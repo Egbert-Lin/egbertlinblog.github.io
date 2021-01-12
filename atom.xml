@@ -74,13 +74,13 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
     <link href="https://egbert-yu-ting.github.io/posts/9e0f4e5/"/>
     <id>https://egbert-yu-ting.github.io/posts/9e0f4e5/</id>
     <published>2021-01-06T06:14:43.000Z</published>
-    <updated>2021-01-12T02:47:55.620Z</updated>
+    <updated>2021-01-12T06:57:25.895Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6&quot;&gt;&lt;b&gt;Tutorial - Install ryu in Ubuntu 16.04 with no failure&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
-&lt;a href=&quot;https://ryu.readthedocs.io/en/latest/index.html&quot;&gt;Ryu&lt;/a&gt; is a component-based software defined networking framework. It&#39;s very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet.</summary>
+&lt;p&gt;&lt;a href=&quot;https://ryu.readthedocs.io/en/latest/index.html&quot;&gt;Ryu&lt;/a&gt; is a component-based software defined networking framework. It&#39;s very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet.</summary>
     
     
     
@@ -100,7 +100,7 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
     <link href="https://egbert-yu-ting.github.io/posts/8ece0fb0/"/>
     <id>https://egbert-yu-ting.github.io/posts/8ece0fb0/</id>
     <published>2021-01-05T12:57:13.000Z</published>
-    <updated>2021-01-12T02:45:45.187Z</updated>
+    <updated>2021-01-12T06:56:49.182Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -130,13 +130,13 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
     <link href="https://egbert-yu-ting.github.io/posts/65af7d45/"/>
     <id>https://egbert-yu-ting.github.io/posts/65af7d45/</id>
     <published>2021-01-05T11:33:27.000Z</published>
-    <updated>2021-01-12T02:42:38.090Z</updated>
+    <updated>2021-01-12T06:56:06.727Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6&quot;&gt;&lt;b&gt;Tutorial - Google Chrome Web Browser in Ubuntu&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
-If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice. Here, I shared my experience of installing Google Chrome on Ubuntu 16.04. You can implement it rapidly and easily.</summary>
+&lt;p&gt;If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice. Here, I shared my experience of installing Google Chrome on Ubuntu 16.04. You can implement it rapidly and easily.</summary>
     
     
     
@@ -178,11 +178,11 @@ If you are working on the Ubuntu environment and not used to using FireFox brows
     <link href="https://egbert-yu-ting.github.io/posts/cac8b982/"/>
     <id>https://egbert-yu-ting.github.io/posts/cac8b982/</id>
     <published>2020-12-30T00:38:38.000Z</published>
-    <updated>2021-01-12T02:36:44.838Z</updated>
+    <updated>2021-01-12T06:55:28.635Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;107. Binary Tree Level Order Traversal II&lt;/b&gt;&lt;/font&gt;&lt;/o&gt; ## Question: Given a binary tree, return the &lt;em&gt;bottom-up level order&lt;/em&gt; traversal of its nodes&#39; values. (ie, from left to right, level by level from leaf to root).</summary>
+&lt;p&gt;&lt;font size=&quot;6&quot;&gt;&lt;b&gt;107. Binary Tree Level Order Traversal II&lt;/b&gt;&lt;/font&gt;&lt;/o&gt; ## Question: Given a binary tree, return the &lt;em&gt;bottom-up level order&lt;/em&gt; traversal of its nodes&#39; values. (ie, from left to right, level by level from leaf to root).</summary>
     
     
     
@@ -226,14 +226,14 @@ A binary tree&#39;s &lt;strong&gt;maximum depth&lt;/strong&gt; is the number of 
     <link href="https://egbert-yu-ting.github.io/posts/d1f23ab6/"/>
     <id>https://egbert-yu-ting.github.io/posts/d1f23ab6/</id>
     <published>2020-12-24T00:40:10.000Z</published>
-    <updated>2021-01-12T02:49:04.968Z</updated>
+    <updated>2021-01-12T06:57:41.568Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6&quot;&gt;&lt;b&gt;101. Symmetric Tree&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).</summary>
+&lt;p&gt;Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).</summary>
     
     
     
@@ -305,14 +305,14 @@ Two binary trees are considered the same if they are structurally identical, and
     <link href="https://egbert-yu-ting.github.io/posts/66cc46ab/"/>
     <id>https://egbert-yu-ting.github.io/posts/66cc46ab/</id>
     <published>2020-12-22T00:31:02.000Z</published>
-    <updated>2021-01-12T02:46:40.323Z</updated>
+    <updated>2021-01-12T06:57:05.931Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6&quot;&gt;&lt;b&gt;83. Remove Duplicates from Sorted List&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-Given a sorted linked list, delete all duplicates such that each element appear only once.</summary>
+&lt;p&gt;Given a sorted linked list, delete all duplicates such that each element appear only once.</summary>
     
     
     
@@ -380,14 +380,14 @@ Since the return type is an integer, the decimal digits are &lt;b&gt;truncated&l
     <link href="https://egbert-yu-ting.github.io/posts/e6133085/"/>
     <id>https://egbert-yu-ting.github.io/posts/e6133085/</id>
     <published>2020-12-16T02:22:19.000Z</published>
-    <updated>2021-01-12T02:36:02.004Z</updated>
+    <updated>2021-01-12T06:55:33.922Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6&quot;&gt;&lt;b&gt;67. Add Binary&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-Given two binary strings &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;a&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;b&lt;/font&gt;&lt;/span&gt;, return &lt;em&gt;their sum as a binary string&lt;/em&gt;.</summary>
+&lt;p&gt;Given two binary strings &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;a&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;b&lt;/font&gt;&lt;/span&gt;, return &lt;em&gt;their sum as a binary string&lt;/em&gt;.</summary>
     
     
     
@@ -458,7 +458,7 @@ You may assume the integer does not contain any leading zero, except the number 
     <link href="https://egbert-yu-ting.github.io/posts/a7083339/"/>
     <id>https://egbert-yu-ting.github.io/posts/a7083339/</id>
     <published>2020-12-11T00:55:52.000Z</published>
-    <updated>2021-01-12T02:50:24.921Z</updated>
+    <updated>2021-01-12T06:58:01.284Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -515,14 +515,14 @@ The &lt;strong&gt;count-and-say&lt;/strong&gt; sequence is a sequence of digit s
     <link href="https://egbert-yu-ting.github.io/posts/41fdcb04/"/>
     <id>https://egbert-yu-ting.github.io/posts/41fdcb04/</id>
     <published>2020-12-10T02:45:08.000Z</published>
-    <updated>2021-01-12T02:48:31.798Z</updated>
+    <updated>2021-01-12T06:57:33.622Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6&quot;&gt;&lt;b&gt;35. Search Insert Position&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</summary>
+&lt;p&gt;Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</summary>
     
     
     

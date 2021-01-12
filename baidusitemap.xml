@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://egbert-yu-ting.github.io/posts/8caf8f3c/</loc>
-    <lastmod>2021-01-12</lastmod>
-  </url>
-  <url>
-    <loc>https://egbert-yu-ting.github.io/posts/4755908e/</loc>
-    <lastmod>2021-01-12</lastmod>
-  </url>
-  <url>
-    <loc>https://egbert-yu-ting.github.io/posts/65af7d45/</loc>
-    <lastmod>2021-01-12</lastmod>
-  </url>
-  <url>
     <loc>https://egbert-yu-ting.github.io/posts/a7083339/</loc>
     <lastmod>2021-01-12</lastmod>
   </url>
@@ -49,6 +37,10 @@
     <lastmod>2021-01-12</lastmod>
   </url>
   <url>
+    <loc>https://egbert-yu-ting.github.io/posts/8caf8f3c/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
     <loc>https://egbert-yu-ting.github.io/posts/236b1bbd/</loc>
     <lastmod>2021-01-12</lastmod>
   </url>
@@ -62,10 +54,6 @@
   </url>
   <url>
     <loc>https://egbert-yu-ting.github.io/posts/7241c2c1/</loc>
-    <lastmod>2021-01-12</lastmod>
-  </url>
-  <url>
-    <loc>https://egbert-yu-ting.github.io/posts/d37a286f/</loc>
     <lastmod>2021-01-12</lastmod>
   </url>
   <url>
@@ -93,31 +81,11 @@
     <lastmod>2021-01-12</lastmod>
   </url>
   <url>
+    <loc>https://egbert-yu-ting.github.io/posts/4755908e/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
     <loc>https://egbert-yu-ting.github.io/posts/2768cb2c/</loc>
-    <lastmod>2021-01-12</lastmod>
-  </url>
-  <url>
-    <loc>https://egbert-yu-ting.github.io/posts/16153cc7/</loc>
-    <lastmod>2021-01-12</lastmod>
-  </url>
-  <url>
-    <loc>https://egbert-yu-ting.github.io/posts/e0d9ee0a/</loc>
-    <lastmod>2021-01-12</lastmod>
-  </url>
-  <url>
-    <loc>https://egbert-yu-ting.github.io/posts/17bf1818/</loc>
-    <lastmod>2021-01-12</lastmod>
-  </url>
-  <url>
-    <loc>https://egbert-yu-ting.github.io/posts/7af6a106/</loc>
-    <lastmod>2021-01-12</lastmod>
-  </url>
-  <url>
-    <loc>https://egbert-yu-ting.github.io/posts/cac8b982/</loc>
-    <lastmod>2021-01-12</lastmod>
-  </url>
-  <url>
-    <loc>https://egbert-yu-ting.github.io/posts/e6133085/</loc>
     <lastmod>2021-01-12</lastmod>
   </url>
   <url>
@@ -129,7 +97,39 @@
     <lastmod>2021-01-12</lastmod>
   </url>
   <url>
+    <loc>https://egbert-yu-ting.github.io/posts/65af7d45/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
+    <loc>https://egbert-yu-ting.github.io/posts/16153cc7/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
     <loc>https://egbert-yu-ting.github.io/posts/278f103a/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
+    <loc>https://egbert-yu-ting.github.io/posts/e0d9ee0a/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
+    <loc>https://egbert-yu-ting.github.io/posts/17bf1818/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
+    <loc>https://egbert-yu-ting.github.io/posts/cac8b982/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
+    <loc>https://egbert-yu-ting.github.io/posts/7af6a106/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
+    <loc>https://egbert-yu-ting.github.io/posts/e6133085/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
+    <loc>https://egbert-yu-ting.github.io/posts/d37a286f/</loc>
     <lastmod>2021-01-12</lastmod>
   </url>
 </urlset> 

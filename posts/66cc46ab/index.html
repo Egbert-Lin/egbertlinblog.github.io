@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
-  <meta name="description" content="#   Remove Duplicates from Sorted List  Question: Given a sorted linked list, delete all duplicates such that each element appear only once.">
+  <meta name="description" content="83. Remove Duplicates from Sorted List  Question: Given a sorted linked list, delete all duplicates such that each element appear only once.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[LeetCode Road] Remove Duplicates from Sorted List">
 <meta property="og:url" content="https://egbert-yu-ting.github.io/posts/66cc46ab/index.html">
 <meta property="og:site_name" content="Egbert Lin&#39;s Blog">
-<meta property="og:description" content="#   Remove Duplicates from Sorted List  Question: Given a sorted linked list, delete all duplicates such that each element appear only once.">
+<meta property="og:description" content="83. Remove Duplicates from Sorted List  Question: Given a sorted linked list, delete all duplicates such that each element appear only once.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-22T00:31:02.000Z">
-<meta property="article:modified_time" content="2021-01-12T01:50:45.711Z">
+<meta property="article:modified_time" content="2021-01-12T02:46:40.323Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="ListNode">
 <meta name="twitter:card" content="summary">
@@ -249,7 +249,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-12 09:50:45" itemprop="dateModified" datetime="2021-01-12T09:50:45+08:00">2021-01-12</time>
+        <time title="Modified: 2021-01-12 10:46:40" itemprop="dateModified" datetime="2021-01-12T10:46:40+08:00">2021-01-12</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -271,11 +271,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        #
-<center>
-<ol start="83" type="1">
-<li>Remove Duplicates from Sorted List
-</center>
+        <p align="center">
+<font size="6"><b>83. Remove Duplicates from Sorted List</b></font>
+</p>
 <h2 id="question">Question:</h2>
 Given a sorted linked list, delete all duplicates such that each element appear only once. <a id="more"></a> ## Example:
 <p style="background-color:#F0F0F0">
@@ -283,8 +281,7 @@ Given a sorted linked list, delete all duplicates such that each element appear 
 </p>
 <p style="background-color:#F0F0F0">
 <b>Input:</b> 1-&gt;1-&gt;2-&gt;3-&gt;3<br> <b>Output:</b> 1-&gt;2-&gt;3<br>
-</p></li>
-</ol>
+</p>
 <h2 id="source-code">Source code</h2>
 <h2 id="version-1"><u>Version 1</u></h2>
 <p>Idea: We can use original List to check each elements. If the current pointer of value is equal to the next pointer of value, we use <code>tail-&gt;next = tail-&gt;next-&gt;next</code> to skip the next pointer. So, We can return head that is unduplicated List.</p>

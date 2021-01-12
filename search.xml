@@ -1,45 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>[LeetCode Road] Binary Tree Level Order Traversal II</title>
-    <url>/posts/cac8b982/</url>
-    <content><![CDATA[#
-<center>
-<ol start="107" type="1">
-<li>Binary Tree Level Order Traversal II
-</center>
-<h2 id="question">Question:</h2>
-Given a binary tree, return the <em>bottom-up level order</em> traversal of its nodes' values. (ie, from left to right, level by level from leaf to root). <a id="more"></a> ## Example: For example: Given binary tree <span style="background-color:#F0F0F0"><font color=#808080>[3,9,20,null,null,15,7]<span style="background-color:#F0F0F0"><font color=#808080>,
-<p style="background-color:#F0F0F0">
-   3<br>    / &lt;br&gt;   9 20<br>    / &lt;br&gt;    15  7
-</p>
-return its bottom-up level order traversal as:
-<p style="background-color:#F0F0F0">
-[<br>   [15,7],<br>   [9,20],<br>   [3]<br>]
-</p></li>
-</ol>
-<h2 id="source-code">Source code</h2>
-<h2 id="version-1"><u>Version 1</u></h2>
-<p>Idea: I made a big mistake, I always think the solution that find the deepest depth first, the go back to the root with each layers. I realized an efficient approach until I had refered to <a href="https://zxi.mytechroad.com/blog/tree/leetcode-107-binary-tree-level-order-traversal-ii/">Huahua's Tech Road</a>. You must understand how to implement a two dimensional vector first. Write a function as recursion, store each elements from top of tree. <code>res.size() &lt;= depth&gt;</code> is an important statement to expand 2D vector size. Then, we must go through every left &amp; right nodes and store it based on correspondingly depth. Finaly, let go back to original function, we must use reverse() to pass the answers.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; levelOrderBottom(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span> &lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line">        levelOrderBottom(root, <span class="number">0</span>, res);</span><br><span class="line">        reverse(res.begin(), res.end());</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">levelOrderBottom</span><span class="params">(TreeNode* root, <span class="keyword">int</span> depth, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">while</span>(res.size() &lt;= depth) res.push_back(&#123;&#125;);</span><br><span class="line">        res[depth].push_back(root-&gt;val);</span><br><span class="line">        levelOrderBottom(root-&gt;left, depth + <span class="number">1</span>, res);</span><br><span class="line">        levelOrderBottom(root-&gt;right, depth + <span class="number">1</span>, res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>STL</tag>
-        <tag>2D_Vector</tag>
-        <tag>Recursion</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Add Binary</title>
     <url>/posts/e6133085/</url>
-    <content><![CDATA[#
-<center>
-<ol start="67" type="1">
-<li>Add Binary
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>67. Add Binary</b></font>
+</p>
 <h2 id="question">Question:</h2>
 Given two binary strings <span style="background-color:#F0F0F0"><font color=#808080>a</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>b</font></span>, return <em>their sum as a binary string</em>. <a id="more"></a> ## Example:
 <p style="background-color:#F0F0F0">
@@ -47,8 +13,7 @@ Given two binary strings <span style="background-color:#F0F0F0"><font color=#808
 </p>
 <p style="background-color:#F0F0F0">
 <b>Input:</b> a = "1010", b = "1011"<br><b>Output:</b> "10101"<br>
-</p></li>
-</ol>
+</p>
 <strong>Constraints:</strong> <strong>
 <li>
 <span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= a.length, b.length &lt;= 10^4</font></span>
@@ -86,16 +51,39 @@ if sum = 0 // binary: 00000000<br>  (sum &amp; 1) = 0<br> if sum = 2 // binary
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Binary Tree Level Order Traversal II</title>
+    <url>/posts/cac8b982/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>107. Binary Tree Level Order Traversal II</b></font></o> ## Question: Given a binary tree, return the <em>bottom-up level order</em> traversal of its nodes' values. (ie, from left to right, level by level from leaf to root). <a id="more"></a> ## Example: For example: Given binary tree <span style="background-color:#F0F0F0"><font color=#808080>[3,9,20,null,null,15,7]<span style="background-color:#F0F0F0"><font color=#808080>,
+<p style="background-color:#F0F0F0">
+   3<br>    / &lt;br&gt;   9 20<br>    / &lt;br&gt;    15  7
+</p>
+return its bottom-up level order traversal as:
+<p style="background-color:#F0F0F0">
+[<br>   [15,7],<br>   [9,20],<br>   [3]<br>]
+</p>
+<h2 id="source-code">Source code</h2>
+<h2 id="version-1"><u>Version 1</u></h2>
+<p>Idea: I made a big mistake, I always think the solution that find the deepest depth first, the go back to the root with each layers. I realized an efficient approach until I had refered to <a href="https://zxi.mytechroad.com/blog/tree/leetcode-107-binary-tree-level-order-traversal-ii/">Huahua's Tech Road</a>. You must understand how to implement a two dimensional vector first. Write a function as recursion, store each elements from top of tree. <code>res.size() &lt;= depth&gt;</code> is an important statement to expand 2D vector size. Then, we must go through every left &amp; right nodes and store it based on correspondingly depth. Finaly, let go back to original function, we must use reverse() to pass the answers.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; levelOrderBottom(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span> &lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line">        levelOrderBottom(root, <span class="number">0</span>, res);</span><br><span class="line">        reverse(res.begin(), res.end());</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">levelOrderBottom</span><span class="params">(TreeNode* root, <span class="keyword">int</span> depth, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">while</span>(res.size() &lt;= depth) res.push_back(&#123;&#125;);</span><br><span class="line">        res[depth].push_back(root-&gt;val);</span><br><span class="line">        levelOrderBottom(root-&gt;left, depth + <span class="number">1</span>, res);</span><br><span class="line">        levelOrderBottom(root-&gt;right, depth + <span class="number">1</span>, res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>STL</tag>
+        <tag>2D_Vector</tag>
+        <tag>Recursion</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Climbing Stairs</title>
     <url>/posts/7af6a106/</url>
-    <content><![CDATA[#
-<center>
-<ol start="70" type="1">
-<li>Climbing Stairs
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>70. Climbing Stairs</b></font>
+</p>
 <h2 id="question">Question:</h2>
-You are climbing a staircase. It takes <span style="background-color:#F0F0F0"><font color=#808080>n</font></span> steps to reach the top.</li>
-</ol>
+<p>You are climbing a staircase. It takes <span style="background-color:#F0F0F0"><font color=#808080>n</font></span> steps to reach the top.</p>
 Each time you can either climb <span style="background-color:#F0F0F0"><font color=#808080>1</font></span> or <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> steps. In how many distinct ways can you climb to the top? <a id="more"></a> ## Example:
 <p style="background-color:#F0F0F0">
 <b>Input:</b> n = 2<br> <b>Output:</b> 2<br> <b>Explanation:</b> There are two ways to climb to the top.<br> 1. 1 step + 1 step<br> 2. 2 steps<br>
@@ -128,14 +116,11 @@ Each time you can either climb <span style="background-color:#F0F0F0"><font colo
   <entry>
     <title>[LeetCode Road] Convert Sorted Array to Binary Search Tree</title>
     <url>/posts/17bf1818/</url>
-    <content><![CDATA[#
-<center>
-<ol start="108" type="1">
-<li>Convert Sorted Array to Binary Search Tree
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>108. Convert Sorted Array to Binary Search Tree</b></font>
+</p>
 <h2 id="question">Question:</h2>
-Given an array where elements are sorted in ascending order, convert it to a height balanced BST.</li>
-</ol>
+<p>Given an array where elements are sorted in ascending order, convert it to a height balanced BST.</p>
 For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1. <a id="more"></a> ## Example:
 <p style="background-color:#F0F0F0">
 Given the sorted array: [-10,-3,0,5,9],<br> <br> One possible answer is: [0,-3,9,-10,null,5], which represents the following height balanced BST:<br>     0<br>    / &lt;br&gt;   -3  9<br>   /  /<br>  -10 5
@@ -160,11 +145,9 @@ left:0, right:4, mid's value:0<br> left:0, right:1, mid's value:-10<br> left:0, 
   <entry>
     <title>[LeetCode Road] Count and Say</title>
     <url>/posts/e0d9ee0a/</url>
-    <content><![CDATA[#
-<center>
-<ol start="38" type="1">
-<li>Count and Say
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>38. Count and Say</b></font>
+</p>
 <h2 id="question">Question:</h2>
 The <strong>count-and-say</strong> sequence is a sequence of digit strings defined by the recursive formula: <strong>
 <li>
@@ -174,8 +157,7 @@ The <strong>count-and-say</strong> sequence is a sequence of digit strings defin
 <li>
 <span style="background-color:#F0F0F0"><font color=#808080>countAndSay(n)</font></span> is the way you would "say" the digit string from <span style="background-color:#F0F0F0"><font color=#808080>countAndSay(n-1)</font></span>, which is then converted into a different digit string.
 </li>
-</strong> To determine how you "say" a digit string, split it into the minimal number of groups so that each group is a contiguous section all of the same character. Then for each group, say the number of characters, then say the character. To convert the saying into a digit string, replace the counts with a number and concatenate every saying. <a id="more"></a> For example, the saying and conversion for digit string "3322251": <img src="38_example.png" />Given a positive integer <span style="background-color:#F0F0F0"><font color=#808080>n</font></span>, return <em>the</em> <span style="background-color:#F0F0F0"><font color=#808080>n^th</font></span> <em>term of the count-and-say sequence</em>.</li>
-</ol>
+<p></strong> To determine how you "say" a digit string, split it into the minimal number of groups so that each group is a contiguous section all of the same character. Then for each group, say the number of characters, then say the character. To convert the saying into a digit string, replace the counts with a number and concatenate every saying. <a id="more"></a> For example, the saying and conversion for digit string "3322251": <img src="38_example.png" />Given a positive integer <span style="background-color:#F0F0F0"><font color=#808080>n</font></span>, return <em>the</em> <span style="background-color:#F0F0F0"><font color=#808080>n^th</font></span> <em>term of the count-and-say sequence</em>.</p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
 <b>Input:</b> n = 1<br><b>Output:</b> "1"<br><b>Explanation:</b> This is the base case.<br>
@@ -203,13 +185,16 @@ The <strong>count-and-say</strong> sequence is a sequence of digit strings defin
   <entry>
     <title>Error message: Please tell me who you are. Run git config --global...</title>
     <url>/posts/278f103a/</url>
-    <content><![CDATA[<h1 id="command-line-hexo-d-and-you-got-error-message-please-tell-me-who-you-are.">Command line: "hexo d" and you got error message: Please tell me who you are.</h1>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Command line: "hexo d" and you got error message: Please tell me who you are.</b></font>
+</p>
 <h3 id="full-error-message-info">Full error message info:</h3>
 <p><font color=#FF0000>Please tell me who you are.</p>
 <p>Run</p>
 <p>git config --global user.email “you@example.com” git config --global user.name “Your Name”</p>
-<p>to set your account’s default identity. Omit --global to set the identity only in this repository. <a id="more"></a> fatal: unable to auto-detect email address (got ...) error: src refspec HEAD does not match any. error: failed to push some refs to(your ...github.io)</font> ***</p>
-<p>When I ran "hexo d" command, the deployment was stuck! The reason was I updated my mac OS a few days age. Now, the system can't distinguish your indentity.</p>
+<p>to set your account’s default identity. Omit --global to set the identity only in this repository.</p>
+<p>fatal: unable to auto-detect email address (got ...) error: src refspec HEAD does not match any. error: failed to push some refs to(your ...github.io)</font> ***</p>
+<p>When I ran "hexo d" command, the deployment was stuck! <a id="more"></a> The reason was I updated my mac OS a few days age. Now, the system can't distinguish your indentity.</p>
 <p>So, the solution can solve it:</p>
 <h3 id="solution">Solution:</h3>
 <p>Input commands: 1) git config --global user.email "email" //Your github email address(https://username.github.io)</p>
@@ -227,10 +212,9 @@ The <strong>count-and-say</strong> sequence is a sequence of digit strings defin
   <entry>
     <title>Interview programming question - Find second largest element</title>
     <url>/posts/16153cc7/</url>
-    <content><![CDATA[#
-<center>
-Let coding interview become easy - Find second largest element
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Let coding interview become easy - Find second largest element</b></font>
+</p>
 <p>Maybe you will face it problem when you have an interview for a job with Tech. company. The problem is "How to find second largest element?", it seems very easy to get result, but you must propose an efficient approach. <a id="more"></a> If there is a vector that consists <code>&#123;2, 3, 4, 1, 7, 6, 5&#125;</code>, I delcare two variables as first largest element and second largest element. I initialize variables to INT_MIN. At 13 lines, <code>if(input[i]&gt;first)</code> is true, <code>input[i]</code> is largest element and pass it to <code>first</code> after storing a value of <code>first</code> by <code>second</code>. Otherwise, compare <code>input[i]</code> with <code>second</code>, it checks a current value whether it bigger than <code>second</code> or not.</p>
 <h2 id="source-code">Source code</h2>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">pair&lt;int, int&gt; findLargest(vector&lt;int&gt; input)&#123;</span><br><span class="line">    <span class="keyword">int</span> first = INT_MIN;</span><br><span class="line">    <span class="keyword">int</span> second = INT_MIN;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; input.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(input[i]&gt;first)&#123;</span><br><span class="line">            second = first;</span><br><span class="line">            first = input[i];</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(input[i] &gt; second)&#123;</span><br><span class="line">            second = input[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">make_pair</span>(first, second);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr = &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; ans = findLargest(arr);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;The first largest element=&quot;</span> &lt;&lt; ans.first &lt;&lt; <span class="string">&quot;, the second largest element=&quot;</span> &lt;&lt; ans.second &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -246,17 +230,14 @@ Let coding interview become easy - Find second largest element
   <entry>
     <title>[Step by Step] How to install Google Chrome on Ubuntu 16.04</title>
     <url>/posts/65af7d45/</url>
-    <content><![CDATA[#
-<center>
-Tutorial - Google Chrome Web Browser in Ubuntu
-</center>
-<p>If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice. Here, I shared my experience of installing Google Chrome on Ubuntu 16.04. You can implement it rapidly and easily.</p>
-<ul>
-<li><strong>Step 1.</strong> Download the Google Chrome to your Ubuntu system
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Tutorial - Google Chrome Web Browser in Ubuntu</b></font>
+</p>
+If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice. Here, I shared my experience of installing Google Chrome on Ubuntu 16.04. You can implement it rapidly and easily. <a id="more"></a> + <strong>Step 1.</strong> Download the Google Chrome to your Ubuntu system
 <p style="background-color:#F0F0F0">
 $ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 </p>
-<a id="more"></a></li>
+<ul>
 <li><strong>Step 2.</strong> Install the Google Chrome
 <p style="background-color:#F0F0F0">
 $ sudo dpkg -i google-chrome-stable_current_amd64.deb
@@ -283,14 +264,11 @@ $ sudo apt-get install libnss3-1d
   <entry>
     <title>[LeetCode Road] Implement strStr()</title>
     <url>/posts/9bc77297/</url>
-    <content><![CDATA[#
-<center>
-<ol start="28" type="1">
-<li>Implement strStr()
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>28. Implement strStr()</b></font>
+</p>
 <h2 id="question">Question:</h2>
-Implement <font color=#808080>strStr()</font>.</li>
-</ol>
+<p>Implement <font color=#808080>strStr()</font>.</p>
 <p>Return the index of the first occurrence of needle in haystack, or <font color=#808080>-1</font> if <font color=#808080>needle</font> is not part of <font color=#808080>haystack</font>. <strong>Clarification:</strong> What should we return when <font color=#808080>needle</font> is an empty string? This is a great question to ask during an interview.</p>
 For the purpose of this problem, we will return 0 when <font color=#808080>needle</font> is an empty string. This is consistent to C's <font color=#808080>strstr()</font> and Java's <font color=#808080>indexOf()</font>. <a id="more"></a> ## Example:
 <p style="background-color:#F0F0F0">
@@ -326,14 +304,11 @@ For the purpose of this problem, we will return 0 when <font color=#808080>needl
   <entry>
     <title>[LeetCode Road] Length of Last Word</title>
     <url>/posts/b04b682/</url>
-    <content><![CDATA[#
-<center>
-<ol start="58" type="1">
-<li>Length of Last Word
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>8. Length of Last Word</b></font>
+</p>
 <h2 id="question">Question:</h2>
-Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of some words separated by spaces, return the <em>length of the last word in the string</em>. <em>If the last word does not exist, return</em> <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</li>
-</ol>
+<p>Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of some words separated by spaces, return the <em>length of the last word in the string</em>. <em>If the last word does not exist, return</em> <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</p>
 A <strong>word</strong> is a maximal substring consisting of non-space characters only. <a id="more"></a> ## Example:
 <p style="background-color:#F0F0F0">
 <b>Input:</b> s = "Hello World"<br><b>Output:</b> 5<br>
@@ -365,14 +340,11 @@ A <strong>word</strong> is a maximal substring consisting of non-space character
   <entry>
     <title>[LeetCode Road] Longest Common Prefix</title>
     <url>/posts/2768cb2c/</url>
-    <content><![CDATA[#
-<center>
-<ol start="14" type="1">
-<li>Longest Common Prefix
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>14. Longest Common Prefix</b></font>
+</p>
 <h2 id="question">Question:</h2>
-Write a function to find the longest common prefix string amongst an array of strings.</li>
-</ol>
+<p>Write a function to find the longest common prefix string amongst an array of strings.</p>
 If there is no common prefix, return an empty string <span style="background-color:#F0F0F0"><font color=#808080>""</font></span>. <a id="more"></a> ## Example:
 <p style="background-color:#F0F0F0">
 <b>Input:</b> strs = ["flower","flow","flight"]<br><b>Output:</b> "fl"<br>
@@ -411,10 +383,9 @@ If there is no common prefix, return an empty string <span style="background-col
   <entry>
     <title>Shared partition between Mac OS X and Windows 10 [Save time]</title>
     <url>/posts/4755908e/</url>
-    <content><![CDATA[#
-<center>
-Bootcamp: File sharing between Mac OS X and Windows 10 on MacBook Pro
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Bootcamp: File sharing between Mac OS X and Windows 10 on MacBook Pro</b></font>
+</p>
 <p>Here are some reason you should consider deploying Windows on your Mac device. 1. More games with better performance in Windows OS. 2. Some Applications don't work in macOS or not support all functions. 3. Developers need to test projects in Windows OS.</p>
 <p>So, I shared my experience to save your time of installing Windows on MacBook Pro. <a id="more"></a> ## Hardward &amp; Software preparation + Hardware Product model: Macbook Pro 2017 + Software - Win10 ISO You can go to this url to downlaod ISO: https://www.microsoft.com/zh-tw/software-download/windows10 Choose version:Windows 10, Choose language: English and choose 64-bit version</p>
 <h2 id="use-bootcamp-to-install-win10">Use Bootcamp to install Win10</h2>
@@ -473,14 +444,11 @@ Type <b>w</b> to save your changes, You'll be asked to confirm this action
   <entry>
     <title>[LeetCode Road] Maximum Depth of Binary Tree</title>
     <url>/posts/57b52472/</url>
-    <content><![CDATA[#
-<center>
-<ol start="104" type="1">
-<li>Maximum Depth of Binary Tree
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>104. Maximum Depth of Binary Tree</b></font>
+</p>
 <h2 id="question">Question:</h2>
-Given the <span style="background-color:#F0F0F0"><font color=#808080>root</font></span> of a binary tree, return <em>its maximum depth</em>.</li>
-</ol>
+<p>Given the <span style="background-color:#F0F0F0"><font color=#808080>root</font></span> of a binary tree, return <em>its maximum depth</em>.</p>
 A binary tree's <strong>maximum depth</strong> is the number of nodes along the longest path from the root node down to the farthest leaf node. <a id="more"></a> ## Example: <img src="MaximumDepthofBinaryTree_example1.png" />
 <p style="background-color:#F0F0F0">
 <b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 3<br>
@@ -517,14 +485,11 @@ The number of nodes in the tree is in the range <span style="background-color:#F
   <entry>
     <title>[LeetCode Road] Maximum Subarray</title>
     <url>/posts/90ac56be/</url>
-    <content><![CDATA[#
-<center>
-<ol start="53" type="1">
-<li>Maximum Subarray
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>53. Maximum Subarray</b></font>
+</p>
 <h2 id="question">Question:</h2>
-Given an integer array <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span>, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</li>
-</ol>
+<p>Given an integer array <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span>, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
 <strong>Follow up:</strong> If you have figured out the <span style="background-color:#F0F0F0"><font color=#808080>O(n)</font></span> solution, try coding another solution using the <strong>divide and conquer</strong> approach, which is more subtle. <a id="more"></a> ## Example:
 <p style="background-color:#F0F0F0">
 <b>Input:</b> nums = [-2,1,-3,4,-1,2,1,-5,4]<br><b>Output:</b> 6<br><b>Explanation:</b> [4,-1,2,1] has the largest sum = 6.<br>
@@ -568,14 +533,11 @@ Given an integer array <span style="background-color:#F0F0F0"><font color=#80808
   <entry>
     <title>[LeetCode Road] Merge Sorted Array</title>
     <url>/posts/1cc4a24a/</url>
-    <content><![CDATA[#
-<center>
-<ol start="88" type="1">
-<li>Merge Sorted Array
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>88. Merge Sorted Array</b></font>
+</p>
 <h2 id="question">Question:</h2>
-Given two sorted integer arrays <em>nums1</em> and <em>nums2</em>, merge <em>nums2</em> into <em>nums1</em> as one sorted array. <strong>Note:</strong></li>
-</ol>
+<p>Given two sorted integer arrays <em>nums1</em> and <em>nums2</em>, merge <em>nums2</em> into <em>nums1</em> as one sorted array. <strong>Note:</strong></p>
 <ul>
 <li>The number of elements initialized in nums1 and nums2 are m and n respectively.</li>
 <li>You may assume that nums1 has enough space (size that is equal to m + n) to hold additional elements from nums2. <a id="more"></a> ## Example
@@ -615,11 +577,9 @@ Given two sorted integer arrays <em>nums1</em> and <em>nums2</em>, merge <em>num
   <entry>
     <title>[LeetCode Road] Merge Two Sorted Lists</title>
     <url>/posts/61be1b10/</url>
-    <content><![CDATA[#
-<center>
-<ol start="21" type="1">
-<li>Merge Two Sorted Lists
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>21. Merge Two Sorted Lists</b></font>
+</p>
 <h2 id="question">Question:</h2>
 Merge two sorted linked lists and return it as a new <strong>sorted</strong> list. The new list should be made by splicing together the nodes of the first two lists. <a id="more"></a> ## Example: <img src="Merge_ListNode_example.png" />
 <p style="background-color:#F0F0F0">
@@ -629,8 +589,7 @@ Merge two sorted linked lists and return it as a new <strong>sorted</strong> lis
 <b>Input:</b> l1 = [], l2 = []<br><b>Output:</b> []
 </p>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> l1 = [], l2 = [0]<br><b>Output:</b> [0]</li>
-</ol>
+<p><b>Input:</b> l1 = [], l2 = [0]<br><b>Output:</b> [0]</p>
 <strong>Constraints:</strong> <strong>
 <li>
 The number of nodes in both lists is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 50]</font></span> .
@@ -659,14 +618,11 @@ Both <span style="background-color:#F0F0F0"><font color=#808080>l1</font></span>
   <entry>
     <title>[LeetCode Road] Palindrome Number</title>
     <url>/posts/d37a286f/</url>
-    <content><![CDATA[#
-<center>
-<ol start="9" type="1">
-<li>Palindrome Number
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>9. Palindrome Number</b></font>
+</p>
 <h2 id="question">Question:</h2>
-Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.</li>
-</ol>
+<p>Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.</p>
 <strong>Follow up:</strong> Could you solve it without converting the integer to a string? <a id="more"></a> ## Example:
 <p style="background-color:#F0F0F0">
 <b>Input</b>: x = 121<br><b>Output</b>: true<br>
@@ -704,14 +660,11 @@ Determine whether an integer is a palindrome. An integer is a palindrome when it
   <entry>
     <title>[LeetCode Road] Plus One</title>
     <url>/posts/acf6f11e/</url>
-    <content><![CDATA[#
-<center>
-<ol start="66" type="1">
-<li>Plus One
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>66. Plus One</b></font>
+</p>
 <h2 id="question">Question:</h2>
-Given a <strong>non-empty</strong> array of decimal digits representing a non-negative integer, increment one to the integer.</li>
-</ol>
+<p>Given a <strong>non-empty</strong> array of decimal digits representing a non-negative integer, increment one to the integer.</p>
 <p>The digits are stored such that the most significant digit is at the head of the list, and each element in the array contains a single digit.</p>
 You may assume the integer does not contain any leading zero, except the number 0 itself. <a id="more"></a> ## Example:
 <p style="background-color:#F0F0F0">
@@ -747,14 +700,11 @@ You may assume the integer does not contain any leading zero, except the number 
   <entry>
     <title>[LeetCode Road] Remove Duplicates from Sorted Array</title>
     <url>/posts/7241c2c1/</url>
-    <content><![CDATA[#
-<center>
-<ol start="26" type="1">
-<li>Remove Duplicates from Sorted Array
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>26. Remove Duplicates from Sorted Array</b></font>
+</p>
 <h2 id="question">Question:</h2>
-Given a sorted array nums, remove the duplicates in-place such that each element appears only once and returns the new length.</li>
-</ol>
+<p>Given a sorted array nums, remove the duplicates in-place such that each element appears only once and returns the new length.</p>
 <p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array</strong> <font color=#808080>in-place</font> with O(1) extra memory. <a id="more"></a> <strong>Clarification:</strong></p>
 <p>Confused why the returned value is an integer but your answer is an array?</p>
 <p>Note that the input array is passed in by <strong>reference</strong>, which means a modification to the input array will be known to the caller as well.</p>
@@ -801,11 +751,9 @@ Internally you can think of this:
   <entry>
     <title>[LeetCode Road] Remove Duplicates from Sorted List</title>
     <url>/posts/66cc46ab/</url>
-    <content><![CDATA[#
-<center>
-<ol start="83" type="1">
-<li>Remove Duplicates from Sorted List
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>83. Remove Duplicates from Sorted List</b></font>
+</p>
 <h2 id="question">Question:</h2>
 Given a sorted linked list, delete all duplicates such that each element appear only once. <a id="more"></a> ## Example:
 <p style="background-color:#F0F0F0">
@@ -813,8 +761,7 @@ Given a sorted linked list, delete all duplicates such that each element appear 
 </p>
 <p style="background-color:#F0F0F0">
 <b>Input:</b> 1-&gt;1-&gt;2-&gt;3-&gt;3<br> <b>Output:</b> 1-&gt;2-&gt;3<br>
-</p></li>
-</ol>
+</p>
 <h2 id="source-code">Source code</h2>
 <h2 id="version-1"><u>Version 1</u></h2>
 <p>Idea: We can use original List to check each elements. If the current pointer of value is equal to the next pointer of value, we use <code>tail-&gt;next = tail-&gt;next-&gt;next</code> to skip the next pointer. So, We can return head that is unduplicated List.</p>
@@ -834,14 +781,11 @@ Given a sorted linked list, delete all duplicates such that each element appear 
   <entry>
     <title>[LeetCode Road] Remove Element</title>
     <url>/posts/1afffcb4/</url>
-    <content><![CDATA[#
-<center>
-<ol start="27" type="1">
-<li>Remove Element
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>27. Remove Element</b></font>
+</p>
 <h2 id="question">Question:</h2>
-Given an array nums and a value val, remove all instances of that value <font color=#808080>in-place</font> and return the new length.</li>
-</ol>
+<p>Given an array nums and a value val, remove all instances of that value <font color=#808080>in-place</font> and return the new length.</p>
 <p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array</strong> <font color=#808080>in-place</font> with O(1) extra memory.</p>
 <p>The order of elements can be changed. It doesn't matter what you leave beyond the new length. <a id="more"></a> <strong>Clarification:</strong></p>
 <p>Confused why the returned value is an integer but your answer is an array?</p>
@@ -886,14 +830,11 @@ Internally you can think of this:
   <entry>
     <title>[LeetCode Road] Reverse Integer</title>
     <url>/posts/236b1bbd/</url>
-    <content><![CDATA[#
-<center>
-<ol start="7" type="1">
-<li>Reverse Integer
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>7. Reverse Integer</b></font>
+</p>
 <h2 id="question">Question:</h2>
-Given a 32-bit signed integer, reverse digits of an integer.</li>
-</ol>
+<p>Given a 32-bit signed integer, reverse digits of an integer.</p>
 <strong>Note:</strong> Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−2^31, 2^31 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows. <a id="more"></a> ## Example:
 <p style="background-color:#F0F0F0">
 <b>Input</b>: x = 123<br><b>Output</b>: 321<br>
@@ -928,19 +869,16 @@ Given a 32-bit signed integer, reverse digits of an integer.</li>
   <entry>
     <title>[LeetCode Road] Roman to Integer</title>
     <url>/posts/8caf8f3c/</url>
-    <content><![CDATA[#
-<center>
-<ol start="13" type="1">
-<li>Roman to Integer
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>13. Roman to Integer</b></font>
+</p>
 <h2 id="question">Question:</h2>
 Roman numerals are represented by seven different symbols: <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(I\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(V\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(L\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(C\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(D\)</span></font></span> and <span style="background-color:#F0F0F0"><font color=#808080>M</font></span>.
 <p style="background-color:F0F0F0">
 <b>Symbol</b>  <b>Value</b><br>  <span class="math inline">\(I\)</span>       1<br> <span class="math inline">\(V\)</span>      5<br> <span class="math inline">\(X\)</span>      10<br> <span class="math inline">\(L\)</span>       50<br> <span class="math inline">\(C\)</span>      100<br> <span class="math inline">\(D\)</span>      500<br> <span class="math inline">\(M\)</span>        1000
 </p>
 <a id="more"></a>
-For example, <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(II\)</span></font></span> in Roman numeral, just two one's added together. <span style="background-color:#F0F0F0"><font color=#808080>12</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XII\)</span></font></span>, which is simply <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X + II\)</span></font></span>. The number <span style="background-color:#F0F0F0"><font color=#808080>27</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XXVII\)</span></font></span>, which is <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XX + V + II\)</span></font></span>.</li>
-</ol>
+<p>For example, <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(II\)</span></font></span> in Roman numeral, just two one's added together. <span style="background-color:#F0F0F0"><font color=#808080>12</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XII\)</span></font></span>, which is simply <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X + II\)</span></font></span>. The number <span style="background-color:#F0F0F0"><font color=#808080>27</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XXVII\)</span></font></span>, which is <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XX + V + II\)</span></font></span>.</p>
 <p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(IIII\)</span></font></span>. Instead, the number four is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(IV\)</span></font></span>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(IX\)</span></font></span>. There are six instances where subtraction is used:</p>
 <ul>
 <li><span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(I\)</span></font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(V\)</span></font></span> (5) and <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X\)</span></font></span> (10) to make 4 and 9.</li>
@@ -994,10 +932,9 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
   <entry>
     <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
     <url>/posts/9e0f4e5/</url>
-    <content><![CDATA[#
-<center>
-Tutorial - Install ryu in Ubuntu 16.04 with no failure
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Tutorial - Install ryu in Ubuntu 16.04 with no failure</b></font>
+</p>
 <a href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It's very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet. <a id="more"></a> ## Start to configure and install + <strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources)
 <p style="background-color:#F0F0F0">
 $ sudo apt-get update
@@ -1092,74 +1029,13 @@ $ sudo python setup.py install
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Search Insert Position</title>
-    <url>/posts/41fdcb04/</url>
-    <content><![CDATA[#
-<center>
-<ol start="35" type="1">
-<li>Search Insert Position
-</center>
-<h2 id="question">Question:</h2>
-Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order. <a id="more"></a> ## Example:
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [1,3,5,6], target = 5<br><b>Output:</b> 2<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [1,3,5,6], target = 2<br><b>Output:</b> 1<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [1,3,5,6], target = 7<br><b>Output:</b> 4<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [1,3,5,6], target = 0<br><b>Output:</b> 0<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [1], target = 0<br><b>Output:</b> 0<br>
-</p></li>
-</ol>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= nums.length &lt;= 10^4</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-10^4 &lt;= nums[i] &lt;= 10^4</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>nums contains <b>distinct</b> values sorted in <b>ascending</b> order.</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-10^4 &lt;= target &lt;= 10^4</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h2 id="version-1"><u>Version 1</u></h2>
-<p>Idea: It is an intuitive method, use a loop to match each elements.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">searchInsert</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] &gt;= target) <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="version-2"><u>Version 2</u></h2>
-<p>Idea: The solution is refered to <a href="https://zxi.mytechroad.com/blog/algorithms/binary-search/leetcode-35-search-insert-position/">Huahua's Tech Road</a>. It is an efficient approach to process large size of vector. <code>m = l + (r - 1) / 2</code> is a key to divide into two parts. Then, get one of parts that consists target (Reduce computing time), repeats it until we find the accurate position.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">searchInsert</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = nums.size();</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">      <span class="keyword">int</span> m = l + (r - l) / <span class="number">2</span>;      </span><br><span class="line">      <span class="keyword">if</span> (nums[m] == target)</span><br><span class="line">        <span class="keyword">return</span> m;</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span> (nums[m] &gt; target)</span><br><span class="line">        r = m;</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        l = m + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>search</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Same Tree</title>
     <url>/posts/2ef96137/</url>
-    <content><![CDATA[#
-<center>
-<ol start="100" type="1">
-<li>Same Tree
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>100. Same Tree</b></font>
+</p>
 <h2 id="question">Question:</h2>
-Given the roots of two binary trees <span style="background-color:#F0F0F0"><font color=#808080>p</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>q</font></span>, write a function to check if they are the same or not.</li>
-</ol>
+<p>Given the roots of two binary trees <span style="background-color:#F0F0F0"><font color=#808080>p</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>q</font></span>, write a function to check if they are the same or not.</p>
 Two binary trees are considered the same if they are structurally identical, and the nodes have the same value. <a id="more"></a> ## Example: <img src="SameTree_example1.png" />
 <p style="background-color:#F0F0F0">
 <b>Input:</b> p = [1,2,3], q = [1,2,3]<br> <b>Output:</b> true<br>
@@ -1195,47 +1071,68 @@ TThe number of nodes in both trees is in the range <span style="background-color
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Symmetric Tree</title>
-    <url>/posts/d1f23ab6/</url>
-    <content><![CDATA[#
-<center>
-<ol start="101" type="1">
-<li>Symmetric Tree
-</center>
-<h2 id="question">Question:</h2>
-Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center). <a id="more"></a> ## Example: For example, this binary tree <span style="background-color:#F0F0F0"><font color=#808080>[1,2,2,3,4,4,3]</font></span> is symmetric:
-<p style="background-color:#F0F0F0">
-    1<br>      / &lt;br&gt;     2   2<br>    / &amp;ensp;/ &lt;br&gt;   3 4 4 3
+    <title>[LeetCode Road] Search Insert Position</title>
+    <url>/posts/41fdcb04/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>35. Search Insert Position</b></font>
 </p>
-But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,2,2,null,3,null,3]</font></span> is not:
+<h2 id="question">Question:</h2>
+Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order. <a id="more"></a> ## Example:
 <p style="background-color:#F0F0F0">
-    1<br>      / &lt;br&gt;     2   2<br>      &amp;ensp;  &lt;br&gt;     3   3
-</p></li>
-</ol>
-<h2 id="source-code">Source code:</h2>
+<b>Input:</b> nums = [1,3,5,6], target = 5<br><b>Output:</b> 2<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [1,3,5,6], target = 2<br><b>Output:</b> 1<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [1,3,5,6], target = 7<br><b>Output:</b> 4<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [1,3,5,6], target = 0<br><b>Output:</b> 0<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [1], target = 0<br><b>Output:</b> 0<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= nums.length &lt;= 10^4</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-10^4 &lt;= nums[i] &lt;= 10^4</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>nums contains <b>distinct</b> values sorted in <b>ascending</b> order.</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-10^4 &lt;= target &lt;= 10^4</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
 <h2 id="version-1"><u>Version 1</u></h2>
-<p>Idea: The strategic is similar to <a href="https://egbert-yu-ting.github.io/posts/2ef96137/#more">Same-Tree</a>. First, we must check the root node whether it's null or not. Then, we use root-&gt;left and root-&gt;right as arguments to call private function. There are some rules we must to know: 1. the value of the left node must be equal to the value of the right node. 2. the value of the left node as the left child node must be equal to the value of the right node as the right child node. 3. the vlaue of the left node as the right child node must be equal to the value of the right node as the left child node. So, we can write to codes based on these ruls at 22~23 line.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> isSymmetric(root-&gt;left, root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* l, TreeNode* r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!l &amp;&amp; !r) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(!l || !r) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> (l-&gt;val == r-&gt;val) &amp;&amp; isSymmetric(l-&gt;left, r-&gt;right) </span><br><span class="line">            &amp;&amp; isSymmetric(l-&gt;right, r-&gt;left);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Idea: It is an intuitive method, use a loop to match each elements.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">searchInsert</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] &gt;= target) <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="version-2"><u>Version 2</u></h2>
+<p>Idea: The solution is refered to <a href="https://zxi.mytechroad.com/blog/algorithms/binary-search/leetcode-35-search-insert-position/">Huahua's Tech Road</a>. It is an efficient approach to process large size of vector. <code>m = l + (r - 1) / 2</code> is a key to divide into two parts. Then, get one of parts that consists target (Reduce computing time), repeats it until we find the accurate position.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">searchInsert</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = nums.size();</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">      <span class="keyword">int</span> m = l + (r - l) / <span class="number">2</span>;      </span><br><span class="line">      <span class="keyword">if</span> (nums[m] == target)</span><br><span class="line">        <span class="keyword">return</span> m;</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span> (nums[m] &gt; target)</span><br><span class="line">        r = m;</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        l = m + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>LeetCode-Easy</category>
       </categories>
       <tags>
-        <tag>Recursion</tag>
-        <tag>Tree</tag>
+        <tag>search</tag>
       </tags>
   </entry>
   <entry>
     <title>[LeetCode Road] Sqrt(x)</title>
     <url>/posts/72b31d68/</url>
-    <content><![CDATA[#
-<center>
-<ol start="69" type="1">
-<li>Sqrt(x)
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>69. Sqrt(x)</b></font>
+</p>
 <h2 id="question">Question:</h2>
-Given a non-negative integer <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>, compute and return <em>the square root of</em> <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>.</li>
-</ol>
+<p>Given a non-negative integer <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>, compute and return <em>the square root of</em> <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>.</p>
 Since the return type is an integer, the decimal digits are <b>truncated</b>, and only <b>the integer part</b> of the result is returned. <a id="more"></a> ## Example:
 <p style="background-color:#F0F0F0">
 <b>Input:</b> x = 4<br><b>Output:</b> 2<br>
@@ -1264,47 +1161,12 @@ Since the return type is an integer, the decimal digits are <b>truncated</b>, an
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Two Sum</title>
-    <url>/posts/b98c8b25/</url>
-    <content><![CDATA[#
-<center>
-<ol type="1">
-<li>Two Sum
-</center>
-<h2 id="question">Question:</h2>
-Given an array of integers <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> and an integer <span style="background-color:#F0F0F0"><font color=#808080>target</font></span>, return <em>indices of the two numbers such that they add up to target</em>.</li>
-</ol>
-<p>You may assume that each input would have <strong>exactly one solution</strong>, and you may not use the same element twice.</p>
-You can return the answer in any order. <a id="more"></a> ## Example:
-<p style="background-color:#F0F0F0">
-<b>Input</b>: nums = [2,7,11,15], target = 9<br><b>Output</b>: [0,1]<br><b>Output</b>: Because nums[0] + nums[1] == 9, we return [0, 1].
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: nums = [3,2,4], target = 6<br><b>Output</b>: [1,2].
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: nums = [3,3], target = 6<br><b>Output</b>: [0,1]
-</p>
-<h2 id="source-code">Source code</h2>
-<h4 id="version-1"><u>Version 1</u></h4>
-<p>Idea: This is my first coding on the LeetCode platform. After reading the problem, my mind's gone blank, I only thought a simple way to solve it. Use two loop to check all numbers, but the time complexity is O(n^2). I knew this method is not efficient!</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; returnArray;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size() - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; nums.size(); j++)&#123;</span><br><span class="line">                sum = nums[i]+nums[j];</span><br><span class="line">                <span class="keyword">if</span>(sum == target)&#123;</span><br><span class="line">                    returnArray.push_back(i);</span><br><span class="line">                    returnArray.push_back(j);</span><br><span class="line">                    <span class="keyword">return</span> returnArray;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> returnArray;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h4 id="version-2"><u>Version 2</u></h4>
-<p>Idea: So, the source code is refered from online and I added some comments after programming. I heard the Hash Table mechanism at first time. It is a very simple principle, I must remember it! If you want to learn Hash Table, you can see <a href="https://aozturk.medium.com/simple-hash-map-hash-table-implementation-in-c-931965904250">Simple Hash Map</a>.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; returnArray; <span class="comment">// return the ans</span></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mapIndex; <span class="comment">// hash table(key:nums[i], value:index)</span></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            it = mapIndex.find(target - nums[i]);</span><br><span class="line">            <span class="keyword">if</span>(it != mapIndex.end())&#123;</span><br><span class="line">                <span class="comment">// found it, it means target - nums[i] = it-&gt;first</span></span><br><span class="line">                returnArray.push_back(it-&gt;second); <span class="comment">// get the value(index) by iterator</span></span><br><span class="line">                returnArray.push_back(i); <span class="comment">// get the current index</span></span><br><span class="line">                <span class="keyword">return</span> returnArray;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">// add new element</span></span><br><span class="line">                mapIndex.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;(nums[i], i));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> returnArray;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Map(STL)</tag>
-        <tag>Hash_table</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>How to understand recursive function - Tower of Hanoi</title>
     <url>/posts/d521850b/</url>
-    <content><![CDATA[<p>Let's realize how does tower of hanoi works and how to use recursive function to implement it!!!</p>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Tower of Hanoi</b></font>
+</p>
+<p>Let's realize how does tower of hanoi works and how to use recursive function to implement it!!!</p>
 <p>The <strong>Tower of Hanoi</strong> is a mathematical game or puzzle, it's a classical problem during your CSIE studies.</p>
 <p><strong>First</strong>, the demonstration of process(3 disks and 3 rods) as below[1]: <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Tower_of_Hanoi.gif" alt="animation" /> <a id="more"></a> <strong>Second</strong>, moving the entire stack to another rod need to comply with the following rules: 1. Only one disk can be moved at a time. 2. Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack or on an empty rod. 3. No larger disk may be placed on top of a smaller disk.</p>
 <p><strong>Third</strong>, the solutions between 1 disks and 4 disks are shown as following:</p>
@@ -1424,16 +1286,76 @@ You can return the answer in any order. <a id="more"></a> ## Example:
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Symmetric Tree</title>
+    <url>/posts/d1f23ab6/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>101. Symmetric Tree</b></font>
+</p>
+<h2 id="question">Question:</h2>
+Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center). <a id="more"></a> ## Example: For example, this binary tree <span style="background-color:#F0F0F0"><font color=#808080>[1,2,2,3,4,4,3]</font></span> is symmetric:
+<p style="background-color:#F0F0F0">
+    1<br>      / &lt;br&gt;     2   2<br>    / &amp;ensp;/ &lt;br&gt;   3 4 4 3
+</p>
+But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,2,2,null,3,null,3]</font></span> is not:
+<p style="background-color:#F0F0F0">
+    1<br>      / &lt;br&gt;     2   2<br>      &amp;ensp;  &lt;br&gt;     3   3
+</p>
+<h2 id="source-code">Source code:</h2>
+<h2 id="version-1"><u>Version 1</u></h2>
+<p>Idea: The strategic is similar to <a href="https://egbert-yu-ting.github.io/posts/2ef96137/#more">Same-Tree</a>. First, we must check the root node whether it's null or not. Then, we use root-&gt;left and root-&gt;right as arguments to call private function. There are some rules we must to know: 1. the value of the left node must be equal to the value of the right node. 2. the value of the left node as the left child node must be equal to the value of the right node as the right child node. 3. the vlaue of the left node as the right child node must be equal to the value of the right node as the left child node. So, we can write to codes based on these ruls at 22~23 line.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> isSymmetric(root-&gt;left, root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* l, TreeNode* r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!l &amp;&amp; !r) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(!l || !r) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> (l-&gt;val == r-&gt;val) &amp;&amp; isSymmetric(l-&gt;left, r-&gt;right) </span><br><span class="line">            &amp;&amp; isSymmetric(l-&gt;right, r-&gt;left);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Recursion</tag>
+        <tag>Tree</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Two Sum</title>
+    <url>/posts/b98c8b25/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>1. Two Sum</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given an array of integers <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> and an integer <span style="background-color:#F0F0F0"><font color=#808080>target</font></span>, return <em>indices of the two numbers such that they add up to target</em>.</p>
+<p>You may assume that each input would have <strong>exactly one solution</strong>, and you may not use the same element twice.</p>
+You can return the answer in any order. <a id="more"></a> ## Example:
+<p style="background-color:#F0F0F0">
+<b>Input</b>: nums = [2,7,11,15], target = 9<br><b>Output</b>: [0,1]<br><b>Output</b>: Because nums[0] + nums[1] == 9, we return [0, 1].
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: nums = [3,2,4], target = 6<br><b>Output</b>: [1,2].
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: nums = [3,3], target = 6<br><b>Output</b>: [0,1]
+</p>
+<h2 id="source-code">Source code</h2>
+<h4 id="version-1"><u>Version 1</u></h4>
+<p>Idea: This is my first coding on the LeetCode platform. After reading the problem, my mind's gone blank, I only thought a simple way to solve it. Use two loop to check all numbers, but the time complexity is O(n^2). I knew this method is not efficient!</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; returnArray;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size() - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; nums.size(); j++)&#123;</span><br><span class="line">                sum = nums[i]+nums[j];</span><br><span class="line">                <span class="keyword">if</span>(sum == target)&#123;</span><br><span class="line">                    returnArray.push_back(i);</span><br><span class="line">                    returnArray.push_back(j);</span><br><span class="line">                    <span class="keyword">return</span> returnArray;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> returnArray;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="version-2"><u>Version 2</u></h4>
+<p>Idea: So, the source code is refered from online and I added some comments after programming. I heard the Hash Table mechanism at first time. It is a very simple principle, I must remember it! If you want to learn Hash Table, you can see <a href="https://aozturk.medium.com/simple-hash-map-hash-table-implementation-in-c-931965904250">Simple Hash Map</a>.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; returnArray; <span class="comment">// return the ans</span></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mapIndex; <span class="comment">// hash table(key:nums[i], value:index)</span></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            it = mapIndex.find(target - nums[i]);</span><br><span class="line">            <span class="keyword">if</span>(it != mapIndex.end())&#123;</span><br><span class="line">                <span class="comment">// found it, it means target - nums[i] = it-&gt;first</span></span><br><span class="line">                returnArray.push_back(it-&gt;second); <span class="comment">// get the value(index) by iterator</span></span><br><span class="line">                returnArray.push_back(i); <span class="comment">// get the current index</span></span><br><span class="line">                <span class="keyword">return</span> returnArray;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">// add new element</span></span><br><span class="line">                mapIndex.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;(nums[i], i));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> returnArray;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Map(STL)</tag>
+        <tag>Hash_table</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Valid Parentheses</title>
     <url>/posts/5ddd3578/</url>
-    <content><![CDATA[#
-<center>
-<ol start="20" type="1">
-<li>Valid Parentheses
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>20. Valid Parentheses</b></font>
+</p>
 <h2 id="question">Question:</h2>
-Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> containing just the characters <span style="background-color:#F0F0F0"><font color=#808080>'('</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>')'</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>'{'</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>'}'</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>'['</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>']'</font></span>, determine if the input string is valid.</li>
-</ol>
+<p>Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> containing just the characters <span style="background-color:#F0F0F0"><font color=#808080>'('</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>')'</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>'{'</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>'}'</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>'['</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>']'</font></span>, determine if the input string is valid.</p>
 An input string is valid if: 1. Open brackets must be closed by the same type of brackets. 2. Open brackets must be closed in the correct order. <a id="more"></a> ## Example:
 <p style="background-color:#F0F0F0">
 <b>Input:</b> s = "()"<br><b>Output:</b> true
@@ -1475,10 +1397,9 @@ An input string is valid if: 1. Open brackets must be closed by the same type of
   <entry>
     <title>Run Visual Studio Code on macOS Tutorial</title>
     <url>/posts/a7083339/</url>
-    <content><![CDATA[#
-<center>
-Visual Studio Code installation and run it from Terminal on macOS
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Visual Studio Code installation and run it from Terminal on macOS</b></font>
+</p>
 <h2 id="background">Background</h2>
 <p><strong>Visual Studio Code</strong> is a free source-code editor made by Microsoft for Windows, Linux and macOS. Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git. Users can change the theme, keyboard shortcuts, preferences, and install extensions that add additional functionality.</p>
 <h2 id="installation">Installation</h2>
@@ -1509,10 +1430,9 @@ Visual Studio Code installation and run it from Terminal on macOS
   <entry>
     <title>[Quick and Easy] Installation of ns-3 Simulator with OpenFlow 1.3 - Tutorial</title>
     <url>/posts/8ece0fb0/</url>
-    <content><![CDATA[#
-<center>
-ns-3 configuration and ofswitch13 module - Tutorial
-</center>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>ns-3 configuration and ofswitch13 module - Tutorial</b></font>
+</p>
 <p>I had deployed the ns-3 simulation with ofswitch13 successfully. I've been struggling to solve the simulation platform a lot of time. So, my experience is quite valuable and self-giving sharing for the ns-3 beginners. The following procedure can be deployed on VMware/Virtual machine or cloud instance. If your want to know how to deploy ns-3 on remote cloud instance easily, I will post an article to demonstrate full steps. <a id="more"></a> ## What is <a href="https://www.nsnam.org/">ns-3</a> Network Simulator? + A discrete-event network simulator for internet systems + Free software and open source + Packet level + C++ for core/ Python for bindings + Support under Linux, FreeBSD and Cygwin</p>
 <h3 id="ns-3-simulation-workflow">ns-3 simulation workflow:</h3>
 <ol type="1">

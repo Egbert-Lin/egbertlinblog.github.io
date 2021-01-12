@@ -22,16 +22,16 @@
     var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
-  <meta name="description" content="Let&#39;s realize how does tower of hanoi works and how to use recursive function to implement it!!! The Tower of Hanoi is a mathematical game or puzzle, it&#39;s a classical problem during your CSIE studies.">
+  <meta name="description" content="Tower of Hanoi  Let&#39;s realize how does tower of hanoi works and how to use recursive function to implement it!!! The Tower of Hanoi is a mathematical game or puzzle, it&#39;s a classical problem during y">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to understand recursive function - Tower of Hanoi">
 <meta property="og:url" content="https://egbert-yu-ting.github.io/posts/d521850b/index.html">
 <meta property="og:site_name" content="Egbert Lin&#39;s Blog">
-<meta property="og:description" content="Let&#39;s realize how does tower of hanoi works and how to use recursive function to implement it!!! The Tower of Hanoi is a mathematical game or puzzle, it&#39;s a classical problem during your CSIE studies.">
+<meta property="og:description" content="Tower of Hanoi  Let&#39;s realize how does tower of hanoi works and how to use recursive function to implement it!!! The Tower of Hanoi is a mathematical game or puzzle, it&#39;s a classical problem during y">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/4/4f/Tower_of_Hanoi.gif">
 <meta property="article:published_time" content="2020-11-23T07:54:27.000Z">
-<meta property="article:modified_time" content="2021-01-12T01:52:00.609Z">
+<meta property="article:modified_time" content="2021-01-12T02:49:27.637Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="Recursive_function">
 <meta name="twitter:card" content="summary">
@@ -250,7 +250,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-12 09:52:00" itemprop="dateModified" datetime="2021-01-12T09:52:00+08:00">2021-01-12</time>
+        <time title="Modified: 2021-01-12 10:49:27" itemprop="dateModified" datetime="2021-01-12T10:49:27+08:00">2021-01-12</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -272,7 +272,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Let's realize how does tower of hanoi works and how to use recursive function to implement it!!!</p>
+        <p align="center">
+<font size="6"><b>Tower of Hanoi</b></font>
+</p>
+<p>Let's realize how does tower of hanoi works and how to use recursive function to implement it!!!</p>
 <p>The <strong>Tower of Hanoi</strong> is a mathematical game or puzzle, it's a classical problem during your CSIE studies.</p>
 <p><strong>First</strong>, the demonstration of process(3 disks and 3 rods) as below[1]: <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Tower_of_Hanoi.gif" alt="animation" /> <a id="more"></a> <strong>Second</strong>, moving the entire stack to another rod need to comply with the following rules: 1. Only one disk can be moved at a time. 2. Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack or on an empty rod. 3. No larger disk may be placed on top of a smaller disk.</p>
 <p><strong>Third</strong>, the solutions between 1 disks and 4 disks are shown as following:</p>

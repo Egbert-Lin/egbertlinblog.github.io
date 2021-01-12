@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
-  <meta name="description" content="#   Implement strStr()  Question: Implement strStr().  Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack. Clarification: What should we return whe">
+  <meta name="description" content="28. Implement strStr()  Question: Implement strStr(). Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack. Clarification: What should we return whe">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[LeetCode Road] Implement strStr()">
 <meta property="og:url" content="https://egbert-yu-ting.github.io/posts/9bc77297/index.html">
 <meta property="og:site_name" content="Egbert Lin&#39;s Blog">
-<meta property="og:description" content="#   Implement strStr()  Question: Implement strStr().  Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack. Clarification: What should we return whe">
+<meta property="og:description" content="28. Implement strStr()  Question: Implement strStr(). Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack. Clarification: What should we return whe">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-09T03:15:55.000Z">
-<meta property="article:modified_time" content="2021-01-12T01:45:12.388Z">
+<meta property="article:modified_time" content="2021-01-12T02:43:07.605Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="String">
 <meta name="twitter:card" content="summary">
@@ -249,7 +249,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-12 09:45:12" itemprop="dateModified" datetime="2021-01-12T09:45:12+08:00">2021-01-12</time>
+        <time title="Modified: 2021-01-12 10:43:07" itemprop="dateModified" datetime="2021-01-12T10:43:07+08:00">2021-01-12</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -271,14 +271,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        #
-<center>
-<ol start="28" type="1">
-<li>Implement strStr()
-</center>
+        <p align="center">
+<font size="6"><b>28. Implement strStr()</b></font>
+</p>
 <h2 id="question">Question:</h2>
-Implement <font color=#808080>strStr()</font>.</li>
-</ol>
+<p>Implement <font color=#808080>strStr()</font>.</p>
 <p>Return the index of the first occurrence of needle in haystack, or <font color=#808080>-1</font> if <font color=#808080>needle</font> is not part of <font color=#808080>haystack</font>. <strong>Clarification:</strong> What should we return when <font color=#808080>needle</font> is an empty string? This is a great question to ask during an interview.</p>
 For the purpose of this problem, we will return 0 when <font color=#808080>needle</font> is an empty string. This is consistent to C's <font color=#808080>strstr()</font> and Java's <font color=#808080>indexOf()</font>. <a id="more"></a> ## Example:
 <p style="background-color:#F0F0F0">

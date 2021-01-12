@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-12T01:45:39.286Z</updated>
+  <updated>2021-01-12T02:37:19.603Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,17 +21,14 @@
     <link href="https://egbert-yu-ting.github.io/posts/17bf1818/"/>
     <id>https://egbert-yu-ting.github.io/posts/17bf1818/</id>
     <published>2021-01-08T02:44:56.000Z</published>
-    <updated>2021-01-12T01:45:39.286Z</updated>
+    <updated>2021-01-12T02:37:19.603Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-&lt;ol start=&quot;108&quot; type=&quot;1&quot;&gt;
-&lt;li&gt;Convert Sorted Array to Binary Search Tree
-&lt;/center&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;108. Convert Sorted Array to Binary Search Tree&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-Given an array where elements are sorted in ascending order, convert it to a height balanced BST.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Given an array where elements are sorted in ascending order, convert it to a height balanced BST.&lt;/p&gt;
 For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.</summary>
     
     
@@ -50,13 +47,12 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
     <link href="https://egbert-yu-ting.github.io/posts/4755908e/"/>
     <id>https://egbert-yu-ting.github.io/posts/4755908e/</id>
     <published>2021-01-07T03:15:05.000Z</published>
-    <updated>2021-01-12T01:53:03.165Z</updated>
+    <updated>2021-01-12T02:44:00.288Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-Bootcamp: File sharing between Mac OS X and Windows 10 on MacBook Pro
-&lt;/center&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;Bootcamp: File sharing between Mac OS X and Windows 10 on MacBook Pro&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
 &lt;p&gt;Here are some reason you should consider deploying Windows on your Mac device. 1. More games with better performance in Windows OS. 2. Some Applications don&#39;t work in macOS or not support all functions. 3. Developers need to test projects in Windows OS.&lt;/p&gt;
 &lt;p&gt;So, I shared my experience to save your time of installing Windows on MacBook Pro.</summary>
     
@@ -78,13 +74,12 @@ Bootcamp: File sharing between Mac OS X and Windows 10 on MacBook Pro
     <link href="https://egbert-yu-ting.github.io/posts/9e0f4e5/"/>
     <id>https://egbert-yu-ting.github.io/posts/9e0f4e5/</id>
     <published>2021-01-06T06:14:43.000Z</published>
-    <updated>2021-01-12T01:51:33.474Z</updated>
+    <updated>2021-01-12T02:47:55.620Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-Tutorial - Install ryu in Ubuntu 16.04 with no failure
-&lt;/center&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;Tutorial - Install ryu in Ubuntu 16.04 with no failure&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
 &lt;a href=&quot;https://ryu.readthedocs.io/en/latest/index.html&quot;&gt;Ryu&lt;/a&gt; is a component-based software defined networking framework. It&#39;s very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet.</summary>
     
     
@@ -105,13 +100,12 @@ Tutorial - Install ryu in Ubuntu 16.04 with no failure
     <link href="https://egbert-yu-ting.github.io/posts/8ece0fb0/"/>
     <id>https://egbert-yu-ting.github.io/posts/8ece0fb0/</id>
     <published>2021-01-05T12:57:13.000Z</published>
-    <updated>2021-01-12T01:49:59.976Z</updated>
+    <updated>2021-01-12T02:45:45.187Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-ns-3 configuration and ofswitch13 module - Tutorial
-&lt;/center&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;ns-3 configuration and ofswitch13 module - Tutorial&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
 &lt;p&gt;I had deployed the ns-3 simulation with ofswitch13 successfully. I&#39;ve been struggling to solve the simulation platform a lot of time. So, my experience is quite valuable and self-giving sharing for the ns-3 beginners. The following procedure can be deployed on VMware/Virtual machine or cloud instance. If your want to know how to deploy ns-3 on remote cloud instance easily, I will post an article to demonstrate full steps.</summary>
     
     
@@ -136,19 +130,13 @@ ns-3 configuration and ofswitch13 module - Tutorial
     <link href="https://egbert-yu-ting.github.io/posts/65af7d45/"/>
     <id>https://egbert-yu-ting.github.io/posts/65af7d45/</id>
     <published>2021-01-05T11:33:27.000Z</published>
-    <updated>2021-01-12T01:52:54.118Z</updated>
+    <updated>2021-01-12T02:42:38.090Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-Tutorial - Google Chrome Web Browser in Ubuntu
-&lt;/center&gt;
-&lt;p&gt;If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice. Here, I shared my experience of installing Google Chrome on Ubuntu 16.04. You can implement it rapidly and easily.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Step 1.&lt;/strong&gt; Download the Google Chrome to your Ubuntu system
-&lt;p style=&quot;background-color:#F0F0F0&quot;&gt;
-$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-&lt;/p&gt;</summary>
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;Tutorial - Google Chrome Web Browser in Ubuntu&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice. Here, I shared my experience of installing Google Chrome on Ubuntu 16.04. You can implement it rapidly and easily.</summary>
     
     
     
@@ -166,13 +154,12 @@ $ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     <link href="https://egbert-yu-ting.github.io/posts/16153cc7/"/>
     <id>https://egbert-yu-ting.github.io/posts/16153cc7/</id>
     <published>2021-01-05T05:52:46.000Z</published>
-    <updated>2021-01-12T01:47:24.519Z</updated>
+    <updated>2021-01-12T02:39:01.366Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-Let coding interview become easy - Find second largest element
-&lt;/center&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;Let coding interview become easy - Find second largest element&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
 &lt;p&gt;Maybe you will face it problem when you have an interview for a job with Tech. company. The problem is &quot;How to find second largest element?&quot;, it seems very easy to get result, but you must propose an efficient approach.</summary>
     
     
@@ -191,16 +178,11 @@ Let coding interview become easy - Find second largest element
     <link href="https://egbert-yu-ting.github.io/posts/cac8b982/"/>
     <id>https://egbert-yu-ting.github.io/posts/cac8b982/</id>
     <published>2020-12-30T00:38:38.000Z</published>
-    <updated>2021-01-12T01:45:28.431Z</updated>
+    <updated>2021-01-12T02:36:44.838Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-&lt;ol start=&quot;107&quot; type=&quot;1&quot;&gt;
-&lt;li&gt;Binary Tree Level Order Traversal II
-&lt;/center&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-Given a binary tree, return the &lt;em&gt;bottom-up level order&lt;/em&gt; traversal of its nodes&#39; values. (ie, from left to right, level by level from leaf to root).</summary>
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;107. Binary Tree Level Order Traversal II&lt;/b&gt;&lt;/font&gt;&lt;/o&gt; ## Question: Given a binary tree, return the &lt;em&gt;bottom-up level order&lt;/em&gt; traversal of its nodes&#39; values. (ie, from left to right, level by level from leaf to root).</summary>
     
     
     
@@ -220,17 +202,14 @@ Given a binary tree, return the &lt;em&gt;bottom-up level order&lt;/em&gt; trave
     <link href="https://egbert-yu-ting.github.io/posts/57b52472/"/>
     <id>https://egbert-yu-ting.github.io/posts/57b52472/</id>
     <published>2020-12-25T01:32:23.000Z</published>
-    <updated>2021-01-12T01:49:16.036Z</updated>
+    <updated>2021-01-12T02:44:18.455Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-&lt;ol start=&quot;104&quot; type=&quot;1&quot;&gt;
-&lt;li&gt;Maximum Depth of Binary Tree
-&lt;/center&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;104. Maximum Depth of Binary Tree&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-Given the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;root&lt;/font&gt;&lt;/span&gt; of a binary tree, return &lt;em&gt;its maximum depth&lt;/em&gt;.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Given the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;root&lt;/font&gt;&lt;/span&gt; of a binary tree, return &lt;em&gt;its maximum depth&lt;/em&gt;.&lt;/p&gt;
 A binary tree&#39;s &lt;strong&gt;maximum depth&lt;/strong&gt; is the number of nodes along the longest path from the root node down to the farthest leaf node.</summary>
     
     
@@ -247,14 +226,12 @@ A binary tree&#39;s &lt;strong&gt;maximum depth&lt;/strong&gt; is the number of 
     <link href="https://egbert-yu-ting.github.io/posts/d1f23ab6/"/>
     <id>https://egbert-yu-ting.github.io/posts/d1f23ab6/</id>
     <published>2020-12-24T00:40:10.000Z</published>
-    <updated>2021-01-12T01:51:48.229Z</updated>
+    <updated>2021-01-12T02:49:04.968Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-&lt;ol start=&quot;101&quot; type=&quot;1&quot;&gt;
-&lt;li&gt;Symmetric Tree
-&lt;/center&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;101. Symmetric Tree&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).</summary>
     
@@ -274,17 +251,14 @@ Given a binary tree, check whether it is a mirror of itself (ie, symmetric aroun
     <link href="https://egbert-yu-ting.github.io/posts/2ef96137/"/>
     <id>https://egbert-yu-ting.github.io/posts/2ef96137/</id>
     <published>2020-12-23T01:14:29.000Z</published>
-    <updated>2021-01-12T01:51:39.220Z</updated>
+    <updated>2021-01-12T02:48:12.138Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-&lt;ol start=&quot;100&quot; type=&quot;1&quot;&gt;
-&lt;li&gt;Same Tree
-&lt;/center&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;100. Same Tree&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-Given the roots of two binary trees &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;p&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;q&lt;/font&gt;&lt;/span&gt;, write a function to check if they are the same or not.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Given the roots of two binary trees &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;p&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;q&lt;/font&gt;&lt;/span&gt;, write a function to check if they are the same or not.&lt;/p&gt;
 Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.</summary>
     
     
@@ -303,17 +277,14 @@ Two binary trees are considered the same if they are structurally identical, and
     <link href="https://egbert-yu-ting.github.io/posts/1cc4a24a/"/>
     <id>https://egbert-yu-ting.github.io/posts/1cc4a24a/</id>
     <published>2020-12-22T06:39:08.000Z</published>
-    <updated>2021-01-12T01:49:30.773Z</updated>
+    <updated>2021-01-12T02:44:56.986Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-&lt;ol start=&quot;88&quot; type=&quot;1&quot;&gt;
-&lt;li&gt;Merge Sorted Array
-&lt;/center&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;88. Merge Sorted Array&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-Given two sorted integer arrays &lt;em&gt;nums1&lt;/em&gt; and &lt;em&gt;nums2&lt;/em&gt;, merge &lt;em&gt;nums2&lt;/em&gt; into &lt;em&gt;nums1&lt;/em&gt; as one sorted array. &lt;strong&gt;Note:&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Given two sorted integer arrays &lt;em&gt;nums1&lt;/em&gt; and &lt;em&gt;nums2&lt;/em&gt;, merge &lt;em&gt;nums2&lt;/em&gt; into &lt;em&gt;nums1&lt;/em&gt; as one sorted array. &lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The number of elements initialized in nums1 and nums2 are m and n respectively.&lt;/li&gt;
 &lt;li&gt;You may assume that nums1 has enough space (size that is equal to m + n) to hold additional elements from nums2.</summary>
@@ -334,14 +305,12 @@ Given two sorted integer arrays &lt;em&gt;nums1&lt;/em&gt; and &lt;em&gt;nums2&l
     <link href="https://egbert-yu-ting.github.io/posts/66cc46ab/"/>
     <id>https://egbert-yu-ting.github.io/posts/66cc46ab/</id>
     <published>2020-12-22T00:31:02.000Z</published>
-    <updated>2021-01-12T01:50:45.711Z</updated>
+    <updated>2021-01-12T02:46:40.323Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-&lt;ol start=&quot;83&quot; type=&quot;1&quot;&gt;
-&lt;li&gt;Remove Duplicates from Sorted List
-&lt;/center&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;83. Remove Duplicates from Sorted List&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 Given a sorted linked list, delete all duplicates such that each element appear only once.</summary>
     
@@ -359,17 +328,14 @@ Given a sorted linked list, delete all duplicates such that each element appear 
     <link href="https://egbert-yu-ting.github.io/posts/7af6a106/"/>
     <id>https://egbert-yu-ting.github.io/posts/7af6a106/</id>
     <published>2020-12-17T08:12:36.000Z</published>
-    <updated>2021-01-12T01:45:35.640Z</updated>
+    <updated>2021-01-12T02:36:32.821Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-&lt;ol start=&quot;70&quot; type=&quot;1&quot;&gt;
-&lt;li&gt;Climbing Stairs
-&lt;/center&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;70. Climbing Stairs&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-You are climbing a staircase. It takes &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n&lt;/font&gt;&lt;/span&gt; steps to reach the top.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;You are climbing a staircase. It takes &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n&lt;/font&gt;&lt;/span&gt; steps to reach the top.&lt;/p&gt;
 Each time you can either climb &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;1&lt;/font&gt;&lt;/span&gt; or &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;2&lt;/font&gt;&lt;/span&gt; steps. In how many distinct ways can you climb to the top?</summary>
     
     
@@ -390,17 +356,14 @@ Each time you can either climb &lt;span style=&quot;background-color:#F0F0F0&quo
     <link href="https://egbert-yu-ting.github.io/posts/72b31d68/"/>
     <id>https://egbert-yu-ting.github.io/posts/72b31d68/</id>
     <published>2020-12-17T00:56:30.000Z</published>
-    <updated>2021-01-12T01:51:45.279Z</updated>
+    <updated>2021-01-12T02:48:50.553Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-&lt;ol start=&quot;69&quot; type=&quot;1&quot;&gt;
-&lt;li&gt;Sqrt(x)
-&lt;/center&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;69. Sqrt(x)&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-Given a non-negative integer &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;x&lt;/font&gt;&lt;/span&gt;, compute and return &lt;em&gt;the square root of&lt;/em&gt; &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;x&lt;/font&gt;&lt;/span&gt;.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Given a non-negative integer &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;x&lt;/font&gt;&lt;/span&gt;, compute and return &lt;em&gt;the square root of&lt;/em&gt; &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;x&lt;/font&gt;&lt;/span&gt;.&lt;/p&gt;
 Since the return type is an integer, the decimal digits are &lt;b&gt;truncated&lt;/b&gt;, and only &lt;b&gt;the integer part&lt;/b&gt; of the result is returned.</summary>
     
     
@@ -417,14 +380,12 @@ Since the return type is an integer, the decimal digits are &lt;b&gt;truncated&l
     <link href="https://egbert-yu-ting.github.io/posts/e6133085/"/>
     <id>https://egbert-yu-ting.github.io/posts/e6133085/</id>
     <published>2020-12-16T02:22:19.000Z</published>
-    <updated>2021-01-12T01:45:23.378Z</updated>
+    <updated>2021-01-12T02:36:02.004Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-&lt;ol start=&quot;67&quot; type=&quot;1&quot;&gt;
-&lt;li&gt;Add Binary
-&lt;/center&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;67. Add Binary&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 Given two binary strings &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;a&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;b&lt;/font&gt;&lt;/span&gt;, return &lt;em&gt;their sum as a binary string&lt;/em&gt;.</summary>
     
@@ -448,17 +409,14 @@ Given two binary strings &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;
     <link href="https://egbert-yu-ting.github.io/posts/acf6f11e/"/>
     <id>https://egbert-yu-ting.github.io/posts/acf6f11e/</id>
     <published>2020-12-15T01:22:46.000Z</published>
-    <updated>2021-01-12T01:50:24.659Z</updated>
+    <updated>2021-01-12T02:46:02.505Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-&lt;ol start=&quot;66&quot; type=&quot;1&quot;&gt;
-&lt;li&gt;Plus One
-&lt;/center&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;66. Plus One&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-Given a &lt;strong&gt;non-empty&lt;/strong&gt; array of decimal digits representing a non-negative integer, increment one to the integer.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Given a &lt;strong&gt;non-empty&lt;/strong&gt; array of decimal digits representing a non-negative integer, increment one to the integer.&lt;/p&gt;
 &lt;p&gt;The digits are stored such that the most significant digit is at the head of the list, and each element in the array contains a single digit.&lt;/p&gt;
 You may assume the integer does not contain any leading zero, except the number 0 itself.</summary>
     
@@ -476,17 +434,14 @@ You may assume the integer does not contain any leading zero, except the number 
     <link href="https://egbert-yu-ting.github.io/posts/90ac56be/"/>
     <id>https://egbert-yu-ting.github.io/posts/90ac56be/</id>
     <published>2020-12-14T03:34:06.000Z</published>
-    <updated>2021-01-12T01:49:22.702Z</updated>
+    <updated>2021-01-12T02:44:39.042Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-&lt;ol start=&quot;53&quot; type=&quot;1&quot;&gt;
-&lt;li&gt;Maximum Subarray
-&lt;/center&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;53. Maximum Subarray&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-Given an integer array &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;nums&lt;/font&gt;&lt;/span&gt;, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Given an integer array &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;nums&lt;/font&gt;&lt;/span&gt;, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.&lt;/p&gt;
 &lt;strong&gt;Follow up:&lt;/strong&gt; If you have figured out the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;O(n)&lt;/font&gt;&lt;/span&gt; solution, try coding another solution using the &lt;strong&gt;divide and conquer&lt;/strong&gt; approach, which is more subtle.</summary>
     
     
@@ -503,13 +458,12 @@ Given an integer array &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&l
     <link href="https://egbert-yu-ting.github.io/posts/a7083339/"/>
     <id>https://egbert-yu-ting.github.io/posts/a7083339/</id>
     <published>2020-12-11T00:55:52.000Z</published>
-    <updated>2021-01-12T01:52:22.734Z</updated>
+    <updated>2021-01-12T02:50:24.921Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-Visual Studio Code installation and run it from Terminal on macOS
-&lt;/center&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;Visual Studio Code installation and run it from Terminal on macOS&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
 &lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Visual Studio Code&lt;/strong&gt; is a free source-code editor made by Microsoft for Windows, Linux and macOS. Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git. Users can change the theme, keyboard shortcuts, preferences, and install extensions that add additional functionality.&lt;/p&gt;
 &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
@@ -530,14 +484,12 @@ Visual Studio Code installation and run it from Terminal on macOS
     <link href="https://egbert-yu-ting.github.io/posts/e0d9ee0a/"/>
     <id>https://egbert-yu-ting.github.io/posts/e0d9ee0a/</id>
     <published>2020-12-10T07:06:04.000Z</published>
-    <updated>2021-01-12T01:45:45.730Z</updated>
+    <updated>2021-01-12T02:37:38.422Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-&lt;ol start=&quot;38&quot; type=&quot;1&quot;&gt;
-&lt;li&gt;Count and Say
-&lt;/center&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;38. Count and Say&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 The &lt;strong&gt;count-and-say&lt;/strong&gt; sequence is a sequence of digit strings defined by the recursive formula: &lt;strong&gt;
 &lt;li&gt;
@@ -547,7 +499,7 @@ The &lt;strong&gt;count-and-say&lt;/strong&gt; sequence is a sequence of digit s
 &lt;li&gt;
 &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;countAndSay(n)&lt;/font&gt;&lt;/span&gt; is the way you would &quot;say&quot; the digit string from &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;countAndSay(n-1)&lt;/font&gt;&lt;/span&gt;, which is then converted into a different digit string.
 &lt;/li&gt;
-&lt;/strong&gt; To determine how you &quot;say&quot; a digit string, split it into the minimal number of groups so that each group is a contiguous section all of the same character. Then for each group, say the number of characters, then say the character. To convert the saying into a digit string, replace the counts with a number and concatenate every saying.</summary>
+&lt;p&gt;&lt;/strong&gt; To determine how you &quot;say&quot; a digit string, split it into the minimal number of groups so that each group is a contiguous section all of the same character. Then for each group, say the number of characters, then say the character. To convert the saying into a digit string, replace the counts with a number and concatenate every saying.</summary>
     
     
     
@@ -563,14 +515,12 @@ The &lt;strong&gt;count-and-say&lt;/strong&gt; sequence is a sequence of digit s
     <link href="https://egbert-yu-ting.github.io/posts/41fdcb04/"/>
     <id>https://egbert-yu-ting.github.io/posts/41fdcb04/</id>
     <published>2020-12-10T02:45:08.000Z</published>
-    <updated>2021-01-12T01:51:42.457Z</updated>
+    <updated>2021-01-12T02:48:31.798Z</updated>
     
     
-    <summary type="html">#
-&lt;center&gt;
-&lt;ol start=&quot;35&quot; type=&quot;1&quot;&gt;
-&lt;li&gt;Search Insert Position
-&lt;/center&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;35. Search Insert Position&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</summary>
     

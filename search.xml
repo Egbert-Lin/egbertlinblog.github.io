@@ -4,6 +4,7 @@
     <title>[LeetCode Road] Add Binary</title>
     <url>/posts/e6133085/</url>
     <content><![CDATA[<h1 id="67-Add-Binary"><a href="#67-Add-Binary" class="headerlink" title="67. Add Binary"></a><center>67. Add Binary</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given two binary strings <span style="background-color:#F0F0F0"><font color=#808080>a</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>b</font></span>, return <em>their sum as a binary string</em>.</p>
+<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> a = "11", b = "1"<br><b>Output:</b> "100"<br></p>
 <p style="background-color:#F0F0F0"><b>Input:</b> a = "1010", b = "1011"<br><b>Output:</b> "10101"<br></p>
 
@@ -41,6 +42,7 @@ Finally, the variable of res is our answer, but the content is in reverse, so we
     <title>[LeetCode Road] Binary Tree Level Order Traversal II</title>
     <url>/posts/cac8b982/</url>
     <content><![CDATA[<h1 id="107-Binary-Tree-Level-Order-Traversal-II"><a href="#107-Binary-Tree-Level-Order-Traversal-II" class="headerlink" title="107. Binary Tree Level Order Traversal II"></a><center>107. Binary Tree Level Order Traversal II</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given a binary tree, return the <em>bottom-up level order</em> traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).</p>
+<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p>For example:<br>Given binary tree <span style="background-color:#F0F0F0"><font color=#808080>[3,9,20,null,null,15,7]<span style="background-color:#F0F0F0"><font color=#808080>,</p>
 <p style="background-color:#F0F0F0">
 &emsp;&emsp;&emsp;3<br>
@@ -72,6 +74,7 @@ return its bottom-up level order traversal as:
     <url>/posts/7af6a106/</url>
     <content><![CDATA[<h1 id="70-Climbing-Stairs"><a href="#70-Climbing-Stairs" class="headerlink" title="70. Climbing Stairs"></a><center>70. Climbing Stairs</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>You are climbing a staircase. It takes <span style="background-color:#F0F0F0"><font color=#808080>n</font></span> steps to reach the top.</p>
 <p>Each time you can either climb <span style="background-color:#F0F0F0"><font color=#808080>1</font></span> or <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> steps. In how many distinct ways can you climb to the top?</p>
+<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> n = 2<br>
 <b>Output:</b> 2<br>
 <b>Explanation:</b> There are two ways to climb to the top.<br>
@@ -103,6 +106,7 @@ return its bottom-up level order traversal as:
     <url>/posts/17bf1818/</url>
     <content><![CDATA[<h1 id="108-Convert-Sorted-Array-to-Binary-Search-Tree"><a href="#108-Convert-Sorted-Array-to-Binary-Search-Tree" class="headerlink" title="108. Convert Sorted Array to Binary Search Tree"></a><center>108. Convert Sorted Array to Binary Search Tree</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given an array where elements are sorted in ascending order, convert it to a height balanced BST.</p>
 <p>For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.</p>
+<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0">
 Given the sorted array: [-10,-3,0,5,9],<br>
 <br>
@@ -141,6 +145,7 @@ left:5, right:4, return NULL<br>
     <title>[LeetCode Road] Count and Say</title>
     <url>/posts/e0d9ee0a/</url>
     <content><![CDATA[<h1 id="38-Count-and-Say"><a href="#38-Count-and-Say" class="headerlink" title="38. Count and Say"></a><center>38. Count and Say</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>The <strong>count-and-say</strong> sequence is a sequence of digit strings defined by the recursive formula:<br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>countAndSay(1) = “1”</font></span></li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>countAndSay(n)</font></span> is the way you would “say” the digit string from <span style="background-color:#F0F0F0"><font color=#808080>countAndSay(n-1)</font></span>, which is then converted into a different digit string.</li></strong><br>To determine how you “say” a digit string, split it into the minimal number of groups so that each group is a contiguous section all of the same character. Then for each group, say the number of characters, then say the character. To convert the saying into a digit string, replace the counts with a number and concatenate every saying.</p>
+<a id="more"></a>
 <p>For example, the saying and conversion for digit string “3322251”:<br><img src="38_example.png" alt="">Given a positive integer <span style="background-color:#F0F0F0"><font color=#808080>n</font></span>, return <em>the</em> <span style="background-color:#F0F0F0"><font color=#808080>n^th</font></span> <em>term of the count-and-say sequence</em>.</p>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> n = 1<br><b>Output:</b> "1"<br><b>Explanation:</b> This is the base case.<br></p>
 <p style="background-color:#F0F0F0"><b>Input:</b> n = 4<br>
@@ -159,10 +164,11 @@ left:5, right:4, return NULL<br>
   <entry>
     <title>Error message: Please tell me who you are. Run git config --global...</title>
     <url>/posts/278f103a/</url>
-    <content><![CDATA[<h1 id="Command-line-“hexo-d”-and-you-got-error-message-Please-tell-me-who-you-are"><a href="#Command-line-“hexo-d”-and-you-got-error-message-Please-tell-me-who-you-are" class="headerlink" title="Command line: “hexo d” and you got error message: Please tell me who you are."></a>Command line: “hexo d” and you got error message: Please tell me who you are.</h1><h2 id="Full-error-message-info"><a href="#Full-error-message-info" class="headerlink" title="Full error message info:"></a>Full error message info:</h2><p><font color=#FF0000>Please tell me who you are.</p>
+    <content><![CDATA[<h1 id="Command-line-“hexo-d”-and-you-got-error-message-Please-tell-me-who-you-are"><a href="#Command-line-“hexo-d”-and-you-got-error-message-Please-tell-me-who-you-are" class="headerlink" title="Command line: “hexo d” and you got error message: Please tell me who you are."></a>Command line: “hexo d” and you got error message: Please tell me who you are.</h1><h3 id="Full-error-message-info"><a href="#Full-error-message-info" class="headerlink" title="Full error message info:"></a>Full error message info:</h3><p><font color=#FF0000>Please tell me who you are.</p>
 <p>Run</p>
 <p>git config –global user.email “you&#64;example.com”<br>git config –global user.name “Your Name”</p>
 <p>to set your account’s default identity.<br>Omit –global to set the identity only in this repository.</p>
+<a id="more"></a>
 <p>fatal: unable to auto-detect email address (got …)<br>error: src refspec HEAD does not match any.<br>error: failed to push some refs to(your …github.io)</font></p>
 <hr>
 <p>When I ran “hexo d” command, the deployment was stuck!<br>The reason was I updated my mac OS a few days age.<br>Now, the system can’t distinguish your indentity.</p>
@@ -181,9 +187,10 @@ left:5, right:4, return NULL<br>
   <entry>
     <title>Interview programming question - Find second largest element</title>
     <url>/posts/16153cc7/</url>
-    <content><![CDATA[<h1 id="Let-coding-interview-become-easy-Find-second-largest-element"><a href="#Let-coding-interview-become-easy-Find-second-largest-element" class="headerlink" title="Let coding interview become easy - Find second largest element"></a><center>Let coding interview become easy - Find second largest element</center></h1><p>Maybe you will face it problem when you have an interview for a job with Tech. company.<br>The problem is “How to find second largest element?”, it seems very easy to get result, but you must propose an efficient approach.<br>If there is a vector that consists <code>&#123;2, 3, 4, 1, 7, 6, 5&#125;</code>, I delcare two variables as first largest element and second largest element. I initialize variables to INT_MIN. At 13 lines, <code>if(input[i]&gt;first)</code> is true, <code>input[i]</code> is largest element and pass it to <code>first</code> after storing a value of <code>first</code> by <code>second</code>. Otherwise, compare <code>input[i]</code> with <code>second</code>, it checks a current value whether it bigger than <code>second</code> or not.</p>
-<p>Source code as below:</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">pair&lt;int, int&gt; findLargest(vector&lt;int&gt; input)&#123;</span><br><span class="line">    <span class="keyword">int</span> first = INT_MIN;</span><br><span class="line">    <span class="keyword">int</span> second = INT_MIN;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; input.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(input[i]&gt;first)&#123;</span><br><span class="line">            second = first;</span><br><span class="line">            first = input[i];</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(input[i] &gt; second)&#123;</span><br><span class="line">            second = input[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">make_pair</span>(first, second);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr = &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; ans = findLargest(arr);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;The first largest element=&quot;</span> &lt;&lt; ans.first &lt;&lt; <span class="string">&quot;, the second largest element=&quot;</span> &lt;&lt; ans.second &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <content><![CDATA[<h1 id="Let-coding-interview-become-easy-Find-second-largest-element"><a href="#Let-coding-interview-become-easy-Find-second-largest-element" class="headerlink" title="Let coding interview become easy - Find second largest element"></a><center>Let coding interview become easy - Find second largest element</center></h1><p>Maybe you will face it problem when you have an interview for a job with Tech. company.<br>The problem is “How to find second largest element?”, it seems very easy to get result, but you must propose an efficient approach.</p>
+<a id="more"></a>
+<p>If there is a vector that consists <code>&#123;2, 3, 4, 1, 7, 6, 5&#125;</code>, I delcare two variables as first largest element and second largest element. I initialize variables to INT_MIN. At 13 lines, <code>if(input[i]&gt;first)</code> is true, <code>input[i]</code> is largest element and pass it to <code>first</code> after storing a value of <code>first</code> by <code>second</code>. Otherwise, compare <code>input[i]</code> with <code>second</code>, it checks a current value whether it bigger than <code>second</code> or not.</p>
+<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">pair&lt;int, int&gt; findLargest(vector&lt;int&gt; input)&#123;</span><br><span class="line">    <span class="keyword">int</span> first = INT_MIN;</span><br><span class="line">    <span class="keyword">int</span> second = INT_MIN;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; input.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(input[i]&gt;first)&#123;</span><br><span class="line">            second = first;</span><br><span class="line">            first = input[i];</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(input[i] &gt; second)&#123;</span><br><span class="line">            second = input[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">make_pair</span>(first, second);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr = &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; ans = findLargest(arr);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;The first largest element=&quot;</span> &lt;&lt; ans.first &lt;&lt; <span class="string">&quot;, the second largest element=&quot;</span> &lt;&lt; ans.second &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>CodeInterview</category>
       </categories>
@@ -199,7 +206,7 @@ left:5, right:4, return NULL<br>
 <ul>
 <li><p><strong>Step 1.</strong> Download the Google Chrome to your Ubuntu system</p>
 <p style="background-color:#F0F0F0">$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb</p>
-</li>
+<a id="more"></a></li>
 <li><p><strong>Step 2.</strong> Install the Google Chrome</p>
 <p style="background-color:#F0F0F0">$ sudo dpkg -i google-chrome-stable_current_amd64.deb
 </p>
@@ -229,6 +236,7 @@ left:5, right:4, return NULL<br>
     <content><![CDATA[<h1 id="28-Implement-strStr"><a href="#28-Implement-strStr" class="headerlink" title="28. Implement strStr()"></a><center>28. Implement strStr()</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Implement <font color=#808080>strStr()</font>.</p>
 <p>Return the index of the first occurrence of needle in haystack, or <font color=#808080>-1</font> if <font color=#808080>needle</font> is not part of <font color=#808080>haystack</font>.<br><strong>Clarification:</strong><br>What should we return when <font color=#808080>needle</font> is an empty string? This is a great question to ask during an interview.</p>
 <p>For the purpose of this problem, we will return 0 when <font color=#808080>needle</font> is an empty string. This is consistent to C’s <font color=#808080>strstr()</font> and Java’s <font color=#808080>indexOf()</font>.</p>
+<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> haystack = "hello", needle = "ll"<br><b>Output:</b> 2<br></p>
 <p style="background-color:#F0F0F0"><b>Input:</b> haystack = "aaaaa", needle = "bba"<br><b>Output:</b> -1<br></p>
 <p style="background-color:#F0F0F0"><b>Input:</b> haystack = "", needle = ""<br><b>Output:</b> 0<br></p>
@@ -248,6 +256,7 @@ left:5, right:4, return NULL<br>
     <url>/posts/b04b682/</url>
     <content><![CDATA[<h1 id="58-Length-of-Last-Word"><a href="#58-Length-of-Last-Word" class="headerlink" title="58. Length of Last Word"></a><center>58. Length of Last Word</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of some words separated by spaces, return the <em>length of the last word in the string</em>. <em>If the last word does not exist, return</em> <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</p>
 <p>A <strong>word</strong> is a maximal substring consisting of non-space characters only.</p>
+<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> s = "Hello World"<br><b>Output:</b> 5<br></p>
 <p style="background-color:#F0F0F0"><b>Input:</b> s = " "<br><b>Output:</b> 0</br></p>
 
@@ -266,6 +275,7 @@ left:5, right:4, return NULL<br>
     <url>/posts/2768cb2c/</url>
     <content><![CDATA[<h1 id="14-Longest-Common-Prefix"><a href="#14-Longest-Common-Prefix" class="headerlink" title="14. Longest Common Prefix"></a><center>14. Longest Common Prefix</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Write a function to find the longest common prefix string amongst an array of strings.</p>
 <p>If there is no common prefix, return an empty string <span style="background-color:#F0F0F0"><font color=#808080>“”</font></span>.</p>
+<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> strs = ["flower","flow","flight"]<br><b>Output:</b> "fl"<br></p>
 <p style="background-color:#F0F0F0"><b>Input:</b> strs = ["dog","racecar","car"]<br><b>Output:</b> ""<br><b>Explanation:</b> There is no common prefix among the input strings.<br></p>
 
@@ -291,6 +301,7 @@ left:5, right:4, return NULL<br>
 <li>Developers need to test projects in Windows OS.</li>
 </ol>
 <p>So, I shared my experience to save your time of installing Windows on MacBook Pro.</p>
+<a id="more"></a>
 <h2 id="Hardward-amp-Software-preparation"><a href="#Hardward-amp-Software-preparation" class="headerlink" title="Hardward &amp; Software preparation"></a>Hardward &amp; Software preparation</h2><ul>
 <li>Hardware<br>Product model: Macbook Pro 2017</li>
 <li>Software - Win10 ISO<br>You can go to this url to downlaod ISO:<br><a href="https://www.microsoft.com/zh-tw/software-download/windows10">https://www.microsoft.com/zh-tw/software-download/windows10</a><br>Choose version:Windows 10, Choose language: English and choose 64-bit version</li>
@@ -355,6 +366,7 @@ Finally, reboot you Mac and enter WIN10 OS successfully.
     <url>/posts/57b52472/</url>
     <content><![CDATA[<h1 id="104-Maximum-Depth-of-Binary-Tree"><a href="#104-Maximum-Depth-of-Binary-Tree" class="headerlink" title="104. Maximum Depth of Binary Tree"></a><center>104. Maximum Depth of Binary Tree</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given the <span style="background-color:#F0F0F0"><font color=#808080>root</font></span> of a binary tree, return <em>its maximum depth</em>.</p>
 <p>A binary tree’s <strong>maximum depth</strong> is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>
+<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p><img src="MaximumDepthofBinaryTree_example1.png" alt=""></p>
 <p style="background-color:#F0F0F0"><b>Input:</b> root = [3,9,20,null,null,15,7]<br>
 <b>Output:</b> 3<br></p>
@@ -376,42 +388,20 @@ Finally, reboot you Mac and enter WIN10 OS successfully.
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Maximum Subarray</title>
-    <url>/posts/90ac56be/</url>
-    <content><![CDATA[<h1 id="53-Maximum-Subarray"><a href="#53-Maximum-Subarray" class="headerlink" title="53. Maximum Subarray"></a><center>53. Maximum Subarray</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given an integer array <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span>, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
-<p><strong>Follow up:</strong> If you have figured out the <span style="background-color:#F0F0F0"><font color=#808080>O(n)</font></span> solution, try coding another solution using the <strong>divide and conquer</strong> approach, which is more subtle.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> nums = [-2,1,-3,4,-1,2,1,-5,4]<br><b>Output:</b> 6<br><b>Explanation:</b> [4,-1,2,1] has the largest sum = 6.<br></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> nums = [1]<br><b>Output:</b> 1<br></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> nums = [0]<br><b>Output:</b> 0<br></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> nums = [-1]<br><b>Output:</b> -1<br></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> nums = [-2147483647]<br><b>Output:</b> -2147483647<br></p>
-
-<p><strong>Constraints:</strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= nums.length &lt;= 2 * 10^4</font></span></li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>-2^31 &lt;= nums[i] &lt;= 2^31 - 1</font></span></li></strong></p>
-<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h2 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a><u>Version 1</u></h2><p>Idea:<br>It is a brute force approach. Use 2 loop to calculate the sum for each elements.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> len = nums.size();</span><br><span class="line">        <span class="keyword">if</span>(len == <span class="number">1</span>) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> maxValue = INT_MIN;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; len; j++)&#123;</span><br><span class="line">                sum += nums[j];</span><br><span class="line">                maxValue = max(maxValue, sum);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxValue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="Version-2"><a href="#Version-2" class="headerlink" title="Version 2"></a><u>Version 2</u></h2><p>Idea:<br>This is an efficient method, use only one loop.<br><code>sum += nums[i]</code> means the cumulative sum.<br><code>sum = max(sum, nums[i])</code> means the maximum of sum between the cumulative sum or current index of value.<br><code>maxValue = max(maxValue, sum)</code> means recording the maximal value.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxValue = INT_MIN, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            sum = max(sum, nums[i]);</span><br><span class="line">            maxValue = max(maxValue, sum);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxValue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Vector</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Merge Sorted Array</title>
     <url>/posts/1cc4a24a/</url>
     <content><![CDATA[<h1 id="88-Merge-Sorted-Array"><a href="#88-Merge-Sorted-Array" class="headerlink" title="88. Merge Sorted Array"></a><center>88. Merge Sorted Array</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given two sorted integer arrays <em>nums1</em> and <em>nums2</em>, merge <em>nums2</em> into <em>nums1</em> as one sorted array.<br><strong>Note:</strong></p>
 <ul>
 <li>The number of elements initialized in nums1 and nums2 are m and n respectively.</li>
-<li>You may assume that nums1 has enough space (size that is equal to m + n) to hold additional elements from nums2.</li>
-</ul>
+<li>You may assume that nums1 has enough space (size that is equal to m + n) to hold additional elements from nums2.<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p style="background-color:#F0F0F0"><b>Input:</b><br>
 nums1 = [1,2,3,0,0,0], m = 3<br>
 nums2 = [2,5,6],       n = 3<br>
 <br>
 <b>Output:</b> [1,2,2,3,5,6]<br></p>
 
+</li>
+</ul>
 <p><strong>Constraints:</strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>-10^9 &lt;= nums1[i], nums2[i] &lt;= 10^9</font></span></li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>nums1.length == m + n</font></span></li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>nums2.length == n</font></span></li></strong></p>
 <h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h2 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a><u>Version 1</u></h2><p>Idea:<br>My initial approach is to use queue to store element. The processing of merging is in order, I compare witch each elements, if the element is smaller, it will be assign to nums1[i] after the original value of index i will push to queue at nums vector. But, I faced many if statement in my code, it’s too complicated.<br>Finally, I refered to <a href="https://medium.com/@ChYuan/leetcode-no-88-merge-sorted-array-%E5%BF%83%E5%BE%97-easy-9d2b3141ded3">ChingYuanYang</a>, I gained an impressive solution after realizing his explanation.<br>I can assign the element from the last position in reverse order at nums1 vector that is the largest value. It’s an easy way to merge vectors.</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="keyword">int</span> m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> s_1 = m <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> s_2 = n <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> max_size = m + n <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = max_size; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s_1 &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                nums1[i] = nums2[s_2--];</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(s_2 &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                nums1[i] = nums1[s_1--];</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums1[s_1] &gt; nums2[s_2])&#123;</span><br><span class="line">                nums1[i] = nums1[s_1--];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                nums1[i] = nums2[s_2--];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -429,6 +419,7 @@ nums2 = [2,5,6],       n = 3<br>
     <title>[LeetCode Road] Merge Two Sorted Lists</title>
     <url>/posts/61be1b10/</url>
     <content><![CDATA[<h1 id="21-Merge-Two-Sorted-Lists"><a href="#21-Merge-Two-Sorted-Lists" class="headerlink" title="21. Merge Two Sorted Lists"></a><center>21. Merge Two Sorted Lists</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Merge two sorted linked lists and return it as a new <strong>sorted</strong> list. The new list should be made by splicing together the nodes of the first two lists.</p>
+<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p><img src="Merge_ListNode_example.png" alt=""></p>
 <p style="background-color:#F0F0F0"><b>Input:</b> l1 = [1,2,4], l2 = [1,3,4]<br><b>Output:</b> [1,1,2,3,4,4]</p>
 <p style="background-color:#F0F0F0"><b>Input:</b> l1 = [], l2 = []<br><b>Output:</b> []</p>
@@ -449,6 +440,7 @@ nums2 = [2,5,6],       n = 3<br>
     <url>/posts/d37a286f/</url>
     <content><![CDATA[<h1 id="9-Palindrome-Number"><a href="#9-Palindrome-Number" class="headerlink" title="9. Palindrome Number"></a><center>9. Palindrome Number</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.</p>
 <p><strong>Follow up:</strong> Could you solve it without converting the integer to a string?</p>
+<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input</b>: x = 121<br><b>Output</b>: true<br></p>
 <p style="background-color:#F0F0F0"><b>Input</b>: x = -121<br><b>Output</b>: false<br><b>Explanation</b>: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.<br></p>
 <p style="background-color:#F0F0F0"><b>Input</b>: x = 10<br><b>Output</b>: false<br><b>Explanation</b>: Reads 01 from right to left. Therefore it is not a palindrome.<br></p>
@@ -473,6 +465,7 @@ nums2 = [2,5,6],       n = 3<br>
     <content><![CDATA[<h1 id="66-Plus-One"><a href="#66-Plus-One" class="headerlink" title="66. Plus One"></a><center>66. Plus One</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given a <strong>non-empty</strong> array of decimal digits representing a non-negative integer, increment one to the integer.</p>
 <p>The digits are stored such that the most significant digit is at the head of the list, and each element in the array contains a single digit.</p>
 <p>You may assume the integer does not contain any leading zero, except the number 0 itself.</p>
+<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> digits = [1,2,3]<br><b>Output:</b> [1,2,4]<br><b>Explanation:</b> The array represents the integer 123.<br></p>
 <p style="background-color:#F0F0F0"><b>Input:</b> digits = [4,3,2,1]<br><b>Output:</b> [4,3,2,2]<br><b>Explanation:</b> The array represents the integer 4321.<br></p>
 <p style="background-color:#F0F0F0"><b>Input:</b> digits = [0]<br><b>Output:</b> [1]<br></p>
@@ -492,6 +485,7 @@ nums2 = [2,5,6],       n = 3<br>
     <url>/posts/7241c2c1/</url>
     <content><![CDATA[<h1 id="26-Remove-Duplicates-from-Sorted-Array"><a href="#26-Remove-Duplicates-from-Sorted-Array" class="headerlink" title="26. Remove Duplicates from Sorted Array"></a><center>26. Remove Duplicates from Sorted Array</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given a sorted array nums, remove the duplicates in-place such that each element appears only once and returns the new length.</p>
 <p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array</strong> <font color=#808080>in-place</font> with O(1) extra memory.</p>
+<a id="more"></a>
 <p><strong>Clarification:</strong></p>
 <p>Confused why the returned value is an integer but your answer is an array?</p>
 <p>Note that the input array is passed in by <strong>reference</strong>, which means a modification to the input array will be known to the caller as well.</p>
@@ -518,6 +512,7 @@ nums2 = [2,5,6],       n = 3<br>
     <title>[LeetCode Road] Remove Duplicates from Sorted List</title>
     <url>/posts/66cc46ab/</url>
     <content><![CDATA[<h1 id="83-Remove-Duplicates-from-Sorted-List"><a href="#83-Remove-Duplicates-from-Sorted-List" class="headerlink" title="83. Remove Duplicates from Sorted List"></a><center>83. Remove Duplicates from Sorted List</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given a sorted linked list, delete all duplicates such that each element appear only once.</p>
+<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> 1->1->2<br>
 <b>Output:</b> 1->2<br></p>
 <p style="background-color:#F0F0F0"><b>Input:</b> 1->1->2->3->3<br>
@@ -540,6 +535,7 @@ nums2 = [2,5,6],       n = 3<br>
     <content><![CDATA[<h1 id="27-Remove-Element"><a href="#27-Remove-Element" class="headerlink" title="27. Remove Element"></a><center>27. Remove Element</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given an array nums and a value val, remove all instances of that value <font color=#808080>in-place</font> and return the new length.</p>
 <p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array</strong> <font color=#808080>in-place</font> with O(1) extra memory.</p>
 <p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p>
+<a id="more"></a>
 <p><strong>Clarification:</strong></p>
 <p>Confused why the returned value is an integer but your answer is an array?</p>
 <p>Note that the input array is passed in by <strong>reference</strong>, which means a modification to the input array will be known to the caller as well.</p>
@@ -569,6 +565,7 @@ It doesn't matter what you leave beyond the returned length. For example if you 
     <url>/posts/236b1bbd/</url>
     <content><![CDATA[<h1 id="7-Reverse-Integer"><a href="#7-Reverse-Integer" class="headerlink" title="7. Reverse Integer"></a><center>7. Reverse Integer</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given a 32-bit signed integer, reverse digits of an integer.</p>
 <p><strong>Note:</strong><br>Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−2^31,  2^31 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.</p>
+<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input</b>: x = 123<br><b>Output</b>: 321<br></p>
 <p style="background-color:#F0F0F0"><b>Input</b>: x = -123<br><b>Output</b>: -321<br></p>
 <p style="background-color:#F0F0F0"><b>Input</b>: x = 120<br><b>Output</b>: 21<br></p>
@@ -597,8 +594,9 @@ $L$&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;50<br>
 $C$&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;100<br>
 $D$&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;500<br>
 $M$&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&thinsp;&thinsp;1000</p>
+<a id="more"></a>
+For example, <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080>$II$</font></span> in Roman numeral, just two one's added together. <span style="background-color:#F0F0F0"><font color=#808080>12</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080>$XII$</font></span>, which is simply <span style="background-color:#F0F0F0"><font color=#808080>$X + II$</font></span>. The number <span style="background-color:#F0F0F0"><font color=#808080>27</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080>$XXVII$</font></span>, which is <span style="background-color:#F0F0F0"><font color=#808080>$XX + V + II$</font></span>.
 
-<p>For example, <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080>$II$</font></span> in Roman numeral, just two one’s added together. <span style="background-color:#F0F0F0"><font color=#808080>12</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080>$XII$</font></span>, which is simply <span style="background-color:#F0F0F0"><font color=#808080>$X + II$</font></span>. The number <span style="background-color:#F0F0F0"><font color=#808080>27</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080>$XXVII$</font></span>, which is <span style="background-color:#F0F0F0"><font color=#808080>$XX + V + II$</font></span>.</p>
 <p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <span style="background-color:#F0F0F0"><font color=#808080>$IIII$</font></span>. Instead, the number four is written as <span style="background-color:#F0F0F0"><font color=#808080>$IV$</font></span>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <span style="background-color:#F0F0F0"><font color=#808080>$IX$</font></span>. There are six instances where subtraction is used:</p>
 <ul>
 <li><span style="background-color:#F0F0F0"><font color=#808080>$I$</font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080>$V$</font></span> (5) and <span style="background-color:#F0F0F0"><font color=#808080>$X$</font></span> (10) to make 4 and 9. </li>
@@ -624,62 +622,27 @@ $M$&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&thinsp;&thinsp;1000</p>
       </tags>
   </entry>
   <entry>
-    <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
-    <url>/posts/9e0f4e5/</url>
-    <content><![CDATA[<h1 id="Tutorial-Install-ryu-in-Ubuntu-16-04-with-no-failure"><a href="#Tutorial-Install-ryu-in-Ubuntu-16-04-with-no-failure" class="headerlink" title="Tutorial - Install ryu in Ubuntu 16.04 with no failure"></a><center>Tutorial - Install ryu in Ubuntu 16.04 with no failure</center></h1><p><a href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It’s very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet.</p>
-<h2 id="Start-to-configure-and-install"><a href="#Start-to-configure-and-install" class="headerlink" title="Start to configure and install"></a>Start to configure and install</h2><ul>
-<li><p><strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources)</p>
-<p style="background-color:#F0F0F0">$ sudo apt-get update</p>
-</li>
-<li><p><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system</p>
-<p style="background-color:#F0F0F0">$ sudo apt-get install python-pip python-dev</p>
-<p style="background-color:#F0F0F0">$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev</p></li>
-<li><p><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary.</p>
-<p style="background-color:#F0F0F0">$ sudo apt-get install git</p>
-</li>
-<li><p><strong>Step 4.</strong> Download Ryu source code from github</p>
-<p style="background-color:#F0F0F0">$ git clone git://github.com/osrg/ryu.git</p>
-</li>
-<li><p><strong>Step 5.</strong> <a href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller.</p>
-<p style="background-color:#F0F0F0">$ pip install networkx</p>
-</li>
-<li><p><strong>Step 6.</strong> Install Ryu</p>
-<p style="background-color:#F0F0F0">$ cd ryu/</p>
-<p style="background-color:#F0F0F0">$ sudo python ./setup.py install</p>
-</li>
-<li><p><strong>Step 7.</strong> Execution and testing</p>
-<p style="background-color:#F0F0F0">$ ryu-manager</p>
-// If your installation is successful, the terminal will show some info. and stop to listening:
-<p style="background-color:#F0F0F0">
-loading app ryu.controller.ofp_handler<br>
-instantiating app ryu.controller.ofp_handler of OFPHandler</p>
-</li>
-</ul>
-<hr>
-<p style="margin-left:40px"><font color=#FF0000>Warning: if you execute “ryu-manager” and get an error!</font></p>
-<p style="margin-left:40px"><b>Solution:</b></p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ cd ryu/</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo pip install -r tools/pip-requires</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo pip install six --upgrade</p>
+    <title>[LeetCode Road] Maximum Subarray</title>
+    <url>/posts/90ac56be/</url>
+    <content><![CDATA[<h1 id="53-Maximum-Subarray"><a href="#53-Maximum-Subarray" class="headerlink" title="53. Maximum Subarray"></a><center>53. Maximum Subarray</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given an integer array <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span>, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
+<p><strong>Follow up:</strong> If you have figured out the <span style="background-color:#F0F0F0"><font color=#808080>O(n)</font></span> solution, try coding another solution using the <strong>divide and conquer</strong> approach, which is more subtle.</p>
+<a id="more"></a>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> nums = [-2,1,-3,4,-1,2,1,-5,4]<br><b>Output:</b> 6<br><b>Explanation:</b> [4,-1,2,1] has the largest sum = 6.<br></p>
+<p style="background-color:#F0F0F0"><b>Input:</b> nums = [1]<br><b>Output:</b> 1<br></p>
+<p style="background-color:#F0F0F0"><b>Input:</b> nums = [0]<br><b>Output:</b> 0<br></p>
+<p style="background-color:#F0F0F0"><b>Input:</b> nums = [-1]<br><b>Output:</b> -1<br></p>
+<p style="background-color:#F0F0F0"><b>Input:</b> nums = [-2147483647]<br><b>Output:</b> -2147483647<br></p>
 
-<p style="margin-left:40px"><font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font></p>
-<p style="margin-left:40px"><font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>&emsp;&emsp;&emsp;<b>SyntaxError: ivalid syntax</b></font></p>
-<p style="margin-left:40px"><b>Solution:</b></p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ cd /usr/local/lib/python2.7/dist-packages/</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo rm –rf oslo_config/</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata</p>
-<p style="margin-left:40px"><u>From the above, the command is refered to http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html</u></p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ cd oslo.config</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo python setup.py install</p>
-
-]]></content>
+<p><strong>Constraints:</strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= nums.length &lt;= 2 * 10^4</font></span></li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>-2^31 &lt;= nums[i] &lt;= 2^31 - 1</font></span></li></strong></p>
+<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h2 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a><u>Version 1</u></h2><p>Idea:<br>It is a brute force approach. Use 2 loop to calculate the sum for each elements.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> len = nums.size();</span><br><span class="line">        <span class="keyword">if</span>(len == <span class="number">1</span>) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> maxValue = INT_MIN;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; len; j++)&#123;</span><br><span class="line">                sum += nums[j];</span><br><span class="line">                maxValue = max(maxValue, sum);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxValue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="Version-2"><a href="#Version-2" class="headerlink" title="Version 2"></a><u>Version 2</u></h2><p>Idea:<br>This is an efficient method, use only one loop.<br><code>sum += nums[i]</code> means the cumulative sum.<br><code>sum = max(sum, nums[i])</code> means the maximum of sum between the cumulative sum or current index of value.<br><code>maxValue = max(maxValue, sum)</code> means recording the maximal value.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxValue = INT_MIN, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            sum = max(sum, nums[i]);</span><br><span class="line">            maxValue = max(maxValue, sum);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxValue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>Simulator</category>
+        <category>LeetCode-Easy</category>
       </categories>
       <tags>
-        <tag>Ubuntu</tag>
-        <tag>SDN</tag>
-        <tag>Controller</tag>
+        <tag>Vector</tag>
       </tags>
   </entry>
   <entry>
@@ -687,6 +650,7 @@ instantiating app ryu.controller.ofp_handler of OFPHandler</p>
     <url>/posts/2ef96137/</url>
     <content><![CDATA[<h1 id="100-Same-Tree"><a href="#100-Same-Tree" class="headerlink" title="100. Same Tree"></a><center>100. Same Tree</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given the roots of two binary trees <span style="background-color:#F0F0F0"><font color=#808080>p</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>q</font></span>, write a function to check if they are the same or not.</p>
 <p>Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.</p>
+<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p><img src="SameTree_example1.png" alt=""></p>
 <p style="background-color:#F0F0F0"><b>Input:</b> p = [1,2,3], q = [1,2,3]<br>
 <b>Output:</b> true<br></p>
@@ -714,6 +678,7 @@ instantiating app ryu.controller.ofp_handler of OFPHandler</p>
     <title>[LeetCode Road] Search Insert Position</title>
     <url>/posts/41fdcb04/</url>
     <content><![CDATA[<h1 id="35-Search-Insert-Position"><a href="#35-Search-Insert-Position" class="headerlink" title="35. Search Insert Position"></a><center>35. Search Insert Position</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</p>
+<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> nums = [1,3,5,6], target = 5<br><b>Output:</b> 2<br></p>
 <p style="background-color:#F0F0F0"><b>Input:</b> nums = [1,3,5,6], target = 2<br><b>Output:</b> 1<br></p>
 <p style="background-color:#F0F0F0"><b>Input:</b> nums = [1,3,5,6], target = 7<br><b>Output:</b> 4<br></p>
@@ -737,6 +702,7 @@ instantiating app ryu.controller.ofp_handler of OFPHandler</p>
     <url>/posts/72b31d68/</url>
     <content><![CDATA[<h1 id="69-Sqrt-x"><a href="#69-Sqrt-x" class="headerlink" title="69. Sqrt(x)"></a><center>69. Sqrt(x)</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given a non-negative integer <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>, compute and return <em>the square root of</em> <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>.</p>
 <p>Since the return type is an integer, the decimal digits are <b>truncated</b>, and only <b>the integer part</b> of the result is returned.</p>
+<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> x = 4<br><b>Output:</b> 2<br></p>
 <p style="background-color:#F0F0F0"><b>Input:</b> x = 8<br>
 <b>Output:</b> 2<br>
@@ -758,6 +724,7 @@ instantiating app ryu.controller.ofp_handler of OFPHandler</p>
     <title>[LeetCode Road] Symmetric Tree</title>
     <url>/posts/d1f23ab6/</url>
     <content><![CDATA[<h1 id="101-Symmetric-Tree"><a href="#101-Symmetric-Tree" class="headerlink" title="101. Symmetric Tree"></a><center>101. Symmetric Tree</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).</p>
+<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p>For example, this binary tree <span style="background-color:#F0F0F0"><font color=#808080>[1,2,2,3,4,4,3]</font></span> is symmetric:</p>
 <p style="background-color:#F0F0F0">
 &emsp;&emsp;&emsp;&emsp;1<br>
@@ -789,6 +756,7 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
     <content><![CDATA[<p>Let’s realize how does tower of hanoi works and how to use recursive function to implement it!!!</p>
 <p>The <strong>Tower of Hanoi</strong> is a mathematical game or puzzle, it’s a classical problem during your CSIE studies.</p>
 <p><strong>First</strong>, the demonstration of process(3 disks and 3 rods) as below[1]:<br><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Tower_of_Hanoi.gif" alt="animation"></p>
+<a id="more"></a>
 <p><strong>Second</strong>, moving the entire stack to another rod need to comply with the following rules:</p>
 <ol>
 <li>Only one disk can be moved at a time.</li>
@@ -920,6 +888,7 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
     <content><![CDATA[<h1 id="1-Two-Sum"><a href="#1-Two-Sum" class="headerlink" title="1. Two Sum"></a><center>1. Two Sum</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given an array of integers <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> and an integer <span style="background-color:#F0F0F0"><font color=#808080>target</font></span>, return <em>indices of the two numbers such that they add up to target</em>.</p>
 <p>You may assume that each input would have <strong>exactly one solution</strong>, and you may not use the same element twice.</p>
 <p>You can return the answer in any order.</p>
+<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input</b>: nums = [2,7,11,15], target = 9<br><b>Output</b>: [0,1]<br><b>Output</b>: Because nums[0] + nums[1] == 9, we return [0, 1].</p>
 
 <p style="background-color:#F0F0F0"><b>Input</b>: nums = [3,2,4], target = 6<br><b>Output</b>: [1,2].</p>
@@ -945,14 +914,15 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
 <p>An input string is valid if:</p>
 <ol>
 <li>Open brackets must be closed by the same type of brackets.</li>
-<li>Open brackets must be closed in the correct order.</li>
-</ol>
+<li>Open brackets must be closed in the correct order.<a id="more"></a>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> s = "()"<br><b>Output:</b> true</p>
 <p style="background-color:#F0F0F0"><b>Input:</b> s = "()[]{}"<br><b>Output:</b> true</p>
 <p style="background-color:#F0F0F0"><b>Input:</b> s = "(]"<br><b>Output:</b> false</p>
 <p style="background-color:#F0F0F0"><b>Input:</b> s = "([)]"<br><b>Output:</b> false</p>
 <p style="background-color:#F0F0F0"><b>Input:</b> s = "{[]}"<br><b>Output:</b> true</p>
 
+</li>
+</ol>
 <p><strong>Constraints:</strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= s.length &lt;= 10^4</font></span></li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>s</span></font> consists of parentheses only <span style="background-color:#F0F0F0"><font color=#808080>‘()[]{}’.</span></font></li></strong></p>
 <h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h3 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a><u>Version 1</u></h3><p>Idea:<br>Use map&lt;key, value&gt; to declare the characters. Notice: a string will be process is left parenthese, so these can be used as a value. Then, I can use key-value to do match when right parenthese is processed.<br>I get each characters to check whether it is unrecorded or equal <code>st.top()</code> or not. If it is true, this character be added at the top of the stack. On the contrary, delete the top most element of the stack. Finally, ues <code>st.empty()</code> to return whether the stack is empty.<br>P.S. Stack is LIFO(Last In First Out).</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValid</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.length() == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">char</span>, <span class="keyword">char</span>&gt;  match&#123;&#123;<span class="string">&#x27;(&#x27;</span>, <span class="string">&#x27;)&#x27;</span>&#125;, &#123;<span class="string">&#x27;&#123;&#x27;</span>,<span class="string">&#x27;&#125;&#x27;</span>&#125;,&#123;<span class="string">&#x27;[&#x27;</span>,<span class="string">&#x27;]&#x27;</span>&#125;&#125;;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; st;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">const</span> <span class="keyword">char</span> c:s)&#123;</span><br><span class="line">            <span class="keyword">if</span>(st.empty() || c != st.top())&#123;</span><br><span class="line">                st.push(match[c]);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                st.pop();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> st.empty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
@@ -969,7 +939,7 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
     <url>/posts/a7083339/</url>
     <content><![CDATA[<h1 id="Visual-Studio-Code-installation-and-run-it-from-Terminal-on-macOS"><a href="#Visual-Studio-Code-installation-and-run-it-from-Terminal-on-macOS" class="headerlink" title="Visual Studio Code installation and run it from Terminal on macOS"></a><center>Visual Studio Code installation and run it from Terminal on macOS</center></h1><h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p><strong>Visual Studio Code</strong> is a free source-code editor made by Microsoft for Windows, Linux and macOS.<br>Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git. Users can change the theme, keyboard shortcuts, preferences, and install extensions that add additional functionality.</p>
 <h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><ol>
-<li><a href="https://code.visualstudio.com/docs?dv=osx">Download Visual Studio Code</a> for macOS directly.</li>
+<li><a href="https://code.visualstudio.com/docs?dv=osx">Download Visual Studio Code</a> for macOS directly.<a id="more"></a></li>
 <li>Go to your browser’s lownloaded archive.</li>
 <li>Extract <em>VSCode-darwin-stable.zip</em> file</li>
 <li>Drag <span style="background:#F0F0F0">Visual Studio Code.cpp</span> to the <span style="background:#F0F0F0">Applications</span> folder, making it available in the macOS Launchpad.</li>
@@ -995,9 +965,70 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
       </tags>
   </entry>
   <entry>
+    <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
+    <url>/posts/9e0f4e5/</url>
+    <content><![CDATA[<h1 id="Tutorial-Install-ryu-in-Ubuntu-16-04-with-no-failure"><a href="#Tutorial-Install-ryu-in-Ubuntu-16-04-with-no-failure" class="headerlink" title="Tutorial - Install ryu in Ubuntu 16.04 with no failure"></a><center>Tutorial - Install ryu in Ubuntu 16.04 with no failure</center></h1><p><a href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It’s very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet.</p>
+<a id="more"></a>
+<h2 id="Start-to-configure-and-install"><a href="#Start-to-configure-and-install" class="headerlink" title="Start to configure and install"></a>Start to configure and install</h2><ul>
+<li><p><strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources)</p>
+<p style="background-color:#F0F0F0">$ sudo apt-get update</p>
+</li>
+<li><p><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system</p>
+<p style="background-color:#F0F0F0">$ sudo apt-get install python-pip python-dev</p>
+<p style="background-color:#F0F0F0">$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev</p></li>
+<li><p><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary.</p>
+<p style="background-color:#F0F0F0">$ sudo apt-get install git</p>
+</li>
+<li><p><strong>Step 4.</strong> Download Ryu source code from github</p>
+<p style="background-color:#F0F0F0">$ git clone git://github.com/osrg/ryu.git</p>
+</li>
+<li><p><strong>Step 5.</strong> <a href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller.</p>
+<p style="background-color:#F0F0F0">$ pip install networkx</p>
+</li>
+<li><p><strong>Step 6.</strong> Install Ryu</p>
+<p style="background-color:#F0F0F0">$ cd ryu/</p>
+<p style="background-color:#F0F0F0">$ sudo python ./setup.py install</p>
+</li>
+<li><p><strong>Step 7.</strong> Execution and testing</p>
+<p style="background-color:#F0F0F0">$ ryu-manager</p>
+// If your installation is successful, the terminal will show some info. and stop to listening:
+<p style="background-color:#F0F0F0">
+loading app ryu.controller.ofp_handler<br>
+instantiating app ryu.controller.ofp_handler of OFPHandler</p>
+</li>
+</ul>
+<hr>
+<p style="margin-left:40px"><font color=#FF0000>Warning: if you execute “ryu-manager” and get an error!</font></p>
+<p style="margin-left:40px"><b>Solution:</b></p>
+<p style="background-color:#F0F0F0; margin-left:40px;">$ cd ryu/</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo pip install -r tools/pip-requires</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo pip install six --upgrade</p>
+
+<p style="margin-left:40px"><font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font></p>
+<p style="margin-left:40px"><font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>&emsp;&emsp;&emsp;<b>SyntaxError: ivalid syntax</b></font></p>
+<p style="margin-left:40px"><b>Solution:</b></p>
+<p style="background-color:#F0F0F0; margin-left:40px;">$ cd /usr/local/lib/python2.7/dist-packages/</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo rm –rf oslo_config/</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata</p>
+<p style="margin-left:40px"><u>From the above, the command is refered to http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html</u></p>
+<p style="background-color:#F0F0F0; margin-left:40px;">$ cd oslo.config</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo python setup.py install</p>
+
+]]></content>
+      <categories>
+        <category>Simulator</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>SDN</tag>
+        <tag>Controller</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[Quick and Easy] Installation of ns-3 Simulator with OpenFlow 1.3 - Tutorial</title>
     <url>/posts/8ece0fb0/</url>
     <content><![CDATA[<h1 id="ns-3-configuration-and-ofswitch13-module-Tutorial"><a href="#ns-3-configuration-and-ofswitch13-module-Tutorial" class="headerlink" title="ns-3 configuration and ofswitch13 module - Tutorial"></a><center>ns-3 configuration and ofswitch13 module - Tutorial</center></h1><p>I had deployed the ns-3 simulation with ofswitch13 successfully. I’ve been struggling to solve the simulation platform a lot of time. So, my experience is quite valuable and self-giving sharing for the ns-3 beginners.<br>The following procedure can be deployed on VMware/Virtual machine or cloud instance.<br>If your want to know how to deploy ns-3 on remote cloud instance easily, I will post an article to demonstrate full steps.</p>
+<a id="more"></a>
 <h2 id="What-is-ns-3-Network-Simulator"><a href="#What-is-ns-3-Network-Simulator" class="headerlink" title="What is ns-3 Network Simulator?"></a>What is <a href="https://www.nsnam.org/">ns-3</a> Network Simulator?</h2><ul>
 <li>A discrete-event network simulator for internet systems</li>
 <li>Free software and open source</li>

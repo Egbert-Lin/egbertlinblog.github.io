@@ -19,7 +19,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Muse","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+    var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
   <meta name="description" content="Programming Developer">
@@ -245,7 +245,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-12 08:48:28" itemprop="dateModified" datetime="2021-01-12T08:48:28+08:00">2021-01-12</time>
+        <time title="Modified: 2021-01-12 09:45:39" itemprop="dateModified" datetime="2021-01-12T09:45:39+08:00">2021-01-12</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -269,32 +269,14 @@
     <div class="post-body" itemprop="articleBody">
           <h1 id="108-Convert-Sorted-Array-to-Binary-Search-Tree"><a href="#108-Convert-Sorted-Array-to-Binary-Search-Tree" class="headerlink" title="108. Convert Sorted Array to Binary Search Tree"></a><center>108. Convert Sorted Array to Binary Search Tree</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given an array where elements are sorted in ascending order, convert it to a height balanced BST.</p>
 <p>For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0">
-Given the sorted array: [-10,-3,0,5,9],<br>
-<br>
-One possible answer is: [0,-3,9,-10,null,5], which represents the following height balanced BST:<br>
-&emsp;&emsp;&emsp;&ensp;0<br>
-&emsp;&emsp;&emsp;/&ensp;\<br>
-&emsp;&emsp;-3&emsp;&ensp;9<br>
-&emsp;&emsp;/&emsp;&ensp;/<br>
-&emsp;-10&emsp;5</p>
-
-<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h2 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a><u>Version 1</u></h2><p>Idea:<br>At first, let we understand “What is Height Balanced Binary Search Tree(BST)”.<br>You inquire/insert/delete a node of the tree, the time of these actions is proportional to height of the tree. It must keeps its height in the face of arbitrary item (actions), it’s call a height balane (or self balancing) BST.<br>Back to this problem, the strategy is “Binary Search”. At 22 line, the recursive function always satisfy the establishment of the left nodes. On the contrary, it always satisfy the establishment of hte right nodes at 23 line. Using the binary search will through every nodes and get a sequential array.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">sortedArrayToBST</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sortedArrayToBST(nums, <span class="number">0</span>, nums.size() - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">sortedArrayToBST</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(left &gt; right) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">int</span> mid = left + (right - left)/<span class="number">2</span>;</span><br><span class="line">        TreeNode* res = <span class="keyword">new</span> TreeNode(nums[mid]);</span><br><span class="line">        res-&gt;left = sortedArrayToBST(nums, left, mid - <span class="number">1</span>);</span><br><span class="line">        res-&gt;right = sortedArrayToBST(nums, mid + <span class="number">1</span>, right);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>Each steps info.:</p>
-<p style="background-color:#F0F0F0">
-left:0, right:4, mid's value:0<br>
-left:0, right:1, mid's value:-10<br>
-left:0, right:-1, return NULL<br>
-left:1, right:1, mid's value:-3<br>
-left:1, right:0, return NULL<br>
-left:2, right:1, return NULL<br>
-left:3, right:4, mid's value:5<br>
-left:3, right:2, return NULL<br>
-left:4, right:4, mid's value:9<br>
-left:4, right:3, return NULL<br>
-left:5, right:4, return NULL<br>
-<p style="background-color:#F0F0F0">
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/17bf1818/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -350,7 +332,7 @@ left:5, right:4, return NULL<br>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-08 09:22:18" itemprop="dateModified" datetime="2021-01-08T09:22:18+08:00">2021-01-08</time>
+        <time title="Modified: 2021-01-12 09:53:03" itemprop="dateModified" datetime="2021-01-12T09:53:03+08:00">2021-01-12</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -379,56 +361,14 @@ left:5, right:4, return NULL<br>
 <li>Developers need to test projects in Windows OS.</li>
 </ol>
 <p>So, I shared my experience to save your time of installing Windows on MacBook Pro.</p>
-<h2 id="Hardward-amp-Software-preparation"><a href="#Hardward-amp-Software-preparation" class="headerlink" title="Hardward &amp; Software preparation"></a>Hardward &amp; Software preparation</h2><ul>
-<li>Hardware<br>Product model: Macbook Pro 2017</li>
-<li>Software - Win10 ISO<br>You can go to this url to downlaod ISO:<br><a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-tw/software-download/windows10">https://www.microsoft.com/zh-tw/software-download/windows10</a><br>Choose version:Windows 10, Choose language: English and choose 64-bit version</li>
-</ul>
-<h2 id="Use-Bootcamp-to-install-Win10"><a href="#Use-Bootcamp-to-install-Win10" class="headerlink" title="Use Bootcamp to install Win10"></a>Use Bootcamp to install Win10</h2><ul>
-<li><p><strong>Step 1.</strong> Launch Bootcamp Assistant from th Utilities folder in Applications.<br>Then, load your WIN10 ISO and allocate appropriate disk size.<br><img src="bootcamp_1.png" alt=""></p>
-</li>
-<li><p><strong>Step 2.</strong> Wait for some time, the processing will download WIN10 support software.<br><img src="bootcamp_2.png" alt=""></p>
-</li>
-<li><p><strong>Step 3.</strong> Finally, you will see the WIN10 setup screen.<br><img src="bootcamp_3.png" alt=""></p>
-</li>
-<li><p><strong>Step 4.</strong> Enter “Explorer”, you wil see <code>WININSTALL (D:)</code> and click <code>BootCamp folder</code> to execute setup program. (Don’t choose anything else)<br><img src="bootcamp_4.png" alt=""></p>
-</li>
-</ul>
-<h2 id="Partition-NTFS-for-file-sharing"><a href="#Partition-NTFS-for-file-sharing" class="headerlink" title="Partition NTFS for file sharing"></a>Partition NTFS for file sharing</h2><ul>
-<li><p><strong>Step 1.</strong> Shut down your Mac. </p>
-</li>
-<li><p><strong>Step 2.</strong> Hold down the <code>Command and R keys</code> down and press the power button.</p>
-</li>
-<li><p><strong>Step 3.</strong> Keep holding Command and R keys until the Apple logo appears on the screen.</p>
-</li>
-<li><p><strong>Step 4.</strong> Then, you will see a screen saying macOS Utilities(or if your Mac is older, OS X Utilities).</p>
-</li>
-<li><p><strong>Step 5.</strong> Choose “Disk Utility”<br><img src="bootcamp_5.png" alt=""></p>
-</li>
-<li><p><strong>Step 6.</strong> Choose “APPLE SSD …” and click partition<br><img src="bootcamp_6.png" alt=""></p>
-</li>
-<li><p><strong>Step 7.</strong> Click ‘+’ to new partition section<br><img src="bootcamp_7.png" alt=""></p>
-</li>
-<li><p><strong>Step 8.</strong> Suggest selecting the NTFS option<br><img src="bootcamp_8.png" alt=""></p>
-</li>
-<li><p><strong>Step 9.</strong> If the partition is succes, you will see the new partition section between Mac OS X and Windows 10</p>
-</li>
-</ul>
-<h2 id="Error-blue-screen-when-boot-Windows-10"><a href="#Error-blue-screen-when-boot-Windows-10" class="headerlink" title="Error - blue screen when boot Windows 10"></a>Error - blue screen when boot Windows 10</h2><p>You finish above procedures, <font color=#FF0000>if WIN10 can’t boot anymore and show blue screen with error message: 0xd000000e</font></p>
-<ul>
-<li><strong>Reason:</strong>  The installation creates a hybrid MBR which is completely unnecessary. Windows will not boot in EFI mode but in BIOS mode instead and crash.</li>
-<li><strong>Solution:</strong> Enter Mac OS X to open terminal<p style="background-color:#F0F0F0">$ sudo apt-get install gdisk</p>
-<p style="background-color:#F0F0F0">$ sudo gdisk /dev/sda0 ("sda0" depands on your primary partition)</p>
-<p style="background-color:#F0F0F0">Type <b>p</b> to view the partition table to verify you're working on the correct disk</p>
-<p style="background-color:#F0F0F0">Type <b>x</b> to enter the experts' menu</p>
-<p style="background-color:#F0F0F0">Type <b>n</b> to create an empty protective MBR</p>
-<p style="background-color:#F0F0F0">Type <b>w</b> to save your changes, You'll be asked to confirm this action</p>
-Finally, reboot you Mac and enter WIN10 OS successfully.
-
-</li>
-</ul>
-<h2 id="Necessary-third-party-softwares"><a href="#Necessary-third-party-softwares" class="headerlink" title="Necessary third party softwares"></a>Necessary third party softwares</h2><p>To enable  Mac OS X can write data at shared partition, I provide some software infomations as below:<br>&#49; <a target="_blank" rel="noopener" href="https://osxfuse.github.io">OSXFUSE</a><br>&#50; <a target="_blank" rel="noopener" href="https://www.tuxera.com/company/open-source/">ntfs-3g</a></p>
-<p>Reference:<br><a target="_blank" rel="noopener" href="https://www.innoq.com/en/blog/triple-booting-a-mac/">https://www.innoq.com/en/blog/triple-booting-a-mac/</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/4755908e/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -476,10 +416,16 @@ Finally, reboot you Mac and enter WIN10 OS successfully.
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-01-06 14:14:43 / Modified: 15:23:01" itemprop="dateCreated datePublished" datetime="2021-01-06T14:14:43+08:00">2021-01-06</time>
+      <time title="Created: 2021-01-06 14:14:43" itemprop="dateCreated datePublished" datetime="2021-01-06T14:14:43+08:00">2021-01-06</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-12 09:51:33" itemprop="dateModified" datetime="2021-01-12T09:51:33+08:00">2021-01-12</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -501,52 +447,14 @@ Finally, reboot you Mac and enter WIN10 OS successfully.
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="Tutorial-Install-ryu-in-Ubuntu-16-04-with-no-failure"><a href="#Tutorial-Install-ryu-in-Ubuntu-16-04-with-no-failure" class="headerlink" title="Tutorial - Install ryu in Ubuntu 16.04 with no failure"></a><center>Tutorial - Install ryu in Ubuntu 16.04 with no failure</center></h1><p><a target="_blank" rel="noopener" href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It’s very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet.</p>
-<h2 id="Start-to-configure-and-install"><a href="#Start-to-configure-and-install" class="headerlink" title="Start to configure and install"></a>Start to configure and install</h2><ul>
-<li><p><strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources)</p>
-<p style="background-color:#F0F0F0">$ sudo apt-get update</p>
-</li>
-<li><p><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system</p>
-<p style="background-color:#F0F0F0">$ sudo apt-get install python-pip python-dev</p>
-<p style="background-color:#F0F0F0">$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev</p></li>
-<li><p><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary.</p>
-<p style="background-color:#F0F0F0">$ sudo apt-get install git</p>
-</li>
-<li><p><strong>Step 4.</strong> Download Ryu source code from github</p>
-<p style="background-color:#F0F0F0">$ git clone git://github.com/osrg/ryu.git</p>
-</li>
-<li><p><strong>Step 5.</strong> <a target="_blank" rel="noopener" href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller.</p>
-<p style="background-color:#F0F0F0">$ pip install networkx</p>
-</li>
-<li><p><strong>Step 6.</strong> Install Ryu</p>
-<p style="background-color:#F0F0F0">$ cd ryu/</p>
-<p style="background-color:#F0F0F0">$ sudo python ./setup.py install</p>
-</li>
-<li><p><strong>Step 7.</strong> Execution and testing</p>
-<p style="background-color:#F0F0F0">$ ryu-manager</p>
-// If your installation is successful, the terminal will show some info. and stop to listening:
-<p style="background-color:#F0F0F0">
-loading app ryu.controller.ofp_handler<br>
-instantiating app ryu.controller.ofp_handler of OFPHandler</p>
-</li>
-</ul>
-<hr>
-<p style="margin-left:40px"><font color=#FF0000>Warning: if you execute “ryu-manager” and get an error!</font></p>
-<p style="margin-left:40px"><b>Solution:</b></p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ cd ryu/</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo pip install -r tools/pip-requires</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo pip install six --upgrade</p>
-
-<p style="margin-left:40px"><font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font></p>
-<p style="margin-left:40px"><font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>&emsp;&emsp;&emsp;<b>SyntaxError: ivalid syntax</b></font></p>
-<p style="margin-left:40px"><b>Solution:</b></p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ cd /usr/local/lib/python2.7/dist-packages/</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo rm –rf oslo_config/</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata</p>
-<p style="margin-left:40px"><u>From the above, the command is refered to http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html</u></p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ cd oslo.config</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo python setup.py install</p>
-
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/9e0f4e5/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -602,7 +510,7 @@ instantiating app ryu.controller.ofp_handler of OFPHandler</p>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-06 11:37:14" itemprop="dateModified" datetime="2021-01-06T11:37:14+08:00">2021-01-06</time>
+        <time title="Modified: 2021-01-12 09:49:59" itemprop="dateModified" datetime="2021-01-12T09:49:59+08:00">2021-01-12</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -625,97 +533,14 @@ instantiating app ryu.controller.ofp_handler of OFPHandler</p>
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="ns-3-configuration-and-ofswitch13-module-Tutorial"><a href="#ns-3-configuration-and-ofswitch13-module-Tutorial" class="headerlink" title="ns-3 configuration and ofswitch13 module - Tutorial"></a><center>ns-3 configuration and ofswitch13 module - Tutorial</center></h1><p>I had deployed the ns-3 simulation with ofswitch13 successfully. I’ve been struggling to solve the simulation platform a lot of time. So, my experience is quite valuable and self-giving sharing for the ns-3 beginners.<br>The following procedure can be deployed on VMware/Virtual machine or cloud instance.<br>If your want to know how to deploy ns-3 on remote cloud instance easily, I will post an article to demonstrate full steps.</p>
-<h2 id="What-is-ns-3-Network-Simulator"><a href="#What-is-ns-3-Network-Simulator" class="headerlink" title="What is ns-3 Network Simulator?"></a>What is <a target="_blank" rel="noopener" href="https://www.nsnam.org/">ns-3</a> Network Simulator?</h2><ul>
-<li>A discrete-event network simulator for internet systems</li>
-<li>Free software and open source</li>
-<li>Packet level</li>
-<li>C++ for core/ Python for bindings</li>
-<li>Support under Linux, FreeBSD and Cygwin</li>
-</ul>
-<h3 id="ns-3-simulation-workflow"><a href="#ns-3-simulation-workflow" class="headerlink" title="ns-3 simulation workflow:"></a>ns-3 simulation workflow:</h3><ol>
-<li>Topology definition</li>
-<li>Model development</li>
-<li>Node and link configuration</li>
-<li>Execution</li>
-<li>Performance analysis</li>
-<li>Graphical Visualization</li>
-</ol>
-<h3 id="Key-terms-adn-abstractions"><a href="#Key-terms-adn-abstractions" class="headerlink" title="Key terms adn abstractions:"></a>Key terms adn abstractions:</h3><ul>
-<li>Node: the virtual hardward (e.g. PC, server, router, smart phone, etc.)</li>
-<li>Network device: transimts and receives over the channel with network layer</li>
-<li>Channel: transmission medium between Network device (e.g. WiFi, p2p, csma)</li>
-<li>Application: creates or receives data packet that send between Nodes with transport layer</li>
-<li>Helper: ns-3 construct used to quickly configure and create the above</li>
-</ul>
-<h2 id="OpenFlow-1-3-module-for-ns-3"><a href="#OpenFlow-1-3-module-for-ns-3" class="headerlink" title="OpenFlow 1.3 module for ns-3"></a>OpenFlow 1.3 module for ns-3</h2><ul>
-<li>The <a target="_blank" rel="noopener" href="https://github.com/ljerezchaves/ofswitch13">OFSwitch13 module</a>, which enhances the ns-3 Network Simulator with <a target="_blank" rel="noopener" href="https://opennetworking.org/wp-content/uploads/2014/10/openflow-spec-v1.3.0.pdf">OpenFlow 1.3</a> capabilities</li>
-<li>Allow ns-3 users to simulate Software-Defined Networks (SDN)</li>
-<li>Support internal/external SDN controller<br><img src="OFSwitch13Device_structure.png" alt="The OFSwitch13 module overview"></li>
-</ul>
-<h3 id="Main-class-function"><a href="#Main-class-function" class="headerlink" title="Main class function"></a><a target="_blank" rel="noopener" href="http://www.lrc.ic.unicamp.br/~luciano/publications/wns316.pdf">Main class function</a></h3><ul>
-<li>OpenFlow 1.3 switch network device<br>It can be used to interconnect ns-3 nodes using the existing CSMA network devices and channels.</li>
-<li>OpenFlow 1.3 controller interface<br>It provides the basic functionalities for controller implementation.</li>
-<li>OpenFlow channel<br>It is the interface that connects each switch to an OpenFlow controller.</li>
-<li>ofsoftswitch13 library<br>It provides the complete OpenFlow switch datapath implementation, including input and output ports, the flow-table pipeline for packet matching, the group table, and the meter table.<br>It also provides the OFLib library that is used for converting internal messages to and from OpenFlow 1.3 wire format, and the dpctl utility for converting text commands into internal messages.<br><img src="ofsoftswitch13_library_architecture.png" alt="The ofsoftwitch13 library architecture"></li>
-</ul>
-<h2 id="Start-to-configure-and-build"><a href="#Start-to-configure-and-build" class="headerlink" title="Start to configure and build"></a>Start to configure and build</h2><ul>
-<li><p><strong>Step 1.</strong> You have the following packages installed on your system</p>
-<p style="background-color:#F0F0F0">$ sudo apt-get install build-essential gcc g++ python git mercurial unzip cmake</p>
-<p style="background-color:#F0F0F0">$ sudo apt-get install pkg-config autoconf libtool libboost-dev</p>
-</li>
-<li><p><strong>Step 2.</strong> Download a recent stable ns-3 code (using the mercurial repository for ns-3.29)</p>
-<p style="background-color:#F0F0F0">$ hg clone http://code.nsnam.org/ns-3.29</p>
-</li>
-<li><p><strong>Step 3.</strong> Download the OFSwitch13 code into the src/ folder</p>
-<p style="background-color:#F0F0F0">$ cd ns-3.29/src</p>
-<p style="background-color:#F0F0F0">$ git clone --recurse-submodules https://github.com/ljerezchaves/ofswitch13.git</p>
-</li>
-<li><p><strong>Step 4.</strong> Update the code to the desired release version (using 4.0.0, which is compatible with ns-3.29 or later)</p>
-<p style="background-color:#F0F0F0">$ cd ofswitch13</p>
-<p style="background-color:#F0F0F0">$ git checkout 4.0.0 && git submodule update –recursive</p>
-</li>
-<li><p><strong>Step 5.</strong> It is time to compile the ofsoftswitch13 as a static library (Configure and build the library)</p>
-<p style="background-color:#F0F0F0">$ cd lib/ofsoftswitch13</p>
-<p style="background-color:#F0F0F0">$ ./boot.sh</p>
-<p style="background-color:#F0F0F0">$ ./configure --enable-ns3-lib</p>
-<p style="background-color:#F0F0F0">$ make</p>
-<font color=#FF0000>Warning: if you meet an error as “perl: warning: Setting locale failed”:</font>
-
-</li>
-</ul>
-<p style="margin-left:40px"><b>Solution:</b></p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo vim .bashrc</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">export LC_ALL=“en_US.UTF-8”</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo locale-gen zh_TW.UTF-8</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo dpkg-reconfigure locales</p>
-
-<ul>
-<li><p><strong>Step 6.</strong> Go back to the ns-3 root directory and patch the ns-3 code with the appropriated patches available under the ofswitch13/utils directory</p>
-<p style="background-color:#F0F0F0">$ cd ../../../../</p>
-<p style="background-color:#F0F0F0">$ patch -p1 < src/ofswitch13/utils/ofswitch13-src-3_29.patch</p>
-<p style="background-color:#F0F0F0">$ patch -p1 < src/ofswitch13/utils/ofswitch13-doc-3_29.patch</p>
-</li>
-<li><p><strong>Step 7.</strong> Now, configure the ns-3 (Need to check –witch-ofswitch13=your path)</p>
-<p style="background-color:#F0F0F0">$ ./waf configure --enable-tests --enable-examples --enable-sudo --with-ofswitch13=<br>/home/ubuntu/ns-3.29/src/ofswitch13/lib/ofsoftswitch13/</p>
-</li>
-<li><p><strong>Step 8.</strong> Check for the enabled NS-3 OpenFlow 1.3 integration feature after the configuration<br><img src="ns3_configuration.png" alt=""></p>
-</li>
-<li><p><strong>Step 9.</strong> Finally, build the ns-3 simulation</p>
-<p style="background-color:#F0F0F0">$ sudo ./waf</p>
-<font color=#FF0000>Warning: if you meet an error as below:</font>
-<p><img src="./buildError.png"></p>
-
-</li>
-</ul>
-<p style="margin-left:40px"><b>Solution: Modify: “SuidBuild” → “SuidBuild_task”</b></p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo vim wscript</p>
-<p style="margin-left:40px"><img src="./buildError_solution.png"></p>
-
-<p>Now, you can run your first example script, enjoy it!</p>
-<p style="background-color:#F0F0F0">$ ./waf --run scratch/ofswitch13.first</p>
-
-<p><strong>Notice:</strong><br>&#49;. <u>Suggest moving your script to scratch folder before executing.</u><br>&#50;. <u>Don’t add filename extension (e.g. .cc) at your execution’s command line</u></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/8ece0fb0/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -771,7 +596,7 @@ instantiating app ryu.controller.ofp_handler of OFPHandler</p>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-06 09:16:56" itemprop="dateModified" datetime="2021-01-06T09:16:56+08:00">2021-01-06</time>
+        <time title="Modified: 2021-01-12 09:52:54" itemprop="dateModified" datetime="2021-01-12T09:52:54+08:00">2021-01-12</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -797,22 +622,14 @@ instantiating app ryu.controller.ofp_handler of OFPHandler</p>
 <ul>
 <li><p><strong>Step 1.</strong> Download the Google Chrome to your Ubuntu system</p>
 <p style="background-color:#F0F0F0">$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb</p>
-</li>
-<li><p><strong>Step 2.</strong> Install the Google Chrome</p>
-<p style="background-color:#F0F0F0">$ sudo dpkg -i google-chrome-stable_current_amd64.deb
-</p>
-</li>
-<li><p><strong>Step 3.</strong> Update the Google Chrome and you can run it.</p>
-<p style="background-color:#F0F0F0">$ cat /etc/apt/sources.list.d/google-chrome.list</p>
-
-</li>
-</ul>
-<p><img src="GoogleChromeInstallation_1.png" alt=""></p>
-<hr>
-<p>When open the application, if you meet <font color=#FF0000>“Your connection is not secure”</font> message or result as below:<br><img src="GoogleChromeInstallation_2.png" alt=""></p>
-<p><strong>Solution.</strong> Installation of Network Security Service libraries package:</p>
-<p style="background-color:#F0F0F0">$ sudo apt-get install libnss3-1d</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/65af7d45/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -860,10 +677,16 @@ instantiating app ryu.controller.ofp_handler of OFPHandler</p>
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-01-05 13:52:46 / Modified: 15:04:51" itemprop="dateCreated datePublished" datetime="2021-01-05T13:52:46+08:00">2021-01-05</time>
+      <time title="Created: 2021-01-05 13:52:46" itemprop="dateCreated datePublished" datetime="2021-01-05T13:52:46+08:00">2021-01-05</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-12 09:47:24" itemprop="dateModified" datetime="2021-01-12T09:47:24+08:00">2021-01-12</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -884,9 +707,15 @@ instantiating app ryu.controller.ofp_handler of OFPHandler</p>
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="Let-coding-interview-become-easy-Find-second-largest-element"><a href="#Let-coding-interview-become-easy-Find-second-largest-element" class="headerlink" title="Let coding interview become easy - Find second largest element"></a><center>Let coding interview become easy - Find second largest element</center></h1><p>Maybe you will face it problem when you have an interview for a job with Tech. company.<br>The problem is “How to find second largest element?”, it seems very easy to get result, but you must propose an efficient approach.<br>If there is a vector that consists <code>&#123;2, 3, 4, 1, 7, 6, 5&#125;</code>, I delcare two variables as first largest element and second largest element. I initialize variables to INT_MIN. At 13 lines, <code>if(input[i]&gt;first)</code> is true, <code>input[i]</code> is largest element and pass it to <code>first</code> after storing a value of <code>first</code> by <code>second</code>. Otherwise, compare <code>input[i]</code> with <code>second</code>, it checks a current value whether it bigger than <code>second</code> or not.</p>
-<p>Source code as below:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">pair&lt;int, int&gt; findLargest(vector&lt;int&gt; input)&#123;</span><br><span class="line">    <span class="keyword">int</span> first = INT_MIN;</span><br><span class="line">    <span class="keyword">int</span> second = INT_MIN;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; input.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(input[i]&gt;first)&#123;</span><br><span class="line">            second = first;</span><br><span class="line">            first = input[i];</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(input[i] &gt; second)&#123;</span><br><span class="line">            second = input[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">make_pair</span>(first, second);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr = &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; ans = findLargest(arr);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;The first largest element=&quot;</span> &lt;&lt; ans.first &lt;&lt; <span class="string">&quot;, the second largest element=&quot;</span> &lt;&lt; ans.second &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h1 id="Let-coding-interview-become-easy-Find-second-largest-element"><a href="#Let-coding-interview-become-easy-Find-second-largest-element" class="headerlink" title="Let coding interview become easy - Find second largest element"></a><center>Let coding interview become easy - Find second largest element</center></h1><p>Maybe you will face it problem when you have an interview for a job with Tech. company.<br>The problem is “How to find second largest element?”, it seems very easy to get result, but you must propose an efficient approach.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/16153cc7/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -942,7 +771,7 @@ instantiating app ryu.controller.ofp_handler of OFPHandler</p>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-08 15:59:07" itemprop="dateModified" datetime="2021-01-08T15:59:07+08:00">2021-01-08</time>
+        <time title="Modified: 2021-01-12 09:45:28" itemprop="dateModified" datetime="2021-01-12T09:45:28+08:00">2021-01-12</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -965,23 +794,14 @@ instantiating app ryu.controller.ofp_handler of OFPHandler</p>
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="107-Binary-Tree-Level-Order-Traversal-II"><a href="#107-Binary-Tree-Level-Order-Traversal-II" class="headerlink" title="107. Binary Tree Level Order Traversal II"></a><center>107. Binary Tree Level Order Traversal II</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given a binary tree, return the <em>bottom-up level order</em> traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p>For example:<br>Given binary tree <span style="background-color:#F0F0F0"><font color=#808080>[3,9,20,null,null,15,7]<span style="background-color:#F0F0F0"><font color=#808080>,</p>
-<p style="background-color:#F0F0F0">
-&emsp;&emsp;&emsp;3<br>
-&emsp;&emsp;&ensp;/&ensp;\<br>
-&emsp;&emsp;9&emsp;20<br>
-&emsp;&emsp;&emsp;/&emsp;\<br>
-&emsp;&emsp;&ensp;15&emsp;&ensp;7</p>
-return its bottom-up level order traversal as:
-<p style="background-color:#F0F0F0">
-[<br>
-&emsp;&emsp;[15,7],<br>
-&emsp;&emsp;[9,20],<br>
-&emsp;&emsp;[3]<br>
-]</p>
-
-<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h2 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a><u>Version 1</u></h2><p>Idea:<br>I made a big mistake, I always think the solution that find the deepest depth first, the go back to the root with each layers. I realized an efficient approach until I had refered to <a target="_blank" rel="noopener" href="https://zxi.mytechroad.com/blog/tree/leetcode-107-binary-tree-level-order-traversal-ii/">Huahua’s Tech Road</a>.<br>You must understand how to implement a two dimensional vector first. Write a function as recursion, store each elements from top of tree. <code>res.size() &lt;= depth&gt;</code> is an important statement to expand 2D vector size. Then, we must go through every left &amp; right nodes and store it based on correspondingly depth.<br>Finaly, let go back to original function, we must use reverse() to pass the answers.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; levelOrderBottom(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span> &lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line">        levelOrderBottom(root, <span class="number">0</span>, res);</span><br><span class="line">        reverse(res.begin(), res.end());</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">levelOrderBottom</span><span class="params">(TreeNode* root, <span class="keyword">int</span> depth, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">while</span>(res.size() &lt;= depth) res.push_back(&#123;&#125;);</span><br><span class="line">        res[depth].push_back(root-&gt;val);</span><br><span class="line">        levelOrderBottom(root-&gt;left, depth + <span class="number">1</span>, res);</span><br><span class="line">        levelOrderBottom(root-&gt;right, depth + <span class="number">1</span>, res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/cac8b982/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1037,7 +857,7 @@ return its bottom-up level order traversal as:
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-05 15:23:11" itemprop="dateModified" datetime="2021-01-05T15:23:11+08:00">2021-01-05</time>
+        <time title="Modified: 2021-01-12 09:49:16" itemprop="dateModified" datetime="2021-01-12T09:49:16+08:00">2021-01-12</time>
       </span>
 
   
@@ -1052,21 +872,14 @@ return its bottom-up level order traversal as:
     <div class="post-body" itemprop="articleBody">
           <h1 id="104-Maximum-Depth-of-Binary-Tree"><a href="#104-Maximum-Depth-of-Binary-Tree" class="headerlink" title="104. Maximum Depth of Binary Tree"></a><center>104. Maximum Depth of Binary Tree</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given the <span style="background-color:#F0F0F0"><font color=#808080>root</font></span> of a binary tree, return <em>its maximum depth</em>.</p>
 <p>A binary tree’s <strong>maximum depth</strong> is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p><img src="MaximumDepthofBinaryTree_example1.png" alt=""></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> root = [3,9,20,null,null,15,7]<br>
-<b>Output:</b> 3<br></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> root = [1,null,2]<br>
-<b>Output:</b> 2<br></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> root = []<br>
-<b>Output:</b> 0<br></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> root = [0]<br>
-<b>Output:</b> 1<br></p>
-
-<p><strong>Constraints:</strong><br><strong><li>The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^4]</font></span>.</li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>-100 &lt;= Node.val &lt;= 100</font></span></li></strong></p>
-<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h2 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a><u>Version 1</u></h2><p>Idea:<br>Basically, I konw the search must be throughout all link of the whole tree, then if the left/right node of root are NULL, the depth is the deepest, so depth is start from 1 (depth + 1). But, I can’t find out any regular action by using the recursion.<br>There is a quit clear demonstration as below[1]:<br><img src="MaximumDepthofBinaryTree_example2.png" alt=""><br>It’s very helpful and let me understand the recursion processing.<br>So, let me explain the code:<br>(&#49;) <code>maxDepth(root-&gt;left)</code>: use recursion to find deepest depth of left node<br>(&#50;) <code>maxDepth(root-&gt;right</code>: use recursion to find deepest depth of right node<br>(&#51;) <code>max((1), (2))</code>: compare the deepest depth of both of left/right nodes, get the maximum value. Then, <code>+ 1</code> means adding this layer.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> max(maxDepth(root-&gt;left), maxDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>Reference:<br>[1] <a target="_blank" rel="noopener" href="https://algorithms.tutorialhorizon.com/find-the-maximum-depth-or-height-of-a-binary-tree/">https://algorithms.tutorialhorizon.com/find-the-maximum-depth-or-height-of-a-binary-tree/</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/57b52472/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1122,7 +935,7 @@ return its bottom-up level order traversal as:
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-05 15:28:42" itemprop="dateModified" datetime="2021-01-05T15:28:42+08:00">2021-01-05</time>
+        <time title="Modified: 2021-01-12 09:51:48" itemprop="dateModified" datetime="2021-01-12T09:51:48+08:00">2021-01-12</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1145,23 +958,14 @@ return its bottom-up level order traversal as:
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="101-Symmetric-Tree"><a href="#101-Symmetric-Tree" class="headerlink" title="101. Symmetric Tree"></a><center>101. Symmetric Tree</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p>For example, this binary tree <span style="background-color:#F0F0F0"><font color=#808080>[1,2,2,3,4,4,3]</font></span> is symmetric:</p>
-<p style="background-color:#F0F0F0">
-&emsp;&emsp;&emsp;&emsp;1<br>
-&emsp;&emsp;&ensp;&ensp;&ensp;/&ensp;\<br>
-&emsp;&emsp;&ensp;&ensp;2&ensp;&ensp;&ensp;2<br>
-&emsp;&emsp;&ensp;/&ensp;\&ensp;/&ensp;\<br>
-&emsp;&emsp;3&emsp;4 4&emsp;3</p>
-But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,2,2,null,3,null,3]</font></span> is not:
-<p style="background-color:#F0F0F0">
-&emsp;&emsp;&emsp;&emsp;1<br>
-&emsp;&emsp;&ensp;&ensp;&ensp;/&ensp;\<br>
-&emsp;&emsp;&ensp;&ensp;2&ensp;&ensp;&ensp;2<br>
-&emsp;&emsp;&ensp;&ensp;&ensp;\&ensp;&ensp;&ensp;\<br>
-&emsp;&emsp;&ensp;&emsp;3 &ensp;&emsp;3</p>
-
-<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code:"></a>Source code:</h2><h2 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a><u>Version 1</u></h2><p>Idea:<br>The strategic is similar to <a href="https://egbert-yu-ting.github.io/posts/2ef96137/#more">Same-Tree</a>. First, we must check the root node whether it’s null or not. Then, we use root-&gt;left and root-&gt;right as arguments to call private function.<br>There are some rules we must to know:<br>&#49;. the value of the left node must be equal to the value of the right node.<br>&#50;. the value of the left node as the left child node must be equal to the value of the right node as the right child node.<br>&#51;. the vlaue of the left node as the right child node must be equal to the value of the right node as the left child node.<br>So, we can write to codes based on these ruls at 22~23 line.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> isSymmetric(root-&gt;left, root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* l, TreeNode* r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!l &amp;&amp; !r) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(!l || !r) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> (l-&gt;val == r-&gt;val) &amp;&amp; isSymmetric(l-&gt;left, r-&gt;right) </span><br><span class="line">            &amp;&amp; isSymmetric(l-&gt;right, r-&gt;left);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/d1f23ab6/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1217,7 +1021,7 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-05 15:28:12" itemprop="dateModified" datetime="2021-01-05T15:28:12+08:00">2021-01-05</time>
+        <time title="Modified: 2021-01-12 09:51:39" itemprop="dateModified" datetime="2021-01-12T09:51:39+08:00">2021-01-12</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1241,21 +1045,14 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
     <div class="post-body" itemprop="articleBody">
           <h1 id="100-Same-Tree"><a href="#100-Same-Tree" class="headerlink" title="100. Same Tree"></a><center>100. Same Tree</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given the roots of two binary trees <span style="background-color:#F0F0F0"><font color=#808080>p</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>q</font></span>, write a function to check if they are the same or not.</p>
 <p>Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p><img src="SameTree_example1.png" alt=""></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> p = [1,2,3], q = [1,2,3]<br>
-<b>Output:</b> true<br></p>
-
-<p><img src="SameTree_example2.png" alt=""></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> p = [1,2], q = [1,null,2]<br>
-<b>Output</b>: false<br></p>
-
-<p><img src="SameTree_example3.png" alt=""></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> p = [1,2,1], q = [1,1,2]<br>
-<b>Output:</b> false<br></p>
-
-<p><strong>Constraints:</strong><br><strong><li>TThe number of nodes in both trees is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 100]</font></span>.</li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>-10^4 &lt;= Node.val &lt;= 10^4</font></span></li></strong></p>
-<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h2 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a><u>Version 1</u></h2><p>Idea:<br>This is my first time to process binary tree. After realizing question and example, it lets me recollect the solution of <a href="https://egbert-yu-ting.github.io/posts/61be1b10/">LeetCode 21</a>. I can use a similar if statement to code. But, I still don’t know how to compare two binary trees of their child. So, I refered to <a target="_blank" rel="noopener" href="https://www.programcreek.com/2012/12/check-if-two-trees-are-same-or-not/">programcreek</a> finally, I saw source code and understood the solution immediately. We can use recursion to bind the child checking (left &amp; right).</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSameTree</span><span class="params">(TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(p==<span class="literal">NULL</span> &amp;&amp; q==<span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(p==<span class="literal">NULL</span> || q==<span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span>(p-&gt;val==q-&gt;val)&#123;</span><br><span class="line">            <span class="keyword">return</span> isSameTree(p-&gt;left, q-&gt;left) &amp;&amp; isSameTree(p-&gt;right, q-&gt;right);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/2ef96137/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1322,7 +1119,7 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
   </span>
   <span class="author" itemprop="copyrightHolder">EgbertLin</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
 
     </div>
@@ -1330,7 +1127,7 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
 
   
   <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 

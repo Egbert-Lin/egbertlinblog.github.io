@@ -19,7 +19,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Muse","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+    var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
   <meta name="description" content="13. Roman to IntegerQuestion:Roman numerals are represented by seven different symbols: $I$, $V$, $X$, $L$, $C$, $D$ and M. Symbol&amp;emsp;&amp;emsp;Value &amp;thinsp;$I$&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;thin">
@@ -30,7 +30,7 @@
 <meta property="og:description" content="13. Roman to IntegerQuestion:Roman numerals are represented by seven different symbols: $I$, $V$, $X$, $L$, $C$, $D$ and M. Symbol&amp;emsp;&amp;emsp;Value &amp;thinsp;$I$&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;thin">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-01T06:48:42.000Z">
-<meta property="article:modified_time" content="2021-01-05T07:28:01.822Z">
+<meta property="article:modified_time" content="2021-01-12T01:51:28.986Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="Map(STL)">
 <meta name="twitter:card" content="summary">
@@ -249,7 +249,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-05 15:28:01" itemprop="dateModified" datetime="2021-01-05T15:28:01+08:00">2021-01-05</time>
+        <time title="Modified: 2021-01-12 09:51:28" itemprop="dateModified" datetime="2021-01-12T09:51:28+08:00">2021-01-12</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -280,8 +280,9 @@ $L$&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;50<br>
 $C$&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;100<br>
 $D$&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;500<br>
 $M$&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&thinsp;&thinsp;1000</p>
+<a id="more"></a>
+For example, <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080>$II$</font></span> in Roman numeral, just two one's added together. <span style="background-color:#F0F0F0"><font color=#808080>12</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080>$XII$</font></span>, which is simply <span style="background-color:#F0F0F0"><font color=#808080>$X + II$</font></span>. The number <span style="background-color:#F0F0F0"><font color=#808080>27</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080>$XXVII$</font></span>, which is <span style="background-color:#F0F0F0"><font color=#808080>$XX + V + II$</font></span>.
 
-<p>For example, <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080>$II$</font></span> in Roman numeral, just two one’s added together. <span style="background-color:#F0F0F0"><font color=#808080>12</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080>$XII$</font></span>, which is simply <span style="background-color:#F0F0F0"><font color=#808080>$X + II$</font></span>. The number <span style="background-color:#F0F0F0"><font color=#808080>27</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080>$XXVII$</font></span>, which is <span style="background-color:#F0F0F0"><font color=#808080>$XX + V + II$</font></span>.</p>
 <p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <span style="background-color:#F0F0F0"><font color=#808080>$IIII$</font></span>. Instead, the number four is written as <span style="background-color:#F0F0F0"><font color=#808080>$IV$</font></span>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <span style="background-color:#F0F0F0"><font color=#808080>$IX$</font></span>. There are six instances where subtraction is used:</p>
 <ul>
 <li><span style="background-color:#F0F0F0"><font color=#808080>$I$</font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080>$V$</font></span> (5) and <span style="background-color:#F0F0F0"><font color=#808080>$X$</font></span> (10) to make 4 and 9. </li>
@@ -374,7 +375,7 @@ $M$&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&thinsp;&thinsp;1000</p>
   </span>
   <span class="author" itemprop="copyrightHolder">EgbertLin</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
 
     </div>
@@ -382,7 +383,7 @@ $M$&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&thinsp;&thinsp;1000</p>
 
   
   <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 

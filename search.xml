@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>[LeetCode Road] Add Binary</title>
+    <url>/posts/e6133085/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>67. Add Binary</b></font>
+</p>
+<h2 id="question">Question:</h2>
+Given two binary strings <span style="background-color:#F0F0F0"><font color=#808080>a</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>b</font></span>, return <em>their sum as a binary string</em>. <a id="more"></a> ## Example:
+<p style="background-color:#F0F0F0">
+<b>Input:</b> a = "11", b = "1"<br><b>Output:</b> "100"<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> a = "1010", b = "1011"<br><b>Output:</b> "10101"<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= a.length, b.length &lt;= 10^4</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>a</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>b</font></span> consist only of <span style="background-color:#F0F0F0"><font color=#808080>'0'</font></span> or <span style="background-color:#F0F0F0"><font color=#808080>'1'</font></span> characters.
+</li>
+</strong> <strong>
+<li>
+Each string does not contain leading zeros except for the zero itself.
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h2 id="version"><u>Version</u></h2>
+Idea: I want to post my method originally, but the method is very inefficient (add two elements of string as <a href="https://egbert-yu-ting.github.io/posts/acf6f11e/">Plus One</a>, do the same thing for each bits.) So, I refered to <a href="https://zxi.mytechroad.com/blog/math/leetcode-67-add-binary/">Huahua's Tech Road</a>. Wow, it's a concise approach and coding, use only 1 while() to process. This part, we can learn how to convert char to integer、how to convert integer to char、calculate a value of carry and output in reverse. At 9 line, use <code>conditional ? Ture:False</code> to implement summation can save many if statements. At 12 line, it is a right shift operator.
+<p style="background-color:#F0F0F0">
+int a[i] = 1; // binary: 00000001<br> int b[j] = 1; // binary: 00000001<br> int sum = a[i] + b[j] = 2 // binary: 00000010<br> int carry = sum &gt;&gt; 1; // binary: 00000001 (right shifts the bits of the number accordingly)
+</p>
+Then, ues <span style="background-color:#F0F0F0">- '0'</span> to convert char to int as <span style="background-color:#F0F0F0">a[i--] - '0'</span>, because character <span style="background-color:#F0F0F0">'0'</span> means 48.<br> At 15 line, we use logical AND <span style="background-color:#F0F0F0"><font color=#808080>&amp;</font></span> to get the result of 0 or 1.
+<p style="background-color:#F0F0F0">
+if sum = 0 // binary: 00000000<br>  (sum &amp; 1) = 0<br> if sum = 2 // binary: 00000010<br>  (sum &amp; 1) = 1<br> if sum = 3 // binary: 00000011<br>  (sum &amp; 1) = 1
+</p>
+<p>Then, we can use <span style="background-color:#F0F0F0">+ '0'</span> to convert int to char.<br> Finally, the variable of res is our answer, but the content is in reverse, so we need to output the last as head, <b>rbegin()</b> and <b>rend()</b> are built-in functions in C++ STL. rbegin() can return a reverse iterator pointing to the last char. rend() can return a reverse iterator pointing to the theoretical element preceding the first char of the string.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">addBinary</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = a.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> j = b.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">string</span> res;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> || j &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = (i &gt;= <span class="number">0</span> ? a[i--] - <span class="string">&#x27;0&#x27;</span> : <span class="number">0</span>) +</span><br><span class="line">                      (j &gt;= <span class="number">0</span> ? b[j--] - <span class="string">&#x27;0&#x27;</span> : <span class="number">0</span>) +</span><br><span class="line">                      carry;</span><br><span class="line">            carry = sum &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            res += <span class="string">&#x27;0&#x27;</span> + (sum &amp; <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(carry) res += <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line">        <span class="keyword">return</span> &#123;(res.rbegin()), (res.rend())&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Logical_Operators</tag>
+        <tag>Shift_Operators</tag>
+        <tag>ASCII</tag>
+        <tag>Reverse_iterator</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Binary Tree Level Order Traversal II</title>
     <url>/posts/cac8b982/</url>
     <content><![CDATA[<p align="center">
@@ -61,56 +111,6 @@ Each time you can either climb <span style="background-color:#F0F0F0"><font colo
         <tag>Recursion</tag>
         <tag>Fibonacci_Sequence</tag>
         <tag>Iterator</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Add Binary</title>
-    <url>/posts/e6133085/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>67. Add Binary</b></font>
-</p>
-<h2 id="question">Question:</h2>
-Given two binary strings <span style="background-color:#F0F0F0"><font color=#808080>a</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>b</font></span>, return <em>their sum as a binary string</em>. <a id="more"></a> ## Example:
-<p style="background-color:#F0F0F0">
-<b>Input:</b> a = "11", b = "1"<br><b>Output:</b> "100"<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> a = "1010", b = "1011"<br><b>Output:</b> "10101"<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= a.length, b.length &lt;= 10^4</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>a</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>b</font></span> consist only of <span style="background-color:#F0F0F0"><font color=#808080>'0'</font></span> or <span style="background-color:#F0F0F0"><font color=#808080>'1'</font></span> characters.
-</li>
-</strong> <strong>
-<li>
-Each string does not contain leading zeros except for the zero itself.
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h2 id="version"><u>Version</u></h2>
-Idea: I want to post my method originally, but the method is very inefficient (add two elements of string as <a href="https://egbert-yu-ting.github.io/posts/acf6f11e/">Plus One</a>, do the same thing for each bits.) So, I refered to <a href="https://zxi.mytechroad.com/blog/math/leetcode-67-add-binary/">Huahua's Tech Road</a>. Wow, it's a concise approach and coding, use only 1 while() to process. This part, we can learn how to convert char to integer、how to convert integer to char、calculate a value of carry and output in reverse. At 9 line, use <code>conditional ? Ture:False</code> to implement summation can save many if statements. At 12 line, it is a right shift operator.
-<p style="background-color:#F0F0F0">
-int a[i] = 1; // binary: 00000001<br> int b[j] = 1; // binary: 00000001<br> int sum = a[i] + b[j] = 2 // binary: 00000010<br> int carry = sum &gt;&gt; 1; // binary: 00000001 (right shifts the bits of the number accordingly)
-</p>
-Then, ues <span style="background-color:#F0F0F0">- '0'</span> to convert char to int as <span style="background-color:#F0F0F0">a[i--] - '0'</span>, because character <span style="background-color:#F0F0F0">'0'</span> means 48.<br> At 15 line, we use logical AND <span style="background-color:#F0F0F0"><font color=#808080>&amp;</font></span> to get the result of 0 or 1.
-<p style="background-color:#F0F0F0">
-if sum = 0 // binary: 00000000<br>  (sum &amp; 1) = 0<br> if sum = 2 // binary: 00000010<br>  (sum &amp; 1) = 1<br> if sum = 3 // binary: 00000011<br>  (sum &amp; 1) = 1
-</p>
-<p>Then, we can use <span style="background-color:#F0F0F0">+ '0'</span> to convert int to char.<br> Finally, the variable of res is our answer, but the content is in reverse, so we need to output the last as head, <b>rbegin()</b> and <b>rend()</b> are built-in functions in C++ STL. rbegin() can return a reverse iterator pointing to the last char. rend() can return a reverse iterator pointing to the theoretical element preceding the first char of the string.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">addBinary</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = a.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> j = b.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">string</span> res;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> || j &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = (i &gt;= <span class="number">0</span> ? a[i--] - <span class="string">&#x27;0&#x27;</span> : <span class="number">0</span>) +</span><br><span class="line">                      (j &gt;= <span class="number">0</span> ? b[j--] - <span class="string">&#x27;0&#x27;</span> : <span class="number">0</span>) +</span><br><span class="line">                      carry;</span><br><span class="line">            carry = sum &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            res += <span class="string">&#x27;0&#x27;</span> + (sum &amp; <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(carry) res += <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line">        <span class="keyword">return</span> &#123;(res.rbegin()), (res.rend())&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Logical_Operators</tag>
-        <tag>Shift_Operators</tag>
-        <tag>ASCII</tag>
-        <tag>Reverse_iterator</tag>
       </tags>
   </entry>
   <entry>
@@ -338,44 +338,46 @@ A <strong>word</strong> is a maximal substring consisting of non-space character
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Maximum Depth of Binary Tree</title>
-    <url>/posts/57b52472/</url>
+    <title>[LeetCode Road] Longest Common Prefix</title>
+    <url>/posts/2768cb2c/</url>
     <content><![CDATA[<p align="center">
-<font size="6"><b>104. Maximum Depth of Binary Tree</b></font>
+<font size="6"><b>14. Longest Common Prefix</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>Given the <span style="background-color:#F0F0F0"><font color=#808080>root</font></span> of a binary tree, return <em>its maximum depth</em>.</p>
-A binary tree's <strong>maximum depth</strong> is the number of nodes along the longest path from the root node down to the farthest leaf node. <a id="more"></a> ## Example: <img src="MaximumDepthofBinaryTree_example1.png" />
+<p>Write a function to find the longest common prefix string amongst an array of strings.</p>
+If there is no common prefix, return an empty string <span style="background-color:#F0F0F0"><font color=#808080>""</font></span>. <a id="more"></a> ## Example:
 <p style="background-color:#F0F0F0">
-<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 3<br>
+<b>Input:</b> strs = ["flower","flow","flight"]<br><b>Output:</b> "fl"<br>
 </p>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> root = [1,null,2]<br> <b>Output:</b> 2<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = []<br> <b>Output:</b> 0<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [0]<br> <b>Output:</b> 1<br>
+<b>Input:</b> strs = ["dog","racecar","car"]<br><b>Output:</b> ""<br><b>Explanation:</b> There is no common prefix among the input strings.<br>
 </p>
 <strong>Constraints:</strong> <strong>
 <li>
-The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^4]</font></span>.
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs.length &lt;= 200</font>
+</li>
+</strong><br><strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs[i].length &lt;= 200</font>
 </li>
 </strong> <strong>
 <li>
-<span style="background-color:#F0F0F0"><font color=#808080>-100 &lt;= Node.val &lt;= 100</font></span>
+<span style="background-color:#F0F0F0"><font color=#808080>strs[i]</font></span> consists of only lower-case English letters.
 </li>
 <p></strong></p>
 <h2 id="source-code">Source code</h2>
-<h2 id="version-1"><u>Version 1</u></h2>
-<p>Idea: Basically, I konw the search must be throughout all link of the whole tree, then if the left/right node of root are NULL, the depth is the deepest, so depth is start from 1 (depth + 1). But, I can't find out any regular action by using the recursion. There is a quit clear demonstration as below[1]: <img src="MaximumDepthofBinaryTree_example2.png" /> It's very helpful and let me understand the recursion processing. So, let me explain the code: (1) <code>maxDepth(root-&gt;left)</code>: use recursion to find deepest depth of left node (2) <code>maxDepth(root-&gt;right</code>: use recursion to find deepest depth of right node (3) <code>max((1), (2))</code>: compare the deepest depth of both of left/right nodes, get the maximum value. Then, <code>+ 1</code> means adding this layer.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> max(maxDepth(root-&gt;left), maxDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>Reference: [1] https://algorithms.tutorialhorizon.com/find-the-maximum-depth-or-height-of-a-binary-tree/</p>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: First, declared a variable of string that stored strs[0]. Then, I compared it with each elements of vector. At 8 line, <code>min(res.length(), strs[i].length())</code> means finding a smallest length for matching between strings. At 10 line, if a statement is true, I stored a current lenght of string and prepared to compare next element; if a statement is false, it means these strings aren't the same, so the length must be subtract 1 and compare each others again. At 17 line, if length is 0, there is no reason to execute althought maybe there are many elements that have not been compared.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.size() == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res = strs[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; strs.size(); i++)&#123;</span><br><span class="line">            length = min(res.length(), strs[i].length());</span><br><span class="line">            <span class="keyword">while</span>(length &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(res.substr(<span class="number">0</span>, length) == strs[i].substr(<span class="number">0</span>, length))&#123;</span><br><span class="line">                    res = strs[i].substr(<span class="number">0</span>, length);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    length --;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (length == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea: A method is refered from online. Aims to compare every characters, if each characters is the same at the same position, store it! The first loop is the length of strs[0] (1th string), the second loop is number of elements of vector. At 8 line, take each characters <code>s[i]</code> from every strings to match a character of <code>strs[0][i]</code>, meanwhile, check the length of string whether it exceeds i index(position) or not. If a condtion is true, store this character <code>strs[0][i]</code>. On the contrary, return a record.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.empty()) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strs[<span class="number">0</span>].length(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">const</span> <span class="built_in">string</span> &amp;s : strs)</span><br><span class="line">                <span class="keyword">if</span> (s.length() &lt;= i || s[i] != strs[<span class="number">0</span>][i]) <span class="keyword">return</span> res;</span><br><span class="line">            res += strs[<span class="number">0</span>][i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
       <tags>
-        <tag>Recursion</tag>
-        <tag>Tree</tag>
+        <tag>String</tag>
       </tags>
   </entry>
   <entry>
@@ -440,6 +442,91 @@ Type <b>w</b> to save your changes, You'll be asked to confirm this action
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Maximum Depth of Binary Tree</title>
+    <url>/posts/57b52472/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>104. Maximum Depth of Binary Tree</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given the <span style="background-color:#F0F0F0"><font color=#808080>root</font></span> of a binary tree, return <em>its maximum depth</em>.</p>
+A binary tree's <strong>maximum depth</strong> is the number of nodes along the longest path from the root node down to the farthest leaf node. <a id="more"></a> ## Example: <img src="MaximumDepthofBinaryTree_example1.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 3<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [1,null,2]<br> <b>Output:</b> 2<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = []<br> <b>Output:</b> 0<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [0]<br> <b>Output:</b> 1<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^4]</font></span>.
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-100 &lt;= Node.val &lt;= 100</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h2 id="version-1"><u>Version 1</u></h2>
+<p>Idea: Basically, I konw the search must be throughout all link of the whole tree, then if the left/right node of root are NULL, the depth is the deepest, so depth is start from 1 (depth + 1). But, I can't find out any regular action by using the recursion. There is a quit clear demonstration as below[1]: <img src="MaximumDepthofBinaryTree_example2.png" /> It's very helpful and let me understand the recursion processing. So, let me explain the code: (1) <code>maxDepth(root-&gt;left)</code>: use recursion to find deepest depth of left node (2) <code>maxDepth(root-&gt;right</code>: use recursion to find deepest depth of right node (3) <code>max((1), (2))</code>: compare the deepest depth of both of left/right nodes, get the maximum value. Then, <code>+ 1</code> means adding this layer.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> max(maxDepth(root-&gt;left), maxDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Reference: [1] https://algorithms.tutorialhorizon.com/find-the-maximum-depth-or-height-of-a-binary-tree/</p>
+]]></content>
+      <tags>
+        <tag>Recursion</tag>
+        <tag>Tree</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Merge Sorted Array</title>
+    <url>/posts/1cc4a24a/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>88. Merge Sorted Array</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given two sorted integer arrays <em>nums1</em> and <em>nums2</em>, merge <em>nums2</em> into <em>nums1</em> as one sorted array. <strong>Note:</strong></p>
+<ul>
+<li>The number of elements initialized in nums1 and nums2 are m and n respectively.</li>
+<li>You may assume that nums1 has enough space (size that is equal to m + n) to hold additional elements from nums2. <a id="more"></a> ## Example
+<p style="background-color:#F0F0F0">
+<b>Input:</b><br> nums1 = [1,2,3,0,0,0], m = 3<br> nums2 = [2,5,6], n = 3<br> <br> <b>Output:</b> [1,2,2,3,5,6]<br>
+</p></li>
+</ul>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-10^9 &lt;= nums1[i], nums2[i] &lt;= 10^9</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>nums1.length == m + n</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>nums2.length == n</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h2 id="version-1"><u>Version 1</u></h2>
+<p>Idea: My initial approach is to use queue to store element. The processing of merging is in order, I compare witch each elements, if the element is smaller, it will be assign to nums1[i] after the original value of index i will push to queue at nums vector. But, I faced many if statement in my code, it's too complicated. Finally, I refered to <a href="https://medium.com/@ChYuan/leetcode-no-88-merge-sorted-array-%E5%BF%83%E5%BE%97-easy-9d2b3141ded3">ChingYuanYang</a>, I gained an impressive solution after realizing his explanation. I can assign the element from the last position in reverse order at nums1 vector that is the largest value. It's an easy way to merge vectors.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="keyword">int</span> m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> s_1 = m <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> s_2 = n <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> max_size = m + n <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = max_size; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s_1 &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                nums1[i] = nums2[s_2--];</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(s_2 &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                nums1[i] = nums1[s_1--];</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums1[s_1] &gt; nums2[s_2])&#123;</span><br><span class="line">                nums1[i] = nums1[s_1--];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                nums1[i] = nums2[s_2--];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea: It's a perfert code from <a href="https://zxi.mytechroad.com/blog/algorithms/array/leetcode-88-merge-sorted-array/">Huahua's Tech Road</a>. According to the question, it says "merge nums2 into nums1", so we can use the size (=m) of nums2 as while statement rather than the size (=m+n) of nums1. Then, use only one statement to implement clean code with no if statement.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="keyword">int</span> m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = m - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> j = n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> tail = m + n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(j&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">            nums1[tail--] = (i &gt;= <span class="number">0</span> &amp;&amp; nums1[i] &gt; nums2[j]) ? nums1[i--] : nums2[j--];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Vector</tag>
+        <tag>Call_by_reference</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Maximum Subarray</title>
     <url>/posts/90ac56be/</url>
     <content><![CDATA[<p align="center">
@@ -485,93 +572,6 @@ Type <b>w</b> to save your changes, You'll be asked to confirm this action
       </categories>
       <tags>
         <tag>Vector</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Longest Common Prefix</title>
-    <url>/posts/2768cb2c/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>14. Longest Common Prefix</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Write a function to find the longest common prefix string amongst an array of strings.</p>
-If there is no common prefix, return an empty string <span style="background-color:#F0F0F0"><font color=#808080>""</font></span>. <a id="more"></a> ## Example:
-<p style="background-color:#F0F0F0">
-<b>Input:</b> strs = ["flower","flow","flight"]<br><b>Output:</b> "fl"<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> strs = ["dog","racecar","car"]<br><b>Output:</b> ""<br><b>Explanation:</b> There is no common prefix among the input strings.<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs.length &lt;= 200</font>
-</li>
-</strong><br><strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs[i].length &lt;= 200</font>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>strs[i]</font></span> consists of only lower-case English letters.
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: First, declared a variable of string that stored strs[0]. Then, I compared it with each elements of vector. At 8 line, <code>min(res.length(), strs[i].length())</code> means finding a smallest length for matching between strings. At 10 line, if a statement is true, I stored a current lenght of string and prepared to compare next element; if a statement is false, it means these strings aren't the same, so the length must be subtract 1 and compare each others again. At 17 line, if length is 0, there is no reason to execute althought maybe there are many elements that have not been compared.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.size() == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res = strs[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; strs.size(); i++)&#123;</span><br><span class="line">            length = min(res.length(), strs[i].length());</span><br><span class="line">            <span class="keyword">while</span>(length &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(res.substr(<span class="number">0</span>, length) == strs[i].substr(<span class="number">0</span>, length))&#123;</span><br><span class="line">                    res = strs[i].substr(<span class="number">0</span>, length);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    length --;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (length == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea: A method is refered from online. Aims to compare every characters, if each characters is the same at the same position, store it! The first loop is the length of strs[0] (1th string), the second loop is number of elements of vector. At 8 line, take each characters <code>s[i]</code> from every strings to match a character of <code>strs[0][i]</code>, meanwhile, check the length of string whether it exceeds i index(position) or not. If a condtion is true, store this character <code>strs[0][i]</code>. On the contrary, return a record.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.empty()) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strs[<span class="number">0</span>].length(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">const</span> <span class="built_in">string</span> &amp;s : strs)</span><br><span class="line">                <span class="keyword">if</span> (s.length() &lt;= i || s[i] != strs[<span class="number">0</span>][i]) <span class="keyword">return</span> res;</span><br><span class="line">            res += strs[<span class="number">0</span>][i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>String</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Merge Sorted Array</title>
-    <url>/posts/1cc4a24a/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>88. Merge Sorted Array</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given two sorted integer arrays <em>nums1</em> and <em>nums2</em>, merge <em>nums2</em> into <em>nums1</em> as one sorted array. <strong>Note:</strong></p>
-<ul>
-<li>The number of elements initialized in nums1 and nums2 are m and n respectively.</li>
-<li>You may assume that nums1 has enough space (size that is equal to m + n) to hold additional elements from nums2. <a id="more"></a> ## Example
-<p style="background-color:#F0F0F0">
-<b>Input:</b><br> nums1 = [1,2,3,0,0,0], m = 3<br> nums2 = [2,5,6], n = 3<br> <br> <b>Output:</b> [1,2,2,3,5,6]<br>
-</p></li>
-</ul>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-10^9 &lt;= nums1[i], nums2[i] &lt;= 10^9</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>nums1.length == m + n</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>nums2.length == n</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h2 id="version-1"><u>Version 1</u></h2>
-<p>Idea: My initial approach is to use queue to store element. The processing of merging is in order, I compare witch each elements, if the element is smaller, it will be assign to nums1[i] after the original value of index i will push to queue at nums vector. But, I faced many if statement in my code, it's too complicated. Finally, I refered to <a href="https://medium.com/@ChYuan/leetcode-no-88-merge-sorted-array-%E5%BF%83%E5%BE%97-easy-9d2b3141ded3">ChingYuanYang</a>, I gained an impressive solution after realizing his explanation. I can assign the element from the last position in reverse order at nums1 vector that is the largest value. It's an easy way to merge vectors.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="keyword">int</span> m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> s_1 = m <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> s_2 = n <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> max_size = m + n <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = max_size; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s_1 &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                nums1[i] = nums2[s_2--];</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(s_2 &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                nums1[i] = nums1[s_1--];</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums1[s_1] &gt; nums2[s_2])&#123;</span><br><span class="line">                nums1[i] = nums1[s_1--];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                nums1[i] = nums2[s_2--];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea: It's a perfert code from <a href="https://zxi.mytechroad.com/blog/algorithms/array/leetcode-88-merge-sorted-array/">Huahua's Tech Road</a>. According to the question, it says "merge nums2 into nums1", so we can use the size (=m) of nums2 as while statement rather than the size (=m+n) of nums1. Then, use only one statement to implement clean code with no if statement.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="keyword">int</span> m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = m - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> j = n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> tail = m + n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(j&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">            nums1[tail--] = (i &gt;= <span class="number">0</span> &amp;&amp; nums1[i] &gt; nums2[j]) ? nums1[i--] : nums2[j--];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Vector</tag>
-        <tag>Call_by_reference</tag>
       </tags>
   </entry>
   <entry>
@@ -658,6 +658,46 @@ Both <span style="background-color:#F0F0F0"><font color=#808080>l1</font></span>
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Plus One</title>
+    <url>/posts/acf6f11e/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>66. Plus One</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a <strong>non-empty</strong> array of decimal digits representing a non-negative integer, increment one to the integer.</p>
+<p>The digits are stored such that the most significant digit is at the head of the list, and each element in the array contains a single digit.</p>
+You may assume the integer does not contain any leading zero, except the number 0 itself. <a id="more"></a> ## Example:
+<p style="background-color:#F0F0F0">
+<b>Input:</b> digits = [1,2,3]<br><b>Output:</b> [1,2,4]<br><b>Explanation:</b> The array represents the integer 123.<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> digits = [4,3,2,1]<br><b>Output:</b> [4,3,2,2]<br><b>Explanation:</b> The array represents the integer 4321.<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> digits = [0]<br><b>Output:</b> [1]<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= digits.length &lt;= 100</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= digits[i] &lt;= 9</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h2 id="version"><u>Version</u></h2>
+<p>Idea: At first, add 1 and the last index of element. Check each digits in reverse to get the value of carry. Finally, must be check the final the vale of carry, if carry isn't equal to 0, insert it into begining at vector.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">plusOne</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; digits)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> len = digits.size();</span><br><span class="line">        <span class="keyword">int</span> i = len - <span class="number">1</span>, carry = <span class="number">0</span>;</span><br><span class="line">        digits[i]++;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            digits[i] += carry;</span><br><span class="line">            <span class="keyword">int</span> quotient = digits[i] / <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">if</span>(quotient &gt;= <span class="number">1</span>)&#123;</span><br><span class="line">                digits[i] = digits[i] % <span class="number">10</span>;</span><br><span class="line">                carry = quotient;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                carry = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            i--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(carry != <span class="number">0</span>) digits.insert(digits.begin(), carry);</span><br><span class="line">        <span class="keyword">return</span> digits;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Vector</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Remove Duplicates from Sorted Array</title>
     <url>/posts/7241c2c1/</url>
     <content><![CDATA[<p align="center">
@@ -706,46 +746,6 @@ Internally you can think of this:
       <tags>
         <tag>Vector</tag>
         <tag>Call_by_reference</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Plus One</title>
-    <url>/posts/acf6f11e/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>66. Plus One</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a <strong>non-empty</strong> array of decimal digits representing a non-negative integer, increment one to the integer.</p>
-<p>The digits are stored such that the most significant digit is at the head of the list, and each element in the array contains a single digit.</p>
-You may assume the integer does not contain any leading zero, except the number 0 itself. <a id="more"></a> ## Example:
-<p style="background-color:#F0F0F0">
-<b>Input:</b> digits = [1,2,3]<br><b>Output:</b> [1,2,4]<br><b>Explanation:</b> The array represents the integer 123.<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> digits = [4,3,2,1]<br><b>Output:</b> [4,3,2,2]<br><b>Explanation:</b> The array represents the integer 4321.<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> digits = [0]<br><b>Output:</b> [1]<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= digits.length &lt;= 100</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= digits[i] &lt;= 9</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h2 id="version"><u>Version</u></h2>
-<p>Idea: At first, add 1 and the last index of element. Check each digits in reverse to get the value of carry. Finally, must be check the final the vale of carry, if carry isn't equal to 0, insert it into begining at vector.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">plusOne</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; digits)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> len = digits.size();</span><br><span class="line">        <span class="keyword">int</span> i = len - <span class="number">1</span>, carry = <span class="number">0</span>;</span><br><span class="line">        digits[i]++;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            digits[i] += carry;</span><br><span class="line">            <span class="keyword">int</span> quotient = digits[i] / <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">if</span>(quotient &gt;= <span class="number">1</span>)&#123;</span><br><span class="line">                digits[i] = digits[i] % <span class="number">10</span>;</span><br><span class="line">                carry = quotient;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                carry = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            i--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(carry != <span class="number">0</span>) digits.insert(digits.begin(), carry);</span><br><span class="line">        <span class="keyword">return</span> digits;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Vector</tag>
       </tags>
   </entry>
   <entry>

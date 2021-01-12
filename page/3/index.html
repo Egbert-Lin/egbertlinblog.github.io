@@ -1,23 +1,1208 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
+<link rel="stylesheet" href="/css/main.css">
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
 
-{% block content %}
-  <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
-  </section>
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Muse","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
+
+  <meta name="description" content="Programming Developer">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Egbert Lin&#39;s Blog">
+<meta property="og:url" content="https://egbert-yu-ting.github.io/page/3/index.html">
+<meta property="og:site_name" content="Egbert Lin&#39;s Blog">
+<meta property="og:description" content="Programming Developer">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="EgbertLin">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://egbert-yu-ting.github.io/page/3/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Egbert Lin's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Egbert Lin's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Egbert Lin's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">“Life is not a race, but a journey to be savoured each step of the way” by Brian Dyson</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">EgbertLin</p>
+  <div class="site-description" itemprop="description">Programming Developer</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+      
+
+      
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/9bc77297/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/9bc77297/" class="post-title-link" itemprop="url">[LeetCode Road] Implement strStr()</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-12-09 11:15:55" itemprop="dateCreated datePublished" datetime="2020-12-09T11:15:55+08:00">2020-12-09</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-05 15:22:22" itemprop="dateModified" datetime="2021-01-05T15:22:22+08:00">2021-01-05</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="28-Implement-strStr"><a href="#28-Implement-strStr" class="headerlink" title="28. Implement strStr()"></a><center>28. Implement strStr()</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Implement <font color=#808080>strStr()</font>.</p>
+<p>Return the index of the first occurrence of needle in haystack, or <font color=#808080>-1</font> if <font color=#808080>needle</font> is not part of <font color=#808080>haystack</font>.<br><strong>Clarification:</strong><br>What should we return when <font color=#808080>needle</font> is an empty string? This is a great question to ask during an interview.</p>
+<p>For the purpose of this problem, we will return 0 when <font color=#808080>needle</font> is an empty string. This is consistent to C’s <font color=#808080>strstr()</font> and Java’s <font color=#808080>indexOf()</font>.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> haystack = "hello", needle = "ll"<br><b>Output:</b> 2<br></p>
+<p style="background-color:#F0F0F0"><b>Input:</b> haystack = "aaaaa", needle = "bba"<br><b>Output:</b> -1<br></p>
+<p style="background-color:#F0F0F0"><b>Input:</b> haystack = "", needle = ""<br><b>Output:</b> 0<br></p>
+
+<p><strong>Constraints:</strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= haystack.length, needle.length &lt;= 5 * 10^4</font></span></li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>haystack</font><span> and <span style="background-color:#F0F0F0"><font color=#808080>needle</font></span> consist of only lower-case English characters.</li></strong></p>
+<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h2 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a><u>Version 1</u></h2><p>Idea:<br>My bad method got Time Limit Exceeded. Because I used two loop to check each characters of string, record the index by 2 variables if both of characters are equal.<br>I racked my brains for good solution without using substr(). Finally, I got up and went to online to find answer. I refered to <a target="_blank" rel="noopener" href="https://zxi.mytechroad.com/blog/string/leetcode-28-implement-strstr/">Huahua’s Tech Road</a>. The loop repeats <code>haystack.length() - needle.length()</code> times, it can reduce computing time. Use the length of needle to match haystack, if index of j is equal to needle.length(), return index of i.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">strStr</span><span class="params">(<span class="built_in">string</span> haystack, <span class="built_in">string</span> needle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (haystack == needle || !needle.length()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> h = haystack.length();</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = needle.length();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= h - n; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(j &lt; n &amp;&amp; haystack[i+j] == needle[j]) j++;</span><br><span class="line">            <span class="keyword">if</span>(j == n) <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/1afffcb4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/1afffcb4/" class="post-title-link" itemprop="url">[LeetCode Road] Remove Element</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-12-08 15:27:59" itemprop="dateCreated datePublished" datetime="2020-12-08T15:27:59+08:00">2020-12-08</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-05 15:27:37" itemprop="dateModified" datetime="2021-01-05T15:27:37+08:00">2021-01-05</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="27-Remove-Element"><a href="#27-Remove-Element" class="headerlink" title="27. Remove Element"></a><center>27. Remove Element</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given an array nums and a value val, remove all instances of that value <font color=#808080>in-place</font> and return the new length.</p>
+<p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array</strong> <font color=#808080>in-place</font> with O(1) extra memory.</p>
+<p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p>
+<p><strong>Clarification:</strong></p>
+<p>Confused why the returned value is an integer but your answer is an array?</p>
+<p>Note that the input array is passed in by <strong>reference</strong>, which means a modification to the input array will be known to the caller as well.</p>
+<p>Internally you can think of this:</p>
+<p style="background-color:#F0F0F0">// <b>nums</b> is passed in by reference. (i.e., without making a copy)<br>int len = removeElement(nums, val);<br>// any modification to <b>nums</b> in your function would be known by the caller.<br>// using the length returned by your function, it prints the first <b>len</b> elements.<br>for (int i = 0; i < len; i++) {<br>&emsp;&emsp;print(nums[i]);<br>}<br></p>
+
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> nums = [3,2,2,3], val = 3<br>
+<b>Output:</b> 2, nums = [2,2]<br>
+<b>Explanation:</b> Your function should return length = 2, with the first two elements of nums being 2.<br>
+It doesn't matter what you leave beyond the returned length. For example if you return 2 with nums = [2,2,3,3] or nums = [2,3,0,0], your answer will be accepted.<br></p>
+
+<p style="background-color:#F0F0F0"><b>Input:</b> nums = [0,1,2,2,3,0,4,2], val = 2<br><b>Output:</b> 5, nums = [0,1,4,0,3]<br><b>Explanation:</b> Your function should return length = 5, with the first five elements of nums containing 0, 1, 3, 0, and 4. Note that the order of those five elements can be arbitrary. It doesn't matter what values are set beyond the returned length.<br></p>
+
+<p><strong>Constraints:</strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= nums.length &lt;= 100</font></span></li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= nums[i] &lt;= 50</font></span></li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= val &lt;= 100</font></span></li></strong></p>
+<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h3 id="Version-１"><a href="#Version-１" class="headerlink" title="Version １"></a><u>Version １</u></h3><p>Idea:<br>The strategy is the same as <a href="https://egbert-yu-ting.github.io/posts/7241c2c1/#more">LeetCode 26</a>.<br>Declare a count index that starts from 0, aim to store the element if it isn’t equal to val.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">removeElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] != val)&#123;</span><br><span class="line">                nums[count++] = nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/7241c2c1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/7241c2c1/" class="post-title-link" itemprop="url">[LeetCode Road] Remove Duplicates from Sorted Array</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-12-07 09:54:10" itemprop="dateCreated datePublished" datetime="2020-12-07T09:54:10+08:00">2020-12-07</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-05 15:27:15" itemprop="dateModified" datetime="2021-01-05T15:27:15+08:00">2021-01-05</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="26-Remove-Duplicates-from-Sorted-Array"><a href="#26-Remove-Duplicates-from-Sorted-Array" class="headerlink" title="26. Remove Duplicates from Sorted Array"></a><center>26. Remove Duplicates from Sorted Array</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given a sorted array nums, remove the duplicates in-place such that each element appears only once and returns the new length.</p>
+<p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array</strong> <font color=#808080>in-place</font> with O(1) extra memory.</p>
+<p><strong>Clarification:</strong></p>
+<p>Confused why the returned value is an integer but your answer is an array?</p>
+<p>Note that the input array is passed in by <strong>reference</strong>, which means a modification to the input array will be known to the caller as well.</p>
+<p>Internally you can think of this:</p>
+<p style="background-color:#F0F0F0">// <b>nums</b> is passed in by reference. (i.e., without making a copy)<br>int len = removeDuplicates(nums);<br><br>// any modification to <b>nums</b> in your function would be known by the caller.<br>// using the length returned by your function, it prints the first <b>len</b> elements.<br>for (int i = 0; i < len; i++) {<br>&emsp;&emsp;print(nums[i]);<br>}</p>
+
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> nums = [1,1,2]<br><b>Output:</b> 2, nums = [1,2]<br><b>Explanation:</b> Your function should return length = <b>2</b>, with the first two elements of nums being <b>1</b> and <b>2</b> respectively. It doesn't matter what you leave beyond the returned length.<br></p>
+<p style="background-color:#F0F0F0"><b>Input:</b> nums = [0,0,1,1,1,2,2,3,3,4]<br><b>Output:</b> 5, nums = [0,1,2,3,4]<br><b>Explanation:</b> Your function should return length = <b>5</b>, with the first five elements of nums being modified to <b>0</b>, <b>1</b>, <b>2</b>, <b>3</b>, and <b>4</b> respectively. It doesn't matter what values are set beyond the returned length.<br></p>
+
+<p><strong>Constraints:</strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= nums.length &lt;= 3 * 10^4</font></span></li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>-10^4 &lt;= nums[i] &lt;= 10^4</font></span></li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>nums is sorted in ascending order.</font></span></li></strong></p>
+<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h3 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a><u>Version 1</u></h3><p>Idea:<br>This is a simple solution. Remain the first element, so a count index is start from 1. Use a loop to compare with each elements, if it find the result is true, store the element and shift a count index.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!nums.size()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i - <span class="number">1</span>] != nums[i])</span><br><span class="line">                nums[count++] = nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="Version-2"><a href="#Version-2" class="headerlink" title="Version 2"></a><u>Version 2</u></h3><p>Idea:<br>This better solution is refered to <a target="_blank" rel="noopener" href="https://zxi.mytechroad.com/blog/algorithms/array/leetcode-26-remove-duplicates-from-sorted-array/">Huahua’s Tech Road</a>. At first, <code>nums[count++] = nums[i]</code> aims to store the first element and shift a count index. Declare a new variable j as <code>i + 1</code> to find the element which is not equal to nums[i]. Then, if it is found, use <code>i = j</code> to record index.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt; <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>, i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; n)&#123;</span><br><span class="line">            nums[count++] = nums[i];</span><br><span class="line">            <span class="keyword">int</span> j = i + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(j&lt; n &amp;&amp; nums[j] == nums[i]) j++;</span><br><span class="line">            i = j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/61be1b10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/61be1b10/" class="post-title-link" itemprop="url">[LeetCode Road] Merge Two Sorted Lists</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-12-04 11:13:19" itemprop="dateCreated datePublished" datetime="2020-12-04T11:13:19+08:00">2020-12-04</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-05 15:25:49" itemprop="dateModified" datetime="2021-01-05T15:25:49+08:00">2021-01-05</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="21-Merge-Two-Sorted-Lists"><a href="#21-Merge-Two-Sorted-Lists" class="headerlink" title="21. Merge Two Sorted Lists"></a><center>21. Merge Two Sorted Lists</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Merge two sorted linked lists and return it as a new <strong>sorted</strong> list. The new list should be made by splicing together the nodes of the first two lists.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p><img src="Merge_ListNode_example.png" alt=""></p>
+<p style="background-color:#F0F0F0"><b>Input:</b> l1 = [1,2,4], l2 = [1,3,4]<br><b>Output:</b> [1,1,2,3,4,4]</p>
+<p style="background-color:#F0F0F0"><b>Input:</b> l1 = [], l2 = []<br><b>Output:</b> []</p>
+<p style="background-color:#F0F0F0"><b>Input:</b> l1 = [], l2 = [0]<br><b>Output:</b> [0]
+
+<p><strong>Constraints:</strong><br><strong><li>The number of nodes in both lists is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 50]</font></span> .</li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>-100 &lt;= Node.val &lt;= 100</font></span></li></strong><br><strong><li>Both <span style="background-color:#F0F0F0"><font color=#808080>l1</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>l2</font></span> are sorted in non-decreasing order.</li></strong></p>
+<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h3 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a><u>Version 1</u></h3><p>Idea:<br>I haven’t written a program with ListNode before. So, ListNode’s constructor is very strange to me. I directly refered to <a target="_blank" rel="noopener" href="https://zxi.mytechroad.com/blog/leetcode/leetcode-21-merge-two-sorted-lists/">Huahua’s Tech Road</a>. The method used a temporary node as the start of the result list, named <em>dummy</em>. The ListNode pointer’s tail always points to the last node in the result list, so you can use <code>tail-&gt;next=l1</code> to append new Nodes easily. <u>Notice: Must to do <code>tail=tail-&gt;next</code></u> to get next node’ memory address. The while() proceeds, it means two of ListNode aren’t empty. It one of ListNodes is empty, non-empty ListNode is added value to tail. When the processing is done, the result is in <code>dummy.next</code> (because the first value is 0, initial value).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        <span class="function">ListNode <span class="title">dummy</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">        ListNode* tail = &amp;dummy;</span><br><span class="line">        <span class="keyword">while</span>(l1 &amp;&amp; l2)&#123;</span><br><span class="line">            <span class="keyword">if</span>(l1-&gt;val &gt; l2-&gt;val)&#123;</span><br><span class="line">                tail-&gt;next=l2;</span><br><span class="line">                l2 = l2-&gt;next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                tail-&gt;next=l1;</span><br><span class="line">                l1 = l1-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            tail = tail-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l1) tail-&gt;next = l1;</span><br><span class="line">        <span class="keyword">if</span>(l2) tail-&gt;next = l2;</span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/b04b682/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/b04b682/" class="post-title-link" itemprop="url">[LeetCode Road] Length of Last Word</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-12-03 23:09:14" itemprop="dateCreated datePublished" datetime="2020-12-03T23:09:14+08:00">2020-12-03</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-05 15:22:44" itemprop="dateModified" datetime="2021-01-05T15:22:44+08:00">2021-01-05</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="58-Length-of-Last-Word"><a href="#58-Length-of-Last-Word" class="headerlink" title="58. Length of Last Word"></a><center>58. Length of Last Word</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of some words separated by spaces, return the <em>length of the last word in the string</em>. <em>If the last word does not exist, return</em> <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</p>
+<p>A <strong>word</strong> is a maximal substring consisting of non-space characters only.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> s = "Hello World"<br><b>Output:</b> 5<br></p>
+<p style="background-color:#F0F0F0"><b>Input:</b> s = " "<br><b>Output:</b> 0</br></p>
+
+<p><strong>Constraints:</strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= s.length &lt;= 10^4</font></span></li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of only English letters and spaces <span style="background-color:#F0F0F0"><font color=#808080>‘ ‘</font></span></li></strong>.</p>
+<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h3 id="Version"><a href="#Version" class="headerlink" title="Version"></a><u>Version</u></h3><p>Idea:<br>This problem took me a lot of time thinking how to solve, because I tried many methods based on scanning string in order. As a result, I ingorned tailing spaces situation, e.g. “a    “ or “a  bc   “. Obviously, my logic was error! Finally, I refered to <a target="_blank" rel="noopener" href="https://zxi.mytechroad.com/blog/string/leetcode-58-length-of-last-word/">Huahua’s Tech Road</a>, the solution is very understandable, it scan the string in <strong>reverse order</strong> <u>until a space or reach the beginning of the string</u>. So, the first <code>while(i &gt;= 0 &amp;&amp; s[i] == &#39; &#39;)</code> means trimming off space at tail; the second <code>while(i &gt;= 0 &amp;&amp; s[i] != &#39; &#39;)</code> means calculating length of a last word.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLastWord</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> characters = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] == <span class="string">&#x27; &#x27;</span>) i--;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] != <span class="string">&#x27; &#x27;</span>)&#123;</span><br><span class="line">            i--;</span><br><span class="line">            characters ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> characters;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/5ddd3578/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/5ddd3578/" class="post-title-link" itemprop="url">[LeetCode Road] Valid Parentheses</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-12-03 11:13:28" itemprop="dateCreated datePublished" datetime="2020-12-03T11:13:28+08:00">2020-12-03</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-05 15:30:32" itemprop="dateModified" datetime="2021-01-05T15:30:32+08:00">2021-01-05</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="20-Valid-Parentheses"><a href="#20-Valid-Parentheses" class="headerlink" title="20. Valid Parentheses"></a><center>20. Valid Parentheses</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> containing just the characters <span style="background-color:#F0F0F0"><font color=#808080>‘(‘</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>‘)’</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>‘{‘</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>‘}’</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>‘[‘</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>‘]’</font></span>, determine if the input string is valid.</p>
+<p>An input string is valid if:</p>
+<ol>
+<li>Open brackets must be closed by the same type of brackets.</li>
+<li>Open brackets must be closed in the correct order.</li>
+</ol>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> s = "()"<br><b>Output:</b> true</p>
+<p style="background-color:#F0F0F0"><b>Input:</b> s = "()[]{}"<br><b>Output:</b> true</p>
+<p style="background-color:#F0F0F0"><b>Input:</b> s = "(]"<br><b>Output:</b> false</p>
+<p style="background-color:#F0F0F0"><b>Input:</b> s = "([)]"<br><b>Output:</b> false</p>
+<p style="background-color:#F0F0F0"><b>Input:</b> s = "{[]}"<br><b>Output:</b> true</p>
+
+<p><strong>Constraints:</strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= s.length &lt;= 10^4</font></span></li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>s</span></font> consists of parentheses only <span style="background-color:#F0F0F0"><font color=#808080>‘()[]{}’.</span></font></li></strong></p>
+<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h3 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a><u>Version 1</u></h3><p>Idea:<br>Use map&lt;key, value&gt; to declare the characters. Notice: a string will be process is left parenthese, so these can be used as a value. Then, I can use key-value to do match when right parenthese is processed.<br>I get each characters to check whether it is unrecorded or equal <code>st.top()</code> or not. If it is true, this character be added at the top of the stack. On the contrary, delete the top most element of the stack. Finally, ues <code>st.empty()</code> to return whether the stack is empty.<br>P.S. Stack is LIFO(Last In First Out).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValid</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.length() == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">char</span>, <span class="keyword">char</span>&gt;  match&#123;&#123;<span class="string">&#x27;(&#x27;</span>, <span class="string">&#x27;)&#x27;</span>&#125;, &#123;<span class="string">&#x27;&#123;&#x27;</span>,<span class="string">&#x27;&#125;&#x27;</span>&#125;,&#123;<span class="string">&#x27;[&#x27;</span>,<span class="string">&#x27;]&#x27;</span>&#125;&#125;;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; st;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">const</span> <span class="keyword">char</span> c:s)&#123;</span><br><span class="line">            <span class="keyword">if</span>(st.empty() || c != st.top())&#123;</span><br><span class="line">                st.push(match[c]);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                st.pop();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> st.empty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/2768cb2c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2768cb2c/" class="post-title-link" itemprop="url">[LeetCode Road] Longest Common Prefix</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-12-02 11:50:15" itemprop="dateCreated datePublished" datetime="2020-12-02T11:50:15+08:00">2020-12-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-05 15:22:56" itemprop="dateModified" datetime="2021-01-05T15:22:56+08:00">2021-01-05</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="14-Longest-Common-Prefix"><a href="#14-Longest-Common-Prefix" class="headerlink" title="14. Longest Common Prefix"></a><center>14. Longest Common Prefix</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Write a function to find the longest common prefix string amongst an array of strings.</p>
+<p>If there is no common prefix, return an empty string <span style="background-color:#F0F0F0"><font color=#808080>“”</font></span>.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> strs = ["flower","flow","flight"]<br><b>Output:</b> "fl"<br></p>
+<p style="background-color:#F0F0F0"><b>Input:</b> strs = ["dog","racecar","car"]<br><b>Output:</b> ""<br><b>Explanation:</b> There is no common prefix among the input strings.<br></p>
+
+<p><strong>Constraints:</strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs.length &lt;= 200</font></li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs[i].length &lt;= 200</font></li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>strs[i]</font></span> consists of only lower-case English letters.</li></strong></p>
+<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h3 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a><u>Version 1</u></h3><p>Idea:<br>First, declared a variable of string that stored strs[0]. Then, I compared it with each elements of vector. At 8 line, <code>min(res.length(), strs[i].length())</code> means finding a smallest length for matching between strings. At 10 line, if a statement is true, I stored a current lenght of string and prepared to compare next element; if a statement is false, it means these strings aren’t the same, so the length must be subtract 1 and compare each others again. At 17 line, if length is 0, there is no reason to execute althought maybe there are many elements that have not been compared.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.size() == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res = strs[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; strs.size(); i++)&#123;</span><br><span class="line">            length = min(res.length(), strs[i].length());</span><br><span class="line">            <span class="keyword">while</span>(length &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(res.substr(<span class="number">0</span>, length) == strs[i].substr(<span class="number">0</span>, length))&#123;</span><br><span class="line">                    res = strs[i].substr(<span class="number">0</span>, length);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    length --;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (length == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="Version-2"><a href="#Version-2" class="headerlink" title="Version 2"></a><u>Version 2</u></h3><p>Idea:<br>A method is refered from online. Aims to compare every characters, if each characters is the same at the same position, store it!<br>The first loop is the length of strs[0] (1th string), the second loop is number of elements of vector. At 8 line, take each characters <code>s[i]</code> from every strings to match a character of <code>strs[0][i]</code>, meanwhile, check the length of string whether it exceeds i index(position) or not. If a condtion is true, store this character <code>strs[0][i]</code>. On the contrary, return a record.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.empty()) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strs[<span class="number">0</span>].length(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">const</span> <span class="built_in">string</span> &amp;s : strs)</span><br><span class="line">                <span class="keyword">if</span> (s.length() &lt;= i || s[i] != strs[<span class="number">0</span>][i]) <span class="keyword">return</span> res;</span><br><span class="line">            res += strs[<span class="number">0</span>][i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/8caf8f3c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/8caf8f3c/" class="post-title-link" itemprop="url">[LeetCode Road] Roman to Integer</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-12-01 14:48:42" itemprop="dateCreated datePublished" datetime="2020-12-01T14:48:42+08:00">2020-12-01</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-05 15:28:01" itemprop="dateModified" datetime="2021-01-05T15:28:01+08:00">2021-01-05</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="13-Roman-to-Integer"><a href="#13-Roman-to-Integer" class="headerlink" title="13. Roman to Integer"></a><center>13. Roman to Integer</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Roman numerals are represented by seven different symbols: <span style="background-color:#F0F0F0"><font color=#808080>$I$</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>$V$</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>$X$</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>$L$</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>$C$</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>$D$</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>M</font></span>.</p>
+<p style="background-color:F0F0F0"><b>Symbol</b>&emsp;&emsp;<b>Value</b><br>
+&thinsp;$I$&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;1<br>
+$V$&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;5<br>
+$X$&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;10<br>
+$L$&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;50<br>
+$C$&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;100<br>
+$D$&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;500<br>
+$M$&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&thinsp;&thinsp;1000</p>
+
+<p>For example, <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080>$II$</font></span> in Roman numeral, just two one’s added together. <span style="background-color:#F0F0F0"><font color=#808080>12</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080>$XII$</font></span>, which is simply <span style="background-color:#F0F0F0"><font color=#808080>$X + II$</font></span>. The number <span style="background-color:#F0F0F0"><font color=#808080>27</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080>$XXVII$</font></span>, which is <span style="background-color:#F0F0F0"><font color=#808080>$XX + V + II$</font></span>.</p>
+<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <span style="background-color:#F0F0F0"><font color=#808080>$IIII$</font></span>. Instead, the number four is written as <span style="background-color:#F0F0F0"><font color=#808080>$IV$</font></span>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <span style="background-color:#F0F0F0"><font color=#808080>$IX$</font></span>. There are six instances where subtraction is used:</p>
+<ul>
+<li><span style="background-color:#F0F0F0"><font color=#808080>$I$</font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080>$V$</font></span> (5) and <span style="background-color:#F0F0F0"><font color=#808080>$X$</font></span> (10) to make 4 and 9. </li>
+<li><span style="background-color:#F0F0F0"><font color=#808080>$X$</font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080>$L$</font></span> (50) and <span style="background-color:#F0F0F0"><font color=#808080>$C$</font></span> (100) to make 40 and 90. </li>
+<li><span style="background-color:#F0F0F0"><font color=#808080>$C$</font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080>$D$</font></span> (500) and <span style="background-color:#F0F0F0"><font color=#808080>$M$</font></span> (1000) to make 400 and 900.<br>Given a roman numeral, convert it to an integer.</li>
+</ul>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> s = "$III$"<br><b>Output:</b> 3<br></p>
+<p style="background-color:#F0F0F0"><b>Input:</b> s = "$IV$"<br><b>Output:</b> 4<br></p>
+<p style="background-color:#F0F0F0"><b>Input:</b> s = "$IX$"<br><b>Output:</b> 9<br></p>
+<p style="background-color:#F0F0F0"><b>Input:</b> s = "$LVIII$"<br><b>Output:</b> 58<br><b>Explanation:</b> $L$ = 50, $V$= 5, $III$ = 3.<br></p>
+<p style="background-color:#F0F0F0"><b>Input:</b> s = "$MCMXCIV$"<b>Output:</b> 1994<br><b>Explanation:</b> $M$ = 1000, $CM$ = 900, $XC$ = 90 and $IV$ = 4.<br></p>
+
+<p><strong>Constraints:</strong><br><strong><li>1 &lt;= s.length &lt;= 15</li></strong><br><strong><li>s contains only the characters (‘$I$’, ‘$V$’, ‘$X$’, ‘$L$’, ‘$C$’, ‘$D$’, ‘$M$’).</li></strong><br><strong><li>It is guaranteed that s is a valid roman numeral in the range [1, 3999].</li></strong></p>
+<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h3 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a><u>Version 1</u></h3><p>Idea:<br>At first, I thought these symbols can be built by using vector directly. After my careful thought, a map container is a easy way to store elements by a combination of a key value and a mapped value. Next step, I used a loop to check each characters, if <code>symbol[s[i]] &gt;= symbol[s[i + 1]]</code> is true, add symbol[s[i]] up. On the contrary, if <code>symbol[s[i]] &lt; symbol[s[i + 1]]</code> is true, subtract symbol[s[i]] from summation.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        map&lt;char, int&gt; symbol(&#123;&#123;&#x27;I&#x27;, 1&#125;, &#123;&#x27;V&#x27;, 5&#125;, &#123;&#x27;X&#x27;, 10&#125;, &#123;&#x27;L&#x27;, 50&#125;, &#123;&#x27;C&#x27;, 100,&#125;, &#123;&#x27;D&#x27;, 500&#125;, &#123;&#x27;M&#x27;, 1000&#125;&#125;);</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(symbol[s[i]] &gt;= symbol[s[i + <span class="number">1</span>]])&#123;</span><br><span class="line">                sum += symbol[s[i]];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                sum -= symbol[s[i]];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="Version-2"><a href="#Version-2" class="headerlink" title="Version 2"></a><u>Version 2</u></h3><p>Idea:<br>This is a way to reduce a computing time. Add symbol[s[i]] value first, then check a value of s[i - 1] element whether it is less than a value of s[i] or not. If it is true, the summation need to subtract twice value of symbol[s[i - 1]]. So, it implements the less conditional operator. </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        map&lt;char, int&gt; symbol(&#123;&#123;&#x27;I&#x27;, 1&#125;, &#123;&#x27;V&#x27;, 5&#125;, &#123;&#x27;X&#x27;, 10&#125;, &#123;&#x27;L&#x27;, 50&#125;, &#123;&#x27;C&#x27;, 100,&#125;, &#123;&#x27;D&#x27;, 500&#125;, &#123;&#x27;M&#x27;, 1000&#125;&#125;);</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            sum += symbol[s[i]];</span><br><span class="line">            <span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; symbol[s[i - <span class="number">1</span>]] &lt; symbol[s[i]])&#123;</span><br><span class="line">                sum -= <span class="number">2</span>*symbol[s[i <span class="number">-1</span>]];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/278f103a/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/278f103a/" class="post-title-link" itemprop="url">Error message: Please tell me who you are. Run git config --global...</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-11-30 15:41:02" itemprop="dateCreated datePublished" datetime="2020-11-30T15:41:02+08:00">2020-11-30</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-12-09 14:33:09" itemprop="dateModified" datetime="2020-12-09T14:33:09+08:00">2020-12-09</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Command-line-“hexo-d”-and-you-got-error-message-Please-tell-me-who-you-are"><a href="#Command-line-“hexo-d”-and-you-got-error-message-Please-tell-me-who-you-are" class="headerlink" title="Command line: “hexo d” and you got error message: Please tell me who you are."></a>Command line: “hexo d” and you got error message: Please tell me who you are.</h1><h2 id="Full-error-message-info"><a href="#Full-error-message-info" class="headerlink" title="Full error message info:"></a>Full error message info:</h2><p><font color=#FF0000>Please tell me who you are.</p>
+<p>Run</p>
+<p>git config –global user.email “you&#64;example.com”<br>git config –global user.name “Your Name”</p>
+<p>to set your account’s default identity.<br>Omit –global to set the identity only in this repository.</p>
+<p>fatal: unable to auto-detect email address (got …)<br>error: src refspec HEAD does not match any.<br>error: failed to push some refs to(your …github.io)</font></p>
+<hr>
+<p>When I ran “hexo d” command, the deployment was stuck!<br>The reason was I updated my mac OS a few days age.<br>Now, the system can’t distinguish your indentity.</p>
+<p>So, the solution can solve it:</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h3><p>Input commands:</p>
+<p>1) git config –global user.email “email”<br>   //Your github email address(https:&#47;&#47;username.github.io)</p>
+<p>2) git config –global user.name “username”<br>   //(your nickname、github’s username or anyone you name it) only English! </p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/d37a286f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/d37a286f/" class="post-title-link" itemprop="url">[LeetCode Road] Palindrome Number</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-11-27 16:02:51" itemprop="dateCreated datePublished" datetime="2020-11-27T16:02:51+08:00">2020-11-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-05 15:26:51" itemprop="dateModified" datetime="2021-01-05T15:26:51+08:00">2021-01-05</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="9-Palindrome-Number"><a href="#9-Palindrome-Number" class="headerlink" title="9. Palindrome Number"></a><center>9. Palindrome Number</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.</p>
+<p><strong>Follow up:</strong> Could you solve it without converting the integer to a string?</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input</b>: x = 121<br><b>Output</b>: true<br></p>
+<p style="background-color:#F0F0F0"><b>Input</b>: x = -121<br><b>Output</b>: false<br><b>Explanation</b>: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.<br></p>
+<p style="background-color:#F0F0F0"><b>Input</b>: x = 10<br><b>Output</b>: false<br><b>Explanation</b>: Reads 01 from right to left. Therefore it is not a palindrome.<br></p>
+<p style="background-color:#F0F0F0"><b>Input</b>: x = -101<br><b>Output</b>: false<br></p>
+
+<p><strong>Constraints:</strong><br><strong><li>-2^31 &lt;=x &lt;= 2^31 -1</li></strong></p>
+<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h3 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a><u>Version 1</u></h3><p>idea:<br>My solution is the same as “Reverse Integer”. Use the reverse integer to compare with the original value, so you can get the result.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">0</span>, temp = x;</span><br><span class="line">        <span class="keyword">if</span>(x &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">while</span>(x)&#123;</span><br><span class="line">                ans = ans * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">                x = x / <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(temp == ans)&#123;</span><br><span class="line">                <span class="keyword">return</span> (ans &gt; INT_MAX)?<span class="number">0</span>:<span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;      </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="Version-2"><a href="#Version-2" class="headerlink" title="Version 2"></a><u>Version 2</u></h3><p>idea:<br>The solution is refered from online. At if statement, it filters negative numbers and multiples of 10. <code>while(x &gt;sum)</code> means cutting x in half. If x is even digits, use <code>sum == x</code> to get answer, on the contrary, use <code>sume / 10 == x</code>. This method of computing time is fater than Version 1 if x is a large number.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">0</span> || (x != <span class="number">0</span> &amp;&amp; x % <span class="number">10</span> == <span class="number">0</span>))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(x &gt; sum)&#123;</span><br><span class="line">            sum = sum * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">            x = x / <span class="number">10</span>;</span><br><span class="line">        &#125;      </span><br><span class="line">        <span class="keyword">return</span> (sum == x)||(sum / <span class="number">10</span> == x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">EgbertLin</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2d_models/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2d_models/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2d_models/assets/wanko.model.json"},"display":{"position":null,"width":200,"height":300},"mobile":{"show":false},"react":{"opacity":1},"log":false});</script></body>
+</html>

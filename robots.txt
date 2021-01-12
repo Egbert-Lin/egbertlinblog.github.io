@@ -1,0 +1,15 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Allow: /about/ 
+
+# Disallow: /js/
+# Disallow: /css/
+# Disallow: /fancybox/
+# Disallow: /vendors/
+# Disallow: /fonts/ 
+
+Sitemap: https://egbert-yu-ting.github.io/sitemap.xml

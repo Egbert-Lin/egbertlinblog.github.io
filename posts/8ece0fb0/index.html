@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
-  <meta name="description" content="ns-3 configuration and ofswitch13 module - TutorialI had deployed the ns-3 simulation with ofswitch13 successfully. I’ve been struggling to solve the simulation platform a lot of time. So, my experien">
+  <meta name="description" content="#  ns-3 configuration and ofswitch13 module - Tutorial  I had deployed the ns-3 simulation with ofswitch13 successfully. I&#39;ve been struggling to solve the simulation platform a lot of time. So, my exp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Quick and Easy] Installation of ns-3 Simulator with OpenFlow 1.3 - Tutorial">
 <meta property="og:url" content="https://egbert-yu-ting.github.io/posts/8ece0fb0/index.html">
 <meta property="og:site_name" content="Egbert Lin&#39;s Blog">
-<meta property="og:description" content="ns-3 configuration and ofswitch13 module - TutorialI had deployed the ns-3 simulation with ofswitch13 successfully. I’ve been struggling to solve the simulation platform a lot of time. So, my experien">
+<meta property="og:description" content="#  ns-3 configuration and ofswitch13 module - Tutorial  I had deployed the ns-3 simulation with ofswitch13 successfully. I&#39;ve been struggling to solve the simulation platform a lot of time. So, my exp">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/8ece0fb0/OFSwitch13Device_structure.png">
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/8ece0fb0/ofsoftswitch13_library_architecture.png">
@@ -165,7 +165,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ns-3-configuration-and-ofswitch13-module-Tutorial"><span class="nav-number">1.</span> <span class="nav-text">ns-3 configuration and ofswitch13 module - Tutorial</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-ns-3-Network-Simulator"><span class="nav-number">1.1.</span> <span class="nav-text">What is ns-3 Network Simulator?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ns-3-simulation-workflow"><span class="nav-number">1.1.1.</span> <span class="nav-text">ns-3 simulation workflow:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Key-terms-adn-abstractions"><span class="nav-number">1.1.2.</span> <span class="nav-text">Key terms adn abstractions:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenFlow-1-3-module-for-ns-3"><span class="nav-number">1.2.</span> <span class="nav-text">OpenFlow 1.3 module for ns-3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Main-class-function"><span class="nav-number">1.2.1.</span> <span class="nav-text">Main class function</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Start-to-configure-and-build"><span class="nav-number">1.3.</span> <span class="nav-text">Start to configure and build</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ns-3-simulation-workflow"><span class="nav-number">1.</span> <span class="nav-text">ns-3 simulation workflow:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#key-terms-adn-abstractions"><span class="nav-number">2.</span> <span class="nav-text">Key terms adn abstractions:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#openflow-1.3-module-for-ns-3"><span class="nav-number"></span> <span class="nav-text">OpenFlow 1.3 module for ns-3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#main-class-function"><span class="nav-number">1.</span> <span class="nav-text">Main class function</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#start-to-configure-and-build"><span class="nav-number"></span> <span class="nav-text">Start to configure and build</span></a></div>
       </section>
       <!--/noindex-->
 
@@ -281,16 +281,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="ns-3-configuration-and-ofswitch13-module-Tutorial"><a href="#ns-3-configuration-and-ofswitch13-module-Tutorial" class="headerlink" title="ns-3 configuration and ofswitch13 module - Tutorial"></a><center>ns-3 configuration and ofswitch13 module - Tutorial</center></h1><p>I had deployed the ns-3 simulation with ofswitch13 successfully. I’ve been struggling to solve the simulation platform a lot of time. So, my experience is quite valuable and self-giving sharing for the ns-3 beginners.<br>The following procedure can be deployed on VMware/Virtual machine or cloud instance.<br>If your want to know how to deploy ns-3 on remote cloud instance easily, I will post an article to demonstrate full steps.</p>
-<a id="more"></a>
-<h2 id="What-is-ns-3-Network-Simulator"><a href="#What-is-ns-3-Network-Simulator" class="headerlink" title="What is ns-3 Network Simulator?"></a>What is <a target="_blank" rel="noopener" href="https://www.nsnam.org/">ns-3</a> Network Simulator?</h2><ul>
-<li>A discrete-event network simulator for internet systems</li>
-<li>Free software and open source</li>
-<li>Packet level</li>
-<li>C++ for core/ Python for bindings</li>
-<li>Support under Linux, FreeBSD and Cygwin</li>
-</ul>
-<h3 id="ns-3-simulation-workflow"><a href="#ns-3-simulation-workflow" class="headerlink" title="ns-3 simulation workflow:"></a>ns-3 simulation workflow:</h3><ol>
+        #
+<center>
+ns-3 configuration and ofswitch13 module - Tutorial
+</center>
+<p>I had deployed the ns-3 simulation with ofswitch13 successfully. I've been struggling to solve the simulation platform a lot of time. So, my experience is quite valuable and self-giving sharing for the ns-3 beginners. The following procedure can be deployed on VMware/Virtual machine or cloud instance. If your want to know how to deploy ns-3 on remote cloud instance easily, I will post an article to demonstrate full steps. <a id="more"></a> ## What is <a target="_blank" rel="noopener" href="https://www.nsnam.org/">ns-3</a> Network Simulator? + A discrete-event network simulator for internet systems + Free software and open source + Packet level + C++ for core/ Python for bindings + Support under Linux, FreeBSD and Cygwin</p>
+<h3 id="ns-3-simulation-workflow">ns-3 simulation workflow:</h3>
+<ol type="1">
 <li>Topology definition</li>
 <li>Model development</li>
 <li>Node and link configuration</li>
@@ -298,81 +295,123 @@
 <li>Performance analysis</li>
 <li>Graphical Visualization</li>
 </ol>
-<h3 id="Key-terms-adn-abstractions"><a href="#Key-terms-adn-abstractions" class="headerlink" title="Key terms adn abstractions:"></a>Key terms adn abstractions:</h3><ul>
+<h3 id="key-terms-adn-abstractions">Key terms adn abstractions:</h3>
+<ul>
 <li>Node: the virtual hardward (e.g. PC, server, router, smart phone, etc.)</li>
 <li>Network device: transimts and receives over the channel with network layer</li>
 <li>Channel: transmission medium between Network device (e.g. WiFi, p2p, csma)</li>
 <li>Application: creates or receives data packet that send between Nodes with transport layer</li>
 <li>Helper: ns-3 construct used to quickly configure and create the above</li>
 </ul>
-<h2 id="OpenFlow-1-3-module-for-ns-3"><a href="#OpenFlow-1-3-module-for-ns-3" class="headerlink" title="OpenFlow 1.3 module for ns-3"></a>OpenFlow 1.3 module for ns-3</h2><ul>
+<h2 id="openflow-1.3-module-for-ns-3">OpenFlow 1.3 module for ns-3</h2>
+<ul>
 <li>The <a target="_blank" rel="noopener" href="https://github.com/ljerezchaves/ofswitch13">OFSwitch13 module</a>, which enhances the ns-3 Network Simulator with <a target="_blank" rel="noopener" href="https://opennetworking.org/wp-content/uploads/2014/10/openflow-spec-v1.3.0.pdf">OpenFlow 1.3</a> capabilities</li>
 <li>Allow ns-3 users to simulate Software-Defined Networks (SDN)</li>
-<li>Support internal/external SDN controller<br><img src="OFSwitch13Device_structure.png" alt="The OFSwitch13 module overview"></li>
+<li>Support internal/external SDN controller <img src="OFSwitch13Device_structure.png" alt="The OFSwitch13 module overview" /></li>
 </ul>
-<h3 id="Main-class-function"><a href="#Main-class-function" class="headerlink" title="Main class function"></a><a target="_blank" rel="noopener" href="http://www.lrc.ic.unicamp.br/~luciano/publications/wns316.pdf">Main class function</a></h3><ul>
-<li>OpenFlow 1.3 switch network device<br>It can be used to interconnect ns-3 nodes using the existing CSMA network devices and channels.</li>
-<li>OpenFlow 1.3 controller interface<br>It provides the basic functionalities for controller implementation.</li>
-<li>OpenFlow channel<br>It is the interface that connects each switch to an OpenFlow controller.</li>
-<li>ofsoftswitch13 library<br>It provides the complete OpenFlow switch datapath implementation, including input and output ports, the flow-table pipeline for packet matching, the group table, and the meter table.<br>It also provides the OFLib library that is used for converting internal messages to and from OpenFlow 1.3 wire format, and the dpctl utility for converting text commands into internal messages.<br><img src="ofsoftswitch13_library_architecture.png" alt="The ofsoftwitch13 library architecture"></li>
+<h3 id="main-class-function"><a target="_blank" rel="noopener" href="http://www.lrc.ic.unicamp.br/~luciano/publications/wns316.pdf">Main class function</a></h3>
+<ul>
+<li>OpenFlow 1.3 switch network device It can be used to interconnect ns-3 nodes using the existing CSMA network devices and channels.</li>
+<li>OpenFlow 1.3 controller interface It provides the basic functionalities for controller implementation.</li>
+<li>OpenFlow channel It is the interface that connects each switch to an OpenFlow controller.</li>
+<li>ofsoftswitch13 library It provides the complete OpenFlow switch datapath implementation, including input and output ports, the flow-table pipeline for packet matching, the group table, and the meter table. It also provides the OFLib library that is used for converting internal messages to and from OpenFlow 1.3 wire format, and the dpctl utility for converting text commands into internal messages. <img src="ofsoftswitch13_library_architecture.png" alt="The ofsoftwitch13 library architecture" /></li>
 </ul>
-<h2 id="Start-to-configure-and-build"><a href="#Start-to-configure-and-build" class="headerlink" title="Start to configure and build"></a>Start to configure and build</h2><ul>
-<li><p><strong>Step 1.</strong> You have the following packages installed on your system</p>
-<p style="background-color:#F0F0F0">$ sudo apt-get install build-essential gcc g++ python git mercurial unzip cmake</p>
-<p style="background-color:#F0F0F0">$ sudo apt-get install pkg-config autoconf libtool libboost-dev</p>
-</li>
-<li><p><strong>Step 2.</strong> Download a recent stable ns-3 code (using the mercurial repository for ns-3.29)</p>
-<p style="background-color:#F0F0F0">$ hg clone http://code.nsnam.org/ns-3.29</p>
-</li>
-<li><p><strong>Step 3.</strong> Download the OFSwitch13 code into the src/ folder</p>
-<p style="background-color:#F0F0F0">$ cd ns-3.29/src</p>
-<p style="background-color:#F0F0F0">$ git clone --recurse-submodules https://github.com/ljerezchaves/ofswitch13.git</p>
-</li>
-<li><p><strong>Step 4.</strong> Update the code to the desired release version (using 4.0.0, which is compatible with ns-3.29 or later)</p>
-<p style="background-color:#F0F0F0">$ cd ofswitch13</p>
-<p style="background-color:#F0F0F0">$ git checkout 4.0.0 && git submodule update –recursive</p>
-</li>
-<li><p><strong>Step 5.</strong> It is time to compile the ofsoftswitch13 as a static library (Configure and build the library)</p>
-<p style="background-color:#F0F0F0">$ cd lib/ofsoftswitch13</p>
-<p style="background-color:#F0F0F0">$ ./boot.sh</p>
-<p style="background-color:#F0F0F0">$ ./configure --enable-ns3-lib</p>
-<p style="background-color:#F0F0F0">$ make</p>
-<font color=#FF0000>Warning: if you meet an error as “perl: warning: Setting locale failed”:</font>
-
-</li>
+<h2 id="start-to-configure-and-build">Start to configure and build</h2>
+<ul>
+<li><strong>Step 1.</strong> You have the following packages installed on your system
+<p style="background-color:#F0F0F0">
+$ sudo apt-get install build-essential gcc g++ python git mercurial unzip cmake
+</p>
+<p style="background-color:#F0F0F0">
+$ sudo apt-get install pkg-config autoconf libtool libboost-dev
+</p></li>
+<li><strong>Step 2.</strong> Download a recent stable ns-3 code (using the mercurial repository for ns-3.29)
+<p style="background-color:#F0F0F0">
+$ hg clone http://code.nsnam.org/ns-3.29
+</p></li>
+<li><strong>Step 3.</strong> Download the OFSwitch13 code into the src/ folder
+<p style="background-color:#F0F0F0">
+$ cd ns-3.29/src
+</p>
+<p style="background-color:#F0F0F0">
+$ git clone --recurse-submodules https://github.com/ljerezchaves/ofswitch13.git
+</p></li>
+<li><strong>Step 4.</strong> Update the code to the desired release version (using 4.0.0, which is compatible with ns-3.29 or later)
+<p style="background-color:#F0F0F0">
+$ cd ofswitch13
+</p>
+<p style="background-color:#F0F0F0">
+$ git checkout 4.0.0 &amp;&amp; git submodule update –recursive
+</p></li>
+<li><strong>Step 5.</strong> It is time to compile the ofsoftswitch13 as a static library (Configure and build the library)
+<p style="background-color:#F0F0F0">
+$ cd lib/ofsoftswitch13
+</p>
+<p style="background-color:#F0F0F0">
+$ ./boot.sh
+</p>
+<p style="background-color:#F0F0F0">
+$ ./configure --enable-ns3-lib
+</p>
+<p style="background-color:#F0F0F0">
+$ make
+</p>
+<font color=#FF0000>Warning: if you meet an error as “perl: warning: Setting locale failed”:</font></li>
 </ul>
-<p style="margin-left:40px"><b>Solution:</b></p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo vim .bashrc</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">export LC_ALL=“en_US.UTF-8”</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo locale-gen zh_TW.UTF-8</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo dpkg-reconfigure locales</p>
-
+<p style="margin-left:40px">
+<b>Solution:</b>
+</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">
+$ sudo vim .bashrc
+</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">
+export LC_ALL=“en_US.UTF-8”
+</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">
+$ sudo locale-gen zh_TW.UTF-8
+</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">
+$ sudo dpkg-reconfigure locales
+</p>
 <ul>
 <li><p><strong>Step 6.</strong> Go back to the ns-3 root directory and patch the ns-3 code with the appropriated patches available under the ofswitch13/utils directory</p>
-<p style="background-color:#F0F0F0">$ cd ../../../../</p>
-<p style="background-color:#F0F0F0">$ patch -p1 < src/ofswitch13/utils/ofswitch13-src-3_29.patch</p>
-<p style="background-color:#F0F0F0">$ patch -p1 < src/ofswitch13/utils/ofswitch13-doc-3_29.patch</p>
-</li>
-<li><p><strong>Step 7.</strong> Now, configure the ns-3 (Need to check –witch-ofswitch13=your path)</p>
-<p style="background-color:#F0F0F0">$ ./waf configure --enable-tests --enable-examples --enable-sudo --with-ofswitch13=<br>/home/ubuntu/ns-3.29/src/ofswitch13/lib/ofsoftswitch13/</p>
-</li>
-<li><p><strong>Step 8.</strong> Check for the enabled NS-3 OpenFlow 1.3 integration feature after the configuration<br><img src="ns3_configuration.png" alt=""></p>
-</li>
+<p style="background-color:#F0F0F0">
+<p>$ cd ../../../../</p>
+</p>
+<p style="background-color:#F0F0F0">
+<p>$ patch -p1 &lt; src/ofswitch13/utils/ofswitch13-src-3_29.patch</p>
+</p>
+<p style="background-color:#F0F0F0">
+<p>$ patch -p1 &lt; src/ofswitch13/utils/ofswitch13-doc-3_29.patch</p>
+</p></li>
+<li><p><strong>Step 7.</strong> Now, configure the ns-3 (Need to check --witch-ofswitch13=your path)</p>
+<p style="background-color:#F0F0F0">
+<p>$ ./waf configure --enable-tests --enable-examples --enable-sudo --with-ofswitch13=<br>/home/ubuntu/ns-3.29/src/ofswitch13/lib/ofsoftswitch13/</p>
+</p></li>
+<li><p><strong>Step 8.</strong> Check for the enabled NS-3 OpenFlow 1.3 integration feature after the configuration <img src="ns3_configuration.png" /></p></li>
 <li><p><strong>Step 9.</strong> Finally, build the ns-3 simulation</p>
-<p style="background-color:#F0F0F0">$ sudo ./waf</p>
-<font color=#FF0000>Warning: if you meet an error as below:</font>
+<p style="background-color:#F0F0F0">
+<p>$ sudo ./waf</p>
+</p>
+<p><font color=#FF0000>Warning: if you meet an error as below:</font></p>
+<p>
 <p><img src="./buildError.png"></p>
-
-</li>
+</p></li>
 </ul>
-<p style="margin-left:40px"><b>Solution: Modify: “SuidBuild” → “SuidBuild_task”</b></p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo vim wscript</p>
-<p style="margin-left:40px"><img src="./buildError_solution.png"></p>
-
-<p>Now, you can run your first example script, enjoy it!</p>
-<p style="background-color:#F0F0F0">$ ./waf --run scratch/ofswitch13.first</p>
-
-<p><strong>Notice:</strong><br>&#49;. <u>Suggest moving your script to scratch folder before executing.</u><br>&#50;. <u>Don’t add filename extension (e.g. .cc) at your execution’s command line</u></p>
+<p style="margin-left:40px">
+<b>Solution: Modify: “SuidBuild” → “SuidBuild_task”</b>
+</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">
+$ sudo vim wscript
+</p>
+<p style="margin-left:40px">
+<img src="./buildError_solution.png">
+</p>
+Now, you can run your first example script, enjoy it!
+<p style="background-color:#F0F0F0">
+$ ./waf --run scratch/ofswitch13.first
+</p>
+<p><strong>Notice:</strong> 1. <u>Suggest moving your script to scratch folder before executing.</u> 2. <u>Don't add filename extension (e.g. .cc) at your execution's command line</u></p>
 
     </div>
 
@@ -487,6 +526,8 @@
 
 
 
+
+  
 
   
 

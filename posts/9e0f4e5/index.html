@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
-  <meta name="description" content="Tutorial - Install ryu in Ubuntu 16.04 with no failureRyu is a component-based software defined networking framework. It’s very easy to develop your own SDN controller. And, if you have any questions,">
+  <meta name="description" content="#  Tutorial - Install ryu in Ubuntu 16.04 with no failure  Ryu is a component-based software defined networking framework. It&#39;s very easy to develop your own SDN controller. And, if you have any quest">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[One-time success] How to install Ryu on Ubuntu - Tutorial">
 <meta property="og:url" content="https://egbert-yu-ting.github.io/posts/9e0f4e5/index.html">
 <meta property="og:site_name" content="Egbert Lin&#39;s Blog">
-<meta property="og:description" content="Tutorial - Install ryu in Ubuntu 16.04 with no failureRyu is a component-based software defined networking framework. It’s very easy to develop your own SDN controller. And, if you have any questions,">
+<meta property="og:description" content="#  Tutorial - Install ryu in Ubuntu 16.04 with no failure  Ryu is a component-based software defined networking framework. It&#39;s very easy to develop your own SDN controller. And, if you have any quest">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-06T06:14:43.000Z">
 <meta property="article:modified_time" content="2021-01-12T01:51:33.474Z">
@@ -145,7 +145,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -157,7 +157,6 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Tutorial-Install-ryu-in-Ubuntu-16-04-with-no-failure"><span class="nav-number">1.</span> <span class="nav-text">Tutorial - Install ryu in Ubuntu 16.04 with no failure</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Start-to-configure-and-install"><span class="nav-number">1.1.</span> <span class="nav-text">Start to configure and install</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -273,53 +272,93 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Tutorial-Install-ryu-in-Ubuntu-16-04-with-no-failure"><a href="#Tutorial-Install-ryu-in-Ubuntu-16-04-with-no-failure" class="headerlink" title="Tutorial - Install ryu in Ubuntu 16.04 with no failure"></a><center>Tutorial - Install ryu in Ubuntu 16.04 with no failure</center></h1><p><a target="_blank" rel="noopener" href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It’s very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet.</p>
-<a id="more"></a>
-<h2 id="Start-to-configure-and-install"><a href="#Start-to-configure-and-install" class="headerlink" title="Start to configure and install"></a>Start to configure and install</h2><ul>
-<li><p><strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources)</p>
-<p style="background-color:#F0F0F0">$ sudo apt-get update</p>
-</li>
-<li><p><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system</p>
-<p style="background-color:#F0F0F0">$ sudo apt-get install python-pip python-dev</p>
-<p style="background-color:#F0F0F0">$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev</p></li>
-<li><p><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary.</p>
-<p style="background-color:#F0F0F0">$ sudo apt-get install git</p>
-</li>
-<li><p><strong>Step 4.</strong> Download Ryu source code from github</p>
-<p style="background-color:#F0F0F0">$ git clone git://github.com/osrg/ryu.git</p>
-</li>
-<li><p><strong>Step 5.</strong> <a target="_blank" rel="noopener" href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller.</p>
-<p style="background-color:#F0F0F0">$ pip install networkx</p>
-</li>
-<li><p><strong>Step 6.</strong> Install Ryu</p>
-<p style="background-color:#F0F0F0">$ cd ryu/</p>
-<p style="background-color:#F0F0F0">$ sudo python ./setup.py install</p>
-</li>
-<li><p><strong>Step 7.</strong> Execution and testing</p>
-<p style="background-color:#F0F0F0">$ ryu-manager</p>
+        #
+<center>
+Tutorial - Install ryu in Ubuntu 16.04 with no failure
+</center>
+<a target="_blank" rel="noopener" href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It's very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet. <a id="more"></a> ## Start to configure and install + <strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources)
+<p style="background-color:#F0F0F0">
+$ sudo apt-get update
+</p>
+<ul>
+<li><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system
+<p style="background-color:#F0F0F0">
+$ sudo apt-get install python-pip python-dev
+</p>
+<p style="background-color:#F0F0F0">
+$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev
+</p></li>
+<li><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary.
+<p style="background-color:#F0F0F0">
+$ sudo apt-get install git
+</p></li>
+<li><strong>Step 4.</strong> Download Ryu source code from github
+<p style="background-color:#F0F0F0">
+$ git clone git://github.com/osrg/ryu.git
+</p></li>
+<li><strong>Step 5.</strong> <a target="_blank" rel="noopener" href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller.
+<p style="background-color:#F0F0F0">
+$ pip install networkx
+</p></li>
+<li><strong>Step 6.</strong> Install Ryu
+<p style="background-color:#F0F0F0">
+$ cd ryu/
+</p>
+<p style="background-color:#F0F0F0">
+$ sudo python ./setup.py install
+</p></li>
+<li><strong>Step 7.</strong> Execution and testing
+<p style="background-color:#F0F0F0">
+$ ryu-manager
+</p>
 // If your installation is successful, the terminal will show some info. and stop to listening:
 <p style="background-color:#F0F0F0">
-loading app ryu.controller.ofp_handler<br>
-instantiating app ryu.controller.ofp_handler of OFPHandler</p>
-</li>
+loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_handler of OFPHandler
+</p>
+<hr />
+<p style="margin-left:40px">
+<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error!</font>
+</p>
+<p style="margin-left:40px">
+<b>Solution:</b>
+</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">
+$ cd ryu/
+</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">
+$ sudo pip install -r tools/pip-requires
+</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">
+$ sudo pip install six --upgrade
+</p></li>
 </ul>
-<hr>
-<p style="margin-left:40px"><font color=#FF0000>Warning: if you execute “ryu-manager” and get an error!</font></p>
-<p style="margin-left:40px"><b>Solution:</b></p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ cd ryu/</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo pip install -r tools/pip-requires</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo pip install six --upgrade</p>
-
-<p style="margin-left:40px"><font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font></p>
-<p style="margin-left:40px"><font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>&emsp;&emsp;&emsp;<b>SyntaxError: ivalid syntax</b></font></p>
-<p style="margin-left:40px"><b>Solution:</b></p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ cd /usr/local/lib/python2.7/dist-packages/</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo rm –rf oslo_config/</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata</p>
-<p style="margin-left:40px"><u>From the above, the command is refered to http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html</u></p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ cd oslo.config</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">$ sudo python setup.py install</p>
-
+<p style="margin-left:40px">
+<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font>
+</p>
+<p style="margin-left:40px">
+<font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>   <b>SyntaxError: ivalid syntax</b></font>
+</p>
+<p style="margin-left:40px">
+<b>Solution:</b>
+</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">
+$ cd /usr/local/lib/python2.7/dist-packages/
+</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">
+$ sudo rm –rf oslo_config/
+</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">
+$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata
+</p>
+<p style="margin-left:40px">
+<u>From the above, the command is refered to http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html</u>
+</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">
+$ cd oslo.config
+</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">
+$ sudo python setup.py install
+</p>
 
     </div>
 
@@ -432,6 +471,8 @@ instantiating app ryu.controller.ofp_handler of OFPHandler</p>
 
 
 
+
+  
 
   
 

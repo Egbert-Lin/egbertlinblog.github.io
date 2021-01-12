@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
-  <meta name="description" content="104. Maximum Depth of Binary TreeQuestion:Given the root of a binary tree, return its maximum depth. A binary tree’s maximum depth is the number of nodes along the longest path from the root node down">
+  <meta name="description" content="#   Maximum Depth of Binary Tree  Question: Given the root of a binary tree, return its maximum depth.  A binary tree&#39;s maximum depth is the number of nodes along the longest path from the root node d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[LeetCode Road] Maximum Depth of Binary Tree">
 <meta property="og:url" content="https://egbert-yu-ting.github.io/posts/57b52472/index.html">
 <meta property="og:site_name" content="Egbert Lin&#39;s Blog">
-<meta property="og:description" content="104. Maximum Depth of Binary TreeQuestion:Given the root of a binary tree, return its maximum depth. A binary tree’s maximum depth is the number of nodes along the longest path from the root node down">
+<meta property="og:description" content="#   Maximum Depth of Binary Tree  Question: Given the root of a binary tree, return its maximum depth.  A binary tree&#39;s maximum depth is the number of nodes along the longest path from the root node d">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/57b52472/MaximumDepthofBinaryTree_example1.png">
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/57b52472/MaximumDepthofBinaryTree_example2.png">
@@ -159,7 +159,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#104-Maximum-Depth-of-Binary-Tree"><span class="nav-number">1.</span> <span class="nav-text">104. Maximum Depth of Binary Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.1.</span> <span class="nav-text">Question:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">1.2.</span> <span class="nav-text">Example:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Source-code"><span class="nav-number">1.3.</span> <span class="nav-text">Source code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Version-1"><span class="nav-number">1.4.</span> <span class="nav-text">Version 1</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#question"><span class="nav-number">1.</span> <span class="nav-text">Question:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source-code"><span class="nav-number">2.</span> <span class="nav-text">Source code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#version-1"><span class="nav-number">3.</span> <span class="nav-text">Version 1</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -266,23 +266,41 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="104-Maximum-Depth-of-Binary-Tree"><a href="#104-Maximum-Depth-of-Binary-Tree" class="headerlink" title="104. Maximum Depth of Binary Tree"></a><center>104. Maximum Depth of Binary Tree</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given the <span style="background-color:#F0F0F0"><font color=#808080>root</font></span> of a binary tree, return <em>its maximum depth</em>.</p>
-<p>A binary tree’s <strong>maximum depth</strong> is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>
-<a id="more"></a>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p><img src="MaximumDepthofBinaryTree_example1.png" alt=""></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> root = [3,9,20,null,null,15,7]<br>
-<b>Output:</b> 3<br></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> root = [1,null,2]<br>
-<b>Output:</b> 2<br></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> root = []<br>
-<b>Output:</b> 0<br></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> root = [0]<br>
-<b>Output:</b> 1<br></p>
-
-<p><strong>Constraints:</strong><br><strong><li>The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^4]</font></span>.</li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>-100 &lt;= Node.val &lt;= 100</font></span></li></strong></p>
-<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h2 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a><u>Version 1</u></h2><p>Idea:<br>Basically, I konw the search must be throughout all link of the whole tree, then if the left/right node of root are NULL, the depth is the deepest, so depth is start from 1 (depth + 1). But, I can’t find out any regular action by using the recursion.<br>There is a quit clear demonstration as below[1]:<br><img src="MaximumDepthofBinaryTree_example2.png" alt=""><br>It’s very helpful and let me understand the recursion processing.<br>So, let me explain the code:<br>(&#49;) <code>maxDepth(root-&gt;left)</code>: use recursion to find deepest depth of left node<br>(&#50;) <code>maxDepth(root-&gt;right</code>: use recursion to find deepest depth of right node<br>(&#51;) <code>max((1), (2))</code>: compare the deepest depth of both of left/right nodes, get the maximum value. Then, <code>+ 1</code> means adding this layer.</p>
+        #
+<center>
+<ol start="104" type="1">
+<li>Maximum Depth of Binary Tree
+</center>
+<h2 id="question">Question:</h2>
+Given the <span style="background-color:#F0F0F0"><font color=#808080>root</font></span> of a binary tree, return <em>its maximum depth</em>.</li>
+</ol>
+A binary tree's <strong>maximum depth</strong> is the number of nodes along the longest path from the root node down to the farthest leaf node. <a id="more"></a> ## Example: <img src="MaximumDepthofBinaryTree_example1.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 3<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [1,null,2]<br> <b>Output:</b> 2<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = []<br> <b>Output:</b> 0<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [0]<br> <b>Output:</b> 1<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^4]</font></span>.
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-100 &lt;= Node.val &lt;= 100</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h2 id="version-1"><u>Version 1</u></h2>
+<p>Idea: Basically, I konw the search must be throughout all link of the whole tree, then if the left/right node of root are NULL, the depth is the deepest, so depth is start from 1 (depth + 1). But, I can't find out any regular action by using the recursion. There is a quit clear demonstration as below[1]: <img src="MaximumDepthofBinaryTree_example2.png" /> It's very helpful and let me understand the recursion processing. So, let me explain the code: (1) <code>maxDepth(root-&gt;left)</code>: use recursion to find deepest depth of left node (2) <code>maxDepth(root-&gt;right</code>: use recursion to find deepest depth of right node (3) <code>max((1), (2))</code>: compare the deepest depth of both of left/right nodes, get the maximum value. Then, <code>+ 1</code> means adding this layer.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> max(maxDepth(root-&gt;left), maxDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>Reference:<br>[1] <a target="_blank" rel="noopener" href="https://algorithms.tutorialhorizon.com/find-the-maximum-depth-or-height-of-a-binary-tree/">https://algorithms.tutorialhorizon.com/find-the-maximum-depth-or-height-of-a-binary-tree/</a></p>
+<p>Reference: [1] https://algorithms.tutorialhorizon.com/find-the-maximum-depth-or-height-of-a-binary-tree/</p>
 
     </div>
 
@@ -394,6 +412,8 @@
 
 
 
+
+  
 
   
 

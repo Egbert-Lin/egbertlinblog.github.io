@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
-  <meta name="description" content="53. Maximum SubarrayQuestion:Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum. Follow up: If you have figured out">
+  <meta name="description" content="#   Maximum Subarray  Question: Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.  Follow up: If you have figured">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[LeetCode Road] Maximum Subarray">
 <meta property="og:url" content="https://egbert-yu-ting.github.io/posts/90ac56be/index.html">
 <meta property="og:site_name" content="Egbert Lin&#39;s Blog">
-<meta property="og:description" content="53. Maximum SubarrayQuestion:Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum. Follow up: If you have figured out">
+<meta property="og:description" content="#   Maximum Subarray  Question: Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.  Follow up: If you have figured">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-14T03:34:06.000Z">
 <meta property="article:modified_time" content="2021-01-12T01:49:22.702Z">
@@ -155,7 +155,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#53-Maximum-Subarray"><span class="nav-number">1.</span> <span class="nav-text">53. Maximum Subarray</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.1.</span> <span class="nav-text">Question:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">1.2.</span> <span class="nav-text">Example:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Source-code"><span class="nav-number">1.3.</span> <span class="nav-text">Source code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Version-1"><span class="nav-number">1.4.</span> <span class="nav-text">Version 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Version-2"><span class="nav-number">1.5.</span> <span class="nav-text">Version 2</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#question"><span class="nav-number">1.</span> <span class="nav-text">Question:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source-code"><span class="nav-number">2.</span> <span class="nav-text">Source code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#version-1"><span class="nav-number">3.</span> <span class="nav-text">Version 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#version-2"><span class="nav-number">4.</span> <span class="nav-text">Version 2</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -271,20 +271,47 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="53-Maximum-Subarray"><a href="#53-Maximum-Subarray" class="headerlink" title="53. Maximum Subarray"></a><center>53. Maximum Subarray</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Given an integer array <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span>, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
-<p><strong>Follow up:</strong> If you have figured out the <span style="background-color:#F0F0F0"><font color=#808080>O(n)</font></span> solution, try coding another solution using the <strong>divide and conquer</strong> approach, which is more subtle.</p>
-<a id="more"></a>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> nums = [-2,1,-3,4,-1,2,1,-5,4]<br><b>Output:</b> 6<br><b>Explanation:</b> [4,-1,2,1] has the largest sum = 6.<br></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> nums = [1]<br><b>Output:</b> 1<br></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> nums = [0]<br><b>Output:</b> 0<br></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> nums = [-1]<br><b>Output:</b> -1<br></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> nums = [-2147483647]<br><b>Output:</b> -2147483647<br></p>
-
-<p><strong>Constraints:</strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= nums.length &lt;= 2 * 10^4</font></span></li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>-2^31 &lt;= nums[i] &lt;= 2^31 - 1</font></span></li></strong></p>
-<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h2 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a><u>Version 1</u></h2><p>Idea:<br>It is a brute force approach. Use 2 loop to calculate the sum for each elements.</p>
+        #
+<center>
+<ol start="53" type="1">
+<li>Maximum Subarray
+</center>
+<h2 id="question">Question:</h2>
+Given an integer array <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span>, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</li>
+</ol>
+<strong>Follow up:</strong> If you have figured out the <span style="background-color:#F0F0F0"><font color=#808080>O(n)</font></span> solution, try coding another solution using the <strong>divide and conquer</strong> approach, which is more subtle. <a id="more"></a> ## Example:
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [-2,1,-3,4,-1,2,1,-5,4]<br><b>Output:</b> 6<br><b>Explanation:</b> [4,-1,2,1] has the largest sum = 6.<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [1]<br><b>Output:</b> 1<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [0]<br><b>Output:</b> 0<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [-1]<br><b>Output:</b> -1<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [-2147483647]<br><b>Output:</b> -2147483647<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= nums.length &lt;= 2 * 10^4</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-2^31 &lt;= nums[i] &lt;= 2^31 - 1</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h2 id="version-1"><u>Version 1</u></h2>
+<p>Idea: It is a brute force approach. Use 2 loop to calculate the sum for each elements.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> len = nums.size();</span><br><span class="line">        <span class="keyword">if</span>(len == <span class="number">1</span>) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> maxValue = INT_MIN;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; len; j++)&#123;</span><br><span class="line">                sum += nums[j];</span><br><span class="line">                maxValue = max(maxValue, sum);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxValue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="Version-2"><a href="#Version-2" class="headerlink" title="Version 2"></a><u>Version 2</u></h2><p>Idea:<br>This is an efficient method, use only one loop.<br><code>sum += nums[i]</code> means the cumulative sum.<br><code>sum = max(sum, nums[i])</code> means the maximum of sum between the cumulative sum or current index of value.<br><code>maxValue = max(maxValue, sum)</code> means recording the maximal value.</p>
+<h2 id="version-2"><u>Version 2</u></h2>
+<p>Idea: This is an efficient method, use only one loop. <code>sum += nums[i]</code> means the cumulative sum. <code>sum = max(sum, nums[i])</code> means the maximum of sum between the cumulative sum or current index of value. <code>maxValue = max(maxValue, sum)</code> means recording the maximal value.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxValue = INT_MIN, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            sum = max(sum, nums[i]);</span><br><span class="line">            maxValue = max(maxValue, sum);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxValue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -394,6 +421,8 @@
 
 
 
+
+  
 
   
 

@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
-  <meta name="description" content="13. Roman to IntegerQuestion:Roman numerals are represented by seven different symbols: $I$, $V$, $X$, $L$, $C$, $D$ and M. Symbol&amp;emsp;&amp;emsp;Value &amp;thinsp;$I$&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;thin">
+  <meta name="description" content="#   Roman to Integer  Question: Roman numerals are represented by seven different symbols: \(I\), \(V\), \(X\), \(L\), \(C\), \(D\) and M.  Symbol  Value  \(I\)       1 \(V\)      5 \(X\)      10 \(L\">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[LeetCode Road] Roman to Integer">
 <meta property="og:url" content="https://egbert-yu-ting.github.io/posts/8caf8f3c/index.html">
 <meta property="og:site_name" content="Egbert Lin&#39;s Blog">
-<meta property="og:description" content="13. Roman to IntegerQuestion:Roman numerals are represented by seven different symbols: $I$, $V$, $X$, $L$, $C$, $D$ and M. Symbol&amp;emsp;&amp;emsp;Value &amp;thinsp;$I$&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;thin">
+<meta property="og:description" content="#   Roman to Integer  Question: Roman numerals are represented by seven different symbols: \(I\), \(V\), \(X\), \(L\), \(C\), \(D\) and M.  Symbol  Value  \(I\)       1 \(V\)      5 \(X\)      10 \(L\">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-01T06:48:42.000Z">
-<meta property="article:modified_time" content="2021-01-12T01:51:28.986Z">
+<meta property="article:modified_time" content="2021-01-12T02:04:44.262Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="Map(STL)">
 <meta name="twitter:card" content="summary">
@@ -155,7 +155,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#13-Roman-to-Integer"><span class="nav-number">1.</span> <span class="nav-text">13. Roman to Integer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.1.</span> <span class="nav-text">Question:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">1.2.</span> <span class="nav-text">Example:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Source-code"><span class="nav-number">1.3.</span> <span class="nav-text">Source code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Version-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">Version 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Version-2"><span class="nav-number">1.3.2.</span> <span class="nav-text">Version 2</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#question"><span class="nav-number">1.</span> <span class="nav-text">Question:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example"><span class="nav-number">2.</span> <span class="nav-text">Example:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source-code"><span class="nav-number">3.</span> <span class="nav-text">Source code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#version-1"><span class="nav-number">3.1.</span> <span class="nav-text">Version 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#version-2"><span class="nav-number">3.2.</span> <span class="nav-text">Version 2</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -249,7 +249,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-12 09:51:28" itemprop="dateModified" datetime="2021-01-12T09:51:28+08:00">2021-01-12</time>
+        <time title="Modified: 2021-01-12 10:04:44" itemprop="dateModified" datetime="2021-01-12T10:04:44+08:00">2021-01-12</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -271,35 +271,62 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="13-Roman-to-Integer"><a href="#13-Roman-to-Integer" class="headerlink" title="13. Roman to Integer"></a><center>13. Roman to Integer</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>Roman numerals are represented by seven different symbols: <span style="background-color:#F0F0F0"><font color=#808080>$I$</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>$V$</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>$X$</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>$L$</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>$C$</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>$D$</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>M</font></span>.</p>
-<p style="background-color:F0F0F0"><b>Symbol</b>&emsp;&emsp;<b>Value</b><br>
-&thinsp;$I$&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;1<br>
-$V$&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;5<br>
-$X$&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;10<br>
-$L$&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;50<br>
-$C$&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;100<br>
-$D$&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;500<br>
-$M$&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&thinsp;&thinsp;1000</p>
+        #
+<center>
+<ol start="13" type="1">
+<li>Roman to Integer
+</center>
+<h2 id="question">Question:</h2>
+Roman numerals are represented by seven different symbols: <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(I\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(V\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(L\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(C\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(D\)</span></font></span> and <span style="background-color:#F0F0F0"><font color=#808080>M</font></span>.
+<p style="background-color:F0F0F0">
+<b>Symbol</b>  <b>Value</b><br>  <span class="math inline">\(I\)</span>       1<br> <span class="math inline">\(V\)</span>      5<br> <span class="math inline">\(X\)</span>      10<br> <span class="math inline">\(L\)</span>       50<br> <span class="math inline">\(C\)</span>      100<br> <span class="math inline">\(D\)</span>      500<br> <span class="math inline">\(M\)</span>        1000
+</p>
 <a id="more"></a>
-For example, <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080>$II$</font></span> in Roman numeral, just two one's added together. <span style="background-color:#F0F0F0"><font color=#808080>12</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080>$XII$</font></span>, which is simply <span style="background-color:#F0F0F0"><font color=#808080>$X + II$</font></span>. The number <span style="background-color:#F0F0F0"><font color=#808080>27</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080>$XXVII$</font></span>, which is <span style="background-color:#F0F0F0"><font color=#808080>$XX + V + II$</font></span>.
-
-<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <span style="background-color:#F0F0F0"><font color=#808080>$IIII$</font></span>. Instead, the number four is written as <span style="background-color:#F0F0F0"><font color=#808080>$IV$</font></span>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <span style="background-color:#F0F0F0"><font color=#808080>$IX$</font></span>. There are six instances where subtraction is used:</p>
+For example, <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(II\)</span></font></span> in Roman numeral, just two one's added together. <span style="background-color:#F0F0F0"><font color=#808080>12</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XII\)</span></font></span>, which is simply <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X + II\)</span></font></span>. The number <span style="background-color:#F0F0F0"><font color=#808080>27</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XXVII\)</span></font></span>, which is <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XX + V + II\)</span></font></span>.</li>
+</ol>
+<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(IIII\)</span></font></span>. Instead, the number four is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(IV\)</span></font></span>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(IX\)</span></font></span>. There are six instances where subtraction is used:</p>
 <ul>
-<li><span style="background-color:#F0F0F0"><font color=#808080>$I$</font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080>$V$</font></span> (5) and <span style="background-color:#F0F0F0"><font color=#808080>$X$</font></span> (10) to make 4 and 9. </li>
-<li><span style="background-color:#F0F0F0"><font color=#808080>$X$</font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080>$L$</font></span> (50) and <span style="background-color:#F0F0F0"><font color=#808080>$C$</font></span> (100) to make 40 and 90. </li>
-<li><span style="background-color:#F0F0F0"><font color=#808080>$C$</font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080>$D$</font></span> (500) and <span style="background-color:#F0F0F0"><font color=#808080>$M$</font></span> (1000) to make 400 and 900.<br>Given a roman numeral, convert it to an integer.</li>
+<li><span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(I\)</span></font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(V\)</span></font></span> (5) and <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X\)</span></font></span> (10) to make 4 and 9.</li>
+<li><span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X\)</span></font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(L\)</span></font></span> (50) and <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(C\)</span></font></span> (100) to make 40 and 90.</li>
+<li><span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(C\)</span></font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(D\)</span></font></span> (500) and <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(M\)</span></font></span> (1000) to make 400 and 900. Given a roman numeral, convert it to an integer.</li>
 </ul>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> s = "$III$"<br><b>Output:</b> 3<br></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> s = "$IV$"<br><b>Output:</b> 4<br></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> s = "$IX$"<br><b>Output:</b> 9<br></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> s = "$LVIII$"<br><b>Output:</b> 58<br><b>Explanation:</b> $L$ = 50, $V$= 5, $III$ = 3.<br></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> s = "$MCMXCIV$"<b>Output:</b> 1994<br><b>Explanation:</b> $M$ = 1000, $CM$ = 900, $XC$ = 90 and $IV$ = 4.<br></p>
-
-<p><strong>Constraints:</strong><br><strong><li>1 &lt;= s.length &lt;= 15</li></strong><br><strong><li>s contains only the characters (‘$I$’, ‘$V$’, ‘$X$’, ‘$L$’, ‘$C$’, ‘$D$’, ‘$M$’).</li></strong><br><strong><li>It is guaranteed that s is a valid roman numeral in the range [1, 3999].</li></strong></p>
-<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h3 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a><u>Version 1</u></h3><p>Idea:<br>At first, I thought these symbols can be built by using vector directly. After my careful thought, a map container is a easy way to store elements by a combination of a key value and a mapped value. Next step, I used a loop to check each characters, if <code>symbol[s[i]] &gt;= symbol[s[i + 1]]</code> is true, add symbol[s[i]] up. On the contrary, if <code>symbol[s[i]] &lt; symbol[s[i + 1]]</code> is true, subtract symbol[s[i]] from summation.</p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "<span class="math inline">\(III\)</span>"<br><b>Output:</b> 3<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "<span class="math inline">\(IV\)</span>"<br><b>Output:</b> 4<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "<span class="math inline">\(IX\)</span>"<br><b>Output:</b> 9<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "<span class="math inline">\(LVIII\)</span>"<br><b>Output:</b> 58<br><b>Explanation:</b> <span class="math inline">\(L\)</span> = 50, <span class="math inline">\(V\)</span>= 5, <span class="math inline">\(III\)</span> = 3.<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "<span class="math inline">\(MCMXCIV\)</span>"<b>Output:</b> 1994<br><b>Explanation:</b> <span class="math inline">\(M\)</span> = 1000, <span class="math inline">\(CM\)</span> = 900, <span class="math inline">\(XC\)</span> = 90 and <span class="math inline">\(IV\)</span> = 4.<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+1 &lt;= s.length &lt;= 15
+</li>
+</strong> <strong>
+<li>
+s contains only the characters ('<span class="math inline">\(I\)</span>', '<span class="math inline">\(V\)</span>', '<span class="math inline">\(X\)</span>', '<span class="math inline">\(L\)</span>', '<span class="math inline">\(C\)</span>', '<span class="math inline">\(D\)</span>', '<span class="math inline">\(M\)</span>').
+</li>
+</strong> <strong>
+<li>
+It is guaranteed that s is a valid roman numeral in the range [1, 3999].
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: At first, I thought these symbols can be built by using vector directly. After my careful thought, a map container is a easy way to store elements by a combination of a key value and a mapped value. Next step, I used a loop to check each characters, if <code>symbol[s[i]] &gt;= symbol[s[i + 1]]</code> is true, add symbol[s[i]] up. On the contrary, if <code>symbol[s[i]] &lt; symbol[s[i + 1]]</code> is true, subtract symbol[s[i]] from summation.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        map&lt;char, int&gt; symbol(&#123;&#123;&#x27;I&#x27;, 1&#125;, &#123;&#x27;V&#x27;, 5&#125;, &#123;&#x27;X&#x27;, 10&#125;, &#123;&#x27;L&#x27;, 50&#125;, &#123;&#x27;C&#x27;, 100,&#125;, &#123;&#x27;D&#x27;, 500&#125;, &#123;&#x27;M&#x27;, 1000&#125;&#125;);</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(symbol[s[i]] &gt;= symbol[s[i + <span class="number">1</span>]])&#123;</span><br><span class="line">                sum += symbol[s[i]];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                sum -= symbol[s[i]];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="Version-2"><a href="#Version-2" class="headerlink" title="Version 2"></a><u>Version 2</u></h3><p>Idea:<br>This is a way to reduce a computing time. Add symbol[s[i]] value first, then check a value of s[i - 1] element whether it is less than a value of s[i] or not. If it is true, the summation need to subtract twice value of symbol[s[i - 1]]. So, it implements the less conditional operator. </p>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea: This is a way to reduce a computing time. Add symbol[s[i]] value first, then check a value of s[i - 1] element whether it is less than a value of s[i] or not. If it is true, the summation need to subtract twice value of symbol[s[i - 1]]. So, it implements the less conditional operator.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        map&lt;char, int&gt; symbol(&#123;&#123;&#x27;I&#x27;, 1&#125;, &#123;&#x27;V&#x27;, 5&#125;, &#123;&#x27;X&#x27;, 10&#125;, &#123;&#x27;L&#x27;, 50&#125;, &#123;&#x27;C&#x27;, 100,&#125;, &#123;&#x27;D&#x27;, 500&#125;, &#123;&#x27;M&#x27;, 1000&#125;&#125;);</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            sum += symbol[s[i]];</span><br><span class="line">            <span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; symbol[s[i - <span class="number">1</span>]] &lt; symbol[s[i]])&#123;</span><br><span class="line">                sum -= <span class="number">2</span>*symbol[s[i <span class="number">-1</span>]];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -411,6 +438,52 @@ For example, <span style="background-color:#F0F0F0"><font color=#808080>2</font>
 
 
   
+
+  
+      <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = '//cdn.jsdelivr.net/npm/mathjax@3.1.0/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

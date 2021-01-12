@@ -24,8 +24,15 @@
     <updated>2021-01-12T01:45:39.286Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;108-Convert-Sorted-Array-to-Binary-Search-Tree&quot;&gt;&lt;a href=&quot;#108-Convert-Sorted-Array-to-Binary-Search-Tree&quot; class=&quot;headerlink&quot; title=&quot;108. Convert Sorted Array to Binary Search Tree&quot;&gt;&lt;/a&gt;&lt;center&gt;108. Convert Sorted Array to Binary Search Tree&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question:&quot;&gt;&lt;/a&gt;Question:&lt;/h2&gt;&lt;p&gt;Given an array where elements are sorted in ascending order, convert it to a height balanced BST.&lt;/p&gt;
-&lt;p&gt;For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.&lt;/p&gt;</summary>
+    <summary type="html">#
+&lt;center&gt;
+&lt;ol start=&quot;108&quot; type=&quot;1&quot;&gt;
+&lt;li&gt;Convert Sorted Array to Binary Search Tree
+&lt;/center&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+Given an array where elements are sorted in ascending order, convert it to a height balanced BST.&lt;/li&gt;
+&lt;/ol&gt;
+For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.</summary>
     
     
     
@@ -46,13 +53,12 @@
     <updated>2021-01-12T01:53:03.165Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;Bootcamp-File-sharing-between-Mac-OS-X-and-Windows-10-on-MacBook-Pro&quot;&gt;&lt;a href=&quot;#Bootcamp-File-sharing-between-Mac-OS-X-and-Windows-10-on-MacBook-Pro&quot; class=&quot;headerlink&quot; title=&quot;Bootcamp: File sharing between Mac OS X and Windows 10 on MacBook Pro&quot;&gt;&lt;/a&gt;&lt;center&gt;Bootcamp: File sharing between Mac OS X and Windows 10 on MacBook Pro&lt;/center&gt;&lt;/h1&gt;&lt;p&gt;Here are some reason you should consider deploying Windows on your Mac device.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;More games with better performance in Windows OS.&lt;/li&gt;
-&lt;li&gt;Some Applications don’t work in macOS or not support all functions.&lt;/li&gt;
-&lt;li&gt;Developers need to test projects in Windows OS.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;So, I shared my experience to save your time of installing Windows on MacBook Pro.&lt;/p&gt;</summary>
+    <summary type="html">#
+&lt;center&gt;
+Bootcamp: File sharing between Mac OS X and Windows 10 on MacBook Pro
+&lt;/center&gt;
+&lt;p&gt;Here are some reason you should consider deploying Windows on your Mac device. 1. More games with better performance in Windows OS. 2. Some Applications don&#39;t work in macOS or not support all functions. 3. Developers need to test projects in Windows OS.&lt;/p&gt;
+&lt;p&gt;So, I shared my experience to save your time of installing Windows on MacBook Pro.</summary>
     
     
     
@@ -75,7 +81,11 @@
     <updated>2021-01-12T01:51:33.474Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;Tutorial-Install-ryu-in-Ubuntu-16-04-with-no-failure&quot;&gt;&lt;a href=&quot;#Tutorial-Install-ryu-in-Ubuntu-16-04-with-no-failure&quot; class=&quot;headerlink&quot; title=&quot;Tutorial - Install ryu in Ubuntu 16.04 with no failure&quot;&gt;&lt;/a&gt;&lt;center&gt;Tutorial - Install ryu in Ubuntu 16.04 with no failure&lt;/center&gt;&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://ryu.readthedocs.io/en/latest/index.html&quot;&gt;Ryu&lt;/a&gt; is a component-based software defined networking framework. It’s very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet.&lt;/p&gt;</summary>
+    <summary type="html">#
+&lt;center&gt;
+Tutorial - Install ryu in Ubuntu 16.04 with no failure
+&lt;/center&gt;
+&lt;a href=&quot;https://ryu.readthedocs.io/en/latest/index.html&quot;&gt;Ryu&lt;/a&gt; is a component-based software defined networking framework. It&#39;s very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet.</summary>
     
     
     
@@ -98,7 +108,11 @@
     <updated>2021-01-12T01:49:59.976Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;ns-3-configuration-and-ofswitch13-module-Tutorial&quot;&gt;&lt;a href=&quot;#ns-3-configuration-and-ofswitch13-module-Tutorial&quot; class=&quot;headerlink&quot; title=&quot;ns-3 configuration and ofswitch13 module - Tutorial&quot;&gt;&lt;/a&gt;&lt;center&gt;ns-3 configuration and ofswitch13 module - Tutorial&lt;/center&gt;&lt;/h1&gt;&lt;p&gt;I had deployed the ns-3 simulation with ofswitch13 successfully. I’ve been struggling to solve the simulation platform a lot of time. So, my experience is quite valuable and self-giving sharing for the ns-3 beginners.&lt;br&gt;The following procedure can be deployed on VMware/Virtual machine or cloud instance.&lt;br&gt;If your want to know how to deploy ns-3 on remote cloud instance easily, I will post an article to demonstrate full steps.&lt;/p&gt;</summary>
+    <summary type="html">#
+&lt;center&gt;
+ns-3 configuration and ofswitch13 module - Tutorial
+&lt;/center&gt;
+&lt;p&gt;I had deployed the ns-3 simulation with ofswitch13 successfully. I&#39;ve been struggling to solve the simulation platform a lot of time. So, my experience is quite valuable and self-giving sharing for the ns-3 beginners. The following procedure can be deployed on VMware/Virtual machine or cloud instance. If your want to know how to deploy ns-3 on remote cloud instance easily, I will post an article to demonstrate full steps.</summary>
     
     
     
@@ -125,10 +139,16 @@
     <updated>2021-01-12T01:52:54.118Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;Tutorial-Google-Chrome-Web-Browser-in-Ubuntu&quot;&gt;&lt;a href=&quot;#Tutorial-Google-Chrome-Web-Browser-in-Ubuntu&quot; class=&quot;headerlink&quot; title=&quot;Tutorial - Google Chrome Web Browser in Ubuntu&quot;&gt;&lt;/a&gt;&lt;center&gt;Tutorial - Google Chrome Web Browser in Ubuntu&lt;/center&gt;&lt;/h1&gt;&lt;p&gt;If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice.&lt;br&gt;Here, I shared my experience of installing Google Chrome on Ubuntu 16.04. You can implement it rapidly and easily.&lt;/p&gt;
+    <summary type="html">#
+&lt;center&gt;
+Tutorial - Google Chrome Web Browser in Ubuntu
+&lt;/center&gt;
+&lt;p&gt;If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice. Here, I shared my experience of installing Google Chrome on Ubuntu 16.04. You can implement it rapidly and easily.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Step 1.&lt;/strong&gt; Download the Google Chrome to your Ubuntu system&lt;/p&gt;
-&lt;p style=&quot;background-color:#F0F0F0&quot;&gt;$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb&lt;/p&gt;</summary>
+&lt;li&gt;&lt;strong&gt;Step 1.&lt;/strong&gt; Download the Google Chrome to your Ubuntu system
+&lt;p style=&quot;background-color:#F0F0F0&quot;&gt;
+$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+&lt;/p&gt;</summary>
     
     
     
@@ -149,7 +169,11 @@
     <updated>2021-01-12T01:47:24.519Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;Let-coding-interview-become-easy-Find-second-largest-element&quot;&gt;&lt;a href=&quot;#Let-coding-interview-become-easy-Find-second-largest-element&quot; class=&quot;headerlink&quot; title=&quot;Let coding interview become easy - Find second largest element&quot;&gt;&lt;/a&gt;&lt;center&gt;Let coding interview become easy - Find second largest element&lt;/center&gt;&lt;/h1&gt;&lt;p&gt;Maybe you will face it problem when you have an interview for a job with Tech. company.&lt;br&gt;The problem is “How to find second largest element?”, it seems very easy to get result, but you must propose an efficient approach.&lt;/p&gt;</summary>
+    <summary type="html">#
+&lt;center&gt;
+Let coding interview become easy - Find second largest element
+&lt;/center&gt;
+&lt;p&gt;Maybe you will face it problem when you have an interview for a job with Tech. company. The problem is &quot;How to find second largest element?&quot;, it seems very easy to get result, but you must propose an efficient approach.</summary>
     
     
     
@@ -170,7 +194,13 @@
     <updated>2021-01-12T01:45:28.431Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;107-Binary-Tree-Level-Order-Traversal-II&quot;&gt;&lt;a href=&quot;#107-Binary-Tree-Level-Order-Traversal-II&quot; class=&quot;headerlink&quot; title=&quot;107. Binary Tree Level Order Traversal II&quot;&gt;&lt;/a&gt;&lt;center&gt;107. Binary Tree Level Order Traversal II&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question:&quot;&gt;&lt;/a&gt;Question:&lt;/h2&gt;&lt;p&gt;Given a binary tree, return the &lt;em&gt;bottom-up level order&lt;/em&gt; traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).&lt;/p&gt;</summary>
+    <summary type="html">#
+&lt;center&gt;
+&lt;ol start=&quot;107&quot; type=&quot;1&quot;&gt;
+&lt;li&gt;Binary Tree Level Order Traversal II
+&lt;/center&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+Given a binary tree, return the &lt;em&gt;bottom-up level order&lt;/em&gt; traversal of its nodes&#39; values. (ie, from left to right, level by level from leaf to root).</summary>
     
     
     
@@ -193,8 +223,15 @@
     <updated>2021-01-12T01:49:16.036Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;104-Maximum-Depth-of-Binary-Tree&quot;&gt;&lt;a href=&quot;#104-Maximum-Depth-of-Binary-Tree&quot; class=&quot;headerlink&quot; title=&quot;104. Maximum Depth of Binary Tree&quot;&gt;&lt;/a&gt;&lt;center&gt;104. Maximum Depth of Binary Tree&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question:&quot;&gt;&lt;/a&gt;Question:&lt;/h2&gt;&lt;p&gt;Given the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;root&lt;/font&gt;&lt;/span&gt; of a binary tree, return &lt;em&gt;its maximum depth&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;A binary tree’s &lt;strong&gt;maximum depth&lt;/strong&gt; is the number of nodes along the longest path from the root node down to the farthest leaf node.&lt;/p&gt;</summary>
+    <summary type="html">#
+&lt;center&gt;
+&lt;ol start=&quot;104&quot; type=&quot;1&quot;&gt;
+&lt;li&gt;Maximum Depth of Binary Tree
+&lt;/center&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+Given the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;root&lt;/font&gt;&lt;/span&gt; of a binary tree, return &lt;em&gt;its maximum depth&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+A binary tree&#39;s &lt;strong&gt;maximum depth&lt;/strong&gt; is the number of nodes along the longest path from the root node down to the farthest leaf node.</summary>
     
     
     
@@ -213,7 +250,13 @@
     <updated>2021-01-12T01:51:48.229Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;101-Symmetric-Tree&quot;&gt;&lt;a href=&quot;#101-Symmetric-Tree&quot; class=&quot;headerlink&quot; title=&quot;101. Symmetric Tree&quot;&gt;&lt;/a&gt;&lt;center&gt;101. Symmetric Tree&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question:&quot;&gt;&lt;/a&gt;Question:&lt;/h2&gt;&lt;p&gt;Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).&lt;/p&gt;</summary>
+    <summary type="html">#
+&lt;center&gt;
+&lt;ol start=&quot;101&quot; type=&quot;1&quot;&gt;
+&lt;li&gt;Symmetric Tree
+&lt;/center&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).</summary>
     
     
     
@@ -234,8 +277,15 @@
     <updated>2021-01-12T01:51:39.220Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;100-Same-Tree&quot;&gt;&lt;a href=&quot;#100-Same-Tree&quot; class=&quot;headerlink&quot; title=&quot;100. Same Tree&quot;&gt;&lt;/a&gt;&lt;center&gt;100. Same Tree&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question:&quot;&gt;&lt;/a&gt;Question:&lt;/h2&gt;&lt;p&gt;Given the roots of two binary trees &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;p&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;q&lt;/font&gt;&lt;/span&gt;, write a function to check if they are the same or not.&lt;/p&gt;
-&lt;p&gt;Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.&lt;/p&gt;</summary>
+    <summary type="html">#
+&lt;center&gt;
+&lt;ol start=&quot;100&quot; type=&quot;1&quot;&gt;
+&lt;li&gt;Same Tree
+&lt;/center&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+Given the roots of two binary trees &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;p&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;q&lt;/font&gt;&lt;/span&gt;, write a function to check if they are the same or not.&lt;/li&gt;
+&lt;/ol&gt;
+Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.</summary>
     
     
     
@@ -256,7 +306,14 @@
     <updated>2021-01-12T01:49:30.773Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;88-Merge-Sorted-Array&quot;&gt;&lt;a href=&quot;#88-Merge-Sorted-Array&quot; class=&quot;headerlink&quot; title=&quot;88. Merge Sorted Array&quot;&gt;&lt;/a&gt;&lt;center&gt;88. Merge Sorted Array&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question:&quot;&gt;&lt;/a&gt;Question:&lt;/h2&gt;&lt;p&gt;Given two sorted integer arrays &lt;em&gt;nums1&lt;/em&gt; and &lt;em&gt;nums2&lt;/em&gt;, merge &lt;em&gt;nums2&lt;/em&gt; into &lt;em&gt;nums1&lt;/em&gt; as one sorted array.&lt;br&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;
+    <summary type="html">#
+&lt;center&gt;
+&lt;ol start=&quot;88&quot; type=&quot;1&quot;&gt;
+&lt;li&gt;Merge Sorted Array
+&lt;/center&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+Given two sorted integer arrays &lt;em&gt;nums1&lt;/em&gt; and &lt;em&gt;nums2&lt;/em&gt;, merge &lt;em&gt;nums2&lt;/em&gt; into &lt;em&gt;nums1&lt;/em&gt; as one sorted array. &lt;strong&gt;Note:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;The number of elements initialized in nums1 and nums2 are m and n respectively.&lt;/li&gt;
 &lt;li&gt;You may assume that nums1 has enough space (size that is equal to m + n) to hold additional elements from nums2.</summary>
@@ -280,7 +337,13 @@
     <updated>2021-01-12T01:50:45.711Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;83-Remove-Duplicates-from-Sorted-List&quot;&gt;&lt;a href=&quot;#83-Remove-Duplicates-from-Sorted-List&quot; class=&quot;headerlink&quot; title=&quot;83. Remove Duplicates from Sorted List&quot;&gt;&lt;/a&gt;&lt;center&gt;83. Remove Duplicates from Sorted List&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question:&quot;&gt;&lt;/a&gt;Question:&lt;/h2&gt;&lt;p&gt;Given a sorted linked list, delete all duplicates such that each element appear only once.&lt;/p&gt;</summary>
+    <summary type="html">#
+&lt;center&gt;
+&lt;ol start=&quot;83&quot; type=&quot;1&quot;&gt;
+&lt;li&gt;Remove Duplicates from Sorted List
+&lt;/center&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+Given a sorted linked list, delete all duplicates such that each element appear only once.</summary>
     
     
     
@@ -299,8 +362,15 @@
     <updated>2021-01-12T01:45:35.640Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;70-Climbing-Stairs&quot;&gt;&lt;a href=&quot;#70-Climbing-Stairs&quot; class=&quot;headerlink&quot; title=&quot;70. Climbing Stairs&quot;&gt;&lt;/a&gt;&lt;center&gt;70. Climbing Stairs&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question:&quot;&gt;&lt;/a&gt;Question:&lt;/h2&gt;&lt;p&gt;You are climbing a staircase. It takes &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n&lt;/font&gt;&lt;/span&gt; steps to reach the top.&lt;/p&gt;
-&lt;p&gt;Each time you can either climb &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;1&lt;/font&gt;&lt;/span&gt; or &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;2&lt;/font&gt;&lt;/span&gt; steps. In how many distinct ways can you climb to the top?&lt;/p&gt;</summary>
+    <summary type="html">#
+&lt;center&gt;
+&lt;ol start=&quot;70&quot; type=&quot;1&quot;&gt;
+&lt;li&gt;Climbing Stairs
+&lt;/center&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+You are climbing a staircase. It takes &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n&lt;/font&gt;&lt;/span&gt; steps to reach the top.&lt;/li&gt;
+&lt;/ol&gt;
+Each time you can either climb &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;1&lt;/font&gt;&lt;/span&gt; or &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;2&lt;/font&gt;&lt;/span&gt; steps. In how many distinct ways can you climb to the top?</summary>
     
     
     
@@ -323,8 +393,15 @@
     <updated>2021-01-12T01:51:45.279Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;69-Sqrt-x&quot;&gt;&lt;a href=&quot;#69-Sqrt-x&quot; class=&quot;headerlink&quot; title=&quot;69. Sqrt(x)&quot;&gt;&lt;/a&gt;&lt;center&gt;69. Sqrt(x)&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question:&quot;&gt;&lt;/a&gt;Question:&lt;/h2&gt;&lt;p&gt;Given a non-negative integer &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;x&lt;/font&gt;&lt;/span&gt;, compute and return &lt;em&gt;the square root of&lt;/em&gt; &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;x&lt;/font&gt;&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Since the return type is an integer, the decimal digits are &lt;b&gt;truncated&lt;/b&gt;, and only &lt;b&gt;the integer part&lt;/b&gt; of the result is returned.&lt;/p&gt;</summary>
+    <summary type="html">#
+&lt;center&gt;
+&lt;ol start=&quot;69&quot; type=&quot;1&quot;&gt;
+&lt;li&gt;Sqrt(x)
+&lt;/center&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+Given a non-negative integer &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;x&lt;/font&gt;&lt;/span&gt;, compute and return &lt;em&gt;the square root of&lt;/em&gt; &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;x&lt;/font&gt;&lt;/span&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+Since the return type is an integer, the decimal digits are &lt;b&gt;truncated&lt;/b&gt;, and only &lt;b&gt;the integer part&lt;/b&gt; of the result is returned.</summary>
     
     
     
@@ -343,7 +420,13 @@
     <updated>2021-01-12T01:45:23.378Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;67-Add-Binary&quot;&gt;&lt;a href=&quot;#67-Add-Binary&quot; class=&quot;headerlink&quot; title=&quot;67. Add Binary&quot;&gt;&lt;/a&gt;&lt;center&gt;67. Add Binary&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question:&quot;&gt;&lt;/a&gt;Question:&lt;/h2&gt;&lt;p&gt;Given two binary strings &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;a&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;b&lt;/font&gt;&lt;/span&gt;, return &lt;em&gt;their sum as a binary string&lt;/em&gt;.&lt;/p&gt;</summary>
+    <summary type="html">#
+&lt;center&gt;
+&lt;ol start=&quot;67&quot; type=&quot;1&quot;&gt;
+&lt;li&gt;Add Binary
+&lt;/center&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+Given two binary strings &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;a&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;b&lt;/font&gt;&lt;/span&gt;, return &lt;em&gt;their sum as a binary string&lt;/em&gt;.</summary>
     
     
     
@@ -368,9 +451,16 @@
     <updated>2021-01-12T01:50:24.659Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;66-Plus-One&quot;&gt;&lt;a href=&quot;#66-Plus-One&quot; class=&quot;headerlink&quot; title=&quot;66. Plus One&quot;&gt;&lt;/a&gt;&lt;center&gt;66. Plus One&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question:&quot;&gt;&lt;/a&gt;Question:&lt;/h2&gt;&lt;p&gt;Given a &lt;strong&gt;non-empty&lt;/strong&gt; array of decimal digits representing a non-negative integer, increment one to the integer.&lt;/p&gt;
+    <summary type="html">#
+&lt;center&gt;
+&lt;ol start=&quot;66&quot; type=&quot;1&quot;&gt;
+&lt;li&gt;Plus One
+&lt;/center&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+Given a &lt;strong&gt;non-empty&lt;/strong&gt; array of decimal digits representing a non-negative integer, increment one to the integer.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;The digits are stored such that the most significant digit is at the head of the list, and each element in the array contains a single digit.&lt;/p&gt;
-&lt;p&gt;You may assume the integer does not contain any leading zero, except the number 0 itself.&lt;/p&gt;</summary>
+You may assume the integer does not contain any leading zero, except the number 0 itself.</summary>
     
     
     
@@ -389,8 +479,15 @@
     <updated>2021-01-12T01:49:22.702Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;53-Maximum-Subarray&quot;&gt;&lt;a href=&quot;#53-Maximum-Subarray&quot; class=&quot;headerlink&quot; title=&quot;53. Maximum Subarray&quot;&gt;&lt;/a&gt;&lt;center&gt;53. Maximum Subarray&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question:&quot;&gt;&lt;/a&gt;Question:&lt;/h2&gt;&lt;p&gt;Given an integer array &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;nums&lt;/font&gt;&lt;/span&gt;, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Follow up:&lt;/strong&gt; If you have figured out the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;O(n)&lt;/font&gt;&lt;/span&gt; solution, try coding another solution using the &lt;strong&gt;divide and conquer&lt;/strong&gt; approach, which is more subtle.&lt;/p&gt;</summary>
+    <summary type="html">#
+&lt;center&gt;
+&lt;ol start=&quot;53&quot; type=&quot;1&quot;&gt;
+&lt;li&gt;Maximum Subarray
+&lt;/center&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+Given an integer array &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;nums&lt;/font&gt;&lt;/span&gt;, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;strong&gt;Follow up:&lt;/strong&gt; If you have figured out the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;O(n)&lt;/font&gt;&lt;/span&gt; solution, try coding another solution using the &lt;strong&gt;divide and conquer&lt;/strong&gt; approach, which is more subtle.</summary>
     
     
     
@@ -409,8 +506,14 @@
     <updated>2021-01-12T01:52:22.734Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;Visual-Studio-Code-installation-and-run-it-from-Terminal-on-macOS&quot;&gt;&lt;a href=&quot;#Visual-Studio-Code-installation-and-run-it-from-Terminal-on-macOS&quot; class=&quot;headerlink&quot; title=&quot;Visual Studio Code installation and run it from Terminal on macOS&quot;&gt;&lt;/a&gt;&lt;center&gt;Visual Studio Code installation and run it from Terminal on macOS&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;Background&quot;&gt;&lt;a href=&quot;#Background&quot; class=&quot;headerlink&quot; title=&quot;Background&quot;&gt;&lt;/a&gt;Background&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Visual Studio Code&lt;/strong&gt; is a free source-code editor made by Microsoft for Windows, Linux and macOS.&lt;br&gt;Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git. Users can change the theme, keyboard shortcuts, preferences, and install extensions that add additional functionality.&lt;/p&gt;
-&lt;h2 id=&quot;Installation&quot;&gt;&lt;a href=&quot;#Installation&quot; class=&quot;headerlink&quot; title=&quot;Installation&quot;&gt;&lt;/a&gt;Installation&lt;/h2&gt;&lt;ol&gt;
+    <summary type="html">#
+&lt;center&gt;
+Visual Studio Code installation and run it from Terminal on macOS
+&lt;/center&gt;
+&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Visual Studio Code&lt;/strong&gt; is a free source-code editor made by Microsoft for Windows, Linux and macOS. Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git. Users can change the theme, keyboard shortcuts, preferences, and install extensions that add additional functionality.&lt;/p&gt;
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+&lt;ol type=&quot;1&quot;&gt;
 &lt;li&gt;&lt;a href=&quot;https://code.visualstudio.com/docs?dv=osx&quot;&gt;Download Visual Studio Code&lt;/a&gt; for macOS directly.</summary>
     
     
@@ -430,7 +533,21 @@
     <updated>2021-01-12T01:45:45.730Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;38-Count-and-Say&quot;&gt;&lt;a href=&quot;#38-Count-and-Say&quot; class=&quot;headerlink&quot; title=&quot;38. Count and Say&quot;&gt;&lt;/a&gt;&lt;center&gt;38. Count and Say&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question:&quot;&gt;&lt;/a&gt;Question:&lt;/h2&gt;&lt;p&gt;The &lt;strong&gt;count-and-say&lt;/strong&gt; sequence is a sequence of digit strings defined by the recursive formula:&lt;br&gt;&lt;strong&gt;&lt;li&gt;&lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;countAndSay(1) = “1”&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;&lt;li&gt;&lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;countAndSay(n)&lt;/font&gt;&lt;/span&gt; is the way you would “say” the digit string from &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;countAndSay(n-1)&lt;/font&gt;&lt;/span&gt;, which is then converted into a different digit string.&lt;/li&gt;&lt;/strong&gt;&lt;br&gt;To determine how you “say” a digit string, split it into the minimal number of groups so that each group is a contiguous section all of the same character. Then for each group, say the number of characters, then say the character. To convert the saying into a digit string, replace the counts with a number and concatenate every saying.&lt;/p&gt;</summary>
+    <summary type="html">#
+&lt;center&gt;
+&lt;ol start=&quot;38&quot; type=&quot;1&quot;&gt;
+&lt;li&gt;Count and Say
+&lt;/center&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+The &lt;strong&gt;count-and-say&lt;/strong&gt; sequence is a sequence of digit strings defined by the recursive formula: &lt;strong&gt;
+&lt;li&gt;
+&lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;countAndSay(1) = &quot;1&quot;&lt;/font&gt;&lt;/span&gt;
+&lt;/li&gt;
+&lt;/strong&gt; &lt;strong&gt;
+&lt;li&gt;
+&lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;countAndSay(n)&lt;/font&gt;&lt;/span&gt; is the way you would &quot;say&quot; the digit string from &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;countAndSay(n-1)&lt;/font&gt;&lt;/span&gt;, which is then converted into a different digit string.
+&lt;/li&gt;
+&lt;/strong&gt; To determine how you &quot;say&quot; a digit string, split it into the minimal number of groups so that each group is a contiguous section all of the same character. Then for each group, say the number of characters, then say the character. To convert the saying into a digit string, replace the counts with a number and concatenate every saying.</summary>
     
     
     
@@ -449,7 +566,13 @@
     <updated>2021-01-12T01:51:42.457Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;35-Search-Insert-Position&quot;&gt;&lt;a href=&quot;#35-Search-Insert-Position&quot; class=&quot;headerlink&quot; title=&quot;35. Search Insert Position&quot;&gt;&lt;/a&gt;&lt;center&gt;35. Search Insert Position&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question:&quot;&gt;&lt;/a&gt;Question:&lt;/h2&gt;&lt;p&gt;Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.&lt;/p&gt;</summary>
+    <summary type="html">#
+&lt;center&gt;
+&lt;ol start=&quot;35&quot; type=&quot;1&quot;&gt;
+&lt;li&gt;Search Insert Position
+&lt;/center&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</summary>
     
     
     

@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
-  <meta name="description" content="38. Count and SayQuestion:The count-and-say sequence is a sequence of digit strings defined by the recursive formula:countAndSay(1) &#x3D; “1”countAndSay(n) is the way you would “say” the digit string from">
+  <meta name="description" content="#   Count and Say  Question: The count-and-say sequence is a sequence of digit strings defined by the recursive formula:   countAndSay(1) &#x3D; &quot;1&quot;     countAndSay(n) is the way you would &quot;say&quot; the digit">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[LeetCode Road] Count and Say">
 <meta property="og:url" content="https://egbert-yu-ting.github.io/posts/e0d9ee0a/index.html">
 <meta property="og:site_name" content="Egbert Lin&#39;s Blog">
-<meta property="og:description" content="38. Count and SayQuestion:The count-and-say sequence is a sequence of digit strings defined by the recursive formula:countAndSay(1) &#x3D; “1”countAndSay(n) is the way you would “say” the digit string from">
+<meta property="og:description" content="#   Count and Say  Question: The count-and-say sequence is a sequence of digit strings defined by the recursive formula:   countAndSay(1) &#x3D; &quot;1&quot;     countAndSay(n) is the way you would &quot;say&quot; the digit">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/e0d9ee0a/38_example.png">
 <meta property="article:published_time" content="2020-12-10T07:06:04.000Z">
@@ -157,7 +157,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#38-Count-and-Say"><span class="nav-number">1.</span> <span class="nav-text">38. Count and Say</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.1.</span> <span class="nav-text">Question:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">1.2.</span> <span class="nav-text">Example:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Source-code"><span class="nav-number">1.3.</span> <span class="nav-text">Source code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Version"><span class="nav-number">1.4.</span> <span class="nav-text">Version</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#question"><span class="nav-number">1.</span> <span class="nav-text">Question:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example"><span class="nav-number">2.</span> <span class="nav-text">Example:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source-code"><span class="nav-number">3.</span> <span class="nav-text">Source code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#version"><span class="nav-number">4.</span> <span class="nav-text">Version</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -273,16 +273,39 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="38-Count-and-Say"><a href="#38-Count-and-Say" class="headerlink" title="38. Count and Say"></a><center>38. Count and Say</center></h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>The <strong>count-and-say</strong> sequence is a sequence of digit strings defined by the recursive formula:<br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>countAndSay(1) = “1”</font></span></li></strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>countAndSay(n)</font></span> is the way you would “say” the digit string from <span style="background-color:#F0F0F0"><font color=#808080>countAndSay(n-1)</font></span>, which is then converted into a different digit string.</li></strong><br>To determine how you “say” a digit string, split it into the minimal number of groups so that each group is a contiguous section all of the same character. Then for each group, say the number of characters, then say the character. To convert the saying into a digit string, replace the counts with a number and concatenate every saying.</p>
-<a id="more"></a>
-<p>For example, the saying and conversion for digit string “3322251”:<br><img src="38_example.png" alt="">Given a positive integer <span style="background-color:#F0F0F0"><font color=#808080>n</font></span>, return <em>the</em> <span style="background-color:#F0F0F0"><font color=#808080>n^th</font></span> <em>term of the count-and-say sequence</em>.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p style="background-color:#F0F0F0"><b>Input:</b> n = 1<br><b>Output:</b> "1"<br><b>Explanation:</b> This is the base case.<br></p>
-<p style="background-color:#F0F0F0"><b>Input:</b> n = 4<br>
-<b>Output:</b> "1211"<br><b>Explanation:</b><br>countAndSay(1) = "1"<br>countAndSay(2) = say "1" = one 1 = "11"<br>countAndSay(3) = say "11" = two 1's = "21"<br>countAndSay(4) = say "21" = one 2 + one 1 = "12" + "11" = "1211"<br></p>
-
-<p><strong>Constraints:</strong><br><strong><li><span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= n &lt;= 30</font></span></li></strong></p>
-<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><h2 id="Version"><a href="#Version" class="headerlink" title="Version"></a><u>Version</u></h2><p>Idea:<br>It is a sticky problem for me, my methods always got Time Limit Exceeded. I had no choice but to refer to <a target="_blank" rel="noopener" href="https://zxi.mytechroad.com/blog/simulation/leetcode-38-count-and-say/">Huahua’s Tech Road</a>.<br>Declare a string consists 1 character, if n = 1, return a string.<br><code>record</code> as a index, it starts from 0. We must check <code>res[record] != res[j]</code>, use <code>j - count</code> we can get number of the same characters. Finally, use temporary string to store the results.</p>
+        #
+<center>
+<ol start="38" type="1">
+<li>Count and Say
+</center>
+<h2 id="question">Question:</h2>
+The <strong>count-and-say</strong> sequence is a sequence of digit strings defined by the recursive formula: <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>countAndSay(1) = "1"</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>countAndSay(n)</font></span> is the way you would "say" the digit string from <span style="background-color:#F0F0F0"><font color=#808080>countAndSay(n-1)</font></span>, which is then converted into a different digit string.
+</li>
+</strong> To determine how you "say" a digit string, split it into the minimal number of groups so that each group is a contiguous section all of the same character. Then for each group, say the number of characters, then say the character. To convert the saying into a digit string, replace the counts with a number and concatenate every saying. <a id="more"></a> For example, the saying and conversion for digit string "3322251": <img src="38_example.png" />Given a positive integer <span style="background-color:#F0F0F0"><font color=#808080>n</font></span>, return <em>the</em> <span style="background-color:#F0F0F0"><font color=#808080>n^th</font></span> <em>term of the count-and-say sequence</em>.</li>
+</ol>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> n = 1<br><b>Output:</b> "1"<br><b>Explanation:</b> This is the base case.<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> n = 4<br> <b>Output:</b> "1211"<br><b>Explanation:</b><br>countAndSay(1) = "1"<br>countAndSay(2) = say "1" = one 1 = "11"<br>countAndSay(3) = say "11" = two 1's = "21"<br>countAndSay(4) = say "21" = one 2 + one 1 = "12" + "11" = "1211"<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= n &lt;= 30</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h2 id="version"><u>Version</u></h2>
+<p>Idea: It is a sticky problem for me, my methods always got Time Limit Exceeded. I had no choice but to refer to <a target="_blank" rel="noopener" href="https://zxi.mytechroad.com/blog/simulation/leetcode-38-count-and-say/">Huahua's Tech Road</a>. Declare a string consists 1 character, if n = 1, return a string. <code>record</code> as a index, it starts from 0. We must check <code>res[record] != res[j]</code>, use <code>j - count</code> we can get number of the same characters. Finally, use temporary string to store the results.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">countAndSay</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> res = <span class="string">&quot;1&quot;</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="built_in">string</span> temp = <span class="string">&quot;&quot;</span>;</span><br><span class="line">            <span class="keyword">int</span> record = <span class="number">0</span>, len = res.length();</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(res[record] != res[j] || j == len)&#123;</span><br><span class="line">                    <span class="keyword">int</span> count = j - record;</span><br><span class="line">                    temp += <span class="string">&#x27;0&#x27;</span> + count;</span><br><span class="line">                    temp += res[record];</span><br><span class="line">                    record = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            res = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -392,6 +415,8 @@
 
 
 
+
+  
 
   
 

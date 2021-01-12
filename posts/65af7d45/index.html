@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
-  <meta name="description" content="Tutorial - Google Chrome Web Browser in UbuntuIf you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice.Here, I shared my experience">
+  <meta name="description" content="#  Tutorial - Google Chrome Web Browser in Ubuntu  If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice. Here, I shared my exper">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Step by Step] How to install Google Chrome on Ubuntu 16.04">
 <meta property="og:url" content="https://egbert-yu-ting.github.io/posts/65af7d45/index.html">
 <meta property="og:site_name" content="Egbert Lin&#39;s Blog">
-<meta property="og:description" content="Tutorial - Google Chrome Web Browser in UbuntuIf you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice.Here, I shared my experience">
+<meta property="og:description" content="#  Tutorial - Google Chrome Web Browser in Ubuntu  If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice. Here, I shared my exper">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/65af7d45/GoogleChromeInstallation_1.png">
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/65af7d45/GoogleChromeInstallation_2.png">
@@ -147,7 +147,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -159,7 +159,6 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Tutorial-Google-Chrome-Web-Browser-in-Ubuntu"><span class="nav-number">1.</span> <span class="nav-text">Tutorial - Google Chrome Web Browser in Ubuntu</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -275,25 +274,31 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Tutorial-Google-Chrome-Web-Browser-in-Ubuntu"><a href="#Tutorial-Google-Chrome-Web-Browser-in-Ubuntu" class="headerlink" title="Tutorial - Google Chrome Web Browser in Ubuntu"></a><center>Tutorial - Google Chrome Web Browser in Ubuntu</center></h1><p>If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice.<br>Here, I shared my experience of installing Google Chrome on Ubuntu 16.04. You can implement it rapidly and easily.</p>
+        #
+<center>
+Tutorial - Google Chrome Web Browser in Ubuntu
+</center>
+<p>If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice. Here, I shared my experience of installing Google Chrome on Ubuntu 16.04. You can implement it rapidly and easily.</p>
 <ul>
-<li><p><strong>Step 1.</strong> Download the Google Chrome to your Ubuntu system</p>
-<p style="background-color:#F0F0F0">$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb</p>
-<a id="more"></a></li>
-<li><p><strong>Step 2.</strong> Install the Google Chrome</p>
-<p style="background-color:#F0F0F0">$ sudo dpkg -i google-chrome-stable_current_amd64.deb
+<li><strong>Step 1.</strong> Download the Google Chrome to your Ubuntu system
+<p style="background-color:#F0F0F0">
+$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 </p>
-</li>
-<li><p><strong>Step 3.</strong> Update the Google Chrome and you can run it.</p>
-<p style="background-color:#F0F0F0">$ cat /etc/apt/sources.list.d/google-chrome.list</p>
-
-</li>
+<a id="more"></a></li>
+<li><strong>Step 2.</strong> Install the Google Chrome
+<p style="background-color:#F0F0F0">
+$ sudo dpkg -i google-chrome-stable_current_amd64.deb
+</p></li>
+<li><strong>Step 3.</strong> Update the Google Chrome and you can run it.
+<p style="background-color:#F0F0F0">
+$ cat /etc/apt/sources.list.d/google-chrome.list
+</p></li>
 </ul>
-<p><img src="GoogleChromeInstallation_1.png" alt=""></p>
-<hr>
-<p>When open the application, if you meet <font color=#FF0000>“Your connection is not secure”</font> message or result as below:<br><img src="GoogleChromeInstallation_2.png" alt=""></p>
-<p><strong>Solution.</strong> Installation of Network Security Service libraries package:</p>
-<p style="background-color:#F0F0F0">$ sudo apt-get install libnss3-1d</p>
+<p><img src="GoogleChromeInstallation_1.png" /> *** When open the application, if you meet <font color=#FF0000>"Your connection is not secure"</font> message or result as below: <img src="GoogleChromeInstallation_2.png" /></p>
+<strong>Solution.</strong> Installation of Network Security Service libraries package:
+<p style="background-color:#F0F0F0">
+$ sudo apt-get install libnss3-1d
+</p>
 
     </div>
 
@@ -405,6 +410,8 @@
 
 
 
+
+  
 
   
 

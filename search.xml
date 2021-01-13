@@ -61,7 +61,7 @@ if sum = 0 // binary: 00000000<br>  (sum &amp; 1) = 0<br> if sum = 2 // binary
 <h2 id="example">Example:</h2>
 For example: Given binary tree <span style="background-color:#F0F0F0"><font color=#808080>[3,9,20,null,null,15,7]<span style="background-color:#F0F0F0"><font color=#808080>,
 <p style="background-color:#F0F0F0">
-   3<br>    / &lt;br&gt;   9 20<br>    / &lt;br&gt;    15  7
+   3<br>    /  <br>   9 20 <br>    /  <br>    15  7
 </p>
 return its bottom-up level order traversal as:
 <p style="background-color:#F0F0F0">

@@ -100,11 +100,11 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
     <link href="https://egbert-yu-ting.github.io/posts/9e0f4e5/"/>
     <id>https://egbert-yu-ting.github.io/posts/9e0f4e5/</id>
     <published>2021-01-06T06:14:43.000Z</published>
-    <updated>2021-01-13T06:02:09.158Z</updated>
+    <updated>2021-01-13T06:02:54.595Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;Tutorial - Install ryu in Ubuntu 16.04 with no failure&lt;/b&gt;&lt;/font&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;Tutorial - Install Ryu in Ubuntu 16.04 with no failure&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://ryu.readthedocs.io/en/latest/index.html&quot;&gt;Ryu&lt;/a&gt; is a component-based software defined networking framework. It&#39;s very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet.</summary>
     

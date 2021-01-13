@@ -982,7 +982,7 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
     <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
     <url>/posts/9e0f4e5/</url>
     <content><![CDATA[<p align="center">
-<font size="6"><b>Tutorial - Install ryu in Ubuntu 16.04 with no failure</b></font>
+<font size="6"><b>Tutorial - Install Ryu in Ubuntu 16.04 with no failure</b></font>
 </p>
 <p><a href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It's very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet. <a id="more"></a></p>
 <h2 id="start-to-configure-and-install">Start to configure and install</h2>

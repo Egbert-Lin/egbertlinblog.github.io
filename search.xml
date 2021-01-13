@@ -60,7 +60,7 @@ if sum = 0 // binary: 00000000<br>  (sum &amp; 1) = 0<br> if sum = 2 // binary
 <h2 id="question">Question:</h2>
 <p>Given a binary tree, return the <em>bottom-up level order</em> traversal of its nodes' values. (ie, from left to right, level by level from leaf to root). <a id="more"></a></p>
 <h2 id="example">Example:</h2>
-For example: Given binary tree <span style="background-color:#F0F0F0"><font color=#808080>[3,9,20,null,null,15,7]<span style="background-color:#F0F0F0"><font color=#808080>,
+For example: Given binary tree <span style="background-color:#F0F0F0"><font color=#808080>[3,9,20,null,null,15,7]</span></font>,
 <p style="background-color:#F0F0F0">
    3<br>    / &lt;br&gt;   9 20<br>    / &lt;br&gt;    15  7
 </p>

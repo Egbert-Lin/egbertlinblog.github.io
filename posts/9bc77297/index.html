@@ -30,7 +30,7 @@
 <meta property="og:description" content="28. Implement strStr()  Question: Implement strStr(). Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack. Clarification: What should we return whe">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-09T03:15:55.000Z">
-<meta property="article:modified_time" content="2021-01-13T00:15:11.098Z">
+<meta property="article:modified_time" content="2021-01-13T00:46:07.325Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="String">
 <meta name="twitter:card" content="summary">
@@ -215,7 +215,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#question"><span class="nav-number">1.</span> <span class="nav-text">Question:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source-code"><span class="nav-number">2.</span> <span class="nav-text">Source code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#version-1"><span class="nav-number">3.</span> <span class="nav-text">Version 1</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#question"><span class="nav-number">1.</span> <span class="nav-text">Question:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example"><span class="nav-number">2.</span> <span class="nav-text">Example:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source-code"><span class="nav-number">3.</span> <span class="nav-text">Source code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#version-1"><span class="nav-number">4.</span> <span class="nav-text">Version 1</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -353,7 +353,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-13 08:15:11" itemprop="dateModified" datetime="2021-01-13T08:15:11+08:00">2021-01-13</time>
+        <time title="Modified: 2021-01-13 08:46:07" itemprop="dateModified" datetime="2021-01-13T08:46:07+08:00">2021-01-13</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -380,8 +380,9 @@
 </p>
 <h2 id="question">Question:</h2>
 <p>Implement <font color=#808080>strStr()</font>.</p>
-<p>Return the index of the first occurrence of needle in haystack, or <font color=#808080>-1</font> if <font color=#808080>needle</font> is not part of <font color=#808080>haystack</font>. <strong>Clarification:</strong> What should we return when <font color=#808080>needle</font> is an empty string? This is a great question to ask during an interview.</p>
-For the purpose of this problem, we will return 0 when <font color=#808080>needle</font> is an empty string. This is consistent to C's <font color=#808080>strstr()</font> and Java's <font color=#808080>indexOf()</font>. <a id="more"></a> ## Example:
+<p>Return the index of the first occurrence of needle in haystack, or <font color=#808080>-1</font> if <font color=#808080>needle</font> is not part of <font color=#808080>haystack</font>.<br> <strong>Clarification:</strong> What should we return when <font color=#808080>needle</font> is an empty string? This is a great question to ask during an interview.</p>
+<p>For the purpose of this problem, we will return 0 when <font color=#808080>needle</font> is an empty string. This is consistent to C's <font color=#808080>strstr()</font> and Java's <font color=#808080>indexOf()</font>. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
 <b>Input:</b> haystack = "hello", needle = "ll"<br><b>Output:</b> 2<br>
 </p>

@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-13T00:14:29.933Z</updated>
+  <updated>2021-01-13T00:37:45.618Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/17bf1818/"/>
     <id>https://egbert-yu-ting.github.io/posts/17bf1818/</id>
     <published>2021-01-08T02:44:56.000Z</published>
-    <updated>2021-01-13T00:14:29.933Z</updated>
+    <updated>2021-01-13T00:37:45.618Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -130,7 +130,7 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
     <link href="https://egbert-yu-ting.github.io/posts/65af7d45/"/>
     <id>https://egbert-yu-ting.github.io/posts/65af7d45/</id>
     <published>2021-01-05T11:33:27.000Z</published>
-    <updated>2021-01-12T06:56:06.727Z</updated>
+    <updated>2021-01-13T00:15:02.816Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -154,7 +154,7 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
     <link href="https://egbert-yu-ting.github.io/posts/16153cc7/"/>
     <id>https://egbert-yu-ting.github.io/posts/16153cc7/</id>
     <published>2021-01-05T05:52:46.000Z</published>
-    <updated>2021-01-12T02:39:01.366Z</updated>
+    <updated>2021-01-13T00:14:56.714Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -178,7 +178,7 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
     <link href="https://egbert-yu-ting.github.io/posts/cac8b982/"/>
     <id>https://egbert-yu-ting.github.io/posts/cac8b982/</id>
     <published>2020-12-30T00:38:38.000Z</published>
-    <updated>2021-01-13T00:29:57.836Z</updated>
+    <updated>2021-01-13T00:37:00.799Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -229,7 +229,7 @@ A binary tree&#39;s &lt;strong&gt;maximum depth&lt;/strong&gt; is the number of 
     <link href="https://egbert-yu-ting.github.io/posts/d1f23ab6/"/>
     <id>https://egbert-yu-ting.github.io/posts/d1f23ab6/</id>
     <published>2020-12-24T00:40:10.000Z</published>
-    <updated>2021-01-13T00:16:35.745Z</updated>
+    <updated>2021-01-13T00:39:08.115Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -280,7 +280,7 @@ Two binary trees are considered the same if they are structurally identical, and
     <link href="https://egbert-yu-ting.github.io/posts/1cc4a24a/"/>
     <id>https://egbert-yu-ting.github.io/posts/1cc4a24a/</id>
     <published>2020-12-22T06:39:08.000Z</published>
-    <updated>2021-01-13T00:15:40.872Z</updated>
+    <updated>2021-01-13T00:40:11.099Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -308,7 +308,7 @@ Two binary trees are considered the same if they are structurally identical, and
     <link href="https://egbert-yu-ting.github.io/posts/66cc46ab/"/>
     <id>https://egbert-yu-ting.github.io/posts/66cc46ab/</id>
     <published>2020-12-22T00:31:02.000Z</published>
-    <updated>2021-01-13T00:16:04.574Z</updated>
+    <updated>2021-01-13T00:43:38.288Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -331,7 +331,7 @@ Two binary trees are considered the same if they are structurally identical, and
     <link href="https://egbert-yu-ting.github.io/posts/7af6a106/"/>
     <id>https://egbert-yu-ting.github.io/posts/7af6a106/</id>
     <published>2020-12-17T08:12:36.000Z</published>
-    <updated>2021-01-13T00:14:51.932Z</updated>
+    <updated>2021-01-13T00:42:47.096Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -339,7 +339,7 @@ Two binary trees are considered the same if they are structurally identical, and
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;You are climbing a staircase. It takes &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n&lt;/font&gt;&lt;/span&gt; steps to reach the top.&lt;/p&gt;
-Each time you can either climb &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;1&lt;/font&gt;&lt;/span&gt; or &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;2&lt;/font&gt;&lt;/span&gt; steps. In how many distinct ways can you climb to the top?</summary>
+&lt;p&gt;Each time you can either climb &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;1&lt;/font&gt;&lt;/span&gt; or &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;2&lt;/font&gt;&lt;/span&gt; steps. In how many distinct ways can you climb to the top?</summary>
     
     
     
@@ -359,7 +359,7 @@ Each time you can either climb &lt;span style=&quot;background-color:#F0F0F0&quo
     <link href="https://egbert-yu-ting.github.io/posts/72b31d68/"/>
     <id>https://egbert-yu-ting.github.io/posts/72b31d68/</id>
     <published>2020-12-17T00:56:30.000Z</published>
-    <updated>2021-01-13T00:16:32.636Z</updated>
+    <updated>2021-01-13T00:42:27.207Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -367,7 +367,7 @@ Each time you can either climb &lt;span style=&quot;background-color:#F0F0F0&quo
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Given a non-negative integer &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;x&lt;/font&gt;&lt;/span&gt;, compute and return &lt;em&gt;the square root of&lt;/em&gt; &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;x&lt;/font&gt;&lt;/span&gt;.&lt;/p&gt;
-Since the return type is an integer, the decimal digits are &lt;b&gt;truncated&lt;/b&gt;, and only &lt;b&gt;the integer part&lt;/b&gt; of the result is returned.</summary>
+&lt;p&gt;Since the return type is an integer, the decimal digits are &lt;b&gt;truncated&lt;/b&gt;, and only &lt;b&gt;the integer part&lt;/b&gt; of the result is returned.</summary>
     
     
     
@@ -412,7 +412,7 @@ Since the return type is an integer, the decimal digits are &lt;b&gt;truncated&l
     <link href="https://egbert-yu-ting.github.io/posts/acf6f11e/"/>
     <id>https://egbert-yu-ting.github.io/posts/acf6f11e/</id>
     <published>2020-12-15T01:22:46.000Z</published>
-    <updated>2021-01-13T00:15:55.967Z</updated>
+    <updated>2021-01-13T00:41:43.871Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -421,7 +421,7 @@ Since the return type is an integer, the decimal digits are &lt;b&gt;truncated&l
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Given a &lt;strong&gt;non-empty&lt;/strong&gt; array of decimal digits representing a non-negative integer, increment one to the integer.&lt;/p&gt;
 &lt;p&gt;The digits are stored such that the most significant digit is at the head of the list, and each element in the array contains a single digit.&lt;/p&gt;
-You may assume the integer does not contain any leading zero, except the number 0 itself.</summary>
+&lt;p&gt;You may assume the integer does not contain any leading zero, except the number 0 itself.</summary>
     
     
     
@@ -437,7 +437,7 @@ You may assume the integer does not contain any leading zero, except the number 
     <link href="https://egbert-yu-ting.github.io/posts/90ac56be/"/>
     <id>https://egbert-yu-ting.github.io/posts/90ac56be/</id>
     <published>2020-12-14T03:34:06.000Z</published>
-    <updated>2021-01-13T00:15:36.232Z</updated>
+    <updated>2021-01-13T00:45:07.262Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -445,7 +445,7 @@ You may assume the integer does not contain any leading zero, except the number 
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Given an integer array &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;nums&lt;/font&gt;&lt;/span&gt;, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.&lt;/p&gt;
-&lt;strong&gt;Follow up:&lt;/strong&gt; If you have figured out the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;O(n)&lt;/font&gt;&lt;/span&gt; solution, try coding another solution using the &lt;strong&gt;divide and conquer&lt;/strong&gt; approach, which is more subtle.</summary>
+&lt;p&gt;&lt;strong&gt;Follow up:&lt;/strong&gt; If you have figured out the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;O(n)&lt;/font&gt;&lt;/span&gt; solution, try coding another solution using the &lt;strong&gt;divide and conquer&lt;/strong&gt; approach, which is more subtle.</summary>
     
     
     

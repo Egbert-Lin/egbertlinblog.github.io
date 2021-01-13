@@ -419,7 +419,10 @@ $ sudo apt-get install libnss3-1d
 <li><p><strong>Step 9.</strong> If the partition is succes, you will see the new partition section between Mac OS X and Windows 10</p></li>
 </ul>
 <h2 id="error---blue-screen-when-boot-windows-10">Error - blue screen when boot Windows 10</h2>
-You finish above procedures, <font color=#FF0000>if WIN10 can't boot anymore and show blue screen with error message: 0xd000000e</font> + <strong>Reason:</strong> The installation creates a hybrid MBR which is completely unnecessary. Windows will not boot in EFI mode but in BIOS mode instead and crash. + <strong>Solution:</strong> Enter Mac OS X to open terminal
+<p>You finish above procedures, <font color=#FF0000>if WIN10 can't boot anymore and show blue screen with error message: 0xd000000e</font></p>
+<ul>
+<li><strong>Reason:</strong> The installation creates a hybrid MBR which is completely unnecessary. Windows will not boot in EFI mode but in BIOS mode instead and crash.</li>
+<li><strong>Solution:</strong> Enter Mac OS X to open terminal
 <p style="background-color:#F0F0F0">
 $ sudo apt-get install gdisk
 </p>
@@ -438,7 +441,8 @@ Type <b>n</b> to create an empty protective MBR
 <p style="background-color:#F0F0F0">
 Type <b>w</b> to save your changes, You'll be asked to confirm this action
 </p>
-<p>Finally, reboot you Mac and enter WIN10 OS successfully.</p>
+Finally, reboot you Mac and enter WIN10 OS successfully.</li>
+</ul>
 <h2 id="necessary-third-party-softwares">Necessary third party softwares</h2>
 <p>To enable Mac OS X can write data at shared partition, I provide some software infomations as below: 1 <a href="https://osxfuse.github.io">OSXFUSE</a> 2 <a href="https://www.tuxera.com/company/open-source/">ntfs-3g</a></p>
 <p>Reference: https://www.innoq.com/en/blog/triple-booting-a-mac/</p>

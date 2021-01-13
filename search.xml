@@ -1061,7 +1061,7 @@ $ sudo rm –rf oslo_config/
 $ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata
 </p>
 <p style="margin-left:40px">
-<u>From the above, the command is refered to:<br> http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html</u>
+From the above, the command is refered to:<br> http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html
 </p>
 <p style="background-color:#F0F0F0; margin-left:40px;">
 $ cd oslo.config

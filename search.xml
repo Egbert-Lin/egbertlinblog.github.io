@@ -444,7 +444,7 @@ Type <b>w</b> to save your changes, You'll be asked to confirm this action
 Finally, reboot you Mac and enter WIN10 OS successfully.</li>
 </ul>
 <h2 id="necessary-third-party-softwares">Necessary third party softwares</h2>
-<p>To enable Mac OS X can write data at shared partition, I provide some software infomations as below: 1 <a href="https://osxfuse.github.io">OSXFUSE</a> 2 <a href="https://www.tuxera.com/company/open-source/">ntfs-3g</a></p>
+<p>To enable Mac OS X can write data at shared partition, I provide some software infomations as below: 1. <a href="https://osxfuse.github.io">OSXFUSE</a><br> 2. <a href="https://www.tuxera.com/company/open-source/">ntfs-3g</a></p>
 <p>Reference:<br> https://www.innoq.com/en/blog/triple-booting-a-mac/</p>
 ]]></content>
       <categories>

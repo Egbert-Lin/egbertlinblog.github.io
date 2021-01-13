@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://egbert-yu-ting.github.io/posts/68394953/</loc>
+    
+    <lastmod>2021-01-13</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://egbert-yu-ting.github.io/posts/d521850b/</loc>
     
     <lastmod>2021-01-13</lastmod>
@@ -291,6 +298,27 @@
   </url>
   
   <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Tech/</loc>
+    <lastmod>2021-01-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Sidebar/</loc>
+    <lastmod>2021-01-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Post/</loc>
+    <lastmod>2021-01-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://egbert-yu-ting.github.io/tags/STL/</loc>
     <lastmod>2021-01-13</lastmod>
     <changefreq>daily</changefreq>
@@ -334,13 +362,6 @@
   
   <url>
     <loc>https://egbert-yu-ting.github.io/tags/String/</loc>
-    <lastmod>2021-01-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Tech/</loc>
     <lastmod>2021-01-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -445,13 +466,6 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Map-STL/</loc>
-    <lastmod>2021-01-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://egbert-yu-ting.github.io/tags/SDN/</loc>
     <lastmod>2021-01-13</lastmod>
     <changefreq>daily</changefreq>
@@ -467,6 +481,13 @@
   
   <url>
     <loc>https://egbert-yu-ting.github.io/tags/search/</loc>
+    <lastmod>2021-01-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Map-STL/</loc>
     <lastmod>2021-01-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

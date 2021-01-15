@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-13T03:54:47.157Z</updated>
+  <updated>2021-01-15T03:33:24.554Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[LeetCode Road]Balanced Binary Tree</title>
+    <link href="https://egbert-yu-ting.github.io/posts/b3e1ca12/"/>
+    <id>https://egbert-yu-ting.github.io/posts/b3e1ca12/</id>
+    <published>2021-01-15T02:13:15.000Z</published>
+    <updated>2021-01-15T03:33:24.554Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;110. Balanced Binary Tree&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given a binary tree, dete</summary>
+      
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+    <category term="Tree" scheme="https://egbert-yu-ting.github.io/tags/Tree/"/>
+    
+    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo NexT v8.x.x - Add recent posts</title>
@@ -47,7 +75,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/17bf1818/"/>
     <id>https://egbert-yu-ting.github.io/posts/17bf1818/</id>
     <published>2021-01-08T02:44:56.000Z</published>
-    <updated>2021-01-13T00:37:45.618Z</updated>
+    <updated>2021-01-15T02:41:26.639Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -55,7 +83,7 @@
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Given an array where elements are sorted in ascending order, convert it to a height balanced BST.&lt;/p&gt;
-For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.</summary>
+&lt;p&gt;For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.</summary>
     
     
     
@@ -218,11 +246,11 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
     <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
     
     
+    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
+    
     <category term="STL" scheme="https://egbert-yu-ting.github.io/tags/STL/"/>
     
     <category term="2D_Vector" scheme="https://egbert-yu-ting.github.io/tags/2D-Vector/"/>
-    
-    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
     
   </entry>
   
@@ -231,7 +259,7 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
     <link href="https://egbert-yu-ting.github.io/posts/57b52472/"/>
     <id>https://egbert-yu-ting.github.io/posts/57b52472/</id>
     <published>2020-12-25T01:32:23.000Z</published>
-    <updated>2021-01-13T00:15:31.554Z</updated>
+    <updated>2021-01-15T03:29:16.206Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -239,14 +267,16 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Given the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;root&lt;/font&gt;&lt;/span&gt; of a binary tree, return &lt;em&gt;its maximum depth&lt;/em&gt;.&lt;/p&gt;
-A binary tree&#39;s &lt;strong&gt;maximum depth&lt;/strong&gt; is the number of nodes along the longest path from the root node down to the farthest leaf node.</summary>
+&lt;p&gt;A binary tree&#39;s &lt;strong&gt;maximum depth&lt;/strong&gt; is the number of nodes along the longest path from the root node down to the farthest leaf node.</summary>
     
     
     
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
     
-    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
     
     <category term="Tree" scheme="https://egbert-yu-ting.github.io/tags/Tree/"/>
+    
+    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
     
   </entry>
   
@@ -269,9 +299,9 @@ A binary tree&#39;s &lt;strong&gt;maximum depth&lt;/strong&gt; is the number of 
     <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
     
     
-    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
-    
     <category term="Tree" scheme="https://egbert-yu-ting.github.io/tags/Tree/"/>
+    
+    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
     
   </entry>
   
@@ -295,9 +325,9 @@ Two binary trees are considered the same if they are structurally identical, and
     <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
     
     
-    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
-    
     <category term="Tree" scheme="https://egbert-yu-ting.github.io/tags/Tree/"/>
+    
+    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
     
   </entry>
   
@@ -505,37 +535,6 @@ Two binary trees are considered the same if they are structurally identical, and
     
     
     <category term="Editor" scheme="https://egbert-yu-ting.github.io/tags/Editor/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Count and Say</title>
-    <link href="https://egbert-yu-ting.github.io/posts/e0d9ee0a/"/>
-    <id>https://egbert-yu-ting.github.io/posts/e0d9ee0a/</id>
-    <published>2020-12-10T07:06:04.000Z</published>
-    <updated>2021-01-13T00:14:37.881Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;38. Count and Say&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-The &lt;strong&gt;count-and-say&lt;/strong&gt; sequence is a sequence of digit strings defined by the recursive formula: &lt;strong&gt;
-&lt;li&gt;
-&lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;countAndSay(1) = &quot;1&quot;&lt;/font&gt;&lt;/span&gt;
-&lt;/li&gt;
-&lt;/strong&gt; &lt;strong&gt;
-&lt;li&gt;
-&lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;countAndSay(n)&lt;/font&gt;&lt;/span&gt; is the way you would &quot;say&quot; the digit string from &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;countAndSay(n-1)&lt;/font&gt;&lt;/span&gt;, which is then converted into a different digit string.
-&lt;/li&gt;
-&lt;p&gt;&lt;/strong&gt; To determine how you &quot;say&quot; a digit string, split it into the minimal number of groups so that each group is a contiguous section all of the same character. Then for each group, say the number of characters, then say the character. To convert the saying into a digit string, replace the counts with a number and concatenate every saying.</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="String" scheme="https://egbert-yu-ting.github.io/tags/String/"/>
     
   </entry>
   

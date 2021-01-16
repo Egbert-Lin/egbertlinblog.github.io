@@ -31,7 +31,7 @@
 <meta property="og:description" content="28. Implement strStr()  Question: Implement strStr(). Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack. Clarification: What should we return whe">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-09T03:15:55.000Z">
-<meta property="article:modified_time" content="2021-01-13T00:46:07.325Z">
+<meta property="article:modified_time" content="2021-01-16T11:29:28.382Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="String">
 <meta name="twitter:card" content="summary">
@@ -216,7 +216,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#question"><span class="nav-number">1.</span> <span class="nav-text">Question:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example"><span class="nav-number">2.</span> <span class="nav-text">Example:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source-code"><span class="nav-number">3.</span> <span class="nav-text">Source code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#version-1"><span class="nav-number">4.</span> <span class="nav-text">Version 1</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#question"><span class="nav-number">1.</span> <span class="nav-text">Question:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example"><span class="nav-number">2.</span> <span class="nav-text">Example:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source-code"><span class="nav-number">3.</span> <span class="nav-text">Source code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#version-1"><span class="nav-number">3.1.</span> <span class="nav-text">Version 1</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -357,7 +357,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-13 08:46:07" itemprop="dateModified" datetime="2021-01-13T08:46:07+08:00">2021-01-13</time>
+        <time title="Modified: 2021-01-16 19:29:28" itemprop="dateModified" datetime="2021-01-16T19:29:28+08:00">2021-01-16</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -406,7 +406,7 @@
 </li>
 <p></strong></p>
 <h2 id="source-code">Source code</h2>
-<h2 id="version-1"><u>Version 1</u></h2>
+<h3 id="version-1"><u>Version 1</u></h3>
 <p>Idea: My bad method got Time Limit Exceeded. Because I used two loop to check each characters of string, record the index by 2 variables if both of characters are equal. I racked my brains for good solution without using substr(). Finally, I got up and went to online to find answer. I refered to <a target="_blank" rel="noopener" href="https://zxi.mytechroad.com/blog/string/leetcode-28-implement-strstr/">Huahua's Tech Road</a>. The loop repeats <code>haystack.length() - needle.length()</code> times, it can reduce computing time. Use the length of needle to match haystack, if index of j is equal to needle.length(), return index of i.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">strStr</span><span class="params">(<span class="built_in">string</span> haystack, <span class="built_in">string</span> needle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (haystack == needle || !needle.length()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> h = haystack.length();</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = needle.length();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= h - n; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(j &lt; n &amp;&amp; haystack[i+j] == needle[j]) j++;</span><br><span class="line">            <span class="keyword">if</span>(j == n) <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 

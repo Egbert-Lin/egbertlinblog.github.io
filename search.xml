@@ -679,7 +679,7 @@ Both <span style="background-color:#F0F0F0"><font color=#808080>l1</font></span>
 <h2 id="question">Question:</h2>
 <p>Given a binary tree, find its minimum depth.</p>
 <p>The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>
-<p><strong>Note:</strong> A leaf is a node with no children.</p>
+<p><strong>Note:</strong> A leaf is a node with no children. <a id="more"></a></p>
 <h2 id="example">Example:</h2>
 <img src="example.png" />
 <p style="background-color:#F0F0F0">

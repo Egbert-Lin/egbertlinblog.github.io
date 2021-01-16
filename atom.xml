@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-16T11:13:26.698Z</updated>
+  <updated>2021-01-16T11:22:05.221Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,11 +21,12 @@
     <link href="https://egbert-yu-ting.github.io/posts/2397063c/"/>
     <id>https://egbert-yu-ting.github.io/posts/2397063c/</id>
     <published>2021-01-16T10:23:34.000Z</published>
-    <updated>2021-01-16T11:13:26.698Z</updated>
+    <updated>2021-01-16T11:22:05.221Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;p&gt;&lt;font size=&quot;6&quot;&gt;&lt;b&gt;111. Minimum Depth of Binary Treep align=&quot;center&quot;&amp;gt;&lt;font size=&quot;6&quot;&gt;&lt;b&gt;&lt;/p&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;111. Minimum Depth of Binary Treep align=&quot;center&quot;&amp;gt;&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Given a binary tree, find its minimum depth.&lt;/p&gt;
 &lt;p&gt;The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.&lt;/p&gt;

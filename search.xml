@@ -675,7 +675,8 @@ Both <span style="background-color:#F0F0F0"><font color=#808080>l1</font></span>
     <title>[LeetCode Road]  Minimum Depth of Binary Tree</title>
     <url>/posts/2397063c/</url>
     <content><![CDATA[<p align="center">
-<p><font size="6"><b>111. Minimum Depth of Binary Treep align="center"&gt;<font size="6"><b></p>
+<font size="6"><b>111. Minimum Depth of Binary Treep align="center"&gt;</b></font>
+</p>
 <h2 id="question">Question:</h2>
 <p>Given a binary tree, find its minimum depth.</p>
 <p>The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>

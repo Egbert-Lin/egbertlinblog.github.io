@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-16T11:27:41.403Z</updated>
+  <updated>2021-01-17T15:15:10.367Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[LeetCode Road] Path Sum</title>
+    <link href="https://egbert-yu-ting.github.io/posts/bb7f02f5/"/>
+    <id>https://egbert-yu-ting.github.io/posts/bb7f02f5/</id>
+    <published>2021-01-17T07:54:09.000Z</published>
+    <updated>2021-01-17T15:15:10.367Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;112. Path Sum&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; A leaf is a node with no children.</summary>
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+    <category term="Tree" scheme="https://egbert-yu-ting.github.io/tags/Tree/"/>
+    
+    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
+    
+  </entry>
   
   <entry>
     <title>[LeetCode Road]  Minimum Depth of Binary Tree</title>
@@ -506,30 +532,6 @@ Two binary trees are considered the same if they are structurally identical, and
 &lt;p&gt;Given a &lt;strong&gt;non-empty&lt;/strong&gt; array of decimal digits representing a non-negative integer, increment one to the integer.&lt;/p&gt;
 &lt;p&gt;The digits are stored such that the most significant digit is at the head of the list, and each element in the array contains a single digit.&lt;/p&gt;
 &lt;p&gt;You may assume the integer does not contain any leading zero, except the number 0 itself.</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Vector" scheme="https://egbert-yu-ting.github.io/tags/Vector/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Maximum Subarray</title>
-    <link href="https://egbert-yu-ting.github.io/posts/90ac56be/"/>
-    <id>https://egbert-yu-ting.github.io/posts/90ac56be/</id>
-    <published>2020-12-14T03:34:06.000Z</published>
-    <updated>2021-01-16T11:30:18.975Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;53. Maximum Subarray&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given an integer array &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;nums&lt;/font&gt;&lt;/span&gt;, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Follow up:&lt;/strong&gt; If you have figured out the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;O(n)&lt;/font&gt;&lt;/span&gt; solution, try coding another solution using the &lt;strong&gt;divide and conquer&lt;/strong&gt; approach, which is more subtle.</summary>
     
     
     

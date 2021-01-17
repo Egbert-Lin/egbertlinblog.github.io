@@ -126,37 +126,6 @@ TThe number of nodes in the tree is in the range <span style="background-color:#
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Binary Tree Level Order Traversal II</title>
-    <url>/posts/cac8b982/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>107. Binary Tree Level Order Traversal II</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a binary tree, return the <em>bottom-up level order</em> traversal of its nodes' values. (ie, from left to right, level by level from leaf to root). <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-For example: Given binary tree <span style="background-color:#F0F0F0"><font color=#808080>[3,9,20,null,null,15,7]</span></font>,
-<p style="background-color:#F0F0F0">
-   3<br>    / \<br>   9 20<br>    / \<br>    15  7
-</p>
-return its bottom-up level order traversal as:
-<p style="background-color:#F0F0F0">
-[<br>   [15,7],<br>   [9,20],<br>   [3]<br>]
-</p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: I made a big mistake, I always think the solution that find the deepest depth first, the go back to the root with each layers. I realized an efficient approach until I had refered to <a href="https://zxi.mytechroad.com/blog/tree/leetcode-107-binary-tree-level-order-traversal-ii/">Huahua's Tech Road</a>. You must understand how to implement a two dimensional vector first. Write a function as recursion, store each elements from top of tree. <code>res.size() &lt;= depth&gt;</code> is an important statement to expand 2D vector size. Then, we must go through every left &amp; right nodes and store it based on correspondingly depth. Finaly, let go back to original function, we must use reverse() to pass the answers.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; levelOrderBottom(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span> &lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line">        levelOrderBottom(root, <span class="number">0</span>, res);</span><br><span class="line">        reverse(res.begin(), res.end());</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">levelOrderBottom</span><span class="params">(TreeNode* root, <span class="keyword">int</span> depth, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">while</span>(res.size() &lt;= depth) res.push_back(&#123;&#125;);</span><br><span class="line">        res[depth].push_back(root-&gt;val);</span><br><span class="line">        levelOrderBottom(root-&gt;left, depth + <span class="number">1</span>, res);</span><br><span class="line">        levelOrderBottom(root-&gt;right, depth + <span class="number">1</span>, res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Recursion</tag>
-        <tag>STL</tag>
-        <tag>2D_Vector</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Climbing Stairs</title>
     <url>/posts/7af6a106/</url>
     <content><![CDATA[<p align="center">
@@ -195,6 +164,37 @@ return its bottom-up level order traversal as:
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Binary Tree Level Order Traversal II</title>
+    <url>/posts/cac8b982/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>107. Binary Tree Level Order Traversal II</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a binary tree, return the <em>bottom-up level order</em> traversal of its nodes' values. (ie, from left to right, level by level from leaf to root). <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+For example: Given binary tree <span style="background-color:#F0F0F0"><font color=#808080>[3,9,20,null,null,15,7]</span></font>,
+<p style="background-color:#F0F0F0">
+   3<br>    / \<br>   9 20<br>    / \<br>    15  7
+</p>
+return its bottom-up level order traversal as:
+<p style="background-color:#F0F0F0">
+[<br>   [15,7],<br>   [9,20],<br>   [3]<br>]
+</p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: I made a big mistake, I always think the solution that find the deepest depth first, the go back to the root with each layers. I realized an efficient approach until I had refered to <a href="https://zxi.mytechroad.com/blog/tree/leetcode-107-binary-tree-level-order-traversal-ii/">Huahua's Tech Road</a>. You must understand how to implement a two dimensional vector first. Write a function as recursion, store each elements from top of tree. <code>res.size() &lt;= depth&gt;</code> is an important statement to expand 2D vector size. Then, we must go through every left &amp; right nodes and store it based on correspondingly depth. Finaly, let go back to original function, we must use reverse() to pass the answers.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; levelOrderBottom(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span> &lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line">        levelOrderBottom(root, <span class="number">0</span>, res);</span><br><span class="line">        reverse(res.begin(), res.end());</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">levelOrderBottom</span><span class="params">(TreeNode* root, <span class="keyword">int</span> depth, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">while</span>(res.size() &lt;= depth) res.push_back(&#123;&#125;);</span><br><span class="line">        res[depth].push_back(root-&gt;val);</span><br><span class="line">        levelOrderBottom(root-&gt;left, depth + <span class="number">1</span>, res);</span><br><span class="line">        levelOrderBottom(root-&gt;right, depth + <span class="number">1</span>, res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Recursion</tag>
+        <tag>STL</tag>
+        <tag>2D_Vector</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Convert Sorted Array to Binary Search Tree</title>
     <url>/posts/17bf1818/</url>
     <content><![CDATA[<p align="center">
@@ -222,33 +222,6 @@ left:0, right:4, mid's value:0<br> left:0, right:1, mid's value:-10<br> left:0, 
       <tags>
         <tag>Recursion</tag>
         <tag>TreeNode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Error message: Please tell me who you are. Run git config --global...</title>
-    <url>/posts/278f103a/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Command line: "hexo d" and you got error message: Please tell me who you are.</b></font>
-</p>
-<h3 id="full-error-message-info">Full error message info:</h3>
-<p><font color=#FF0000>Please tell me who you are.</p>
-<p>Run</p>
-<p>git config --global user.email “you@example.com” git config --global user.name “Your Name”</p>
-<p>to set your account’s default identity. Omit --global to set the identity only in this repository.</p>
-<p>fatal: unable to auto-detect email address (got ...) error: src refspec HEAD does not match any. error: failed to push some refs to(your ...github.io)</font> ***</p>
-<p>When I ran "hexo d" command, the deployment was stuck! <a id="more"></a> The reason was I updated my mac OS a few days age. Now, the system can't distinguish your indentity.</p>
-<p>So, the solution can solve it:</p>
-<h3 id="solution">Solution:</h3>
-<p>Input commands: 1) git config --global user.email "email" //Your github email address(https://username.github.io)</p>
-<ol start="2" type="1">
-<li>git config --global user.name "username" //(your nickname、github's username or anyone you name it) only English!</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Tech</tag>
       </tags>
   </entry>
   <entry>
@@ -292,6 +265,53 @@ The <strong>count-and-say</strong> sequence is a sequence of digit strings defin
       </tags>
   </entry>
   <entry>
+    <title>Error message: Please tell me who you are. Run git config --global...</title>
+    <url>/posts/278f103a/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Command line: "hexo d" and you got error message: Please tell me who you are.</b></font>
+</p>
+<h3 id="full-error-message-info">Full error message info:</h3>
+<p><font color=#FF0000>Please tell me who you are.</p>
+<p>Run</p>
+<p>git config --global user.email “you@example.com” git config --global user.name “Your Name”</p>
+<p>to set your account’s default identity. Omit --global to set the identity only in this repository.</p>
+<p>fatal: unable to auto-detect email address (got ...) error: src refspec HEAD does not match any. error: failed to push some refs to(your ...github.io)</font> ***</p>
+<p>When I ran "hexo d" command, the deployment was stuck! <a id="more"></a> The reason was I updated my mac OS a few days age. Now, the system can't distinguish your indentity.</p>
+<p>So, the solution can solve it:</p>
+<h3 id="solution">Solution:</h3>
+<p>Input commands: 1) git config --global user.email "email" //Your github email address(https://username.github.io)</p>
+<ol start="2" type="1">
+<li>git config --global user.name "username" //(your nickname、github's username or anyone you name it) only English!</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Tech</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Interview programming question - Find second largest element</title>
+    <url>/posts/16153cc7/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Let coding interview become easy - Find second largest element</b></font>
+</p>
+<p>Maybe you will face it problem when you have an interview for a job with Tech. company. The problem is "How to find second largest element?", it seems very easy to get result, but you must propose an efficient approach. <a id="more"></a></p>
+<p>If there is a vector that consists <code>&#123;2, 3, 4, 1, 7, 6, 5&#125;</code>, I delcare two variables as first largest element and second largest element. I initialize variables to INT_MIN. At 13 lines, <code>if(input[i]&gt;first)</code> is true, <code>input[i]</code> is largest element and pass it to <code>first</code> after storing a value of <code>first</code> by <code>second</code>. Otherwise, compare <code>input[i]</code> with <code>second</code>, it checks a current value whether it bigger than <code>second</code> or not.</p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">pair&lt;int, int&gt; findLargest(vector&lt;int&gt; input)&#123;</span><br><span class="line">    <span class="keyword">int</span> first = INT_MIN;</span><br><span class="line">    <span class="keyword">int</span> second = INT_MIN;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; input.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(input[i]&gt;first)&#123;</span><br><span class="line">            second = first;</span><br><span class="line">            first = input[i];</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(input[i] &gt; second)&#123;</span><br><span class="line">            second = input[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">make_pair</span>(first, second);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr = &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; ans = findLargest(arr);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;The first largest element=&quot;</span> &lt;&lt; ans.first &lt;&lt; <span class="string">&quot;, the second largest element=&quot;</span> &lt;&lt; ans.second &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CodeInterview</category>
+      </categories>
+      <tags>
+        <tag>Pair</tag>
+        <tag>INT_MIN</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[Step by Step] How to install Google Chrome on Ubuntu 16.04</title>
     <url>/posts/65af7d45/</url>
     <content><![CDATA[<p align="center">
@@ -324,26 +344,6 @@ $ sudo apt-get install libnss3-1d
       <tags>
         <tag>Ubuntu</tag>
         <tag>Google_Chrome</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Interview programming question - Find second largest element</title>
-    <url>/posts/16153cc7/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Let coding interview become easy - Find second largest element</b></font>
-</p>
-<p>Maybe you will face it problem when you have an interview for a job with Tech. company. The problem is "How to find second largest element?", it seems very easy to get result, but you must propose an efficient approach. <a id="more"></a></p>
-<p>If there is a vector that consists <code>&#123;2, 3, 4, 1, 7, 6, 5&#125;</code>, I delcare two variables as first largest element and second largest element. I initialize variables to INT_MIN. At 13 lines, <code>if(input[i]&gt;first)</code> is true, <code>input[i]</code> is largest element and pass it to <code>first</code> after storing a value of <code>first</code> by <code>second</code>. Otherwise, compare <code>input[i]</code> with <code>second</code>, it checks a current value whether it bigger than <code>second</code> or not.</p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">pair&lt;int, int&gt; findLargest(vector&lt;int&gt; input)&#123;</span><br><span class="line">    <span class="keyword">int</span> first = INT_MIN;</span><br><span class="line">    <span class="keyword">int</span> second = INT_MIN;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; input.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(input[i]&gt;first)&#123;</span><br><span class="line">            second = first;</span><br><span class="line">            first = input[i];</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(input[i] &gt; second)&#123;</span><br><span class="line">            second = input[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">make_pair</span>(first, second);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr = &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; ans = findLargest(arr);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;The first largest element=&quot;</span> &lt;&lt; ans.first &lt;&lt; <span class="string">&quot;, the second largest element=&quot;</span> &lt;&lt; ans.second &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>CodeInterview</category>
-      </categories>
-      <tags>
-        <tag>Pair</tag>
-        <tag>INT_MIN</tag>
       </tags>
   </entry>
   <entry>
@@ -717,6 +717,46 @@ Both <span style="background-color:#F0F0F0"><font color=#808080>l1</font></span>
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road]  Minimum Depth of Binary Tree</title>
+    <url>/posts/2397063c/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>111. Minimum Depth of Binary Tree</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a binary tree, find its minimum depth.</p>
+<p>The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>
+<p><strong>Note:</strong> A leaf is a node with no children. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<img src="example.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 2
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [2,null,3,null,4,null,5,null,6]<br> <b>Output:</b> 5
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^5]</font></span>.
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-1000 &lt;= Node.val &lt;= 1000</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: We can sum up the rules of the binary tree.<br> <strong>First:</strong> If the left subnode and right subnode are exist of leaf node, it can be calculated each depths and use min() to get minimum depth.<br> <strong>Seconde:</strong> If there is NULL either left subnode or right subnode of leaf node, we must use max() to get the maxixmum depth, because <u>"A leaf is a node with no children"</u> based on the question. E.g. if left subnode is NULL, a leaf can't be calculated as 1 depth.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;left &amp;&amp; root-&gt;right)&#123;</span><br><span class="line">            <span class="keyword">return</span> min(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> max(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Tree</tag>
+        <tag>Recursion</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Palindrome Number</title>
     <url>/posts/d37a286f/</url>
     <content><![CDATA[<p align="center">
@@ -760,6 +800,34 @@ Both <span style="background-color:#F0F0F0"><font color=#808080>l1</font></span>
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Path Sum</title>
+    <url>/posts/bb7f02f5/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>112. Path Sum</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.</p>
+<p><strong>Note:</strong> A leaf is a node with no children. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+Given the below binary tree and <span style="background-color:#F0F0F0"><font color=#808080>sum = 22</font></span>,
+<p style="background-color:#F0F0F0">
+    5<br>     / \<br>    4  8<br>    /  / \<br>   11 13 4<br>   / \    \<br>  7  2    1
+</p>
+<p>return true, as there exist a root-to-leaf path <span style="background-color:#F0F0F0"><font color=#808080>5-&gt;4-&gt;11-&gt;2</font></span> which sum is 22.</p>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">hasPathSum</span><span class="params">(TreeNode* root, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(!root-&gt;left &amp;&amp; !root-&gt;right &amp;&amp; (root-&gt;val == sum)) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> hasPathSum(root-&gt;left, sum - root-&gt;val) || hasPathSum(root-&gt;right, sum - root-&gt;val);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Tree</tag>
+        <tag>Recursion</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Plus One</title>
     <url>/posts/acf6f11e/</url>
     <content><![CDATA[<p align="center">
@@ -798,46 +866,6 @@ Both <span style="background-color:#F0F0F0"><font color=#808080>l1</font></span>
       </categories>
       <tags>
         <tag>Vector</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road]  Minimum Depth of Binary Tree</title>
-    <url>/posts/2397063c/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>111. Minimum Depth of Binary Tree</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a binary tree, find its minimum depth.</p>
-<p>The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>
-<p><strong>Note:</strong> A leaf is a node with no children. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<img src="example.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 2
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [2,null,3,null,4,null,5,null,6]<br> <b>Output:</b> 5
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^5]</font></span>.
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-1000 &lt;= Node.val &lt;= 1000</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code:</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: We can sum up the rules of the binary tree.<br> <strong>First:</strong> If the left subnode and right subnode are exist of leaf node, it can be calculated each depths and use min() to get minimum depth.<br> <strong>Seconde:</strong> If there is NULL either left subnode or right subnode of leaf node, we must use max() to get the maxixmum depth, because <u>"A leaf is a node with no children"</u> based on the question. E.g. if left subnode is NULL, a leaf can't be calculated as 1 depth.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;left &amp;&amp; root-&gt;right)&#123;</span><br><span class="line">            <span class="keyword">return</span> min(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> max(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Tree</tag>
-        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>
@@ -1073,107 +1101,6 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
       </tags>
   </entry>
   <entry>
-    <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
-    <url>/posts/9e0f4e5/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Tutorial - Install Ryu in Ubuntu 16.04 with no failure</b></font>
-</p>
-<p><a href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It's very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet. <a id="more"></a></p>
-<h2 id="start-to-configure-and-install">Start to configure and install</h2>
-<ul>
-<li><strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources)
-<p style="background-color:#F0F0F0">
-$ sudo apt-get update
-</p></li>
-<li><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system
-<p style="background-color:#F0F0F0">
-$ sudo apt-get install python-pip python-dev
-</p>
-<p style="background-color:#F0F0F0">
-$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev
-</p></li>
-<li><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary.
-<p style="background-color:#F0F0F0">
-$ sudo apt-get install git
-</p></li>
-<li><strong>Step 4.</strong> Download Ryu source code from github
-<p style="background-color:#F0F0F0">
-$ git clone git://github.com/osrg/ryu.git
-</p></li>
-<li><strong>Step 5.</strong> <a href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller.
-<p style="background-color:#F0F0F0">
-$ pip install networkx
-</p></li>
-<li><strong>Step 6.</strong> Install Ryu
-<p style="background-color:#F0F0F0">
-$ cd ryu/
-</p>
-<p style="background-color:#F0F0F0">
-$ sudo python ./setup.py install
-</p></li>
-<li><strong>Step 7.</strong> Execution and testing
-<p style="background-color:#F0F0F0">
-$ ryu-manager
-</p>
-// If your installation is successful, the terminal will show some info. and stop to listening:
-<p style="background-color:#F0F0F0">
-loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_handler of OFPHandler
-</p>
-<hr />
-<p>
-<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error!</font>
-</p>
-<p>
-<b>Solution:</b>
-</p>
-<p style="background-color:#F0F0F0;">
-$ cd ryu/
-</p>
-<p style="background-color:#F0F0F0;">
-$ sudo pip install -r tools/pip-requires
-</p>
-<p style="background-color:#F0F0F0;">
-$ sudo pip install six --upgrade
-</p></li>
-</ul>
-<p style="margin-left:40px">
-<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font>
-</p>
-<p style="margin-left:40px">
-<font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>   <b>SyntaxError: ivalid syntax</b></font>
-</p>
-<p style="margin-left:40px">
-<b>Solution:</b>
-</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">
-$ cd /usr/local/lib/python2.7/dist-packages/
-</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">
-$ sudo rm –rf oslo_config/
-</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">
-$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata
-</p>
-<p style="margin-left:40px">
-From the above, the command is refered to:<br> http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html
-</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">
-$ cd oslo.config
-</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">
-$ sudo python setup.py install
-</p>
-]]></content>
-      <categories>
-        <category>Simulator</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-        <tag>SDN</tag>
-        <tag>Controller</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Same Tree</title>
     <url>/posts/2ef96137/</url>
     <content><![CDATA[<p align="center">
@@ -1335,6 +1262,107 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
       <tags>
         <tag>Tree</tag>
         <tag>Recursion</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
+    <url>/posts/9e0f4e5/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Tutorial - Install Ryu in Ubuntu 16.04 with no failure</b></font>
+</p>
+<p><a href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It's very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet. <a id="more"></a></p>
+<h2 id="start-to-configure-and-install">Start to configure and install</h2>
+<ul>
+<li><strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources)
+<p style="background-color:#F0F0F0">
+$ sudo apt-get update
+</p></li>
+<li><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system
+<p style="background-color:#F0F0F0">
+$ sudo apt-get install python-pip python-dev
+</p>
+<p style="background-color:#F0F0F0">
+$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev
+</p></li>
+<li><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary.
+<p style="background-color:#F0F0F0">
+$ sudo apt-get install git
+</p></li>
+<li><strong>Step 4.</strong> Download Ryu source code from github
+<p style="background-color:#F0F0F0">
+$ git clone git://github.com/osrg/ryu.git
+</p></li>
+<li><strong>Step 5.</strong> <a href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller.
+<p style="background-color:#F0F0F0">
+$ pip install networkx
+</p></li>
+<li><strong>Step 6.</strong> Install Ryu
+<p style="background-color:#F0F0F0">
+$ cd ryu/
+</p>
+<p style="background-color:#F0F0F0">
+$ sudo python ./setup.py install
+</p></li>
+<li><strong>Step 7.</strong> Execution and testing
+<p style="background-color:#F0F0F0">
+$ ryu-manager
+</p>
+// If your installation is successful, the terminal will show some info. and stop to listening:
+<p style="background-color:#F0F0F0">
+loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_handler of OFPHandler
+</p>
+<hr />
+<p>
+<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error!</font>
+</p>
+<p>
+<b>Solution:</b>
+</p>
+<p style="background-color:#F0F0F0;">
+$ cd ryu/
+</p>
+<p style="background-color:#F0F0F0;">
+$ sudo pip install -r tools/pip-requires
+</p>
+<p style="background-color:#F0F0F0;">
+$ sudo pip install six --upgrade
+</p></li>
+</ul>
+<p style="margin-left:40px">
+<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font>
+</p>
+<p style="margin-left:40px">
+<font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>   <b>SyntaxError: ivalid syntax</b></font>
+</p>
+<p style="margin-left:40px">
+<b>Solution:</b>
+</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">
+$ cd /usr/local/lib/python2.7/dist-packages/
+</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">
+$ sudo rm –rf oslo_config/
+</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">
+$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata
+</p>
+<p style="margin-left:40px">
+From the above, the command is refered to:<br> http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html
+</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">
+$ cd oslo.config
+</p>
+<p style="background-color:#F0F0F0; margin-left:40px;">
+$ sudo python setup.py install
+</p>
+]]></content>
+      <categories>
+        <category>Simulator</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>SDN</tag>
+        <tag>Controller</tag>
       </tags>
   </entry>
   <entry>

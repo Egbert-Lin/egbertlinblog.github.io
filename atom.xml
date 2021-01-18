@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-18T17:20:49.871Z</updated>
+  <updated>2021-01-18T17:21:51.668Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,17 +21,15 @@
     <link href="https://egbert-yu-ting.github.io/posts/a026a3d3/"/>
     <id>https://egbert-yu-ting.github.io/posts/a026a3d3/</id>
     <published>2021-01-18T15:28:03.000Z</published>
-    <updated>2021-01-18T17:20:49.871Z</updated>
+    <updated>2021-01-18T17:21:51.668Z</updated>
     
     
-      
-      
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6&quot;&gt;&lt;b&gt;121. Best Time to Buy and Sell Stock&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;You are given </summary>
-      
+&lt;p&gt;You are given an array &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;prices&lt;/font&gt;&lt;/span&gt; where &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;prices[i]&lt;/font&gt;&lt;/span&gt; is the price of a given stock on the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;i^th&lt;/font&gt;&lt;/span&gt; day.&lt;/p&gt;
+&lt;p&gt;You want to maximize your profit by choosing a &lt;strong&gt;single day&lt;/strong&gt; to buy one stock and choosing a &lt;strong&gt;different day in the future&lt;/strong&gt; to sell that stock.</summary>
     
     
     

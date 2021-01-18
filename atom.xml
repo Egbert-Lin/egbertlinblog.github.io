@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-17T16:04:23.224Z</updated>
+  <updated>2021-01-18T00:31:41.780Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[LeetCode Road] Pascals&#39;s Triangle</title>
+    <link href="https://egbert-yu-ting.github.io/posts/2b0547f6/"/>
+    <id>https://egbert-yu-ting.github.io/posts/2b0547f6/</id>
+    <published>2021-01-18T00:13:34.000Z</published>
+    <updated>2021-01-18T00:31:41.780Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;118. Pascals&#39;s Triangle&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given a non-negative integer numRows, generate the first numRows of Pascal&#39;s triangle.&lt;br&gt; &lt;font size=&quot;2&quot;&gt;In Pascal&#39;s triangle, each number is the sum of the two numbers directly above it.&lt;/font&gt;</summary>
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
+    
+    <category term="2D_vector" scheme="https://egbert-yu-ting.github.io/tags/2D-vector/"/>
+    
+  </entry>
   
   <entry>
     <title>[LeetCode Road] Path Sum</title>
@@ -514,31 +539,6 @@ Two binary trees are considered the same if they are structurally identical, and
     <category term="ASCII" scheme="https://egbert-yu-ting.github.io/tags/ASCII/"/>
     
     <category term="Reverse_iterator" scheme="https://egbert-yu-ting.github.io/tags/Reverse-iterator/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Plus One</title>
-    <link href="https://egbert-yu-ting.github.io/posts/acf6f11e/"/>
-    <id>https://egbert-yu-ting.github.io/posts/acf6f11e/</id>
-    <published>2020-12-15T01:22:46.000Z</published>
-    <updated>2021-01-16T11:32:07.661Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;66. Plus One&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given a &lt;strong&gt;non-empty&lt;/strong&gt; array of decimal digits representing a non-negative integer, increment one to the integer.&lt;/p&gt;
-&lt;p&gt;The digits are stored such that the most significant digit is at the head of the list, and each element in the array contains a single digit.&lt;/p&gt;
-&lt;p&gt;You may assume the integer does not contain any leading zero, except the number 0 itself.</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Vector" scheme="https://egbert-yu-ting.github.io/tags/Vector/"/>
     
   </entry>
   

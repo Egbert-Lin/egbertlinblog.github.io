@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-18T07:37:50.263Z</updated>
+  <updated>2021-01-18T17:20:49.871Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[LeetCode Road]Best Time to Buy and Sell Stock</title>
+    <link href="https://egbert-yu-ting.github.io/posts/a026a3d3/"/>
+    <id>https://egbert-yu-ting.github.io/posts/a026a3d3/</id>
+    <published>2021-01-18T15:28:03.000Z</published>
+    <updated>2021-01-18T17:20:49.871Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;121. Best Time to Buy and Sell Stock&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;You are given </summary>
+      
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+    <category term="Stock" scheme="https://egbert-yu-ting.github.io/tags/Stock/"/>
+    
+    <category term="BruteForce" scheme="https://egbert-yu-ting.github.io/tags/BruteForce/"/>
+    
+  </entry>
   
   <entry>
     <title>[LeetCode Road]Pascal&#39;s Triangle II</title>
@@ -507,30 +535,6 @@ Two binary trees are considered the same if they are structurally identical, and
     <category term="Fibonacci_Sequence" scheme="https://egbert-yu-ting.github.io/tags/Fibonacci-Sequence/"/>
     
     <category term="Iterator" scheme="https://egbert-yu-ting.github.io/tags/Iterator/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Sqrt(x)</title>
-    <link href="https://egbert-yu-ting.github.io/posts/72b31d68/"/>
-    <id>https://egbert-yu-ting.github.io/posts/72b31d68/</id>
-    <published>2020-12-17T00:56:30.000Z</published>
-    <updated>2021-01-16T11:33:39.161Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;69. Sqrt(x)&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given a non-negative integer &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;x&lt;/font&gt;&lt;/span&gt;, compute and return &lt;em&gt;the square root of&lt;/em&gt; &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;x&lt;/font&gt;&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Since the return type is an integer, the decimal digits are &lt;b&gt;truncated&lt;/b&gt;, and only &lt;b&gt;the integer part&lt;/b&gt; of the result is returned.</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Binary_search" scheme="https://egbert-yu-ting.github.io/tags/Binary-search/"/>
     
   </entry>
   

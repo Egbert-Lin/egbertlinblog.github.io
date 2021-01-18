@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://egbert-yu-ting.github.io/posts/b04b682/</loc>
+    
+    <lastmod>2021-01-18</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/posts/2397063c/</loc>
+    
+    <lastmod>2021-01-18</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/posts/8ece0fb0/</loc>
+    
+    <lastmod>2021-01-18</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://egbert-yu-ting.github.io/posts/f3431365/</loc>
     
     <lastmod>2021-01-18</lastmod>
@@ -121,13 +142,6 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/posts/b04b682/</loc>
-    
-    <lastmod>2021-01-16</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://egbert-yu-ting.github.io/posts/9bc77297/</loc>
     
     <lastmod>2021-01-16</lastmod>
@@ -157,13 +171,6 @@
   
   <url>
     <loc>https://egbert-yu-ting.github.io/posts/e6133085/</loc>
-    
-    <lastmod>2021-01-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://egbert-yu-ting.github.io/posts/2397063c/</loc>
     
     <lastmod>2021-01-16</lastmod>
     
@@ -257,13 +264,6 @@
     <loc>https://egbert-yu-ting.github.io/posts/65af7d45/</loc>
     
     <lastmod>2021-01-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://egbert-yu-ting.github.io/posts/8ece0fb0/</loc>
-    
-    <lastmod>2021-01-12</lastmod>
     
   </url>
   
@@ -543,14 +543,14 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Recursive-function/</loc>
+    <loc>https://egbert-yu-ting.github.io/tags/Hash-table/</loc>
     <lastmod>2021-01-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Hash-table/</loc>
+    <loc>https://egbert-yu-ting.github.io/tags/Recursive-function/</loc>
     <lastmod>2021-01-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

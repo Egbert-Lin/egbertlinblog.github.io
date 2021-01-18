@@ -333,6 +333,27 @@
   </url>
   
   <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Tech/</loc>
+    <lastmod>2021-01-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Sidebar/</loc>
+    <lastmod>2021-01-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Post/</loc>
+    <lastmod>2021-01-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://egbert-yu-ting.github.io/tags/Tree/</loc>
     <lastmod>2021-01-18</lastmod>
     <changefreq>daily</changefreq>
@@ -355,27 +376,6 @@
   
   <url>
     <loc>https://egbert-yu-ting.github.io/tags/2D-Vector/</loc>
-    <lastmod>2021-01-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Tech/</loc>
-    <lastmod>2021-01-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Sidebar/</loc>
-    <lastmod>2021-01-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Post/</loc>
     <lastmod>2021-01-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -543,14 +543,14 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Hash-table/</loc>
+    <loc>https://egbert-yu-ting.github.io/tags/Recursive-function/</loc>
     <lastmod>2021-01-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Recursive-function/</loc>
+    <loc>https://egbert-yu-ting.github.io/tags/Hash-table/</loc>
     <lastmod>2021-01-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

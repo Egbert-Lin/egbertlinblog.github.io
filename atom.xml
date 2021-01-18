@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-18T02:26:11.018Z</updated>
+  <updated>2021-01-18T07:19:41.120Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -17,15 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>[LeetCode Road] Pascals&#39;s Triangle</title>
-    <link href="https://egbert-yu-ting.github.io/posts/2b0547f6/"/>
-    <id>https://egbert-yu-ting.github.io/posts/2b0547f6/</id>
-    <published>2021-01-18T00:13:34.000Z</published>
-    <updated>2021-01-18T02:26:11.018Z</updated>
+    <title>[LeetCode Road]Pascal&#39;s Triangle II</title>
+    <link href="https://egbert-yu-ting.github.io/posts/f3431365/"/>
+    <id>https://egbert-yu-ting.github.io/posts/f3431365/</id>
+    <published>2021-01-18T05:55:39.000Z</published>
+    <updated>2021-01-18T07:19:41.120Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;118. Pascals&#39;s Triangle&lt;/b&gt;&lt;/font&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;118. Pascal&#39;s Triangle II&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given an integer &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;rowIndex&lt;/font&gt;&lt;/span&gt;, return the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;rowIndex^th&lt;/font&gt;&lt;/span&gt; row of the Pascal&#39;s triangle. Notice that the row index starts from &lt;strong&gt;0&lt;/strong&gt;. &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif&quot; alt=&quot;animation&quot; /&gt; &lt;font size=&quot;2&quot;&gt;In Pascal&#39;s triangle, each number is the sum of the two numbers directly above it.&lt;/font&gt;</summary>
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+    <category term="Vector" scheme="https://egbert-yu-ting.github.io/tags/Vector/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[LeetCode Road] Pascal&#39;s Triangle</title>
+    <link href="https://egbert-yu-ting.github.io/posts/2b0547f6/"/>
+    <id>https://egbert-yu-ting.github.io/posts/2b0547f6/</id>
+    <published>2021-01-18T00:13:34.000Z</published>
+    <updated>2021-01-18T06:37:02.516Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;118. Pascal&#39;s Triangle&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Given a non-negative integer numRows, generate the first numRows of Pascal&#39;s triangle.&lt;br&gt; &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif&quot; alt=&quot;animation&quot; /&gt; &lt;font size=&quot;2&quot;&gt;In Pascal&#39;s triangle, each number is the sum of the two numbers directly above it.&lt;/font&gt;</summary>
@@ -34,8 +57,6 @@
     
     <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
     
-    
-    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
     
     <category term="2D_vector" scheme="https://egbert-yu-ting.github.io/tags/2D-vector/"/>
     
@@ -510,35 +531,6 @@ Two binary trees are considered the same if they are structurally identical, and
     
     
     <category term="Binary_search" scheme="https://egbert-yu-ting.github.io/tags/Binary-search/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Add Binary</title>
-    <link href="https://egbert-yu-ting.github.io/posts/e6133085/"/>
-    <id>https://egbert-yu-ting.github.io/posts/e6133085/</id>
-    <published>2020-12-16T02:22:19.000Z</published>
-    <updated>2021-01-16T11:28:05.129Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;67. Add Binary&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given two binary strings &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;a&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;b&lt;/font&gt;&lt;/span&gt;, return &lt;em&gt;their sum as a binary string&lt;/em&gt;.</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Logical_Operators" scheme="https://egbert-yu-ting.github.io/tags/Logical-Operators/"/>
-    
-    <category term="Shift_Operators" scheme="https://egbert-yu-ting.github.io/tags/Shift-Operators/"/>
-    
-    <category term="ASCII" scheme="https://egbert-yu-ting.github.io/tags/ASCII/"/>
-    
-    <category term="Reverse_iterator" scheme="https://egbert-yu-ting.github.io/tags/Reverse-iterator/"/>
     
   </entry>
   

@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/68394953/sidebar.png">
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/68394953/Recently.png">
 <meta property="article:published_time" content="2021-01-13T03:09:05.000Z">
-<meta property="article:modified_time" content="2021-01-13T03:54:47.157Z">
+<meta property="article:modified_time" content="2021-01-18T00:55:21.376Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="Tech">
 <meta property="article:tag" content="Sidebar">
@@ -354,10 +354,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-01-13 11:09:05 / Modified: 11:54:47" itemprop="dateCreated datePublished" datetime="2021-01-13T11:09:05+08:00">2021-01-13</time>
+      <time title="Created: 2021-01-13 11:09:05" itemprop="dateCreated datePublished" datetime="2021-01-13T11:09:05+08:00">2021-01-13</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-18 08:55:21" itemprop="dateModified" datetime="2021-01-18T08:55:21+08:00">2021-01-18</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -388,7 +394,7 @@
 <h2 id="custom-file-support-1">Custom File Support [1]</h2>
 <p>In <code>/blog/themes/next</code>, open theme config file (_config.yml) and use <strong>custom_file_path</strong> key word to search the section. Then, uncomment the <code>sidebar: source/_data_sidebar.njk</code> as below: <img src="sidebar.png" /></p>
 <h2 id="modify-the-theme-config-file-_config.yml">Modify the theme config file (_config.yml)</h2>
-<p>Let add some contents to enable this function. So open _config.yml and add three lines: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">recent_posts: true</span><br><span class="line">recent_posts_title: Recently</span><br><span class="line">recent_posts_layout: block</span><br></pre></td></tr></table></figure></p>
+<p>Let add some contents to enable this function. So open _config.yml and add three line: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">recent_posts: true</span><br><span class="line">recent_posts_title: Recently</span><br><span class="line">recent_posts_layout: block</span><br></pre></td></tr></table></figure></p>
 <h2 id="redeploy-your-blog">Redeploy your blog</h2>
 <p>After deploying the blog, you will see recent posts successfully. <img src="Recently.png" /></p>
 <p>References:<br> [1] https://theme-next.js.org/docs/advanced-settings/custom-files.html?highlight=sideb</p>

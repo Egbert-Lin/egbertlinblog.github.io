@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-19T00:39:23.890Z</updated>
+  <updated>2021-01-19T17:48:02.890Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Run PyCharm: Python development platform on Ubuntu / Ryu SDN</title>
+    <link href="https://egbert-yu-ting.github.io/posts/784045ef/"/>
+    <id>https://egbert-yu-ting.github.io/posts/784045ef/</id>
+    <published>2021-01-19T16:34:14.000Z</published>
+    <updated>2021-01-19T17:48:02.890Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;Tutorial - PyCharm Installation and build project environment for Ryu&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;installat</summary>
+      
+    
+    
+    
+    <category term="Instruction" scheme="https://egbert-yu-ting.github.io/categories/Instruction/"/>
+    
+    
+    <category term="IDE" scheme="https://egbert-yu-ting.github.io/tags/IDE/"/>
+    
+    <category term="Python" scheme="https://egbert-yu-ting.github.io/tags/Python/"/>
+    
+    <category term="Platform" scheme="https://egbert-yu-ting.github.io/tags/Platform/"/>
+    
+  </entry>
   
   <entry>
     <title>[LeetCode Road] Best Time to Buy and Sell Stock</title>
@@ -505,34 +534,6 @@ Two binary trees are considered the same if they are structurally identical, and
     
     
     <category term="ListNode" scheme="https://egbert-yu-ting.github.io/tags/ListNode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Climbing Stairs</title>
-    <link href="https://egbert-yu-ting.github.io/posts/7af6a106/"/>
-    <id>https://egbert-yu-ting.github.io/posts/7af6a106/</id>
-    <published>2020-12-17T08:12:36.000Z</published>
-    <updated>2021-01-16T11:28:34.112Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;70. Climbing Stairs&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;You are climbing a staircase. It takes &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n&lt;/font&gt;&lt;/span&gt; steps to reach the top.&lt;/p&gt;
-&lt;p&gt;Each time you can either climb &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;1&lt;/font&gt;&lt;/span&gt; or &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;2&lt;/font&gt;&lt;/span&gt; steps. In how many distinct ways can you climb to the top?</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
-    
-    <category term="Fibonacci_Sequence" scheme="https://egbert-yu-ting.github.io/tags/Fibonacci-Sequence/"/>
-    
-    <category term="Iterator" scheme="https://egbert-yu-ting.github.io/tags/Iterator/"/>
     
   </entry>
   

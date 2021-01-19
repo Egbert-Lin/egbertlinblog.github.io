@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://egbert-yu-ting.github.io/posts/784045ef/</loc>
+    
+    <lastmod>2021-01-19</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/posts/a7083339/</loc>
+    
+    <lastmod>2021-01-19</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://egbert-yu-ting.github.io/posts/2b0547f6/</loc>
     
     <lastmod>2021-01-19</lastmod>
@@ -240,13 +254,6 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/posts/a7083339/</loc>
-    
-    <lastmod>2021-01-13</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://egbert-yu-ting.github.io/posts/8caf8f3c/</loc>
     
     <lastmod>2021-01-13</lastmod>
@@ -375,20 +382,6 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Stock/</loc>
-    <lastmod>2021-01-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://egbert-yu-ting.github.io/tags/BruteForce/</loc>
-    <lastmod>2021-01-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://egbert-yu-ting.github.io/tags/STL/</loc>
     <lastmod>2021-01-19</lastmod>
     <changefreq>daily</changefreq>
@@ -403,7 +396,35 @@
   </url>
   
   <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Stock/</loc>
+    <lastmod>2021-01-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/BruteForce/</loc>
+    <lastmod>2021-01-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://egbert-yu-ting.github.io/tags/TreeNode/</loc>
+    <lastmod>2021-01-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Fibonacci-Sequence/</loc>
+    <lastmod>2021-01-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Iterator/</loc>
     <lastmod>2021-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -515,21 +536,21 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Fibonacci-Sequence/</loc>
+    <loc>https://egbert-yu-ting.github.io/tags/IDE/</loc>
     <lastmod>2021-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Iterator/</loc>
+    <loc>https://egbert-yu-ting.github.io/tags/Python/</loc>
     <lastmod>2021-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Map-STL/</loc>
+    <loc>https://egbert-yu-ting.github.io/tags/Platform/</loc>
     <lastmod>2021-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -557,6 +578,13 @@
   </url>
   
   <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Map-STL/</loc>
+    <lastmod>2021-01-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://egbert-yu-ting.github.io/tags/Binary-search/</loc>
     <lastmod>2021-01-19</lastmod>
     <changefreq>daily</changefreq>
@@ -578,14 +606,14 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Stack/</loc>
+    <loc>https://egbert-yu-ting.github.io/tags/Editor/</loc>
     <lastmod>2021-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Editor/</loc>
+    <loc>https://egbert-yu-ting.github.io/tags/Stack/</loc>
     <lastmod>2021-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

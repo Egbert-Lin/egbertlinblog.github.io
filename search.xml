@@ -1693,7 +1693,24 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
 </ol>
 <h2 id="launching-from-the-command-line">Launching from the command line</h2>
 <p>You can type 'code .' in any folder to start editing files in that folder. <font color=#FF0000>Notice: you will meet an error message: <b>“code .” command is not working</b></font></p>
-<p><strong>Solution:</strong> You must add Visual Studio Code to the path first: 1. Create bash_profile file if it doesn't exist in your system.<br>    <b>touch ~/.bash_profile</b><br> 2. Open this file, click 'i' to edit.<br>    <b>vi ~/.bash_profile</b><br> 3. Paste it as below, and type ':' + 'wq' to write &amp; quit.<br>    <b>export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"</b><br> 4. Preserve your current shell, if you miss it, you will repeat step2-step3 again when you reopen the terminal.<br>    <b>source ~/.bash_profile</b><br></p>
+<strong>Solution:</strong> You must add Visual Studio Code to the path first: 1. Create bash_profile file if it doesn't exist in your system.
+<p style="background-color:#F0F0F0">
+touch ~/.bash_profile
+</p>
+<ol start="2" type="1">
+<li>Open this file, click 'i' to edit.
+<p style="background-color:#F0F0F0">
+vi ~/.bash_profile
+</p></li>
+<li>Paste it as below, and type ':' + 'wq' to write &amp; quit.&lt;
+<p style="background-color:#F0F0F0">
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+</p></li>
+<li>Preserve your current shell, if you miss it, you will repeat step2-step3 again when you reopen the terminal.
+<p style="background-color:#F0F0F0">
+source ~/.bash_profile
+</p></li>
+</ol>
 ]]></content>
       <categories>
         <category>Instruction</category>

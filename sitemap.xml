@@ -403,20 +403,6 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Fibonacci-Sequence/</loc>
-    <lastmod>2021-01-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Iterator/</loc>
-    <lastmod>2021-01-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://egbert-yu-ting.github.io/tags/TreeNode/</loc>
     <lastmod>2021-01-19</lastmod>
     <changefreq>daily</changefreq>
@@ -523,6 +509,20 @@
   
   <url>
     <loc>https://egbert-yu-ting.github.io/tags/2D-vector/</loc>
+    <lastmod>2021-01-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Fibonacci-Sequence/</loc>
+    <lastmod>2021-01-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Iterator/</loc>
     <lastmod>2021-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

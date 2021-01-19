@@ -199,44 +199,6 @@ return its bottom-up level order traversal as:
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Climbing Stairs</title>
-    <url>/posts/7af6a106/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>70. Climbing Stairs</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>You are climbing a staircase. It takes <span style="background-color:#F0F0F0"><font color=#808080>n</font></span> steps to reach the top.</p>
-<p>Each time you can either climb <span style="background-color:#F0F0F0"><font color=#808080>1</font></span> or <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> steps. In how many distinct ways can you climb to the top? <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> n = 2<br> <b>Output:</b> 2<br> <b>Explanation:</b> There are two ways to climb to the top.<br> 1. 1 step + 1 step<br> 2. 2 steps<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> n = 3<br> <b>Output:</b> 3<br> <b>Explanation:</b> There are three ways to climb to the top.<br> 1. 1 step + 1 step + 1 step<br> 2. 1 step + 2 steps<br> 3. 2 steps + 1 step<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= n &lt;= 45</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: We must find the reqular pattern. As example mentioned, n = 2 -&gt; output: 2, n = 3 -&gt; output: 3. You can derive n = 4, n = 5, ...ect. My answer is as below and you can get the reqular result: n = 4 -&gt; Output: 5 // 2 + 3 n = 5 -&gt; Output: 8 // 3 + 5 n = 6 -&gt; Output: 13 // 5 + 8 n = 7 -&gt; Output: 21 // 8 + 13 (Results: 1 2 3 5 8 13 21 ...) Isn't it like classical problem of <strong>Fibonacci Sequence</strong>? So, I directly think recursion can solve it. The approach is as below, but the recursion can't pass the submission, because it will show <u>Time Limit Exceeded</u> when n = 44.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">return</span> climbStairs(n - <span class="number">1</span>) + climbStairs(n - <span class="number">2</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea: The strategy of second approach is an iterator. We can use for loop instead of recursion. Very simple coding as below and it can pass the submission.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> prev = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> next = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++)&#123;</span><br><span class="line">            result = prev + next;</span><br><span class="line">            prev = next;</span><br><span class="line">            next = result;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Recursion</tag>
-        <tag>Fibonacci_Sequence</tag>
-        <tag>Iterator</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Convert Sorted Array to Binary Search Tree</title>
     <url>/posts/17bf1818/</url>
     <content><![CDATA[<p align="center">
@@ -304,33 +266,6 @@ The <strong>count-and-say</strong> sequence is a sequence of digit strings defin
       </categories>
       <tags>
         <tag>String</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Error message: Please tell me who you are. Run git config --global...</title>
-    <url>/posts/278f103a/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Command line: "hexo d" and you got error message: Please tell me who you are.</b></font>
-</p>
-<h3 id="full-error-message-info">Full error message info:</h3>
-<p><font color=#FF0000>Please tell me who you are.</p>
-<p>Run</p>
-<p>git config --global user.email “you@example.com” git config --global user.name “Your Name”</p>
-<p>to set your account’s default identity. Omit --global to set the identity only in this repository.</p>
-<p>fatal: unable to auto-detect email address (got ...) error: src refspec HEAD does not match any. error: failed to push some refs to(your ...github.io)</font> ***</p>
-<p>When I ran "hexo d" command, the deployment was stuck! <a id="more"></a> The reason was I updated my mac OS a few days age. Now, the system can't distinguish your indentity.</p>
-<p>So, the solution can solve it:</p>
-<h3 id="solution">Solution:</h3>
-<p>Input commands: 1) git config --global user.email "email" //Your github email address(https://username.github.io)</p>
-<ol start="2" type="1">
-<li>git config --global user.name "username" //(your nickname、github's username or anyone you name it) only English!</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Tech</tag>
       </tags>
   </entry>
   <entry>
@@ -430,43 +365,6 @@ $ sudo apt-get install libnss3-1d
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Length of Last Word</title>
-    <url>/posts/b04b682/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>8. Length of Last Word</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of some words separated by spaces, return the <em>length of the last word in the string</em>. <em>If the last word does not exist, return</em> <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</p>
-<p>A <strong>word</strong> is a maximal substring consisting of non-space characters only. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = "Hello World"<br><b>Output:</b> 5<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = " "<br><b>Output:</b> 0</br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= s.length &lt;= 10^4</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of only English letters and spaces <span style="background-color:#F0F0F0"><font color=#808080>' '</font></span>
-</li>
-<p></strong>.</p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: This problem took me a lot of time thinking how to solve, because I tried many methods based on scanning string in order. As a result, I ingorned tailing spaces situation, e.g., "a " or "a bc ". Obviously, my logic was error! Finally, I refered to <a href="https://zxi.mytechroad.com/blog/string/leetcode-58-length-of-last-word/">Huahua's Tech Road</a>, the solution is very understandable, it scan the string in <strong>reverse order</strong> <u>until a space or reach the beginning of the string</u>. So, the first <code>while(i &gt;= 0 &amp;&amp; s[i] == ' ')</code> means trimming off space at tail; the second <code>while(i &gt;= 0 &amp;&amp; s[i] != ' ')</code> means calculating length of a last word.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLastWord</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> characters = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] == <span class="string">&#x27; &#x27;</span>) i--;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] != <span class="string">&#x27; &#x27;</span>)&#123;</span><br><span class="line">            i--;</span><br><span class="line">            characters ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> characters;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Reverse_order</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Longest Common Prefix</title>
     <url>/posts/2768cb2c/</url>
     <content><![CDATA[<p align="center">
@@ -508,6 +406,43 @@ $ sudo apt-get install libnss3-1d
       </categories>
       <tags>
         <tag>String</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Length of Last Word</title>
+    <url>/posts/b04b682/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>8. Length of Last Word</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of some words separated by spaces, return the <em>length of the last word in the string</em>. <em>If the last word does not exist, return</em> <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</p>
+<p>A <strong>word</strong> is a maximal substring consisting of non-space characters only. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "Hello World"<br><b>Output:</b> 5<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = " "<br><b>Output:</b> 0</br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= s.length &lt;= 10^4</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of only English letters and spaces <span style="background-color:#F0F0F0"><font color=#808080>' '</font></span>
+</li>
+<p></strong>.</p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: This problem took me a lot of time thinking how to solve, because I tried many methods based on scanning string in order. As a result, I ingorned tailing spaces situation, e.g., "a " or "a bc ". Obviously, my logic was error! Finally, I refered to <a href="https://zxi.mytechroad.com/blog/string/leetcode-58-length-of-last-word/">Huahua's Tech Road</a>, the solution is very understandable, it scan the string in <strong>reverse order</strong> <u>until a space or reach the beginning of the string</u>. So, the first <code>while(i &gt;= 0 &amp;&amp; s[i] == ' ')</code> means trimming off space at tail; the second <code>while(i &gt;= 0 &amp;&amp; s[i] != ' ')</code> means calculating length of a last word.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLastWord</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> characters = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] == <span class="string">&#x27; &#x27;</span>) i--;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] != <span class="string">&#x27; &#x27;</span>)&#123;</span><br><span class="line">            i--;</span><br><span class="line">            characters ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> characters;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Reverse_order</tag>
       </tags>
   </entry>
   <entry>
@@ -717,6 +652,33 @@ The number of nodes in the tree is in the range <span style="background-color:#F
       </tags>
   </entry>
   <entry>
+    <title>Error message: Please tell me who you are. Run git config --global...</title>
+    <url>/posts/278f103a/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Command line: "hexo d" and you got error message: Please tell me who you are.</b></font>
+</p>
+<h3 id="full-error-message-info">Full error message info:</h3>
+<p><font color=#FF0000>Please tell me who you are.</p>
+<p>Run</p>
+<p>git config --global user.email “you@example.com” git config --global user.name “Your Name”</p>
+<p>to set your account’s default identity. Omit --global to set the identity only in this repository.</p>
+<p>fatal: unable to auto-detect email address (got ...) error: src refspec HEAD does not match any. error: failed to push some refs to(your ...github.io)</font> ***</p>
+<p>When I ran "hexo d" command, the deployment was stuck! <a id="more"></a> The reason was I updated my mac OS a few days age. Now, the system can't distinguish your indentity.</p>
+<p>So, the solution can solve it:</p>
+<h3 id="solution">Solution:</h3>
+<p>Input commands: 1) git config --global user.email "email" //Your github email address(https://username.github.io)</p>
+<ol start="2" type="1">
+<li>git config --global user.name "username" //(your nickname、github's username or anyone you name it) only English!</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Tech</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Merge Two Sorted Lists</title>
     <url>/posts/61be1b10/</url>
     <content><![CDATA[<p align="center">
@@ -843,45 +805,6 @@ The number of nodes in the tree is in the range <span style="background-color:#F
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Pascal&#39;s Triangle II</title>
-    <url>/posts/f3431365/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>118. Pascal's Triangle II</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given an integer <span style="background-color:#F0F0F0"><font color=#808080>rowIndex</font></span>, return the <span style="background-color:#F0F0F0"><font color=#808080>rowIndex^th</font></span> row of the Pascal's triangle. Notice that the row index starts from <strong>0</strong>. <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif" alt="animation" /> <font size="2">In Pascal's triangle, each number is the sum of the two numbers directly above it.</font> <a id="more"></a></p>
-<p><strong>Follow up:</strong> Could you optimize your algorithm to use only <em>O(k)</em> extra space?</p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> rowIndex = 3<br> <b>Output:</b> [1,3,3,1]
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> rowIndex = 0<br> <b>Output:</b> [1]
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> rowIndex = 0<br> <b>Output:</b> [1]
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= rowIndex &lt;= 33</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: It is familiar with <a href="https://egbert-yu-ting.github.io/posts/2b0547f6/">Pascal's Trangle</a> question, you can use similar algorithm to implement it.<br> However, the efficiency of algorithm is not optimization.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">getRow</span><span class="params">(<span class="keyword">int</span> rowIndex)</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">res</span><span class="params">(<span class="number">1</span>,<span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">if</span>(rowIndex == <span class="number">0</span>) <span class="keyword">return</span> res;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= rowIndex; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> prev = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; i; j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> temp = res[j];</span><br><span class="line">                res[j] += prev;</span><br><span class="line">                prev = temp;</span><br><span class="line">            &#125; </span><br><span class="line">            res.push_back(<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea: Here's the best algorithm.<br> At first, declare a vector that consists <code>rowIndex + 1</code> elements. Must be <strong>add 1</strong>, because row index starts from 0. So the size of vector is ready, we don't use <code>push_back()</code> in loop anymore.<br> Whatever a value of rowIndex is, the first position of vector is always 1, so we pass 1 to <code>res</code> vector.<br> At 9 line, we calculate each elements in reverse(it not includes the frist element).<br> E.g., <u>Input: rowIndex = 3</u><br>    i = 1, res=[1, 0, 0]<br>    i = 1, res=[1, 0 + 1, 0] = [1, 1, 0]<br>    i = 2, res=[1, 1 + 1, 0 + 1] = [1, 2, 1] (output)</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">getRow</span><span class="params">(<span class="keyword">int</span> rowIndex)</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">res</span><span class="params">(rowIndex+<span class="number">1</span>)</span></span>;</span><br><span class="line">        res[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= rowIndex; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &gt; <span class="number">0</span>; j--)</span><br><span class="line">                res[j] += res[j<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Vector</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Pascal&#39;s Triangle</title>
     <url>/posts/2b0547f6/</url>
     <content><![CDATA[<p align="center">
@@ -931,6 +854,83 @@ Given the below binary tree and <span style="background-color:#F0F0F0"><font col
       <tags>
         <tag>Tree</tag>
         <tag>Recursion</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Climbing Stairs</title>
+    <url>/posts/7af6a106/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>70. Climbing Stairs</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>You are climbing a staircase. It takes <span style="background-color:#F0F0F0"><font color=#808080>n</font></span> steps to reach the top.</p>
+<p>Each time you can either climb <span style="background-color:#F0F0F0"><font color=#808080>1</font></span> or <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> steps. In how many distinct ways can you climb to the top? <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> n = 2<br> <b>Output:</b> 2<br> <b>Explanation:</b> There are two ways to climb to the top.<br> 1. 1 step + 1 step<br> 2. 2 steps<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> n = 3<br> <b>Output:</b> 3<br> <b>Explanation:</b> There are three ways to climb to the top.<br> 1. 1 step + 1 step + 1 step<br> 2. 1 step + 2 steps<br> 3. 2 steps + 1 step<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= n &lt;= 45</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: We must find the reqular pattern. As example mentioned, n = 2 -&gt; output: 2, n = 3 -&gt; output: 3. You can derive n = 4, n = 5, ...ect. My answer is as below and you can get the reqular result: n = 4 -&gt; Output: 5 // 2 + 3 n = 5 -&gt; Output: 8 // 3 + 5 n = 6 -&gt; Output: 13 // 5 + 8 n = 7 -&gt; Output: 21 // 8 + 13 (Results: 1 2 3 5 8 13 21 ...) Isn't it like classical problem of <strong>Fibonacci Sequence</strong>? So, I directly think recursion can solve it. The approach is as below, but the recursion can't pass the submission, because it will show <u>Time Limit Exceeded</u> when n = 44.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">return</span> climbStairs(n - <span class="number">1</span>) + climbStairs(n - <span class="number">2</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea: The strategy of second approach is an iterator. We can use for loop instead of recursion. Very simple coding as below and it can pass the submission.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> prev = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> next = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++)&#123;</span><br><span class="line">            result = prev + next;</span><br><span class="line">            prev = next;</span><br><span class="line">            next = result;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Recursion</tag>
+        <tag>Fibonacci_Sequence</tag>
+        <tag>Iterator</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Pascal&#39;s Triangle II</title>
+    <url>/posts/f3431365/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>118. Pascal's Triangle II</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given an integer <span style="background-color:#F0F0F0"><font color=#808080>rowIndex</font></span>, return the <span style="background-color:#F0F0F0"><font color=#808080>rowIndex^th</font></span> row of the Pascal's triangle. Notice that the row index starts from <strong>0</strong>. <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif" alt="animation" /> <font size="2">In Pascal's triangle, each number is the sum of the two numbers directly above it.</font> <a id="more"></a></p>
+<p><strong>Follow up:</strong> Could you optimize your algorithm to use only <em>O(k)</em> extra space?</p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> rowIndex = 3<br> <b>Output:</b> [1,3,3,1]
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> rowIndex = 0<br> <b>Output:</b> [1]
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> rowIndex = 0<br> <b>Output:</b> [1]
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= rowIndex &lt;= 33</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: It is familiar with <a href="https://egbert-yu-ting.github.io/posts/2b0547f6/">Pascal's Trangle</a> question, you can use similar algorithm to implement it.<br> However, the efficiency of algorithm is not optimization.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">getRow</span><span class="params">(<span class="keyword">int</span> rowIndex)</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">res</span><span class="params">(<span class="number">1</span>,<span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">if</span>(rowIndex == <span class="number">0</span>) <span class="keyword">return</span> res;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= rowIndex; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> prev = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; i; j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> temp = res[j];</span><br><span class="line">                res[j] += prev;</span><br><span class="line">                prev = temp;</span><br><span class="line">            &#125; </span><br><span class="line">            res.push_back(<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea: Here's the best algorithm.<br> At first, declare a vector that consists <code>rowIndex + 1</code> elements. Must be <strong>add 1</strong>, because row index starts from 0. So the size of vector is ready, we don't use <code>push_back()</code> in loop anymore.<br> Whatever a value of rowIndex is, the first position of vector is always 1, so we pass 1 to <code>res</code> vector.<br> At 9 line, we calculate each elements in reverse(it not includes the frist element).<br> E.g., <u>Input: rowIndex = 3</u><br>    i = 1, res=[1, 0, 0]<br>    i = 1, res=[1, 0 + 1, 0] = [1, 1, 0]<br>    i = 2, res=[1, 1 + 1, 0 + 1] = [1, 2, 1] (output)</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">getRow</span><span class="params">(<span class="keyword">int</span> rowIndex)</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">res</span><span class="params">(rowIndex+<span class="number">1</span>)</span></span>;</span><br><span class="line">        res[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= rowIndex; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &gt; <span class="number">0</span>; j--)</span><br><span class="line">                res[j] += res[j<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Vector</tag>
       </tags>
   </entry>
   <entry>
@@ -1207,6 +1207,48 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Same Tree</title>
+    <url>/posts/2ef96137/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>100. Same Tree</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given the roots of two binary trees <span style="background-color:#F0F0F0"><font color=#808080>p</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>q</font></span>, write a function to check if they are the same or not.</p>
+Two binary trees are considered the same if they are structurally identical, and the nodes have the same value. <a id="more"></a> ## Example: <img src="SameTree_example1.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> p = [1,2,3], q = [1,2,3]<br> <b>Output:</b> true<br>
+</p>
+<img src="SameTree_example2.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> p = [1,2], q = [1,null,2]<br> <b>Output</b>: false<br>
+</p>
+<img src="SameTree_example3.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> p = [1,2,1], q = [1,1,2]<br> <b>Output:</b> false<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+TThe number of nodes in both trees is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 100]</font></span>.
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-10^4 &lt;= Node.val &lt;= 10^4</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: This is my first time to process binary tree. After realizing question and example, it lets me recollect the solution of <a href="https://egbert-yu-ting.github.io/posts/61be1b10/">LeetCode 21</a>. I can use a similar if statement to code. But, I still don't know how to compare two binary trees of their child. So, I refered to <a href="https://www.programcreek.com/2012/12/check-if-two-trees-are-same-or-not/">programcreek</a> finally, I saw source code and understood the solution immediately. We can use recursion to bind the child checking (left &amp; right).</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSameTree</span><span class="params">(TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(p==<span class="literal">NULL</span> &amp;&amp; q==<span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(p==<span class="literal">NULL</span> || q==<span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span>(p-&gt;val==q-&gt;val)&#123;</span><br><span class="line">            <span class="keyword">return</span> isSameTree(p-&gt;left, q-&gt;left) &amp;&amp; isSameTree(p-&gt;right, q-&gt;right);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Tree</tag>
+        <tag>Recursion</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
     <url>/posts/9e0f4e5/</url>
     <content><![CDATA[<p align="center">
@@ -1305,48 +1347,6 @@ $ sudo python setup.py install
         <tag>Ubuntu</tag>
         <tag>SDN</tag>
         <tag>Controller</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Same Tree</title>
-    <url>/posts/2ef96137/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>100. Same Tree</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given the roots of two binary trees <span style="background-color:#F0F0F0"><font color=#808080>p</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>q</font></span>, write a function to check if they are the same or not.</p>
-Two binary trees are considered the same if they are structurally identical, and the nodes have the same value. <a id="more"></a> ## Example: <img src="SameTree_example1.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> p = [1,2,3], q = [1,2,3]<br> <b>Output:</b> true<br>
-</p>
-<img src="SameTree_example2.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> p = [1,2], q = [1,null,2]<br> <b>Output</b>: false<br>
-</p>
-<img src="SameTree_example3.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> p = [1,2,1], q = [1,1,2]<br> <b>Output:</b> false<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-TThe number of nodes in both trees is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 100]</font></span>.
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-10^4 &lt;= Node.val &lt;= 10^4</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: This is my first time to process binary tree. After realizing question and example, it lets me recollect the solution of <a href="https://egbert-yu-ting.github.io/posts/61be1b10/">LeetCode 21</a>. I can use a similar if statement to code. But, I still don't know how to compare two binary trees of their child. So, I refered to <a href="https://www.programcreek.com/2012/12/check-if-two-trees-are-same-or-not/">programcreek</a> finally, I saw source code and understood the solution immediately. We can use recursion to bind the child checking (left &amp; right).</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSameTree</span><span class="params">(TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(p==<span class="literal">NULL</span> &amp;&amp; q==<span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(p==<span class="literal">NULL</span> || q==<span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span>(p-&gt;val==q-&gt;val)&#123;</span><br><span class="line">            <span class="keyword">return</span> isSameTree(p-&gt;left, q-&gt;left) &amp;&amp; isSameTree(p-&gt;right, q-&gt;right);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Tree</tag>
-        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>

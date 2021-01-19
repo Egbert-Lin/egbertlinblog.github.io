@@ -1144,6 +1144,69 @@ Internally you can think of this:
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Roman to Integer</title>
+    <url>/posts/8caf8f3c/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>13. Roman to Integer</b></font>
+</p>
+<h2 id="question">Question:</h2>
+Roman numerals are represented by seven different symbols: <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(I\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(V\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(L\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(C\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(D\)</span></font></span> and <span style="background-color:#F0F0F0"><font color=#808080>M</font></span>.
+<p style="background-color:F0F0F0">
+<b>Symbol</b>  <b>Value</b><br>  <span class="math inline">\(I\)</span>       1<br> <span class="math inline">\(V\)</span>      5<br> <span class="math inline">\(X\)</span>      10<br> <span class="math inline">\(L\)</span>       50<br> <span class="math inline">\(C\)</span>      100<br> <span class="math inline">\(D\)</span>      500<br> <span class="math inline">\(M\)</span>        1000
+</p>
+<a id="more"></a>
+<p>For example, <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(II\)</span></font></span> in Roman numeral, just two one's added together. <span style="background-color:#F0F0F0"><font color=#808080>12</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XII\)</span></font></span>, which is simply <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X + II\)</span></font></span>. The number <span style="background-color:#F0F0F0"><font color=#808080>27</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XXVII\)</span></font></span>, which is <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XX + V + II\)</span></font></span>.</p>
+<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(IIII\)</span></font></span>. Instead, the number four is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(IV\)</span></font></span>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(IX\)</span></font></span>. There are six instances where subtraction is used:</p>
+<ul>
+<li><span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(I\)</span></font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(V\)</span></font></span> (5) and <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X\)</span></font></span> (10) to make 4 and 9.</li>
+<li><span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X\)</span></font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(L\)</span></font></span> (50) and <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(C\)</span></font></span> (100) to make 40 and 90.</li>
+<li><span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(C\)</span></font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(D\)</span></font></span> (500) and <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(M\)</span></font></span> (1000) to make 400 and 900. Given a roman numeral, convert it to an integer.</li>
+</ul>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "<span class="math inline">\(III\)</span>"<br><b>Output:</b> 3<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "<span class="math inline">\(IV\)</span>"<br><b>Output:</b> 4<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "<span class="math inline">\(IX\)</span>"<br><b>Output:</b> 9<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "<span class="math inline">\(LVIII\)</span>"<br><b>Output:</b> 58<br><b>Explanation:</b> <span class="math inline">\(L\)</span> = 50, <span class="math inline">\(V\)</span>= 5, <span class="math inline">\(III\)</span> = 3.<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "<span class="math inline">\(MCMXCIV\)</span>"<b>Output:</b> 1994<br><b>Explanation:</b> <span class="math inline">\(M\)</span> = 1000, <span class="math inline">\(CM\)</span> = 900, <span class="math inline">\(XC\)</span> = 90 and <span class="math inline">\(IV\)</span> = 4.<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+1 &lt;= s.length &lt;= 15
+</li>
+</strong> <strong>
+<li>
+s contains only the characters ('<span class="math inline">\(I\)</span>', '<span class="math inline">\(V\)</span>', '<span class="math inline">\(X\)</span>', '<span class="math inline">\(L\)</span>', '<span class="math inline">\(C\)</span>', '<span class="math inline">\(D\)</span>', '<span class="math inline">\(M\)</span>').
+</li>
+</strong> <strong>
+<li>
+It is guaranteed that s is a valid roman numeral in the range [1, 3999].
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: At first, I thought these symbols can be built by using vector directly. After my careful thought, a map container is a easy way to store elements by a combination of a key value and a mapped value. Next step, I used a loop to check each characters, if <code>symbol[s[i]] &gt;= symbol[s[i + 1]]</code> is true, add symbol[s[i]] up. On the contrary, if <code>symbol[s[i]] &lt; symbol[s[i + 1]]</code> is true, subtract symbol[s[i]] from summation.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        map&lt;char, int&gt; symbol(&#123;&#123;&#x27;I&#x27;, 1&#125;, &#123;&#x27;V&#x27;, 5&#125;, &#123;&#x27;X&#x27;, 10&#125;, &#123;&#x27;L&#x27;, 50&#125;, &#123;&#x27;C&#x27;, 100,&#125;, &#123;&#x27;D&#x27;, 500&#125;, &#123;&#x27;M&#x27;, 1000&#125;&#125;);</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(symbol[s[i]] &gt;= symbol[s[i + <span class="number">1</span>]])&#123;</span><br><span class="line">                sum += symbol[s[i]];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                sum -= symbol[s[i]];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea: This is a way to reduce a computing time. Add symbol[s[i]] value first, then check a value of s[i - 1] element whether it is less than a value of s[i] or not. If it is true, the summation need to subtract twice value of symbol[s[i - 1]]. So, it implements the less conditional operator.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        map&lt;char, int&gt; symbol(&#123;&#123;&#x27;I&#x27;, 1&#125;, &#123;&#x27;V&#x27;, 5&#125;, &#123;&#x27;X&#x27;, 10&#125;, &#123;&#x27;L&#x27;, 50&#125;, &#123;&#x27;C&#x27;, 100,&#125;, &#123;&#x27;D&#x27;, 500&#125;, &#123;&#x27;M&#x27;, 1000&#125;&#125;);</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            sum += symbol[s[i]];</span><br><span class="line">            <span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; symbol[s[i - <span class="number">1</span>]] &lt; symbol[s[i]])&#123;</span><br><span class="line">                sum -= <span class="number">2</span>*symbol[s[i <span class="number">-1</span>]];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Map(STL)</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
     <url>/posts/9e0f4e5/</url>
     <content><![CDATA[<p align="center">
@@ -1284,69 +1347,6 @@ TThe number of nodes in both trees is in the range <span style="background-color
       <tags>
         <tag>Tree</tag>
         <tag>Recursion</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Roman to Integer</title>
-    <url>/posts/8caf8f3c/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>13. Roman to Integer</b></font>
-</p>
-<h2 id="question">Question:</h2>
-Roman numerals are represented by seven different symbols: <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(I\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(V\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(L\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(C\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(D\)</span></font></span> and <span style="background-color:#F0F0F0"><font color=#808080>M</font></span>.
-<p style="background-color:F0F0F0">
-<b>Symbol</b>  <b>Value</b><br>  <span class="math inline">\(I\)</span>       1<br> <span class="math inline">\(V\)</span>      5<br> <span class="math inline">\(X\)</span>      10<br> <span class="math inline">\(L\)</span>       50<br> <span class="math inline">\(C\)</span>      100<br> <span class="math inline">\(D\)</span>      500<br> <span class="math inline">\(M\)</span>        1000
-</p>
-<a id="more"></a>
-<p>For example, <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(II\)</span></font></span> in Roman numeral, just two one's added together. <span style="background-color:#F0F0F0"><font color=#808080>12</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XII\)</span></font></span>, which is simply <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X + II\)</span></font></span>. The number <span style="background-color:#F0F0F0"><font color=#808080>27</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XXVII\)</span></font></span>, which is <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XX + V + II\)</span></font></span>.</p>
-<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(IIII\)</span></font></span>. Instead, the number four is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(IV\)</span></font></span>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(IX\)</span></font></span>. There are six instances where subtraction is used:</p>
-<ul>
-<li><span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(I\)</span></font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(V\)</span></font></span> (5) and <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X\)</span></font></span> (10) to make 4 and 9.</li>
-<li><span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X\)</span></font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(L\)</span></font></span> (50) and <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(C\)</span></font></span> (100) to make 40 and 90.</li>
-<li><span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(C\)</span></font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(D\)</span></font></span> (500) and <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(M\)</span></font></span> (1000) to make 400 and 900. Given a roman numeral, convert it to an integer.</li>
-</ul>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = "<span class="math inline">\(III\)</span>"<br><b>Output:</b> 3<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = "<span class="math inline">\(IV\)</span>"<br><b>Output:</b> 4<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = "<span class="math inline">\(IX\)</span>"<br><b>Output:</b> 9<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = "<span class="math inline">\(LVIII\)</span>"<br><b>Output:</b> 58<br><b>Explanation:</b> <span class="math inline">\(L\)</span> = 50, <span class="math inline">\(V\)</span>= 5, <span class="math inline">\(III\)</span> = 3.<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = "<span class="math inline">\(MCMXCIV\)</span>"<b>Output:</b> 1994<br><b>Explanation:</b> <span class="math inline">\(M\)</span> = 1000, <span class="math inline">\(CM\)</span> = 900, <span class="math inline">\(XC\)</span> = 90 and <span class="math inline">\(IV\)</span> = 4.<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-1 &lt;= s.length &lt;= 15
-</li>
-</strong> <strong>
-<li>
-s contains only the characters ('<span class="math inline">\(I\)</span>', '<span class="math inline">\(V\)</span>', '<span class="math inline">\(X\)</span>', '<span class="math inline">\(L\)</span>', '<span class="math inline">\(C\)</span>', '<span class="math inline">\(D\)</span>', '<span class="math inline">\(M\)</span>').
-</li>
-</strong> <strong>
-<li>
-It is guaranteed that s is a valid roman numeral in the range [1, 3999].
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: At first, I thought these symbols can be built by using vector directly. After my careful thought, a map container is a easy way to store elements by a combination of a key value and a mapped value. Next step, I used a loop to check each characters, if <code>symbol[s[i]] &gt;= symbol[s[i + 1]]</code> is true, add symbol[s[i]] up. On the contrary, if <code>symbol[s[i]] &lt; symbol[s[i + 1]]</code> is true, subtract symbol[s[i]] from summation.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        map&lt;char, int&gt; symbol(&#123;&#123;&#x27;I&#x27;, 1&#125;, &#123;&#x27;V&#x27;, 5&#125;, &#123;&#x27;X&#x27;, 10&#125;, &#123;&#x27;L&#x27;, 50&#125;, &#123;&#x27;C&#x27;, 100,&#125;, &#123;&#x27;D&#x27;, 500&#125;, &#123;&#x27;M&#x27;, 1000&#125;&#125;);</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(symbol[s[i]] &gt;= symbol[s[i + <span class="number">1</span>]])&#123;</span><br><span class="line">                sum += symbol[s[i]];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                sum -= symbol[s[i]];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea: This is a way to reduce a computing time. Add symbol[s[i]] value first, then check a value of s[i - 1] element whether it is less than a value of s[i] or not. If it is true, the summation need to subtract twice value of symbol[s[i - 1]]. So, it implements the less conditional operator.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        map&lt;char, int&gt; symbol(&#123;&#123;&#x27;I&#x27;, 1&#125;, &#123;&#x27;V&#x27;, 5&#125;, &#123;&#x27;X&#x27;, 10&#125;, &#123;&#x27;L&#x27;, 50&#125;, &#123;&#x27;C&#x27;, 100,&#125;, &#123;&#x27;D&#x27;, 500&#125;, &#123;&#x27;M&#x27;, 1000&#125;&#125;);</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            sum += symbol[s[i]];</span><br><span class="line">            <span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; symbol[s[i - <span class="number">1</span>]] &lt; symbol[s[i]])&#123;</span><br><span class="line">                sum -= <span class="number">2</span>*symbol[s[i <span class="number">-1</span>]];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Map(STL)</tag>
       </tags>
   </entry>
   <entry>

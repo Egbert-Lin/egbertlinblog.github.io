@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-19T17:48:11.379Z</updated>
+  <updated>2021-01-19T17:50:33.287Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,16 +21,15 @@
     <link href="https://egbert-yu-ting.github.io/posts/784045ef/"/>
     <id>https://egbert-yu-ting.github.io/posts/784045ef/</id>
     <published>2021-01-19T16:34:14.000Z</published>
-    <updated>2021-01-19T17:48:11.379Z</updated>
+    <updated>2021-01-19T17:50:33.287Z</updated>
     
     
-      
-      
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6&quot;&gt;&lt;b&gt;Tutorial - PyCharm Installation and build project environment for Ryu&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
-&lt;h2 id=&quot;installat</summary>
-      
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Step 1.&lt;/strong&gt; Download the &lt;a href=&quot;https://www.jetbrains.com/pycharm/&quot;&gt;PyCharm&lt;/a&gt; to your Ubuntu system</summary>
     
     
     

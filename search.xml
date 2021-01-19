@@ -982,7 +982,7 @@ Given the below binary tree and <span style="background-color:#F0F0F0"><font col
 </p>
 <h2 id="installation">Installation</h2>
 <ul>
-<li><p><strong>Step 1.</strong> Download the <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> to your Ubuntu system</p></li>
+<li><p><strong>Step 1.</strong> Download the <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> to your Ubuntu system <a id="more"></a></p></li>
 <li><p><strong>Step 2.</strong> Unpack the pycharm-*.tar.gz file (The recommended installation location according to the filesystem hierarchy standard (FHS) is /opt.)</p>
 <p style="background-color:#F0F0F0">
 <p>$ sudo tar xfz pycharm-*.tar.gz -C /opt/</p>
@@ -1693,7 +1693,7 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
 </ol>
 <h2 id="launching-from-the-command-line">Launching from the command line</h2>
 <p>You can type 'code .' in any folder to start editing files in that folder. <font color=#FF0000>Notice: you will meet an error message: <b>“code .” command is not working</b></font></p>
-<strong>Solution:</strong> You must add Visual Studio Code to the path first: 1. Create bash_profile file if it doesn't exist in your system.
+<strong>Solution:</strong> You must add Visual Studio Code to the path first:<br> 1. Create bash_profile file if it doesn't exist in your system.
 <p style="background-color:#F0F0F0">
 touch ~/.bash_profile
 </p>

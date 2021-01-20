@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-20T06:44:34.681Z</updated>
+  <updated>2021-01-20T06:47:18.881Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="https://egbert-yu-ting.github.io/posts/784045ef/"/>
     <id>https://egbert-yu-ting.github.io/posts/784045ef/</id>
     <published>2021-01-19T16:34:14.000Z</published>
-    <updated>2021-01-20T06:44:34.681Z</updated>
+    <updated>2021-01-20T06:47:18.881Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6&quot;&gt;&lt;b&gt;Tutorial - PyCharm Installation and build project environment for the development of Ryu controller&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;what-is-pycharm&quot;&gt;What is PyCharm?&lt;/h2&gt;
-&lt;p&gt;Are you developing python project on Ubuntu right now? When you are writing code, I guess that you edit file by &lt;code&gt;vi&lt;/code&gt;, &lt;code&gt;vim&lt;/code&gt; or &#39;gedit&#39;. Maybe these tools are convenient to you, but those are inefficient and hard to maintain program for the development of big projet. PyCharm is one of the most popular Python IDEs. It provides &lt;u&gt;code analysis&lt;/u&gt;, &lt;u&gt;a graphical debugger&lt;/u&gt;, &lt;u&gt;an integrated unit tester&lt;/u&gt;, integration with &lt;u&gt;version control systems&lt;/u&gt; (VCSes), and supports &lt;u&gt;web development with Django&lt;/u&gt; as well as &lt;u&gt;data science with Anaconda&lt;/u&gt;. And, it is cross-platform, compatible with Windows, macOS and Linux versions. Also, it supports both Python 2 (2.7) and Python 3 (3.5 and above) versions.</summary>
+&lt;p&gt;Are you developing python project on Ubuntu right now? When you are writing code, I guess that you edit file by &lt;code&gt;vi&lt;/code&gt;, &lt;code&gt;vim&lt;/code&gt; or &#39;gedit&#39;. Maybe these tools are convenient to you, but those are inefficient and hard to maintain program for the development of big projet.&lt;br&gt; PyCharm is one of the most popular Python IDEs. It provides &lt;u&gt;code analysis&lt;/u&gt;, &lt;u&gt;a graphical debugger&lt;/u&gt;, &lt;u&gt;an integrated unit tester&lt;/u&gt;, integration with &lt;u&gt;version control systems&lt;/u&gt; (VCSes), and supports &lt;u&gt;web development with Django&lt;/u&gt; as well as &lt;u&gt;data science with Anaconda&lt;/u&gt;.&lt;br&gt; And, it is cross-platform, compatible with Windows, macOS and Linux versions. Also, it supports both Python 2 (2.7) and Python 3 (3.5 and above) versions.</summary>
     
     
     

@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-20T08:45:43.834Z</updated>
+  <updated>2021-01-20T08:47:14.908Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,14 +21,11 @@
     <link href="https://egbert-yu-ting.github.io/posts/a10d34fe/"/>
     <id>https://egbert-yu-ting.github.io/posts/a10d34fe/</id>
     <published>2021-01-20T07:00:48.000Z</published>
-    <updated>2021-01-20T08:45:43.834Z</updated>
+    <updated>2021-01-20T08:47:14.908Z</updated>
     
     
-      
-      
     <summary type="html">&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Say you have an array &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;prices&lt;/font&gt;&lt;/span&gt; fo</summary>
-      
+&lt;p&gt;Say you have an array &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;prices&lt;/font&gt;&lt;/span&gt; for which the ith element is the price of a given stock on day i. Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times). &lt;strong&gt;Note:&lt;/strong&gt; You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</summary>
     
     
     

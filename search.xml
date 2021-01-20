@@ -129,9 +129,7 @@ TThe number of nodes in the tree is in the range <span style="background-color:#
     <title>Best Time to Buy and Sell Stock II</title>
     <url>/posts/a10d34fe/</url>
     <content><![CDATA[<h2 id="question">Question:</h2>
-<p>Say you have an array <span style="background-color:#F0F0F0"><font color=#808080>prices</font></span> for which the ith element is the price of a given stock on day i.</p>
-<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).</p>
-<p><strong>Note:</strong> You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</p>
+<p>Say you have an array <span style="background-color:#F0F0F0"><font color=#808080>prices</font></span> for which the ith element is the price of a given stock on day i. Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times). <strong>Note:</strong> You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again). <a id="more"></a></p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
 <b>Input:</b> [7,1,5,3,6,4]<br> <b>Output:</b> 7<br> <b>Explanation:</b> Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.<br>       Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.

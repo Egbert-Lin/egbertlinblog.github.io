@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/8ece0fb0/buildError.png">
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/8ece0fb0/buildError_solution.png">
 <meta property="article:published_time" content="2021-01-05T12:57:13.000Z">
-<meta property="article:modified_time" content="2021-01-20T01:32:05.152Z">
+<meta property="article:modified_time" content="2021-01-20T02:19:19.799Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="SDN">
 <meta property="article:tag" content="Simulation">
@@ -394,7 +394,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-20 09:32:05" itemprop="dateModified" datetime="2021-01-20T09:32:05+08:00">2021-01-20</time>
+        <time title="Modified: 2021-01-20 10:19:19" itemprop="dateModified" datetime="2021-01-20T10:19:19+08:00">2021-01-20</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -449,14 +449,20 @@
 <ul>
 <li>The <a target="_blank" rel="noopener" href="https://github.com/ljerezchaves/ofswitch13">OFSwitch13 module</a>, which enhances the ns-3 Network Simulator with <a target="_blank" rel="noopener" href="https://opennetworking.org/wp-content/uploads/2014/10/openflow-spec-v1.3.0.pdf">OpenFlow 1.3</a> capabilities</li>
 <li>Allow ns-3 users to simulate Software-Defined Networks (SDN)</li>
-<li>Support internal/external SDN controller <img src="OFSwitch13Device_structure.png" alt="The OFSwitch13 module overview" /></li>
+<li>Support internal/external SDN controller
+<center>
+<img src="OFSwitch13Device_structure.png" alt="OFSwitch13Device structure" /> <b>Fig. 1. The OFSwitch13Device internal structure</b>
+</center></li>
 </ul>
 <h2 id="main-class-function"><a target="_blank" rel="noopener" href="http://www.lrc.ic.unicamp.br/~luciano/publications/wns316.pdf">Main class function</a></h2>
 <ul>
 <li>OpenFlow 1.3 switch network device It can be used to interconnect ns-3 nodes using the existing CSMA network devices and channels.</li>
 <li>OpenFlow 1.3 controller interface It provides the basic functionalities for controller implementation.</li>
 <li>OpenFlow channel It is the interface that connects each switch to an OpenFlow controller.</li>
-<li>ofsoftswitch13 library It provides the complete OpenFlow switch datapath implementation, including input and output ports, the flow-table pipeline for packet matching, the group table, and the meter table. It also provides the OFLib library that is used for converting internal messages to and from OpenFlow 1.3 wire format, and the dpctl utility for converting text commands into internal messages. <img src="ofsoftswitch13_library_architecture.png" alt="The ofsoftwitch13 library architecture" /></li>
+<li>ofsoftswitch13 library It provides the complete OpenFlow switch datapath implementation, including input and output ports, the flow-table pipeline for packet matching, the group table, and the meter table. It also provides the OFLib library that is used for converting internal messages to and from OpenFlow 1.3 wire format, and the dpctl utility for converting text commands into internal messages.
+<center>
+<img src="ofsoftswitch13_library_architecture.png" alt="The ofsoftwitch13 library architecture" /> <b>Fig. 2. The ofsoftswitch13 library architecture</b>
+</center></li>
 </ul>
 <h2 id="start-to-configure-and-build">Start to configure and build</h2>
 <ul>

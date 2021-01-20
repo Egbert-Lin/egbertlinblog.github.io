@@ -154,7 +154,7 @@ TThe number of nodes in the tree is in the range <span style="background-color:#
 <p>Idea: Here is the same as <a href="https://egbert-yu-ting.github.io/posts/a026a3d3/">Best Time to Buy and Sell Stock</a>. <br> At 8 line, it always gets lowest price to i-th day.<br> At 9 - 10 line, we know the value of profit (<code>prices[i] - minPrice</code>), it must be checked whether it's bigger than 0. Because it avoids buying day and selling day on the same day, and guarantee the positive profit we get.<br> At 11 - 14 lin, we should not sell stock immediately even the profit is prositive at i-th day, maybe it will higher tomorrow (i-th + 1 day). So, we can know the selling day that is the best.<br> At 17 line, reinitialize minPrice variable for the next best buying day.</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> minPrice = INT_MAX, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            minPrice = min(minPrice, prices[i]);</span><br><span class="line">            <span class="keyword">int</span> profit = prices[i] - minPrice, j = i;</span><br><span class="line">            <span class="keyword">if</span>(profit &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">while</span>(j &lt; n &amp;&amp; prices[j] &gt;= prices[i])&#123;</span><br><span class="line">                    i = j;</span><br><span class="line">                    j++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                sum += prices[i] - minPrice;</span><br><span class="line">                minPrice= INT_MAX;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea: This strategy is very simple, if the buying day subtracted from the selling day (positive profit), we directly add profit into maxProfit variable.</p>
+<p>Idea: This strategy is very simple, if the buying day subtracted from the selling day is positive (profit), we directly add profit into maxProfit variable.</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxProfit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(prices[i] &gt; prices[i<span class="number">-1</span>])&#123;</span><br><span class="line">                maxProfit += prices[i]- prices[i<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
@@ -201,6 +201,37 @@ TThe number of nodes in the tree is in the range <span style="background-color:#
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Binary Tree Level Order Traversal II</title>
+    <url>/posts/cac8b982/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>107. Binary Tree Level Order Traversal II</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a binary tree, return the <em>bottom-up level order</em> traversal of its nodes' values. (ie, from left to right, level by level from leaf to root). <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+For example: Given binary tree <span style="background-color:#F0F0F0"><font color=#808080>[3,9,20,null,null,15,7]</span></font>,
+<p style="background-color:#F0F0F0">
+   3<br>    / \<br>   9 20<br>    / \<br>    15  7
+</p>
+return its bottom-up level order traversal as:
+<p style="background-color:#F0F0F0">
+[<br>   [15,7],<br>   [9,20],<br>   [3]<br>]
+</p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: I made a big mistake, I always think the solution that find the deepest depth first, the go back to the root with each layers. I realized an efficient approach until I had refered to <a href="https://zxi.mytechroad.com/blog/tree/leetcode-107-binary-tree-level-order-traversal-ii/">Huahua's Tech Road</a>. You must understand how to implement a two dimensional vector first. Write a function as recursion, store each elements from top of tree. <code>res.size() &lt;= depth&gt;</code> is an important statement to expand 2D vector size. Then, we must go through every left &amp; right nodes and store it based on correspondingly depth. Finaly, let go back to original function, we must use reverse() to pass the answers.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; levelOrderBottom(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span> &lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line">        levelOrderBottom(root, <span class="number">0</span>, res);</span><br><span class="line">        reverse(res.begin(), res.end());</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">levelOrderBottom</span><span class="params">(TreeNode* root, <span class="keyword">int</span> depth, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">while</span>(res.size() &lt;= depth) res.push_back(&#123;&#125;);</span><br><span class="line">        res[depth].push_back(root-&gt;val);</span><br><span class="line">        levelOrderBottom(root-&gt;left, depth + <span class="number">1</span>, res);</span><br><span class="line">        levelOrderBottom(root-&gt;right, depth + <span class="number">1</span>, res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Recursion</tag>
+        <tag>STL</tag>
+        <tag>2D_Vector</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Climbing Stairs</title>
     <url>/posts/7af6a106/</url>
     <content><![CDATA[<p align="center">
@@ -236,37 +267,6 @@ TThe number of nodes in the tree is in the range <span style="background-color:#
         <tag>Recursion</tag>
         <tag>Fibonacci_Sequence</tag>
         <tag>Iterator</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Binary Tree Level Order Traversal II</title>
-    <url>/posts/cac8b982/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>107. Binary Tree Level Order Traversal II</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a binary tree, return the <em>bottom-up level order</em> traversal of its nodes' values. (ie, from left to right, level by level from leaf to root). <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-For example: Given binary tree <span style="background-color:#F0F0F0"><font color=#808080>[3,9,20,null,null,15,7]</span></font>,
-<p style="background-color:#F0F0F0">
-   3<br>    / \<br>   9 20<br>    / \<br>    15  7
-</p>
-return its bottom-up level order traversal as:
-<p style="background-color:#F0F0F0">
-[<br>   [15,7],<br>   [9,20],<br>   [3]<br>]
-</p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: I made a big mistake, I always think the solution that find the deepest depth first, the go back to the root with each layers. I realized an efficient approach until I had refered to <a href="https://zxi.mytechroad.com/blog/tree/leetcode-107-binary-tree-level-order-traversal-ii/">Huahua's Tech Road</a>. You must understand how to implement a two dimensional vector first. Write a function as recursion, store each elements from top of tree. <code>res.size() &lt;= depth&gt;</code> is an important statement to expand 2D vector size. Then, we must go through every left &amp; right nodes and store it based on correspondingly depth. Finaly, let go back to original function, we must use reverse() to pass the answers.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; levelOrderBottom(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span> &lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line">        levelOrderBottom(root, <span class="number">0</span>, res);</span><br><span class="line">        reverse(res.begin(), res.end());</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">levelOrderBottom</span><span class="params">(TreeNode* root, <span class="keyword">int</span> depth, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">while</span>(res.size() &lt;= depth) res.push_back(&#123;&#125;);</span><br><span class="line">        res[depth].push_back(root-&gt;val);</span><br><span class="line">        levelOrderBottom(root-&gt;left, depth + <span class="number">1</span>, res);</span><br><span class="line">        levelOrderBottom(root-&gt;right, depth + <span class="number">1</span>, res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Recursion</tag>
-        <tag>STL</tag>
-        <tag>2D_Vector</tag>
       </tags>
   </entry>
   <entry>
@@ -387,6 +387,28 @@ The <strong>count-and-say</strong> sequence is a sequence of digit strings defin
       </tags>
   </entry>
   <entry>
+    <title>[Step by Step] How to install Google Chrome on Ubuntu 16.04</title>
+    <url>/posts/65af7d45/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Tutorial - Google Chrome Web Browser in Ubuntu</b></font>
+</p>
+<p>If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice. Here, I shared my experience of installing Google Chrome on Ubuntu 16.04. You can implement it rapidly and easily. <a id="more"></a></p>
+<ul>
+<li><strong>Step 1.</strong> Download the Google Chrome to your Ubuntu system <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 2.</strong> Install the Google Chrome <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo dpkg -i google-chrome-stable_current_amd64.deb</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 3.</strong> Update the Google Chrome and you can run it. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cat /etc/apt/sources.list.d/google-chrome.list</span><br></pre></td></tr></table></figure> <img src="GoogleChromeInstallation_1.png" /> *** When open the application, if you meet <font color=#FF0000>"Your connection is not secure"</font> message or result as below: <img src="GoogleChromeInstallation_2.png" /></li>
+</ul>
+<p><strong>Solution.</strong> Installation of Network Security Service libraries package: <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install libnss3-1d</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <categories>
+        <category>Instruction</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>Google_Chrome</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Implement strStr()</title>
     <url>/posts/9bc77297/</url>
     <content><![CDATA[<p align="center">
@@ -419,72 +441,6 @@ The <strong>count-and-say</strong> sequence is a sequence of digit strings defin
 <h3 id="version-1"><u>Version 1</u></h3>
 <p>Idea: My bad method got Time Limit Exceeded. Because I used two loop to check each characters of string, record the index by 2 variables if both of characters are equal. I racked my brains for good solution without using substr(). Finally, I got up and went to online to find answer. I refered to <a href="https://zxi.mytechroad.com/blog/string/leetcode-28-implement-strstr/">Huahua's Tech Road</a>. The loop repeats <code>haystack.length() - needle.length()</code> times, it can reduce computing time. Use the length of needle to match haystack, if index of j is equal to needle.length(), return index of i.</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">strStr</span><span class="params">(<span class="built_in">string</span> haystack, <span class="built_in">string</span> needle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (haystack == needle || !needle.length()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> h = haystack.length();</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = needle.length();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= h - n; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(j &lt; n &amp;&amp; haystack[i+j] == needle[j]) j++;</span><br><span class="line">            <span class="keyword">if</span>(j == n) <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>String</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Step by Step] How to install Google Chrome on Ubuntu 16.04</title>
-    <url>/posts/65af7d45/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Tutorial - Google Chrome Web Browser in Ubuntu</b></font>
-</p>
-<p>If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice. Here, I shared my experience of installing Google Chrome on Ubuntu 16.04. You can implement it rapidly and easily. <a id="more"></a></p>
-<ul>
-<li><strong>Step 1.</strong> Download the Google Chrome to your Ubuntu system <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 2.</strong> Install the Google Chrome <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo dpkg -i google-chrome-stable_current_amd64.deb</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 3.</strong> Update the Google Chrome and you can run it. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cat /etc/apt/sources.list.d/google-chrome.list</span><br></pre></td></tr></table></figure> <img src="GoogleChromeInstallation_1.png" /> *** When open the application, if you meet <font color=#FF0000>"Your connection is not secure"</font> message or result as below: <img src="GoogleChromeInstallation_2.png" /></li>
-</ul>
-<p><strong>Solution.</strong> Installation of Network Security Service libraries package: <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install libnss3-1d</span><br></pre></td></tr></table></figure></p>
-]]></content>
-      <categories>
-        <category>Instruction</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-        <tag>Google_Chrome</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Longest Common Prefix</title>
-    <url>/posts/2768cb2c/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>14. Longest Common Prefix</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Write a function to find the longest common prefix string amongst an array of strings.</p>
-<p>If there is no common prefix, return an empty string <span style="background-color:#F0F0F0"><font color=#808080>""</font></span>. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> strs = ["flower","flow","flight"]<br><b>Output:</b> "fl"<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> strs = ["dog","racecar","car"]<br><b>Output:</b> ""<br><b>Explanation:</b> There is no common prefix among the input strings.<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs.length &lt;= 200</font>
-</li>
-</strong><br><strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs[i].length &lt;= 200</font>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>strs[i]</font></span> consists of only lower-case English letters.
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: First, declared a variable of string that stored strs[0]. Then, I compared it with each elements of vector. At 8 line, <code>min(res.length(), strs[i].length())</code> means finding a smallest length for matching between strings. At 10 line, if a statement is true, I stored a current lenght of string and prepared to compare next element; if a statement is false, it means these strings aren't the same, so the length must be subtract 1 and compare each others again. At 17 line, if length is 0, there is no reason to execute althought maybe there are many elements that have not been compared.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.size() == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res = strs[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; strs.size(); i++)&#123;</span><br><span class="line">            length = min(res.length(), strs[i].length());</span><br><span class="line">            <span class="keyword">while</span>(length &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(res.substr(<span class="number">0</span>, length) == strs[i].substr(<span class="number">0</span>, length))&#123;</span><br><span class="line">                    res = strs[i].substr(<span class="number">0</span>, length);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    length --;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (length == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea: A method is refered from online. Aims to compare every characters, if each characters is the same at the same position, store it! The first loop is the length of strs[0] (1th string), the second loop is number of elements of vector. At 8 line, take each characters <code>s[i]</code> from every strings to match a character of <code>strs[0][i]</code>, meanwhile, check the length of string whether it exceeds i index(position) or not. If a condtion is true, store this character <code>strs[0][i]</code>. On the contrary, return a record.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.empty()) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strs[<span class="number">0</span>].length(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">const</span> <span class="built_in">string</span> &amp;s : strs)</span><br><span class="line">                <span class="keyword">if</span> (s.length() &lt;= i || s[i] != strs[<span class="number">0</span>][i]) <span class="keyword">return</span> res;</span><br><span class="line">            res += strs[<span class="number">0</span>][i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>LeetCode-Easy</category>
@@ -531,49 +487,47 @@ The <strong>count-and-say</strong> sequence is a sequence of digit strings defin
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Maximum Depth of Binary Tree</title>
-    <url>/posts/57b52472/</url>
+    <title>[LeetCode Road] Longest Common Prefix</title>
+    <url>/posts/2768cb2c/</url>
     <content><![CDATA[<p align="center">
-<font size="6"><b>104. Maximum Depth of Binary Tree</b></font>
+<font size="6"><b>14. Longest Common Prefix</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>Given the <span style="background-color:#F0F0F0"><font color=#808080>root</font></span> of a binary tree, return <em>its maximum depth</em>.</p>
-<p>A binary tree's <strong>maximum depth</strong> is the number of nodes along the longest path from the root node down to the farthest leaf node. <a id="more"></a></p>
+<p>Write a function to find the longest common prefix string amongst an array of strings.</p>
+<p>If there is no common prefix, return an empty string <span style="background-color:#F0F0F0"><font color=#808080>""</font></span>. <a id="more"></a></p>
 <h2 id="example">Example:</h2>
-<img src="MaximumDepthofBinaryTree_example1.png" />
 <p style="background-color:#F0F0F0">
-<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 3<br>
+<b>Input:</b> strs = ["flower","flow","flight"]<br><b>Output:</b> "fl"<br>
 </p>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> root = [1,null,2]<br> <b>Output:</b> 2<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = []<br> <b>Output:</b> 0<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [0]<br> <b>Output:</b> 1<br>
+<b>Input:</b> strs = ["dog","racecar","car"]<br><b>Output:</b> ""<br><b>Explanation:</b> There is no common prefix among the input strings.<br>
 </p>
 <strong>Constraints:</strong> <strong>
 <li>
-The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^4]</font></span>.
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs.length &lt;= 200</font>
+</li>
+</strong><br><strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs[i].length &lt;= 200</font>
 </li>
 </strong> <strong>
 <li>
-<span style="background-color:#F0F0F0"><font color=#808080>-100 &lt;= Node.val &lt;= 100</font></span>
+<span style="background-color:#F0F0F0"><font color=#808080>strs[i]</font></span> consists of only lower-case English letters.
 </li>
 <p></strong></p>
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: Basically, I konw the search must be throughout all link of the whole tree, then if the left/right node of root are NULL, the depth is the deepest, so depth is start from 1 (depth + 1). But, I can't find out any regular action by using the recursion. There is a quit clear demonstration as below[1]: <img src="MaximumDepthofBinaryTree_example2.png" /> It's very helpful and let me understand the recursion processing. So, let me explain the code: (1) <code>maxDepth(root-&gt;left)</code>: use recursion to find deepest depth of left node (2) <code>maxDepth(root-&gt;right</code>: use recursion to find deepest depth of right node (3) <code>max((1), (2))</code>: compare the deepest depth of both of left/right nodes, get the maximum value. Then, <code>+ 1</code> means adding this layer.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> max(maxDepth(root-&gt;left), maxDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>Reference:<br> [1] https://algorithms.tutorialhorizon.com/find-the-maximum-depth-or-height-of-a-binary-tree/</p>
+<p>Idea: First, declared a variable of string that stored strs[0]. Then, I compared it with each elements of vector. At 8 line, <code>min(res.length(), strs[i].length())</code> means finding a smallest length for matching between strings. At 10 line, if a statement is true, I stored a current lenght of string and prepared to compare next element; if a statement is false, it means these strings aren't the same, so the length must be subtract 1 and compare each others again. At 17 line, if length is 0, there is no reason to execute althought maybe there are many elements that have not been compared.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.size() == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res = strs[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; strs.size(); i++)&#123;</span><br><span class="line">            length = min(res.length(), strs[i].length());</span><br><span class="line">            <span class="keyword">while</span>(length &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(res.substr(<span class="number">0</span>, length) == strs[i].substr(<span class="number">0</span>, length))&#123;</span><br><span class="line">                    res = strs[i].substr(<span class="number">0</span>, length);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    length --;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (length == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea: A method is refered from online. Aims to compare every characters, if each characters is the same at the same position, store it! The first loop is the length of strs[0] (1th string), the second loop is number of elements of vector. At 8 line, take each characters <code>s[i]</code> from every strings to match a character of <code>strs[0][i]</code>, meanwhile, check the length of string whether it exceeds i index(position) or not. If a condtion is true, store this character <code>strs[0][i]</code>. On the contrary, return a record.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.empty()) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strs[<span class="number">0</span>].length(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">const</span> <span class="built_in">string</span> &amp;s : strs)</span><br><span class="line">                <span class="keyword">if</span> (s.length() &lt;= i || s[i] != strs[<span class="number">0</span>][i]) <span class="keyword">return</span> res;</span><br><span class="line">            res += strs[<span class="number">0</span>][i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>LeetCode-Easy</category>
       </categories>
       <tags>
-        <tag>Tree</tag>
-        <tag>Recursion</tag>
+        <tag>String</tag>
       </tags>
   </entry>
   <entry>
@@ -633,6 +587,52 @@ Finally, reboot you Mac and enter WIN10 OS successfully.</li>
         <tag>MacOS_X</tag>
         <tag>Windows10</tag>
         <tag>Bootcamp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Maximum Depth of Binary Tree</title>
+    <url>/posts/57b52472/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>104. Maximum Depth of Binary Tree</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given the <span style="background-color:#F0F0F0"><font color=#808080>root</font></span> of a binary tree, return <em>its maximum depth</em>.</p>
+<p>A binary tree's <strong>maximum depth</strong> is the number of nodes along the longest path from the root node down to the farthest leaf node. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<img src="MaximumDepthofBinaryTree_example1.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 3<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [1,null,2]<br> <b>Output:</b> 2<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = []<br> <b>Output:</b> 0<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [0]<br> <b>Output:</b> 1<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^4]</font></span>.
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-100 &lt;= Node.val &lt;= 100</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: Basically, I konw the search must be throughout all link of the whole tree, then if the left/right node of root are NULL, the depth is the deepest, so depth is start from 1 (depth + 1). But, I can't find out any regular action by using the recursion. There is a quit clear demonstration as below[1]: <img src="MaximumDepthofBinaryTree_example2.png" /> It's very helpful and let me understand the recursion processing. So, let me explain the code: (1) <code>maxDepth(root-&gt;left)</code>: use recursion to find deepest depth of left node (2) <code>maxDepth(root-&gt;right</code>: use recursion to find deepest depth of right node (3) <code>max((1), (2))</code>: compare the deepest depth of both of left/right nodes, get the maximum value. Then, <code>+ 1</code> means adding this layer.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> max(maxDepth(root-&gt;left), maxDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Reference:<br> [1] https://algorithms.tutorialhorizon.com/find-the-maximum-depth-or-height-of-a-binary-tree/</p>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Tree</tag>
+        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>
@@ -1195,47 +1195,6 @@ Internally you can think of this:
       </tags>
   </entry>
   <entry>
-    <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
-    <url>/posts/9e0f4e5/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Tutorial - Install Ryu in Ubuntu 16.04 with no failure</b></font>
-</p>
-<p><a href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It's very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet. <a id="more"></a></p>
-<h2 id="start-to-configure-and-install">Start to configure and install</h2>
-<ul>
-<li><strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-pip python-dev</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 4.</strong> Download Ryu source code from github <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ git clone git://github.com/osrg/ryu.git</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 5.</strong> <a href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ pip install networkx</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 6.</strong> Install Ryu <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python ./setup.py install</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 7.</strong> Execution and testing <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ryu-manager</span><br></pre></td></tr></table></figure> // If your installation is successful, the terminal will show some info. and stop to listening:
-<p style="background-color:#F0F0F0">
-loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_handler of OFPHandler
-</p>
-<hr />
-<p>
-<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error!</font>
-</p>
-<p>
-<b>Solution:</b>
-</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install -r tools/pip-requires</span><br></pre></td></tr></table></figure>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install six --upgrade</span><br></pre></td></tr></table></figure>
-<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font> <font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>   <b>SyntaxError: ivalid syntax</b></font><br> <b>Solution:</b> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd /usr/local/lib/python2.7/dist-packages/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo rm –rf oslo_config/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata</span><br></pre></td></tr></table></figure> From the above, the command is refered to:<br> http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd oslo.config</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python setup.py install</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Simulator</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-        <tag>SDN</tag>
-        <tag>Controller</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Roman to Integer</title>
     <url>/posts/8caf8f3c/</url>
     <content><![CDATA[<p align="center">
@@ -1296,6 +1255,47 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
       </categories>
       <tags>
         <tag>Map(STL)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
+    <url>/posts/9e0f4e5/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Tutorial - Install Ryu in Ubuntu 16.04 with no failure</b></font>
+</p>
+<p><a href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It's very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet. <a id="more"></a></p>
+<h2 id="start-to-configure-and-install">Start to configure and install</h2>
+<ul>
+<li><strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-pip python-dev</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 4.</strong> Download Ryu source code from github <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ git clone git://github.com/osrg/ryu.git</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 5.</strong> <a href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ pip install networkx</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 6.</strong> Install Ryu <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python ./setup.py install</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 7.</strong> Execution and testing <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ryu-manager</span><br></pre></td></tr></table></figure> // If your installation is successful, the terminal will show some info. and stop to listening:
+<p style="background-color:#F0F0F0">
+loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_handler of OFPHandler
+</p>
+<hr />
+<p>
+<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error!</font>
+</p>
+<p>
+<b>Solution:</b>
+</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install -r tools/pip-requires</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install six --upgrade</span><br></pre></td></tr></table></figure>
+<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font> <font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>   <b>SyntaxError: ivalid syntax</b></font><br> <b>Solution:</b> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd /usr/local/lib/python2.7/dist-packages/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo rm –rf oslo_config/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata</span><br></pre></td></tr></table></figure> From the above, the command is refered to:<br> http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd oslo.config</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python setup.py install</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Simulator</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>SDN</tag>
+        <tag>Controller</tag>
       </tags>
   </entry>
   <entry>

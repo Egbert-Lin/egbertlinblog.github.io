@@ -31,7 +31,7 @@
 <meta property="og:description" content="Visual Studio Code installation and run it from Terminal on macOS  Background Visual Studio Code is a free source-code editor made by Microsoft for Windows, Linux and macOS. Features include support">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-11T00:55:52.000Z">
-<meta property="article:modified_time" content="2021-01-19T17:54:25.525Z">
+<meta property="article:modified_time" content="2021-01-20T01:34:25.259Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="Editor">
 <meta name="twitter:card" content="summary">
@@ -384,7 +384,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-20 01:54:25" itemprop="dateModified" datetime="2021-01-20T01:54:25+08:00">2021-01-20</time>
+        <time title="Modified: 2021-01-20 09:34:25" itemprop="dateModified" datetime="2021-01-20T09:34:25+08:00">2021-01-20</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -422,22 +422,10 @@
 <p>You can type 'code .' in any folder to start editing files in that folder. <font color=#FF0000>Notice: you will meet an error message: <b>“code .” command is not working</b></font></p>
 <p><strong>Solution:</strong> You must add Visual Studio Code to the path first:<br></p>
 <ol type="1">
-<li>Create bash_profile file if it doesn't exist in your system.
-<p style="background-color:#F0F0F0">
-touch ~/.bash_profile
-</p></li>
-<li>Open this file, click 'i' to edit.
-<p style="background-color:#F0F0F0">
-vi ~/.bash_profile
-</p></li>
-<li>Paste it as below, and type ':' + 'wq' to write &amp; quit.&lt;
-<p style="background-color:#F0F0F0">
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-</p></li>
-<li>Preserve your current shell, if you miss it, you will repeat step2-step3 again when you reopen the terminal.
-<p style="background-color:#F0F0F0">
-source ~/.bash_profile
-</p></li>
+<li>Create bash_profile file if it doesn't exist in your system. <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
+<li>Open this file, click 'i' to edit. <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
+<li>Paste it as below, and type ':' + 'wq' to write &amp; quit.&lt; <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=&quot;$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin&quot;</span><br></pre></td></tr></table></figure></li>
+<li>Preserve your current shell, if you miss it, you will repeat step2-step3 again when you reopen the terminal. <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ source ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
 </ol>
 
     </div>

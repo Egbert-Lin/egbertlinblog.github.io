@@ -467,6 +467,50 @@ $ sudo apt-get install libnss3-1d
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Longest Common Prefix</title>
+    <url>/posts/2768cb2c/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>14. Longest Common Prefix</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Write a function to find the longest common prefix string amongst an array of strings.</p>
+<p>If there is no common prefix, return an empty string <span style="background-color:#F0F0F0"><font color=#808080>""</font></span>. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> strs = ["flower","flow","flight"]<br><b>Output:</b> "fl"<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> strs = ["dog","racecar","car"]<br><b>Output:</b> ""<br><b>Explanation:</b> There is no common prefix among the input strings.<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs.length &lt;= 200</font>
+</li>
+</strong><br><strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs[i].length &lt;= 200</font>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>strs[i]</font></span> consists of only lower-case English letters.
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: First, declared a variable of string that stored strs[0]. Then, I compared it with each elements of vector. At 8 line, <code>min(res.length(), strs[i].length())</code> means finding a smallest length for matching between strings. At 10 line, if a statement is true, I stored a current lenght of string and prepared to compare next element; if a statement is false, it means these strings aren't the same, so the length must be subtract 1 and compare each others again. At 17 line, if length is 0, there is no reason to execute althought maybe there are many elements that have not been compared.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.size() == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res = strs[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; strs.size(); i++)&#123;</span><br><span class="line">            length = min(res.length(), strs[i].length());</span><br><span class="line">            <span class="keyword">while</span>(length &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(res.substr(<span class="number">0</span>, length) == strs[i].substr(<span class="number">0</span>, length))&#123;</span><br><span class="line">                    res = strs[i].substr(<span class="number">0</span>, length);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    length --;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (length == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea: A method is refered from online. Aims to compare every characters, if each characters is the same at the same position, store it! The first loop is the length of strs[0] (1th string), the second loop is number of elements of vector. At 8 line, take each characters <code>s[i]</code> from every strings to match a character of <code>strs[0][i]</code>, meanwhile, check the length of string whether it exceeds i index(position) or not. If a condtion is true, store this character <code>strs[0][i]</code>. On the contrary, return a record.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.empty()) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strs[<span class="number">0</span>].length(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">const</span> <span class="built_in">string</span> &amp;s : strs)</span><br><span class="line">                <span class="keyword">if</span> (s.length() &lt;= i || s[i] != strs[<span class="number">0</span>][i]) <span class="keyword">return</span> res;</span><br><span class="line">            res += strs[<span class="number">0</span>][i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>String</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Shared partition between Mac OS X and Windows 10 [Save time]</title>
     <url>/posts/4755908e/</url>
     <content><![CDATA[<p align="center">
@@ -529,50 +573,6 @@ Finally, reboot you Mac and enter WIN10 OS successfully.</li>
         <tag>MacOS_X</tag>
         <tag>Windows10</tag>
         <tag>Bootcamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Longest Common Prefix</title>
-    <url>/posts/2768cb2c/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>14. Longest Common Prefix</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Write a function to find the longest common prefix string amongst an array of strings.</p>
-<p>If there is no common prefix, return an empty string <span style="background-color:#F0F0F0"><font color=#808080>""</font></span>. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> strs = ["flower","flow","flight"]<br><b>Output:</b> "fl"<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> strs = ["dog","racecar","car"]<br><b>Output:</b> ""<br><b>Explanation:</b> There is no common prefix among the input strings.<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs.length &lt;= 200</font>
-</li>
-</strong><br><strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs[i].length &lt;= 200</font>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>strs[i]</font></span> consists of only lower-case English letters.
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: First, declared a variable of string that stored strs[0]. Then, I compared it with each elements of vector. At 8 line, <code>min(res.length(), strs[i].length())</code> means finding a smallest length for matching between strings. At 10 line, if a statement is true, I stored a current lenght of string and prepared to compare next element; if a statement is false, it means these strings aren't the same, so the length must be subtract 1 and compare each others again. At 17 line, if length is 0, there is no reason to execute althought maybe there are many elements that have not been compared.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.size() == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res = strs[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; strs.size(); i++)&#123;</span><br><span class="line">            length = min(res.length(), strs[i].length());</span><br><span class="line">            <span class="keyword">while</span>(length &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(res.substr(<span class="number">0</span>, length) == strs[i].substr(<span class="number">0</span>, length))&#123;</span><br><span class="line">                    res = strs[i].substr(<span class="number">0</span>, length);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    length --;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (length == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea: A method is refered from online. Aims to compare every characters, if each characters is the same at the same position, store it! The first loop is the length of strs[0] (1th string), the second loop is number of elements of vector. At 8 line, take each characters <code>s[i]</code> from every strings to match a character of <code>strs[0][i]</code>, meanwhile, check the length of string whether it exceeds i index(position) or not. If a condtion is true, store this character <code>strs[0][i]</code>. On the contrary, return a record.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.empty()) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strs[<span class="number">0</span>].length(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">const</span> <span class="built_in">string</span> &amp;s : strs)</span><br><span class="line">                <span class="keyword">if</span> (s.length() &lt;= i || s[i] != strs[<span class="number">0</span>][i]) <span class="keyword">return</span> res;</span><br><span class="line">            res += strs[<span class="number">0</span>][i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>String</tag>
       </tags>
   </entry>
   <entry>
@@ -843,6 +843,30 @@ The number of nodes in the tree is in the range <span style="background-color:#F
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Pascal&#39;s Triangle</title>
+    <url>/posts/2b0547f6/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>118. Pascal's Triangle</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.<br> <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif" alt="animation" /> <font size="2">In Pascal's triangle, each number is the sum of the two numbers directly above it.</font> <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> 5<br> <b>Output:</b><br> [<br>    [1],<br>   [1,1],<br>   [1,2,1],<br>  [1,3,3,1],<br>  [1,4,6,4,1]<br>]
+</p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: The last element of vector(row) is always consistent(equals to 1), We add 1 into vector for each rows at 17-18 line.<br> The first element of vector is also the same, so the index of j is from 1 to i - 1(i is represented the number of numRows). At the range of j, we should add previous value into the current index of value.<br> At 11 line, prev variable means the first element of vector.<br> At 13 line, declare temp variable and store row[j] as the next prev.<br> At 14 line, add prev into row[j].<br> At 15 line, pass temp to prev.<br> Finally, we use two loops to implement Pascals's Triangle easily.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; generate(<span class="keyword">int</span> numRows) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">        <span class="keyword">if</span>(numRows &lt; <span class="number">1</span>) <span class="keyword">return</span> res;</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">row</span><span class="params">(<span class="number">1</span>,<span class="number">1</span>)</span></span>;</span><br><span class="line">        res.push_back(row);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= numRows; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> prev = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; i - <span class="number">1</span>; j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> temp = row[j];</span><br><span class="line">                row[j] += prev;</span><br><span class="line">                prev = temp;</span><br><span class="line">            &#125;</span><br><span class="line">            row.push_back(<span class="number">1</span>);</span><br><span class="line">            res.push_back(row);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>2D_vector</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Pascal&#39;s Triangle II</title>
     <url>/posts/f3431365/</url>
     <content><![CDATA[<p align="center">
@@ -882,30 +906,6 @@ The number of nodes in the tree is in the range <span style="background-color:#F
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Pascal&#39;s Triangle</title>
-    <url>/posts/2b0547f6/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>118. Pascal's Triangle</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.<br> <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif" alt="animation" /> <font size="2">In Pascal's triangle, each number is the sum of the two numbers directly above it.</font> <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> 5<br> <b>Output:</b><br> [<br>    [1],<br>   [1,1],<br>   [1,2,1],<br>  [1,3,3,1],<br>  [1,4,6,4,1]<br>]
-</p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: The last element of vector(row) is always consistent(equals to 1), We add 1 into vector for each rows at 17-18 line.<br> The first element of vector is also the same, so the index of j is from 1 to i - 1(i is represented the number of numRows). At the range of j, we should add previous value into the current index of value.<br> At 11 line, prev variable means the first element of vector.<br> At 13 line, declare temp variable and store row[j] as the next prev.<br> At 14 line, add prev into row[j].<br> At 15 line, pass temp to prev.<br> Finally, we use two loops to implement Pascals's Triangle easily.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; generate(<span class="keyword">int</span> numRows) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">        <span class="keyword">if</span>(numRows &lt; <span class="number">1</span>) <span class="keyword">return</span> res;</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">row</span><span class="params">(<span class="number">1</span>,<span class="number">1</span>)</span></span>;</span><br><span class="line">        res.push_back(row);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= numRows; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> prev = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; i - <span class="number">1</span>; j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> temp = row[j];</span><br><span class="line">                row[j] += prev;</span><br><span class="line">                prev = temp;</span><br><span class="line">            &#125;</span><br><span class="line">            row.push_back(<span class="number">1</span>);</span><br><span class="line">            res.push_back(row);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>2D_vector</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Path Sum</title>
     <url>/posts/bb7f02f5/</url>
     <content><![CDATA[<p align="center">
@@ -931,41 +931,6 @@ Given the below binary tree and <span style="background-color:#F0F0F0"><font col
       <tags>
         <tag>Tree</tag>
         <tag>Recursion</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Run PyCharm: Python development platform on Ubuntu / Ryu SDN</title>
-    <url>/posts/784045ef/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Tutorial - PyCharm Installation and build project environment for the development of Ryu controller</b></font>
-</p>
-<h2 id="installation">Installation</h2>
-<ul>
-<li><p><strong>Step 1.</strong> Download the <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> to your Ubuntu system <a id="more"></a></p></li>
-<li><p><strong>Step 2.</strong> Unpack the pycharm-*.tar.gz file (The recommended installation location according to the filesystem hierarchy standard (FHS) is /opt.) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo tar xfz pycharm-*.tar.gz -C /opt/</span><br></pre></td></tr></table></figure></p></li>
-<li><p><strong>Step 3.</strong> Go to the bin subdirectory <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd /opt/pycharm-*/bin</span><br></pre></td></tr></table></figure></p></li>
-<li><p><strong>Step 4.</strong> Run pycharm.sh from the bin subdirectory <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ./pycharm.sh</span><br></pre></td></tr></table></figure></p></li>
-<li><p><strong>Step 5.</strong> Choose “Do not import settings” as below: <img src="figure1.png" /></p></li>
-<li><p><strong>Step 6.</strong> Select the user interface theme</p></li>
-<li><p><strong>Step 7.</strong> Download and install additional pyugins</p></li>
-<li><p><strong>Step 8.</strong> Start a project in PyCharm <img src="figure2.png" /></p></li>
-</ul>
-<h2 id="debug-ryu-sdn-controller">Debug Ryu SDN controller</h2>
-<ul>
-<li><p><strong>Step 1.</strong> First, build a new project. Then, create a python file (compile file) <img src="figure_3.png" /></p></li>
-<li><p><strong>Step 2.</strong> Paste the code as below: (Notice: you must set your directory of controller.py) <img src="figure_4.png" /></p></li>
-<li><p><strong>Step 3.</strong> Create a controller.py (You can paste the source code of simple_switch_13.py to controller.py) <img src="figure_5.png" /></p></li>
-<li><p><strong>Step 4.</strong> Change a project interpreter 3.4 to 2.7 version (File-&gt;settings-&gt;Project-&gt;Project Interpreter) <img src="figure_6.png" /></p></li>
-<li><p><strong>Step 5.</strong> Finally, debugging the controller.py and get currect result <img src="figure_7.png" /></p></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Instruction</category>
-      </categories>
-      <tags>
-        <tag>IDE</tag>
-        <tag>Python</tag>
-        <tag>Platform</tag>
       </tags>
   </entry>
   <entry>
@@ -1007,6 +972,41 @@ Given the below binary tree and <span style="background-color:#F0F0F0"><font col
       </categories>
       <tags>
         <tag>Vector</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Run PyCharm: Python development platform on Ubuntu / Ryu SDN</title>
+    <url>/posts/784045ef/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Tutorial - PyCharm Installation and build project environment for the development of Ryu controller</b></font>
+</p>
+<h2 id="installation">Installation</h2>
+<ul>
+<li><p><strong>Step 1.</strong> Download the <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> to your Ubuntu system <a id="more"></a></p></li>
+<li><p><strong>Step 2.</strong> Unpack the pycharm-*.tar.gz file (The recommended installation location according to the filesystem hierarchy standard (FHS) is /opt.) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo tar xfz pycharm-*.tar.gz -C /opt/</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>Step 3.</strong> Go to the bin subdirectory <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd /opt/pycharm-*/bin</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>Step 4.</strong> Run pycharm.sh from the bin subdirectory <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ./pycharm.sh</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>Step 5.</strong> Choose “Do not import settings” as below: <img src="figure1.png" /></p></li>
+<li><p><strong>Step 6.</strong> Select the user interface theme</p></li>
+<li><p><strong>Step 7.</strong> Download and install additional pyugins</p></li>
+<li><p><strong>Step 8.</strong> Start a project in PyCharm <img src="figure2.png" /></p></li>
+</ul>
+<h2 id="debug-ryu-sdn-controller">Debug Ryu SDN controller</h2>
+<ul>
+<li><p><strong>Step 1.</strong> First, build a new project. Then, create a python file (compile file) <img src="figure_3.png" /></p></li>
+<li><p><strong>Step 2.</strong> Paste the code as below: (Notice: you must set your directory of controller.py) <img src="figure_4.png" /></p></li>
+<li><p><strong>Step 3.</strong> Create a controller.py (You can paste the source code of simple_switch_13.py to controller.py) <img src="figure_5.png" /></p></li>
+<li><p><strong>Step 4.</strong> Change a project interpreter 3.4 to 2.7 version (File-&gt;settings-&gt;Project-&gt;Project Interpreter) <img src="figure_6.png" /></p></li>
+<li><p><strong>Step 5.</strong> Finally, debugging the controller.py and get currect result <img src="figure_7.png" /></p></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Instruction</category>
+      </categories>
+      <tags>
+        <tag>IDE</tag>
+        <tag>Python</tag>
+        <tag>Platform</tag>
       </tags>
   </entry>
   <entry>
@@ -1090,46 +1090,6 @@ Internally you can think of this:
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Reverse Integer</title>
-    <url>/posts/236b1bbd/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>7. Reverse Integer</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a 32-bit signed integer, reverse digits of an integer.</p>
-<p><strong>Note:</strong> Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−2^31, 2^31 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = 123<br><b>Output</b>: 321<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = -123<br><b>Output</b>: -321<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = 120<br><b>Output</b>: 21<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = 0<br><b>Output</b>: 0<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
--2^31 &lt;= x &lt;= 2^31 -1
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: At the begining, I need to get units digit, so the modulus operator % can compute the remainder. Then, the remainder should be added to answer(return value) after answer times ten for each loop. <code>x = x / 10</code> means removing units digit for getting hundreds digit. Don't forget the constraints, use values of INT_MIN and INT_MAX to implement it. P.S. <code>return (conditional)?true:false</code></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(x != <span class="number">0</span>)&#123;</span><br><span class="line">            ans = ans * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">            x = x / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (ans&gt;INT_MIN &amp;&amp; ans&lt;INT_MAX)?ans:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Remainder</tag>
-        <tag>Quotient</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Remove Element</title>
     <url>/posts/1afffcb4/</url>
     <content><![CDATA[<p align="center">
@@ -1176,6 +1136,46 @@ Internally you can think of this:
       <tags>
         <tag>Vector</tag>
         <tag>Call_by_reference</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Reverse Integer</title>
+    <url>/posts/236b1bbd/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>7. Reverse Integer</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a 32-bit signed integer, reverse digits of an integer.</p>
+<p><strong>Note:</strong> Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−2^31, 2^31 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = 123<br><b>Output</b>: 321<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = -123<br><b>Output</b>: -321<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = 120<br><b>Output</b>: 21<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = 0<br><b>Output</b>: 0<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+-2^31 &lt;= x &lt;= 2^31 -1
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: At the begining, I need to get units digit, so the modulus operator % can compute the remainder. Then, the remainder should be added to answer(return value) after answer times ten for each loop. <code>x = x / 10</code> means removing units digit for getting hundreds digit. Don't forget the constraints, use values of INT_MIN and INT_MAX to implement it. P.S. <code>return (conditional)?true:false</code></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(x != <span class="number">0</span>)&#123;</span><br><span class="line">            ans = ans * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">            x = x / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (ans&gt;INT_MIN &amp;&amp; ans&lt;INT_MAX)?ans:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Remainder</tag>
+        <tag>Quotient</tag>
       </tags>
   </entry>
   <entry>
@@ -1250,41 +1250,13 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
 <p><a href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It's very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet. <a id="more"></a></p>
 <h2 id="start-to-configure-and-install">Start to configure and install</h2>
 <ul>
-<li><strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources)
-<p style="background-color:#F0F0F0">
-$ sudo apt-get update
-</p></li>
-<li><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system
-<p style="background-color:#F0F0F0">
-$ sudo apt-get install python-pip python-dev
-</p>
-<p style="background-color:#F0F0F0">
-$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev
-</p></li>
-<li><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary.
-<p style="background-color:#F0F0F0">
-$ sudo apt-get install git
-</p></li>
-<li><strong>Step 4.</strong> Download Ryu source code from github
-<p style="background-color:#F0F0F0">
-$ git clone git://github.com/osrg/ryu.git
-</p></li>
-<li><strong>Step 5.</strong> <a href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller.
-<p style="background-color:#F0F0F0">
-$ pip install networkx
-</p></li>
-<li><strong>Step 6.</strong> Install Ryu
-<p style="background-color:#F0F0F0">
-$ cd ryu/
-</p>
-<p style="background-color:#F0F0F0">
-$ sudo python ./setup.py install
-</p></li>
-<li><strong>Step 7.</strong> Execution and testing
-<p style="background-color:#F0F0F0">
-$ ryu-manager
-</p>
-// If your installation is successful, the terminal will show some info. and stop to listening:
+<li><strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-pip python-dev</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 4.</strong> Download Ryu source code from github <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ git clone git://github.com/osrg/ryu.git</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 5.</strong> <a href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ pip install networkx</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 6.</strong> Install Ryu <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python ./setup.py install</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 7.</strong> Execution and testing <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ryu-manager</span><br></pre></td></tr></table></figure> // If your installation is successful, the terminal will show some info. and stop to listening:
 <p style="background-color:#F0F0F0">
 loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_handler of OFPHandler
 </p>
@@ -1295,43 +1267,11 @@ loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_
 <p>
 <b>Solution:</b>
 </p>
-<p style="background-color:#F0F0F0;">
-$ cd ryu/
-</p>
-<p style="background-color:#F0F0F0;">
-$ sudo pip install -r tools/pip-requires
-</p>
-<p style="background-color:#F0F0F0;">
-$ sudo pip install six --upgrade
-</p></li>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install -r tools/pip-requires</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install six --upgrade</span><br></pre></td></tr></table></figure>
+<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font> <font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>   <b>SyntaxError: ivalid syntax</b></font><br> <b>Solution:</b> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd /usr/local/lib/python2.7/dist-packages/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo rm –rf oslo_config/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata</span><br></pre></td></tr></table></figure> From the above, the command is refered to:<br> http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd oslo.config</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python setup.py install</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p style="margin-left:40px">
-<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font>
-</p>
-<p style="margin-left:40px">
-<font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>   <b>SyntaxError: ivalid syntax</b></font>
-</p>
-<p style="margin-left:40px">
-<b>Solution:</b>
-</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">
-$ cd /usr/local/lib/python2.7/dist-packages/
-</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">
-$ sudo rm –rf oslo_config/
-</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">
-$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata
-</p>
-<p style="margin-left:40px">
-From the above, the command is refered to:<br> http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html
-</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">
-$ cd oslo.config
-</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">
-$ sudo python setup.py install
-</p>
 ]]></content>
       <categories>
         <category>Simulator</category>
@@ -1733,22 +1673,10 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
 <p>You can type 'code .' in any folder to start editing files in that folder. <font color=#FF0000>Notice: you will meet an error message: <b>“code .” command is not working</b></font></p>
 <p><strong>Solution:</strong> You must add Visual Studio Code to the path first:<br></p>
 <ol type="1">
-<li>Create bash_profile file if it doesn't exist in your system.
-<p style="background-color:#F0F0F0">
-touch ~/.bash_profile
-</p></li>
-<li>Open this file, click 'i' to edit.
-<p style="background-color:#F0F0F0">
-vi ~/.bash_profile
-</p></li>
-<li>Paste it as below, and type ':' + 'wq' to write &amp; quit.&lt;
-<p style="background-color:#F0F0F0">
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-</p></li>
-<li>Preserve your current shell, if you miss it, you will repeat step2-step3 again when you reopen the terminal.
-<p style="background-color:#F0F0F0">
-source ~/.bash_profile
-</p></li>
+<li>Create bash_profile file if it doesn't exist in your system. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ touch ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
+<li>Open this file, click 'i' to edit. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ vi ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
+<li>Paste it as below, and type ':' + 'wq' to write &amp; quit.&lt; <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">export PATH=&quot;$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin&quot;</span><br></pre></td></tr></table></figure></li>
+<li>Preserve your current shell, if you miss it, you will repeat step2-step3 again when you reopen the terminal. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ source ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
 </ol>
 ]]></content>
       <categories>
@@ -1805,32 +1733,22 @@ source ~/.bash_profile
 </ul>
 <h2 id="start-to-configure-and-build">Start to configure and build</h2>
 <ul>
-<li><strong>Step 1.</strong> You have the following packages installed on your system <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install build-essential gcc g++ python git mercurial unzip cmake</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install pkg-config autoconf libtool libboost-dev</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 2.</strong> Download a recent stable ns-3 code (using the mercurial repository for ns-3.29) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ hg clone http://code.nsnam.org/ns-3.29</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 3.</strong> Download the OFSwitch13 code into the src/ folder <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ns-3.29/src</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ git clone --recurse-submodules https://github.com/ljerezchaves/ofswitch13.git</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 4.</strong> Update the code to the desired release version (using 4.0.0, which is compatible with ns-3.29 or later) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ofswitch13</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ git checkout 4.0.0 &amp;&amp; git submodule update –recursive</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 5.</strong> It is time to compile the ofsoftswitch13 as a static library (Configure and build the library) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd lib/ofsoftswitch13</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ./boot.sh</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ./configure --enable-ns3-lib</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ make</span><br></pre></td></tr></table></figure> <br></li>
-</ul>
-<p><font color=#FF0000>Warning: if you meet an error as “perl: warning: Setting locale failed”:</font></p>
-<p><b>Solution: Add <code>export LC_ALL=“en_US.UTF-8”</code> to bashrc file</b></p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo vim .bashrc</span><br></pre></td></tr></table></figure>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">export LC_ALL=“en_US.UTF-8”</span><br></pre></td></tr></table></figure>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo locale-gen zh_TW.UTF-8</span><br></pre></td></tr></table></figure>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo dpkg-reconfigure locales</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<ul>
+<li><p><strong>Step 1.</strong> You have the following packages installed on your system <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install build-essential gcc g++ python git mercurial unzip cmake</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install pkg-config autoconf libtool libboost-dev</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>Step 2.</strong> Download a recent stable ns-3 code (using the mercurial repository for ns-3.29) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ hg clone http://code.nsnam.org/ns-3.29</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>Step 3.</strong> Download the OFSwitch13 code into the src/ folder <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ns-3.29/src</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ git clone --recurse-submodules https://github.com/ljerezchaves/ofswitch13.git</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>Step 4.</strong> Update the code to the desired release version (using 4.0.0, which is compatible with ns-3.29 or later) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ofswitch13</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ git checkout 4.0.0 &amp;&amp; git submodule update –recursive</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>Step 5.</strong> It is time to compile the ofsoftswitch13 as a static library (Configure and build the library) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd lib/ofsoftswitch13</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ./boot.sh</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ./configure --enable-ns3-lib</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ make</span><br></pre></td></tr></table></figure> <font color=#FF0000>Warning: if you meet an error as “perl: warning: Setting locale failed”:</font><br> <b>Solution: Add <code>export LC_ALL=“en_US.UTF-8”</code> to bashrc file</b> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo vim .bashrc</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">export LC_ALL=“en_US.UTF-8”</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo locale-gen zh_TW.UTF-8</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo dpkg-reconfigure locales</span><br></pre></td></tr></table></figure></p></li>
 <li><p><strong>Step 6.</strong> Go back to the ns-3 root directory and patch the ns-3 code with the appropriated patches available under the ofswitch13/utils directory <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ../../../../</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ patch -p1 &lt; src/ofswitch13/utils/ofswitch13-src-3_29.patch</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ patch -p1 &lt; src/ofswitch13/utils/ofswitch13-doc-3_29.patch</span><br></pre></td></tr></table></figure></p></li>
 <li><p><strong>Step 7.</strong> Now, configure the ns-3 (Need to check --witch-ofswitch13=your path) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ./waf configure --enable-tests --enable-examples --enable-sudo --with-ofswitch13=&lt;br&gt;/home/ubuntu/ns-3.29/src/ofswitch13/lib/ofsoftswitch13/</span><br></pre></td></tr></table></figure></p></li>
 <li><p><strong>Step 8.</strong> Check for the enabled NS-3 OpenFlow 1.3 integration feature after the configuration <img src="ns3_configuration.png" /></p></li>
-<li><p><strong>Step 9.</strong> Finally, build the ns-3 simulation <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo ./waf</span><br></pre></td></tr></table></figure> <br></p></li>
-</ul>
-<font color=#FF0000>Warning: if you meet an error as below:</font>
+<li><p><strong>Step 9.</strong> Finally, build the ns-3 simulation <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo ./waf</span><br></pre></td></tr></table></figure> <font color=#FF0000>Warning: if you meet an error as below:</font></p>
 <p>
-<img src="./buildError.png">
+<p><img src="./buildError.png"></p>
 </p>
-<b>Solution: Modify “SuidBuild” → “SuidBuild_task”</b> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo vim wscript</span><br></pre></td></tr></table></figure> <img src="./buildError_solution.png">
-</p>
-<p>Now, you can run your first example script, enjoy it! <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ./waf --run scratch/ofswitch13.first</span><br></pre></td></tr></table></figure> <strong>Notice:</strong><br> 1. <u>Suggest moving your script to scratch folder before executing</u><br>. 2. <u>Don't add filename extension (e.g. .cc) at your execution's command line</u>.</p>
+<p><b>Solution: Modify “SuidBuild” → “SuidBuild_task”</b> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo vim wscript</span><br></pre></td></tr></table></figure> <img src="./buildError_solution.png"></p>
+</p></li>
+</ul>
+<p><br> <b>Now, you can run your first example script, enjoy it!</b> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ./waf --run scratch/ofswitch13.first</span><br></pre></td></tr></table></figure> <strong>Notice:</strong><br> 1. <u>Suggest moving your script to scratch folder before executing</u>.<br> 2. <u>Don't add filename extension (e.g. .cc) at your execution's command line</u>.</p>
 ]]></content>
       <categories>
         <category>Simulator</category>

@@ -467,50 +467,6 @@ $ sudo apt-get install libnss3-1d
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Longest Common Prefix</title>
-    <url>/posts/2768cb2c/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>14. Longest Common Prefix</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Write a function to find the longest common prefix string amongst an array of strings.</p>
-<p>If there is no common prefix, return an empty string <span style="background-color:#F0F0F0"><font color=#808080>""</font></span>. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> strs = ["flower","flow","flight"]<br><b>Output:</b> "fl"<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> strs = ["dog","racecar","car"]<br><b>Output:</b> ""<br><b>Explanation:</b> There is no common prefix among the input strings.<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs.length &lt;= 200</font>
-</li>
-</strong><br><strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs[i].length &lt;= 200</font>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>strs[i]</font></span> consists of only lower-case English letters.
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: First, declared a variable of string that stored strs[0]. Then, I compared it with each elements of vector. At 8 line, <code>min(res.length(), strs[i].length())</code> means finding a smallest length for matching between strings. At 10 line, if a statement is true, I stored a current lenght of string and prepared to compare next element; if a statement is false, it means these strings aren't the same, so the length must be subtract 1 and compare each others again. At 17 line, if length is 0, there is no reason to execute althought maybe there are many elements that have not been compared.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.size() == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res = strs[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; strs.size(); i++)&#123;</span><br><span class="line">            length = min(res.length(), strs[i].length());</span><br><span class="line">            <span class="keyword">while</span>(length &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(res.substr(<span class="number">0</span>, length) == strs[i].substr(<span class="number">0</span>, length))&#123;</span><br><span class="line">                    res = strs[i].substr(<span class="number">0</span>, length);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    length --;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (length == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea: A method is refered from online. Aims to compare every characters, if each characters is the same at the same position, store it! The first loop is the length of strs[0] (1th string), the second loop is number of elements of vector. At 8 line, take each characters <code>s[i]</code> from every strings to match a character of <code>strs[0][i]</code>, meanwhile, check the length of string whether it exceeds i index(position) or not. If a condtion is true, store this character <code>strs[0][i]</code>. On the contrary, return a record.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.empty()) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strs[<span class="number">0</span>].length(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">const</span> <span class="built_in">string</span> &amp;s : strs)</span><br><span class="line">                <span class="keyword">if</span> (s.length() &lt;= i || s[i] != strs[<span class="number">0</span>][i]) <span class="keyword">return</span> res;</span><br><span class="line">            res += strs[<span class="number">0</span>][i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>String</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Shared partition between Mac OS X and Windows 10 [Save time]</title>
     <url>/posts/4755908e/</url>
     <content><![CDATA[<p align="center">
@@ -576,6 +532,96 @@ Finally, reboot you Mac and enter WIN10 OS successfully.</li>
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Longest Common Prefix</title>
+    <url>/posts/2768cb2c/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>14. Longest Common Prefix</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Write a function to find the longest common prefix string amongst an array of strings.</p>
+<p>If there is no common prefix, return an empty string <span style="background-color:#F0F0F0"><font color=#808080>""</font></span>. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> strs = ["flower","flow","flight"]<br><b>Output:</b> "fl"<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> strs = ["dog","racecar","car"]<br><b>Output:</b> ""<br><b>Explanation:</b> There is no common prefix among the input strings.<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs.length &lt;= 200</font>
+</li>
+</strong><br><strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs[i].length &lt;= 200</font>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>strs[i]</font></span> consists of only lower-case English letters.
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: First, declared a variable of string that stored strs[0]. Then, I compared it with each elements of vector. At 8 line, <code>min(res.length(), strs[i].length())</code> means finding a smallest length for matching between strings. At 10 line, if a statement is true, I stored a current lenght of string and prepared to compare next element; if a statement is false, it means these strings aren't the same, so the length must be subtract 1 and compare each others again. At 17 line, if length is 0, there is no reason to execute althought maybe there are many elements that have not been compared.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.size() == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res = strs[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; strs.size(); i++)&#123;</span><br><span class="line">            length = min(res.length(), strs[i].length());</span><br><span class="line">            <span class="keyword">while</span>(length &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(res.substr(<span class="number">0</span>, length) == strs[i].substr(<span class="number">0</span>, length))&#123;</span><br><span class="line">                    res = strs[i].substr(<span class="number">0</span>, length);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    length --;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (length == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea: A method is refered from online. Aims to compare every characters, if each characters is the same at the same position, store it! The first loop is the length of strs[0] (1th string), the second loop is number of elements of vector. At 8 line, take each characters <code>s[i]</code> from every strings to match a character of <code>strs[0][i]</code>, meanwhile, check the length of string whether it exceeds i index(position) or not. If a condtion is true, store this character <code>strs[0][i]</code>. On the contrary, return a record.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.empty()) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strs[<span class="number">0</span>].length(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">const</span> <span class="built_in">string</span> &amp;s : strs)</span><br><span class="line">                <span class="keyword">if</span> (s.length() &lt;= i || s[i] != strs[<span class="number">0</span>][i]) <span class="keyword">return</span> res;</span><br><span class="line">            res += strs[<span class="number">0</span>][i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>String</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Maximum Depth of Binary Tree</title>
+    <url>/posts/57b52472/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>104. Maximum Depth of Binary Tree</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given the <span style="background-color:#F0F0F0"><font color=#808080>root</font></span> of a binary tree, return <em>its maximum depth</em>.</p>
+<p>A binary tree's <strong>maximum depth</strong> is the number of nodes along the longest path from the root node down to the farthest leaf node. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<img src="MaximumDepthofBinaryTree_example1.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 3<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [1,null,2]<br> <b>Output:</b> 2<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = []<br> <b>Output:</b> 0<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [0]<br> <b>Output:</b> 1<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^4]</font></span>.
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-100 &lt;= Node.val &lt;= 100</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: Basically, I konw the search must be throughout all link of the whole tree, then if the left/right node of root are NULL, the depth is the deepest, so depth is start from 1 (depth + 1). But, I can't find out any regular action by using the recursion. There is a quit clear demonstration as below[1]: <img src="MaximumDepthofBinaryTree_example2.png" /> It's very helpful and let me understand the recursion processing. So, let me explain the code: (1) <code>maxDepth(root-&gt;left)</code>: use recursion to find deepest depth of left node (2) <code>maxDepth(root-&gt;right</code>: use recursion to find deepest depth of right node (3) <code>max((1), (2))</code>: compare the deepest depth of both of left/right nodes, get the maximum value. Then, <code>+ 1</code> means adding this layer.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> max(maxDepth(root-&gt;left), maxDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Reference:<br> [1] https://algorithms.tutorialhorizon.com/find-the-maximum-depth-or-height-of-a-binary-tree/</p>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Tree</tag>
+        <tag>Recursion</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Maximum Subarray</title>
     <url>/posts/90ac56be/</url>
     <content><![CDATA[<p align="center">
@@ -623,52 +669,6 @@ Finally, reboot you Mac and enter WIN10 OS successfully.</li>
       <tags>
         <tag>BruteForce</tag>
         <tag>Vector</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Maximum Depth of Binary Tree</title>
-    <url>/posts/57b52472/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>104. Maximum Depth of Binary Tree</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given the <span style="background-color:#F0F0F0"><font color=#808080>root</font></span> of a binary tree, return <em>its maximum depth</em>.</p>
-<p>A binary tree's <strong>maximum depth</strong> is the number of nodes along the longest path from the root node down to the farthest leaf node. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<img src="MaximumDepthofBinaryTree_example1.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 3<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [1,null,2]<br> <b>Output:</b> 2<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = []<br> <b>Output:</b> 0<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [0]<br> <b>Output:</b> 1<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^4]</font></span>.
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-100 &lt;= Node.val &lt;= 100</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: Basically, I konw the search must be throughout all link of the whole tree, then if the left/right node of root are NULL, the depth is the deepest, so depth is start from 1 (depth + 1). But, I can't find out any regular action by using the recursion. There is a quit clear demonstration as below[1]: <img src="MaximumDepthofBinaryTree_example2.png" /> It's very helpful and let me understand the recursion processing. So, let me explain the code: (1) <code>maxDepth(root-&gt;left)</code>: use recursion to find deepest depth of left node (2) <code>maxDepth(root-&gt;right</code>: use recursion to find deepest depth of right node (3) <code>max((1), (2))</code>: compare the deepest depth of both of left/right nodes, get the maximum value. Then, <code>+ 1</code> means adding this layer.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> max(maxDepth(root-&gt;left), maxDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>Reference:<br> [1] https://algorithms.tutorialhorizon.com/find-the-maximum-depth-or-height-of-a-binary-tree/</p>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Tree</tag>
-        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>
@@ -934,6 +934,41 @@ Given the below binary tree and <span style="background-color:#F0F0F0"><font col
       </tags>
   </entry>
   <entry>
+    <title>Run PyCharm: Python development platform on Ubuntu / Ryu SDN</title>
+    <url>/posts/784045ef/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Tutorial - PyCharm Installation and build project environment for the development of Ryu controller</b></font>
+</p>
+<h2 id="installation">Installation</h2>
+<ul>
+<li><p><strong>Step 1.</strong> Download the <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> to your Ubuntu system <a id="more"></a></p></li>
+<li><p><strong>Step 2.</strong> Unpack the pycharm-*.tar.gz file (The recommended installation location according to the filesystem hierarchy standard (FHS) is /opt.) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo tar xfz pycharm-*.tar.gz -C /opt/</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>Step 3.</strong> Go to the bin subdirectory <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd /opt/pycharm-*/bin</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>Step 4.</strong> Run pycharm.sh from the bin subdirectory <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ./pycharm.sh</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>Step 5.</strong> Choose “Do not import settings” as below: <img src="figure1.png" /></p></li>
+<li><p><strong>Step 6.</strong> Select the user interface theme</p></li>
+<li><p><strong>Step 7.</strong> Download and install additional pyugins</p></li>
+<li><p><strong>Step 8.</strong> Start a project in PyCharm <img src="figure2.png" /></p></li>
+</ul>
+<h2 id="debug-ryu-sdn-controller">Debug Ryu SDN controller</h2>
+<ul>
+<li><p><strong>Step 1.</strong> First, build a new project. Then, create a python file (compile file) <img src="figure_3.png" /></p></li>
+<li><p><strong>Step 2.</strong> Paste the code as below: (Notice: you must set your directory of controller.py) <img src="figure_4.png" /></p></li>
+<li><p><strong>Step 3.</strong> Create a controller.py (You can paste the source code of simple_switch_13.py to controller.py) <img src="figure_5.png" /></p></li>
+<li><p><strong>Step 4.</strong> Change a project interpreter 3.4 to 2.7 version (File-&gt;settings-&gt;Project-&gt;Project Interpreter) <img src="figure_6.png" /></p></li>
+<li><p><strong>Step 5.</strong> Finally, debugging the controller.py and get currect result <img src="figure_7.png" /></p></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Instruction</category>
+      </categories>
+      <tags>
+        <tag>IDE</tag>
+        <tag>Python</tag>
+        <tag>Platform</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Plus One</title>
     <url>/posts/acf6f11e/</url>
     <content><![CDATA[<p align="center">
@@ -972,50 +1007,6 @@ Given the below binary tree and <span style="background-color:#F0F0F0"><font col
       </categories>
       <tags>
         <tag>Vector</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Run PyCharm: Python development platform on Ubuntu / Ryu SDN</title>
-    <url>/posts/784045ef/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Tutorial - PyCharm Installation and build project environment for Ryu</b></font>
-</p>
-<h2 id="installation">Installation</h2>
-<ul>
-<li><p><strong>Step 1.</strong> Download the <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> to your Ubuntu system <a id="more"></a></p></li>
-<li><p><strong>Step 2.</strong> Unpack the pycharm-*.tar.gz file (The recommended installation location according to the filesystem hierarchy standard (FHS) is /opt.)</p>
-<p style="background-color:#F0F0F0">
-<p>$ sudo tar xfz pycharm-*.tar.gz -C /opt/</p>
-</p></li>
-<li><p><strong>Step 3.</strong> Go to the bin subdirectory</p>
-<p style="background-color:#F0F0F0">
-<p>$ cd /opt/pycharm-*/bin</p>
-</p></li>
-<li><p><strong>Step 4.</strong> Run pycharm.sh from the bin subdirectory</p>
-<p style="background-color:#F0F0F0">
-<p>./pycharm.sh</p>
-</p></li>
-<li><p><strong>Step 5.</strong> Choose “Do not import settings” as below: <img src="figure1.png" /></p></li>
-<li><p><strong>Step 6.</strong> Select the user interface theme</p></li>
-<li><p><strong>Step 7.</strong> Download and install additional pyugins</p></li>
-<li><p><strong>Step 8.</strong> Start a project in PyCharm <img src="figure2.png" /></p></li>
-</ul>
-<h2 id="debug-ryu-sdn-controller">Debug Ryu SDN controller</h2>
-<ul>
-<li><p><strong>Step 1.</strong> First, build a new project. Then, create a python file (compile file) <img src="figure_3.png" /></p></li>
-<li><p><strong>Step 2.</strong> Paste the code as below: (Notice: you must set your directory of controller.py) <img src="figure_4.png" /></p></li>
-<li><p><strong>Step 3.</strong> Create a controller.py (You can paste the source code of simple_switch_13.py to controller.py) <img src="figure_5.png" /></p></li>
-<li><p><strong>Step 4.</strong> Change a project interpreter 3.4 to 2.7 version (File-&gt;settings-&gt;Project-&gt;Project Interpreter) <img src="figure_6.png" /></p></li>
-<li><p><strong>Step 5.</strong> Finally, debugging the controller.py and get currect result <img src="figure_7.png" /></p></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Instruction</category>
-      </categories>
-      <tags>
-        <tag>IDE</tag>
-        <tag>Python</tag>
-        <tag>Platform</tag>
       </tags>
   </entry>
   <entry>
@@ -1069,6 +1060,76 @@ Internally you can think of this:
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Remove Duplicates from Sorted List</title>
+    <url>/posts/66cc46ab/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>83. Remove Duplicates from Sorted List</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a sorted linked list, delete all duplicates such that each element appear only once. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> 1-&gt;1-&gt;2<br> <b>Output:</b> 1-&gt;2<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> 1-&gt;1-&gt;2-&gt;3-&gt;3<br> <b>Output:</b> 1-&gt;2-&gt;3<br>
+</p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: We can use original List to check each elements. If the current pointer of value is equal to the next pointer of value, we use <code>tail-&gt;next = tail-&gt;next-&gt;next</code> to skip the next pointer. So, We can return head that is unduplicated List.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">deleteDuplicates</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        ListNode *tail = head;</span><br><span class="line">        <span class="keyword">while</span>(tail &amp;&amp; tail-&gt;next)&#123;</span><br><span class="line">            <span class="keyword">if</span>(tail-&gt;val == tail-&gt;next-&gt;val)&#123;</span><br><span class="line">                tail-&gt;next = tail-&gt;next-&gt;next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                tail = tail-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea: If we don't want to modify the List of head, we can delcare a new ListNode, as dummy. Before going into the while statement, we must assign a first value of head to <code>tail-&gt;next</code> that is a pointer of the list of dummy. Then we can compare a value of tail with a value of head. <em>Notice: return dummy must be <code>dummy.next</code>, because the first value is an initial value.</em> The solution is refered to <a href="https://zxi.mytechroad.com/blog/list/leetcode-83-remove-duplicates-from-sorted-list/">Huahua's Tech Road</a>.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">deleteDuplicates</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="function">ListNode <span class="title">dummy</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">        ListNode* tail = &amp;dummy;</span><br><span class="line">        tail-&gt;next = head;</span><br><span class="line">        <span class="keyword">while</span>(head)&#123;</span><br><span class="line">            <span class="keyword">while</span>(head &amp;&amp; head-&gt;val == tail-&gt;next-&gt;val) head = head-&gt;next;</span><br><span class="line">            tail-&gt;next-&gt;next = head;</span><br><span class="line">            tail = tail-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>ListNode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Reverse Integer</title>
+    <url>/posts/236b1bbd/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>7. Reverse Integer</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a 32-bit signed integer, reverse digits of an integer.</p>
+<p><strong>Note:</strong> Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−2^31, 2^31 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = 123<br><b>Output</b>: 321<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = -123<br><b>Output</b>: -321<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = 120<br><b>Output</b>: 21<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = 0<br><b>Output</b>: 0<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+-2^31 &lt;= x &lt;= 2^31 -1
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: At the begining, I need to get units digit, so the modulus operator % can compute the remainder. Then, the remainder should be added to answer(return value) after answer times ten for each loop. <code>x = x / 10</code> means removing units digit for getting hundreds digit. Don't forget the constraints, use values of INT_MIN and INT_MAX to implement it. P.S. <code>return (conditional)?true:false</code></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(x != <span class="number">0</span>)&#123;</span><br><span class="line">            ans = ans * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">            x = x / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (ans&gt;INT_MIN &amp;&amp; ans&lt;INT_MAX)?ans:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Remainder</tag>
+        <tag>Quotient</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Remove Element</title>
     <url>/posts/1afffcb4/</url>
     <content><![CDATA[<p align="center">
@@ -1115,36 +1176,6 @@ Internally you can think of this:
       <tags>
         <tag>Vector</tag>
         <tag>Call_by_reference</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Remove Duplicates from Sorted List</title>
-    <url>/posts/66cc46ab/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>83. Remove Duplicates from Sorted List</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a sorted linked list, delete all duplicates such that each element appear only once. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> 1-&gt;1-&gt;2<br> <b>Output:</b> 1-&gt;2<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> 1-&gt;1-&gt;2-&gt;3-&gt;3<br> <b>Output:</b> 1-&gt;2-&gt;3<br>
-</p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: We can use original List to check each elements. If the current pointer of value is equal to the next pointer of value, we use <code>tail-&gt;next = tail-&gt;next-&gt;next</code> to skip the next pointer. So, We can return head that is unduplicated List.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">deleteDuplicates</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        ListNode *tail = head;</span><br><span class="line">        <span class="keyword">while</span>(tail &amp;&amp; tail-&gt;next)&#123;</span><br><span class="line">            <span class="keyword">if</span>(tail-&gt;val == tail-&gt;next-&gt;val)&#123;</span><br><span class="line">                tail-&gt;next = tail-&gt;next-&gt;next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                tail = tail-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea: If we don't want to modify the List of head, we can delcare a new ListNode, as dummy. Before going into the while statement, we must assign a first value of head to <code>tail-&gt;next</code> that is a pointer of the list of dummy. Then we can compare a value of tail with a value of head. <em>Notice: return dummy must be <code>dummy.next</code>, because the first value is an initial value.</em> The solution is refered to <a href="https://zxi.mytechroad.com/blog/list/leetcode-83-remove-duplicates-from-sorted-list/">Huahua's Tech Road</a>.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">deleteDuplicates</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="function">ListNode <span class="title">dummy</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">        ListNode* tail = &amp;dummy;</span><br><span class="line">        tail-&gt;next = head;</span><br><span class="line">        <span class="keyword">while</span>(head)&#123;</span><br><span class="line">            <span class="keyword">while</span>(head &amp;&amp; head-&gt;val == tail-&gt;next-&gt;val) head = head-&gt;next;</span><br><span class="line">            tail-&gt;next-&gt;next = head;</span><br><span class="line">            tail = tail-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>ListNode</tag>
       </tags>
   </entry>
   <entry>
@@ -1208,46 +1239,6 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
       </categories>
       <tags>
         <tag>Map(STL)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Reverse Integer</title>
-    <url>/posts/236b1bbd/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>7. Reverse Integer</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a 32-bit signed integer, reverse digits of an integer.</p>
-<p><strong>Note:</strong> Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−2^31, 2^31 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = 123<br><b>Output</b>: 321<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = -123<br><b>Output</b>: -321<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = 120<br><b>Output</b>: 21<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = 0<br><b>Output</b>: 0<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
--2^31 &lt;= x &lt;= 2^31 -1
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: At the begining, I need to get units digit, so the modulus operator % can compute the remainder. Then, the remainder should be added to answer(return value) after answer times ten for each loop. <code>x = x / 10</code> means removing units digit for getting hundreds digit. Don't forget the constraints, use values of INT_MIN and INT_MAX to implement it. P.S. <code>return (conditional)?true:false</code></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(x != <span class="number">0</span>)&#123;</span><br><span class="line">            ans = ans * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">            x = x / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (ans&gt;INT_MIN &amp;&amp; ans&lt;INT_MAX)?ans:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Remainder</tag>
-        <tag>Quotient</tag>
       </tags>
   </entry>
   <entry>
@@ -1394,42 +1385,6 @@ TThe number of nodes in both trees is in the range <span style="background-color
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Sqrt(x)</title>
-    <url>/posts/72b31d68/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>69. Sqrt(x)</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a non-negative integer <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>, compute and return <em>the square root of</em> <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>.</p>
-<p>Since the return type is an integer, the decimal digits are <b>truncated</b>, and only <b>the integer part</b> of the result is returned. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> x = 4<br><b>Output:</b> 2<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> x = 8<br> <b>Output:</b> 2<br> <b>Explanation:</b> The square root of 8 is 2.82842..., and since the decimal part is truncated, 2 is returned.<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= x &lt;= 2^31 - 1</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source Code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: My intuition is divided divisor that is start from 1, we can get remainder, if remainder is equal to divisor, return the divisor; if divisor is bigger than remainder, retrurn the (divisor - 1). This method can work, but it wastes much time.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> divisor = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(divisor &lt;= x)&#123;</span><br><span class="line">            <span class="keyword">int</span> remainder = x / divisor;</span><br><span class="line">            <span class="keyword">if</span>(divisor == remainder) <span class="keyword">return</span> divisor;</span><br><span class="line">            <span class="keyword">if</span>(divisor &gt; remainder) <span class="keyword">return</span> divisor - <span class="number">1</span>;</span><br><span class="line">            divisor ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> divisor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea: We can use binary search to improve time complexity. A variable of l means left index, a variable of r means right index and a variable of m means middle index. l must be set 1, because <code>while(l &lt;= r)</code> can filter <code>x = 0</code> test case. We use <code>m * m</code> to find which value can match x.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> l = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">long</span> r = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(x) ;</span><br><span class="line">        <span class="keyword">while</span>(l &lt;= r)&#123;</span><br><span class="line">            <span class="keyword">long</span> m = (l + r) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> ( m * m == x) <span class="keyword">return</span> m;</span><br><span class="line">            <span class="keyword">if</span>( m * m &gt; x)&#123;</span><br><span class="line">                r = m - <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                l = m + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Binary_search</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Search Insert Position</title>
     <url>/posts/41fdcb04/</url>
     <content><![CDATA[<p align="center">
@@ -1483,6 +1438,72 @@ TThe number of nodes in both trees is in the range <span style="background-color
       </categories>
       <tags>
         <tag>search</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Sqrt(x)</title>
+    <url>/posts/72b31d68/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>69. Sqrt(x)</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a non-negative integer <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>, compute and return <em>the square root of</em> <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>.</p>
+<p>Since the return type is an integer, the decimal digits are <b>truncated</b>, and only <b>the integer part</b> of the result is returned. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> x = 4<br><b>Output:</b> 2<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> x = 8<br> <b>Output:</b> 2<br> <b>Explanation:</b> The square root of 8 is 2.82842..., and since the decimal part is truncated, 2 is returned.<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= x &lt;= 2^31 - 1</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source Code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: My intuition is divided divisor that is start from 1, we can get remainder, if remainder is equal to divisor, return the divisor; if divisor is bigger than remainder, retrurn the (divisor - 1). This method can work, but it wastes much time.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> divisor = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(divisor &lt;= x)&#123;</span><br><span class="line">            <span class="keyword">int</span> remainder = x / divisor;</span><br><span class="line">            <span class="keyword">if</span>(divisor == remainder) <span class="keyword">return</span> divisor;</span><br><span class="line">            <span class="keyword">if</span>(divisor &gt; remainder) <span class="keyword">return</span> divisor - <span class="number">1</span>;</span><br><span class="line">            divisor ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> divisor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea: We can use binary search to improve time complexity. A variable of l means left index, a variable of r means right index and a variable of m means middle index. l must be set 1, because <code>while(l &lt;= r)</code> can filter <code>x = 0</code> test case. We use <code>m * m</code> to find which value can match x.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> l = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">long</span> r = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(x) ;</span><br><span class="line">        <span class="keyword">while</span>(l &lt;= r)&#123;</span><br><span class="line">            <span class="keyword">long</span> m = (l + r) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> ( m * m == x) <span class="keyword">return</span> m;</span><br><span class="line">            <span class="keyword">if</span>( m * m &gt; x)&#123;</span><br><span class="line">                r = m - <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                l = m + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Binary_search</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Symmetric Tree</title>
+    <url>/posts/d1f23ab6/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>101. Symmetric Tree</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center). <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+For example, this binary tree <span style="background-color:#F0F0F0"><font color=#808080>[1,2,2,3,4,4,3]</font></span> is symmetric:
+<p style="background-color:#F0F0F0">
+    1<br>      / \<br>     2   2<br>    / \ / \<br>   3 4 4 3
+</p>
+But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,2,2,null,3,null,3]</font></span> is not:
+<p style="background-color:#F0F0F0">
+    1<br>      / \<br>     2   2<br>      \   \<br>     3   3
+</p>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: The strategic is similar to <a href="https://egbert-yu-ting.github.io/posts/2ef96137/#more">Same-Tree</a>. First, we must check the root node whether it's null or not. Then, we use root-&gt;left and root-&gt;right as arguments to call private function. There are some rules we must to know: 1. the value of the left node must be equal to the value of the right node. 2. the value of the left node as the left child node must be equal to the value of the right node as the right child node. 3. the vlaue of the left node as the right child node must be equal to the value of the right node as the left child node. So, we can write to codes based on these ruls at 22~23 line.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> isSymmetric(root-&gt;left, root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* l, TreeNode* r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!l &amp;&amp; !r) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(!l || !r) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> (l-&gt;val == r-&gt;val) &amp;&amp; isSymmetric(l-&gt;left, r-&gt;right) </span><br><span class="line">            &amp;&amp; isSymmetric(l-&gt;right, r-&gt;left);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Tree</tag>
+        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>
@@ -1611,33 +1632,39 @@ TThe number of nodes in both trees is in the range <span style="background-color
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Symmetric Tree</title>
-    <url>/posts/d1f23ab6/</url>
+    <title>[LeetCode Road] Two Sum</title>
+    <url>/posts/b98c8b25/</url>
     <content><![CDATA[<p align="center">
-<font size="6"><b>101. Symmetric Tree</b></font>
+<font size="6"><b>1. Two Sum</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center). <a id="more"></a></p>
+<p>Given an array of integers <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> and an integer <span style="background-color:#F0F0F0"><font color=#808080>target</font></span>, return <em>indices of the two numbers such that they add up to target</em>.</p>
+<p>You may assume that each input would have <strong>exactly one solution</strong>, and you may not use the same element twice.</p>
+<p>You can return the answer in any order. <a id="more"></a></p>
 <h2 id="example">Example:</h2>
-For example, this binary tree <span style="background-color:#F0F0F0"><font color=#808080>[1,2,2,3,4,4,3]</font></span> is symmetric:
 <p style="background-color:#F0F0F0">
-    1<br>      / \<br>     2   2<br>    / \ / \<br>   3 4 4 3
+<b>Input</b>: nums = [2,7,11,15], target = 9<br><b>Output</b>: [0,1]<br><b>Output</b>: Because nums[0] + nums[1] == 9, we return [0, 1].
 </p>
-But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,2,2,null,3,null,3]</font></span> is not:
 <p style="background-color:#F0F0F0">
-    1<br>      / \<br>     2   2<br>      \   \<br>     3   3
+<b>Input</b>: nums = [3,2,4], target = 6<br><b>Output</b>: [1,2].
 </p>
-<h2 id="source-code">Source code:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: nums = [3,3], target = 6<br><b>Output</b>: [0,1]
+</p>
+<h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: The strategic is similar to <a href="https://egbert-yu-ting.github.io/posts/2ef96137/#more">Same-Tree</a>. First, we must check the root node whether it's null or not. Then, we use root-&gt;left and root-&gt;right as arguments to call private function. There are some rules we must to know: 1. the value of the left node must be equal to the value of the right node. 2. the value of the left node as the left child node must be equal to the value of the right node as the right child node. 3. the vlaue of the left node as the right child node must be equal to the value of the right node as the left child node. So, we can write to codes based on these ruls at 22~23 line.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> isSymmetric(root-&gt;left, root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* l, TreeNode* r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!l &amp;&amp; !r) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(!l || !r) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> (l-&gt;val == r-&gt;val) &amp;&amp; isSymmetric(l-&gt;left, r-&gt;right) </span><br><span class="line">            &amp;&amp; isSymmetric(l-&gt;right, r-&gt;left);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Idea: This is my first coding on the LeetCode platform. After reading the problem, my mind's gone blank, I only thought a simple way to solve it. Use two loop to check all numbers, but the time complexity is O(n^2). I knew this method is not efficient!</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; returnArray;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size() - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; nums.size(); j++)&#123;</span><br><span class="line">                sum = nums[i]+nums[j];</span><br><span class="line">                <span class="keyword">if</span>(sum == target)&#123;</span><br><span class="line">                    returnArray.push_back(i);</span><br><span class="line">                    returnArray.push_back(j);</span><br><span class="line">                    <span class="keyword">return</span> returnArray;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> returnArray;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="version-2"><u>Version 2</u></h4>
+<p>Idea: So, the source code is refered from online and I added some comments after programming. I heard the Hash Table mechanism at first time. It is a very simple principle, I must remember it! If you want to learn Hash Table, you can see <a href="https://aozturk.medium.com/simple-hash-map-hash-table-implementation-in-c-931965904250">Simple Hash Map</a>.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; returnArray; <span class="comment">// return the ans</span></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mapIndex; <span class="comment">// hash table(key:nums[i], value:index)</span></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            it = mapIndex.find(target - nums[i]);</span><br><span class="line">            <span class="keyword">if</span>(it != mapIndex.end())&#123;</span><br><span class="line">                <span class="comment">// found it, it means target - nums[i] = it-&gt;first</span></span><br><span class="line">                returnArray.push_back(it-&gt;second); <span class="comment">// get the value(index) by iterator</span></span><br><span class="line">                returnArray.push_back(i); <span class="comment">// get the current index</span></span><br><span class="line">                <span class="keyword">return</span> returnArray;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">// add new element</span></span><br><span class="line">                mapIndex.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;(nums[i], i));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> returnArray;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>LeetCode-Easy</category>
       </categories>
       <tags>
-        <tag>Tree</tag>
-        <tag>Recursion</tag>
+        <tag>Map(STL)</tag>
+        <tag>Hash_table</tag>
       </tags>
   </entry>
   <entry>
@@ -1685,42 +1712,6 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
       <tags>
         <tag>Map(STL)</tag>
         <tag>Stack</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Two Sum</title>
-    <url>/posts/b98c8b25/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>1. Two Sum</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given an array of integers <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> and an integer <span style="background-color:#F0F0F0"><font color=#808080>target</font></span>, return <em>indices of the two numbers such that they add up to target</em>.</p>
-<p>You may assume that each input would have <strong>exactly one solution</strong>, and you may not use the same element twice.</p>
-<p>You can return the answer in any order. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: nums = [2,7,11,15], target = 9<br><b>Output</b>: [0,1]<br><b>Output</b>: Because nums[0] + nums[1] == 9, we return [0, 1].
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: nums = [3,2,4], target = 6<br><b>Output</b>: [1,2].
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: nums = [3,3], target = 6<br><b>Output</b>: [0,1]
-</p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: This is my first coding on the LeetCode platform. After reading the problem, my mind's gone blank, I only thought a simple way to solve it. Use two loop to check all numbers, but the time complexity is O(n^2). I knew this method is not efficient!</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; returnArray;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size() - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; nums.size(); j++)&#123;</span><br><span class="line">                sum = nums[i]+nums[j];</span><br><span class="line">                <span class="keyword">if</span>(sum == target)&#123;</span><br><span class="line">                    returnArray.push_back(i);</span><br><span class="line">                    returnArray.push_back(j);</span><br><span class="line">                    <span class="keyword">return</span> returnArray;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> returnArray;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h4 id="version-2"><u>Version 2</u></h4>
-<p>Idea: So, the source code is refered from online and I added some comments after programming. I heard the Hash Table mechanism at first time. It is a very simple principle, I must remember it! If you want to learn Hash Table, you can see <a href="https://aozturk.medium.com/simple-hash-map-hash-table-implementation-in-c-931965904250">Simple Hash Map</a>.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; returnArray; <span class="comment">// return the ans</span></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mapIndex; <span class="comment">// hash table(key:nums[i], value:index)</span></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            it = mapIndex.find(target - nums[i]);</span><br><span class="line">            <span class="keyword">if</span>(it != mapIndex.end())&#123;</span><br><span class="line">                <span class="comment">// found it, it means target - nums[i] = it-&gt;first</span></span><br><span class="line">                returnArray.push_back(it-&gt;second); <span class="comment">// get the value(index) by iterator</span></span><br><span class="line">                returnArray.push_back(i); <span class="comment">// get the current index</span></span><br><span class="line">                <span class="keyword">return</span> returnArray;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">// add new element</span></span><br><span class="line">                mapIndex.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;(nums[i], i));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> returnArray;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Map(STL)</tag>
-        <tag>Hash_table</tag>
       </tags>
   </entry>
   <entry>
@@ -1780,8 +1771,9 @@ source ~/.bash_profile
 <li>Free software and open source</li>
 <li>Packet level</li>
 <li>C++ for core/ Python for bindings</li>
-<li>Support under Linux, FreeBSD and Cygwin G ### ns-3 simulation workflow:</li>
+<li>Support under Linux, FreeBSD and Cygwin</li>
 </ul>
+<h2 id="ns-3-simulation-workflow">ns-3 simulation workflow:</h2>
 <ol type="1">
 <li>Topology definition</li>
 <li>Model development</li>
@@ -1790,7 +1782,7 @@ source ~/.bash_profile
 <li>Performance analysis</li>
 <li>Graphical Visualization</li>
 </ol>
-<h3 id="key-terms-adn-abstractions">Key terms adn abstractions:</h3>
+<h2 id="key-terms-adn-abstractions">Key terms adn abstractions:</h2>
 <ul>
 <li>Node: the virtual hardward (e.g., PC, server, router, smart phone, etc.)</li>
 <li>Network device: transimts and receives over the channel with network layer</li>
@@ -1804,7 +1796,7 @@ source ~/.bash_profile
 <li>Allow ns-3 users to simulate Software-Defined Networks (SDN)</li>
 <li>Support internal/external SDN controller <img src="OFSwitch13Device_structure.png" alt="The OFSwitch13 module overview" /></li>
 </ul>
-<h3 id="main-class-function"><a href="http://www.lrc.ic.unicamp.br/~luciano/publications/wns316.pdf">Main class function</a></h3>
+<h2 id="main-class-function"><a href="http://www.lrc.ic.unicamp.br/~luciano/publications/wns316.pdf">Main class function</a></h2>
 <ul>
 <li>OpenFlow 1.3 switch network device It can be used to interconnect ns-3 nodes using the existing CSMA network devices and channels.</li>
 <li>OpenFlow 1.3 controller interface It provides the basic functionalities for controller implementation.</li>
@@ -1813,100 +1805,32 @@ source ~/.bash_profile
 </ul>
 <h2 id="start-to-configure-and-build">Start to configure and build</h2>
 <ul>
-<li><strong>Step 1.</strong> You have the following packages installed on your system
-<p style="background-color:#F0F0F0">
-$ sudo apt-get install build-essential gcc g++ python git mercurial unzip cmake
-</p>
-<p style="background-color:#F0F0F0">
-$ sudo apt-get install pkg-config autoconf libtool libboost-dev
-</p></li>
-<li><strong>Step 2.</strong> Download a recent stable ns-3 code (using the mercurial repository for ns-3.29)
-<p style="background-color:#F0F0F0">
-$ hg clone http://code.nsnam.org/ns-3.29
-</p></li>
-<li><strong>Step 3.</strong> Download the OFSwitch13 code into the src/ folder
-<p style="background-color:#F0F0F0">
-$ cd ns-3.29/src
-</p>
-<p style="background-color:#F0F0F0">
-$ git clone --recurse-submodules https://github.com/ljerezchaves/ofswitch13.git
-</p></li>
-<li><strong>Step 4.</strong> Update the code to the desired release version (using 4.0.0, which is compatible with ns-3.29 or later)
-<p style="background-color:#F0F0F0">
-$ cd ofswitch13
-</p>
-<p style="background-color:#F0F0F0">
-$ git checkout 4.0.0 &amp;&amp; git submodule update –recursive
-</p></li>
-<li><strong>Step 5.</strong> It is time to compile the ofsoftswitch13 as a static library (Configure and build the library)
-<p style="background-color:#F0F0F0">
-$ cd lib/ofsoftswitch13
-</p>
-<p style="background-color:#F0F0F0">
-$ ./boot.sh
-</p>
-<p style="background-color:#F0F0F0">
-$ ./configure --enable-ns3-lib
-</p>
-<p style="background-color:#F0F0F0">
-$ make
-</p>
-<font color=#FF0000>Warning: if you meet an error as “perl: warning: Setting locale failed”:</font></li>
+<li><strong>Step 1.</strong> You have the following packages installed on your system <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install build-essential gcc g++ python git mercurial unzip cmake</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install pkg-config autoconf libtool libboost-dev</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 2.</strong> Download a recent stable ns-3 code (using the mercurial repository for ns-3.29) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ hg clone http://code.nsnam.org/ns-3.29</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 3.</strong> Download the OFSwitch13 code into the src/ folder <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ns-3.29/src</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ git clone --recurse-submodules https://github.com/ljerezchaves/ofswitch13.git</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 4.</strong> Update the code to the desired release version (using 4.0.0, which is compatible with ns-3.29 or later) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ofswitch13</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ git checkout 4.0.0 &amp;&amp; git submodule update –recursive</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 5.</strong> It is time to compile the ofsoftswitch13 as a static library (Configure and build the library) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd lib/ofsoftswitch13</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ./boot.sh</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ./configure --enable-ns3-lib</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ make</span><br></pre></td></tr></table></figure> <br></li>
 </ul>
-<p style="margin-left:40px">
-<b>Solution:</b>
-</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">
-$ sudo vim .bashrc
-</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">
-export LC_ALL=“en_US.UTF-8”
-</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">
-$ sudo locale-gen zh_TW.UTF-8
-</p>
-<p style="background-color:#F0F0F0; margin-left:40px;">
-$ sudo dpkg-reconfigure locales
-</p>
+<p><font color=#FF0000>Warning: if you meet an error as “perl: warning: Setting locale failed”:</font></p>
+<p><b>Solution: Add <code>export LC_ALL=“en_US.UTF-8”</code> to bashrc file</b></p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo vim .bashrc</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">export LC_ALL=“en_US.UTF-8”</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo locale-gen zh_TW.UTF-8</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo dpkg-reconfigure locales</span><br></pre></td></tr></table></figure>
+<p><br></p>
 <ul>
-<li><p><strong>Step 6.</strong> Go back to the ns-3 root directory and patch the ns-3 code with the appropriated patches available under the ofswitch13/utils directory</p>
-<p style="background-color:#F0F0F0">
-<p>$ cd ../../../../</p>
-</p>
-<p style="background-color:#F0F0F0">
-<p>$ patch -p1 &lt; src/ofswitch13/utils/ofswitch13-src-3_29.patch</p>
-</p>
-<p style="background-color:#F0F0F0">
-<p>$ patch -p1 &lt; src/ofswitch13/utils/ofswitch13-doc-3_29.patch</p>
-</p></li>
-<li><p><strong>Step 7.</strong> Now, configure the ns-3 (Need to check --witch-ofswitch13=your path)</p>
-<p style="background-color:#F0F0F0">
-<p>$ ./waf configure --enable-tests --enable-examples --enable-sudo --with-ofswitch13=<br>/home/ubuntu/ns-3.29/src/ofswitch13/lib/ofsoftswitch13/</p>
-</p></li>
+<li><p><strong>Step 6.</strong> Go back to the ns-3 root directory and patch the ns-3 code with the appropriated patches available under the ofswitch13/utils directory <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ../../../../</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ patch -p1 &lt; src/ofswitch13/utils/ofswitch13-src-3_29.patch</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ patch -p1 &lt; src/ofswitch13/utils/ofswitch13-doc-3_29.patch</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>Step 7.</strong> Now, configure the ns-3 (Need to check --witch-ofswitch13=your path) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ./waf configure --enable-tests --enable-examples --enable-sudo --with-ofswitch13=&lt;br&gt;/home/ubuntu/ns-3.29/src/ofswitch13/lib/ofsoftswitch13/</span><br></pre></td></tr></table></figure></p></li>
 <li><p><strong>Step 8.</strong> Check for the enabled NS-3 OpenFlow 1.3 integration feature after the configuration <img src="ns3_configuration.png" /></p></li>
-<li><p><strong>Step 9.</strong> Finally, build the ns-3 simulation</p>
-<p style="background-color:#F0F0F0">
-<p>$ sudo ./waf</p>
-</p>
-<p><font color=#FF0000>Warning: if you meet an error as below:</font></p>
-<p>
-<p><img src="./buildError.png"></p>
-</p></li>
+<li><p><strong>Step 9.</strong> Finally, build the ns-3 simulation <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo ./waf</span><br></pre></td></tr></table></figure> <br></p></li>
 </ul>
-<p style="margin-left:40px">
-<b>Solution: Modify: “SuidBuild” → “SuidBuild_task”</b>
+<font color=#FF0000>Warning: if you meet an error as below:</font>
+<p>
+<img src="./buildError.png">
 </p>
-<p style="background-color:#F0F0F0; margin-left:40px;">
-$ sudo vim wscript
+<b>Solution: Modify “SuidBuild” → “SuidBuild_task”</b> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo vim wscript</span><br></pre></td></tr></table></figure> <img src="./buildError_solution.png">
 </p>
-<p style="margin-left:40px">
-<img src="./buildError_solution.png">
-</p>
-Now, you can run your first example script, enjoy it!
-<p style="background-color:#F0F0F0">
-$ ./waf --run scratch/ofswitch13.first
-</p>
-<p><strong>Notice:</strong> 1. <u>Suggest moving your script to scratch folder before executing.</u> 2. <u>Don't add filename extension (e.g. .cc) at your execution's command line</u></p>
+<p>Now, you can run your first example script, enjoy it! <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ./waf --run scratch/ofswitch13.first</span><br></pre></td></tr></table></figure> <strong>Notice:</strong><br> 1. <u>Suggest moving your script to scratch folder before executing</u><br>. 2. <u>Don't add filename extension (e.g. .cc) at your execution's command line</u>.</p>
 ]]></content>
       <categories>
         <category>Simulator</category>

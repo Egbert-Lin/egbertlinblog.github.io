@@ -126,6 +126,20 @@ TThe number of nodes in the tree is in the range <span style="background-color:#
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Best Time to Buy and Sell Stock II</title>
+    <url>/posts/db875d74/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>121. Best Time to Buy and Sell Stock II</b></font>
+</p>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Stock</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Best Time to Buy and Sell Stock</title>
     <url>/posts/a026a3d3/</url>
     <content><![CDATA[<p align="center">
@@ -961,9 +975,11 @@ Given the below binary tree and <span style="background-color:#F0F0F0"><font col
     <content><![CDATA[<p align="center">
 <font size="6"><b>Tutorial - PyCharm Installation and build project environment for the development of Ryu controller</b></font>
 </p>
+<h2 id="what-is-pycharm">What is PyCharm?</h2>
+<p>Are you developing python project on Ubuntu right now? When you are writing code, I guess that you edit file by <code>vi</code>, <code>vim</code> or 'gedit'. Maybe these tools are convenient to you, but those are inefficient and hard to maintain program for the development of big projet. PyCharm is one of the most popular Python IDEs. It provides <u>code analysis</u>, <u>a graphical debugger</u>, <u>an integrated unit tester</u>, integration with <u>version control systems</u> (VCSes), and supports <u>web development with Django</u> as well as <u>data science with Anaconda<u>. And, it is cross-platform, compatible with Windows, macOS and Linux versions. Also, it supports both Python 2 (2.7) and Python 3 (3.5 and above) versions. <a id="more"></a></p>
 <h2 id="installation">Installation</h2>
 <ul>
-<li><p><strong>Step 1.</strong> Download the <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> to your Ubuntu system <a id="more"></a></p></li>
+<li><p><strong>Step 1.</strong> Download the <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> to your Ubuntu system</p></li>
 <li><p><strong>Step 2.</strong> Unpack the pycharm-*.tar.gz file (The recommended installation location according to the filesystem hierarchy standard (FHS) is /opt.) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo tar xfz pycharm-*.tar.gz -C /opt/</span><br></pre></td></tr></table></figure></p></li>
 <li><p><strong>Step 3.</strong> Go to the bin subdirectory <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd /opt/pycharm-*/bin</span><br></pre></td></tr></table></figure></p></li>
 <li><p><strong>Step 4.</strong> Run pycharm.sh from the bin subdirectory <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ./pycharm.sh</span><br></pre></td></tr></table></figure></p></li>
@@ -1220,47 +1236,6 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
       </categories>
       <tags>
         <tag>Map(STL)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
-    <url>/posts/9e0f4e5/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Tutorial - Install Ryu in Ubuntu 16.04 with no failure</b></font>
-</p>
-<p><a href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It's very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet. <a id="more"></a></p>
-<h2 id="start-to-configure-and-install">Start to configure and install</h2>
-<ul>
-<li><strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-pip python-dev</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 4.</strong> Download Ryu source code from github <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ git clone git://github.com/osrg/ryu.git</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 5.</strong> <a href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ pip install networkx</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 6.</strong> Install Ryu <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python ./setup.py install</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 7.</strong> Execution and testing <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ryu-manager</span><br></pre></td></tr></table></figure> // If your installation is successful, the terminal will show some info. and stop to listening:
-<p style="background-color:#F0F0F0">
-loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_handler of OFPHandler
-</p>
-<hr />
-<p>
-<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error!</font>
-</p>
-<p>
-<b>Solution:</b>
-</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install -r tools/pip-requires</span><br></pre></td></tr></table></figure>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install six --upgrade</span><br></pre></td></tr></table></figure>
-<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font> <font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>   <b>SyntaxError: ivalid syntax</b></font><br> <b>Solution:</b> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd /usr/local/lib/python2.7/dist-packages/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo rm –rf oslo_config/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata</span><br></pre></td></tr></table></figure> From the above, the command is refered to:<br> http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd oslo.config</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python setup.py install</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Simulator</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-        <tag>SDN</tag>
-        <tag>Controller</tag>
       </tags>
   </entry>
   <entry>
@@ -1550,6 +1525,47 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
       </categories>
       <tags>
         <tag>Recursive_function</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
+    <url>/posts/9e0f4e5/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Tutorial - Install Ryu in Ubuntu 16.04 with no failure</b></font>
+</p>
+<p><a href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It's very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet. <a id="more"></a></p>
+<h2 id="start-to-configure-and-install">Start to configure and install</h2>
+<ul>
+<li><strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-pip python-dev</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 4.</strong> Download Ryu source code from github <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ git clone git://github.com/osrg/ryu.git</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 5.</strong> <a href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ pip install networkx</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 6.</strong> Install Ryu <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python ./setup.py install</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 7.</strong> Execution and testing <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ryu-manager</span><br></pre></td></tr></table></figure> // If your installation is successful, the terminal will show some info. and stop to listening:
+<p style="background-color:#F0F0F0">
+loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_handler of OFPHandler
+</p>
+<hr />
+<p>
+<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error!</font>
+</p>
+<p>
+<b>Solution:</b>
+</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install -r tools/pip-requires</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install six --upgrade</span><br></pre></td></tr></table></figure>
+<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font> <font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>   <b>SyntaxError: ivalid syntax</b></font><br> <b>Solution:</b> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd /usr/local/lib/python2.7/dist-packages/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo rm –rf oslo_config/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata</span><br></pre></td></tr></table></figure> From the above, the command is refered to:<br> http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd oslo.config</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python setup.py install</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Simulator</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>SDN</tag>
+        <tag>Controller</tag>
       </tags>
   </entry>
   <entry>

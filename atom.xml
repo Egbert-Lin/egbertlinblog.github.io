@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-20T03:30:43.883Z</updated>
+  <updated>2021-01-20T03:52:55.385Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,31 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>[LeetCode Road] Best Time to Buy and Sell Stock II</title>
-    <link href="https://egbert-yu-ting.github.io/posts/db875d74/"/>
-    <id>https://egbert-yu-ting.github.io/posts/db875d74/</id>
-    <published>2021-01-20T03:26:33.000Z</published>
-    <updated>2021-01-20T03:30:43.883Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;121. Best Time to Buy and Sell Stock II&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Stock" scheme="https://egbert-yu-ting.github.io/tags/Stock/"/>
-    
-  </entry>
   
   <entry>
     <title>Run PyCharm: Python development platform on Ubuntu / Ryu SDN</title>
@@ -534,6 +509,29 @@ Two binary trees are considered the same if they are structurally identical, and
     <category term="Vector" scheme="https://egbert-yu-ting.github.io/tags/Vector/"/>
     
     <category term="Call_by_reference" scheme="https://egbert-yu-ting.github.io/tags/Call-by-reference/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[LeetCode Road] Remove Duplicates from Sorted List</title>
+    <link href="https://egbert-yu-ting.github.io/posts/66cc46ab/"/>
+    <id>https://egbert-yu-ting.github.io/posts/66cc46ab/</id>
+    <published>2020-12-22T00:31:02.000Z</published>
+    <updated>2021-01-16T11:32:37.337Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;83. Remove Duplicates from Sorted List&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given a sorted linked list, delete all duplicates such that each element appear only once.</summary>
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+    <category term="ListNode" scheme="https://egbert-yu-ting.github.io/tags/ListNode/"/>
     
   </entry>
   

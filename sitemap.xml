@@ -9,13 +9,6 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/posts/db875d74/</loc>
-    
-    <lastmod>2021-01-20</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://egbert-yu-ting.github.io/posts/4755908e/</loc>
     
     <lastmod>2021-01-20</lastmod>
@@ -571,6 +564,20 @@
   </url>
   
   <url>
+    <loc>https://egbert-yu-ting.github.io/tags/SDN/</loc>
+    <lastmod>2021-01-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Controller/</loc>
+    <lastmod>2021-01-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://egbert-yu-ting.github.io/tags/search/</loc>
     <lastmod>2021-01-20</lastmod>
     <changefreq>daily</changefreq>
@@ -586,20 +593,6 @@
   
   <url>
     <loc>https://egbert-yu-ting.github.io/tags/Recursive-function/</loc>
-    <lastmod>2021-01-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://egbert-yu-ting.github.io/tags/SDN/</loc>
-    <lastmod>2021-01-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Controller/</loc>
     <lastmod>2021-01-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -685,14 +678,14 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/categories/recursion/</loc>
+    <loc>https://egbert-yu-ting.github.io/categories/simulator/</loc>
     <lastmod>2021-01-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/categories/simulator/</loc>
+    <loc>https://egbert-yu-ting.github.io/categories/recursion/</loc>
     <lastmod>2021-01-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

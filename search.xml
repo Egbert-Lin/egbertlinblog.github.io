@@ -528,13 +528,7 @@ The <strong>count-and-say</strong> sequence is a sequence of digit strings defin
 <p>You finish above procedures, <font color=#FF0000>if WIN10 can't boot anymore and show blue screen with error message: 0xd000000e</font></p>
 <ul>
 <li><strong>Reason:</strong> The installation creates a hybrid MBR which is completely unnecessary. Windows will not boot in EFI mode but in BIOS mode instead and crash.</li>
-<li><strong>Solution:</strong> Enter Mac OS X to open terminal
-<p style="background-color:#F0F0F0">
-$ sudo apt-get install gdisk
-</p>
-<p style="background-color:#F0F0F0">
-$ sudo gdisk /dev/sda0 ("sda0" depands on your primary partition)
-</p>
+<li><strong>Solution:</strong> Enter Mac OS X to open terminal <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install gdisk</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo gdisk /dev/sda0 (&quot;sda0&quot; depands on your primary partition)</span><br></pre></td></tr></table></figure>
 <p style="background-color:#F0F0F0">
 Type <b>p</b> to view the partition table to verify you're working on the correct disk
 </p>

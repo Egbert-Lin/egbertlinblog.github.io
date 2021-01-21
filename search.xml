@@ -1537,7 +1537,7 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
 </p>
 <h2 id="question">Question:</h2>
 <p>Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.</p>
-<p><strong>Note:</strong> For the purpose of this problem, we define empty string as valid palindrome.</p>
+<p><strong>Note:</strong> For the purpose of this problem, we define empty string as valid palindrome. <a id="more"></a></p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
 <b>Input:</b> "A man, a plan, a canal: Panama"<br> <b>Output:</b> true

@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-21T01:47:15.461Z</updated>
+  <updated>2021-01-21T01:48:55.210Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,17 +21,15 @@
     <link href="https://egbert-yu-ting.github.io/posts/1686f472/"/>
     <id>https://egbert-yu-ting.github.io/posts/1686f472/</id>
     <published>2021-01-21T01:08:36.000Z</published>
-    <updated>2021-01-21T01:47:15.461Z</updated>
+    <updated>2021-01-21T01:48:55.210Z</updated>
     
     
-      
-      
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6&quot;&gt;&lt;b&gt;125. Valid Palindrome&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given a string, determine if </summary>
-      
+&lt;p&gt;Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; For the purpose of this problem, we define empty string as valid palindrome.</summary>
     
     
     

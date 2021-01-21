@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-21T08:15:31.397Z</updated>
+  <updated>2021-01-21T08:15:43.286Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/f249b7a1/"/>
     <id>https://egbert-yu-ting.github.io/posts/f249b7a1/</id>
     <published>2021-01-21T06:23:18.000Z</published>
-    <updated>2021-01-21T08:15:31.397Z</updated>
+    <updated>2021-01-21T08:15:43.286Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
@@ -62,14 +62,14 @@
     <link href="https://egbert-yu-ting.github.io/posts/a10d34fe/"/>
     <id>https://egbert-yu-ting.github.io/posts/a10d34fe/</id>
     <published>2021-01-20T07:00:48.000Z</published>
-    <updated>2021-01-21T01:17:57.708Z</updated>
+    <updated>2021-01-21T08:40:17.117Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6&quot;&gt;&lt;b&gt;122. Best Time to Buy and Sell Stock II&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Say you have an array &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;prices&lt;/font&gt;&lt;/span&gt; for which the ith element is the price of a given stock on day i.&lt;br&gt; Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).&lt;br&gt; &lt;strong&gt;Note:&lt;/strong&gt; You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</summary>
+&lt;p&gt;Say you have an array &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;prices&lt;/font&gt;&lt;/span&gt; for which the ith element is the price of a given stock on day i.&lt;br&gt;</summary>
     
     
     
@@ -81,14 +81,14 @@
     <link href="https://egbert-yu-ting.github.io/posts/784045ef/"/>
     <id>https://egbert-yu-ting.github.io/posts/784045ef/</id>
     <published>2021-01-19T16:34:14.000Z</published>
-    <updated>2021-01-20T06:47:18.881Z</updated>
+    <updated>2021-01-21T08:39:38.789Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6&quot;&gt;&lt;b&gt;Tutorial - PyCharm Installation and build project environment for the development of Ryu controller&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;what-is-pycharm&quot;&gt;What is PyCharm?&lt;/h2&gt;
-&lt;p&gt;Are you developing python project on Ubuntu right now? When you are writing code, I guess that you edit file by &lt;code&gt;vi&lt;/code&gt;, &lt;code&gt;vim&lt;/code&gt; or &#39;gedit&#39;. Maybe these tools are convenient to you, but those are inefficient and hard to maintain program for the development of big projet.&lt;br&gt; PyCharm is one of the most popular Python IDEs. It provides &lt;u&gt;code analysis&lt;/u&gt;, &lt;u&gt;a graphical debugger&lt;/u&gt;, &lt;u&gt;an integrated unit tester&lt;/u&gt;, integration with &lt;u&gt;version control systems&lt;/u&gt; (VCSes), and supports &lt;u&gt;web development with Django&lt;/u&gt; as well as &lt;u&gt;data science with Anaconda&lt;/u&gt;.&lt;br&gt; And, it is cross-platform, compatible with Windows, macOS and Linux versions. Also, it supports both Python 2 (2.7) and Python 3 (3.5 and above) versions.</summary>
+&lt;p&gt;Are you developing python project on Ubuntu right now? When you are writing code, I guess that you edit file by &lt;code&gt;vi&lt;/code&gt;, &lt;code&gt;vim&lt;/code&gt; or &#39;gedit&#39;. Maybe these tools are convenient to you, but those are inefficient and hard to maintain program for the development of big projet.&lt;br&gt;</summary>
     
     
     

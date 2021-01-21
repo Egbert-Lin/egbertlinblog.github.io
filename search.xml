@@ -162,37 +162,6 @@ TThe number of nodes in the tree is in the range <span style="background-color:#
 ]]></content>
   </entry>
   <entry>
-    <title>[LeetCode Road] Binary Tree Level Order Traversal II</title>
-    <url>/posts/cac8b982/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>107. Binary Tree Level Order Traversal II</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a binary tree, return the <em>bottom-up level order</em> traversal of its nodes' values. (ie, from left to right, level by level from leaf to root). <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-For example: Given binary tree <span style="background-color:#F0F0F0"><font color=#808080>[3,9,20,null,null,15,7]</span></font>,
-<p style="background-color:#F0F0F0">
-   3<br>    / \<br>   9 20<br>    / \<br>    15  7
-</p>
-return its bottom-up level order traversal as:
-<p style="background-color:#F0F0F0">
-[<br>   [15,7],<br>   [9,20],<br>   [3]<br>]
-</p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: I made a big mistake, I always think the solution that find the deepest depth first, the go back to the root with each layers. I realized an efficient approach until I had refered to <a href="https://zxi.mytechroad.com/blog/tree/leetcode-107-binary-tree-level-order-traversal-ii/">Huahua's Tech Road</a>. You must understand how to implement a two dimensional vector first. Write a function as recursion, store each elements from top of tree. <code>res.size() &lt;= depth&gt;</code> is an important statement to expand 2D vector size. Then, we must go through every left &amp; right nodes and store it based on correspondingly depth. Finaly, let go back to original function, we must use reverse() to pass the answers.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; levelOrderBottom(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span> &lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line">        levelOrderBottom(root, <span class="number">0</span>, res);</span><br><span class="line">        reverse(res.begin(), res.end());</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">levelOrderBottom</span><span class="params">(TreeNode* root, <span class="keyword">int</span> depth, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">while</span>(res.size() &lt;= depth) res.push_back(&#123;&#125;);</span><br><span class="line">        res[depth].push_back(root-&gt;val);</span><br><span class="line">        levelOrderBottom(root-&gt;left, depth + <span class="number">1</span>, res);</span><br><span class="line">        levelOrderBottom(root-&gt;right, depth + <span class="number">1</span>, res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Recursion</tag>
-        <tag>STL</tag>
-        <tag>2D_Vector</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Best Time to Buy and Sell Stock</title>
     <url>/posts/a026a3d3/</url>
     <content><![CDATA[<p align="center">
@@ -232,6 +201,75 @@ return its bottom-up level order traversal as:
       <tags>
         <tag>Stock</tag>
         <tag>BruteForce</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Binary Tree Level Order Traversal II</title>
+    <url>/posts/cac8b982/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>107. Binary Tree Level Order Traversal II</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a binary tree, return the <em>bottom-up level order</em> traversal of its nodes' values. (ie, from left to right, level by level from leaf to root). <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+For example: Given binary tree <span style="background-color:#F0F0F0"><font color=#808080>[3,9,20,null,null,15,7]</span></font>,
+<p style="background-color:#F0F0F0">
+   3<br>    / \<br>   9 20<br>    / \<br>    15  7
+</p>
+return its bottom-up level order traversal as:
+<p style="background-color:#F0F0F0">
+[<br>   [15,7],<br>   [9,20],<br>   [3]<br>]
+</p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: I made a big mistake, I always think the solution that find the deepest depth first, the go back to the root with each layers. I realized an efficient approach until I had refered to <a href="https://zxi.mytechroad.com/blog/tree/leetcode-107-binary-tree-level-order-traversal-ii/">Huahua's Tech Road</a>. You must understand how to implement a two dimensional vector first. Write a function as recursion, store each elements from top of tree. <code>res.size() &lt;= depth&gt;</code> is an important statement to expand 2D vector size. Then, we must go through every left &amp; right nodes and store it based on correspondingly depth. Finaly, let go back to original function, we must use reverse() to pass the answers.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; levelOrderBottom(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span> &lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line">        levelOrderBottom(root, <span class="number">0</span>, res);</span><br><span class="line">        reverse(res.begin(), res.end());</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">levelOrderBottom</span><span class="params">(TreeNode* root, <span class="keyword">int</span> depth, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">while</span>(res.size() &lt;= depth) res.push_back(&#123;&#125;);</span><br><span class="line">        res[depth].push_back(root-&gt;val);</span><br><span class="line">        levelOrderBottom(root-&gt;left, depth + <span class="number">1</span>, res);</span><br><span class="line">        levelOrderBottom(root-&gt;right, depth + <span class="number">1</span>, res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Recursion</tag>
+        <tag>STL</tag>
+        <tag>2D_Vector</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Climbing Stairs</title>
+    <url>/posts/7af6a106/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>70. Climbing Stairs</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>You are climbing a staircase. It takes <span style="background-color:#F0F0F0"><font color=#808080>n</font></span> steps to reach the top.</p>
+<p>Each time you can either climb <span style="background-color:#F0F0F0"><font color=#808080>1</font></span> or <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> steps. In how many distinct ways can you climb to the top? <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> n = 2<br> <b>Output:</b> 2<br> <b>Explanation:</b> There are two ways to climb to the top.<br> 1. 1 step + 1 step<br> 2. 2 steps<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> n = 3<br> <b>Output:</b> 3<br> <b>Explanation:</b> There are three ways to climb to the top.<br> 1. 1 step + 1 step + 1 step<br> 2. 1 step + 2 steps<br> 3. 2 steps + 1 step<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= n &lt;= 45</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: We must find the reqular pattern. As example mentioned, n = 2 -&gt; output: 2, n = 3 -&gt; output: 3. You can derive n = 4, n = 5, ...ect. My answer is as below and you can get the reqular result: n = 4 -&gt; Output: 5 // 2 + 3 n = 5 -&gt; Output: 8 // 3 + 5 n = 6 -&gt; Output: 13 // 5 + 8 n = 7 -&gt; Output: 21 // 8 + 13 (Results: 1 2 3 5 8 13 21 ...) Isn't it like classical problem of <strong>Fibonacci Sequence</strong>? So, I directly think recursion can solve it. The approach is as below, but the recursion can't pass the submission, because it will show <u>Time Limit Exceeded</u> when n = 44.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">return</span> climbStairs(n - <span class="number">1</span>) + climbStairs(n - <span class="number">2</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea: The strategy of second approach is an iterator. We can use for loop instead of recursion. Very simple coding as below and it can pass the submission.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> prev = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> next = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++)&#123;</span><br><span class="line">            result = prev + next;</span><br><span class="line">            prev = next;</span><br><span class="line">            next = result;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Recursion</tag>
+        <tag>Fibonacci_Sequence</tag>
+        <tag>Iterator</tag>
       </tags>
   </entry>
   <entry>
@@ -496,6 +534,65 @@ The <strong>count-and-say</strong> sequence is a sequence of digit strings defin
       </tags>
   </entry>
   <entry>
+    <title>Shared partition between Mac OS X and Windows 10 [Save time]</title>
+    <url>/posts/4755908e/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Bootcamp: File sharing between Mac OS X and Windows 10 on MacBook Pro</b></font>
+</p>
+<p>Here are some reason you should consider deploying Windows on your Mac device. 1. More games with better performance in Windows OS. 2. Some Applications don't work in macOS or not support all functions. 3. Developers need to test projects in Windows OS.</p>
+<p>So, I shared my experience to save your time of installing Windows on MacBook Pro. <a id="more"></a> ## Hardward &amp; Software preparation + Hardware Product model: Macbook Pro 2017 + Software - Win10 ISO You can go to this url to downlaod ISO: https://www.microsoft.com/zh-tw/software-download/windows10 Choose version:Windows 10, Choose language: English and choose 64-bit version</p>
+<h2 id="use-bootcamp-to-install-win10">Use Bootcamp to install Win10</h2>
+<ul>
+<li><p><strong>Step 1.</strong> Launch Bootcamp Assistant from th Utilities folder in Applications. Then, load your WIN10 ISO and allocate appropriate disk size. <img src="bootcamp_1.png" /></p></li>
+<li><p><strong>Step 2.</strong> Wait for some time, the processing will download WIN10 support software. <img src="bootcamp_2.png" /></p></li>
+<li><p><strong>Step 3.</strong> Finally, you will see the WIN10 setup screen. <img src="bootcamp_3.png" /></p></li>
+<li><p><strong>Step 4.</strong> Enter "Explorer", you wil see <code>WININSTALL (D:)</code> and click <code>BootCamp folder</code> to execute setup program. (Don't choose anything else) <img src="bootcamp_4.png" /></p></li>
+</ul>
+<h2 id="partition-ntfs-for-file-sharing">Partition NTFS for file sharing</h2>
+<ul>
+<li><p><strong>Step 1.</strong> Shut down your Mac.</p></li>
+<li><p><strong>Step 2.</strong> Hold down the <code>Command and R keys</code> down and press the power button.</p></li>
+<li><p><strong>Step 3.</strong> Keep holding Command and R keys until the Apple logo appears on the screen.</p></li>
+<li><p><strong>Step 4.</strong> Then, you will see a screen saying macOS Utilities(or if your Mac is older, OS X Utilities).</p></li>
+<li><p><strong>Step 5.</strong> Choose "Disk Utility" <img src="bootcamp_5.png" /></p></li>
+<li><p><strong>Step 6.</strong> Choose "APPLE SSD ..." and click partition <img src="bootcamp_6.png" /></p></li>
+<li><p><strong>Step 7.</strong> Click '+' to new partition section <img src="bootcamp_7.png" /></p></li>
+<li><p><strong>Step 8.</strong> Suggest selecting the NTFS option <img src="bootcamp_8.png" /></p></li>
+<li><p><strong>Step 9.</strong> If the partition is succes, you will see the new partition section between Mac OS X and Windows 10</p></li>
+</ul>
+<h2 id="error---blue-screen-when-boot-windows-10">Error - blue screen when boot Windows 10</h2>
+<p>You finish above procedures, <font color=#FF0000>if WIN10 can't boot anymore and show blue screen with error message: 0xd000000e</font></p>
+<ul>
+<li><strong>Reason:</strong> The installation creates a hybrid MBR which is completely unnecessary. Windows will not boot in EFI mode but in BIOS mode instead and crash.</li>
+<li><strong>Solution:</strong> Enter Mac OS X to open terminal <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install gdisk</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo gdisk /dev/sda0 (&quot;sda0&quot; depands on your primary partition)</span><br></pre></td></tr></table></figure>
+<p style="background-color:#F0F0F0">
+Type <b>p</b> to view the partition table to verify you're working on the correct disk
+</p>
+<p style="background-color:#F0F0F0">
+Type <b>x</b> to enter the experts' menu
+</p>
+<p style="background-color:#F0F0F0">
+Type <b>n</b> to create an empty protective MBR
+</p>
+<p style="background-color:#F0F0F0">
+Type <b>w</b> to save your changes, You'll be asked to confirm this action
+</p>
+Finally, reboot you Mac and enter WIN10 OS successfully.</li>
+</ul>
+<h2 id="necessary-third-party-softwares">Necessary third party softwares</h2>
+<p>To enable Mac OS X can write data at shared partition, I provide some software infomations as below:<br> 1. <a href="https://osxfuse.github.io">OSXFUSE</a><br> 2. <a href="https://www.tuxera.com/company/open-source/">ntfs-3g</a></p>
+<p>Reference:<br> https://www.innoq.com/en/blog/triple-booting-a-mac/</p>
+]]></content>
+      <categories>
+        <category>Instruction</category>
+      </categories>
+      <tags>
+        <tag>MacOS_X</tag>
+        <tag>Windows10</tag>
+        <tag>Bootcamp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Maximum Depth of Binary Tree</title>
     <url>/posts/57b52472/</url>
     <content><![CDATA[<p align="center">
@@ -539,56 +636,6 @@ The number of nodes in the tree is in the range <span style="background-color:#F
       <tags>
         <tag>Tree</tag>
         <tag>Recursion</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Maximum Subarray</title>
-    <url>/posts/90ac56be/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>53. Maximum Subarray</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given an integer array <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span>, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
-<p><strong>Follow up:</strong> If you have figured out the <span style="background-color:#F0F0F0"><font color=#808080>O(n)</font></span> solution, try coding another solution using the <strong>divide and conquer</strong> approach, which is more subtle. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [-2,1,-3,4,-1,2,1,-5,4]<br><b>Output:</b> 6<br><b>Explanation:</b> [4,-1,2,1] has the largest sum = 6.<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [1]<br><b>Output:</b> 1<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [0]<br><b>Output:</b> 0<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [-1]<br><b>Output:</b> -1<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [-2147483647]<br><b>Output:</b> -2147483647<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= nums.length &lt;= 2 * 10^4</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-2^31 &lt;= nums[i] &lt;= 2^31 - 1</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: It is a brute force approach. Use 2 loop to calculate the sum for each elements.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> len = nums.size();</span><br><span class="line">        <span class="keyword">if</span>(len == <span class="number">1</span>) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> maxValue = INT_MIN;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; len; j++)&#123;</span><br><span class="line">                sum += nums[j];</span><br><span class="line">                maxValue = max(maxValue, sum);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxValue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea: This is an efficient method, use only one loop. <code>sum += nums[i]</code> means the cumulative sum. <code>sum = max(sum, nums[i])</code> means the maximum of sum between the cumulative sum or current index of value. <code>maxValue = max(maxValue, sum)</code> means recording the maximal value.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxValue = INT_MIN, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            sum = max(sum, nums[i]);</span><br><span class="line">            maxValue = max(maxValue, sum);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxValue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>BruteForce</tag>
-        <tag>Vector</tag>
       </tags>
   </entry>
   <entry>
@@ -851,6 +898,56 @@ Given the below binary tree and <span style="background-color:#F0F0F0"><font col
       <tags>
         <tag>Tree</tag>
         <tag>Recursion</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Maximum Subarray</title>
+    <url>/posts/90ac56be/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>53. Maximum Subarray</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given an integer array <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span>, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
+<p><strong>Follow up:</strong> If you have figured out the <span style="background-color:#F0F0F0"><font color=#808080>O(n)</font></span> solution, try coding another solution using the <strong>divide and conquer</strong> approach, which is more subtle. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [-2,1,-3,4,-1,2,1,-5,4]<br><b>Output:</b> 6<br><b>Explanation:</b> [4,-1,2,1] has the largest sum = 6.<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [1]<br><b>Output:</b> 1<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [0]<br><b>Output:</b> 0<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [-1]<br><b>Output:</b> -1<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [-2147483647]<br><b>Output:</b> -2147483647<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= nums.length &lt;= 2 * 10^4</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-2^31 &lt;= nums[i] &lt;= 2^31 - 1</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea: It is a brute force approach. Use 2 loop to calculate the sum for each elements.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> len = nums.size();</span><br><span class="line">        <span class="keyword">if</span>(len == <span class="number">1</span>) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> maxValue = INT_MIN;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; len; j++)&#123;</span><br><span class="line">                sum += nums[j];</span><br><span class="line">                maxValue = max(maxValue, sum);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxValue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea: This is an efficient method, use only one loop. <code>sum += nums[i]</code> means the cumulative sum. <code>sum = max(sum, nums[i])</code> means the maximum of sum between the cumulative sum or current index of value. <code>maxValue = max(maxValue, sum)</code> means recording the maximal value.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxValue = INT_MIN, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            sum = max(sum, nums[i]);</span><br><span class="line">            maxValue = max(maxValue, sum);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxValue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>BruteForce</tag>
+        <tag>Vector</tag>
       </tags>
   </entry>
   <entry>
@@ -1303,40 +1400,41 @@ TThe number of nodes in both trees is in the range <span style="background-color
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Sqrt(x)</title>
-    <url>/posts/72b31d68/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>69. Sqrt(x)</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a non-negative integer <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>, compute and return <em>the square root of</em> <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>.</p>
-<p>Since the return type is an integer, the decimal digits are <b>truncated</b>, and only <b>the integer part</b> of the result is returned. <a id="more"></a></p>
+    <title>Single Number</title>
+    <url>/posts/f249b7a1/</url>
+    <content><![CDATA[<h2 id="question">Question:</h2>
+<p>Given a <strong>non-empty</strong> array of integers nums, every element appears twice except for one. Find that single one.</p>
+<p><strong>Follow up:</strong> Could you implement a solution with a linear runtime complexity and without using extra memory? <a id="more"></a></p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> x = 4<br><b>Output:</b> 2<br>
+<b>Input:</b> nums = [2,2,1]<br> <b>Output:</b> 1
 </p>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> x = 8<br> <b>Output:</b> 2<br> <b>Explanation:</b> The square root of 8 is 2.82842..., and since the decimal part is truncated, 2 is returned.<br>
+<b>Input:</b> nums = [4,1,2,1,2]<br> <b>Output:</b> 4
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [1]<br> <b>Output:</b> 1
 </p>
 <strong>Constraints:</strong> <strong>
 <li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= x &lt;= 2^31 - 1</font></span>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= nums.length &lt;= 3 * 10^4</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-3 * 10^4 &lt;= nums[i] &lt;= 3 * 10^4</font></span>
+</li>
+</strong> <strong>
+<li>
+Each element in the array appears twice except for one element which appears only once.
 </li>
 <p></strong></p>
-<h2 id="source-code">Source Code</h2>
+<h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: My intuition is divided divisor that is start from 1, we can get remainder, if remainder is equal to divisor, return the divisor; if divisor is bigger than remainder, retrurn the (divisor - 1). This method can work, but it wastes much time.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> divisor = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(divisor &lt;= x)&#123;</span><br><span class="line">            <span class="keyword">int</span> remainder = x / divisor;</span><br><span class="line">            <span class="keyword">if</span>(divisor == remainder) <span class="keyword">return</span> divisor;</span><br><span class="line">            <span class="keyword">if</span>(divisor &gt; remainder) <span class="keyword">return</span> divisor - <span class="number">1</span>;</span><br><span class="line">            divisor ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> divisor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea: We can use binary search to improve time complexity. A variable of l means left index, a variable of r means right index and a variable of m means middle index. l must be set 1, because <code>while(l &lt;= r)</code> can filter <code>x = 0</code> test case. We use <code>m * m</code> to find which value can match x.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> l = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">long</span> r = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(x) ;</span><br><span class="line">        <span class="keyword">while</span>(l &lt;= r)&#123;</span><br><span class="line">            <span class="keyword">long</span> m = (l + r) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> ( m * m == x) <span class="keyword">return</span> m;</span><br><span class="line">            <span class="keyword">if</span>( m * m &gt; x)&#123;</span><br><span class="line">                r = m - <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                l = m + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Idea: I need a pool to store elements, those are recorded by a counter. Hence, I remember one of LeetCode question I had done before. The question of <a href="https://egbert-yu-ting.github.io/posts/b98c8b25/">Two Sum</a> solution is <strong>hash table</strong>. A Hash table (Hash Map) is supporting generic type key-value pairs with the templates.<br></p>
+<p>Therefore, the elements of nums vector will be stored into map&lt;int,int&gt;, I set the element as a key (unique), give 1 as a value (means a counter). If the element is exist in map already, a counter will be added 1.<br></p>
+<p>Finally, I use a loop to check each pairs whether a counter is equal to 1. Remember to return a key of pair.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.size() == <span class="number">1</span>) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mapNum;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">        <span class="keyword">int</span> ans;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            it = mapNum.find(nums[i]);</span><br><span class="line">            <span class="keyword">if</span>(it == mapNum.end())&#123;</span><br><span class="line">                mapNum.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(nums[i], <span class="number">1</span>));</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                it-&gt;second += <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">for</span>(it = mapNum.begin(); it != mapNum.end(); it++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(it-&gt;second == <span class="number">1</span>)&#123;</span><br><span class="line">                ans = it-&gt;first;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Binary_search</tag>
-      </tags>
   </entry>
   <entry>
     <title>[LeetCode Road] Symmetric Tree</title>
@@ -1725,100 +1823,39 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
       </tags>
   </entry>
   <entry>
-    <title>Shared partition between Mac OS X and Windows 10 [Save time]</title>
-    <url>/posts/4755908e/</url>
+    <title>[LeetCode Road] Sqrt(x)</title>
+    <url>/posts/72b31d68/</url>
     <content><![CDATA[<p align="center">
-<font size="6"><b>Bootcamp: File sharing between Mac OS X and Windows 10 on MacBook Pro</b></font>
-</p>
-<p>Here are some reason you should consider deploying Windows on your Mac device. 1. More games with better performance in Windows OS. 2. Some Applications don't work in macOS or not support all functions. 3. Developers need to test projects in Windows OS.</p>
-<p>So, I shared my experience to save your time of installing Windows on MacBook Pro. <a id="more"></a> ## Hardward &amp; Software preparation + Hardware Product model: Macbook Pro 2017 + Software - Win10 ISO You can go to this url to downlaod ISO: https://www.microsoft.com/zh-tw/software-download/windows10 Choose version:Windows 10, Choose language: English and choose 64-bit version</p>
-<h2 id="use-bootcamp-to-install-win10">Use Bootcamp to install Win10</h2>
-<ul>
-<li><p><strong>Step 1.</strong> Launch Bootcamp Assistant from th Utilities folder in Applications. Then, load your WIN10 ISO and allocate appropriate disk size. <img src="bootcamp_1.png" /></p></li>
-<li><p><strong>Step 2.</strong> Wait for some time, the processing will download WIN10 support software. <img src="bootcamp_2.png" /></p></li>
-<li><p><strong>Step 3.</strong> Finally, you will see the WIN10 setup screen. <img src="bootcamp_3.png" /></p></li>
-<li><p><strong>Step 4.</strong> Enter "Explorer", you wil see <code>WININSTALL (D:)</code> and click <code>BootCamp folder</code> to execute setup program. (Don't choose anything else) <img src="bootcamp_4.png" /></p></li>
-</ul>
-<h2 id="partition-ntfs-for-file-sharing">Partition NTFS for file sharing</h2>
-<ul>
-<li><p><strong>Step 1.</strong> Shut down your Mac.</p></li>
-<li><p><strong>Step 2.</strong> Hold down the <code>Command and R keys</code> down and press the power button.</p></li>
-<li><p><strong>Step 3.</strong> Keep holding Command and R keys until the Apple logo appears on the screen.</p></li>
-<li><p><strong>Step 4.</strong> Then, you will see a screen saying macOS Utilities(or if your Mac is older, OS X Utilities).</p></li>
-<li><p><strong>Step 5.</strong> Choose "Disk Utility" <img src="bootcamp_5.png" /></p></li>
-<li><p><strong>Step 6.</strong> Choose "APPLE SSD ..." and click partition <img src="bootcamp_6.png" /></p></li>
-<li><p><strong>Step 7.</strong> Click '+' to new partition section <img src="bootcamp_7.png" /></p></li>
-<li><p><strong>Step 8.</strong> Suggest selecting the NTFS option <img src="bootcamp_8.png" /></p></li>
-<li><p><strong>Step 9.</strong> If the partition is succes, you will see the new partition section between Mac OS X and Windows 10</p></li>
-</ul>
-<h2 id="error---blue-screen-when-boot-windows-10">Error - blue screen when boot Windows 10</h2>
-<p>You finish above procedures, <font color=#FF0000>if WIN10 can't boot anymore and show blue screen with error message: 0xd000000e</font></p>
-<ul>
-<li><strong>Reason:</strong> The installation creates a hybrid MBR which is completely unnecessary. Windows will not boot in EFI mode but in BIOS mode instead and crash.</li>
-<li><strong>Solution:</strong> Enter Mac OS X to open terminal <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install gdisk</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo gdisk /dev/sda0 (&quot;sda0&quot; depands on your primary partition)</span><br></pre></td></tr></table></figure>
-<p style="background-color:#F0F0F0">
-Type <b>p</b> to view the partition table to verify you're working on the correct disk
-</p>
-<p style="background-color:#F0F0F0">
-Type <b>x</b> to enter the experts' menu
-</p>
-<p style="background-color:#F0F0F0">
-Type <b>n</b> to create an empty protective MBR
-</p>
-<p style="background-color:#F0F0F0">
-Type <b>w</b> to save your changes, You'll be asked to confirm this action
-</p>
-Finally, reboot you Mac and enter WIN10 OS successfully.</li>
-</ul>
-<h2 id="necessary-third-party-softwares">Necessary third party softwares</h2>
-<p>To enable Mac OS X can write data at shared partition, I provide some software infomations as below:<br> 1. <a href="https://osxfuse.github.io">OSXFUSE</a><br> 2. <a href="https://www.tuxera.com/company/open-source/">ntfs-3g</a></p>
-<p>Reference:<br> https://www.innoq.com/en/blog/triple-booting-a-mac/</p>
-]]></content>
-      <categories>
-        <category>Instruction</category>
-      </categories>
-      <tags>
-        <tag>MacOS_X</tag>
-        <tag>Windows10</tag>
-        <tag>Bootcamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Climbing Stairs</title>
-    <url>/posts/7af6a106/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>70. Climbing Stairs</b></font>
+<font size="6"><b>69. Sqrt(x)</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>You are climbing a staircase. It takes <span style="background-color:#F0F0F0"><font color=#808080>n</font></span> steps to reach the top.</p>
-<p>Each time you can either climb <span style="background-color:#F0F0F0"><font color=#808080>1</font></span> or <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> steps. In how many distinct ways can you climb to the top? <a id="more"></a></p>
+<p>Given a non-negative integer <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>, compute and return <em>the square root of</em> <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>.</p>
+<p>Since the return type is an integer, the decimal digits are <b>truncated</b>, and only <b>the integer part</b> of the result is returned. <a id="more"></a></p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> n = 2<br> <b>Output:</b> 2<br> <b>Explanation:</b> There are two ways to climb to the top.<br> 1. 1 step + 1 step<br> 2. 2 steps<br>
+<b>Input:</b> x = 4<br><b>Output:</b> 2<br>
 </p>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> n = 3<br> <b>Output:</b> 3<br> <b>Explanation:</b> There are three ways to climb to the top.<br> 1. 1 step + 1 step + 1 step<br> 2. 1 step + 2 steps<br> 3. 2 steps + 1 step<br>
+<b>Input:</b> x = 8<br> <b>Output:</b> 2<br> <b>Explanation:</b> The square root of 8 is 2.82842..., and since the decimal part is truncated, 2 is returned.<br>
 </p>
 <strong>Constraints:</strong> <strong>
 <li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= n &lt;= 45</font></span>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= x &lt;= 2^31 - 1</font></span>
 </li>
 <p></strong></p>
-<h2 id="source-code">Source code</h2>
+<h2 id="source-code">Source Code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: We must find the reqular pattern. As example mentioned, n = 2 -&gt; output: 2, n = 3 -&gt; output: 3. You can derive n = 4, n = 5, ...ect. My answer is as below and you can get the reqular result: n = 4 -&gt; Output: 5 // 2 + 3 n = 5 -&gt; Output: 8 // 3 + 5 n = 6 -&gt; Output: 13 // 5 + 8 n = 7 -&gt; Output: 21 // 8 + 13 (Results: 1 2 3 5 8 13 21 ...) Isn't it like classical problem of <strong>Fibonacci Sequence</strong>? So, I directly think recursion can solve it. The approach is as below, but the recursion can't pass the submission, because it will show <u>Time Limit Exceeded</u> when n = 44.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">return</span> climbStairs(n - <span class="number">1</span>) + climbStairs(n - <span class="number">2</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Idea: My intuition is divided divisor that is start from 1, we can get remainder, if remainder is equal to divisor, return the divisor; if divisor is bigger than remainder, retrurn the (divisor - 1). This method can work, but it wastes much time.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> divisor = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(divisor &lt;= x)&#123;</span><br><span class="line">            <span class="keyword">int</span> remainder = x / divisor;</span><br><span class="line">            <span class="keyword">if</span>(divisor == remainder) <span class="keyword">return</span> divisor;</span><br><span class="line">            <span class="keyword">if</span>(divisor &gt; remainder) <span class="keyword">return</span> divisor - <span class="number">1</span>;</span><br><span class="line">            divisor ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> divisor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea: The strategy of second approach is an iterator. We can use for loop instead of recursion. Very simple coding as below and it can pass the submission.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> prev = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> next = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++)&#123;</span><br><span class="line">            result = prev + next;</span><br><span class="line">            prev = next;</span><br><span class="line">            next = result;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Idea: We can use binary search to improve time complexity. A variable of l means left index, a variable of r means right index and a variable of m means middle index. l must be set 1, because <code>while(l &lt;= r)</code> can filter <code>x = 0</code> test case. We use <code>m * m</code> to find which value can match x.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> l = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">long</span> r = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(x) ;</span><br><span class="line">        <span class="keyword">while</span>(l &lt;= r)&#123;</span><br><span class="line">            <span class="keyword">long</span> m = (l + r) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> ( m * m == x) <span class="keyword">return</span> m;</span><br><span class="line">            <span class="keyword">if</span>( m * m &gt; x)&#123;</span><br><span class="line">                r = m - <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                l = m + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>LeetCode-Easy</category>
       </categories>
       <tags>
-        <tag>Recursion</tag>
-        <tag>Fibonacci_Sequence</tag>
-        <tag>Iterator</tag>
+        <tag>Binary_search</tag>
       </tags>
   </entry>
 </search>

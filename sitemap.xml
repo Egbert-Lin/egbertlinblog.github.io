@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://egbert-yu-ting.github.io/posts/f249b7a1/</loc>
+    
+    <lastmod>2021-01-21</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://egbert-yu-ting.github.io/posts/1686f472/</loc>
     
     <lastmod>2021-01-21</lastmod>
@@ -396,6 +403,20 @@
   </url>
   
   <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Stock/</loc>
+    <lastmod>2021-01-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/BruteForce/</loc>
+    <lastmod>2021-01-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://egbert-yu-ting.github.io/tags/STL/</loc>
     <lastmod>2021-01-21</lastmod>
     <changefreq>daily</changefreq>
@@ -410,14 +431,14 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Stock/</loc>
+    <loc>https://egbert-yu-ting.github.io/tags/Fibonacci-Sequence/</loc>
     <lastmod>2021-01-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/BruteForce/</loc>
+    <loc>https://egbert-yu-ting.github.io/tags/Iterator/</loc>
     <lastmod>2021-01-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -467,6 +488,27 @@
   
   <url>
     <loc>https://egbert-yu-ting.github.io/tags/Reverse-order/</loc>
+    <lastmod>2021-01-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/MacOS-X/</loc>
+    <lastmod>2021-01-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Windows10/</loc>
+    <lastmod>2021-01-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Bootcamp/</loc>
     <lastmod>2021-01-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -564,13 +606,6 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Binary-search/</loc>
-    <lastmod>2021-01-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://egbert-yu-ting.github.io/tags/Recursive-function/</loc>
     <lastmod>2021-01-21</lastmod>
     <changefreq>daily</changefreq>
@@ -627,35 +662,7 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/MacOS-X/</loc>
-    <lastmod>2021-01-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Windows10/</loc>
-    <lastmod>2021-01-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Bootcamp/</loc>
-    <lastmod>2021-01-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Fibonacci-Sequence/</loc>
-    <lastmod>2021-01-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Iterator/</loc>
+    <loc>https://egbert-yu-ting.github.io/tags/Binary-search/</loc>
     <lastmod>2021-01-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

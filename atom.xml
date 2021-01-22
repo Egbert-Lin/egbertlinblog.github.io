@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-22T00:35:22.449Z</updated>
+  <updated>2021-01-22T01:29:31.827Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/f249b7a1/"/>
     <id>https://egbert-yu-ting.github.io/posts/f249b7a1/</id>
     <published>2021-01-21T06:23:18.000Z</published>
-    <updated>2021-01-22T00:35:22.449Z</updated>
+    <updated>2021-01-22T01:29:31.827Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
@@ -32,6 +32,8 @@
     
     <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
     
+    
+    <category term="Logical_Operators" scheme="https://egbert-yu-ting.github.io/tags/Logical-Operators/"/>
     
     <category term="Map(STL)" scheme="https://egbert-yu-ting.github.io/tags/Map-STL/"/>
     
@@ -66,7 +68,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/a10d34fe/"/>
     <id>https://egbert-yu-ting.github.io/posts/a10d34fe/</id>
     <published>2021-01-20T07:00:48.000Z</published>
-    <updated>2021-01-22T00:27:43.460Z</updated>
+    <updated>2021-01-22T01:32:21.931Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -116,7 +118,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/a026a3d3/"/>
     <id>https://egbert-yu-ting.github.io/posts/a026a3d3/</id>
     <published>2021-01-18T15:28:03.000Z</published>
-    <updated>2021-01-22T00:27:52.581Z</updated>
+    <updated>2021-01-22T01:32:38.566Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -218,7 +220,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/b3e1ca12/"/>
     <id>https://egbert-yu-ting.github.io/posts/b3e1ca12/</id>
     <published>2021-01-15T02:13:15.000Z</published>
-    <updated>2021-01-22T00:27:31.703Z</updated>
+    <updated>2021-01-22T01:31:49.781Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -273,7 +275,7 @@ For this problem, a height-balanced binary tree is defined as:
     <link href="https://egbert-yu-ting.github.io/posts/17bf1818/"/>
     <id>https://egbert-yu-ting.github.io/posts/17bf1818/</id>
     <published>2021-01-08T02:44:56.000Z</published>
-    <updated>2021-01-22T00:28:16.160Z</updated>
+    <updated>2021-01-22T01:35:08.573Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -430,7 +432,7 @@ For this problem, a height-balanced binary tree is defined as:
     <link href="https://egbert-yu-ting.github.io/posts/cac8b982/"/>
     <id>https://egbert-yu-ting.github.io/posts/cac8b982/</id>
     <published>2020-12-30T00:38:38.000Z</published>
-    <updated>2021-01-22T00:28:03.492Z</updated>
+    <updated>2021-01-22T01:33:00.701Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;

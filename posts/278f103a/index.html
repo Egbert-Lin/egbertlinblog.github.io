@@ -31,7 +31,7 @@
 <meta property="og:description" content="Command line: &quot;hexo d&quot; and you got error message: Please tell me who you are.  Full error message info: Please tell me who you are. Run git config --global user.email “you@example.com” git config --g">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-30T07:41:02.000Z">
-<meta property="article:modified_time" content="2021-01-12T02:38:25.300Z">
+<meta property="article:modified_time" content="2021-01-22T01:36:50.123Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="Tech">
 <meta name="twitter:card" content="summary">
@@ -385,7 +385,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-12 10:38:25" itemprop="dateModified" datetime="2021-01-12T10:38:25+08:00">2021-01-12</time>
+        <time title="Modified: 2021-01-22 09:36:50" itemprop="dateModified" datetime="2021-01-22T09:36:50+08:00">2021-01-22</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -413,15 +413,15 @@
 <h3 id="full-error-message-info">Full error message info:</h3>
 <p><font color=#FF0000>Please tell me who you are.</p>
 <p>Run</p>
-<p>git config --global user.email “you@example.com” git config --global user.name “Your Name”</p>
-<p>to set your account’s default identity. Omit --global to set the identity only in this repository.</p>
-<p>fatal: unable to auto-detect email address (got ...) error: src refspec HEAD does not match any. error: failed to push some refs to(your ...github.io)</font> ***</p>
-<p>When I ran "hexo d" command, the deployment was stuck! <a id="more"></a> The reason was I updated my mac OS a few days age. Now, the system can't distinguish your indentity.</p>
+<p>git config --global user.email “you@example.com”<br> git config --global user.name “Your Name”<br></p>
+<p>to set your account’s default identity.<br> Omit --global to set the identity only in this repository.<br></p>
+<p>fatal: unable to auto-detect email address (got ...)<br> error: src refspec HEAD does not match any.<br> error: failed to push some refs to(your ...github.io)</font> ***</p>
+<p>When I ran "hexo d" command, the deployment was stuck!<br> <a id="more"></a> The reason was I updated my mac OS a few days age.<br> Now, the system can't distinguish your indentity.<br></p>
 <p>So, the solution can solve it:</p>
 <h3 id="solution">Solution:</h3>
-<p>Input commands: 1) git config --global user.email "email" //Your github email address(https://username.github.io)</p>
+<p>Input commands:<br> 1) git config --global user.email "email"<br> //Your github email address(https://username.github.io)<br></p>
 <ol start="2" type="1">
-<li>git config --global user.name "username" //(your nickname、github's username or anyone you name it) only English!</li>
+<li>git config --global user.name "username"<br> //(your nickname、github's username or anyone you name it) only English!</li>
 </ol>
 
     </div>

@@ -31,8 +31,9 @@
 <meta property="og:description" content="Question: Given a non-empty array of integers nums, every element appears twice except for one. Find that single one. Follow up: Could you implement a solution with a linear runtime complexity and wit">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-21T06:23:18.000Z">
-<meta property="article:modified_time" content="2021-01-22T00:35:22.449Z">
+<meta property="article:modified_time" content="2021-01-22T01:29:31.827Z">
 <meta property="article:author" content="EgbertLin">
+<meta property="article:tag" content="Logical_Operators">
 <meta property="article:tag" content="Map(STL)">
 <meta name="twitter:card" content="summary">
 
@@ -226,7 +227,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#question"><span class="nav-number">1.</span> <span class="nav-text">Question:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example"><span class="nav-number">2.</span> <span class="nav-text">Example:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source-code"><span class="nav-number">3.</span> <span class="nav-text">Source code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#version-1"><span class="nav-number">3.1.</span> <span class="nav-text">Version 1</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#question"><span class="nav-number">1.</span> <span class="nav-text">Question:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example"><span class="nav-number">2.</span> <span class="nav-text">Example:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source-code"><span class="nav-number">3.</span> <span class="nav-text">Source code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#version-1"><span class="nav-number">3.1.</span> <span class="nav-text">Version 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#version-2"><span class="nav-number">3.2.</span> <span class="nav-text">Version 2</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -385,7 +386,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-22 08:35:22" itemprop="dateModified" datetime="2021-01-22T08:35:22+08:00">2021-01-22</time>
+        <time title="Modified: 2021-01-22 09:29:31" itemprop="dateModified" datetime="2021-01-22T09:29:31+08:00">2021-01-22</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -435,10 +436,16 @@ Each element in the array appears twice except for one element which appears onl
 <p></strong></p>
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: I need a pool to store elements, those are recorded by a counter. Hence, I remember one of LeetCode question I had done before. The question of <a href="https://egbert-yu-ting.github.io/posts/b98c8b25/">Two Sum</a> solution is <strong>hash table</strong>. A Hash table (Hash Map) is supporting generic type key-value pairs with the templates.<br></p>
+<p>Idea:<br> I need a pool to store elements, those are recorded by a counter. Hence, I remember one of LeetCode question I had done before. The question of <a href="https://egbert-yu-ting.github.io/posts/b98c8b25/">Two Sum</a> solution is <strong>hash table</strong>. A Hash table (Hash Map) is supporting generic type key-value pairs with the templates.<br></p>
 <p>Therefore, the elements of nums vector will be stored into map&lt;int,int&gt;, I set the element as a key (unique), give 1 as a value (means a counter). If the element is exist in map already, a counter will be added 1.<br></p>
 <p>Finally, I use a loop to check each pairs whether a counter is equal to 1. Remember to return a key of pair.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.size() == <span class="number">1</span>) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mapNum;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">        <span class="keyword">int</span> ans;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            it = mapNum.find(nums[i]);</span><br><span class="line">            <span class="keyword">if</span>(it == mapNum.end())&#123;</span><br><span class="line">                mapNum.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(nums[i], <span class="number">1</span>));</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                it-&gt;second += <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">for</span>(it = mapNum.begin(); it != mapNum.end(); it++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(it-&gt;second == <span class="number">1</span>)&#123;</span><br><span class="line">                ans = it-&gt;first;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<br> This is an optimal algorithm that refered to internet. A Logical operator is very impressive method to solve it.<br></p>
+<p>Exclusive or (<code>XOR</code>) is one of a logicl operator that outputs is true (=1) only when two inputs differ. On the contrary, outputs is false (=0) only when the two inputs are the same.<br></p>
+<p>E.g.,<br>    1 0<br> <u>XOR 1 0</u><br>    0 0<br></p>
+<p>Hence, we can do XOR for each elements and the result appears only once.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            res ^= nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -465,6 +472,7 @@ Each element in the array appears twice except for one element which appears onl
 </div>
 
           <div class="post-tags">
+              <a href="/tags/Logical-Operators/" rel="tag"><i class="fa fa-tag"></i> Logical_Operators</a>
               <a href="/tags/Map-STL/" rel="tag"><i class="fa fa-tag"></i> Map(STL)</a>
           </div>
 

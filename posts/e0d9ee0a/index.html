@@ -32,7 +32,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/e0d9ee0a/38_example.png">
 <meta property="article:published_time" content="2020-12-10T07:06:04.000Z">
-<meta property="article:modified_time" content="2021-01-22T00:28:22.746Z">
+<meta property="article:modified_time" content="2021-01-22T01:35:35.373Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="String">
 <meta name="twitter:card" content="summary">
@@ -387,7 +387,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-22 08:28:22" itemprop="dateModified" datetime="2021-01-22T08:28:22+08:00">2021-01-22</time>
+        <time title="Modified: 2021-01-22 09:35:35" itemprop="dateModified" datetime="2021-01-22T09:35:35+08:00">2021-01-22</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -436,7 +436,8 @@ The <strong>count-and-say</strong> sequence is a sequence of digit strings defin
 <p></strong></p>
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: It is a sticky problem for me, my methods always got Time Limit Exceeded. I had no choice but to refer to <a target="_blank" rel="noopener" href="https://zxi.mytechroad.com/blog/simulation/leetcode-38-count-and-say/">Huahua's Tech Road</a>. Declare a string consists 1 character, if n = 1, return a string. <code>record</code> as a index, it starts from 0. We must check <code>res[record] != res[j]</code>, use <code>j - count</code> we can get number of the same characters. Finally, use temporary string to store the results.</p>
+<p>Idea:<br> It is a sticky problem for me, my methods always got Time Limit Exceeded. I had no choice but to refer to <a target="_blank" rel="noopener" href="https://zxi.mytechroad.com/blog/simulation/leetcode-38-count-and-say/">Huahua's Tech Road</a>.<br></p>
+<p>Declare a string consists 1 character, if n = 1, return a string. <code>record</code> as a index, it starts from 0. We must check <code>res[record] != res[j]</code>, use <code>j - count</code> we can get number of the same characters. Finally, use temporary string to store the results.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">countAndSay</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> res = <span class="string">&quot;1&quot;</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="built_in">string</span> temp = <span class="string">&quot;&quot;</span>;</span><br><span class="line">            <span class="keyword">int</span> record = <span class="number">0</span>, len = res.length();</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(res[record] != res[j] || j == len)&#123;</span><br><span class="line">                    <span class="keyword">int</span> count = j - record;</span><br><span class="line">                    temp += <span class="string">&#x27;0&#x27;</span> + count;</span><br><span class="line">                    temp += res[record];</span><br><span class="line">                    record = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            res = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>

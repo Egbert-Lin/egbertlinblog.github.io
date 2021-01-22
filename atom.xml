@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-21T08:15:43.286Z</updated>
+  <updated>2021-01-22T00:35:22.449Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Single Number</title>
+    <title>[LeetCode Road] Single Number - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/f249b7a1/"/>
     <id>https://egbert-yu-ting.github.io/posts/f249b7a1/</id>
     <published>2021-01-21T06:23:18.000Z</published>
-    <updated>2021-01-21T08:15:43.286Z</updated>
+    <updated>2021-01-22T00:35:22.449Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
@@ -30,15 +30,19 @@
     
     
     
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+    <category term="Map(STL)" scheme="https://egbert-yu-ting.github.io/tags/Map-STL/"/>
     
   </entry>
   
   <entry>
-    <title>[LeetCode Road]Valid Palindrome</title>
+    <title>[LeetCode Road] Valid Palindromev - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/1686f472/"/>
     <id>https://egbert-yu-ting.github.io/posts/1686f472/</id>
     <published>2021-01-21T01:08:36.000Z</published>
-    <updated>2021-01-21T01:59:16.315Z</updated>
+    <updated>2021-01-22T00:34:19.082Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -58,11 +62,11 @@
   </entry>
   
   <entry>
-    <title>Best Time to Buy and Sell Stock II</title>
+    <title>Best Time to Buy and Sell Stock II - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/a10d34fe/"/>
     <id>https://egbert-yu-ting.github.io/posts/a10d34fe/</id>
     <published>2021-01-20T07:00:48.000Z</published>
-    <updated>2021-01-21T08:42:50.099Z</updated>
+    <updated>2021-01-22T00:27:43.460Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -81,11 +85,11 @@
   </entry>
   
   <entry>
-    <title>Run PyCharm: Python development platform on Ubuntu / Ryu SDN</title>
+    <title>Run PyCharm: Python development platform on Ubuntu (Ryu SDN)</title>
     <link href="https://egbert-yu-ting.github.io/posts/784045ef/"/>
     <id>https://egbert-yu-ting.github.io/posts/784045ef/</id>
     <published>2021-01-19T16:34:14.000Z</published>
-    <updated>2021-01-21T08:39:38.789Z</updated>
+    <updated>2021-01-22T00:32:12.774Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -108,11 +112,11 @@
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Best Time to Buy and Sell Stock</title>
+    <title>[LeetCode Road] Best Time to Buy and Sell Stock - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/a026a3d3/"/>
     <id>https://egbert-yu-ting.github.io/posts/a026a3d3/</id>
     <published>2021-01-18T15:28:03.000Z</published>
-    <updated>2021-01-19T00:39:23.890Z</updated>
+    <updated>2021-01-22T00:27:52.581Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -134,34 +138,11 @@
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Pascal&#39;s Triangle II</title>
-    <link href="https://egbert-yu-ting.github.io/posts/f3431365/"/>
-    <id>https://egbert-yu-ting.github.io/posts/f3431365/</id>
-    <published>2021-01-18T05:55:39.000Z</published>
-    <updated>2021-01-19T00:39:30.993Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;118. Pascal&#39;s Triangle II&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given an integer &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;rowIndex&lt;/font&gt;&lt;/span&gt;, return the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;rowIndex^th&lt;/font&gt;&lt;/span&gt; row of the Pascal&#39;s triangle. Notice that the row index starts from &lt;strong&gt;0&lt;/strong&gt;. &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif&quot; alt=&quot;animation&quot; /&gt; &lt;font size=&quot;2&quot;&gt;In Pascal&#39;s triangle, each number is the sum of the two numbers directly above it.&lt;/font&gt;</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Vector" scheme="https://egbert-yu-ting.github.io/tags/Vector/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Pascal&#39;s Triangle</title>
+    <title>[LeetCode Road] Pascal&#39;s Triangle - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/2b0547f6/"/>
     <id>https://egbert-yu-ting.github.io/posts/2b0547f6/</id>
     <published>2021-01-18T00:13:34.000Z</published>
-    <updated>2021-01-19T00:39:35.580Z</updated>
+    <updated>2021-01-22T00:31:46.259Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -180,11 +161,11 @@
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Path Sum</title>
+    <title>[LeetCode Road] Path Sum - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/bb7f02f5/"/>
     <id>https://egbert-yu-ting.github.io/posts/bb7f02f5/</id>
     <published>2021-01-17T07:54:09.000Z</published>
-    <updated>2021-01-18T00:55:34.611Z</updated>
+    <updated>2021-01-22T00:31:53.730Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -206,11 +187,11 @@
   </entry>
   
   <entry>
-    <title>[LeetCode Road]  Minimum Depth of Binary Tree</title>
+    <title>[LeetCode Road] Minimum Depth of Binary Tree - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/2397063c/"/>
     <id>https://egbert-yu-ting.github.io/posts/2397063c/</id>
     <published>2021-01-16T10:23:34.000Z</published>
-    <updated>2021-01-18T07:41:50.997Z</updated>
+    <updated>2021-01-22T00:31:07.763Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -233,11 +214,11 @@
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Balanced Binary Tree</title>
+    <title>[LeetCode Road] Balanced Binary Tree - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/b3e1ca12/"/>
     <id>https://egbert-yu-ting.github.io/posts/b3e1ca12/</id>
     <published>2021-01-15T02:13:15.000Z</published>
-    <updated>2021-01-18T00:54:57.766Z</updated>
+    <updated>2021-01-22T00:27:31.703Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -288,11 +269,11 @@ For this problem, a height-balanced binary tree is defined as:
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Convert Sorted Array to Binary Search Tree</title>
+    <title>[LeetCode Road] Convert Sorted Array to Binary Search Tree - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/17bf1818/"/>
     <id>https://egbert-yu-ting.github.io/posts/17bf1818/</id>
     <published>2021-01-08T02:44:56.000Z</published>
-    <updated>2021-01-16T11:27:33.779Z</updated>
+    <updated>2021-01-22T00:28:16.160Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -314,11 +295,11 @@ For this problem, a height-balanced binary tree is defined as:
   </entry>
   
   <entry>
-    <title>Shared partition between Mac OS X and Windows 10 [Save time]</title>
+    <title>[Save time] Shared partition between Mac OS X and Windows 10</title>
     <link href="https://egbert-yu-ting.github.io/posts/4755908e/"/>
     <id>https://egbert-yu-ting.github.io/posts/4755908e/</id>
     <published>2021-01-07T03:15:05.000Z</published>
-    <updated>2021-01-20T03:24:53.204Z</updated>
+    <updated>2021-01-22T00:30:20.370Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -421,11 +402,11 @@ For this problem, a height-balanced binary tree is defined as:
   </entry>
   
   <entry>
-    <title>Interview programming question - Find second largest element</title>
+    <title>[Interview question] Find second largest element - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/16153cc7/"/>
     <id>https://egbert-yu-ting.github.io/posts/16153cc7/</id>
     <published>2021-01-05T05:52:46.000Z</published>
-    <updated>2021-01-18T00:54:41.516Z</updated>
+    <updated>2021-01-22T00:29:32.980Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -445,11 +426,11 @@ For this problem, a height-balanced binary tree is defined as:
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Binary Tree Level Order Traversal II</title>
+    <title>[LeetCode Road] Binary Tree Level Order Traversal II - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/cac8b982/"/>
     <id>https://egbert-yu-ting.github.io/posts/cac8b982/</id>
     <published>2020-12-30T00:38:38.000Z</published>
-    <updated>2021-01-16T11:28:22.127Z</updated>
+    <updated>2021-01-22T00:28:03.492Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -472,11 +453,11 @@ For this problem, a height-balanced binary tree is defined as:
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Maximum Depth of Binary Tree</title>
+    <title>[LeetCode Road] Maximum Depth of Binary Tree - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/57b52472/"/>
     <id>https://egbert-yu-ting.github.io/posts/57b52472/</id>
     <published>2020-12-25T01:32:23.000Z</published>
-    <updated>2021-01-16T11:29:53.161Z</updated>
+    <updated>2021-01-22T00:30:40.860Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -498,11 +479,11 @@ For this problem, a height-balanced binary tree is defined as:
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Symmetric Tree</title>
+    <title>[LeetCode Road] Symmetric Tree - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/d1f23ab6/"/>
     <id>https://egbert-yu-ting.github.io/posts/d1f23ab6/</id>
     <published>2020-12-24T00:40:10.000Z</published>
-    <updated>2021-01-16T11:33:48.376Z</updated>
+    <updated>2021-01-22T00:33:48.206Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -510,6 +491,32 @@ For this problem, a height-balanced binary tree is defined as:
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).</summary>
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+    <category term="Tree" scheme="https://egbert-yu-ting.github.io/tags/Tree/"/>
+    
+    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[LeetCode Road] Same Tree - Solution/C++</title>
+    <link href="https://egbert-yu-ting.github.io/posts/2ef96137/"/>
+    <id>https://egbert-yu-ting.github.io/posts/2ef96137/</id>
+    <published>2020-12-23T01:14:29.000Z</published>
+    <updated>2021-01-22T00:33:01.902Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;100. Same Tree&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given the roots of two binary trees &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;p&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;q&lt;/font&gt;&lt;/span&gt;, write a function to check if they are the same or not.&lt;/p&gt;
+Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.</summary>
     
     
     

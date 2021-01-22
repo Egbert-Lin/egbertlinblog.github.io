@@ -44,7 +44,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/1686f472/"/>
     <id>https://egbert-yu-ting.github.io/posts/1686f472/</id>
     <published>2021-01-21T01:08:36.000Z</published>
-    <updated>2021-01-22T00:34:19.082Z</updated>
+    <updated>2021-01-22T02:08:41.509Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -140,11 +140,34 @@
   </entry>
   
   <entry>
+    <title>[LeetCode Road] Pascal&#39;s Triangle II - Solution/C++</title>
+    <link href="https://egbert-yu-ting.github.io/posts/f3431365/"/>
+    <id>https://egbert-yu-ting.github.io/posts/f3431365/</id>
+    <published>2021-01-18T05:55:39.000Z</published>
+    <updated>2021-01-22T02:18:31.881Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;118. Pascal&#39;s Triangle II&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given an integer &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;rowIndex&lt;/font&gt;&lt;/span&gt;, return the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;rowIndex^th&lt;/font&gt;&lt;/span&gt; row of the Pascal&#39;s triangle. Notice that the row index starts from &lt;strong&gt;0&lt;/strong&gt;. &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif&quot; alt=&quot;animation&quot; /&gt; &lt;font size=&quot;2&quot;&gt;In Pascal&#39;s triangle, each number is the sum of the two numbers directly above it.&lt;/font&gt;</summary>
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+    <category term="Vector" scheme="https://egbert-yu-ting.github.io/tags/Vector/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[LeetCode Road] Pascal&#39;s Triangle - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/2b0547f6/"/>
     <id>https://egbert-yu-ting.github.io/posts/2b0547f6/</id>
     <published>2021-01-18T00:13:34.000Z</published>
-    <updated>2021-01-22T00:31:46.259Z</updated>
+    <updated>2021-01-22T02:01:37.033Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -167,7 +190,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/bb7f02f5/"/>
     <id>https://egbert-yu-ting.github.io/posts/bb7f02f5/</id>
     <published>2021-01-17T07:54:09.000Z</published>
-    <updated>2021-01-22T00:31:53.730Z</updated>
+    <updated>2021-01-22T02:02:06.978Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -193,7 +216,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/2397063c/"/>
     <id>https://egbert-yu-ting.github.io/posts/2397063c/</id>
     <published>2021-01-16T10:23:34.000Z</published>
-    <updated>2021-01-22T00:31:07.763Z</updated>
+    <updated>2021-01-22T01:56:58.160Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -328,7 +351,7 @@ For this problem, a height-balanced binary tree is defined as:
     <link href="https://egbert-yu-ting.github.io/posts/9e0f4e5/"/>
     <id>https://egbert-yu-ting.github.io/posts/9e0f4e5/</id>
     <published>2021-01-06T06:14:43.000Z</published>
-    <updated>2021-01-20T01:39:12.841Z</updated>
+    <updated>2021-01-22T02:05:52.166Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -354,13 +377,13 @@ For this problem, a height-balanced binary tree is defined as:
     <link href="https://egbert-yu-ting.github.io/posts/8ece0fb0/"/>
     <id>https://egbert-yu-ting.github.io/posts/8ece0fb0/</id>
     <published>2021-01-05T12:57:13.000Z</published>
-    <updated>2021-01-20T02:19:19.799Z</updated>
+    <updated>2021-01-22T01:59:50.080Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6&quot;&gt;&lt;b&gt;ns-3 configuration and ofswitch13 module - Tutorial&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
-&lt;p&gt;I had deployed the ns-3 simulation with ofswitch13 successfully. I&#39;ve been struggling to solve the simulation platform a lot of time. So, my experience is quite valuable and self-giving sharing for the ns-3 beginners. The following procedure can be deployed on VMware/Virtual machine or cloud instance. If your want to know how to deploy ns-3 on remote cloud instance easily, I will post an article to demonstrate full steps.</summary>
+&lt;p&gt;I had deployed the ns-3 simulation with ofswitch13 successfully. I&#39;ve been struggling to solve the simulation platform a lot of time. So, my experience is quite valuable and self-giving sharing for the ns-3 beginners.&lt;br&gt; The following procedure can be deployed on VMware/Virtual machine or cloud instance.&lt;br&gt; If your want to know how to deploy ns-3 on remote cloud instance easily, I will post an article to demonstrate full steps.</summary>
     
     
     
@@ -384,13 +407,13 @@ For this problem, a height-balanced binary tree is defined as:
     <link href="https://egbert-yu-ting.github.io/posts/65af7d45/"/>
     <id>https://egbert-yu-ting.github.io/posts/65af7d45/</id>
     <published>2021-01-05T11:33:27.000Z</published>
-    <updated>2021-01-20T02:33:26.107Z</updated>
+    <updated>2021-01-22T02:11:27.105Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6&quot;&gt;&lt;b&gt;Tutorial - Google Chrome Web Browser in Ubuntu&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
-&lt;p&gt;If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice. Here, I shared my experience of installing Google Chrome on Ubuntu 16.04. You can implement it rapidly and easily.</summary>
+&lt;p&gt;If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice.&lt;br&gt; Here, I shared my experience of installing Google Chrome on Ubuntu 16.04. You can implement it rapidly and easily.</summary>
     
     
     
@@ -408,13 +431,13 @@ For this problem, a height-balanced binary tree is defined as:
     <link href="https://egbert-yu-ting.github.io/posts/16153cc7/"/>
     <id>https://egbert-yu-ting.github.io/posts/16153cc7/</id>
     <published>2021-01-05T05:52:46.000Z</published>
-    <updated>2021-01-22T00:29:32.980Z</updated>
+    <updated>2021-01-22T01:49:37.443Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6&quot;&gt;&lt;b&gt;Let coding interview become easy - Find second largest element&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
-&lt;p&gt;Maybe you will face it problem when you have an interview for a job with Tech. company. The problem is &quot;How to find second largest element?&quot;, it seems very easy to get result, but you must propose an efficient approach.</summary>
+&lt;p&gt;Maybe you will face it problem when you have an interview for a job with Tech. company.&lt;br&gt; The problem is &quot;How to find second largest element?&quot;, it seems very easy to get result, but you must propose an efficient approach.</summary>
     
     
     
@@ -459,7 +482,7 @@ For this problem, a height-balanced binary tree is defined as:
     <link href="https://egbert-yu-ting.github.io/posts/57b52472/"/>
     <id>https://egbert-yu-ting.github.io/posts/57b52472/</id>
     <published>2020-12-25T01:32:23.000Z</published>
-    <updated>2021-01-22T00:30:40.860Z</updated>
+    <updated>2021-01-22T01:55:05.710Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -485,7 +508,7 @@ For this problem, a height-balanced binary tree is defined as:
     <link href="https://egbert-yu-ting.github.io/posts/d1f23ab6/"/>
     <id>https://egbert-yu-ting.github.io/posts/d1f23ab6/</id>
     <published>2020-12-24T00:40:10.000Z</published>
-    <updated>2021-01-22T00:33:48.206Z</updated>
+    <updated>2021-01-22T02:08:01.389Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -493,32 +516,6 @@ For this problem, a height-balanced binary tree is defined as:
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Tree" scheme="https://egbert-yu-ting.github.io/tags/Tree/"/>
-    
-    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Same Tree - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/2ef96137/"/>
-    <id>https://egbert-yu-ting.github.io/posts/2ef96137/</id>
-    <published>2020-12-23T01:14:29.000Z</published>
-    <updated>2021-01-22T00:33:01.902Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;100. Same Tree&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given the roots of two binary trees &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;p&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;q&lt;/font&gt;&lt;/span&gt;, write a function to check if they are the same or not.&lt;/p&gt;
-Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.</summary>
     
     
     

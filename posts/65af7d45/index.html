@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/65af7d45/GoogleChromeInstallation_1.png">
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/65af7d45/GoogleChromeInstallation_2.png">
 <meta property="article:published_time" content="2021-01-05T11:33:27.000Z">
-<meta property="article:modified_time" content="2021-01-20T02:33:26.107Z">
+<meta property="article:modified_time" content="2021-01-22T02:11:27.105Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="Ubuntu">
 <meta property="article:tag" content="Google_Chrome">
@@ -263,7 +263,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -388,7 +388,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-20 10:33:26" itemprop="dateModified" datetime="2021-01-20T10:33:26+08:00">2021-01-20</time>
+        <time title="Modified: 2021-01-22 10:11:27" itemprop="dateModified" datetime="2021-01-22T10:11:27+08:00">2021-01-22</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -413,12 +413,14 @@
         <p align="center">
 <font size="6"><b>Tutorial - Google Chrome Web Browser in Ubuntu</b></font>
 </p>
-<p>If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice. Here, I shared my experience of installing Google Chrome on Ubuntu 16.04. You can implement it rapidly and easily. <a id="more"></a></p>
+<p>If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice.<br> Here, I shared my experience of installing Google Chrome on Ubuntu 16.04. You can implement it rapidly and easily. <a id="more"></a></p>
 <ul>
 <li><strong>Step 1.</strong> Download the Google Chrome to your Ubuntu system <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb</span><br></pre></td></tr></table></figure></li>
 <li><strong>Step 2.</strong> Install the Google Chrome <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo dpkg -i google-chrome-stable_current_amd64.deb</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 3.</strong> Update the Google Chrome and you can run it. <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /etc/apt/sources.list.d/google-chrome.list</span><br></pre></td></tr></table></figure> <img src="GoogleChromeInstallation_1.png" /> *** When open the application, if you meet <font color=#FF0000>"Your connection is not secure"</font> message or result as below: <img src="GoogleChromeInstallation_2.png" /></li>
+<li><strong>Step 3.</strong> Update the Google Chrome and you can run it. <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /etc/apt/sources.list.d/google-chrome.list</span><br></pre></td></tr></table></figure> <img src="GoogleChromeInstallation_1.png" />
+<hr style="border-top: dotted 1px;" /></li>
 </ul>
+<p>When open the application, if you meet <font color=#FF0000>"Your connection is not secure"</font> message or result as below: <img src="GoogleChromeInstallation_2.png" /></p>
 <p><strong>Solution.</strong> Installation of Network Security Service libraries package: <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install libnss3-1d</span><br></pre></td></tr></table></figure></p>
 
     </div>

@@ -31,7 +31,7 @@
 <meta property="og:description" content="13. Roman to Integer  Question: Roman numerals are represented by seven different symbols: \(I\), \(V\), \(X\), \(L\), \(C\), \(D\) and M.  Symbol  Value  \(I\)       1 \(V\)      5 \(X\)      10 \(L">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-01T06:48:42.000Z">
-<meta property="article:modified_time" content="2021-01-22T00:32:46.801Z">
+<meta property="article:modified_time" content="2021-01-22T02:05:39.559Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="Map(STL)">
 <meta name="twitter:card" content="summary">
@@ -260,7 +260,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -385,7 +385,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-22 08:32:46" itemprop="dateModified" datetime="2021-01-22T08:32:46+08:00">2021-01-22</time>
+        <time title="Modified: 2021-01-22 10:05:39" itemprop="dateModified" datetime="2021-01-22T10:05:39+08:00">2021-01-22</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -454,10 +454,10 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
 <p></strong></p>
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: At first, I thought these symbols can be built by using vector directly. After my careful thought, a map container is a easy way to store elements by a combination of a key value and a mapped value. Next step, I used a loop to check each characters, if <code>symbol[s[i]] &gt;= symbol[s[i + 1]]</code> is true, add symbol[s[i]] up. On the contrary, if <code>symbol[s[i]] &lt; symbol[s[i + 1]]</code> is true, subtract symbol[s[i]] from summation.</p>
+<p>Idea:<br> At first, I thought these symbols can be built by using vector directly. After my careful thought, a map container is a easy way to store elements by a combination of a key value and a mapped value. Next step, I used a loop to check each characters, if <code>symbol[s[i]] &gt;= symbol[s[i + 1]]</code> is true, add symbol[s[i]] up. On the contrary, if <code>symbol[s[i]] &lt; symbol[s[i + 1]]</code> is true, subtract symbol[s[i]] from summation.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        map&lt;char, int&gt; symbol(&#123;&#123;&#x27;I&#x27;, 1&#125;, &#123;&#x27;V&#x27;, 5&#125;, &#123;&#x27;X&#x27;, 10&#125;, &#123;&#x27;L&#x27;, 50&#125;, &#123;&#x27;C&#x27;, 100,&#125;, &#123;&#x27;D&#x27;, 500&#125;, &#123;&#x27;M&#x27;, 1000&#125;&#125;);</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(symbol[s[i]] &gt;= symbol[s[i + <span class="number">1</span>]])&#123;</span><br><span class="line">                sum += symbol[s[i]];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                sum -= symbol[s[i]];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea: This is a way to reduce a computing time. Add symbol[s[i]] value first, then check a value of s[i - 1] element whether it is less than a value of s[i] or not. If it is true, the summation need to subtract twice value of symbol[s[i - 1]]. So, it implements the less conditional operator.</p>
+<p>Idea:<br> This is a way to reduce a computing time. Add symbol[s[i]] value first, then check a value of s[i - 1] element whether it is less than a value of s[i] or not. If it is true, the summation need to subtract twice value of symbol[s[i - 1]]. So, it implements the less conditional operator.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        map&lt;char, int&gt; symbol(&#123;&#123;&#x27;I&#x27;, 1&#125;, &#123;&#x27;V&#x27;, 5&#125;, &#123;&#x27;X&#x27;, 10&#125;, &#123;&#x27;L&#x27;, 50&#125;, &#123;&#x27;C&#x27;, 100,&#125;, &#123;&#x27;D&#x27;, 500&#125;, &#123;&#x27;M&#x27;, 1000&#125;&#125;);</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            sum += symbol[s[i]];</span><br><span class="line">            <span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; symbol[s[i - <span class="number">1</span>]] &lt; symbol[s[i]])&#123;</span><br><span class="line">                sum -= <span class="number">2</span>*symbol[s[i <span class="number">-1</span>]];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>

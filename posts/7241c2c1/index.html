@@ -31,7 +31,7 @@
 <meta property="og:description" content="26. Remove Duplicates from Sorted Array  Question: Given a sorted array nums, remove the duplicates in-place such that each element appears only once and returns the new length. Do not allocate extra">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-07T01:54:10.000Z">
-<meta property="article:modified_time" content="2021-01-22T00:32:29.037Z">
+<meta property="article:modified_time" content="2021-01-22T02:03:03.383Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="Vector">
 <meta property="article:tag" content="Call_by_reference">
@@ -261,7 +261,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -386,7 +386,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-22 08:32:29" itemprop="dateModified" datetime="2021-01-22T08:32:29+08:00">2021-01-22</time>
+        <time title="Modified: 2021-01-22 10:03:03" itemprop="dateModified" datetime="2021-01-22T10:03:03+08:00">2021-01-22</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -441,10 +441,10 @@ Internally you can think of this:
 <p></strong></p>
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea: This is a simple solution. Remain the first element, so a count index is start from 1. Use a loop to compare with each elements, if it find the result is true, store the element and shift a count index.</p>
+<p>Idea:<br> This is a simple solution. Remain the first element, so a count index is start from 1. Use a loop to compare with each elements, if it find the result is true, store the element and shift a count index.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!nums.size()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i - <span class="number">1</span>] != nums[i])</span><br><span class="line">                nums[count++] = nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea: This better solution is refered to <a target="_blank" rel="noopener" href="https://zxi.mytechroad.com/blog/algorithms/array/leetcode-26-remove-duplicates-from-sorted-array/">Huahua's Tech Road</a>. At first, <code>nums[count++] = nums[i]</code> aims to store the first element and shift a count index. Declare a new variable j as <code>i + 1</code> to find the element which is not equal to nums[i]. Then, if it is found, use <code>i = j</code> to record index.</p>
+<p>Idea:<br> This better solution is refered to <a target="_blank" rel="noopener" href="https://zxi.mytechroad.com/blog/algorithms/array/leetcode-26-remove-duplicates-from-sorted-array/">Huahua's Tech Road</a>.<br> At first, <code>nums[count++] = nums[i]</code> aims to store the first element and shift a count index. Declare a new variable j as <code>i + 1</code> to find the element which is not equal to nums[i]. Then, if it is found, use <code>i = j</code> to record index.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt; <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>, i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; n)&#123;</span><br><span class="line">            nums[count++] = nums[i];</span><br><span class="line">            <span class="keyword">int</span> j = i + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(j&lt; n &amp;&amp; nums[j] == nums[i]) j++;</span><br><span class="line">            i = j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>

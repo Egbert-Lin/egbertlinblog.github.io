@@ -175,35 +175,45 @@ TThe number of nodes in the tree is in the range <span style="background-color:#
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Binary Tree Level Order Traversal II - Solution/C++</title>
-    <url>/posts/cac8b982/</url>
+    <title>[LeetCode Road] Best Time to Buy and Sell Stock - Solution/C++</title>
+    <url>/posts/a026a3d3/</url>
     <content><![CDATA[<p align="center">
-<font size="6"><b>107. Binary Tree Level Order Traversal II</b></font>
+<font size="6"><b>121. Best Time to Buy and Sell Stock</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>Given a binary tree, return the <em>bottom-up level order</em> traversal of its nodes' values. (ie, from left to right, level by level from leaf to root). <a id="more"></a></p>
+<p>You are given an array <span style="background-color:#F0F0F0"><font color=#808080>prices</font></span> where <span style="background-color:#F0F0F0"><font color=#808080>prices[i]</font></span> is the price of a given stock on the <span style="background-color:#F0F0F0"><font color=#808080>i^th</font></span> day.</p>
+<p>You want to maximize your profit by choosing a <strong>single day</strong> to buy one stock and choosing a <strong>different day in the future</strong> to sell that stock. <a id="more"></a></p>
+<p>Return <em>the maximum profit you can achieve from this transaction</em>. If you cannot achieve any profit, return <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</p>
 <h2 id="example">Example:</h2>
-For example: Given binary tree <span style="background-color:#F0F0F0"><font color=#808080>[3,9,20,null,null,15,7]</span></font>,
 <p style="background-color:#F0F0F0">
-   3<br>    / \<br>   9 20<br>    / \<br>    15  7
+<b>Input:</b> prices = [7,1,5,3,6,4]<br> <b>Output:</b> 5<br> <b>Explanation:</b> Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.<br> Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
 </p>
-return its bottom-up level order traversal as:
 <p style="background-color:#F0F0F0">
-[<br>   [15,7],<br>   [9,20],<br>   [3]<br>]
+<b>Input:</b> prices = [7,6,4,3,1]<br> <b>Output:</b> 0<br> <b>Explanation:</b> In this case, no transactions are done and the max profit = 0.
 </p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= prices.length &lt;= 10^5</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= prices[i] &lt;= 10^4</font></span>
+</li>
+<p></strong></p>
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> I made a big mistake, I always think the solution that find the deepest depth first, the go back to the root with each layers. I realized an efficient approach until I had refered to <a href="https://zxi.mytechroad.com/blog/tree/leetcode-107-binary-tree-level-order-traversal-ii/">Huahua's Tech Road</a>.<br></p>
-<p>You must understand how to implement a two dimensional vector first. Write a function as recursion, store each elements from top of tree. <code>res.size() &lt;= depth&gt;</code> is an important statement to expand 2D vector size. Then, we must go through every left &amp; right nodes and store it based on correspondingly depth. Finaly, let go back to original function, we must use reverse() to pass the answers.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; levelOrderBottom(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span> &lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line">        levelOrderBottom(root, <span class="number">0</span>, res);</span><br><span class="line">        reverse(res.begin(), res.end());</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">levelOrderBottom</span><span class="params">(TreeNode* root, <span class="keyword">int</span> depth, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">while</span>(res.size() &lt;= depth) res.push_back(&#123;&#125;);</span><br><span class="line">        res[depth].push_back(root-&gt;val);</span><br><span class="line">        levelOrderBottom(root-&gt;left, depth + <span class="number">1</span>, res);</span><br><span class="line">        levelOrderBottom(root-&gt;right, depth + <span class="number">1</span>, res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Idea:<br> It is a brute force algorithm. Each elements as buying day (<code>prices[i]</code>)compare the profit with other selling day (<code>prices[j]</code>, i &lt; j), so we can get the maximum profit, however, the strategy is very inefficient. (Time Limit Exceeded)</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices.empty() || prices.size() == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> profit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; prices.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> cost = prices[i];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; prices.size(); j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> reward = prices[j];</span><br><span class="line">                <span class="keyword">int</span> temp = reward - cost;</span><br><span class="line">                <span class="keyword">if</span>(temp &gt; <span class="number">0</span> &amp;&amp; temp &gt; profit)&#123;</span><br><span class="line">                    profit = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<br> It can use only one loop to implement the algorithm.<br> <code>minPrice</code>: It want to get the lowest price up to i-th day.<br> <code>maxProfit</code>: It want to get the max profit up to i-th day.<br> <code>max(maxProfit, prices[i] - minPrice)</code>: It means that the minimum price subtracted from the price of selling day(<code>prices[i]</code>) and choose the large profit.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> minPrice = INT_MAX, maxProfit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            minPrice = min(minPrice, prices[i]);</span><br><span class="line">            maxProfit = max(maxProfit, prices[i] - minPrice);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>LeetCode-Easy</category>
       </categories>
       <tags>
-        <tag>Recursion</tag>
-        <tag>STL</tag>
-        <tag>2D_Vector</tag>
+        <tag>Stock</tag>
+        <tag>BruteForce</tag>
       </tags>
   </entry>
   <entry>
@@ -244,6 +254,38 @@ return its bottom-up level order traversal as:
         <tag>Recursion</tag>
         <tag>Fibonacci_Sequence</tag>
         <tag>Iterator</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Binary Tree Level Order Traversal II - Solution/C++</title>
+    <url>/posts/cac8b982/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>107. Binary Tree Level Order Traversal II</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a binary tree, return the <em>bottom-up level order</em> traversal of its nodes' values. (ie, from left to right, level by level from leaf to root). <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+For example: Given binary tree <span style="background-color:#F0F0F0"><font color=#808080>[3,9,20,null,null,15,7]</span></font>,
+<p style="background-color:#F0F0F0">
+   3<br>    / \<br>   9 20<br>    / \<br>    15  7
+</p>
+return its bottom-up level order traversal as:
+<p style="background-color:#F0F0F0">
+[<br>   [15,7],<br>   [9,20],<br>   [3]<br>]
+</p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> I made a big mistake, I always think the solution that find the deepest depth first, the go back to the root with each layers. I realized an efficient approach until I had refered to <a href="https://zxi.mytechroad.com/blog/tree/leetcode-107-binary-tree-level-order-traversal-ii/">Huahua's Tech Road</a>.<br></p>
+<p>You must understand how to implement a two dimensional vector first. Write a function as recursion, store each elements from top of tree. <code>res.size() &lt;= depth&gt;</code> is an important statement to expand 2D vector size. Then, we must go through every left &amp; right nodes and store it based on correspondingly depth. Finaly, let go back to original function, we must use reverse() to pass the answers.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; levelOrderBottom(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span> &lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line">        levelOrderBottom(root, <span class="number">0</span>, res);</span><br><span class="line">        reverse(res.begin(), res.end());</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">levelOrderBottom</span><span class="params">(TreeNode* root, <span class="keyword">int</span> depth, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">while</span>(res.size() &lt;= depth) res.push_back(&#123;&#125;);</span><br><span class="line">        res[depth].push_back(root-&gt;val);</span><br><span class="line">        levelOrderBottom(root-&gt;left, depth + <span class="number">1</span>, res);</span><br><span class="line">        levelOrderBottom(root-&gt;right, depth + <span class="number">1</span>, res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Recursion</tag>
+        <tag>STL</tag>
+        <tag>2D_Vector</tag>
       </tags>
   </entry>
   <entry>
@@ -575,53 +617,6 @@ Finally, reboot you Mac and enter WIN10 OS successfully.</li>
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Maximum Depth of Binary Tree - Solution/C++</title>
-    <url>/posts/57b52472/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>104. Maximum Depth of Binary Tree</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given the <span style="background-color:#F0F0F0"><font color=#808080>root</font></span> of a binary tree, return <em>its maximum depth</em>.</p>
-<p>A binary tree's <strong>maximum depth</strong> is the number of nodes along the longest path from the root node down to the farthest leaf node. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<img src="MaximumDepthofBinaryTree_example1.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 3<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [1,null,2]<br> <b>Output:</b> 2<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = []<br> <b>Output:</b> 0<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [0]<br> <b>Output:</b> 1<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^4]</font></span>.
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-100 &lt;= Node.val &lt;= 100</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> Basically, I konw the search must be throughout all link of the whole tree, then if the left/right node of root are NULL, the depth is the deepest, so depth is start from 1 (depth + 1). But, I can't find out any regular action by using the recursion.<br></p>
-<p>There is a quit clear demonstration as below[1]: <img src="MaximumDepthofBinaryTree_example2.png" /> It's very helpful and let me understand the recursion processing. So, let me explain the code:<br> (1) <code>maxDepth(root-&gt;left)</code>: use recursion to find deepest depth of left node<br> (2) <code>maxDepth(root-&gt;right</code>: use recursion to find deepest depth of right node<br> (3) <code>max((1), (2))</code>: compare the deepest depth of both of left/right nodes, get the maximum value. Then, <code>+ 1</code> means adding this layer.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> max(maxDepth(root-&gt;left), maxDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>Reference:<br> [1] https://algorithms.tutorialhorizon.com/find-the-maximum-depth-or-height-of-a-binary-tree/</p>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Tree</tag>
-        <tag>Recursion</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Maximum Subarray - Solution/C++</title>
     <url>/posts/90ac56be/</url>
     <content><![CDATA[<p align="center">
@@ -669,6 +664,53 @@ The number of nodes in the tree is in the range <span style="background-color:#F
       <tags>
         <tag>BruteForce</tag>
         <tag>Vector</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Maximum Depth of Binary Tree - Solution/C++</title>
+    <url>/posts/57b52472/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>104. Maximum Depth of Binary Tree</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given the <span style="background-color:#F0F0F0"><font color=#808080>root</font></span> of a binary tree, return <em>its maximum depth</em>.</p>
+<p>A binary tree's <strong>maximum depth</strong> is the number of nodes along the longest path from the root node down to the farthest leaf node. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<img src="MaximumDepthofBinaryTree_example1.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 3<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [1,null,2]<br> <b>Output:</b> 2<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = []<br> <b>Output:</b> 0<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [0]<br> <b>Output:</b> 1<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^4]</font></span>.
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-100 &lt;= Node.val &lt;= 100</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> Basically, I konw the search must be throughout all link of the whole tree, then if the left/right node of root are NULL, the depth is the deepest, so depth is start from 1 (depth + 1). But, I can't find out any regular action by using the recursion.<br></p>
+<p>There is a quit clear demonstration as below[1]: <img src="MaximumDepthofBinaryTree_example2.png" /> It's very helpful and let me understand the recursion processing. So, let me explain the code:<br> (1) <code>maxDepth(root-&gt;left)</code>: use recursion to find deepest depth of left node<br> (2) <code>maxDepth(root-&gt;right</code>: use recursion to find deepest depth of right node<br> (3) <code>max((1), (2))</code>: compare the deepest depth of both of left/right nodes, get the maximum value. Then, <code>+ 1</code> means adding this layer.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> max(maxDepth(root-&gt;left), maxDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Reference:<br> [1] https://algorithms.tutorialhorizon.com/find-the-maximum-depth-or-height-of-a-binary-tree/</p>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Tree</tag>
+        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>
@@ -1151,46 +1193,6 @@ Internally you can think of this:
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Reverse Integer - Solution/C++</title>
-    <url>/posts/236b1bbd/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>7. Reverse Integer</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a 32-bit signed integer, reverse digits of an integer.</p>
-<p><strong>Note:</strong> Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−2^31, 2^31 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = 123<br><b>Output</b>: 321<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = -123<br><b>Output</b>: -321<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = 120<br><b>Output</b>: 21<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = 0<br><b>Output</b>: 0<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
--2^31 &lt;= x &lt;= 2^31 -1
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> At the begining, I need to get units digit, so the modulus operator % can compute the remainder. Then, the remainder should be added to answer(return value) after answer times ten for each loop. <code>x = x / 10</code> means removing units digit for getting hundreds digit. Don't forget the constraints, use values of INT_MIN and INT_MAX to implement it.<br> P.S. <code>return (conditional)?true:false</code></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(x != <span class="number">0</span>)&#123;</span><br><span class="line">            ans = ans * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">            x = x / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (ans&gt;INT_MIN &amp;&amp; ans&lt;INT_MAX)?ans:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Remainder</tag>
-        <tag>Quotient</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Roman to Integer - Solution/C++</title>
     <url>/posts/8caf8f3c/</url>
     <content><![CDATA[<p align="center">
@@ -1251,6 +1253,46 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
       </categories>
       <tags>
         <tag>Map(STL)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Reverse Integer - Solution/C++</title>
+    <url>/posts/236b1bbd/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>7. Reverse Integer</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a 32-bit signed integer, reverse digits of an integer.</p>
+<p><strong>Note:</strong> Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−2^31, 2^31 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = 123<br><b>Output</b>: 321<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = -123<br><b>Output</b>: -321<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = 120<br><b>Output</b>: 21<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = 0<br><b>Output</b>: 0<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+-2^31 &lt;= x &lt;= 2^31 -1
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> At the begining, I need to get units digit, so the modulus operator % can compute the remainder. Then, the remainder should be added to answer(return value) after answer times ten for each loop. <code>x = x / 10</code> means removing units digit for getting hundreds digit. Don't forget the constraints, use values of INT_MIN and INT_MAX to implement it.<br> P.S. <code>return (conditional)?true:false</code></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(x != <span class="number">0</span>)&#123;</span><br><span class="line">            ans = ans * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">            x = x / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (ans&gt;INT_MIN &amp;&amp; ans&lt;INT_MAX)?ans:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Remainder</tag>
+        <tag>Quotient</tag>
       </tags>
   </entry>
   <entry>
@@ -1865,48 +1907,6 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
         <tag>ns-3</tag>
         <tag>ofswitch</tag>
         <tag>OpenFlow1.3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Best Time to Buy and Sell Stock - Solution/C++</title>
-    <url>/posts/a026a3d3/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>121. Best Time to Buy and Sell Stock</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>You are given an array <span style="background-color:#F0F0F0"><font color=#808080>prices</font></span> where <span style="background-color:#F0F0F0"><font color=#808080>prices[i]</font></span> is the price of a given stock on the <span style="background-color:#F0F0F0"><font color=#808080>i^th</font></span> day.</p>
-<p>You want to maximize your profit by choosing a <strong>single day</strong> to buy one stock and choosing a <strong>different day in the future</strong> to sell that stock. <a id="more"></a></p>
-<p>Return <em>the maximum profit you can achieve from this transaction</em>. If you cannot achieve any profit, return <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> prices = [7,1,5,3,6,4]<br> <b>Output:</b> 5<br> <b>Explanation:</b> Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.<br> Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> prices = [7,6,4,3,1]<br> <b>Output:</b> 0<br> <b>Explanation:</b> In this case, no transactions are done and the max profit = 0.
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= prices.length &lt;= 10^5</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= prices[i] &lt;= 10^4</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> It is a brute force algorithm. Each elements as buying day (<code>prices[i]</code>)compare the profit with other selling day (<code>prices[j]</code>, i &lt; j), so we can get the maximum profit, however, the strategy is very inefficient. (Time Limit Exceeded)</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices.empty() || prices.size() == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> profit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; prices.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> cost = prices[i];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; prices.size(); j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> reward = prices[j];</span><br><span class="line">                <span class="keyword">int</span> temp = reward - cost;</span><br><span class="line">                <span class="keyword">if</span>(temp &gt; <span class="number">0</span> &amp;&amp; temp &gt; profit)&#123;</span><br><span class="line">                    profit = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> It can use only one loop to implement the algorithm.<br> <code>minPrice</code>: It want to get the lowest price up to i-th day.<br> <code>maxProfit</code>: It want to get the max profit up to i-th day.<br> <code>max(maxProfit, prices[i] - minPrice)</code>: It means that the minimum price subtracted from the price of selling day(<code>prices[i]</code>) and choose the large profit.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> minPrice = INT_MAX, maxProfit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            minPrice = min(minPrice, prices[i]);</span><br><span class="line">            maxProfit = max(maxProfit, prices[i] - minPrice);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Stock</tag>
-        <tag>BruteForce</tag>
       </tags>
   </entry>
 </search>

@@ -1,5 +1,5 @@
 :root {
-  --body-bg-color: #fbe7b3;
+  --body-bg-color: #eee;
   --content-bg-color: #fff;
   --card-bg-color: #f5f5f5;
   --text-color: #555;
@@ -2906,10 +2906,10 @@ mjx-container[display="true"] + br {
 }
 .post-body h1,
 .post-body h2 {
-  border-bottom: 1px solid #fbe7b3;
+  border-bottom: 1px solid #eee;
 }
 .post-body h3 {
-  border-bottom: 1px dotted #fbe7b3;
+  border-bottom: 1px dotted #eee;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .main-inner {

@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-25T07:04:38.633Z</updated>
+  <updated>2021-01-25T16:24:16.731Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[LeetCode] Min Stack - Solution/C++</title>
+    <link href="https://egbert-yu-ting.github.io/posts/cb679286/"/>
+    <id>https://egbert-yu-ting.github.io/posts/cb679286/</id>
+    <published>2021-01-25T08:31:05.000Z</published>
+    <updated>2021-01-25T16:24:16.731Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;155. Min Stack&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.&lt;br&gt;&lt;/p&gt;
+&lt;storng&gt;
+&lt;/li&gt;
+push(x) -- Push element x onto stack.
+&lt;/li&gt;
+&lt;/strong&gt; &lt;storng&gt;
+&lt;/li&gt;
+pop() -- Removes the element on top of the stack.
+&lt;/li&gt;
+&lt;/strong&gt; &lt;storng&gt;
+&lt;/li&gt;
+top() -- Get the top element.
+&lt;/li&gt;
+&lt;/storng&gt; &lt;storng&gt;
+&lt;/li&gt;
+getMin() -- Retrieve the minimum element in the stack.
+&lt;/li&gt;
+&lt;p&gt;&lt;/strong&gt;</summary>
+    
+    
+    
+    <category term="LeetCode" scheme="https://egbert-yu-ting.github.io/categories/LeetCode/"/>
+    
+    
+    <category term="Stack" scheme="https://egbert-yu-ting.github.io/tags/Stack/"/>
+    
+  </entry>
   
   <entry>
     <title>[LeetCode Road] Linked List Cycle - Solution/C++</title>
@@ -501,32 +541,6 @@ For this problem, a height-balanced binary tree is defined as:
     <category term="STL" scheme="https://egbert-yu-ting.github.io/tags/STL/"/>
     
     <category term="2D_Vector" scheme="https://egbert-yu-ting.github.io/tags/2D-Vector/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Maximum Depth of Binary Tree - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/57b52472/"/>
-    <id>https://egbert-yu-ting.github.io/posts/57b52472/</id>
-    <published>2020-12-25T01:32:23.000Z</published>
-    <updated>2021-01-22T01:55:05.710Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;104. Maximum Depth of Binary Tree&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;root&lt;/font&gt;&lt;/span&gt; of a binary tree, return &lt;em&gt;its maximum depth&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;A binary tree&#39;s &lt;strong&gt;maximum depth&lt;/strong&gt; is the number of nodes along the longest path from the root node down to the farthest leaf node.</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Tree" scheme="https://egbert-yu-ting.github.io/tags/Tree/"/>
-    
-    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
     
   </entry>
   

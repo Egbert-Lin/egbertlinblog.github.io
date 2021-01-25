@@ -844,9 +844,7 @@ getMin() -- Retrieve the minimum element in the stack.
 <p></strong> <a id="more"></a></p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
-<p><b>Input</b><br> ["MinStack","push","push","push","getMin","pop","top","getMin"]<br> [[],[-2],[0],[-3],[],[],[],[]]<br></p>
-<p><b>Output</b><br> [null,null,null,null,-3,null,0,-2]<br></p>
-<b>Explanation</b><br> MinStack minStack = new MinStack();<br> minStack.push(-2);<br> minStack.push(0);<br> minStack.push(-3);<br> minStack.getMin(); // return -3<br> minStack.pop();<br> minStack.top(); // return 0<br> minStack.getMin(); // return -2
+<b>Input</b><br> ["MinStack","push","push","push","getMin","pop","top","getMin"]<br> [[],[-2],[0],[-3],[],[],[],[]]<br> <br> <b>Output</b><br> [null,null,null,null,-3,null,0,-2]<br> <br> <b>Explanation</b><br> MinStack minStack = new MinStack();<br> minStack.push(-2);<br> minStack.push(0);<br> minStack.push(-3);<br> minStack.getMin(); // return -3<br> minStack.pop();<br> minStack.top();  // return 0<br> minStack.getMin(); // return -2
 </p>
 <strong>Constraints:</strong> <strong>
 <li>

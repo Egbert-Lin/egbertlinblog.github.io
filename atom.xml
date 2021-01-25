@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-22T01:29:31.827Z</updated>
+  <updated>2021-01-25T03:41:26.401Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[LeetCode Road] Linked List Cycle - Solution/C++</title>
+    <link href="https://egbert-yu-ting.github.io/posts/44e8eae/"/>
+    <id>https://egbert-yu-ting.github.io/posts/44e8eae/</id>
+    <published>2021-01-25T01:04:33.000Z</published>
+    <updated>2021-01-25T03:41:26.401Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;141. Linked List Cycle&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;head&lt;/font&gt;&lt;/span&gt;, the head of a linked list, determine if the linked list has a cycle in it.&lt;/p&gt;
+&lt;p&gt;There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;next&lt;/font&gt;&lt;/soab&gt; pointer. Internally, &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;pos&lt;/font&gt;&lt;/span&gt; is used to denote the index of the node that tail&#39;s &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;next&lt;/font&gt;&lt;/span&gt; pointer is connected to. &lt;strong&gt;Note&lt;/strong&gt; that &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;pos&lt;/font&gt;&lt;/span&gt; &lt;strong&gt;is not passed as a parameter&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Return &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;true&lt;/font&gt;&lt;/span&gt; &lt;em&gt;if there is a cycle in the linked list&lt;/em&gt;. Otherwise, return &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;false&lt;/font&gt;&lt;/span&gt;.</summary>
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+    <category term="ListNode" scheme="https://egbert-yu-ting.github.io/tags/ListNode/"/>
+    
+  </entry>
   
   <entry>
     <title>[LeetCode Road] Single Number - Solution/C++</title>
@@ -491,31 +516,6 @@ For this problem, a height-balanced binary tree is defined as:
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Given the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;root&lt;/font&gt;&lt;/span&gt; of a binary tree, return &lt;em&gt;its maximum depth&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;A binary tree&#39;s &lt;strong&gt;maximum depth&lt;/strong&gt; is the number of nodes along the longest path from the root node down to the farthest leaf node.</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Tree" scheme="https://egbert-yu-ting.github.io/tags/Tree/"/>
-    
-    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Symmetric Tree - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/d1f23ab6/"/>
-    <id>https://egbert-yu-ting.github.io/posts/d1f23ab6/</id>
-    <published>2020-12-24T00:40:10.000Z</published>
-    <updated>2021-01-22T02:08:01.389Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;101. Symmetric Tree&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).</summary>
     
     
     

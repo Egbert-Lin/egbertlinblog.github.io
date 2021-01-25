@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-25T07:00:00.224Z</updated>
+  <updated>2021-01-25T07:04:38.633Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/44e8eae/"/>
     <id>https://egbert-yu-ting.github.io/posts/44e8eae/</id>
     <published>2021-01-25T01:04:33.000Z</published>
-    <updated>2021-01-25T07:00:00.224Z</updated>
+    <updated>2021-01-25T07:04:38.633Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -38,6 +38,8 @@
     
     
     <category term="ListNode" scheme="https://egbert-yu-ting.github.io/tags/ListNode/"/>
+    
+    <category term="Algorithm" scheme="https://egbert-yu-ting.github.io/tags/Algorithm/"/>
     
   </entry>
   

@@ -35,8 +35,10 @@
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/44e8eae/example_1.png">
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/44e8eae/example_2.png">
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/44e8eae/example_3.png">
+<meta property="og:image" content="https://egbert-yu-ting.github.io/posts/44e8eae/cyclical_list.png">
+<meta property="og:image" content="https://egbert-yu-ting.github.io/posts/44e8eae/non_cyclical_list.png">
 <meta property="article:published_time" content="2021-01-25T01:04:33.000Z">
-<meta property="article:modified_time" content="2021-01-25T03:41:26.401Z">
+<meta property="article:modified_time" content="2021-01-25T07:00:00.224Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="ListNode">
 <meta name="twitter:card" content="summary">
@@ -385,7 +387,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-01-25 09:04:33 / Modified: 11:41:26" itemprop="dateCreated datePublished" datetime="2021-01-25T09:04:33+08:00">2021-01-25</time>
+      <time title="Created: 2021-01-25 09:04:33 / Modified: 15:00:00" itemprop="dateCreated datePublished" datetime="2021-01-25T09:04:33+08:00">2021-01-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -437,18 +439,25 @@ The number of the nodes in the list is in the range <span style="background-colo
 </li>
 </strong> <strong>
 <li>
-<span style="background-color:#F0F0F0"><font color=#808080>pos</font></sapn> is <span style="background-color:#F0F0F0"><font color=#808080>-1<font></span> or a <b>valid index</b> in the linked-list.
+<span style="background-color:#F0F0F0"><font color=#808080>pos</font></sapn> is <span style="background-color:#F0F0F0"><font color=#808080>-1</font></span> or a <b>valid index</b> in the linked-list.
 </li>
 <p></strong></p>
 <h2 id="source-code">Source code:</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
 <p>Idea:<br> We can use <strong>hash table</strong> to detect if a list is cyclical.<br></p>
-<p>When we go through each node one by one, we should records the reference of node (or memory address) in a <strong>has table</strong>. Every reference is unique, so if current node's reference is in the hash table, it means that a node had been visited in a list before, <code>return true</code>. If the current node is <code>NULL</code>, it's represented the end of the list and a cyclical list is invalid, <code>return false</code>.</p>
+<p>When we go through each node one by one, we should records the reference of node (or memory address) in a <strong>Hash Table</strong>. Every reference is unique, so if current node's reference is in the hash table, it means that a node had been visited in a list before, <code>return true</code>. If the current node is <code>NULL</code>, it's represented the end of the list and a cyclical list is invalid, <code>return false</code>.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_set</span>&lt;ListNode*&gt; visited;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(head)&#123;</span><br><span class="line">            <span class="keyword">if</span>(visited.count(head)) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            visited.insert(head);</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="version-2"><u>Version 2</u></h3>
 <p>Idea:<br> In order to reduce the space complexity to <code>O(1)</code>, we can't declare any container to record the reference of node. <strong>Floyd's Cycle Finding Algorithm</strong> is quite efficient and simple.<br></p>
-<p><strong>Ｗhat is Floyd's Cycle Finding Algorithm?</strong><br></p>
-<p><strong>How does it work?</strong><br></p>
+<p><strong>Ｗhat is Floyd's Cycle Finding Algorithm?</strong> <em>wikipedia</em><br> When you want to solve the detection of multi-connected elements whether it's exist cyclical state, you can try to convert these questions to List structure, and List can be summerized into two parts:<br></p>
+<ol type="1">
+<li><p>Cyclical List structure <img src="cyclical_list.png" /></p></li>
+<li><p>Non cyclical List structure <img src="non_cyclical_list.png" /></p></li>
+</ol>
+<p>The algorithm is named after Robert W. Floyd, who was credited with its invention by Donald Knuth.<br> It is a pointer algorithm that uses only two pointers, which move through the sequence at different speeds. It is also called the "tortoise and the hare algorithm".<br></p>
+<p><strong>How does it work?</strong><br> Declare two variable as a slow pointer and a fast pointer. **The slow pointer moves one step at a time while the fast pointer moves two steps at a time.<br></p>
+<p>If there is a non cyclical List, the fast pointer will reach the end first and the last node points a NULL, you can return false in this case.</p>
+<p>If there is a cyclical List, <strong>the fast pointer will eventually meet the slow pointer</strong>, so you can return true at 18 line.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> fast = head;</span><br><span class="line">        <span class="keyword">auto</span> slow = head;</span><br><span class="line">        <span class="keyword">while</span>(fast)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!fast-&gt;next) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            fast = fast-&gt;next-&gt;next;</span><br><span class="line">            slow = slow-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(fast == slow) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>

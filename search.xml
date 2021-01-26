@@ -482,7 +482,7 @@ fatal: unable to auto-detect email address (got ...)<br> error: src refspec HEAD
 </p>
 <h2 id="question">Question:</h2>
 <p>Write a program to find the node at which the intersection of two singly linked lists begins.<br></p>
-<p>For example, the following two linked lists: <img src="example_1.png" /> begin to intersect at node c1.</p>
+<p>For example, the following two linked lists: <img src="example_1.png" /> begin to intersect at node c1. <a id="more"></a></p>
 <h2 id="example">Example:</h2>
 <img src="example_2.png" />
 <p style="background-color:#F0F0F0">

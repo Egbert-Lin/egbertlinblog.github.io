@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://egbert-yu-ting.github.io/posts/a44c9fee/</loc>
+    
+    <lastmod>2021-01-26</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://egbert-yu-ting.github.io/posts/cb679286/</loc>
     
     <lastmod>2021-01-26</lastmod>
@@ -403,6 +410,13 @@
   </url>
   
   <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Stock/</loc>
+    <lastmod>2021-01-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://egbert-yu-ting.github.io/tags/Tree/</loc>
     <lastmod>2021-01-26</lastmod>
     <changefreq>daily</changefreq>
@@ -417,14 +431,14 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Stock/</loc>
+    <loc>https://egbert-yu-ting.github.io/tags/Fibonacci-Sequence/</loc>
     <lastmod>2021-01-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/BruteForce/</loc>
+    <loc>https://egbert-yu-ting.github.io/tags/Iterator/</loc>
     <lastmod>2021-01-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -445,14 +459,7 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Fibonacci-Sequence/</loc>
-    <lastmod>2021-01-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Iterator/</loc>
+    <loc>https://egbert-yu-ting.github.io/tags/BruteForce/</loc>
     <lastmod>2021-01-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -501,13 +508,6 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Reverse-order/</loc>
-    <lastmod>2021-01-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://egbert-yu-ting.github.io/tags/ListNode/</loc>
     <lastmod>2021-01-26</lastmod>
     <changefreq>daily</changefreq>
@@ -516,6 +516,13 @@
   
   <url>
     <loc>https://egbert-yu-ting.github.io/tags/Algorithm/</loc>
+    <lastmod>2021-01-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Reverse-order/</loc>
     <lastmod>2021-01-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

@@ -82,6 +82,51 @@ if sum = 0 // binary: 00000000<br>  (sum &amp; 1) = 0<br> if sum = 2 // binary
       </tags>
   </entry>
   <entry>
+    <title>Best Time to Buy and Sell Stock II - Solution/C++</title>
+    <url>/posts/a10d34fe/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>122. Best Time to Buy and Sell Stock II</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Say you have an array <span style="background-color:#F0F0F0"><font color=#808080>prices</font></span> for which the ith element is the price of a given stock on day i.<br> <a id="more"></a></p>
+<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).<br></p>
+<p><strong>Note:</strong> You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> [7,1,5,3,6,4]<br> <b>Output:</b> 7<br> <b>Explanation:</b> Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.<br>       Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> [1,2,3,4,5]<br> <b>Output:</b> 4<br> <b>Explanation:</b> Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.        Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are engaging multiple transactions at the same time. You must sell before buying again.
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> [7,6,4,3,1]<br> <b>Output:</b> 0<br> <b>Explanation:</b> In this case, no transaction is done, i.e. max profit = 0.
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= prices.length &lt;= 3 * 10 ^ 4</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= prices[i] &lt;= 10 ^ 4</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> Here is the same as <a href="https://egbert-yu-ting.github.io/posts/a026a3d3/">Best Time to Buy and Sell Stock</a>. <br></p>
+<p>At 8 line, it always gets lowest price to i-th day.<br> At 9 - 10 line, we know the value of profit (<code>prices[i] - minPrice</code>), it must be checked whether it's bigger than 0. Because it avoids buying day and selling day on the same day, and guarantee the positive profit we get.<br> At 11 - 14 lin, we should not sell stock immediately even the profit is prositive at i-th day, maybe it will higher tomorrow (i-th + 1 day). So, we can know the selling day that is the best.<br> At 17 line, reinitialize minPrice variable for the next best buying day.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> minPrice = INT_MAX, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            minPrice = min(minPrice, prices[i]);</span><br><span class="line">            <span class="keyword">int</span> profit = prices[i] - minPrice, j = i;</span><br><span class="line">            <span class="keyword">if</span>(profit &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">while</span>(j &lt; n &amp;&amp; prices[j] &gt;= prices[i])&#123;</span><br><span class="line">                    i = j;</span><br><span class="line">                    j++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                sum += prices[i] - minPrice;</span><br><span class="line">                minPrice= INT_MAX;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<br> This strategy is very simple, if the buying day subtracted from the selling day is positive (profit), we directly add profit into maxProfit variable.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxProfit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(prices[i] &gt; prices[i<span class="number">-1</span>])&#123;</span><br><span class="line">                maxProfit += prices[i]- prices[i<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Stock</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Balanced Binary Tree - Solution/C++</title>
     <url>/posts/b3e1ca12/</url>
     <content><![CDATA[<p align="center">
@@ -130,80 +175,6 @@ TThe number of nodes in the tree is in the range <span style="background-color:#
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Best Time to Buy and Sell Stock - Solution/C++</title>
-    <url>/posts/a026a3d3/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>121. Best Time to Buy and Sell Stock</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>You are given an array <span style="background-color:#F0F0F0"><font color=#808080>prices</font></span> where <span style="background-color:#F0F0F0"><font color=#808080>prices[i]</font></span> is the price of a given stock on the <span style="background-color:#F0F0F0"><font color=#808080>i^th</font></span> day.</p>
-<p>You want to maximize your profit by choosing a <strong>single day</strong> to buy one stock and choosing a <strong>different day in the future</strong> to sell that stock. <a id="more"></a></p>
-<p>Return <em>the maximum profit you can achieve from this transaction</em>. If you cannot achieve any profit, return <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> prices = [7,1,5,3,6,4]<br> <b>Output:</b> 5<br> <b>Explanation:</b> Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.<br> Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> prices = [7,6,4,3,1]<br> <b>Output:</b> 0<br> <b>Explanation:</b> In this case, no transactions are done and the max profit = 0.
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= prices.length &lt;= 10^5</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= prices[i] &lt;= 10^4</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> It is a brute force algorithm. Each elements as buying day (<code>prices[i]</code>)compare the profit with other selling day (<code>prices[j]</code>, i &lt; j), so we can get the maximum profit, however, the strategy is very inefficient. (Time Limit Exceeded)</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices.empty() || prices.size() == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> profit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; prices.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> cost = prices[i];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; prices.size(); j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> reward = prices[j];</span><br><span class="line">                <span class="keyword">int</span> temp = reward - cost;</span><br><span class="line">                <span class="keyword">if</span>(temp &gt; <span class="number">0</span> &amp;&amp; temp &gt; profit)&#123;</span><br><span class="line">                    profit = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> It can use only one loop to implement the algorithm.<br> <code>minPrice</code>: It want to get the lowest price up to i-th day.<br> <code>maxProfit</code>: It want to get the max profit up to i-th day.<br> <code>max(maxProfit, prices[i] - minPrice)</code>: It means that the minimum price subtracted from the price of selling day(<code>prices[i]</code>) and choose the large profit.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> minPrice = INT_MAX, maxProfit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            minPrice = min(minPrice, prices[i]);</span><br><span class="line">            maxProfit = max(maxProfit, prices[i] - minPrice);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Stock</tag>
-        <tag>BruteForce</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Binary Tree Level Order Traversal II - Solution/C++</title>
-    <url>/posts/cac8b982/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>107. Binary Tree Level Order Traversal II</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a binary tree, return the <em>bottom-up level order</em> traversal of its nodes' values. (ie, from left to right, level by level from leaf to root). <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-For example: Given binary tree <span style="background-color:#F0F0F0"><font color=#808080>[3,9,20,null,null,15,7]</span></font>,
-<p style="background-color:#F0F0F0">
-   3<br>    / \<br>   9 20<br>    / \<br>    15  7
-</p>
-return its bottom-up level order traversal as:
-<p style="background-color:#F0F0F0">
-[<br>   [15,7],<br>   [9,20],<br>   [3]<br>]
-</p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> I made a big mistake, I always think the solution that find the deepest depth first, the go back to the root with each layers. I realized an efficient approach until I had refered to <a href="https://zxi.mytechroad.com/blog/tree/leetcode-107-binary-tree-level-order-traversal-ii/">Huahua's Tech Road</a>.<br></p>
-<p>You must understand how to implement a two dimensional vector first. Write a function as recursion, store each elements from top of tree. <code>res.size() &lt;= depth&gt;</code> is an important statement to expand 2D vector size. Then, we must go through every left &amp; right nodes and store it based on correspondingly depth. Finaly, let go back to original function, we must use reverse() to pass the answers.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; levelOrderBottom(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span> &lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line">        levelOrderBottom(root, <span class="number">0</span>, res);</span><br><span class="line">        reverse(res.begin(), res.end());</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">levelOrderBottom</span><span class="params">(TreeNode* root, <span class="keyword">int</span> depth, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">while</span>(res.size() &lt;= depth) res.push_back(&#123;&#125;);</span><br><span class="line">        res[depth].push_back(root-&gt;val);</span><br><span class="line">        levelOrderBottom(root-&gt;left, depth + <span class="number">1</span>, res);</span><br><span class="line">        levelOrderBottom(root-&gt;right, depth + <span class="number">1</span>, res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Recursion</tag>
-        <tag>STL</tag>
-        <tag>2D_Vector</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Climbing Stairs - Solution/C++</title>
     <url>/posts/7af6a106/</url>
     <content><![CDATA[<p align="center">
@@ -244,48 +215,77 @@ return its bottom-up level order traversal as:
       </tags>
   </entry>
   <entry>
-    <title>Best Time to Buy and Sell Stock II - Solution/C++</title>
-    <url>/posts/a10d34fe/</url>
+    <title>[LeetCode Road] Binary Tree Level Order Traversal II - Solution/C++</title>
+    <url>/posts/cac8b982/</url>
     <content><![CDATA[<p align="center">
-<font size="6"><b>122. Best Time to Buy and Sell Stock II</b></font>
+<font size="6"><b>107. Binary Tree Level Order Traversal II</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>Say you have an array <span style="background-color:#F0F0F0"><font color=#808080>prices</font></span> for which the ith element is the price of a given stock on day i.<br> <a id="more"></a></p>
-<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).<br></p>
-<p><strong>Note:</strong> You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</p>
+<p>Given a binary tree, return the <em>bottom-up level order</em> traversal of its nodes' values. (ie, from left to right, level by level from leaf to root). <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+For example: Given binary tree <span style="background-color:#F0F0F0"><font color=#808080>[3,9,20,null,null,15,7]</span></font>,
+<p style="background-color:#F0F0F0">
+   3<br>    / \<br>   9 20<br>    / \<br>    15  7
+</p>
+return its bottom-up level order traversal as:
+<p style="background-color:#F0F0F0">
+[<br>   [15,7],<br>   [9,20],<br>   [3]<br>]
+</p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> I made a big mistake, I always think the solution that find the deepest depth first, the go back to the root with each layers. I realized an efficient approach until I had refered to <a href="https://zxi.mytechroad.com/blog/tree/leetcode-107-binary-tree-level-order-traversal-ii/">Huahua's Tech Road</a>.<br></p>
+<p>You must understand how to implement a two dimensional vector first. Write a function as recursion, store each elements from top of tree. <code>res.size() &lt;= depth&gt;</code> is an important statement to expand 2D vector size. Then, we must go through every left &amp; right nodes and store it based on correspondingly depth. Finaly, let go back to original function, we must use reverse() to pass the answers.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; levelOrderBottom(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span> &lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line">        levelOrderBottom(root, <span class="number">0</span>, res);</span><br><span class="line">        reverse(res.begin(), res.end());</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">levelOrderBottom</span><span class="params">(TreeNode* root, <span class="keyword">int</span> depth, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">while</span>(res.size() &lt;= depth) res.push_back(&#123;&#125;);</span><br><span class="line">        res[depth].push_back(root-&gt;val);</span><br><span class="line">        levelOrderBottom(root-&gt;left, depth + <span class="number">1</span>, res);</span><br><span class="line">        levelOrderBottom(root-&gt;right, depth + <span class="number">1</span>, res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Recursion</tag>
+        <tag>STL</tag>
+        <tag>2D_Vector</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Best Time to Buy and Sell Stock - Solution/C++</title>
+    <url>/posts/a026a3d3/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>121. Best Time to Buy and Sell Stock</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>You are given an array <span style="background-color:#F0F0F0"><font color=#808080>prices</font></span> where <span style="background-color:#F0F0F0"><font color=#808080>prices[i]</font></span> is the price of a given stock on the <span style="background-color:#F0F0F0"><font color=#808080>i^th</font></span> day.</p>
+<p>You want to maximize your profit by choosing a <strong>single day</strong> to buy one stock and choosing a <strong>different day in the future</strong> to sell that stock. <a id="more"></a></p>
+<p>Return <em>the maximum profit you can achieve from this transaction</em>. If you cannot achieve any profit, return <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> [7,1,5,3,6,4]<br> <b>Output:</b> 7<br> <b>Explanation:</b> Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.<br>       Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+<b>Input:</b> prices = [7,1,5,3,6,4]<br> <b>Output:</b> 5<br> <b>Explanation:</b> Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.<br> Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
 </p>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> [1,2,3,4,5]<br> <b>Output:</b> 4<br> <b>Explanation:</b> Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.        Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are engaging multiple transactions at the same time. You must sell before buying again.
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> [7,6,4,3,1]<br> <b>Output:</b> 0<br> <b>Explanation:</b> In this case, no transaction is done, i.e. max profit = 0.
+<b>Input:</b> prices = [7,6,4,3,1]<br> <b>Output:</b> 0<br> <b>Explanation:</b> In this case, no transactions are done and the max profit = 0.
 </p>
 <strong>Constraints:</strong> <strong>
 <li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= prices.length &lt;= 3 * 10 ^ 4</font></span>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= prices.length &lt;= 10^5</font></span>
 </li>
 </strong> <strong>
 <li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= prices[i] &lt;= 10 ^ 4</font></span>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= prices[i] &lt;= 10^4</font></span>
 </li>
 <p></strong></p>
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> Here is the same as <a href="https://egbert-yu-ting.github.io/posts/a026a3d3/">Best Time to Buy and Sell Stock</a>. <br></p>
-<p>At 8 line, it always gets lowest price to i-th day.<br> At 9 - 10 line, we know the value of profit (<code>prices[i] - minPrice</code>), it must be checked whether it's bigger than 0. Because it avoids buying day and selling day on the same day, and guarantee the positive profit we get.<br> At 11 - 14 lin, we should not sell stock immediately even the profit is prositive at i-th day, maybe it will higher tomorrow (i-th + 1 day). So, we can know the selling day that is the best.<br> At 17 line, reinitialize minPrice variable for the next best buying day.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> minPrice = INT_MAX, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            minPrice = min(minPrice, prices[i]);</span><br><span class="line">            <span class="keyword">int</span> profit = prices[i] - minPrice, j = i;</span><br><span class="line">            <span class="keyword">if</span>(profit &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">while</span>(j &lt; n &amp;&amp; prices[j] &gt;= prices[i])&#123;</span><br><span class="line">                    i = j;</span><br><span class="line">                    j++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                sum += prices[i] - minPrice;</span><br><span class="line">                minPrice= INT_MAX;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Idea:<br> It is a brute force algorithm. Each elements as buying day (<code>prices[i]</code>)compare the profit with other selling day (<code>prices[j]</code>, i &lt; j), so we can get the maximum profit, however, the strategy is very inefficient. (Time Limit Exceeded)</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices.empty() || prices.size() == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> profit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; prices.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> cost = prices[i];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; prices.size(); j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> reward = prices[j];</span><br><span class="line">                <span class="keyword">int</span> temp = reward - cost;</span><br><span class="line">                <span class="keyword">if</span>(temp &gt; <span class="number">0</span> &amp;&amp; temp &gt; profit)&#123;</span><br><span class="line">                    profit = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> This strategy is very simple, if the buying day subtracted from the selling day is positive (profit), we directly add profit into maxProfit variable.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxProfit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(prices[i] &gt; prices[i<span class="number">-1</span>])&#123;</span><br><span class="line">                maxProfit += prices[i]- prices[i<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Idea:<br> It can use only one loop to implement the algorithm.<br> <code>minPrice</code>: It want to get the lowest price up to i-th day.<br> <code>maxProfit</code>: It want to get the max profit up to i-th day.<br> <code>max(maxProfit, prices[i] - minPrice)</code>: It means that the minimum price subtracted from the price of selling day(<code>prices[i]</code>) and choose the large profit.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> minPrice = INT_MAX, maxProfit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            minPrice = min(minPrice, prices[i]);</span><br><span class="line">            maxProfit = max(maxProfit, prices[i] - minPrice);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>LeetCode-Easy</category>
       </categories>
       <tags>
         <tag>Stock</tag>
+        <tag>BruteForce</tag>
       </tags>
   </entry>
   <entry>
@@ -475,40 +475,61 @@ fatal: unable to auto-detect email address (got ...)<br> error: src refspec HEAD
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Length of Last Word - Solution/C++</title>
-    <url>/posts/b04b682/</url>
+    <title>[LeetCode Road] Intersection of Two Linked Lists</title>
+    <url>/posts/a44c9fee/</url>
     <content><![CDATA[<p align="center">
-<font size="6"><b>8. Length of Last Word</b></font>
+<font size="6"><b>160. Intersection of Two Linked Lists</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of some words separated by spaces, return the <em>length of the last word in the string</em>. <em>If the last word does not exist, return</em> <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</p>
-<p>A <strong>word</strong> is a maximal substring consisting of non-space characters only. <a id="more"></a></p>
+<p>Write a program to find the node at which the intersection of two singly linked lists begins.<br></p>
+<p>For example, the following two linked lists: <img src="example_1.png" /> begin to intersect at node c1.</p>
 <h2 id="example">Example:</h2>
+<img src="example_2.png" />
 <p style="background-color:#F0F0F0">
-<b>Input:</b> s = "Hello World"<br><b>Output:</b> 5<br>
+<b>Input:</b> intersectVal = 8, listA = [4,1,8,4,5], listB = [5,6,1,8,4,5], skipA = 2, skipB = 3<br> <b>Output:</b> Reference of the node with value = 8<br> <b>Input Explanation:</b> The intersected node's value is 8 (note that this must not be 0 if the two lists intersect). From the head of A, it reads as [4,1,8,4,5]. From the head of B, it reads as [5,6,1,8,4,5]. There are 2 nodes before the intersected node in A; There are 3 nodes before the intersected node in B.
 </p>
+<img src="example_3.png" />
 <p style="background-color:#F0F0F0">
-<b>Input:</b> s = " "<br><b>Output:</b> 0</br>
+<b>Input:</b> intersectVal = 2, listA = [1,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1<br> <b>Output:</b> Reference of the node with value = 2<br> <b>Input Explanation:</b> The intersected node's value is 2 (note that this must not be 0 if the two lists intersect). From the head of A, it reads as [1,9,1,2,4]. From the head of B, it reads as [3,2,4]. There are 3 nodes before the intersected node in A; There are 1 node before the intersected node in B.
 </p>
-<strong>Constraints:</strong> <strong>
+<img src="example_4.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2<br> <b>Output:</b> null<br> <b>Input Explanation:</b> From the head of A, it reads as [2,6,4]. From the head of B, it reads as [1,5]. Since the two lists do not intersect, intersectVal must be 0, while skipA and skipB can be arbitrary values.<br> <b>Explanation:</b> The two lists do not intersect, so return null.
+</p>
+<strong>Notes:</strong> <strong>
 <li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= s.length &lt;= 10^4</font></span>
+If the two linked lists have no intersection at all, return <span style="background-color:#F0F0F0"><font color=#808080>null</font></span>.
 </li>
 </strong> <strong>
 <li>
-<span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of only English letters and spaces <span style="background-color:#F0F0F0"><font color=#808080>' '</font></span>
+The linked lists must retain their original structure after the function returns.
 </li>
-<p></strong>.</p>
-<h2 id="source-code">Source code</h2>
+</strong> <strong>
+<li>
+You may assume there are no cycles anywhere in the entire linked structure.
+</li>
+</strong> <strong>
+<li>
+Each value on each linked list is in the range <span style="background-color:#F0F0F0"><font color=#808080>[1, 10^9]</font></span>.
+</li>
+</strong> <strong>
+<li>
+Your code should preferably run in O(n) time and use only O(1) memory.
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code:</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> This problem took me a lot of time thinking how to solve, because I tried many methods based on scanning string in order. As a result, I ingorned tailing spaces situation, e.g., "a " or "a bc ".<br> Obviously, my logic was error! Finally, I refered to <a href="https://zxi.mytechroad.com/blog/string/leetcode-58-length-of-last-word/">Huahua's Tech Road</a>, the solution is very understandable, it scan the string in <strong>reverse order</strong> <u>until a space or reach the beginning of the string</u>.<br> So, the first <code>while(i &gt;= 0 &amp;&amp; s[i] == ' ')</code> means trimming off space at tail; the second <code>while(i &gt;= 0 &amp;&amp; s[i] != ' ')</code> means calculating length of a last word.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLastWord</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> characters = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] == <span class="string">&#x27; &#x27;</span>) i--;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] != <span class="string">&#x27; &#x27;</span>)&#123;</span><br><span class="line">            i--;</span><br><span class="line">            characters ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> characters;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Idea:<br></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">getIntersectionNode</span><span class="params">(ListNode *headA, ListNode *headB)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!headA &amp;&amp; !headB) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">int</span> lenA = <span class="number">0</span>, lenB = <span class="number">0</span>;</span><br><span class="line">        ListNode *tempA = headA;</span><br><span class="line">        ListNode *tempB = headB;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(tempA)&#123;</span><br><span class="line">            lenA++;</span><br><span class="line">            tempA = tempA-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(tempB)&#123;</span><br><span class="line">            lenB++;</span><br><span class="line">            tempB = tempB-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(tempA!=tempB) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(lenA &gt; lenB)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; lenA - lenB; i++)</span><br><span class="line">                headA = headA-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(lenB &gt; lenA)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; lenB - lenA; i++)</span><br><span class="line">                headB = headB-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(headA != headB)&#123;</span><br><span class="line">            headA = headA-&gt;next;</span><br><span class="line">            headB = headB-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> headA;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<br></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">getIntersectionNode</span><span class="params">(ListNode *headA, ListNode *headB)</span> </span>&#123;</span><br><span class="line">        ListNode *tempA = headA;</span><br><span class="line">        ListNode *tempB = headB;</span><br><span class="line">        <span class="keyword">while</span>(tempA != tempB)&#123;</span><br><span class="line">            tempA = tempA?tempA-&gt;next:headB;</span><br><span class="line">            tempB = tempB?tempB-&gt;next:headA;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> tempA;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>LeetCode-Easy</category>
       </categories>
       <tags>
-        <tag>Reverse_order</tag>
+        <tag>ListNode</tag>
       </tags>
   </entry>
   <entry>
@@ -571,6 +592,43 @@ The number of the nodes in the list is in the range <span style="background-colo
       <tags>
         <tag>ListNode</tag>
         <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Length of Last Word - Solution/C++</title>
+    <url>/posts/b04b682/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>8. Length of Last Word</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of some words separated by spaces, return the <em>length of the last word in the string</em>. <em>If the last word does not exist, return</em> <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</p>
+<p>A <strong>word</strong> is a maximal substring consisting of non-space characters only. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "Hello World"<br><b>Output:</b> 5<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = " "<br><b>Output:</b> 0</br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= s.length &lt;= 10^4</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of only English letters and spaces <span style="background-color:#F0F0F0"><font color=#808080>' '</font></span>
+</li>
+<p></strong>.</p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> This problem took me a lot of time thinking how to solve, because I tried many methods based on scanning string in order. As a result, I ingorned tailing spaces situation, e.g., "a " or "a bc ".<br> Obviously, my logic was error! Finally, I refered to <a href="https://zxi.mytechroad.com/blog/string/leetcode-58-length-of-last-word/">Huahua's Tech Road</a>, the solution is very understandable, it scan the string in <strong>reverse order</strong> <u>until a space or reach the beginning of the string</u>.<br> So, the first <code>while(i &gt;= 0 &amp;&amp; s[i] == ' ')</code> means trimming off space at tail; the second <code>while(i &gt;= 0 &amp;&amp; s[i] != ' ')</code> means calculating length of a last word.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLastWord</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> characters = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] == <span class="string">&#x27; &#x27;</span>) i--;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] != <span class="string">&#x27; &#x27;</span>)&#123;</span><br><span class="line">            i--;</span><br><span class="line">            characters ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> characters;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Reverse_order</tag>
       </tags>
   </entry>
   <entry>
@@ -867,6 +925,46 @@ Both <span style="background-color:#F0F0F0"><font color=#808080>l1</font></span>
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Minimum Depth of Binary Tree - Solution/C++</title>
+    <url>/posts/2397063c/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>111. Minimum Depth of Binary Tree</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a binary tree, find its minimum depth.</p>
+<p>The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>
+<p><strong>Note:</strong> A leaf is a node with no children. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<img src="example.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 2
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [2,null,3,null,4,null,5,null,6]<br> <b>Output:</b> 5
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^5]</font></span>.
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-1000 &lt;= Node.val &lt;= 1000</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> We can sum up the rules of the binary tree.<br> <strong>First:</strong> If the left subnode and right subnode are exist of leaf node, it can be calculated each depths and use min() to get minimum depth.<br> <strong>Seconde:</strong> If there is NULL either left subnode or right subnode of leaf node, we must use max() to get the maxixmum depth, because <u>"A leaf is a node with no children"</u> based on the question. E.g., if left subnode is NULL, a leaf can't be calculated as 1 depth.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;left &amp;&amp; root-&gt;right)&#123;</span><br><span class="line">            <span class="keyword">return</span> min(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> max(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Tree</tag>
+        <tag>Recursion</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Min Stack - Solution/C++</title>
     <url>/posts/cb679286/</url>
     <content><![CDATA[<p align="center">
@@ -913,46 +1011,6 @@ Methods <span style="background-color:#F0F0F0"><font color=#808080>pop</font></s
       </categories>
       <tags>
         <tag>Stack</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Minimum Depth of Binary Tree - Solution/C++</title>
-    <url>/posts/2397063c/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>111. Minimum Depth of Binary Tree</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a binary tree, find its minimum depth.</p>
-<p>The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>
-<p><strong>Note:</strong> A leaf is a node with no children. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<img src="example.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 2
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [2,null,3,null,4,null,5,null,6]<br> <b>Output:</b> 5
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^5]</font></span>.
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-1000 &lt;= Node.val &lt;= 1000</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code:</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> We can sum up the rules of the binary tree.<br> <strong>First:</strong> If the left subnode and right subnode are exist of leaf node, it can be calculated each depths and use min() to get minimum depth.<br> <strong>Seconde:</strong> If there is NULL either left subnode or right subnode of leaf node, we must use max() to get the maxixmum depth, because <u>"A leaf is a node with no children"</u> based on the question. E.g., if left subnode is NULL, a leaf can't be calculated as 1 depth.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;left &amp;&amp; root-&gt;right)&#123;</span><br><span class="line">            <span class="keyword">return</span> min(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> max(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Tree</tag>
-        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>
@@ -1597,37 +1655,6 @@ Each element in the array appears twice except for one element which appears onl
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Symmetric Tree - Solution/C++</title>
-    <url>/posts/d1f23ab6/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>101. Symmetric Tree</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center). <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-For example, this binary tree <span style="background-color:#F0F0F0"><font color=#808080>[1,2,2,3,4,4,3]</font></span> is symmetric:
-<p style="background-color:#F0F0F0">
-    1<br>      / \<br>     2   2<br>    / \ / \<br>   3 4 4 3
-</p>
-But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,2,2,null,3,null,3]</font></span> is not:
-<p style="background-color:#F0F0F0">
-    1<br>      / \<br>     2   2<br>      \   \<br>     3   3
-</p>
-<h2 id="source-code">Source code:</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> The strategic is similar to <a href="https://egbert-yu-ting.github.io/posts/2ef96137/#more">Same-Tree</a>. First, we must check the root node whether it's null or not. Then, we use root-&gt;left and root-&gt;right as arguments to call private function.<br></p>
-<p>There are some rules we must to know:<br> 1. the value of the left node must be equal to the value of the right node.<br> 2. the value of the left node as the left child node must be equal to the value of the right node as the right child node.<br> 3. the vlaue of the left node as the right child node must be equal to the value of the right node as the left child node.<br> So, we can write to codes based on these ruls at 22~23 line.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> isSymmetric(root-&gt;left, root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* l, TreeNode* r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!l &amp;&amp; !r) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(!l || !r) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> (l-&gt;val == r-&gt;val) &amp;&amp; isSymmetric(l-&gt;left, r-&gt;right) </span><br><span class="line">            &amp;&amp; isSymmetric(l-&gt;right, r-&gt;left);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Tree</tag>
-        <tag>Recursion</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Sqrt(x) - Solution/C++</title>
     <url>/posts/72b31d68/</url>
     <content><![CDATA[<p align="center">
@@ -1661,6 +1688,37 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
       </categories>
       <tags>
         <tag>Binary_search</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Symmetric Tree - Solution/C++</title>
+    <url>/posts/d1f23ab6/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>101. Symmetric Tree</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center). <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+For example, this binary tree <span style="background-color:#F0F0F0"><font color=#808080>[1,2,2,3,4,4,3]</font></span> is symmetric:
+<p style="background-color:#F0F0F0">
+    1<br>      / \<br>     2   2<br>    / \ / \<br>   3 4 4 3
+</p>
+But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,2,2,null,3,null,3]</font></span> is not:
+<p style="background-color:#F0F0F0">
+    1<br>      / \<br>     2   2<br>      \   \<br>     3   3
+</p>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> The strategic is similar to <a href="https://egbert-yu-ting.github.io/posts/2ef96137/#more">Same-Tree</a>. First, we must check the root node whether it's null or not. Then, we use root-&gt;left and root-&gt;right as arguments to call private function.<br></p>
+<p>There are some rules we must to know:<br> 1. the value of the left node must be equal to the value of the right node.<br> 2. the value of the left node as the left child node must be equal to the value of the right node as the right child node.<br> 3. the vlaue of the left node as the right child node must be equal to the value of the right node as the left child node.<br> So, we can write to codes based on these ruls at 22~23 line.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> isSymmetric(root-&gt;left, root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* l, TreeNode* r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!l &amp;&amp; !r) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(!l || !r) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> (l-&gt;val == r-&gt;val) &amp;&amp; isSymmetric(l-&gt;left, r-&gt;right) </span><br><span class="line">            &amp;&amp; isSymmetric(l-&gt;right, r-&gt;left);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Tree</tag>
+        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>

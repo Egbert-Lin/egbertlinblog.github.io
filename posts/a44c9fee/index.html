@@ -41,7 +41,7 @@
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/a44c9fee/explain.png">
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/a44c9fee/intersectval.png">
 <meta property="article:published_time" content="2021-01-26T08:01:15.000Z">
-<meta property="article:modified_time" content="2021-01-27T09:03:02.539Z">
+<meta property="article:modified_time" content="2021-01-27T09:11:55.726Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="ListNode">
 <meta name="twitter:card" content="summary">
@@ -396,7 +396,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-27 17:03:02" itemprop="dateModified" datetime="2021-01-27T17:03:02+08:00">2021-01-27</time>
+        <time title="Modified: 2021-01-27 17:11:55" itemprop="dateModified" datetime="2021-01-27T17:11:55+08:00">2021-01-27</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -488,6 +488,7 @@ After counting, you should make those Lists moved to the same position, as below
 <h3 id="version-2"><u>Version 2</u></h3>
 <p>Idea:<br> Let takes Example 2 to explain how efficient method it is. <img src="explain.png" /></p>
 <p>Go through each node with headA and headB at the same time, meanwhile, check the reference of nodes whether those are the same or not. If one of the List points to <code>NULL</code>(means at the end), restart to go through the other, the illustration is shown in the following, <img src="intersectval.png" /></p>
+<p>So, if there is the intersection between two singly linked lists, the method will find. On the contrary, those will point to NULL.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">getIntersectionNode</span><span class="params">(ListNode *headA, ListNode *headB)</span> </span>&#123;</span><br><span class="line">        ListNode *tempA = headA;</span><br><span class="line">        ListNode *tempB = headB;</span><br><span class="line">        <span class="keyword">while</span>(tempA != tempB)&#123;</span><br><span class="line">            tempA = tempA?tempA-&gt;next:headB;</span><br><span class="line">            tempB = tempB?tempB-&gt;next:headA;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> tempA;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>

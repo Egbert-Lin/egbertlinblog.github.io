@@ -431,13 +431,6 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/BruteForce/</loc>
-    <lastmod>2021-01-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://egbert-yu-ting.github.io/tags/STL/</loc>
     <lastmod>2021-01-27</lastmod>
     <changefreq>daily</changefreq>
@@ -474,6 +467,13 @@
   
   <url>
     <loc>https://egbert-yu-ting.github.io/tags/String/</loc>
+    <lastmod>2021-01-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/BruteForce/</loc>
     <lastmod>2021-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -634,6 +634,13 @@
   </url>
   
   <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Binary-search/</loc>
+    <lastmod>2021-01-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://egbert-yu-ting.github.io/tags/Recursive-function/</loc>
     <lastmod>2021-01-27</lastmod>
     <changefreq>daily</changefreq>
@@ -677,13 +684,6 @@
   
   <url>
     <loc>https://egbert-yu-ting.github.io/tags/OpenFlow1-3/</loc>
-    <lastmod>2021-01-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Binary-search/</loc>
     <lastmod>2021-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

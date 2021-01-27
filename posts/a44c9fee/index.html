@@ -36,8 +36,10 @@
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/a44c9fee/example_2.png">
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/a44c9fee/example_3.png">
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/a44c9fee/example_4.png">
+<meta property="og:image" content="https://egbert-yu-ting.github.io/posts/a44c9fee/AbiggerB.png">
+<meta property="og:image" content="https://egbert-yu-ting.github.io/posts/a44c9fee/AsmallerB.png">
 <meta property="article:published_time" content="2021-01-26T08:01:15.000Z">
-<meta property="article:modified_time" content="2021-01-26T09:02:21.138Z">
+<meta property="article:modified_time" content="2021-01-27T07:30:45.717Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="ListNode">
 <meta name="twitter:card" content="summary">
@@ -384,10 +386,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-01-26 16:01:15 / Modified: 17:02:21" itemprop="dateCreated datePublished" datetime="2021-01-26T16:01:15+08:00">2021-01-26</time>
+      <time title="Created: 2021-01-26 16:01:15" itemprop="dateCreated datePublished" datetime="2021-01-26T16:01:15+08:00">2021-01-26</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-27 15:30:45" itemprop="dateModified" datetime="2021-01-27T15:30:45+08:00">2021-01-27</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -464,7 +472,16 @@ Your code should preferably run in O(n) time and use only O(1) memory.
 <p></strong></p>
 <h2 id="source-code">Source code:</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br></p>
+<p>Idea:<br> The length of two List may be different, so you should count the length of <code>headA</code> and <code>headB</code> at 17-25 line.<br> <strong>Notice:</strong> You must declare the pointer of ListNode as <code>headA</code> &amp; <code>headB</code>.<br></p>
+After counting, you should make those Lists moved to the same position, as below: <img src="AbiggerB.png" />
+<p align="center">
+(a.) The count of headA is bigger than headB
+</p>
+<img src="AsmallerB.png" />
+<p align="center">
+(b.) The count of headA is smaller than headB
+</p>
+<p>At 39-42 line, it starts comparing each value of List, if find the same reference(address), return headA(or headB).<br> However, if there is no intersection(can not find the same Listnode), the List of headA or headB points to <code>NULL</code>, hence also return headA(or headB).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">getIntersectionNode</span><span class="params">(ListNode *headA, ListNode *headB)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!headA &amp;&amp; !headB) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">int</span> lenA = <span class="number">0</span>, lenB = <span class="number">0</span>;</span><br><span class="line">        ListNode *tempA = headA;</span><br><span class="line">        ListNode *tempB = headB;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(tempA)&#123;</span><br><span class="line">            lenA++;</span><br><span class="line">            tempA = tempA-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(tempB)&#123;</span><br><span class="line">            lenB++;</span><br><span class="line">            tempB = tempB-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(tempA!=tempB) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(lenA &gt; lenB)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; lenA - lenB; i++)</span><br><span class="line">                headA = headA-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(lenB &gt; lenA)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; lenB - lenA; i++)</span><br><span class="line">                headB = headB-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(headA != headB)&#123;</span><br><span class="line">            headA = headA-&gt;next;</span><br><span class="line">            headB = headB-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> headA;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="version-2"><u>Version 2</u></h3>
 <p>Idea:<br></p>

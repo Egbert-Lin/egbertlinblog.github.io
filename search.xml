@@ -519,7 +519,16 @@ Your code should preferably run in O(n) time and use only O(1) memory.
 <p></strong></p>
 <h2 id="source-code">Source code:</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br></p>
+<p>Idea:<br> The length of two List may be different, so you should count the length of <code>headA</code> and <code>headB</code> at 17-25 line.<br> <strong>Notice:</strong> You must declare the pointer of ListNode as <code>headA</code> &amp; <code>headB</code>.<br></p>
+After counting, you should make those Lists moved to the same position, as below: <img src="AbiggerB.png" />
+<p align="center">
+(a.) The count of headA is bigger than headB
+</p>
+<img src="AsmallerB.png" />
+<p align="center">
+(b.) The count of headA is smaller than headB
+</p>
+<p>At 39-42 line, it starts comparing each value of List, if find the same reference(address), return headA(or headB).<br> However, if there is no intersection(can not find the same Listnode), the List of headA or headB points to <code>NULL</code>, hence also return headA(or headB).</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">getIntersectionNode</span><span class="params">(ListNode *headA, ListNode *headB)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!headA &amp;&amp; !headB) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">int</span> lenA = <span class="number">0</span>, lenB = <span class="number">0</span>;</span><br><span class="line">        ListNode *tempA = headA;</span><br><span class="line">        ListNode *tempB = headB;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(tempA)&#123;</span><br><span class="line">            lenA++;</span><br><span class="line">            tempA = tempA-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(tempB)&#123;</span><br><span class="line">            lenB++;</span><br><span class="line">            tempB = tempB-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(tempA!=tempB) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(lenA &gt; lenB)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; lenA - lenB; i++)</span><br><span class="line">                headA = headA-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(lenB &gt; lenA)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; lenB - lenA; i++)</span><br><span class="line">                headB = headB-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(headA != headB)&#123;</span><br><span class="line">            headA = headA-&gt;next;</span><br><span class="line">            headB = headB-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> headA;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="version-2"><u>Version 2</u></h3>
 <p>Idea:<br></p>
@@ -1057,6 +1066,47 @@ The number of nodes in the tree is in the range <span style="background-color:#F
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Pascal&#39;s Triangle II - Solution/C++</title>
+    <url>/posts/f3431365/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>118. Pascal's Triangle II</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given an integer <span style="background-color:#F0F0F0"><font color=#808080>rowIndex</font></span>, return the <span style="background-color:#F0F0F0"><font color=#808080>rowIndex^th</font></span> row of the Pascal's triangle. Notice that the row index starts from <strong>0</strong>. <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif" alt="animation" /> <font size="2">In Pascal's triangle, each number is the sum of the two numbers directly above it.</font> <a id="more"></a></p>
+<p><strong>Follow up:</strong> Could you optimize your algorithm to use only <em>O(k)</em> extra space?</p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> rowIndex = 3<br> <b>Output:</b> [1,3,3,1]
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> rowIndex = 0<br> <b>Output:</b> [1]
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> rowIndex = 0<br> <b>Output:</b> [1]
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= rowIndex &lt;= 33</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> It is familiar with <a href="https://egbert-yu-ting.github.io/posts/2b0547f6/">Pascal's Trangle</a> question, you can use similar algorithm to implement it.<br> However, the efficiency of algorithm is not optimization.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">getRow</span><span class="params">(<span class="keyword">int</span> rowIndex)</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">res</span><span class="params">(<span class="number">1</span>,<span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">if</span>(rowIndex == <span class="number">0</span>) <span class="keyword">return</span> res;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= rowIndex; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> prev = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; i; j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> temp = res[j];</span><br><span class="line">                res[j] += prev;</span><br><span class="line">                prev = temp;</span><br><span class="line">            &#125; </span><br><span class="line">            res.push_back(<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<br> Here's the best algorithm.<br> At first, declare a vector that consists <code>rowIndex + 1</code> elements. Must be <strong>add 1</strong>, because row index starts from 0. So the size of vector is ready, we don't use <code>push_back()</code> in loop anymore.<br></p>
+<p>Whatever a value of rowIndex is, the first position of vector is always 1, so we pass 1 to <code>res</code> vector.<br> At 9 line, we calculate each elements in reverse(it not includes the frist element).<br></p>
+<p>E.g., <u>Input: rowIndex = 3</u><br>    i = 1, res=[1, 0, 0]<br>    i = 1, res=[1, 0 + 1, 0] = [1, 1, 0]<br>    i = 2, res=[1, 1 + 1, 0 + 1] = [1, 2, 1] (output)</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">getRow</span><span class="params">(<span class="keyword">int</span> rowIndex)</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">res</span><span class="params">(rowIndex+<span class="number">1</span>)</span></span>;</span><br><span class="line">        res[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= rowIndex; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &gt; <span class="number">0</span>; j--)</span><br><span class="line">                res[j] += res[j<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>2D_Vector</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Pascal&#39;s Triangle - Solution/C++</title>
     <url>/posts/2b0547f6/</url>
     <content><![CDATA[<p align="center">
@@ -1238,47 +1288,6 @@ Internally you can think of this:
       <tags>
         <tag>Vector</tag>
         <tag>Call_by_reference</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Pascal&#39;s Triangle II - Solution/C++</title>
-    <url>/posts/f3431365/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>118. Pascal's Triangle II</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given an integer <span style="background-color:#F0F0F0"><font color=#808080>rowIndex</font></span>, return the <span style="background-color:#F0F0F0"><font color=#808080>rowIndex^th</font></span> row of the Pascal's triangle. Notice that the row index starts from <strong>0</strong>. <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif" alt="animation" /> <font size="2">In Pascal's triangle, each number is the sum of the two numbers directly above it.</font> <a id="more"></a></p>
-<p><strong>Follow up:</strong> Could you optimize your algorithm to use only <em>O(k)</em> extra space?</p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> rowIndex = 3<br> <b>Output:</b> [1,3,3,1]
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> rowIndex = 0<br> <b>Output:</b> [1]
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> rowIndex = 0<br> <b>Output:</b> [1]
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= rowIndex &lt;= 33</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> It is familiar with <a href="https://egbert-yu-ting.github.io/posts/2b0547f6/">Pascal's Trangle</a> question, you can use similar algorithm to implement it.<br> However, the efficiency of algorithm is not optimization.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">getRow</span><span class="params">(<span class="keyword">int</span> rowIndex)</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">res</span><span class="params">(<span class="number">1</span>,<span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">if</span>(rowIndex == <span class="number">0</span>) <span class="keyword">return</span> res;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= rowIndex; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> prev = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; i; j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> temp = res[j];</span><br><span class="line">                res[j] += prev;</span><br><span class="line">                prev = temp;</span><br><span class="line">            &#125; </span><br><span class="line">            res.push_back(<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> Here's the best algorithm.<br> At first, declare a vector that consists <code>rowIndex + 1</code> elements. Must be <strong>add 1</strong>, because row index starts from 0. So the size of vector is ready, we don't use <code>push_back()</code> in loop anymore.<br></p>
-<p>Whatever a value of rowIndex is, the first position of vector is always 1, so we pass 1 to <code>res</code> vector.<br> At 9 line, we calculate each elements in reverse(it not includes the frist element).<br></p>
-<p>E.g., <u>Input: rowIndex = 3</u><br>    i = 1, res=[1, 0, 0]<br>    i = 1, res=[1, 0 + 1, 0] = [1, 1, 0]<br>    i = 2, res=[1, 1 + 1, 0 + 1] = [1, 2, 1] (output)</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">getRow</span><span class="params">(<span class="keyword">int</span> rowIndex)</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">res</span><span class="params">(rowIndex+<span class="number">1</span>)</span></span>;</span><br><span class="line">        res[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= rowIndex; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &gt; <span class="number">0</span>; j--)</span><br><span class="line">                res[j] += res[j<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>2D_Vector</tag>
       </tags>
   </entry>
   <entry>
@@ -1652,42 +1661,6 @@ Each element in the array appears twice except for one element which appears onl
       <tags>
         <tag>Logical_Operators</tag>
         <tag>Map(STL)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Sqrt(x) - Solution/C++</title>
-    <url>/posts/72b31d68/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>69. Sqrt(x)</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a non-negative integer <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>, compute and return <em>the square root of</em> <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>.</p>
-<p>Since the return type is an integer, the decimal digits are <b>truncated</b>, and only <b>the integer part</b> of the result is returned. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> x = 4<br><b>Output:</b> 2<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> x = 8<br> <b>Output:</b> 2<br> <b>Explanation:</b> The square root of 8 is 2.82842..., and since the decimal part is truncated, 2 is returned.<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= x &lt;= 2^31 - 1</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source Code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> My intuition is divided divisor that is start from 1, we can get remainder, if remainder is equal to divisor, return the divisor; if divisor is bigger than remainder, retrurn the (divisor - 1).<br> This method can work, but it wastes much time.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> divisor = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(divisor &lt;= x)&#123;</span><br><span class="line">            <span class="keyword">int</span> remainder = x / divisor;</span><br><span class="line">            <span class="keyword">if</span>(divisor == remainder) <span class="keyword">return</span> divisor;</span><br><span class="line">            <span class="keyword">if</span>(divisor &gt; remainder) <span class="keyword">return</span> divisor - <span class="number">1</span>;</span><br><span class="line">            divisor ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> divisor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<be> We can use binary search to improve time complexity. A variable of l means left index, a variable of r means right index and a variable of m means middle index. l must be set 1, because <code>while(l &lt;= r)</code> can filter <code>x = 0</code> test case. We use <code>m * m</code> to find which value can match x.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> l = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">long</span> r = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(x) ;</span><br><span class="line">        <span class="keyword">while</span>(l &lt;= r)&#123;</span><br><span class="line">            <span class="keyword">long</span> m = (l + r) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> ( m * m == x) <span class="keyword">return</span> m;</span><br><span class="line">            <span class="keyword">if</span>( m * m &gt; x)&#123;</span><br><span class="line">                r = m - <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                l = m + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Binary_search</tag>
       </tags>
   </entry>
   <entry>
@@ -2076,6 +2049,42 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
         <tag>ns-3</tag>
         <tag>ofswitch</tag>
         <tag>OpenFlow1.3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Sqrt(x) - Solution/C++</title>
+    <url>/posts/72b31d68/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>69. Sqrt(x)</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a non-negative integer <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>, compute and return <em>the square root of</em> <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>.</p>
+<p>Since the return type is an integer, the decimal digits are <b>truncated</b>, and only <b>the integer part</b> of the result is returned. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> x = 4<br><b>Output:</b> 2<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> x = 8<br> <b>Output:</b> 2<br> <b>Explanation:</b> The square root of 8 is 2.82842..., and since the decimal part is truncated, 2 is returned.<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= x &lt;= 2^31 - 1</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source Code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> My intuition is divided divisor that is start from 1, we can get remainder, if remainder is equal to divisor, return the divisor; if divisor is bigger than remainder, retrurn the (divisor - 1).<br> This method can work, but it wastes much time.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> divisor = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(divisor &lt;= x)&#123;</span><br><span class="line">            <span class="keyword">int</span> remainder = x / divisor;</span><br><span class="line">            <span class="keyword">if</span>(divisor == remainder) <span class="keyword">return</span> divisor;</span><br><span class="line">            <span class="keyword">if</span>(divisor &gt; remainder) <span class="keyword">return</span> divisor - <span class="number">1</span>;</span><br><span class="line">            divisor ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> divisor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<be> We can use binary search to improve time complexity. A variable of l means left index, a variable of r means right index and a variable of m means middle index. l must be set 1, because <code>while(l &lt;= r)</code> can filter <code>x = 0</code> test case. We use <code>m * m</code> to find which value can match x.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> l = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">long</span> r = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(x) ;</span><br><span class="line">        <span class="keyword">while</span>(l &lt;= r)&#123;</span><br><span class="line">            <span class="keyword">long</span> m = (l + r) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> ( m * m == x) <span class="keyword">return</span> m;</span><br><span class="line">            <span class="keyword">if</span>( m * m &gt; x)&#123;</span><br><span class="line">                r = m - <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                l = m + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Binary_search</tag>
       </tags>
   </entry>
 </search>

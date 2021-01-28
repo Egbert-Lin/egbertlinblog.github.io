@@ -487,6 +487,20 @@
   </url>
   
   <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Pair/</loc>
+    <lastmod>2021-01-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/INT-MIN/</loc>
+    <lastmod>2021-01-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://egbert-yu-ting.github.io/tags/Ubuntu/</loc>
     <lastmod>2021-01-28</lastmod>
     <changefreq>daily</changefreq>
@@ -508,14 +522,14 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Algorithm/</loc>
+    <loc>https://egbert-yu-ting.github.io/tags/Reverse-order/</loc>
     <lastmod>2021-01-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Reverse-order/</loc>
+    <loc>https://egbert-yu-ting.github.io/tags/Algorithm/</loc>
     <lastmod>2021-01-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -682,20 +696,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Pair/</loc>
-    <lastmod>2021-01-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://egbert-yu-ting.github.io/tags/INT-MIN/</loc>
-    <lastmod>2021-01-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   
   <url>
@@ -707,6 +707,13 @@
   
   <url>
     <loc>https://egbert-yu-ting.github.io/categories/hexo/</loc>
+    <lastmod>2021-01-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/categories/codeinterview/</loc>
     <lastmod>2021-01-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -728,13 +735,6 @@
   
   <url>
     <loc>https://egbert-yu-ting.github.io/categories/recursion/</loc>
-    <lastmod>2021-01-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://egbert-yu-ting.github.io/categories/codeinterview/</loc>
     <lastmod>2021-01-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

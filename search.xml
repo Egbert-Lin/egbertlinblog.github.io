@@ -1795,7 +1795,7 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
 </p>
 <h2 id="question">Question:</h2>
 <p>Given an array of integers that is already <b><l>sorted in ascending order</l></b>, find two numbers such that they add up to a specific target number.</p>
-<p>The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2.</p>
+<p>The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. <a id="more"></a></p>
 <b>Note:</b><br> <strong>
 <li>
 Your returned answers (both index1 and index2) are not zero-based.

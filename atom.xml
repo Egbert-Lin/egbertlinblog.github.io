@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-28T01:10:05.927Z</updated>
+  <updated>2021-01-28T01:15:31.380Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="https://egbert-yu-ting.github.io/posts/a4366474/"/>
     <id>https://egbert-yu-ting.github.io/posts/a4366474/</id>
     <published>2021-01-28T00:29:41.000Z</published>
-    <updated>2021-01-28T01:10:05.927Z</updated>
+    <updated>2021-01-28T01:15:31.380Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Two Sum II - Input array is sorted&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given an array of integers that is already &lt;b&gt;&lt;l&gt;sorted in ascending order&lt;/l&gt;&lt;/b&gt;, find two numbers such that they add up to a specific target number.&lt;/p&gt;
+&lt;p&gt;Given an array of integers that is already &lt;b&gt;&lt;I&gt;sorted in ascending order&lt;/I&gt;&lt;/b&gt;, find two numbers such that they add up to a specific target number.&lt;/p&gt;
 &lt;p&gt;The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2.</summary>
     
     

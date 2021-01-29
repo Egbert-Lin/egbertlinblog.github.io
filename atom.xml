@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-28T16:53:26.329Z</updated>
+  <updated>2021-01-29T02:16:39.154Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[LeetCode] Majority Element</title>
+    <link href="https://egbert-yu-ting.github.io/posts/ef374e86/"/>
+    <id>https://egbert-yu-ting.github.io/posts/ef374e86/</id>
+    <published>2021-01-29T01:19:53.000Z</published>
+    <updated>2021-01-29T02:16:39.154Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;169. Majority Element&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given an array &lt;span style=</summary>
+      
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>[LeetCode Road] Excel Sheet column Title</title>
@@ -507,36 +531,6 @@ For this problem, a height-balanced binary tree is defined as:
     <category term="SDN" scheme="https://egbert-yu-ting.github.io/tags/SDN/"/>
     
     <category term="Controller" scheme="https://egbert-yu-ting.github.io/tags/Controller/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[Quick and Easy] Installation of ns-3 Simulator with OpenFlow 1.3 - Tutorial</title>
-    <link href="https://egbert-yu-ting.github.io/posts/8ece0fb0/"/>
-    <id>https://egbert-yu-ting.github.io/posts/8ece0fb0/</id>
-    <published>2021-01-05T12:57:13.000Z</published>
-    <updated>2021-01-22T01:59:50.080Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;ns-3 configuration and ofswitch13 module - Tutorial&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;p&gt;I had deployed the ns-3 simulation with ofswitch13 successfully. I&#39;ve been struggling to solve the simulation platform a lot of time. So, my experience is quite valuable and self-giving sharing for the ns-3 beginners.&lt;br&gt; The following procedure can be deployed on VMware/Virtual machine or cloud instance.&lt;br&gt; If your want to know how to deploy ns-3 on remote cloud instance easily, I will post an article to demonstrate full steps.</summary>
-    
-    
-    
-    <category term="Simulator" scheme="https://egbert-yu-ting.github.io/categories/simulator/"/>
-    
-    
-    <category term="SDN" scheme="https://egbert-yu-ting.github.io/tags/SDN/"/>
-    
-    <category term="Simulation" scheme="https://egbert-yu-ting.github.io/tags/Simulation/"/>
-    
-    <category term="ns-3" scheme="https://egbert-yu-ting.github.io/tags/ns-3/"/>
-    
-    <category term="ofswitch" scheme="https://egbert-yu-ting.github.io/tags/ofswitch/"/>
-    
-    <category term="OpenFlow1.3" scheme="https://egbert-yu-ting.github.io/tags/OpenFlow1-3/"/>
     
   </entry>
   

@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-29T02:16:39.154Z</updated>
+  <updated>2021-01-29T02:19:35.912Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,17 +21,16 @@
     <link href="https://egbert-yu-ting.github.io/posts/ef374e86/"/>
     <id>https://egbert-yu-ting.github.io/posts/ef374e86/</id>
     <published>2021-01-29T01:19:53.000Z</published>
-    <updated>2021-01-29T02:16:39.154Z</updated>
+    <updated>2021-01-29T02:19:35.912Z</updated>
     
     
-      
-      
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6px&quot;&gt;&lt;b&gt;169. Majority Element&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given an array &lt;span style=</summary>
-      
+&lt;p&gt;Given an array &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;nums&lt;/font&gt;&lt;/span&gt; of size &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n&lt;/font&gt;&lt;/span&gt;, return &lt;em&gt;the majority element&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Follow-up:&lt;/strong&gt; Could you solve the problem in linear time and in &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;Ｏ(1)&lt;/font&gt;&lt;/span&gt; space?</summary>
     
     
     
@@ -367,9 +366,9 @@ getMin() -- Retrieve the minimum element in the stack.
     <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
     
     
-    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
-    
     <category term="Tree" scheme="https://egbert-yu-ting.github.io/tags/Tree/"/>
+    
+    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
     
   </entry>
   
@@ -394,9 +393,9 @@ getMin() -- Retrieve the minimum element in the stack.
     <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
     
     
-    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
-    
     <category term="Tree" scheme="https://egbert-yu-ting.github.io/tags/Tree/"/>
+    
+    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
     
   </entry>
   
@@ -423,9 +422,9 @@ For this problem, a height-balanced binary tree is defined as:
     <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
     
     
-    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
-    
     <category term="Tree" scheme="https://egbert-yu-ting.github.io/tags/Tree/"/>
+    
+    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
     
   </entry>
   

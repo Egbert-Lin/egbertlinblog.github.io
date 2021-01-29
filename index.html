@@ -377,7 +377,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-01-29 09:19:53 / Modified: 10:16:39" itemprop="dateCreated datePublished" datetime="2021-01-29T09:19:53+08:00">2021-01-29</time>
+      <time title="Created: 2021-01-29 09:19:53 / Modified: 10:19:35" itemprop="dateCreated datePublished" datetime="2021-01-29T09:19:53+08:00">2021-01-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -419,31 +419,15 @@
 <h2 id="question">Question:</h2>
 <p>Given an array <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> of size <span style="background-color:#F0F0F0"><font color=#808080>n</font></span>, return <em>the majority element</em>.</p>
 <p>The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.</p>
-<p><strong>Follow-up:</strong> Could you solve the problem in linear time and in <span style="background-color:#F0F0F0"><font color=#808080>Ｏ(1)</font></span> space?</p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [3,2,3]<br> <b>Output:</b> 3
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [2,2,1,1,1,2,2]<br> <b>Output:</b> 2
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>n == nums.length</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= n &lt;= 5 * 10^4</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-2^31 &lt;= nums[i] &lt;= 2^31 - 1</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<p>Idea:<br> The strategy is similar wtih <a target="_blank" rel="noopener" href="https://www.dcard.tw/f/boutique/p/235251138">Linked List Cycle's version 1</a>. Use <strong>Hash Table</strong> to store a count of element. Notice: the majority element appears more than ⌊n / 2⌋ times,</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; count;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            count[nums[i]]++;</span><br><span class="line">            <span class="keyword">if</span> (count[nums[i]] &gt; n/<span class="number">2</span>) <span class="keyword">return</span> nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<p><strong>Follow-up:</strong> Could you solve the problem in linear time and in <span style="background-color:#F0F0F0"><font color=#808080>Ｏ(1)</font></span> space?
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/ef374e86/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

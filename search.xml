@@ -82,6 +82,54 @@ if sum = 0 // binary: 00000000<br>  (sum &amp; 1) = 0<br> if sum = 2 // binary
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Balanced Binary Tree - Solution/C++</title>
+    <url>/posts/b3e1ca12/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>110. Balanced Binary Tree</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a binary tree, determine if it is height-balanced.</p>
+For this problem, a height-balanced binary tree is defined as:
+<p style="background-color:#F0F0F0">
+<span style="background-color:#F0F0F0"><font color=#808080>a binary tree in which the left and right subtrees of <l>every</l> node differ in height by no more than 1.</font></span>
+</p>
+<a id="more"></a>
+<h2 id="example">Example:</h2>
+<img src="example_1.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> true
+</p>
+<img src="example_2.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [1,2,2,3,3,null,null,4,4]<br> <b>Output:</b> false
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = []<br> <b>Output:</b> true
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+TThe number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 5000]</font></span>.
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-10^4 &lt;= Node.val &lt;= 10^4</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> We can calculate the depth of subnodes and use it to compare. How to get calculate the depth for binary tree? You can refer to <a href="https://egbert-yu-ting.github.io/posts/57b52472/?highlight=depth">Maximum Depth of Binary Tree</a>.<br></p>
+<p>So, declare a <strong>getDepth()</strong> function to implement the depth of binary tree. At 18 line, <code>abs(left_depth - right_depth) &gt; 1</code> is based on a rule of height-balanced binary tree.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isBalanced</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">int</span> left_depth = getDepth(root-&gt;left);</span><br><span class="line">        <span class="keyword">int</span> right_depth = getDepth(root-&gt;right);</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">abs</span>(left_depth - right_depth) &gt; <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> isBalanced(root-&gt;left) &amp;&amp; isBalanced(root-&gt;right);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getDepth</span><span class="params">(TreeNode* root)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> max(getDepth(root-&gt;left), getDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Tree</tag>
+        <tag>Recursion</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Best Time to Buy and Sell Stock II - Solution/C++</title>
     <url>/posts/a10d34fe/</url>
     <content><![CDATA[<p align="center">
@@ -195,57 +243,9 @@ return its bottom-up level order traversal as:
         <category>LeetCode-Easy</category>
       </categories>
       <tags>
+        <tag>Recursion</tag>
         <tag>STL</tag>
         <tag>2D_Vector</tag>
-        <tag>Recursion</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Balanced Binary Tree - Solution/C++</title>
-    <url>/posts/b3e1ca12/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>110. Balanced Binary Tree</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a binary tree, determine if it is height-balanced.</p>
-For this problem, a height-balanced binary tree is defined as:
-<p style="background-color:#F0F0F0">
-<span style="background-color:#F0F0F0"><font color=#808080>a binary tree in which the left and right subtrees of <l>every</l> node differ in height by no more than 1.</font></span>
-</p>
-<a id="more"></a>
-<h2 id="example">Example:</h2>
-<img src="example_1.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> true
-</p>
-<img src="example_2.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [1,2,2,3,3,null,null,4,4]<br> <b>Output:</b> false
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = []<br> <b>Output:</b> true
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-TThe number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 5000]</font></span>.
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-10^4 &lt;= Node.val &lt;= 10^4</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> We can calculate the depth of subnodes and use it to compare. How to get calculate the depth for binary tree? You can refer to <a href="https://egbert-yu-ting.github.io/posts/57b52472/?highlight=depth">Maximum Depth of Binary Tree</a>.<br></p>
-<p>So, declare a <strong>getDepth()</strong> function to implement the depth of binary tree. At 18 line, <code>abs(left_depth - right_depth) &gt; 1</code> is based on a rule of height-balanced binary tree.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isBalanced</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">int</span> left_depth = getDepth(root-&gt;left);</span><br><span class="line">        <span class="keyword">int</span> right_depth = getDepth(root-&gt;right);</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">abs</span>(left_depth - right_depth) &gt; <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> isBalanced(root-&gt;left) &amp;&amp; isBalanced(root-&gt;right);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getDepth</span><span class="params">(TreeNode* root)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> max(getDepth(root-&gt;left), getDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Recursion</tag>
-        <tag>Tree</tag>
       </tags>
   </entry>
   <entry>
@@ -782,6 +782,44 @@ Finally, reboot you Mac and enter WIN10 OS successfully.</li>
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode] Majority Element</title>
+    <url>/posts/ef374e86/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>169. Majority Element</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given an array <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> of size <span style="background-color:#F0F0F0"><font color=#808080>n</font></span>, return <em>the majority element</em>.</p>
+<p>The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.</p>
+<p><strong>Follow-up:</strong> Could you solve the problem in linear time and in <span style="background-color:#F0F0F0"><font color=#808080>Ｏ(1)</font></span> space? <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [3,2,3]<br> <b>Output:</b> 3
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [2,2,1,1,1,2,2]<br> <b>Output:</b> 2
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>n == nums.length</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= n &lt;= 5 * 10^4</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-2^31 &lt;= nums[i] &lt;= 2^31 - 1</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<p>Idea:<br> The strategy is similar wtih <a href="https://www.dcard.tw/f/boutique/p/235251138">Linked List Cycle's version 1</a>. Use <strong>Hash Table</strong> to store a count of element. Notice: the majority element appears more than ⌊n / 2⌋ times and therefore you should add if statment for checking.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; count;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            count[nums[i]]++;</span><br><span class="line">            <span class="keyword">if</span> (count[nums[i]] &gt; n/<span class="number">2</span>) <span class="keyword">return</span> nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Maximum Depth of Binary Tree - Solution/C++</title>
     <url>/posts/57b52472/</url>
     <content><![CDATA[<p align="center">
@@ -824,8 +862,8 @@ The number of nodes in the tree is in the range <span style="background-color:#F
         <category>LeetCode-Easy</category>
       </categories>
       <tags>
-        <tag>Recursion</tag>
         <tag>Tree</tag>
+        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>
@@ -1054,8 +1092,8 @@ The number of nodes in the tree is in the range <span style="background-color:#F
         <category>LeetCode-Easy</category>
       </categories>
       <tags>
-        <tag>Recursion</tag>
         <tag>Tree</tag>
+        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>
@@ -1192,8 +1230,8 @@ Given the below binary tree and <span style="background-color:#F0F0F0"><font col
         <category>LeetCode-Easy</category>
       </categories>
       <tags>
-        <tag>Recursion</tag>
         <tag>Tree</tag>
+        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>
@@ -1407,6 +1445,46 @@ Internally you can think of this:
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Reverse Integer - Solution/C++</title>
+    <url>/posts/236b1bbd/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>7. Reverse Integer</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a 32-bit signed integer, reverse digits of an integer.</p>
+<p><strong>Note:</strong> Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−2^31, 2^31 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = 123<br><b>Output</b>: 321<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = -123<br><b>Output</b>: -321<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = 120<br><b>Output</b>: 21<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = 0<br><b>Output</b>: 0<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+-2^31 &lt;= x &lt;= 2^31 -1
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> At the begining, I need to get units digit, so the modulus operator % can compute the remainder. Then, the remainder should be added to answer(return value) after answer times ten for each loop. <code>x = x / 10</code> means removing units digit for getting hundreds digit. Don't forget the constraints, use values of INT_MIN and INT_MAX to implement it.<br> P.S. <code>return (conditional)?true:false</code></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(x != <span class="number">0</span>)&#123;</span><br><span class="line">            ans = ans * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">            x = x / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (ans&gt;INT_MIN &amp;&amp; ans&lt;INT_MAX)?ans:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Remainder</tag>
+        <tag>Quotient</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Roman to Integer - Solution/C++</title>
     <url>/posts/8caf8f3c/</url>
     <content><![CDATA[<p align="center">
@@ -1467,46 +1545,6 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
       </categories>
       <tags>
         <tag>Map(STL)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Reverse Integer - Solution/C++</title>
-    <url>/posts/236b1bbd/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>7. Reverse Integer</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a 32-bit signed integer, reverse digits of an integer.</p>
-<p><strong>Note:</strong> Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−2^31, 2^31 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = 123<br><b>Output</b>: 321<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = -123<br><b>Output</b>: -321<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = 120<br><b>Output</b>: 21<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = 0<br><b>Output</b>: 0<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
--2^31 &lt;= x &lt;= 2^31 -1
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> At the begining, I need to get units digit, so the modulus operator % can compute the remainder. Then, the remainder should be added to answer(return value) after answer times ten for each loop. <code>x = x / 10</code> means removing units digit for getting hundreds digit. Don't forget the constraints, use values of INT_MIN and INT_MAX to implement it.<br> P.S. <code>return (conditional)?true:false</code></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(x != <span class="number">0</span>)&#123;</span><br><span class="line">            ans = ans * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">            x = x / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (ans&gt;INT_MIN &amp;&amp; ans&lt;INT_MAX)?ans:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Remainder</tag>
-        <tag>Quotient</tag>
       </tags>
   </entry>
   <entry>
@@ -1589,8 +1627,8 @@ TThe number of nodes in both trees is in the range <span style="background-color
         <category>LeetCode-Easy</category>
       </categories>
       <tags>
-        <tag>Recursion</tag>
         <tag>Tree</tag>
+        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>
@@ -1762,8 +1800,8 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
         <category>LeetCode-Easy</category>
       </categories>
       <tags>
-        <tag>Recursion</tag>
         <tag>Tree</tag>
+        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>
@@ -2187,43 +2225,5 @@ nums is sorted in increasing order.
         <tag>ofswitch</tag>
         <tag>OpenFlow1.3</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode] Majority Element</title>
-    <url>/posts/ef374e86/</url>
-    <content><![CDATA[<p align="center">
-<font size="6px"><b>169. Majority Element</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given an array <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> of size <span style="background-color:#F0F0F0"><font color=#808080>n</font></span>, return <em>the majority element</em>.</p>
-<p>The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.</p>
-<p><strong>Follow-up:</strong> Could you solve the problem in linear time and in <span style="background-color:#F0F0F0"><font color=#808080>Ｏ(1)</font></span> space?</p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [3,2,3]<br> <b>Output:</b> 3
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [2,2,1,1,1,2,2]<br> <b>Output:</b> 2
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>n == nums.length</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= n &lt;= 5 * 10^4</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-2^31 &lt;= nums[i] &lt;= 2^31 - 1</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<p>Idea:<br> The strategy is similar wtih <a href="https://www.dcard.tw/f/boutique/p/235251138">Linked List Cycle's version 1</a>. Use <strong>Hash Table</strong> to store a count of element. Notice: the majority element appears more than ⌊n / 2⌋ times,</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; count;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            count[nums[i]]++;</span><br><span class="line">            <span class="keyword">if</span> (count[nums[i]] &gt; n/<span class="number">2</span>) <span class="keyword">return</span> nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
   </entry>
 </search>

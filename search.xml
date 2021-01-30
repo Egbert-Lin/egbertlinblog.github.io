@@ -389,6 +389,9 @@ For example:
       <categories>
         <category>LeetCode-Easy</category>
       </categories>
+      <tags>
+        <tag>ASCII</tag>
+      </tags>
   </entry>
   <entry>
     <title>[LeetCode Road] Excel Sheet Column Number</title>
@@ -437,6 +440,9 @@ For example:
       <categories>
         <category>LeetCode-Easy</category>
       </categories>
+      <tags>
+        <tag>ASCII</tag>
+      </tags>
   </entry>
   <entry>
     <title>[Interview question] Find second largest element - Solution/C++</title>

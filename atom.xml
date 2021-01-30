@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-29T07:37:16.405Z</updated>
+  <updated>2021-01-30T16:15:51.169Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>[LeetCode Road] Excel Sheet Column Number</title>
+    <link href="https://egbert-yu-ting.github.io/posts/10e6d46c/"/>
+    <id>https://egbert-yu-ting.github.io/posts/10e6d46c/</id>
+    <published>2021-01-30T15:33:43.000Z</published>
+    <updated>2021-01-30T16:15:51.169Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;171. Excel Sheet Column Number&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given a column title as appear in an Excel sheet, return its corresponding column number.&lt;/p&gt;
+For example:
+&lt;p style=&quot;background-color:#F0F0F0&quot;&gt;
+  A -&amp;gt; 1&lt;br&gt;   B -&amp;gt; 2&lt;br&gt;   C -&amp;gt; 3&lt;br&gt;   ...&lt;br&gt;   Z -&amp;gt; 26&lt;br&gt;   AA -&amp;gt; 27&lt;br&gt;   AB -&amp;gt; 28&lt;br&gt;   ...
+&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>[LeetCode] Majority Element</title>
     <link href="https://egbert-yu-ting.github.io/posts/ef374e86/"/>
     <id>https://egbert-yu-ting.github.io/posts/ef374e86/</id>
     <published>2021-01-29T01:19:53.000Z</published>
-    <updated>2021-01-29T07:37:16.405Z</updated>
+    <updated>2021-01-30T16:00:27.098Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -504,32 +529,6 @@ For this problem, a height-balanced binary tree is defined as:
     <category term="Windows10" scheme="https://egbert-yu-ting.github.io/tags/Windows10/"/>
     
     <category term="Bootcamp" scheme="https://egbert-yu-ting.github.io/tags/Bootcamp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
-    <link href="https://egbert-yu-ting.github.io/posts/9e0f4e5/"/>
-    <id>https://egbert-yu-ting.github.io/posts/9e0f4e5/</id>
-    <published>2021-01-06T06:14:43.000Z</published>
-    <updated>2021-01-22T02:05:52.166Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;Tutorial - Install Ryu in Ubuntu 16.04 with no failure&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://ryu.readthedocs.io/en/latest/index.html&quot;&gt;Ryu&lt;/a&gt; is a component-based software defined networking framework. It&#39;s very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet.</summary>
-    
-    
-    
-    <category term="Simulator" scheme="https://egbert-yu-ting.github.io/categories/simulator/"/>
-    
-    
-    <category term="Ubuntu" scheme="https://egbert-yu-ting.github.io/tags/Ubuntu/"/>
-    
-    <category term="SDN" scheme="https://egbert-yu-ting.github.io/tags/SDN/"/>
-    
-    <category term="Controller" scheme="https://egbert-yu-ting.github.io/tags/Controller/"/>
     
   </entry>
   

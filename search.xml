@@ -581,7 +581,7 @@ After counting, you should make those Lists moved to the same position, as below
 <b>Input:</b> arr[] = {10, 20, 80, 30, 60, 50, 100, 110, 130, 170}<br>     x = 175;<br> <b>Output:</b> -1<br> <b>Explanation:</b> Element x is not present in arr[].
 </p>
 <h2 id="source-code">Source code:</h2>
-<h3 id="version-1"><u>Version 1<u></h3>
+<h3 id="version-1"><u>Version 1</u></h3>
 <p>Idea<br> It is a very simple approach to find the target.<br> <img src="linear_example.png" /></p>
 <p>Go through each element which is equal to the target (Start from the index 0 of array). If the target doesn't exist in arry, return -1.<br> However, it is rarely used practically because other search algorithms are more efficient.<br></p>
 <p><b>Time complexity: O(n)</b><br></p>

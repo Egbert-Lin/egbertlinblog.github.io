@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-01T03:33:20.841Z</updated>
+  <updated>2021-02-01T06:57:43.711Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[LeetCode Road] Factorial Trailing Zeroes</title>
+    <link href="https://egbert-yu-ting.github.io/posts/b0d56b8b/"/>
+    <id>https://egbert-yu-ting.github.io/posts/b0d56b8b/</id>
+    <published>2021-02-01T06:16:57.000Z</published>
+    <updated>2021-02-01T06:57:43.711Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;172. Factorial Trailing Zeroes&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given an integer &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n&lt;/font&gt;&lt;/span&gt;, &lt;I&gt;return the number of trailing zeroes in &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n!&lt;/font&gt;&lt;/span&gt;&lt;/I&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Follow up:&lt;/b&gt; Could you write a solution that works in logarithmic time complexity?</summary>
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Basic programming- Linear Search Algorithm</title>
@@ -503,32 +525,6 @@ For this problem, a height-balanced binary tree is defined as:
     <category term="Sidebar" scheme="https://egbert-yu-ting.github.io/tags/Sidebar/"/>
     
     <category term="Post" scheme="https://egbert-yu-ting.github.io/tags/Post/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Convert Sorted Array to Binary Search Tree - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/17bf1818/"/>
-    <id>https://egbert-yu-ting.github.io/posts/17bf1818/</id>
-    <published>2021-01-08T02:44:56.000Z</published>
-    <updated>2021-01-22T01:35:08.573Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;108. Convert Sorted Array to Binary Search Tree&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given an array where elements are sorted in ascending order, convert it to a height balanced BST.&lt;/p&gt;
-&lt;p&gt;For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
-    
-    <category term="TreeNode" scheme="https://egbert-yu-ting.github.io/tags/TreeNode/"/>
     
   </entry>
   

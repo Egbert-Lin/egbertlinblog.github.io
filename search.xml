@@ -2328,4 +2328,27 @@ nums is sorted in increasing order.
         <tag>OpenFlow1.3</tag>
       </tags>
   </entry>
+  <entry>
+    <title>[LeetCode Road] Factorial Trailing Zeroes</title>
+    <url>/posts/b0d56b8b/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>172. Factorial Trailing Zeroes</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given an integer <span style="background-color:#F0F0F0"><font color=#808080>n</font></span>, <I>return the number of trailing zeroes in <span style="background-color:#F0F0F0"><font color=#808080>n!</font></span></I>.</p>
+<p><b>Follow up:</b> Could you write a solution that works in logarithmic time complexity? <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p>Input: n = 3 Output: 0 Explanation: 3! = 6, no trailing zero.</p>
+<p>Input: n = 5 Output: 1 Explanation: 5! = 120, one trailing zero.</p>
+<p>Input: n = 0 Output: 0</p>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> I give some examples of different n:<br> if n = 5, 5! = 12<b>0</b><br> if n = 9, 9! = 36288<b>0</b><br> if n = 10, 10! = 36288</b>00</b><br> if n = 15, 15! = 1307674368<b>000</b><br> if n = 20, 20! = 243290200817664<b>0000</b><br> if n = 25, 25! = 15511210043330985984<b>000000</b><br></p>
+<p>Above the examples, we can get some rules: 1. tailling zeros means factor of 10 in the factorial 2. finding tailling zeros means counting the number of factor of 5 for the factorial of n 3. dividing n to get the additional number of factor of 5s</p>
+<p>Notice: At n = 25 case, 25 is 5 times 5 (2 of 5s),so it has 5 + 1 of 5s.<br> Finally, we need to divide n to count the number of additional factors of 5. <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">trailingZeroes</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(n)&#123;</span><br><span class="line">            n /= <span class="number">5</span>;</span><br><span class="line">            res += n;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+  </entry>
 </search>

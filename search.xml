@@ -670,7 +670,7 @@ After counting, you should make those Lists moved to the same position, as below
       </tags>
   </entry>
   <entry>
-    <title>Basic programming- Linear Search Algorithm</title>
+    <title>Basic programming - Linear Search Algorithm</title>
     <url>/posts/65334f02/</url>
     <content><![CDATA[<p align="center">
 <font size="6px"><b>Linear Search</b></font>
@@ -679,10 +679,10 @@ After counting, you should make those Lists moved to the same position, as below
 <p>Given an array arr[] of n elements, write a function to search a given element x in arr[]. <a id="more"></a></p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> arr[] = {10, 20, 80, 30, 60, 50, 100, 110, 130, 170}<br>     x = 110;<br> <b>Output:</b> 6<br> <b>Explanation:</b> Element x is present at index 6
+<b>Input:</b> arr[] = {10, 20, 80, 30, 60, 50, 100, 110, 130, 170}<br>     x = 110;<br> <b>Output:</b> 6<br> <b>Explanation:</b> Element x is presented at index 6
 </p>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> arr[] = {10, 20, 80, 30, 60, 50, 100, 110, 130, 170}<br>     x = 175;<br> <b>Output:</b> -1<br> <b>Explanation:</b> Element x is not present in arr[].
+<b>Input:</b> arr[] = {10, 20, 80, 30, 60, 50, 100, 110, 130, 170}<br>    x = 175;<br> <b>Output:</b> -1<br> <b>Explanation:</b> Element x is not presented in arr[].
 </p>
 <h2 id="source-code">Source code:</h2>
 <h3 id="version-1"><u>Version 1</u></h3>

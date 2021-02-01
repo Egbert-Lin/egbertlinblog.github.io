@@ -456,9 +456,12 @@ For example:
 <p>Given an integer <span style="background-color:#F0F0F0"><font color=#808080>n</font></span>, <I>return the number of trailing zeroes in <span style="background-color:#F0F0F0"><font color=#808080>n!</font></span></I>.</p>
 <p><b>Follow up:</b> Could you write a solution that works in logarithmic time complexity? <a id="more"></a></p>
 <h2 id="example">Example:</h2>
-<p>Input: n = 3 Output: 0 Explanation: 3! = 6, no trailing zero.</p>
-<p>Input: n = 5 Output: 1 Explanation: 5! = 120, one trailing zero.</p>
-<p>Input: n = 0 Output: 0</p>
+<p style="background-color:#F0F0F0">
+<p><b>Input:</b> n = 3<br> <b>Output:</b> 0<br> <b>Explanation:</b> 3! = 6, no trailing zero.<br></p>
+<p style="background-color:#F0F0F0">
+<p><b>Input:</b> n = 5<br> <b>Output:</b> 1<br> <b>Explanation:</b> 5! = 120, one trailing zero.<br></p>
+<p style="background-color:#F0F0F0">
+<p><b>Input:</b> n = 0<br> <b>Output:</b> 0<br></p>
 <h2 id="source-code">Source code:</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
 <p>Idea:<br> I give some examples of different n:<br> if n = 5, 5! = 12<b>0</b><br> if n = 9, 9! = 36288<b>0</b><br> if n = 10, 10! = 36288<b>00</b><br> if n = 15, 15! = 1307674368<b>000</b><br> if n = 20, 20! = 243290200817664<b>0000</b><br> if n = 25, 25! = 15511210043330985984<b>000000</b><br></p>

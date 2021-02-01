@@ -1,60 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>[LeetCode Road] Add Binary - Solution/C++</title>
-    <url>/posts/e6133085/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>67. Add Binary</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given two binary strings <span style="background-color:#F0F0F0"><font color=#808080>a</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>b</font></span>, return <em>their sum as a binary string</em>. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> a = "11", b = "1"<br><b>Output:</b> "100"<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> a = "1010", b = "1011"<br><b>Output:</b> "10101"<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= a.length, b.length &lt;= 10^4</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>a</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>b</font></span> consist only of <span style="background-color:#F0F0F0"><font color=#808080>'0'</font></span> or <span style="background-color:#F0F0F0"><font color=#808080>'1'</font></span> characters.
-</li>
-</strong> <strong>
-<li>
-Each string does not contain leading zeros except for the zero itself.
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> I want to post my method originally, but the method is very inefficient (add two elements of string as <a href="https://egbert-yu-ting.github.io/posts/acf6f11e/">Plus One</a>, do the same thing for each bits.)<br></p>
-<p>So, I refered to <a href="https://zxi.mytechroad.com/blog/math/leetcode-67-add-binary/">Huahua's Tech Road</a>. Wow, it's a concise approach and coding, use only 1 while() to process.<br></p>
-<p>This part, we can learn how to convert char to integer、how to convert integer to char、calculate a value of carry and output in reverse.<br></p>
-At 9 line, use <code>conditional ? Ture:False</code> to implement summation can save many if statements. At 12 line, it is a right shift operator.
-<p style="background-color:#F0F0F0">
-int a[i] = 1; // binary: 00000001<br> int b[j] = 1; // binary: 00000001<br> int sum = a[i] + b[j] = 2 // binary: 00000010<br> int carry = sum &gt;&gt; 1; // binary: 00000001 (right shifts the bits of the number accordingly)
-</p>
-Then, ues <span style="background-color:#F0F0F0">- '0'</span> to convert char to int as <span style="background-color:#F0F0F0">a[i--] - '0'</span>, because character <span style="background-color:#F0F0F0">'0'</span> means 48.<br> At 15 line, we use logical AND <span style="background-color:#F0F0F0"><font color=#808080>&amp;</font></span> to get the result of 0 or 1.
-<p style="background-color:#F0F0F0">
-if sum = 0 // binary: 00000000<br>  (sum &amp; 1) = 0<br> if sum = 2 // binary: 00000010<br>  (sum &amp; 1) = 1<br> if sum = 3 // binary: 00000011<br>  (sum &amp; 1) = 1
-</p>
-<p>Then, we can use <span style="background-color:#F0F0F0">+ '0'</span> to convert int to char.<br> Finally, the variable of res is our answer, but the content is in reverse, so we need to output the last as head, <b>rbegin()</b> and <b>rend()</b> are built-in functions in C++ STL. rbegin() can return a reverse iterator pointing to the last char. rend() can return a reverse iterator pointing to the theoretical element preceding the first char of the string.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">addBinary</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = a.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> j = b.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">string</span> res;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> || j &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = (i &gt;= <span class="number">0</span> ? a[i--] - <span class="string">&#x27;0&#x27;</span> : <span class="number">0</span>) +</span><br><span class="line">                      (j &gt;= <span class="number">0</span> ? b[j--] - <span class="string">&#x27;0&#x27;</span> : <span class="number">0</span>) +</span><br><span class="line">                      carry;</span><br><span class="line">            carry = sum &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            res += <span class="string">&#x27;0&#x27;</span> + (sum &amp; <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(carry) res += <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line">        <span class="keyword">return</span> &#123;(res.rbegin()), (res.rend())&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Logical_Operators</tag>
-        <tag>Shift_Operators</tag>
-        <tag>ASCII</tag>
-        <tag>Reverse_iterator</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo NexT v8.x.x - Add recent posts</title>
     <url>/posts/68394953/</url>
     <content><![CDATA[<p align="center">
@@ -289,37 +235,6 @@ return its bottom-up level order traversal as:
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Convert Sorted Array to Binary Search Tree - Solution/C++</title>
-    <url>/posts/17bf1818/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>108. Convert Sorted Array to Binary Search Tree</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given an array where elements are sorted in ascending order, convert it to a height balanced BST.</p>
-<p>For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-Given the sorted array: [-10,-3,0,5,9],<br> <br> One possible answer is: [0,-3,9,-10,null,5], which represents the following height balanced BST:<br>     0<br>    / \<br>   -3  9<br>   /  /<br>  -10 5
-</p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> At first, let we understand "What is Height Balanced Binary Search Tree(BST)". You inquire/insert/delete a node of the tree, the time of these actions is proportional to height of the tree. It must keeps its height in the face of arbitrary item (actions), it's call a height balane (or self balancing) BST.<br></p>
-<p>Back to this problem, the strategy is "Binary Search". At 22 line, the recursive function always satisfy the establishment of the left nodes. On the contrary, it always satisfy the establishment of hte right nodes at 23 line. Using the binary search will through every nodes and get a sequential array.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">sortedArrayToBST</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sortedArrayToBST(nums, <span class="number">0</span>, nums.size() - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">sortedArrayToBST</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(left &gt; right) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">int</span> mid = left + (right - left)/<span class="number">2</span>;</span><br><span class="line">        TreeNode* res = <span class="keyword">new</span> TreeNode(nums[mid]);</span><br><span class="line">        res-&gt;left = sortedArrayToBST(nums, left, mid - <span class="number">1</span>);</span><br><span class="line">        res-&gt;right = sortedArrayToBST(nums, mid + <span class="number">1</span>, right);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-Each steps info.:
-<p style="background-color:#F0F0F0">
-left:0, right:4, mid's value:0<br> left:0, right:1, mid's value:-10<br> left:0, right:-1, return NULL<br> left:1, right:1, mid's value:-3<br> left:1, right:0, return NULL<br> left:2, right:1, return NULL<br> left:3, right:4, mid's value:5<br> left:3, right:2, return NULL<br> left:4, right:4, mid's value:9<br> left:4, right:3, return NULL<br> left:5, right:4, return NULL<br>
-<p style="background-color:#F0F0F0">
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Recursion</tag>
-        <tag>TreeNode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Count and Say - Solution/C++</title>
     <url>/posts/e0d9ee0a/</url>
     <content><![CDATA[<p align="center">
@@ -361,31 +276,57 @@ The <strong>count-and-say</strong> sequence is a sequence of digit strings defin
       </tags>
   </entry>
   <entry>
-    <title>Error message: Please tell me who you are. Run git config --global...</title>
-    <url>/posts/278f103a/</url>
+    <title>[LeetCode Road] Add Binary - Solution/C++</title>
+    <url>/posts/e6133085/</url>
     <content><![CDATA[<p align="center">
-<font size="6"><b>Command line: "hexo d" and you got error message: Please tell me who you are.</b></font>
+<font size="6"><b>67. Add Binary</b></font>
 </p>
-<h3 id="full-error-message-info">Full error message info:</h3>
-<p><font color=#FF0000>Please tell me who you are.</p>
-<p>Run</p>
-<p>git config --global user.email “you@example.com”<br> git config --global user.name “Your Name”<br></p>
-<p>to set your account’s default identity.<br> Omit --global to set the identity only in this repository.<br></p>
-fatal: unable to auto-detect email address (got ...)<br> error: src refspec HEAD does not match any.<br> error: failed to push some refs to(your ...github.io)</font><br> <a id="more"></a>
-<hr style="border-top: dotted 1px;" />
-<p>When I ran "hexo d" command, the deployment was stuck! The reason was I updated my mac OS a few days age. Now, the system can't distinguish your indentity.<br> So, the solution can solve it:</p>
-<h3 id="solution">Solution:</h3>
-<p>Input commands:<br></p>
-<ol type="1">
-<li><p>git config --global user.email "email"<br> //Your github email address(https://username.github.io)<br></p></li>
-<li><p>git config --global user.name "username"<br> //(your nickname、github's username or anyone you name it) only English!</p></li>
-</ol>
+<h2 id="question">Question:</h2>
+<p>Given two binary strings <span style="background-color:#F0F0F0"><font color=#808080>a</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>b</font></span>, return <em>their sum as a binary string</em>. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> a = "11", b = "1"<br><b>Output:</b> "100"<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> a = "1010", b = "1011"<br><b>Output:</b> "10101"<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= a.length, b.length &lt;= 10^4</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>a</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>b</font></span> consist only of <span style="background-color:#F0F0F0"><font color=#808080>'0'</font></span> or <span style="background-color:#F0F0F0"><font color=#808080>'1'</font></span> characters.
+</li>
+</strong> <strong>
+<li>
+Each string does not contain leading zeros except for the zero itself.
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> I want to post my method originally, but the method is very inefficient (add two elements of string as <a href="https://egbert-yu-ting.github.io/posts/acf6f11e/">Plus One</a>, do the same thing for each bits.)<br></p>
+<p>So, I refered to <a href="https://zxi.mytechroad.com/blog/math/leetcode-67-add-binary/">Huahua's Tech Road</a>. Wow, it's a concise approach and coding, use only 1 while() to process.<br></p>
+<p>This part, we can learn how to convert char to integer、how to convert integer to char、calculate a value of carry and output in reverse.<br></p>
+At 9 line, use <code>conditional ? Ture:False</code> to implement summation can save many if statements. At 12 line, it is a right shift operator.
+<p style="background-color:#F0F0F0">
+int a[i] = 1; // binary: 00000001<br> int b[j] = 1; // binary: 00000001<br> int sum = a[i] + b[j] = 2 // binary: 00000010<br> int carry = sum &gt;&gt; 1; // binary: 00000001 (right shifts the bits of the number accordingly)
+</p>
+Then, ues <span style="background-color:#F0F0F0">- '0'</span> to convert char to int as <span style="background-color:#F0F0F0">a[i--] - '0'</span>, because character <span style="background-color:#F0F0F0">'0'</span> means 48.<br> At 15 line, we use logical AND <span style="background-color:#F0F0F0"><font color=#808080>&amp;</font></span> to get the result of 0 or 1.
+<p style="background-color:#F0F0F0">
+if sum = 0 // binary: 00000000<br>  (sum &amp; 1) = 0<br> if sum = 2 // binary: 00000010<br>  (sum &amp; 1) = 1<br> if sum = 3 // binary: 00000011<br>  (sum &amp; 1) = 1
+</p>
+<p>Then, we can use <span style="background-color:#F0F0F0">+ '0'</span> to convert int to char.<br> Finally, the variable of res is our answer, but the content is in reverse, so we need to output the last as head, <b>rbegin()</b> and <b>rend()</b> are built-in functions in C++ STL. rbegin() can return a reverse iterator pointing to the last char. rend() can return a reverse iterator pointing to the theoretical element preceding the first char of the string.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">addBinary</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = a.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> j = b.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">string</span> res;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> || j &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = (i &gt;= <span class="number">0</span> ? a[i--] - <span class="string">&#x27;0&#x27;</span> : <span class="number">0</span>) +</span><br><span class="line">                      (j &gt;= <span class="number">0</span> ? b[j--] - <span class="string">&#x27;0&#x27;</span> : <span class="number">0</span>) +</span><br><span class="line">                      carry;</span><br><span class="line">            carry = sum &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            res += <span class="string">&#x27;0&#x27;</span> + (sum &amp; <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(carry) res += <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line">        <span class="keyword">return</span> &#123;(res.rbegin()), (res.rend())&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>LeetCode-Easy</category>
       </categories>
       <tags>
-        <tag>Tech</tag>
+        <tag>Logical_Operators</tag>
+        <tag>Shift_Operators</tag>
+        <tag>ASCII</tag>
+        <tag>Reverse_iterator</tag>
       </tags>
   </entry>
   <entry>
@@ -442,40 +383,31 @@ For example:
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Excel Sheet column Title</title>
-    <url>/posts/961e4f43/</url>
+    <title>Error message: Please tell me who you are. Run git config --global...</title>
+    <url>/posts/278f103a/</url>
     <content><![CDATA[<p align="center">
-<font size="6px"><b>168. Excel Sheet Column Title</b></font>
+<font size="6"><b>Command line: "hexo d" and you got error message: Please tell me who you are.</b></font>
 </p>
-<h2 id="question">Question:</h2>
-<p>Given a positive integer, return its corresponding column title as appear in an Excel sheet.</p>
-For example:
-<p style="background-color:#F0F0F0">
-  1 -&gt; A<br>   2 -&gt; B<br>   3 -&gt; C<br>   ...<br>   26 -&gt; Z<br>   27 -&gt; AA<br>   28 -&gt; AB <br>   ...
-</p>
-<a id="more"></a>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> 1<br> <b>Output:</b> "A"
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> 28<br> <b>Output:</b> "AB"
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> 701<br> <b>Output:</b> "ZY"
-</p>
-<h2 id="source-code">Source code:</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> According to the ASCII talbe, if you want to get A~Z character, you need 65-90 demical number to convert it.<br></p>
-<p>If the input is <code>n = 26</code>, you use <code>%26</code> to get the remainder is zero, then it is converted to character you will attain <code>'A'</code>, but a correct answer is <code>'Z'</code>. So, <strong>n minus 1</strong> is important before you get the remainder at 6 line.<br></p>
-<p>Next step, you can convert int to character directly. <strong>Notice:</strong> <code>+65</code> is same as <code>'A'</code>. <br> At 8 line, <code>(n - 1)/26</code> as a carry condition every time until n will be 0.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">convertToTitle</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> remainder = (n - <span class="number">1</span>) % <span class="number">26</span>;</span><br><span class="line">            res = (<span class="keyword">char</span>)(remainder + <span class="number">65</span>) + res;</span><br><span class="line">            n = (n - <span class="number">1</span>)/<span class="number">26</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="full-error-message-info">Full error message info:</h3>
+<p><font color=#FF0000>Please tell me who you are.</p>
+<p>Run</p>
+<p>git config --global user.email “you@example.com”<br> git config --global user.name “Your Name”<br></p>
+<p>to set your account’s default identity.<br> Omit --global to set the identity only in this repository.<br></p>
+fatal: unable to auto-detect email address (got ...)<br> error: src refspec HEAD does not match any.<br> error: failed to push some refs to(your ...github.io)</font><br> <a id="more"></a>
+<hr style="border-top: dotted 1px;" />
+<p>When I ran "hexo d" command, the deployment was stuck! The reason was I updated my mac OS a few days age. Now, the system can't distinguish your indentity.<br> So, the solution can solve it:</p>
+<h3 id="solution">Solution:</h3>
+<p>Input commands:<br></p>
+<ol type="1">
+<li><p>git config --global user.email "email"<br> //Your github email address(https://username.github.io)<br></p></li>
+<li><p>git config --global user.name "username"<br> //(your nickname、github's username or anyone you name it) only English!</p></li>
+</ol>
 ]]></content>
       <categories>
-        <category>LeetCode-Easy</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>ASCII</tag>
+        <tag>Tech</tag>
       </tags>
   </entry>
   <entry>
@@ -634,40 +566,32 @@ After counting, you should make those Lists moved to the same position, as below
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Length of Last Word - Solution/C++</title>
-    <url>/posts/b04b682/</url>
+    <title>Basic programming- Linear Search algorithm</title>
+    <url>/posts/65334f02/</url>
     <content><![CDATA[<p align="center">
-<font size="6"><b>8. Length of Last Word</b></font>
+<font size="6px"><b>Linear Search</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of some words separated by spaces, return the <em>length of the last word in the string</em>. <em>If the last word does not exist, return</em> <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</p>
-<p>A <strong>word</strong> is a maximal substring consisting of non-space characters only. <a id="more"></a></p>
+<p>Given an array arr[] of n elements, write a function to search a given element x in arr[].</p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> s = "Hello World"<br><b>Output:</b> 5<br>
+<b>Input:</b> arr[] = {10, 20, 80, 30, 60, 50, 100, 110, 130, 170}<br>     x = 110;<br> <b>Output:</b> 6<br> <b>Explanation:</b> Element x is present at index 6
 </p>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> s = " "<br><b>Output:</b> 0</br>
+<b>Input:</b> arr[] = {10, 20, 80, 30, 60, 50, 100, 110, 130, 170}<br>     x = 175;<br> <b>Output:</b> -1<br> <b>Explanation:</b> Element x is not present in arr[].
 </p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= s.length &lt;= 10^4</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of only English letters and spaces <span style="background-color:#F0F0F0"><font color=#808080>' '</font></span>
-</li>
-<p></strong>.</p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> This problem took me a lot of time thinking how to solve, because I tried many methods based on scanning string in order. As a result, I ingorned tailing spaces situation, e.g., "a " or "a bc ".<br> Obviously, my logic was error! Finally, I refered to <a href="https://zxi.mytechroad.com/blog/string/leetcode-58-length-of-last-word/">Huahua's Tech Road</a>, the solution is very understandable, it scan the string in <strong>reverse order</strong> <u>until a space or reach the beginning of the string</u>.<br> So, the first <code>while(i &gt;= 0 &amp;&amp; s[i] == ' ')</code> means trimming off space at tail; the second <code>while(i &gt;= 0 &amp;&amp; s[i] != ' ')</code> means calculating length of a last word.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLastWord</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> characters = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] == <span class="string">&#x27; &#x27;</span>) i--;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] != <span class="string">&#x27; &#x27;</span>)&#123;</span><br><span class="line">            i--;</span><br><span class="line">            characters ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> characters;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version-1"><u>Version 1<u></h3>
+<p>Idea<br> It is a very simple approach to find the target.<br> <img src="linear_example.png" /></p>
+<p>Go through each element which is equal to the target (Start from the index 0 of array). If the target doesn't exist in arry, return -1.<br> However, it is rarely used practically because other search algorithms are more efficient.<br></p>
+<p><b>Time complexity: O(n)</b><br></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">linearSearch</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr, <span class="keyword">int</span> target)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] == target) <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr&#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">80</span>, <span class="number">30</span>, <span class="number">60</span>, <span class="number">50</span>, <span class="number">100</span>, <span class="number">110</span>, <span class="number">130</span>, <span class="number">170</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">110</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> res = linearSearch(arr, x);</span><br><span class="line">    (res == <span class="number">-1</span>)? <span class="built_in">cout</span> &lt;&lt;<span class="string">&quot;The value isn&#x27;t exist in array&quot;</span>: <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;The value&#x27;s index is &quot;</span> &lt;&lt; res;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>LeetCode-Easy</category>
+        <category>SearchAlgorithm</category>
       </categories>
       <tags>
-        <tag>Reverse_order</tag>
+        <tag>Search</tag>
       </tags>
   </entry>
   <entry>
@@ -733,6 +657,43 @@ The number of the nodes in the list is in the range <span style="background-colo
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Excel Sheet column Title</title>
+    <url>/posts/961e4f43/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>168. Excel Sheet Column Title</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a positive integer, return its corresponding column title as appear in an Excel sheet.</p>
+For example:
+<p style="background-color:#F0F0F0">
+  1 -&gt; A<br>   2 -&gt; B<br>   3 -&gt; C<br>   ...<br>   26 -&gt; Z<br>   27 -&gt; AA<br>   28 -&gt; AB <br>   ...
+</p>
+<a id="more"></a>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> 1<br> <b>Output:</b> "A"
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> 28<br> <b>Output:</b> "AB"
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> 701<br> <b>Output:</b> "ZY"
+</p>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> According to the ASCII talbe, if you want to get A~Z character, you need 65-90 demical number to convert it.<br></p>
+<p>If the input is <code>n = 26</code>, you use <code>%26</code> to get the remainder is zero, then it is converted to character you will attain <code>'A'</code>, but a correct answer is <code>'Z'</code>. So, <strong>n minus 1</strong> is important before you get the remainder at 6 line.<br></p>
+<p>Next step, you can convert int to character directly. <strong>Notice:</strong> <code>+65</code> is same as <code>'A'</code>. <br> At 8 line, <code>(n - 1)/26</code> as a carry condition every time until n will be 0.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">convertToTitle</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> remainder = (n - <span class="number">1</span>) % <span class="number">26</span>;</span><br><span class="line">            res = (<span class="keyword">char</span>)(remainder + <span class="number">65</span>) + res;</span><br><span class="line">            n = (n - <span class="number">1</span>)/<span class="number">26</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>ASCII</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Longest Common Prefix - Solution/C++</title>
     <url>/posts/2768cb2c/</url>
     <content><![CDATA[<p align="center">
@@ -779,62 +740,40 @@ The number of the nodes in the list is in the range <span style="background-colo
       </tags>
   </entry>
   <entry>
-    <title>[Save time] Shared partition between Mac OS X and Windows 10</title>
-    <url>/posts/4755908e/</url>
+    <title>[LeetCode Road] Length of Last Word - Solution/C++</title>
+    <url>/posts/b04b682/</url>
     <content><![CDATA[<p align="center">
-<font size="6"><b>Bootcamp: File sharing between Mac OS X and Windows 10 on MacBook Pro</b></font>
+<font size="6"><b>8. Length of Last Word</b></font>
 </p>
-<p>Here are some reason you should consider deploying Windows on your Mac device. 1. More games with better performance in Windows OS. 2. Some Applications don't work in macOS or not support all functions. 3. Developers need to test projects in Windows OS.</p>
-<p>So, I shared my experience to save your time of installing Windows on MacBook Pro. <a id="more"></a> ## Hardward &amp; Software preparation + Hardware Product model: Macbook Pro 2017 + Software - Win10 ISO You can go to this url to downlaod ISO: https://www.microsoft.com/zh-tw/software-download/windows10 Choose version:Windows 10, Choose language: English and choose 64-bit version</p>
-<h2 id="use-bootcamp-to-install-win10">Use Bootcamp to install Win10</h2>
-<ul>
-<li><p><strong>Step 1.</strong> Launch Bootcamp Assistant from th Utilities folder in Applications. Then, load your WIN10 ISO and allocate appropriate disk size. <img src="bootcamp_1.png" /></p></li>
-<li><p><strong>Step 2.</strong> Wait for some time, the processing will download WIN10 support software. <img src="bootcamp_2.png" /></p></li>
-<li><p><strong>Step 3.</strong> Finally, you will see the WIN10 setup screen. <img src="bootcamp_3.png" /></p></li>
-<li><p><strong>Step 4.</strong> Enter "Explorer", you wil see <code>WININSTALL (D:)</code> and click <code>BootCamp folder</code> to execute setup program. (Don't choose anything else) <img src="bootcamp_4.png" /></p></li>
-</ul>
-<h2 id="partition-ntfs-for-file-sharing">Partition NTFS for file sharing</h2>
-<ul>
-<li><p><strong>Step 1.</strong> Shut down your Mac.</p></li>
-<li><p><strong>Step 2.</strong> Hold down the <code>Command and R keys</code> down and press the power button.</p></li>
-<li><p><strong>Step 3.</strong> Keep holding Command and R keys until the Apple logo appears on the screen.</p></li>
-<li><p><strong>Step 4.</strong> Then, you will see a screen saying macOS Utilities(or if your Mac is older, OS X Utilities).</p></li>
-<li><p><strong>Step 5.</strong> Choose "Disk Utility" <img src="bootcamp_5.png" /></p></li>
-<li><p><strong>Step 6.</strong> Choose "APPLE SSD ..." and click partition <img src="bootcamp_6.png" /></p></li>
-<li><p><strong>Step 7.</strong> Click '+' to new partition section <img src="bootcamp_7.png" /></p></li>
-<li><p><strong>Step 8.</strong> Suggest selecting the NTFS option <img src="bootcamp_8.png" /></p></li>
-<li><p><strong>Step 9.</strong> If the partition is succes, you will see the new partition section between Mac OS X and Windows 10</p></li>
-</ul>
-<h2 id="error---blue-screen-when-boot-windows-10">Error - blue screen when boot Windows 10</h2>
-<p>You finish above procedures, <font color=#FF0000>if WIN10 can't boot anymore and show blue screen with error message: 0xd000000e</font></p>
-<ul>
-<li><strong>Reason:</strong> The installation creates a hybrid MBR which is completely unnecessary. Windows will not boot in EFI mode but in BIOS mode instead and crash.</li>
-<li><strong>Solution:</strong> Enter Mac OS X to open terminal <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install gdisk</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo gdisk /dev/sda0 (&quot;sda0&quot; depands on your primary partition)</span><br></pre></td></tr></table></figure>
+<h2 id="question">Question:</h2>
+<p>Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of some words separated by spaces, return the <em>length of the last word in the string</em>. <em>If the last word does not exist, return</em> <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</p>
+<p>A <strong>word</strong> is a maximal substring consisting of non-space characters only. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
-Type <b>p</b> to view the partition table to verify you're working on the correct disk
+<b>Input:</b> s = "Hello World"<br><b>Output:</b> 5<br>
 </p>
 <p style="background-color:#F0F0F0">
-Type <b>x</b> to enter the experts' menu
+<b>Input:</b> s = " "<br><b>Output:</b> 0</br>
 </p>
-<p style="background-color:#F0F0F0">
-Type <b>n</b> to create an empty protective MBR
-</p>
-<p style="background-color:#F0F0F0">
-Type <b>w</b> to save your changes, You'll be asked to confirm this action
-</p>
-Finally, reboot you Mac and enter WIN10 OS successfully.</li>
-</ul>
-<h2 id="necessary-third-party-softwares">Necessary third party softwares</h2>
-<p>To enable Mac OS X can write data at shared partition, I provide some software infomations as below:<br> 1. <a href="https://osxfuse.github.io">OSXFUSE</a><br> 2. <a href="https://www.tuxera.com/company/open-source/">ntfs-3g</a></p>
-<p>Reference:<br> https://www.innoq.com/en/blog/triple-booting-a-mac/</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= s.length &lt;= 10^4</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of only English letters and spaces <span style="background-color:#F0F0F0"><font color=#808080>' '</font></span>
+</li>
+<p></strong>.</p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> This problem took me a lot of time thinking how to solve, because I tried many methods based on scanning string in order. As a result, I ingorned tailing spaces situation, e.g., "a " or "a bc ".<br> Obviously, my logic was error! Finally, I refered to <a href="https://zxi.mytechroad.com/blog/string/leetcode-58-length-of-last-word/">Huahua's Tech Road</a>, the solution is very understandable, it scan the string in <strong>reverse order</strong> <u>until a space or reach the beginning of the string</u>.<br> So, the first <code>while(i &gt;= 0 &amp;&amp; s[i] == ' ')</code> means trimming off space at tail; the second <code>while(i &gt;= 0 &amp;&amp; s[i] != ' ')</code> means calculating length of a last word.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLastWord</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> characters = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] == <span class="string">&#x27; &#x27;</span>) i--;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] != <span class="string">&#x27; &#x27;</span>)&#123;</span><br><span class="line">            i--;</span><br><span class="line">            characters ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> characters;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Instruction</category>
+        <category>LeetCode-Easy</category>
       </categories>
       <tags>
-        <tag>MacOS_X</tag>
-        <tag>Windows10</tag>
-        <tag>Bootcamp</tag>
+        <tag>Reverse_order</tag>
       </tags>
   </entry>
   <entry>
@@ -937,6 +876,65 @@ The number of nodes in the tree is in the range <span style="background-color:#F
       <tags>
         <tag>Tree</tag>
         <tag>Recursion</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Save time] Shared partition between Mac OS X and Windows 10</title>
+    <url>/posts/4755908e/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Bootcamp: File sharing between Mac OS X and Windows 10 on MacBook Pro</b></font>
+</p>
+<p>Here are some reason you should consider deploying Windows on your Mac device. 1. More games with better performance in Windows OS. 2. Some Applications don't work in macOS or not support all functions. 3. Developers need to test projects in Windows OS.</p>
+<p>So, I shared my experience to save your time of installing Windows on MacBook Pro. <a id="more"></a> ## Hardward &amp; Software preparation + Hardware Product model: Macbook Pro 2017 + Software - Win10 ISO You can go to this url to downlaod ISO: https://www.microsoft.com/zh-tw/software-download/windows10 Choose version:Windows 10, Choose language: English and choose 64-bit version</p>
+<h2 id="use-bootcamp-to-install-win10">Use Bootcamp to install Win10</h2>
+<ul>
+<li><p><strong>Step 1.</strong> Launch Bootcamp Assistant from th Utilities folder in Applications. Then, load your WIN10 ISO and allocate appropriate disk size. <img src="bootcamp_1.png" /></p></li>
+<li><p><strong>Step 2.</strong> Wait for some time, the processing will download WIN10 support software. <img src="bootcamp_2.png" /></p></li>
+<li><p><strong>Step 3.</strong> Finally, you will see the WIN10 setup screen. <img src="bootcamp_3.png" /></p></li>
+<li><p><strong>Step 4.</strong> Enter "Explorer", you wil see <code>WININSTALL (D:)</code> and click <code>BootCamp folder</code> to execute setup program. (Don't choose anything else) <img src="bootcamp_4.png" /></p></li>
+</ul>
+<h2 id="partition-ntfs-for-file-sharing">Partition NTFS for file sharing</h2>
+<ul>
+<li><p><strong>Step 1.</strong> Shut down your Mac.</p></li>
+<li><p><strong>Step 2.</strong> Hold down the <code>Command and R keys</code> down and press the power button.</p></li>
+<li><p><strong>Step 3.</strong> Keep holding Command and R keys until the Apple logo appears on the screen.</p></li>
+<li><p><strong>Step 4.</strong> Then, you will see a screen saying macOS Utilities(or if your Mac is older, OS X Utilities).</p></li>
+<li><p><strong>Step 5.</strong> Choose "Disk Utility" <img src="bootcamp_5.png" /></p></li>
+<li><p><strong>Step 6.</strong> Choose "APPLE SSD ..." and click partition <img src="bootcamp_6.png" /></p></li>
+<li><p><strong>Step 7.</strong> Click '+' to new partition section <img src="bootcamp_7.png" /></p></li>
+<li><p><strong>Step 8.</strong> Suggest selecting the NTFS option <img src="bootcamp_8.png" /></p></li>
+<li><p><strong>Step 9.</strong> If the partition is succes, you will see the new partition section between Mac OS X and Windows 10</p></li>
+</ul>
+<h2 id="error---blue-screen-when-boot-windows-10">Error - blue screen when boot Windows 10</h2>
+<p>You finish above procedures, <font color=#FF0000>if WIN10 can't boot anymore and show blue screen with error message: 0xd000000e</font></p>
+<ul>
+<li><strong>Reason:</strong> The installation creates a hybrid MBR which is completely unnecessary. Windows will not boot in EFI mode but in BIOS mode instead and crash.</li>
+<li><strong>Solution:</strong> Enter Mac OS X to open terminal <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install gdisk</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo gdisk /dev/sda0 (&quot;sda0&quot; depands on your primary partition)</span><br></pre></td></tr></table></figure>
+<p style="background-color:#F0F0F0">
+Type <b>p</b> to view the partition table to verify you're working on the correct disk
+</p>
+<p style="background-color:#F0F0F0">
+Type <b>x</b> to enter the experts' menu
+</p>
+<p style="background-color:#F0F0F0">
+Type <b>n</b> to create an empty protective MBR
+</p>
+<p style="background-color:#F0F0F0">
+Type <b>w</b> to save your changes, You'll be asked to confirm this action
+</p>
+Finally, reboot you Mac and enter WIN10 OS successfully.</li>
+</ul>
+<h2 id="necessary-third-party-softwares">Necessary third party softwares</h2>
+<p>To enable Mac OS X can write data at shared partition, I provide some software infomations as below:<br> 1. <a href="https://osxfuse.github.io">OSXFUSE</a><br> 2. <a href="https://www.tuxera.com/company/open-source/">ntfs-3g</a></p>
+<p>Reference:<br> https://www.innoq.com/en/blog/triple-booting-a-mac/</p>
+]]></content>
+      <categories>
+        <category>Instruction</category>
+      </categories>
+      <tags>
+        <tag>MacOS_X</tag>
+        <tag>Windows10</tag>
+        <tag>Bootcamp</tag>
       </tags>
   </entry>
   <entry>
@@ -1279,6 +1277,37 @@ The number of nodes in the tree is in the range <span style="background-color:#F
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Convert Sorted Array to Binary Search Tree - Solution/C++</title>
+    <url>/posts/17bf1818/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>108. Convert Sorted Array to Binary Search Tree</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given an array where elements are sorted in ascending order, convert it to a height balanced BST.</p>
+<p>For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+Given the sorted array: [-10,-3,0,5,9],<br> <br> One possible answer is: [0,-3,9,-10,null,5], which represents the following height balanced BST:<br>     0<br>    / \<br>   -3  9<br>   /  /<br>  -10 5
+</p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> At first, let we understand "What is Height Balanced Binary Search Tree(BST)". You inquire/insert/delete a node of the tree, the time of these actions is proportional to height of the tree. It must keeps its height in the face of arbitrary item (actions), it's call a height balane (or self balancing) BST.<br></p>
+<p>Back to this problem, the strategy is "Binary Search". At 22 line, the recursive function always satisfy the establishment of the left nodes. On the contrary, it always satisfy the establishment of hte right nodes at 23 line. Using the binary search will through every nodes and get a sequential array.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">sortedArrayToBST</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sortedArrayToBST(nums, <span class="number">0</span>, nums.size() - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">sortedArrayToBST</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(left &gt; right) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">int</span> mid = left + (right - left)/<span class="number">2</span>;</span><br><span class="line">        TreeNode* res = <span class="keyword">new</span> TreeNode(nums[mid]);</span><br><span class="line">        res-&gt;left = sortedArrayToBST(nums, left, mid - <span class="number">1</span>);</span><br><span class="line">        res-&gt;right = sortedArrayToBST(nums, mid + <span class="number">1</span>, right);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+Each steps info.:
+<p style="background-color:#F0F0F0">
+left:0, right:4, mid's value:0<br> left:0, right:1, mid's value:-10<br> left:0, right:-1, return NULL<br> left:1, right:1, mid's value:-3<br> left:1, right:0, return NULL<br> left:2, right:1, return NULL<br> left:3, right:4, mid's value:5<br> left:3, right:2, return NULL<br> left:4, right:4, mid's value:9<br> left:4, right:3, return NULL<br> left:5, right:4, return NULL<br>
+<p style="background-color:#F0F0F0">
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Recursion</tag>
+        <tag>TreeNode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Path Sum - Solution/C++</title>
     <url>/posts/bb7f02f5/</url>
     <content><![CDATA[<p align="center">
@@ -1518,46 +1547,6 @@ Internally you can think of this:
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Reverse Integer - Solution/C++</title>
-    <url>/posts/236b1bbd/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>7. Reverse Integer</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a 32-bit signed integer, reverse digits of an integer.</p>
-<p><strong>Note:</strong> Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−2^31, 2^31 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = 123<br><b>Output</b>: 321<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = -123<br><b>Output</b>: -321<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = 120<br><b>Output</b>: 21<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = 0<br><b>Output</b>: 0<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
--2^31 &lt;= x &lt;= 2^31 -1
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> At the begining, I need to get units digit, so the modulus operator % can compute the remainder. Then, the remainder should be added to answer(return value) after answer times ten for each loop. <code>x = x / 10</code> means removing units digit for getting hundreds digit. Don't forget the constraints, use values of INT_MIN and INT_MAX to implement it.<br> P.S. <code>return (conditional)?true:false</code></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(x != <span class="number">0</span>)&#123;</span><br><span class="line">            ans = ans * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">            x = x / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (ans&gt;INT_MIN &amp;&amp; ans&lt;INT_MAX)?ans:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Remainder</tag>
-        <tag>Quotient</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Roman to Integer - Solution/C++</title>
     <url>/posts/8caf8f3c/</url>
     <content><![CDATA[<p align="center">
@@ -1618,6 +1607,46 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
       </categories>
       <tags>
         <tag>Map(STL)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Reverse Integer - Solution/C++</title>
+    <url>/posts/236b1bbd/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>7. Reverse Integer</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a 32-bit signed integer, reverse digits of an integer.</p>
+<p><strong>Note:</strong> Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−2^31, 2^31 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = 123<br><b>Output</b>: 321<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = -123<br><b>Output</b>: -321<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = 120<br><b>Output</b>: 21<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = 0<br><b>Output</b>: 0<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+-2^31 &lt;= x &lt;= 2^31 -1
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> At the begining, I need to get units digit, so the modulus operator % can compute the remainder. Then, the remainder should be added to answer(return value) after answer times ten for each loop. <code>x = x / 10</code> means removing units digit for getting hundreds digit. Don't forget the constraints, use values of INT_MIN and INT_MAX to implement it.<br> P.S. <code>return (conditional)?true:false</code></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(x != <span class="number">0</span>)&#123;</span><br><span class="line">            ans = ans * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">            x = x / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (ans&gt;INT_MIN &amp;&amp; ans&lt;INT_MAX)?ans:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Remainder</tag>
+        <tag>Quotient</tag>
       </tags>
   </entry>
   <entry>
@@ -2068,6 +2097,41 @@ nums is sorted in increasing order.
       </categories>
   </entry>
   <entry>
+    <title>[LeetCode Road] Valid Palindromev - Solution/C++</title>
+    <url>/posts/1686f472/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>125. Valid Palindrome</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.</p>
+<p><strong>Note:</strong> For the purpose of this problem, we define empty string as valid palindrome. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> "A man, a plan, a canal: Panama"<br> <b>Output:</b> true
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> "race a car"<br> <b>Output:</b> false
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists only of printable ASCII characters.
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> You can easily solve the problem by the library function.<br> However, you must understand the description of question, "Palindrome" means that characters of string are the same when you read it forwards from the beginning or backwards from the end.<br></p>
+<p>"alphanumeric" the content of question is a key point, you should consider alpha and numeric together（Ignor punctuation marks and whether alpha is uppercase or lowercase or not).<br> So, you shoud call <code>isalnum</code> rather than <code>isalpha</code> to filter characters of string.<br></p>
+<p><code>head &lt; tail</code> condition is very important, e.g., input= ".,"<be> Initial: head = 0 &amp; tail=1<br> At 7 line, while() will break when head is added 1(<code>.</code> is not alphanumeric).<br> At 8 line, while() is break direcly, because head = tail (both variables are 1)<br> At 10 line, IF statement will get true and break out of a outer loop.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> head = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> tail = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(head &lt; tail)&#123;</span><br><span class="line">            <span class="keyword">while</span>(head &lt; tail &amp;&amp; !<span class="built_in">isalnum</span>(s[head])) head++;</span><br><span class="line">            <span class="keyword">while</span>(head &lt; tail &amp;&amp; !<span class="built_in">isalnum</span>(s[tail])) tail--;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">tolower</span>(s[head]) != <span class="built_in">tolower</span>(s[tail])) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            head ++;</span><br><span class="line">            tail --;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>STL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Two Sum - Solution/C++</title>
     <url>/posts/b98c8b25/</url>
     <content><![CDATA[<p align="center">
@@ -2101,41 +2165,6 @@ nums is sorted in increasing order.
       <tags>
         <tag>Map(STL)</tag>
         <tag>Hash_table</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Valid Palindromev - Solution/C++</title>
-    <url>/posts/1686f472/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>125. Valid Palindrome</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.</p>
-<p><strong>Note:</strong> For the purpose of this problem, we define empty string as valid palindrome. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> "A man, a plan, a canal: Panama"<br> <b>Output:</b> true
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> "race a car"<br> <b>Output:</b> false
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists only of printable ASCII characters.
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> You can easily solve the problem by the library function.<br> However, you must understand the description of question, "Palindrome" means that characters of string are the same when you read it forwards from the beginning or backwards from the end.<br></p>
-<p>"alphanumeric" the content of question is a key point, you should consider alpha and numeric together（Ignor punctuation marks and whether alpha is uppercase or lowercase or not).<br> So, you shoud call <code>isalnum</code> rather than <code>isalpha</code> to filter characters of string.<br></p>
-<p><code>head &lt; tail</code> condition is very important, e.g., input= ".,"<be> Initial: head = 0 &amp; tail=1<br> At 7 line, while() will break when head is added 1(<code>.</code> is not alphanumeric).<br> At 8 line, while() is break direcly, because head = tail (both variables are 1)<br> At 10 line, IF statement will get true and break out of a outer loop.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> head = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> tail = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(head &lt; tail)&#123;</span><br><span class="line">            <span class="keyword">while</span>(head &lt; tail &amp;&amp; !<span class="built_in">isalnum</span>(s[head])) head++;</span><br><span class="line">            <span class="keyword">while</span>(head &lt; tail &amp;&amp; !<span class="built_in">isalnum</span>(s[tail])) tail--;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">tolower</span>(s[head]) != <span class="built_in">tolower</span>(s[tail])) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            head ++;</span><br><span class="line">            tail --;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>STL</tag>
       </tags>
   </entry>
   <entry>

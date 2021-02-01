@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-01-30T17:16:17.372Z</updated>
+  <updated>2021-02-01T03:23:02.393Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Basic programming- Linear Search algorithm</title>
+    <link href="https://egbert-yu-ting.github.io/posts/65334f02/"/>
+    <id>https://egbert-yu-ting.github.io/posts/65334f02/</id>
+    <published>2021-02-01T00:53:55.000Z</published>
+    <updated>2021-02-01T03:23:02.393Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Linear Search&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given an array arr[] of n elements,</summary>
+      
+    
+    
+    
+    <category term="SearchAlgorithm" scheme="https://egbert-yu-ting.github.io/categories/SearchAlgorithm/"/>
+    
+    
+    <category term="Search" scheme="https://egbert-yu-ting.github.io/tags/Search/"/>
+    
+  </entry>
   
   <entry>
     <title>[LeetCode Road] Excel Sheet Column Number</title>
@@ -506,33 +532,6 @@ For this problem, a height-balanced binary tree is defined as:
     <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
     
     <category term="TreeNode" scheme="https://egbert-yu-ting.github.io/tags/TreeNode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[Save time] Shared partition between Mac OS X and Windows 10</title>
-    <link href="https://egbert-yu-ting.github.io/posts/4755908e/"/>
-    <id>https://egbert-yu-ting.github.io/posts/4755908e/</id>
-    <published>2021-01-07T03:15:05.000Z</published>
-    <updated>2021-01-22T00:30:20.370Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;Bootcamp: File sharing between Mac OS X and Windows 10 on MacBook Pro&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;p&gt;Here are some reason you should consider deploying Windows on your Mac device. 1. More games with better performance in Windows OS. 2. Some Applications don&#39;t work in macOS or not support all functions. 3. Developers need to test projects in Windows OS.&lt;/p&gt;
-&lt;p&gt;So, I shared my experience to save your time of installing Windows on MacBook Pro.</summary>
-    
-    
-    
-    <category term="Instruction" scheme="https://egbert-yu-ting.github.io/categories/Instruction/"/>
-    
-    
-    <category term="MacOS_X" scheme="https://egbert-yu-ting.github.io/tags/MacOS-X/"/>
-    
-    <category term="Windows10" scheme="https://egbert-yu-ting.github.io/tags/Windows10/"/>
-    
-    <category term="Bootcamp" scheme="https://egbert-yu-ting.github.io/tags/Bootcamp/"/>
     
   </entry>
   

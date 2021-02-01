@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-01T03:23:02.393Z</updated>
+  <updated>2021-02-01T03:24:45.600Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,17 +21,14 @@
     <link href="https://egbert-yu-ting.github.io/posts/65334f02/"/>
     <id>https://egbert-yu-ting.github.io/posts/65334f02/</id>
     <published>2021-02-01T00:53:55.000Z</published>
-    <updated>2021-02-01T03:23:02.393Z</updated>
+    <updated>2021-02-01T03:24:45.600Z</updated>
     
     
-      
-      
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Linear Search&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given an array arr[] of n elements,</summary>
-      
+&lt;p&gt;Given an array arr[] of n elements, write a function to search a given element x in arr[].</summary>
     
     
     

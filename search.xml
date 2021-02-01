@@ -572,7 +572,7 @@ After counting, you should make those Lists moved to the same position, as below
 <font size="6px"><b>Linear Search</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>Given an array arr[] of n elements, write a function to search a given element x in arr[].</p>
+<p>Given an array arr[] of n elements, write a function to search a given element x in arr[]. <a id="more"></a></p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
 <b>Input:</b> arr[] = {10, 20, 80, 30, 60, 50, 100, 110, 130, 170}<br>     x = 110;<br> <b>Output:</b> 6<br> <b>Explanation:</b> Element x is present at index 6

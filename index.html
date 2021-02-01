@@ -377,7 +377,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-02-01 08:53:55 / Modified: 11:23:02" itemprop="dateCreated datePublished" datetime="2021-02-01T08:53:55+08:00">2021-02-01</time>
+      <time title="Created: 2021-02-01 08:53:55 / Modified: 11:24:45" itemprop="dateCreated datePublished" datetime="2021-02-01T08:53:55+08:00">2021-02-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -417,21 +417,15 @@
 <font size="6px"><b>Linear Search</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>Given an array arr[] of n elements, write a function to search a given element x in arr[].</p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> arr[] = {10, 20, 80, 30, 60, 50, 100, 110, 130, 170}<br>     x = 110;<br> <b>Output:</b> 6<br> <b>Explanation:</b> Element x is present at index 6
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> arr[] = {10, 20, 80, 30, 60, 50, 100, 110, 130, 170}<br>     x = 175;<br> <b>Output:</b> -1<br> <b>Explanation:</b> Element x is not present in arr[].
-</p>
-<h2 id="source-code">Source code:</h2>
-<h3 id="version-1"><u>Version 1<u></h3>
-<p>Idea<br> It is a very simple approach to find the target.<br> <img src="linear_example.png" /></p>
-<p>Go through each element which is equal to the target (Start from the index 0 of array). If the target doesn't exist in arry, return -1.<br> However, it is rarely used practically because other search algorithms are more efficient.<br></p>
-<p><b>Time complexity: O(n)</b><br></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">linearSearch</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr, <span class="keyword">int</span> target)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] == target) <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr&#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">80</span>, <span class="number">30</span>, <span class="number">60</span>, <span class="number">50</span>, <span class="number">100</span>, <span class="number">110</span>, <span class="number">130</span>, <span class="number">170</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">110</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> res = linearSearch(arr, x);</span><br><span class="line">    (res == <span class="number">-1</span>)? <span class="built_in">cout</span> &lt;&lt;<span class="string">&quot;The value isn&#x27;t exist in array&quot;</span>: <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;The value&#x27;s index is &quot;</span> &lt;&lt; res;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p>Given an array arr[] of n elements, write a function to search a given element x in arr[].
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/65334f02/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

@@ -231,7 +231,8 @@ TThe number of nodes in the tree is in the range <span style="background-color:#
 <p>The idea of binary search is to use the information that the array is sorted and reduce the time complexity to <strong>O(Log n)</strong>.</p>
 <h2 id="source-code">Source code:</h2>
 <h3 id="version"><u>Version</u></h3>
-<p>Idea:<br> You should know the length of array first, repeatedly dividing the search interval in half is at the core of binary search.<br> Hence, you can declare <code>head</code> variable that is index 0, and <code>tail</code> varialbe that is index n - 1 (n is the length of array). Therefore, the middle of the interval is <b>(head + tail) / 2</b><br></p>
+<p>Idea:<br> You should know the length of array first, repeatedly dividing the search interval in half is at the core of binary search.<br> The demonstration is shown as below: <img src="binarySearch_example.png" /></p>
+<p>Hence, you can declare <code>head</code> variable that is index 0, and <code>tail</code> varialbe that is index n - 1 (n is the length of array). Therefore, the middle of the interval is <b>(head + tail) / 2</b><br></p>
 <p>At 14 line, if the value of middle is bigger than the target, narrow the interval to the lower half. Otherwise, narrow it to the upeer half.<br></p>
 <p>Repeat 10 - 18 line to find the position of target until head's index is bigger than tail's index, it means the target isn't exist in array, so return -1.<br></p>
 <p><b>Time complexity: O(log n)</b><br></p>

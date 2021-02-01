@@ -175,45 +175,61 @@ TThe number of nodes in the tree is in the range <span style="background-color:#
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Best Time to Buy and Sell Stock - Solution/C++</title>
-    <url>/posts/a026a3d3/</url>
+    <title>Basic programming - Binary Search Algorithm</title>
+    <url>/posts/dad48e10/</url>
     <content><![CDATA[<p align="center">
-<font size="6"><b>121. Best Time to Buy and Sell Stock</b></font>
+<font size="6px"><b>Binary Search</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>You are given an array <span style="background-color:#F0F0F0"><font color=#808080>prices</font></span> where <span style="background-color:#F0F0F0"><font color=#808080>prices[i]</font></span> is the price of a given stock on the <span style="background-color:#F0F0F0"><font color=#808080>i^th</font></span> day.</p>
-<p>You want to maximize your profit by choosing a <strong>single day</strong> to buy one stock and choosing a <strong>different day in the future</strong> to sell that stock. <a id="more"></a></p>
-<p>Return <em>the maximum profit you can achieve from this transaction</em>. If you cannot achieve any profit, return <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</p>
+<p>Given a sorted array arr[] of n elements, write a function to search a given element x in arr[]. <a id="more"></a></p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> prices = [7,1,5,3,6,4]<br> <b>Output:</b> 5<br> <b>Explanation:</b> Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.<br> Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+<b>Input:</b> arr[] = {1, 4, 6, 7, 9, 11, 12, 15, 17}<br>    x = 12;<br> <b>Output:</b> 6<br> <b>Explanation:</b> Element x is represented at index 6, and the program only runs 2 times. First, middle value is 9. Second, middle value is 12.
 </p>
+<p>The idea of binary search is to use the information that the array is sorted and reduce the time complexity to <strong>O(Log n)</strong>.</p>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version"><u>Version</u></h3>
+<p>Idea:<br></p>
+<p><b>Time complexity: O(log n)</b><br></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr, <span class="keyword">int</span> input)</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> n = arr.size();</span><br><span class="line">    <span class="keyword">int</span> head = <span class="number">0</span>, tail = n - <span class="number">1</span>, middle = - <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(head &lt;= tail)&#123;</span><br><span class="line">        middle = (head + tail) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(arr[middle] == input) <span class="keyword">return</span> middle;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(arr[middle] &gt;input)&#123;</span><br><span class="line">            tail = middle - <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            head = middle + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr&#123; <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">30</span>, <span class="number">33</span>, <span class="number">40</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">22</span>;</span><br><span class="line">    <span class="keyword">int</span> res = binarySearch(arr, x);</span><br><span class="line">    (res == <span class="number">-1</span>)?<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Input is not exist in array&quot;</span>:<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Index &quot;</span> &lt;&lt; res &lt;&lt; <span class="string">&quot; is &quot;</span> &lt;&lt; arr[res];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>SearchAlgorithm</category>
+      </categories>
+      <tags>
+        <tag>Search</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Binary Tree Level Order Traversal II - Solution/C++</title>
+    <url>/posts/cac8b982/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>107. Binary Tree Level Order Traversal II</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a binary tree, return the <em>bottom-up level order</em> traversal of its nodes' values. (ie, from left to right, level by level from leaf to root). <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+For example: Given binary tree <span style="background-color:#F0F0F0"><font color=#808080>[3,9,20,null,null,15,7]</span></font>,
 <p style="background-color:#F0F0F0">
-<b>Input:</b> prices = [7,6,4,3,1]<br> <b>Output:</b> 0<br> <b>Explanation:</b> In this case, no transactions are done and the max profit = 0.
+   3<br>    / \<br>   9 20<br>    / \<br>    15  7
 </p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= prices.length &lt;= 10^5</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= prices[i] &lt;= 10^4</font></span>
-</li>
-<p></strong></p>
+return its bottom-up level order traversal as:
+<p style="background-color:#F0F0F0">
+[<br>   [15,7],<br>   [9,20],<br>   [3]<br>]
+</p>
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> It is a brute force algorithm. Each elements as buying day (<code>prices[i]</code>)compare the profit with other selling day (<code>prices[j]</code>, i &lt; j), so we can get the maximum profit, however, the strategy is very inefficient. (Time Limit Exceeded)</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices.empty() || prices.size() == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> profit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; prices.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> cost = prices[i];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; prices.size(); j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> reward = prices[j];</span><br><span class="line">                <span class="keyword">int</span> temp = reward - cost;</span><br><span class="line">                <span class="keyword">if</span>(temp &gt; <span class="number">0</span> &amp;&amp; temp &gt; profit)&#123;</span><br><span class="line">                    profit = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> It can use only one loop to implement the algorithm.<br> <code>minPrice</code>: It want to get the lowest price up to i-th day.<br> <code>maxProfit</code>: It want to get the max profit up to i-th day.<br> <code>max(maxProfit, prices[i] - minPrice)</code>: It means that the minimum price subtracted from the price of selling day(<code>prices[i]</code>) and choose the large profit.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> minPrice = INT_MAX, maxProfit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            minPrice = min(minPrice, prices[i]);</span><br><span class="line">            maxProfit = max(maxProfit, prices[i] - minPrice);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Idea:<br> I made a big mistake, I always think the solution that find the deepest depth first, the go back to the root with each layers. I realized an efficient approach until I had refered to <a href="https://zxi.mytechroad.com/blog/tree/leetcode-107-binary-tree-level-order-traversal-ii/">Huahua's Tech Road</a>.<br></p>
+<p>You must understand how to implement a two dimensional vector first. Write a function as recursion, store each elements from top of tree. <code>res.size() &lt;= depth&gt;</code> is an important statement to expand 2D vector size. Then, we must go through every left &amp; right nodes and store it based on correspondingly depth. Finaly, let go back to original function, we must use reverse() to pass the answers.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; levelOrderBottom(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span> &lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line">        levelOrderBottom(root, <span class="number">0</span>, res);</span><br><span class="line">        reverse(res.begin(), res.end());</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">levelOrderBottom</span><span class="params">(TreeNode* root, <span class="keyword">int</span> depth, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">while</span>(res.size() &lt;= depth) res.push_back(&#123;&#125;);</span><br><span class="line">        res[depth].push_back(root-&gt;val);</span><br><span class="line">        levelOrderBottom(root-&gt;left, depth + <span class="number">1</span>, res);</span><br><span class="line">        levelOrderBottom(root-&gt;right, depth + <span class="number">1</span>, res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>LeetCode-Easy</category>
       </categories>
       <tags>
-        <tag>Stock</tag>
-        <tag>BruteForce</tag>
+        <tag>Recursion</tag>
+        <tag>STL</tag>
+        <tag>2D_Vector</tag>
       </tags>
   </entry>
   <entry>
@@ -357,6 +373,43 @@ fatal: unable to auto-detect email address (got ...)<br> error: src refspec HEAD
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Excel Sheet column Title</title>
+    <url>/posts/961e4f43/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>168. Excel Sheet Column Title</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a positive integer, return its corresponding column title as appear in an Excel sheet.</p>
+For example:
+<p style="background-color:#F0F0F0">
+  1 -&gt; A<br>   2 -&gt; B<br>   3 -&gt; C<br>   ...<br>   26 -&gt; Z<br>   27 -&gt; AA<br>   28 -&gt; AB <br>   ...
+</p>
+<a id="more"></a>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> 1<br> <b>Output:</b> "A"
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> 28<br> <b>Output:</b> "AB"
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> 701<br> <b>Output:</b> "ZY"
+</p>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> According to the ASCII talbe, if you want to get A~Z character, you need 65-90 demical number to convert it.<br></p>
+<p>If the input is <code>n = 26</code>, you use <code>%26</code> to get the remainder is zero, then it is converted to character you will attain <code>'A'</code>, but a correct answer is <code>'Z'</code>. So, <strong>n minus 1</strong> is important before you get the remainder at 6 line.<br></p>
+<p>Next step, you can convert int to character directly. <strong>Notice:</strong> <code>+65</code> is same as <code>'A'</code>. <br> At 8 line, <code>(n - 1)/26</code> as a carry condition every time until n will be 0.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">convertToTitle</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> remainder = (n - <span class="number">1</span>) % <span class="number">26</span>;</span><br><span class="line">            res = (<span class="keyword">char</span>)(remainder + <span class="number">65</span>) + res;</span><br><span class="line">            n = (n - <span class="number">1</span>)/<span class="number">26</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>ASCII</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Excel Sheet Column Number</title>
     <url>/posts/10e6d46c/</url>
     <content><![CDATA[<p align="center">
@@ -410,40 +463,23 @@ For example:
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Excel Sheet column Title</title>
-    <url>/posts/961e4f43/</url>
+    <title>[Interview question] Find second largest element - Solution/C++</title>
+    <url>/posts/16153cc7/</url>
     <content><![CDATA[<p align="center">
-<font size="6px"><b>168. Excel Sheet Column Title</b></font>
+<font size="6"><b>Let coding interview become easy - Find second largest element</b></font>
 </p>
-<h2 id="question">Question:</h2>
-<p>Given a positive integer, return its corresponding column title as appear in an Excel sheet.</p>
-For example:
-<p style="background-color:#F0F0F0">
-  1 -&gt; A<br>   2 -&gt; B<br>   3 -&gt; C<br>   ...<br>   26 -&gt; Z<br>   27 -&gt; AA<br>   28 -&gt; AB <br>   ...
-</p>
-<a id="more"></a>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> 1<br> <b>Output:</b> "A"
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> 28<br> <b>Output:</b> "AB"
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> 701<br> <b>Output:</b> "ZY"
-</p>
-<h2 id="source-code">Source code:</h2>
+<p>Maybe you will face it problem when you have an interview for a job with Tech. company.<br> The problem is "How to find second largest element?", it seems very easy to get result, but you must propose an efficient approach. <a id="more"></a></p>
+<p>If there is a vector that consists <code>&#123;2, 3, 4, 1, 7, 6, 5&#125;</code>, I delcare two variables as first largest element and second largest element. I initialize variables to INT_MIN. At 13 line, <code>if(input[i]&gt;first)</code> is true, <code>input[i]</code> is largest element and pass it to <code>first</code> after storing a value of <code>first</code> by <code>second</code>. Otherwise, compare <code>input[i]</code> with <code>second</code>, it checks a current value whether it bigger than <code>second</code> or not.</p>
+<h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> According to the ASCII talbe, if you want to get A~Z character, you need 65-90 demical number to convert it.<br></p>
-<p>If the input is <code>n = 26</code>, you use <code>%26</code> to get the remainder is zero, then it is converted to character you will attain <code>'A'</code>, but a correct answer is <code>'Z'</code>. So, <strong>n minus 1</strong> is important before you get the remainder at 6 line.<br></p>
-<p>Next step, you can convert int to character directly. <strong>Notice:</strong> <code>+65</code> is same as <code>'A'</code>. <br> At 8 line, <code>(n - 1)/26</code> as a carry condition every time until n will be 0.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">convertToTitle</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> remainder = (n - <span class="number">1</span>) % <span class="number">26</span>;</span><br><span class="line">            res = (<span class="keyword">char</span>)(remainder + <span class="number">65</span>) + res;</span><br><span class="line">            n = (n - <span class="number">1</span>)/<span class="number">26</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">pair&lt;int, int&gt; findLargest(vector&lt;int&gt; input)&#123;</span><br><span class="line">    <span class="keyword">int</span> first = INT_MIN;</span><br><span class="line">    <span class="keyword">int</span> second = INT_MIN;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; input.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(input[i]&gt;first)&#123;</span><br><span class="line">            second = first;</span><br><span class="line">            first = input[i];</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(input[i] &gt; second)&#123;</span><br><span class="line">            second = input[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">make_pair</span>(first, second);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr = &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; ans = findLargest(arr);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;The first largest element=&quot;</span> &lt;&lt; ans.first &lt;&lt; <span class="string">&quot;, the second largest element=&quot;</span> &lt;&lt; ans.second &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>LeetCode-Easy</category>
+        <category>CodeInterview</category>
       </categories>
       <tags>
-        <tag>ASCII</tag>
+        <tag>Pair</tag>
+        <tag>INT_MIN</tag>
       </tags>
   </entry>
   <entry>
@@ -476,26 +512,6 @@ For example:
       <categories>
         <category>LeetCode-Easy</category>
       </categories>
-  </entry>
-  <entry>
-    <title>[Interview question] Find second largest element - Solution/C++</title>
-    <url>/posts/16153cc7/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Let coding interview become easy - Find second largest element</b></font>
-</p>
-<p>Maybe you will face it problem when you have an interview for a job with Tech. company.<br> The problem is "How to find second largest element?", it seems very easy to get result, but you must propose an efficient approach. <a id="more"></a></p>
-<p>If there is a vector that consists <code>&#123;2, 3, 4, 1, 7, 6, 5&#125;</code>, I delcare two variables as first largest element and second largest element. I initialize variables to INT_MIN. At 13 line, <code>if(input[i]&gt;first)</code> is true, <code>input[i]</code> is largest element and pass it to <code>first</code> after storing a value of <code>first</code> by <code>second</code>. Otherwise, compare <code>input[i]</code> with <code>second</code>, it checks a current value whether it bigger than <code>second</code> or not.</p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">pair&lt;int, int&gt; findLargest(vector&lt;int&gt; input)&#123;</span><br><span class="line">    <span class="keyword">int</span> first = INT_MIN;</span><br><span class="line">    <span class="keyword">int</span> second = INT_MIN;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; input.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(input[i]&gt;first)&#123;</span><br><span class="line">            second = first;</span><br><span class="line">            first = input[i];</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(input[i] &gt; second)&#123;</span><br><span class="line">            second = input[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">make_pair</span>(first, second);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr = &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; ans = findLargest(arr);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;The first largest element=&quot;</span> &lt;&lt; ans.first &lt;&lt; <span class="string">&quot;, the second largest element=&quot;</span> &lt;&lt; ans.second &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>CodeInterview</category>
-      </categories>
-      <tags>
-        <tag>Pair</tag>
-        <tag>INT_MIN</tag>
-      </tags>
   </entry>
   <entry>
     <title>[Step by Step] How to install Google Chrome on Ubuntu 16.04</title>
@@ -561,6 +577,43 @@ For example:
       </categories>
       <tags>
         <tag>String</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Length of Last Word - Solution/C++</title>
+    <url>/posts/b04b682/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>8. Length of Last Word</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of some words separated by spaces, return the <em>length of the last word in the string</em>. <em>If the last word does not exist, return</em> <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</p>
+<p>A <strong>word</strong> is a maximal substring consisting of non-space characters only. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "Hello World"<br><b>Output:</b> 5<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = " "<br><b>Output:</b> 0</br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= s.length &lt;= 10^4</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of only English letters and spaces <span style="background-color:#F0F0F0"><font color=#808080>' '</font></span>
+</li>
+<p></strong>.</p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> This problem took me a lot of time thinking how to solve, because I tried many methods based on scanning string in order. As a result, I ingorned tailing spaces situation, e.g., "a " or "a bc ".<br> Obviously, my logic was error! Finally, I refered to <a href="https://zxi.mytechroad.com/blog/string/leetcode-58-length-of-last-word/">Huahua's Tech Road</a>, the solution is very understandable, it scan the string in <strong>reverse order</strong> <u>until a space or reach the beginning of the string</u>.<br> So, the first <code>while(i &gt;= 0 &amp;&amp; s[i] == ' ')</code> means trimming off space at tail; the second <code>while(i &gt;= 0 &amp;&amp; s[i] != ' ')</code> means calculating length of a last word.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLastWord</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> characters = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] == <span class="string">&#x27; &#x27;</span>) i--;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] != <span class="string">&#x27; &#x27;</span>)&#123;</span><br><span class="line">            i--;</span><br><span class="line">            characters ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> characters;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Reverse_order</tag>
       </tags>
   </entry>
   <entry>
@@ -630,43 +683,6 @@ After counting, you should make those Lists moved to the same position, as below
       </categories>
       <tags>
         <tag>ListNode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Length of Last Word - Solution/C++</title>
-    <url>/posts/b04b682/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>8. Length of Last Word</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of some words separated by spaces, return the <em>length of the last word in the string</em>. <em>If the last word does not exist, return</em> <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</p>
-<p>A <strong>word</strong> is a maximal substring consisting of non-space characters only. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = "Hello World"<br><b>Output:</b> 5<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = " "<br><b>Output:</b> 0</br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= s.length &lt;= 10^4</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of only English letters and spaces <span style="background-color:#F0F0F0"><font color=#808080>' '</font></span>
-</li>
-<p></strong>.</p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> This problem took me a lot of time thinking how to solve, because I tried many methods based on scanning string in order. As a result, I ingorned tailing spaces situation, e.g., "a " or "a bc ".<br> Obviously, my logic was error! Finally, I refered to <a href="https://zxi.mytechroad.com/blog/string/leetcode-58-length-of-last-word/">Huahua's Tech Road</a>, the solution is very understandable, it scan the string in <strong>reverse order</strong> <u>until a space or reach the beginning of the string</u>.<br> So, the first <code>while(i &gt;= 0 &amp;&amp; s[i] == ' ')</code> means trimming off space at tail; the second <code>while(i &gt;= 0 &amp;&amp; s[i] != ' ')</code> means calculating length of a last word.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLastWord</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> characters = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] == <span class="string">&#x27; &#x27;</span>) i--;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] != <span class="string">&#x27; &#x27;</span>)&#123;</span><br><span class="line">            i--;</span><br><span class="line">            characters ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> characters;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Reverse_order</tag>
       </tags>
   </entry>
   <entry>
@@ -807,6 +823,61 @@ The number of the nodes in the list is in the range <span style="background-colo
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode] Majority Element</title>
+    <url>/posts/ef374e86/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>169. Majority Element</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given an array <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> of size <span style="background-color:#F0F0F0"><font color=#808080>n</font></span>, return <em>the majority element</em>.</p>
+<p>The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.</p>
+<p><strong>Follow-up:</strong> Could you solve the problem in linear time and in <span style="background-color:#F0F0F0"><font color=#808080>Ｏ(1)</font></span> space? <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [3,2,3]<br> <b>Output:</b> 3
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [2,2,1,1,1,2,2]<br> <b>Output:</b> 2
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>n == nums.length</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= n &lt;= 5 * 10^4</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-2^31 &lt;= nums[i] &lt;= 2^31 - 1</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<p>Idea:<br> The strategy is similar wtih <a href="https://www.dcard.tw/f/boutique/p/235251138">Linked List Cycle's version 1</a>. Use <strong>Hash Table</strong> to store a count of element. Notice: the majority element appears more than ⌊n / 2⌋ times and therefore you should add if statment for checking.</p>
+<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(n)</b></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; count;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            count[nums[i]]++;</span><br><span class="line">            <span class="keyword">if</span> (count[nums[i]] &gt; n/<span class="number">2</span>) <span class="keyword">return</span> nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<br> It is a vary specail approach. It supposes the first element as the majority, and declare a counter.<br></p>
+<p>Use a loop to go through every element, if current element is equal to the majority, count will plus 1, otherwise, count will minus 1.<br> If count is equal to 0, the majority will be updated to current element, and count is set 1.<br></p>
+<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(1)</b></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> majority = nums.front();</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(majority == nums[i])&#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(--count == <span class="number">0</span>)&#123;</span><br><span class="line">                majority = nums[i];</span><br><span class="line">                count = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> majority;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-3"><u>Version 3</u></h3>
+<p>Idea:<br> You have more than fifty opporunity to get the answer, because the majority element appears more than n / 2 times.<br> Therefore, the strategy is a random approach that a random value is exist in array, then it compares with all element, if it appears more than n /2 times, it is the answer.<br></p>
+<p>Note:<br> The formular of random is:<br> rand%(max - min + 1) + min<br> E.g., you want to get a random number between 5 and 10<br></p>
+<ul>
+<li>min ← 5</li>
+<li>max ← 10</li>
+<li><strong>randValue ← rand()%(10 - 5 + 1) + 5</strong></li>
+</ul>
+<p>// if you don't plus 1 like this: <code>rand()%(10 - 5)</code>, you will attain a random value between 0 to 4. So it must plus 1!</p>
+<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(1)</b></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        srand(time(<span class="literal">nullptr</span>));</span><br><span class="line">        <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> majority = nums[rand()%n];</span><br><span class="line">            <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(majority == nums[i]) count++;</span><br><span class="line">                <span class="keyword">if</span>(count &gt; n/<span class="number">2</span>) <span class="keyword">return</span> majority;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+  </entry>
+  <entry>
     <title>[Save time] Shared partition between Mac OS X and Windows 10</title>
     <url>/posts/4755908e/</url>
     <content><![CDATA[<p align="center">
@@ -866,61 +937,6 @@ Finally, reboot you Mac and enter WIN10 OS successfully.</li>
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode] Majority Element</title>
-    <url>/posts/ef374e86/</url>
-    <content><![CDATA[<p align="center">
-<font size="6px"><b>169. Majority Element</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given an array <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> of size <span style="background-color:#F0F0F0"><font color=#808080>n</font></span>, return <em>the majority element</em>.</p>
-<p>The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.</p>
-<p><strong>Follow-up:</strong> Could you solve the problem in linear time and in <span style="background-color:#F0F0F0"><font color=#808080>Ｏ(1)</font></span> space? <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [3,2,3]<br> <b>Output:</b> 3
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [2,2,1,1,1,2,2]<br> <b>Output:</b> 2
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>n == nums.length</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= n &lt;= 5 * 10^4</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-2^31 &lt;= nums[i] &lt;= 2^31 - 1</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<p>Idea:<br> The strategy is similar wtih <a href="https://www.dcard.tw/f/boutique/p/235251138">Linked List Cycle's version 1</a>. Use <strong>Hash Table</strong> to store a count of element. Notice: the majority element appears more than ⌊n / 2⌋ times and therefore you should add if statment for checking.</p>
-<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(n)</b></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; count;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            count[nums[i]]++;</span><br><span class="line">            <span class="keyword">if</span> (count[nums[i]] &gt; n/<span class="number">2</span>) <span class="keyword">return</span> nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> It is a vary specail approach. It supposes the first element as the majority, and declare a counter.<br></p>
-<p>Use a loop to go through every element, if current element is equal to the majority, count will plus 1, otherwise, count will minus 1.<br> If count is equal to 0, the majority will be updated to current element, and count is set 1.<br></p>
-<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(1)</b></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> majority = nums.front();</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(majority == nums[i])&#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(--count == <span class="number">0</span>)&#123;</span><br><span class="line">                majority = nums[i];</span><br><span class="line">                count = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> majority;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-3"><u>Version 3</u></h3>
-<p>Idea:<br> You have more than fifty opporunity to get the answer, because the majority element appears more than n / 2 times.<br> Therefore, the strategy is a random approach that a random value is exist in array, then it compares with all element, if it appears more than n /2 times, it is the answer.<br></p>
-<p>Note:<br> The formular of random is:<br> rand%(max - min + 1) + min<br> E.g., you want to get a random number between 5 and 10<br></p>
-<ul>
-<li>min ← 5</li>
-<li>max ← 10</li>
-<li><strong>randValue ← rand()%(10 - 5 + 1) + 5</strong></li>
-</ul>
-<p>// if you don't plus 1 like this: <code>rand()%(10 - 5)</code>, you will attain a random value between 0 to 4. So it must plus 1!</p>
-<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(1)</b></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        srand(time(<span class="literal">nullptr</span>));</span><br><span class="line">        <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> majority = nums[rand()%n];</span><br><span class="line">            <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(majority == nums[i]) count++;</span><br><span class="line">                <span class="keyword">if</span>(count &gt; n/<span class="number">2</span>) <span class="keyword">return</span> majority;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Maximum Depth of Binary Tree - Solution/C++</title>
     <url>/posts/57b52472/</url>
     <content><![CDATA[<p align="center">
@@ -968,35 +984,53 @@ The number of nodes in the tree is in the range <span style="background-color:#F
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Binary Tree Level Order Traversal II - Solution/C++</title>
-    <url>/posts/cac8b982/</url>
+    <title>[LeetCode Road] Maximum Subarray - Solution/C++</title>
+    <url>/posts/90ac56be/</url>
     <content><![CDATA[<p align="center">
-<font size="6"><b>107. Binary Tree Level Order Traversal II</b></font>
+<font size="6"><b>53. Maximum Subarray</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>Given a binary tree, return the <em>bottom-up level order</em> traversal of its nodes' values. (ie, from left to right, level by level from leaf to root). <a id="more"></a></p>
+<p>Given an integer array <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span>, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
+<p><strong>Follow up:</strong> If you have figured out the <span style="background-color:#F0F0F0"><font color=#808080>O(n)</font></span> solution, try coding another solution using the <strong>divide and conquer</strong> approach, which is more subtle. <a id="more"></a></p>
 <h2 id="example">Example:</h2>
-For example: Given binary tree <span style="background-color:#F0F0F0"><font color=#808080>[3,9,20,null,null,15,7]</span></font>,
 <p style="background-color:#F0F0F0">
-   3<br>    / \<br>   9 20<br>    / \<br>    15  7
+<b>Input:</b> nums = [-2,1,-3,4,-1,2,1,-5,4]<br><b>Output:</b> 6<br><b>Explanation:</b> [4,-1,2,1] has the largest sum = 6.<br>
 </p>
-return its bottom-up level order traversal as:
 <p style="background-color:#F0F0F0">
-[<br>   [15,7],<br>   [9,20],<br>   [3]<br>]
+<b>Input:</b> nums = [1]<br><b>Output:</b> 1<br>
 </p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [0]<br><b>Output:</b> 0<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [-1]<br><b>Output:</b> -1<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [-2147483647]<br><b>Output:</b> -2147483647<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= nums.length &lt;= 2 * 10^4</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-2^31 &lt;= nums[i] &lt;= 2^31 - 1</font></span>
+</li>
+<p></strong></p>
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> I made a big mistake, I always think the solution that find the deepest depth first, the go back to the root with each layers. I realized an efficient approach until I had refered to <a href="https://zxi.mytechroad.com/blog/tree/leetcode-107-binary-tree-level-order-traversal-ii/">Huahua's Tech Road</a>.<br></p>
-<p>You must understand how to implement a two dimensional vector first. Write a function as recursion, store each elements from top of tree. <code>res.size() &lt;= depth&gt;</code> is an important statement to expand 2D vector size. Then, we must go through every left &amp; right nodes and store it based on correspondingly depth. Finaly, let go back to original function, we must use reverse() to pass the answers.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; levelOrderBottom(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span> &lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line">        levelOrderBottom(root, <span class="number">0</span>, res);</span><br><span class="line">        reverse(res.begin(), res.end());</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">levelOrderBottom</span><span class="params">(TreeNode* root, <span class="keyword">int</span> depth, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">while</span>(res.size() &lt;= depth) res.push_back(&#123;&#125;);</span><br><span class="line">        res[depth].push_back(root-&gt;val);</span><br><span class="line">        levelOrderBottom(root-&gt;left, depth + <span class="number">1</span>, res);</span><br><span class="line">        levelOrderBottom(root-&gt;right, depth + <span class="number">1</span>, res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Idea:<br> It is a brute force approach. Use 2 loop to calculate the sum for each elements.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> len = nums.size();</span><br><span class="line">        <span class="keyword">if</span>(len == <span class="number">1</span>) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> maxValue = INT_MIN;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; len; j++)&#123;</span><br><span class="line">                sum += nums[j];</span><br><span class="line">                maxValue = max(maxValue, sum);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxValue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<br> This is an efficient method, use only one loop.<br> <code>sum += nums[i]</code> means the cumulative sum.<br> <code>sum = max(sum, nums[i])</code> means the maximum of sum between the cumulative sum or current index of value.<br> <code>maxValue = max(maxValue, sum)</code> means recording the maximal value.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxValue = INT_MIN, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            sum = max(sum, nums[i]);</span><br><span class="line">            maxValue = max(maxValue, sum);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxValue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>LeetCode-Easy</category>
       </categories>
       <tags>
-        <tag>Recursion</tag>
-        <tag>STL</tag>
-        <tag>2D_Vector</tag>
+        <tag>BruteForce</tag>
+        <tag>Vector</tag>
       </tags>
   </entry>
   <entry>
@@ -1140,46 +1174,6 @@ Methods <span style="background-color:#F0F0F0"><font color=#808080>pop</font></s
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Minimum Depth of Binary Tree - Solution/C++</title>
-    <url>/posts/2397063c/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>111. Minimum Depth of Binary Tree</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a binary tree, find its minimum depth.</p>
-<p>The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>
-<p><strong>Note:</strong> A leaf is a node with no children. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<img src="example.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 2
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [2,null,3,null,4,null,5,null,6]<br> <b>Output:</b> 5
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^5]</font></span>.
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-1000 &lt;= Node.val &lt;= 1000</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code:</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> We can sum up the rules of the binary tree.<br> <strong>First:</strong> If the left subnode and right subnode are exist of leaf node, it can be calculated each depths and use min() to get minimum depth.<br> <strong>Seconde:</strong> If there is NULL either left subnode or right subnode of leaf node, we must use max() to get the maxixmum depth, because <u>"A leaf is a node with no children"</u> based on the question. E.g., if left subnode is NULL, a leaf can't be calculated as 1 depth.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;left &amp;&amp; root-&gt;right)&#123;</span><br><span class="line">            <span class="keyword">return</span> min(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> max(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Tree</tag>
-        <tag>Recursion</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Palindrome Number - Solution/C++</title>
     <url>/posts/d37a286f/</url>
     <content><![CDATA[<p align="center">
@@ -1220,56 +1214,6 @@ The number of nodes in the tree is in the range <span style="background-color:#F
       <tags>
         <tag>Remainder</tag>
         <tag>Quotient</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Maximum Subarray - Solution/C++</title>
-    <url>/posts/90ac56be/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>53. Maximum Subarray</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given an integer array <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span>, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
-<p><strong>Follow up:</strong> If you have figured out the <span style="background-color:#F0F0F0"><font color=#808080>O(n)</font></span> solution, try coding another solution using the <strong>divide and conquer</strong> approach, which is more subtle. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [-2,1,-3,4,-1,2,1,-5,4]<br><b>Output:</b> 6<br><b>Explanation:</b> [4,-1,2,1] has the largest sum = 6.<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [1]<br><b>Output:</b> 1<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [0]<br><b>Output:</b> 0<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [-1]<br><b>Output:</b> -1<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [-2147483647]<br><b>Output:</b> -2147483647<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= nums.length &lt;= 2 * 10^4</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-2^31 &lt;= nums[i] &lt;= 2^31 - 1</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> It is a brute force approach. Use 2 loop to calculate the sum for each elements.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> len = nums.size();</span><br><span class="line">        <span class="keyword">if</span>(len == <span class="number">1</span>) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> maxValue = INT_MIN;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; len; j++)&#123;</span><br><span class="line">                sum += nums[j];</span><br><span class="line">                maxValue = max(maxValue, sum);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxValue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> This is an efficient method, use only one loop.<br> <code>sum += nums[i]</code> means the cumulative sum.<br> <code>sum = max(sum, nums[i])</code> means the maximum of sum between the cumulative sum or current index of value.<br> <code>maxValue = max(maxValue, sum)</code> means recording the maximal value.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxValue = INT_MIN, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            sum = max(sum, nums[i]);</span><br><span class="line">            maxValue = max(maxValue, sum);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxValue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>BruteForce</tag>
-        <tag>Vector</tag>
       </tags>
   </entry>
   <entry>
@@ -1821,42 +1765,6 @@ TThe number of nodes in both trees is in the range <span style="background-color
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Sqrt(x) - Solution/C++</title>
-    <url>/posts/72b31d68/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>69. Sqrt(x)</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a non-negative integer <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>, compute and return <em>the square root of</em> <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>.</p>
-<p>Since the return type is an integer, the decimal digits are <b>truncated</b>, and only <b>the integer part</b> of the result is returned. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> x = 4<br><b>Output:</b> 2<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> x = 8<br> <b>Output:</b> 2<br> <b>Explanation:</b> The square root of 8 is 2.82842..., and since the decimal part is truncated, 2 is returned.<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= x &lt;= 2^31 - 1</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source Code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> My intuition is divided divisor that is start from 1, we can get remainder, if remainder is equal to divisor, return the divisor; if divisor is bigger than remainder, retrurn the (divisor - 1).<br> This method can work, but it wastes much time.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> divisor = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(divisor &lt;= x)&#123;</span><br><span class="line">            <span class="keyword">int</span> remainder = x / divisor;</span><br><span class="line">            <span class="keyword">if</span>(divisor == remainder) <span class="keyword">return</span> divisor;</span><br><span class="line">            <span class="keyword">if</span>(divisor &gt; remainder) <span class="keyword">return</span> divisor - <span class="number">1</span>;</span><br><span class="line">            divisor ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> divisor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<be> We can use binary search to improve time complexity. A variable of l means left index, a variable of r means right index and a variable of m means middle index. l must be set 1, because <code>while(l &lt;= r)</code> can filter <code>x = 0</code> test case. We use <code>m * m</code> to find which value can match x.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> l = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">long</span> r = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(x) ;</span><br><span class="line">        <span class="keyword">while</span>(l &lt;= r)&#123;</span><br><span class="line">            <span class="keyword">long</span> m = (l + r) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> ( m * m == x) <span class="keyword">return</span> m;</span><br><span class="line">            <span class="keyword">if</span>( m * m &gt; x)&#123;</span><br><span class="line">                r = m - <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                l = m + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Binary_search</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Single Number - Solution/C++</title>
     <url>/posts/f249b7a1/</url>
     <content><![CDATA[<h2 id="question">Question:</h2>
@@ -1904,6 +1812,42 @@ Each element in the array appears twice except for one element which appears onl
       <tags>
         <tag>Logical_Operators</tag>
         <tag>Map(STL)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Sqrt(x) - Solution/C++</title>
+    <url>/posts/72b31d68/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>69. Sqrt(x)</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a non-negative integer <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>, compute and return <em>the square root of</em> <span style="background-color:#F0F0F0"><font color=#808080>x</font></span>.</p>
+<p>Since the return type is an integer, the decimal digits are <b>truncated</b>, and only <b>the integer part</b> of the result is returned. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> x = 4<br><b>Output:</b> 2<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> x = 8<br> <b>Output:</b> 2<br> <b>Explanation:</b> The square root of 8 is 2.82842..., and since the decimal part is truncated, 2 is returned.<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= x &lt;= 2^31 - 1</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source Code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> My intuition is divided divisor that is start from 1, we can get remainder, if remainder is equal to divisor, return the divisor; if divisor is bigger than remainder, retrurn the (divisor - 1).<br> This method can work, but it wastes much time.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> divisor = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(divisor &lt;= x)&#123;</span><br><span class="line">            <span class="keyword">int</span> remainder = x / divisor;</span><br><span class="line">            <span class="keyword">if</span>(divisor == remainder) <span class="keyword">return</span> divisor;</span><br><span class="line">            <span class="keyword">if</span>(divisor &gt; remainder) <span class="keyword">return</span> divisor - <span class="number">1</span>;</span><br><span class="line">            divisor ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> divisor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<be> We can use binary search to improve time complexity. A variable of l means left index, a variable of r means right index and a variable of m means middle index. l must be set 1, because <code>while(l &lt;= r)</code> can filter <code>x = 0</code> test case. We use <code>m * m</code> to find which value can match x.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> l = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">long</span> r = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(x) ;</span><br><span class="line">        <span class="keyword">while</span>(l &lt;= r)&#123;</span><br><span class="line">            <span class="keyword">long</span> m = (l + r) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> ( m * m == x) <span class="keyword">return</span> m;</span><br><span class="line">            <span class="keyword">if</span>( m * m &gt; x)&#123;</span><br><span class="line">                r = m - <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                l = m + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Binary_search</tag>
       </tags>
   </entry>
   <entry>
@@ -2199,38 +2143,6 @@ nums is sorted in increasing order.
       </tags>
   </entry>
   <entry>
-    <title>Run Visual Studio Code on macOS - Tutorial</title>
-    <url>/posts/a7083339/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Visual Studio Code installation and run it from Terminal on macOS</b></font>
-</p>
-<h2 id="background">Background</h2>
-<p><strong>Visual Studio Code</strong> is a free source-code editor made by Microsoft for Windows, Linux and macOS.<br> Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git. Users can change the theme, keyboard shortcuts, preferences, and install extensions that add additional functionality.</p>
-<h2 id="installation">Installation</h2>
-<ol type="1">
-<li><a href="https://code.visualstudio.com/docs?dv=osx">Download Visual Studio Code</a> for macOS directly. <a id="more"></a></li>
-<li>Go to your browser's lownloaded archive.</li>
-<li>Extract <em>VSCode-darwin-stable.zip</em> file</li>
-<li>Drag <span style="background:#F0F0F0">Visual Studio Code.cpp</span> to the <span style="background:#F0F0F0">Applications</span> folder, making it available in the macOS Launchpad.</li>
-</ol>
-<h2 id="launching-from-the-command-line">Launching from the command line</h2>
-<p>You can type 'code .' in any folder to start editing files in that folder.<br> <font color=#FF0000>Notice: you will meet an error message: <b>“code .” command is not working</b></font></p>
-<p><strong>Solution:</strong> You must add Visual Studio Code to the path first:<br></p>
-<ol type="1">
-<li>Create bash_profile file if it doesn't exist in your system. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ touch ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
-<li>Open this file, click 'i' to edit. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ vi ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
-<li>Paste it as below, and type ':' + 'wq' to write &amp; quit.&lt; <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">export PATH=&quot;$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin&quot;</span><br></pre></td></tr></table></figure></li>
-<li>Preserve your current shell, if you miss it, you will repeat step2-step3 again when you reopen the terminal. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ source ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Instruction</category>
-      </categories>
-      <tags>
-        <tag>Editor</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Valid Parentheses - Solution/C++</title>
     <url>/posts/5ddd3578/</url>
     <content><![CDATA[<p align="center">
@@ -2276,6 +2188,38 @@ nums is sorted in increasing order.
       <tags>
         <tag>Stack</tag>
         <tag>Map(STL)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Run Visual Studio Code on macOS - Tutorial</title>
+    <url>/posts/a7083339/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Visual Studio Code installation and run it from Terminal on macOS</b></font>
+</p>
+<h2 id="background">Background</h2>
+<p><strong>Visual Studio Code</strong> is a free source-code editor made by Microsoft for Windows, Linux and macOS.<br> Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git. Users can change the theme, keyboard shortcuts, preferences, and install extensions that add additional functionality.</p>
+<h2 id="installation">Installation</h2>
+<ol type="1">
+<li><a href="https://code.visualstudio.com/docs?dv=osx">Download Visual Studio Code</a> for macOS directly. <a id="more"></a></li>
+<li>Go to your browser's lownloaded archive.</li>
+<li>Extract <em>VSCode-darwin-stable.zip</em> file</li>
+<li>Drag <span style="background:#F0F0F0">Visual Studio Code.cpp</span> to the <span style="background:#F0F0F0">Applications</span> folder, making it available in the macOS Launchpad.</li>
+</ol>
+<h2 id="launching-from-the-command-line">Launching from the command line</h2>
+<p>You can type 'code .' in any folder to start editing files in that folder.<br> <font color=#FF0000>Notice: you will meet an error message: <b>“code .” command is not working</b></font></p>
+<p><strong>Solution:</strong> You must add Visual Studio Code to the path first:<br></p>
+<ol type="1">
+<li>Create bash_profile file if it doesn't exist in your system. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ touch ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
+<li>Open this file, click 'i' to edit. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ vi ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
+<li>Paste it as below, and type ':' + 'wq' to write &amp; quit.&lt; <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">export PATH=&quot;$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin&quot;</span><br></pre></td></tr></table></figure></li>
+<li>Preserve your current shell, if you miss it, you will repeat step2-step3 again when you reopen the terminal. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ source ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Instruction</category>
+      </categories>
+      <tags>
+        <tag>Editor</tag>
       </tags>
   </entry>
   <entry>
@@ -2360,29 +2304,85 @@ nums is sorted in increasing order.
       </tags>
   </entry>
   <entry>
-    <title>Basic programming - Binary Search Algorithm</title>
-    <url>/posts/dad48e10/</url>
+    <title>[LeetCode Road] Best Time to Buy and Sell Stock - Solution/C++</title>
+    <url>/posts/a026a3d3/</url>
     <content><![CDATA[<p align="center">
-<font size="6px"><b>Binary Search</b></font>
+<font size="6"><b>121. Best Time to Buy and Sell Stock</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>Given a sorted array arr[] of n elements, write a function to search a given element x in arr[]. <a id="more"></a></p>
+<p>You are given an array <span style="background-color:#F0F0F0"><font color=#808080>prices</font></span> where <span style="background-color:#F0F0F0"><font color=#808080>prices[i]</font></span> is the price of a given stock on the <span style="background-color:#F0F0F0"><font color=#808080>i^th</font></span> day.</p>
+<p>You want to maximize your profit by choosing a <strong>single day</strong> to buy one stock and choosing a <strong>different day in the future</strong> to sell that stock. <a id="more"></a></p>
+<p>Return <em>the maximum profit you can achieve from this transaction</em>. If you cannot achieve any profit, return <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> arr[] = {1, 4, 6, 7, 9, 11, 12, 15, 17}<br>     x = 12;<br> <b>Output:</b> 6<br> <b>Explanation:</b> Element x is represented at index 6, and the program only runs 2 times. First, middle value is 9. Second, middle value is 12.
+<b>Input:</b> prices = [7,1,5,3,6,4]<br> <b>Output:</b> 5<br> <b>Explanation:</b> Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.<br> Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
 </p>
-<p>The idea of binary search is to use the information that the array is sorted and reduce the time complexity to <strong>O(Log n)</strong>.</p>
-<h2 id="source-code">Source code:</h2>
-<h3 id="version"><u>Version</u></h3>
-<p>Idea:<br></p>
-<p><b>Time complexity: O(log n)</b><br></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr, <span class="keyword">int</span> input)</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> n = arr.size();</span><br><span class="line">    <span class="keyword">int</span> head = <span class="number">0</span>, tail = n - <span class="number">1</span>, middle = - <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(head &lt;= tail)&#123;</span><br><span class="line">        middle = (head + tail) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(arr[middle] == input) <span class="keyword">return</span> middle;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(arr[middle] &gt;input)&#123;</span><br><span class="line">            tail = middle - <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            head = middle + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr&#123; <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">30</span>, <span class="number">33</span>, <span class="number">40</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">22</span>;</span><br><span class="line">    <span class="keyword">int</span> res = binarySearch(arr, x);</span><br><span class="line">    (res == <span class="number">-1</span>)?<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Input is not exist in array&quot;</span>:<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Index &quot;</span> &lt;&lt; res &lt;&lt; <span class="string">&quot; is &quot;</span> &lt;&lt; arr[res];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> prices = [7,6,4,3,1]<br> <b>Output:</b> 0<br> <b>Explanation:</b> In this case, no transactions are done and the max profit = 0.
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= prices.length &lt;= 10^5</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= prices[i] &lt;= 10^4</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> It is a brute force algorithm. Each elements as buying day (<code>prices[i]</code>)compare the profit with other selling day (<code>prices[j]</code>, i &lt; j), so we can get the maximum profit, however, the strategy is very inefficient. (Time Limit Exceeded)</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices.empty() || prices.size() == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> profit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; prices.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> cost = prices[i];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; prices.size(); j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> reward = prices[j];</span><br><span class="line">                <span class="keyword">int</span> temp = reward - cost;</span><br><span class="line">                <span class="keyword">if</span>(temp &gt; <span class="number">0</span> &amp;&amp; temp &gt; profit)&#123;</span><br><span class="line">                    profit = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<br> It can use only one loop to implement the algorithm.<br> <code>minPrice</code>: It want to get the lowest price up to i-th day.<br> <code>maxProfit</code>: It want to get the max profit up to i-th day.<br> <code>max(maxProfit, prices[i] - minPrice)</code>: It means that the minimum price subtracted from the price of selling day(<code>prices[i]</code>) and choose the large profit.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> minPrice = INT_MAX, maxProfit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            minPrice = min(minPrice, prices[i]);</span><br><span class="line">            maxProfit = max(maxProfit, prices[i] - minPrice);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>SearchAlgorithm</category>
+        <category>LeetCode-Easy</category>
       </categories>
       <tags>
-        <tag>Search</tag>
+        <tag>Stock</tag>
+        <tag>BruteForce</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Minimum Depth of Binary Tree - Solution/C++</title>
+    <url>/posts/2397063c/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>111. Minimum Depth of Binary Tree</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a binary tree, find its minimum depth.</p>
+<p>The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>
+<p><strong>Note:</strong> A leaf is a node with no children. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<img src="example.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 2
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [2,null,3,null,4,null,5,null,6]<br> <b>Output:</b> 5
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^5]</font></span>.
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-1000 &lt;= Node.val &lt;= 1000</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> We can sum up the rules of the binary tree.<br> <strong>First:</strong> If the left subnode and right subnode are exist of leaf node, it can be calculated each depths and use min() to get minimum depth.<br> <strong>Seconde:</strong> If there is NULL either left subnode or right subnode of leaf node, we must use max() to get the maxixmum depth, because <u>"A leaf is a node with no children"</u> based on the question. E.g., if left subnode is NULL, a leaf can't be calculated as 1 depth.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;left &amp;&amp; root-&gt;right)&#123;</span><br><span class="line">            <span class="keyword">return</span> min(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> max(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Tree</tag>
+        <tag>Recursion</tag>
       </tags>
   </entry>
 </search>

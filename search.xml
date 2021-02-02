@@ -1111,50 +1111,6 @@ The number of nodes in the tree is in the range <span style="background-color:#F
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Merge Two Sorted Lists - Solution/C++</title>
-    <url>/posts/61be1b10/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>21. Merge Two Sorted Lists</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Merge two sorted linked lists and return it as a new <strong>sorted</strong> list. The new list should be made by splicing together the nodes of the first two lists. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<img src="Merge_ListNode_example.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> l1 = [1,2,4], l2 = [1,3,4]<br><b>Output:</b> [1,1,2,3,4,4]
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> l1 = [], l2 = []<br><b>Output:</b> []
-</p>
-<p style="background-color:#F0F0F0">
-<p><b>Input:</b> l1 = [], l2 = [0]<br><b>Output:</b> [0]</p>
-<strong>Constraints:</strong> <strong>
-<li>
-The number of nodes in both lists is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 50]</font></span> .
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-100 &lt;= Node.val &lt;= 100</font></span>
-</li>
-</strong> <strong>
-<li>
-Both <span style="background-color:#F0F0F0"><font color=#808080>l1</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>l2</font></span> are sorted in non-decreasing order.
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> I haven't written a program with ListNode before. So, ListNode's constructor is very strange to me. I directly refered to <a href="https://zxi.mytechroad.com/blog/leetcode/leetcode-21-merge-two-sorted-lists/">Huahua's Tech Road</a>.<br></p>
-<p>The method used a temporary node as the start of the result list, named <em>dummy</em>. The ListNode pointer's tail always points to the last node in the result list, so you can use <code>tail-&gt;next=l1</code> to append new Nodes easily.<br> <u>Notice: Must to do <code>tail=tail-&gt;next</code></u> to get next node' memory address.<br> The while() proceeds, it means two of ListNode aren't empty. It one of ListNodes is empty, non-empty ListNode is added value to tail. When the processing is done, the result is in <code>dummy.next</code> (because the first value is 0, initial value).</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        <span class="function">ListNode <span class="title">dummy</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">        ListNode* tail = &amp;dummy;</span><br><span class="line">        <span class="keyword">while</span>(l1 &amp;&amp; l2)&#123;</span><br><span class="line">            <span class="keyword">if</span>(l1-&gt;val &gt; l2-&gt;val)&#123;</span><br><span class="line">                tail-&gt;next=l2;</span><br><span class="line">                l2 = l2-&gt;next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                tail-&gt;next=l1;</span><br><span class="line">                l1 = l1-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            tail = tail-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l1) tail-&gt;next = l1;</span><br><span class="line">        <span class="keyword">if</span>(l2) tail-&gt;next = l2;</span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>ListNode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Merge Sorted Array - Solution/C++</title>
     <url>/posts/1cc4a24a/</url>
     <content><![CDATA[<p align="center">
@@ -1199,6 +1155,50 @@ Both <span style="background-color:#F0F0F0"><font color=#808080>l1</font></span>
       <tags>
         <tag>Vector</tag>
         <tag>Call_by_reference</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Merge Two Sorted Lists - Solution/C++</title>
+    <url>/posts/61be1b10/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>21. Merge Two Sorted Lists</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Merge two sorted linked lists and return it as a new <strong>sorted</strong> list. The new list should be made by splicing together the nodes of the first two lists. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<img src="Merge_ListNode_example.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> l1 = [1,2,4], l2 = [1,3,4]<br><b>Output:</b> [1,1,2,3,4,4]
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> l1 = [], l2 = []<br><b>Output:</b> []
+</p>
+<p style="background-color:#F0F0F0">
+<p><b>Input:</b> l1 = [], l2 = [0]<br><b>Output:</b> [0]</p>
+<strong>Constraints:</strong> <strong>
+<li>
+The number of nodes in both lists is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 50]</font></span> .
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-100 &lt;= Node.val &lt;= 100</font></span>
+</li>
+</strong> <strong>
+<li>
+Both <span style="background-color:#F0F0F0"><font color=#808080>l1</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>l2</font></span> are sorted in non-decreasing order.
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> I haven't written a program with ListNode before. So, ListNode's constructor is very strange to me. I directly refered to <a href="https://zxi.mytechroad.com/blog/leetcode/leetcode-21-merge-two-sorted-lists/">Huahua's Tech Road</a>.<br></p>
+<p>The method used a temporary node as the start of the result list, named <em>dummy</em>. The ListNode pointer's tail always points to the last node in the result list, so you can use <code>tail-&gt;next=l1</code> to append new Nodes easily.<br> <u>Notice: Must to do <code>tail=tail-&gt;next</code></u> to get next node' memory address.<br> The while() proceeds, it means two of ListNode aren't empty. It one of ListNodes is empty, non-empty ListNode is added value to tail. When the processing is done, the result is in <code>dummy.next</code> (because the first value is 0, initial value).</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        <span class="function">ListNode <span class="title">dummy</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">        ListNode* tail = &amp;dummy;</span><br><span class="line">        <span class="keyword">while</span>(l1 &amp;&amp; l2)&#123;</span><br><span class="line">            <span class="keyword">if</span>(l1-&gt;val &gt; l2-&gt;val)&#123;</span><br><span class="line">                tail-&gt;next=l2;</span><br><span class="line">                l2 = l2-&gt;next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                tail-&gt;next=l1;</span><br><span class="line">                l1 = l1-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            tail = tail-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l1) tail-&gt;next = l1;</span><br><span class="line">        <span class="keyword">if</span>(l2) tail-&gt;next = l2;</span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>ListNode</tag>
       </tags>
   </entry>
   <entry>
@@ -1722,47 +1722,6 @@ The input must be a <b>binary string</b> of length <span data-stype="background-
       </tags>
   </entry>
   <entry>
-    <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
-    <url>/posts/9e0f4e5/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Tutorial - Install Ryu in Ubuntu 16.04 with no failure</b></font>
-</p>
-<p><a href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It's very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet. <a id="more"></a></p>
-<h2 id="start-to-configure-and-install">Start to configure and install</h2>
-<ul>
-<li><strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-pip python-dev</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 4.</strong> Download Ryu source code from github <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ git clone git://github.com/osrg/ryu.git</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 5.</strong> <a href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ pip install networkx</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 6.</strong> Install Ryu <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python ./setup.py install</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 7.</strong> Execution and testing <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ryu-manager</span><br></pre></td></tr></table></figure> // If your installation is successful, the terminal will show some info. and stop to listening:
-<p style="background-color:#F0F0F0">
-loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_handler of OFPHandler
-</p>
-<hr />
-<p>
-<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error!</font>
-</p>
-<p>
-<b>Solution:</b>
-</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install -r tools/pip-requires</span><br></pre></td></tr></table></figure>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install six --upgrade</span><br></pre></td></tr></table></figure>
-<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font> <font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>   <b>SyntaxError: ivalid syntax</b></font><br> <b>Solution:</b> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd /usr/local/lib/python2.7/dist-packages/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo rm –rf oslo_config/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata</span><br></pre></td></tr></table></figure> From the above, the command is refered to:<br> http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd oslo.config</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python setup.py install</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Simulator</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-        <tag>SDN</tag>
-        <tag>Controller</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Roman to Integer - Solution/C++</title>
     <url>/posts/8caf8f3c/</url>
     <content><![CDATA[<p align="center">
@@ -1826,6 +1785,90 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
       </tags>
   </entry>
   <entry>
+    <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
+    <url>/posts/9e0f4e5/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Tutorial - Install Ryu in Ubuntu 16.04 with no failure</b></font>
+</p>
+<p><a href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It's very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet. <a id="more"></a></p>
+<h2 id="start-to-configure-and-install">Start to configure and install</h2>
+<ul>
+<li><strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-pip python-dev</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 4.</strong> Download Ryu source code from github <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ git clone git://github.com/osrg/ryu.git</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 5.</strong> <a href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ pip install networkx</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 6.</strong> Install Ryu <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python ./setup.py install</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 7.</strong> Execution and testing <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ryu-manager</span><br></pre></td></tr></table></figure> // If your installation is successful, the terminal will show some info. and stop to listening:
+<p style="background-color:#F0F0F0">
+loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_handler of OFPHandler
+</p>
+<hr />
+<p>
+<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error!</font>
+</p>
+<p>
+<b>Solution:</b>
+</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install -r tools/pip-requires</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install six --upgrade</span><br></pre></td></tr></table></figure>
+<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font> <font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>   <b>SyntaxError: ivalid syntax</b></font><br> <b>Solution:</b> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd /usr/local/lib/python2.7/dist-packages/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo rm –rf oslo_config/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata</span><br></pre></td></tr></table></figure> From the above, the command is refered to:<br> http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd oslo.config</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python setup.py install</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Simulator</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>SDN</tag>
+        <tag>Controller</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Same Tree - Solution/C++</title>
+    <url>/posts/2ef96137/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>100. Same Tree</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given the roots of two binary trees <span style="background-color:#F0F0F0"><font color=#808080>p</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>q</font></span>, write a function to check if they are the same or not.</p>
+Two binary trees are considered the same if they are structurally identical, and the nodes have the same value. <a id="more"></a> ## Example: <img src="SameTree_example1.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> p = [1,2,3], q = [1,2,3]<br> <b>Output:</b> true<br>
+</p>
+<img src="SameTree_example2.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> p = [1,2], q = [1,null,2]<br> <b>Output</b>: false<br>
+</p>
+<img src="SameTree_example3.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> p = [1,2,1], q = [1,1,2]<br> <b>Output:</b> false<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+TThe number of nodes in both trees is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 100]</font></span>.
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-10^4 &lt;= Node.val &lt;= 10^4</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> This is my first time to process binary tree. After realizing question and example, it lets me recollect the solution of <a href="https://egbert-yu-ting.github.io/posts/61be1b10/">LeetCode 21</a>.<br></p>
+<p>I can use a similar if statement to code. But, I still don't know how to compare two binary trees of their child. So, I refered to <a href="https://www.programcreek.com/2012/12/check-if-two-trees-are-same-or-not/">programcreek</a>.<br> Finally, I saw source code and understood the solution immediately. We can use recursion to bind the child checking (left &amp; right).</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSameTree</span><span class="params">(TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(p==<span class="literal">NULL</span> &amp;&amp; q==<span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(p==<span class="literal">NULL</span> || q==<span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span>(p-&gt;val==q-&gt;val)&#123;</span><br><span class="line">            <span class="keyword">return</span> isSameTree(p-&gt;left, q-&gt;left) &amp;&amp; isSameTree(p-&gt;right, q-&gt;right);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Tree</tag>
+        <tag>Recursion</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Search Insert Position - Solution/C++</title>
     <url>/posts/41fdcb04/</url>
     <content><![CDATA[<p align="center">
@@ -1879,49 +1922,6 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
       </categories>
       <tags>
         <tag>search</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Same Tree - Solution/C++</title>
-    <url>/posts/2ef96137/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>100. Same Tree</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given the roots of two binary trees <span style="background-color:#F0F0F0"><font color=#808080>p</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>q</font></span>, write a function to check if they are the same or not.</p>
-Two binary trees are considered the same if they are structurally identical, and the nodes have the same value. <a id="more"></a> ## Example: <img src="SameTree_example1.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> p = [1,2,3], q = [1,2,3]<br> <b>Output:</b> true<br>
-</p>
-<img src="SameTree_example2.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> p = [1,2], q = [1,null,2]<br> <b>Output</b>: false<br>
-</p>
-<img src="SameTree_example3.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> p = [1,2,1], q = [1,1,2]<br> <b>Output:</b> false<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-TThe number of nodes in both trees is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 100]</font></span>.
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-10^4 &lt;= Node.val &lt;= 10^4</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> This is my first time to process binary tree. After realizing question and example, it lets me recollect the solution of <a href="https://egbert-yu-ting.github.io/posts/61be1b10/">LeetCode 21</a>.<br></p>
-<p>I can use a similar if statement to code. But, I still don't know how to compare two binary trees of their child. So, I refered to <a href="https://www.programcreek.com/2012/12/check-if-two-trees-are-same-or-not/">programcreek</a>.<br> Finally, I saw source code and understood the solution immediately. We can use recursion to bind the child checking (left &amp; right).</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSameTree</span><span class="params">(TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(p==<span class="literal">NULL</span> &amp;&amp; q==<span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(p==<span class="literal">NULL</span> || q==<span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span>(p-&gt;val==q-&gt;val)&#123;</span><br><span class="line">            <span class="keyword">return</span> isSameTree(p-&gt;left, q-&gt;left) &amp;&amp; isSameTree(p-&gt;right, q-&gt;right);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Tree</tag>
-        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>

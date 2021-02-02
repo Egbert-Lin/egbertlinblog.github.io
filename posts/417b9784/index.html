@@ -33,7 +33,7 @@
 <meta property="og:description" content="190. Reverse Bits  Question: Reverse bits of a given 32 bits unsigned integer. Note:   Note that in some languages such as Java, there is no unsigned integer type. In this case, both input and output">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-02T17:01:27.000Z">
-<meta property="article:modified_time" content="2021-02-02T17:17:26.665Z">
+<meta property="article:modified_time" content="2021-02-02T17:37:30.289Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="Shift_Operators">
 <meta name="twitter:card" content="summary">
@@ -381,7 +381,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-02-03 01:01:27 / Modified: 01:17:26" itemprop="dateCreated datePublished" datetime="2021-02-03T01:01:27+08:00">2021-02-03</time>
+      <time title="Created: 2021-02-03 01:01:27 / Modified: 01:37:30" itemprop="dateCreated datePublished" datetime="2021-02-03T01:01:27+08:00">2021-02-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -422,22 +422,23 @@
 </p>
 <h2 id="question">Question:</h2>
 <p>Reverse bits of a given 32 bits unsigned integer.</p>
-<b>Note:</b><br> <storng>
+<b>Note:</b><br>
+<ul>
 <li>
 Note that in some languages such as Java, there is no unsigned integer type. In this case, both input and output will be given as a signed integer type. They should not affect your implementation, as the integer's internal binary representation is the same, whether it is signed or unsigned.
 </li>
-</strong> <strong>
 <li>
 In Java, the compiler represents the signed integers using 2's complement notation. Therefore, in Example 2 above, the input represents the signed integer -3 and the output represents the signed integer -1073741825.
 </li>
-<p></strong> <a id="more"></a></p>
+</ul>
+<a id="more"></a>
 <p><b>Follow up:</b><br> If this function is called many times, how would you optimize it?</p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> n = 00000010100101000001111010011100<br> <b>Output:</b> 964176192 (00111001011110000010100101000000)<br> <b>Explanation:</b> The input binary string 00000010100101000001111010011100 represents the unsigned integer 43261596, so return 964176192 which its binary representation is 00111001011110000010100101000000.
+<b>Input:</b> n = 00000010100101000001111010011100<br> <b>Output:</b>  964176192 (00111001011110000010100101000000)<br> <b>Explanation:</b> The input binary string <b>00000010100101000001111010011100</b> represents the unsigned integer 43261596, so return 964176192 which its binary representation is <b>00111001011110000010100101000000</b>.
 </p>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> n = 11111111111111111111111111111101<br> <b>Output:</b> 3221225471 (10111111111111111111111111111111)<br> <b>Explanation:</b> The input binary string 11111111111111111111111111111101 represents the unsigned integer 4294967293, so return 3221225471 which its binary representation is 10111111111111111111111111111111.
+<b>Input:</b> n = 11111111111111111111111111111101<br> <b>Output:</b>  3221225471 (10111111111111111111111111111111)<br> <b>Explanation:</b> The input binary string <b>11111111111111111111111111111101</b> represents the unsigned integer 4294967293, so return 3221225471 which its binary representation is <b>10111111111111111111111111111111</b>.
 </p>
 <strong>Constraints:</strong> <strong>
 <li>

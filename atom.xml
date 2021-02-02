@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-02T17:17:26.665Z</updated>
+  <updated>2021-02-02T17:37:30.289Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/417b9784/"/>
     <id>https://egbert-yu-ting.github.io/posts/417b9784/</id>
     <published>2021-02-02T17:01:27.000Z</published>
-    <updated>2021-02-02T17:17:26.665Z</updated>
+    <updated>2021-02-02T17:37:30.289Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -29,15 +29,15 @@
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Reverse bits of a given 32 bits unsigned integer.&lt;/p&gt;
-&lt;b&gt;Note:&lt;/b&gt;&lt;br&gt; &lt;storng&gt;
+&lt;b&gt;Note:&lt;/b&gt;&lt;br&gt;
+&lt;ul&gt;
 &lt;li&gt;
 Note that in some languages such as Java, there is no unsigned integer type. In this case, both input and output will be given as a signed integer type. They should not affect your implementation, as the integer&#39;s internal binary representation is the same, whether it is signed or unsigned.
 &lt;/li&gt;
-&lt;/strong&gt; &lt;strong&gt;
 &lt;li&gt;
 In Java, the compiler represents the signed integers using 2&#39;s complement notation. Therefore, in Example 2 above, the input represents the signed integer -3 and the output represents the signed integer -1073741825.
 &lt;/li&gt;
-&lt;p&gt;&lt;/strong&gt;</summary>
+&lt;/ul&gt;</summary>
     
     
     

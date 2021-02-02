@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-02T08:49:06.555Z</updated>
+  <updated>2021-02-02T09:01:28.254Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -17,14 +17,17 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Basic programming - Exponential Search Algorithm</title>
+    <title>Data Structures - Exponential Search Algorithm</title>
     <link href="https://egbert-yu-ting.github.io/posts/85970ec4/"/>
     <id>https://egbert-yu-ting.github.io/posts/85970ec4/</id>
     <published>2021-02-02T02:02:14.000Z</published>
-    <updated>2021-02-02T08:49:06.555Z</updated>
+    <updated>2021-02-02T09:01:28.254Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Basic programming - Exponential Search&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Given a sorted array, and an element x to be searched, find position of x in the array.</summary>
     
     
@@ -37,15 +40,15 @@
   </entry>
   
   <entry>
-    <title>Basic programming - Binary Search Algorithm</title>
+    <title>Data Structures - Binary Search Algorithm</title>
     <link href="https://egbert-yu-ting.github.io/posts/dad48e10/"/>
     <id>https://egbert-yu-ting.github.io/posts/dad48e10/</id>
     <published>2021-02-01T07:50:08.000Z</published>
-    <updated>2021-02-02T02:05:55.984Z</updated>
+    <updated>2021-02-02T09:01:34.719Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Binary Search&lt;/b&gt;&lt;/font&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Basic programming - Binary Search&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Given a sorted array arr[] of n elements, write a function to search a given element x in arr[].</summary>
@@ -82,15 +85,15 @@
   </entry>
   
   <entry>
-    <title>Basic programming - Linear Search Algorithm</title>
+    <title>Data Structures - Linear Search Algorithm diagram</title>
     <link href="https://egbert-yu-ting.github.io/posts/65334f02/"/>
     <id>https://egbert-yu-ting.github.io/posts/65334f02/</id>
     <published>2021-02-01T00:53:55.000Z</published>
-    <updated>2021-02-02T02:06:00.746Z</updated>
+    <updated>2021-02-02T09:01:31.984Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Linear Search&lt;/b&gt;&lt;/font&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Basic programming - Linear Search&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Given an array arr[] of n elements, write a function to search a given element x in arr[].</summary>

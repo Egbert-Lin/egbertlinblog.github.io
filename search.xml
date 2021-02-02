@@ -217,10 +217,10 @@ TThe number of nodes in the tree is in the range <span style="background-color:#
       </tags>
   </entry>
   <entry>
-    <title>Basic programming - Binary Search Algorithm</title>
+    <title>Data Structures - Binary Search Algorithm</title>
     <url>/posts/dad48e10/</url>
     <content><![CDATA[<p align="center">
-<font size="6px"><b>Binary Search</b></font>
+<font size="6px"><b>Basic programming - Binary Search</b></font>
 </p>
 <h2 id="question">Question:</h2>
 <p>Given a sorted array arr[] of n elements, write a function to search a given element x in arr[]. <a id="more"></a></p>
@@ -508,9 +508,12 @@ For example:
       </tags>
   </entry>
   <entry>
-    <title>Basic programming - Exponential Search Algorithm</title>
+    <title>Data Structures - Exponential Search Algorithm</title>
     <url>/posts/85970ec4/</url>
-    <content><![CDATA[<h2 id="question">Question:</h2>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>Basic programming - Exponential Search</b></font>
+</p>
+<h2 id="question">Question:</h2>
 <p>Given a sorted array, and an element x to be searched, find position of x in the array. <a id="more"></a></p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
@@ -759,10 +762,10 @@ After counting, you should make those Lists moved to the same position, as below
       </tags>
   </entry>
   <entry>
-    <title>Basic programming - Linear Search Algorithm</title>
+    <title>Data Structures - Linear Search Algorithm diagram</title>
     <url>/posts/65334f02/</url>
     <content><![CDATA[<p align="center">
-<font size="6px"><b>Linear Search</b></font>
+<font size="6px"><b>Basic programming - Linear Search</b></font>
 </p>
 <h2 id="question">Question:</h2>
 <p>Given an array arr[] of n elements, write a function to search a given element x in arr[]. <a id="more"></a></p>

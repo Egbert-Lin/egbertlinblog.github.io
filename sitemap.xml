@@ -669,13 +669,6 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Map-STL/</loc>
-    <lastmod>2021-02-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://egbert-yu-ting.github.io/tags/SDN/</loc>
     <lastmod>2021-02-02</lastmod>
     <changefreq>daily</changefreq>
@@ -684,6 +677,13 @@
   
   <url>
     <loc>https://egbert-yu-ting.github.io/tags/Controller/</loc>
+    <lastmod>2021-02-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Map-STL/</loc>
     <lastmod>2021-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

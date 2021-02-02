@@ -33,7 +33,7 @@
 <meta property="og:description" content="67. Add Binary  Question: Given two binary strings a and b, return their sum as a binary string.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-16T02:22:19.000Z">
-<meta property="article:modified_time" content="2021-02-02T15:53:26.037Z">
+<meta property="article:modified_time" content="2021-02-02T16:34:42.761Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="Logical_Operators">
 <meta property="article:tag" content="Shift_Operators">
@@ -390,7 +390,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-02-02 23:53:26" itemprop="dateModified" datetime="2021-02-02T23:53:26+08:00">2021-02-02</time>
+        <time title="Modified: 2021-02-03 00:34:42" itemprop="dateModified" datetime="2021-02-03T00:34:42+08:00">2021-02-03</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -460,7 +460,7 @@ At 9 line, use <code>conditional ? Ture:False</code> to implement one line of if
 <p style="background-color:#F0F0F0">
 int a[i] = 1; // binary: 00000001<br> int b[j] = 1; // binary: 00000001<br> int sum = a[i] + b[j] = 2 // binary: 00000010<br> int carry = sum &gt;&gt; 1; // binary: 00000001 (right shifts the bits of the number accordingly)
 </p>
-Then, ues <span style="background-color:#F0F0F0">- '0'</span> to convert char to int as <span style="background-color:#F0F0F0">a[i--] - '0'</span>, because character <span style="background-color:#F0F0F0">'0'</span> means 48.<br> At 13 line, we use logical AND <span style="background-color:#F0F0F0"><font color=#808080>&amp;</font></span> to get the result of 0 or 1.
+Then, ues <span style="background-color:#F0F0F0">- '0'</span> to convert char to int as <span style="background-color:#F0F0F0">a[i--] - '0'</span>, because character <span style="background-color:#F0F0F0">'0'</span> means 48.<br> At 13 line, we use logical AND <span style="background-color:#F0F0F0"><font color=#808080>&amp;</font></span> to get the result of 0 or 1.<br> Because there are three different value of sum, we need to convert integer to bit, it's shown as the following:<br>
 <p style="background-color:#F0F0F0">
 if sum = 0 // binary: 00000000<br>  (sum &amp; 1) = 0<br> if sum = 2 // binary: 00000010<br>  (sum &amp; 1) = 1<br> if sum = 3 // binary: 00000011<br>  (sum &amp; 1) = 1
 </p>

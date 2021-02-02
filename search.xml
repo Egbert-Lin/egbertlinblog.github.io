@@ -33,11 +33,12 @@ Each string does not contain leading zeros except for the zero itself.
 <p>Idea:<br> I want to post my method originally, but the method is very inefficient (add two elements of string as <a href="https://egbert-yu-ting.github.io/posts/acf6f11e/">Plus One</a>, do the same thing for each bits.)<br></p>
 <p>So, I refered to <a href="https://zxi.mytechroad.com/blog/math/leetcode-67-add-binary/">Huahua's Tech Road</a>. Wow, it's a concise approach and coding, use only 1 while() to process.<br></p>
 <p>This part, we can learn how to convert char to integer、how to convert integer to char、calculate a value of carry and output in reverse.<br></p>
-At 9 line, use <code>conditional ? Ture:False</code> to implement one line of if-else statement. At 12 line, it is a right shift operator.
+At 9 line, use <code>conditional ? Ture:False</code> to implement one line of if-else statement.<br> At 12 line, it is a right shift operator.
 <p style="background-color:#F0F0F0">
 int a[i] = 1; // binary: 00000001<br> int b[j] = 1; // binary: 00000001<br> int sum = a[i] + b[j] = 2 // binary: 00000010<br> int carry = sum &gt;&gt; 1; // binary: 00000001 (right shifts the bits of the number accordingly)
 </p>
-Then, ues <span style="background-color:#F0F0F0">- '0'</span> to convert char to int as <span style="background-color:#F0F0F0">a[i--] - '0'</span>, because character <span style="background-color:#F0F0F0">'0'</span> means 48.<br> At 13 line, we use logical AND <span style="background-color:#F0F0F0"><font color=#808080>&amp;</font></span> to get the result of 0 or 1.<br> Because there are three different value of sum, we need to convert integer to bit, it's shown as the following:<br>
+<p>Then, ues <span style="background-color:#F0F0F0">- '0'</span> to convert char to int as <span style="background-color:#F0F0F0">a[i--] - '0'</span>, because character <span style="background-color:#F0F0F0">'0'</span> means 48.<br></p>
+At 13 line, we use logical AND <span style="background-color:#F0F0F0"><font color=#808080>&amp;</font></span> to get the result of 0 or 1.<br> Because there are three different value of sum, we need to convert integer to bit, it's shown as the following:<br>
 <p style="background-color:#F0F0F0">
 if sum = 0 // binary: 00000000<br>  (sum &amp; 1) = 0<br> if sum = 2 // binary: 00000010<br>  (sum &amp; 1) = 1<br> if sum = 3 // binary: 00000011<br>  (sum &amp; 1) = 1
 </p>
@@ -1060,53 +1061,6 @@ The number of nodes in the tree is in the range <span style="background-color:#F
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Merge Sorted Array - Solution/C++</title>
-    <url>/posts/1cc4a24a/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>88. Merge Sorted Array</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given two sorted integer arrays <em>nums1</em> and <em>nums2</em>, merge <em>nums2</em> into <em>nums1</em> as one sorted array. <strong>Note:</strong></p>
-<ul>
-<li>The number of elements initialized in nums1 and nums2 are m and n respectively.</li>
-<li>You may assume that nums1 has enough space (size that is equal to m + n) to hold additional elements from nums2. <a id="more"></a></li>
-</ul>
-<h2 id="example">Example</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b><br> nums1 = [1,2,3,0,0,0], m = 3<br> nums2 = [2,5,6], n = 3<br> <br> <b>Output:</b> [1,2,2,3,5,6]<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-10^9 &lt;= nums1[i], nums2[i] &lt;= 10^9</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>nums1.length == m + n</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>nums2.length == n</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> My initial approach is to use queue to store element. The processing of merging is in order, I compare witch each elements, if the element is smaller, it will be assign to nums1[i] after the original value of index i will push to queue at nums vector. But, I faced many if statement in my code, it's too complicated.<br></p>
-<p>Finally, I refered to <a href="https://medium.com/@ChYuan/leetcode-no-88-merge-sorted-array-%E5%BF%83%E5%BE%97-easy-9d2b3141ded3">ChingYuanYang</a>, I gained an impressive solution after realizing his explanation.<br> I can assign the element from the last position in reverse order at nums1 vector that is the largest value. It's an easy way to merge vectors.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="keyword">int</span> m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> s_1 = m <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> s_2 = n <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> max_size = m + n <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = max_size; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s_1 &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                nums1[i] = nums2[s_2--];</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(s_2 &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                nums1[i] = nums1[s_1--];</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums1[s_1] &gt; nums2[s_2])&#123;</span><br><span class="line">                nums1[i] = nums1[s_1--];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                nums1[i] = nums2[s_2--];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> It's a perfert code from <a href="https://zxi.mytechroad.com/blog/algorithms/array/leetcode-88-merge-sorted-array/">Huahua's Tech Road</a>.<br></p>
-<p>According to the question, it says "merge nums2 into nums1", so we can use the size (=m) of nums2 as while statement rather than the size (=m+n) of nums1. Then, use only one statement to implement clean code with no if statement.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="keyword">int</span> m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = m - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> j = n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> tail = m + n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(j&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">            nums1[tail--] = (i &gt;= <span class="number">0</span> &amp;&amp; nums1[i] &gt; nums2[j]) ? nums1[i--] : nums2[j--];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Vector</tag>
-        <tag>Call_by_reference</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Maximum Subarray - Solution/C++</title>
     <url>/posts/90ac56be/</url>
     <content><![CDATA[<p align="center">
@@ -1154,6 +1108,53 @@ The number of nodes in the tree is in the range <span style="background-color:#F
       <tags>
         <tag>BruteForce</tag>
         <tag>Vector</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Merge Sorted Array - Solution/C++</title>
+    <url>/posts/1cc4a24a/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>88. Merge Sorted Array</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given two sorted integer arrays <em>nums1</em> and <em>nums2</em>, merge <em>nums2</em> into <em>nums1</em> as one sorted array. <strong>Note:</strong></p>
+<ul>
+<li>The number of elements initialized in nums1 and nums2 are m and n respectively.</li>
+<li>You may assume that nums1 has enough space (size that is equal to m + n) to hold additional elements from nums2. <a id="more"></a></li>
+</ul>
+<h2 id="example">Example</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b><br> nums1 = [1,2,3,0,0,0], m = 3<br> nums2 = [2,5,6], n = 3<br> <br> <b>Output:</b> [1,2,2,3,5,6]<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-10^9 &lt;= nums1[i], nums2[i] &lt;= 10^9</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>nums1.length == m + n</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>nums2.length == n</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> My initial approach is to use queue to store element. The processing of merging is in order, I compare witch each elements, if the element is smaller, it will be assign to nums1[i] after the original value of index i will push to queue at nums vector. But, I faced many if statement in my code, it's too complicated.<br></p>
+<p>Finally, I refered to <a href="https://medium.com/@ChYuan/leetcode-no-88-merge-sorted-array-%E5%BF%83%E5%BE%97-easy-9d2b3141ded3">ChingYuanYang</a>, I gained an impressive solution after realizing his explanation.<br> I can assign the element from the last position in reverse order at nums1 vector that is the largest value. It's an easy way to merge vectors.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="keyword">int</span> m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> s_1 = m <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> s_2 = n <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> max_size = m + n <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = max_size; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s_1 &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                nums1[i] = nums2[s_2--];</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(s_2 &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                nums1[i] = nums1[s_1--];</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums1[s_1] &gt; nums2[s_2])&#123;</span><br><span class="line">                nums1[i] = nums1[s_1--];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                nums1[i] = nums2[s_2--];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<br> It's a perfert code from <a href="https://zxi.mytechroad.com/blog/algorithms/array/leetcode-88-merge-sorted-array/">Huahua's Tech Road</a>.<br></p>
+<p>According to the question, it says "merge nums2 into nums1", so we can use the size (=m) of nums2 as while statement rather than the size (=m+n) of nums1. Then, use only one statement to implement clean code with no if statement.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="keyword">int</span> m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = m - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> j = n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> tail = m + n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(j&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">            nums1[tail--] = (i &gt;= <span class="number">0</span> &amp;&amp; nums1[i] &gt; nums2[j]) ? nums1[i--] : nums2[j--];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Vector</tag>
+        <tag>Call_by_reference</tag>
       </tags>
   </entry>
   <entry>
@@ -1638,6 +1639,12 @@ Internally you can think of this:
       </tags>
   </entry>
   <entry>
+    <title>Reverse Bits</title>
+    <url>/posts/39fc1869/</url>
+    <content><![CDATA[
+]]></content>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Reverse Integer - Solution/C++</title>
     <url>/posts/236b1bbd/</url>
     <content><![CDATA[<p align="center">
@@ -1675,47 +1682,6 @@ Internally you can think of this:
       <tags>
         <tag>Remainder</tag>
         <tag>Quotient</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
-    <url>/posts/9e0f4e5/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Tutorial - Install Ryu in Ubuntu 16.04 with no failure</b></font>
-</p>
-<p><a href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It's very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet. <a id="more"></a></p>
-<h2 id="start-to-configure-and-install">Start to configure and install</h2>
-<ul>
-<li><strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-pip python-dev</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 4.</strong> Download Ryu source code from github <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ git clone git://github.com/osrg/ryu.git</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 5.</strong> <a href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ pip install networkx</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 6.</strong> Install Ryu <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python ./setup.py install</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 7.</strong> Execution and testing <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ryu-manager</span><br></pre></td></tr></table></figure> // If your installation is successful, the terminal will show some info. and stop to listening:
-<p style="background-color:#F0F0F0">
-loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_handler of OFPHandler
-</p>
-<hr />
-<p>
-<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error!</font>
-</p>
-<p>
-<b>Solution:</b>
-</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install -r tools/pip-requires</span><br></pre></td></tr></table></figure>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install six --upgrade</span><br></pre></td></tr></table></figure>
-<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font> <font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>   <b>SyntaxError: ivalid syntax</b></font><br> <b>Solution:</b> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd /usr/local/lib/python2.7/dist-packages/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo rm –rf oslo_config/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata</span><br></pre></td></tr></table></figure> From the above, the command is refered to:<br> http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd oslo.config</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python setup.py install</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Simulator</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-        <tag>SDN</tag>
-        <tag>Controller</tag>
       </tags>
   </entry>
   <entry>
@@ -1779,6 +1745,47 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
       </categories>
       <tags>
         <tag>Map(STL)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
+    <url>/posts/9e0f4e5/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Tutorial - Install Ryu in Ubuntu 16.04 with no failure</b></font>
+</p>
+<p><a href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It's very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet. <a id="more"></a></p>
+<h2 id="start-to-configure-and-install">Start to configure and install</h2>
+<ul>
+<li><strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-pip python-dev</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 4.</strong> Download Ryu source code from github <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ git clone git://github.com/osrg/ryu.git</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 5.</strong> <a href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ pip install networkx</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 6.</strong> Install Ryu <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python ./setup.py install</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 7.</strong> Execution and testing <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ryu-manager</span><br></pre></td></tr></table></figure> // If your installation is successful, the terminal will show some info. and stop to listening:
+<p style="background-color:#F0F0F0">
+loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_handler of OFPHandler
+</p>
+<hr />
+<p>
+<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error!</font>
+</p>
+<p>
+<b>Solution:</b>
+</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install -r tools/pip-requires</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install six --upgrade</span><br></pre></td></tr></table></figure>
+<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font> <font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>   <b>SyntaxError: ivalid syntax</b></font><br> <b>Solution:</b> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd /usr/local/lib/python2.7/dist-packages/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo rm –rf oslo_config/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata</span><br></pre></td></tr></table></figure> From the above, the command is refered to:<br> http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd oslo.config</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python setup.py install</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Simulator</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>SDN</tag>
+        <tag>Controller</tag>
       </tags>
   </entry>
   <entry>
@@ -1967,37 +1974,6 @@ Each element in the array appears twice except for one element which appears onl
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Symmetric Tree - Solution/C++</title>
-    <url>/posts/d1f23ab6/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>101. Symmetric Tree</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center). <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-For example, this binary tree <span style="background-color:#F0F0F0"><font color=#808080>[1,2,2,3,4,4,3]</font></span> is symmetric:
-<p style="background-color:#F0F0F0">
-    1<br>      / \<br>     2   2<br>    / \ / \<br>   3 4 4 3
-</p>
-But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,2,2,null,3,null,3]</font></span> is not:
-<p style="background-color:#F0F0F0">
-    1<br>      / \<br>     2   2<br>      \   \<br>     3   3
-</p>
-<h2 id="source-code">Source code:</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> The strategic is similar to <a href="https://egbert-yu-ting.github.io/posts/2ef96137/#more">Same-Tree</a>. First, we must check the root node whether it's null or not. Then, we use root-&gt;left and root-&gt;right as arguments to call private function.<br></p>
-<p>There are some rules we must to know:<br> 1. the value of the left node must be equal to the value of the right node.<br> 2. the value of the left node as the left child node must be equal to the value of the right node as the right child node.<br> 3. the vlaue of the left node as the right child node must be equal to the value of the right node as the left child node.<br> So, we can write to codes based on these ruls at 22~23 line.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> isSymmetric(root-&gt;left, root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* l, TreeNode* r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!l &amp;&amp; !r) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(!l || !r) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> (l-&gt;val == r-&gt;val) &amp;&amp; isSymmetric(l-&gt;left, r-&gt;right) </span><br><span class="line">            &amp;&amp; isSymmetric(l-&gt;right, r-&gt;left);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Tree</tag>
-        <tag>Recursion</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>How to understand recursive function - Tower of Hanoi</title>
     <url>/posts/d521850b/</url>
     <content><![CDATA[<p align="center">
@@ -2120,6 +2096,37 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
       </categories>
       <tags>
         <tag>Recursive_function</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Symmetric Tree - Solution/C++</title>
+    <url>/posts/d1f23ab6/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>101. Symmetric Tree</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center). <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+For example, this binary tree <span style="background-color:#F0F0F0"><font color=#808080>[1,2,2,3,4,4,3]</font></span> is symmetric:
+<p style="background-color:#F0F0F0">
+    1<br>      / \<br>     2   2<br>    / \ / \<br>   3 4 4 3
+</p>
+But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,2,2,null,3,null,3]</font></span> is not:
+<p style="background-color:#F0F0F0">
+    1<br>      / \<br>     2   2<br>      \   \<br>     3   3
+</p>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> The strategic is similar to <a href="https://egbert-yu-ting.github.io/posts/2ef96137/#more">Same-Tree</a>. First, we must check the root node whether it's null or not. Then, we use root-&gt;left and root-&gt;right as arguments to call private function.<br></p>
+<p>There are some rules we must to know:<br> 1. the value of the left node must be equal to the value of the right node.<br> 2. the value of the left node as the left child node must be equal to the value of the right node as the right child node.<br> 3. the vlaue of the left node as the right child node must be equal to the value of the right node as the left child node.<br> So, we can write to codes based on these ruls at 22~23 line.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> isSymmetric(root-&gt;left, root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* l, TreeNode* r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!l &amp;&amp; !r) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(!l || !r) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> (l-&gt;val == r-&gt;val) &amp;&amp; isSymmetric(l-&gt;left, r-&gt;right) </span><br><span class="line">            &amp;&amp; isSymmetric(l-&gt;right, r-&gt;left);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Tree</tag>
+        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>

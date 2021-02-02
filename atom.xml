@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-02T09:01:28.254Z</updated>
+  <updated>2021-02-02T17:02:15.810Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Reverse Bits</title>
+    <link href="https://egbert-yu-ting.github.io/posts/39fc1869/"/>
+    <id>https://egbert-yu-ting.github.io/posts/39fc1869/</id>
+    <published>2021-02-02T17:01:27.000Z</published>
+    <updated>2021-02-02T17:02:15.810Z</updated>
+    
+    
+      
+      
+    <summary type="html">
+</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Data Structures - Exponential Search Algorithm</title>
@@ -479,33 +498,6 @@ getMin() -- Retrieve the minimum element in the stack.
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; A leaf is a node with no children.</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Tree" scheme="https://egbert-yu-ting.github.io/tags/Tree/"/>
-    
-    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Minimum Depth of Binary Tree - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/2397063c/"/>
-    <id>https://egbert-yu-ting.github.io/posts/2397063c/</id>
-    <published>2021-01-16T10:23:34.000Z</published>
-    <updated>2021-01-22T01:56:58.160Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;111. Minimum Depth of Binary Tree&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given a binary tree, find its minimum depth.&lt;/p&gt;
-&lt;p&gt;The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; A leaf is a node with no children.</summary>
     
     

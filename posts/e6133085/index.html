@@ -33,7 +33,7 @@
 <meta property="og:description" content="67. Add Binary  Question: Given two binary strings a and b, return their sum as a binary string.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-16T02:22:19.000Z">
-<meta property="article:modified_time" content="2021-02-02T16:34:42.761Z">
+<meta property="article:modified_time" content="2021-02-02T16:42:42.052Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="Logical_Operators">
 <meta property="article:tag" content="Shift_Operators">
@@ -265,7 +265,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-count">56</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -301,6 +301,11 @@
 	</div>
 	<ul class="links-of-blogroll-list recent-posts-list">
 	        <li class="my-links-of-blogroll-item">
+		    <a href="/posts/39fc1869/" title="Reverse Bits" target="">
+		    Reverse Bits
+		    </a>
+		</li>
+	        <li class="my-links-of-blogroll-item">
 		    <a href="/posts/85970ec4/" title="Data Structures - Exponential Search Algorithm" target="">
 		    Data Structures - Exponential Search Algorithm
 		    </a>
@@ -318,11 +323,6 @@
 	        <li class="my-links-of-blogroll-item">
 		    <a href="/posts/65334f02/" title="Data Structures - Linear Search Algorithm diagram" target="">
 		    Data Structures - Linear Search Algorithm diagram
-		    </a>
-		</li>
-	        <li class="my-links-of-blogroll-item">
-		    <a href="/posts/10e6d46c/" title="[LeetCode Road] Excel Sheet Column Number" target="">
-		    [LeetCode Road] Excel Sheet Column Number
 		    </a>
 		</li>
 	</ul>
@@ -390,7 +390,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-02-03 00:34:42" itemprop="dateModified" datetime="2021-02-03T00:34:42+08:00">2021-02-03</time>
+        <time title="Modified: 2021-02-03 00:42:42" itemprop="dateModified" datetime="2021-02-03T00:42:42+08:00">2021-02-03</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -456,11 +456,12 @@ Each string does not contain leading zeros except for the zero itself.
 <p>Idea:<br> I want to post my method originally, but the method is very inefficient (add two elements of string as <a href="https://egbert-yu-ting.github.io/posts/acf6f11e/">Plus One</a>, do the same thing for each bits.)<br></p>
 <p>So, I refered to <a target="_blank" rel="noopener" href="https://zxi.mytechroad.com/blog/math/leetcode-67-add-binary/">Huahua's Tech Road</a>. Wow, it's a concise approach and coding, use only 1 while() to process.<br></p>
 <p>This part, we can learn how to convert char to integer、how to convert integer to char、calculate a value of carry and output in reverse.<br></p>
-At 9 line, use <code>conditional ? Ture:False</code> to implement one line of if-else statement. At 12 line, it is a right shift operator.
+At 9 line, use <code>conditional ? Ture:False</code> to implement one line of if-else statement.<br> At 12 line, it is a right shift operator.
 <p style="background-color:#F0F0F0">
 int a[i] = 1; // binary: 00000001<br> int b[j] = 1; // binary: 00000001<br> int sum = a[i] + b[j] = 2 // binary: 00000010<br> int carry = sum &gt;&gt; 1; // binary: 00000001 (right shifts the bits of the number accordingly)
 </p>
-Then, ues <span style="background-color:#F0F0F0">- '0'</span> to convert char to int as <span style="background-color:#F0F0F0">a[i--] - '0'</span>, because character <span style="background-color:#F0F0F0">'0'</span> means 48.<br> At 13 line, we use logical AND <span style="background-color:#F0F0F0"><font color=#808080>&amp;</font></span> to get the result of 0 or 1.<br> Because there are three different value of sum, we need to convert integer to bit, it's shown as the following:<br>
+<p>Then, ues <span style="background-color:#F0F0F0">- '0'</span> to convert char to int as <span style="background-color:#F0F0F0">a[i--] - '0'</span>, because character <span style="background-color:#F0F0F0">'0'</span> means 48.<br></p>
+At 13 line, we use logical AND <span style="background-color:#F0F0F0"><font color=#808080>&amp;</font></span> to get the result of 0 or 1.<br> Because there are three different value of sum, we need to convert integer to bit, it's shown as the following:<br>
 <p style="background-color:#F0F0F0">
 if sum = 0 // binary: 00000000<br>  (sum &amp; 1) = 0<br> if sum = 2 // binary: 00000010<br>  (sum &amp; 1) = 1<br> if sum = 3 // binary: 00000011<br>  (sum &amp; 1) = 1
 </p>

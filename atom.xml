@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-01T17:17:29.858Z</updated>
+  <updated>2021-02-02T03:50:03.700Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Exponential Search</title>
+    <link href="https://egbert-yu-ting.github.io/posts/85970ec4/"/>
+    <id>https://egbert-yu-ting.github.io/posts/85970ec4/</id>
+    <published>2021-02-02T02:02:14.000Z</published>
+    <updated>2021-02-02T03:50:03.700Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given a sorted array, and an element x to be searched, find position of x in the array.</summary>
+    
+    
+    
+    <category term="SearchAlgorithm" scheme="https://egbert-yu-ting.github.io/categories/searchalgorithm/"/>
+    
+    
+    <category term="Search" scheme="https://egbert-yu-ting.github.io/tags/Search/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Basic programming - Binary Search Algorithm</title>
     <link href="https://egbert-yu-ting.github.io/posts/dad48e10/"/>
     <id>https://egbert-yu-ting.github.io/posts/dad48e10/</id>
     <published>2021-02-01T07:50:08.000Z</published>
-    <updated>2021-02-01T17:17:29.858Z</updated>
+    <updated>2021-02-02T02:05:55.984Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -66,7 +86,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/65334f02/"/>
     <id>https://egbert-yu-ting.github.io/posts/65334f02/</id>
     <published>2021-02-01T00:53:55.000Z</published>
-    <updated>2021-02-01T09:04:36.780Z</updated>
+    <updated>2021-02-02T02:06:00.746Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -484,35 +504,6 @@ getMin() -- Retrieve the minimum element in the stack.
 &lt;p&gt;Given a binary tree, find its minimum depth.&lt;/p&gt;
 &lt;p&gt;The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; A leaf is a node with no children.</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Tree" scheme="https://egbert-yu-ting.github.io/tags/Tree/"/>
-    
-    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Balanced Binary Tree - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/b3e1ca12/"/>
-    <id>https://egbert-yu-ting.github.io/posts/b3e1ca12/</id>
-    <published>2021-01-15T02:13:15.000Z</published>
-    <updated>2021-01-22T01:31:49.781Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;110. Balanced Binary Tree&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given a binary tree, determine if it is height-balanced.&lt;/p&gt;
-For this problem, a height-balanced binary tree is defined as:
-&lt;p style=&quot;background-color:#F0F0F0&quot;&gt;
-&lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;a binary tree in which the left and right subtrees of &lt;l&gt;every&lt;/l&gt; node differ in height by no more than 1.&lt;/font&gt;&lt;/span&gt;
-&lt;/p&gt;</summary>
     
     
     

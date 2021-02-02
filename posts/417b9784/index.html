@@ -25,18 +25,21 @@
     var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="Reverse Bits">
-<meta property="og:url" content="https://egbert-yu-ting.github.io/posts/39fc1869/index.html">
+  <meta name="description" content="190. Reverse Bits  Question: Reverse bits of a given 32 bits unsigned integer. Note:   Note that in some languages such as Java, there is no unsigned integer type. In this case, both input and output">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[LeetCode Road] Reverse Bits">
+<meta property="og:url" content="https://egbert-yu-ting.github.io/posts/417b9784/index.html">
 <meta property="og:site_name" content="Egbert Lin&#39;s Blog">
+<meta property="og:description" content="190. Reverse Bits  Question: Reverse bits of a given 32 bits unsigned integer. Note:   Note that in some languages such as Java, there is no unsigned integer type. In this case, both input and output">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-02T17:01:27.000Z">
-<meta property="article:modified_time" content="2021-02-02T17:02:15.810Z">
+<meta property="article:modified_time" content="2021-02-02T17:17:26.665Z">
 <meta property="article:author" content="EgbertLin">
+<meta property="article:tag" content="Shift_Operators">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://egbert-yu-ting.github.io/posts/39fc1869/">
+<link rel="canonical" href="https://egbert-yu-ting.github.io/posts/417b9784/">
 
 
 <script class="page-configurations">
@@ -50,7 +53,7 @@
 </script><script data-ad-client="ca-pub-8863232600865901" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <title>Reverse Bits | Egbert Lin's Blog</title>
+  <title>[LeetCode Road] Reverse Bits | Egbert Lin's Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S56LQ3K3NG"></script>
     <script>
@@ -213,7 +216,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -225,6 +228,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#question"><span class="nav-number">1.</span> <span class="nav-text">Question:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example"><span class="nav-number">2.</span> <span class="nav-text">Example:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source-code"><span class="nav-number">3.</span> <span class="nav-text">Source code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#version-1"><span class="nav-number">3.1.</span> <span class="nav-text">Version 1</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -294,8 +298,8 @@
 	</div>
 	<ul class="links-of-blogroll-list recent-posts-list">
 	        <li class="my-links-of-blogroll-item">
-		    <a href="/posts/39fc1869/" title="Reverse Bits" target="">
-		    Reverse Bits
+		    <a href="/posts/417b9784/" title="[LeetCode Road] Reverse Bits" target="">
+		    [LeetCode Road] Reverse Bits
 		    </a>
 		</li>
 	        <li class="my-links-of-blogroll-item">
@@ -349,7 +353,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/39fc1869/">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/417b9784/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -365,7 +369,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Reverse Bits
+          [LeetCode Road] Reverse Bits
         </h1>
 
         <div class="post-meta-container">
@@ -377,7 +381,16 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-02-03 01:01:27 / Modified: 01:02:15" itemprop="dateCreated datePublished" datetime="2021-02-03T01:01:27+08:00">2021-02-03</time>
+      <time title="Created: 2021-02-03 01:01:27 / Modified: 01:17:26" itemprop="dateCreated datePublished" datetime="2021-02-03T01:01:27+08:00">2021-02-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
+        </span>
     </span>
 
   
@@ -389,8 +402,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/posts/39fc1869/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/39fc1869/" itemprop="commentCount"></span>
+    <a title="disqus" href="/posts/417b9784/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/417b9784/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -404,7 +417,37 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        
+        <p align="center">
+<font size="6px"><b>190. Reverse Bits</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Reverse bits of a given 32 bits unsigned integer.</p>
+<b>Note:</b><br> <storng>
+<li>
+Note that in some languages such as Java, there is no unsigned integer type. In this case, both input and output will be given as a signed integer type. They should not affect your implementation, as the integer's internal binary representation is the same, whether it is signed or unsigned.
+</li>
+</strong> <strong>
+<li>
+In Java, the compiler represents the signed integers using 2's complement notation. Therefore, in Example 2 above, the input represents the signed integer -3 and the output represents the signed integer -1073741825.
+</li>
+<p></strong> <a id="more"></a></p>
+<p><b>Follow up:</b><br> If this function is called many times, how would you optimize it?</p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> n = 00000010100101000001111010011100<br> <b>Output:</b> 964176192 (00111001011110000010100101000000)<br> <b>Explanation:</b> The input binary string 00000010100101000001111010011100 represents the unsigned integer 43261596, so return 964176192 which its binary representation is 00111001011110000010100101000000.
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> n = 11111111111111111111111111111101<br> <b>Output:</b> 3221225471 (10111111111111111111111111111111)<br> <b>Explanation:</b> The input binary string 11111111111111111111111111111101 represents the unsigned integer 4294967293, so return 3221225471 which its binary representation is 10111111111111111111111111111111.
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+The input must be a <b>binary string</b> of length <span data-stype="background-color:#F0F0F0"><font color=#808080>32</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">uint32_t</span> <span class="title">reverseBits</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">uint32_t</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++)&#123;</span><br><span class="line">            res = (res &lt;&lt; <span class="number">1</span>) | (n &amp; <span class="number">1</span>);</span><br><span class="line">            n &gt;&gt;=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -422,7 +465,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>Post link: </strong>
-      <a href="https://egbert-yu-ting.github.io/posts/39fc1869/" title="Reverse Bits">https://egbert-yu-ting.github.io/posts/39fc1869/</a>
+      <a href="https://egbert-yu-ting.github.io/posts/417b9784/" title="[LeetCode Road] Reverse Bits">https://egbert-yu-ting.github.io/posts/417b9784/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -430,6 +473,9 @@
 </ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/Shift-Operators/" rel="tag"><i class="fa fa-tag"></i> Shift_Operators</a>
+          </div>
 
         
 
@@ -554,9 +600,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://egbert-yu-ting.github.io/posts/39fc1869/";
-    this.page.identifier = "posts/39fc1869/";
-    this.page.title = "Reverse Bits";
+    this.page.url = "https://egbert-yu-ting.github.io/posts/417b9784/";
+    this.page.identifier = "posts/417b9784/";
+    this.page.title = "[LeetCode Road] Reverse Bits";
     };
   NexT.utils.loadComments('#disqus_thread', () => {
     if (window.DISQUS) {

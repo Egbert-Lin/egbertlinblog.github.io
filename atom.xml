@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-02T17:02:15.810Z</updated>
+  <updated>2021-02-02T17:17:26.665Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -17,21 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Reverse Bits</title>
-    <link href="https://egbert-yu-ting.github.io/posts/39fc1869/"/>
-    <id>https://egbert-yu-ting.github.io/posts/39fc1869/</id>
+    <title>[LeetCode Road] Reverse Bits</title>
+    <link href="https://egbert-yu-ting.github.io/posts/417b9784/"/>
+    <id>https://egbert-yu-ting.github.io/posts/417b9784/</id>
     <published>2021-02-02T17:01:27.000Z</published>
-    <updated>2021-02-02T17:02:15.810Z</updated>
+    <updated>2021-02-02T17:17:26.665Z</updated>
     
     
-      
-      
-    <summary type="html">
-</summary>
-      
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;190. Reverse Bits&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Reverse bits of a given 32 bits unsigned integer.&lt;/p&gt;
+&lt;b&gt;Note:&lt;/b&gt;&lt;br&gt; &lt;storng&gt;
+&lt;li&gt;
+Note that in some languages such as Java, there is no unsigned integer type. In this case, both input and output will be given as a signed integer type. They should not affect your implementation, as the integer&#39;s internal binary representation is the same, whether it is signed or unsigned.
+&lt;/li&gt;
+&lt;/strong&gt; &lt;strong&gt;
+&lt;li&gt;
+In Java, the compiler represents the signed integers using 2&#39;s complement notation. Therefore, in Example 2 above, the input represents the signed integer -3 and the output represents the signed integer -1073741825.
+&lt;/li&gt;
+&lt;p&gt;&lt;/strong&gt;</summary>
     
     
     
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+    <category term="Shift_Operators" scheme="https://egbert-yu-ting.github.io/tags/Shift-Operators/"/>
     
   </entry>
   
@@ -208,7 +221,7 @@ For example:
     <link href="https://egbert-yu-ting.github.io/posts/a4366474/"/>
     <id>https://egbert-yu-ting.github.io/posts/a4366474/</id>
     <published>2021-01-28T00:29:41.000Z</published>
-    <updated>2021-01-28T09:06:03.642Z</updated>
+    <updated>2021-02-02T17:17:36.616Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;

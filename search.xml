@@ -240,7 +240,7 @@ TThe number of nodes in the tree is in the range <span style="background-color:#
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr, <span class="keyword">int</span> input)</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> n = arr.size();</span><br><span class="line">    <span class="keyword">int</span> head = <span class="number">0</span>, tail = n - <span class="number">1</span>, middle = - <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(head &lt;= tail)&#123;</span><br><span class="line">        middle = (head + tail) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(arr[middle] == input) <span class="keyword">return</span> middle;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(arr[middle] &gt;input)&#123;</span><br><span class="line">            tail = middle - <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            head = middle + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr&#123; <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">30</span>, <span class="number">33</span>, <span class="number">40</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">22</span>;</span><br><span class="line">    <span class="keyword">int</span> res = binarySearch(arr, x);</span><br><span class="line">    (res == <span class="number">-1</span>)?<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Input is not exist in array&quot;</span>:<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Index &quot;</span> &lt;&lt; res &lt;&lt; <span class="string">&quot; is &quot;</span> &lt;&lt; arr[res];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>SearchAlgorithm</category>
+        <category>Search-Algorithm</category>
       </categories>
       <tags>
         <tag>Search</tag>
@@ -419,43 +419,6 @@ fatal: unable to auto-detect email address (got ...)<br> error: src refspec HEAD
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Excel Sheet column Title</title>
-    <url>/posts/961e4f43/</url>
-    <content><![CDATA[<p align="center">
-<font size="6px"><b>168. Excel Sheet Column Title</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a positive integer, return its corresponding column title as appear in an Excel sheet.</p>
-For example:
-<p style="background-color:#F0F0F0">
-  1 -&gt; A<br>   2 -&gt; B<br>   3 -&gt; C<br>   ...<br>   26 -&gt; Z<br>   27 -&gt; AA<br>   28 -&gt; AB <br>   ...
-</p>
-<a id="more"></a>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> 1<br> <b>Output:</b> "A"
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> 28<br> <b>Output:</b> "AB"
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> 701<br> <b>Output:</b> "ZY"
-</p>
-<h2 id="source-code">Source code:</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> According to the ASCII talbe, if you want to get A~Z character, you need 65-90 demical number to convert it.<br></p>
-<p>If the input is <code>n = 26</code>, you use <code>%26</code> to get the remainder is zero, then it is converted to character you will attain <code>'A'</code>, but a correct answer is <code>'Z'</code>. So, <strong>n minus 1</strong> is important before you get the remainder at 6 line.<br></p>
-<p>Next step, you can convert int to character directly. <strong>Notice:</strong> <code>+65</code> is same as <code>'A'</code>. <br> At 8 line, <code>(n - 1)/26</code> as a carry condition every time until n will be 0.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">convertToTitle</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> remainder = (n - <span class="number">1</span>) % <span class="number">26</span>;</span><br><span class="line">            res = (<span class="keyword">char</span>)(remainder + <span class="number">65</span>) + res;</span><br><span class="line">            n = (n - <span class="number">1</span>)/<span class="number">26</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>ASCII</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Excel Sheet Column Number</title>
     <url>/posts/10e6d46c/</url>
     <content><![CDATA[<p align="center">
@@ -509,6 +472,43 @@ For example:
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Excel Sheet column Title</title>
+    <url>/posts/961e4f43/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>168. Excel Sheet Column Title</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a positive integer, return its corresponding column title as appear in an Excel sheet.</p>
+For example:
+<p style="background-color:#F0F0F0">
+  1 -&gt; A<br>   2 -&gt; B<br>   3 -&gt; C<br>   ...<br>   26 -&gt; Z<br>   27 -&gt; AA<br>   28 -&gt; AB <br>   ...
+</p>
+<a id="more"></a>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> 1<br> <b>Output:</b> "A"
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> 28<br> <b>Output:</b> "AB"
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> 701<br> <b>Output:</b> "ZY"
+</p>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> According to the ASCII talbe, if you want to get A~Z character, you need 65-90 demical number to convert it.<br></p>
+<p>If the input is <code>n = 26</code>, you use <code>%26</code> to get the remainder is zero, then it is converted to character you will attain <code>'A'</code>, but a correct answer is <code>'Z'</code>. So, <strong>n minus 1</strong> is important before you get the remainder at 6 line.<br></p>
+<p>Next step, you can convert int to character directly. <strong>Notice:</strong> <code>+65</code> is same as <code>'A'</code>. <br> At 8 line, <code>(n - 1)/26</code> as a carry condition every time until n will be 0.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">convertToTitle</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> remainder = (n - <span class="number">1</span>) % <span class="number">26</span>;</span><br><span class="line">            res = (<span class="keyword">char</span>)(remainder + <span class="number">65</span>) + res;</span><br><span class="line">            n = (n - <span class="number">1</span>)/<span class="number">26</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>ASCII</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Data Structures - Exponential Search Algorithm</title>
     <url>/posts/85970ec4/</url>
     <content><![CDATA[<p align="center">
@@ -533,7 +533,7 @@ For example:
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr, <span class="keyword">int</span> target, <span class="keyword">int</span> head, <span class="keyword">int</span> tail)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(head &lt;= tail)&#123;</span><br><span class="line">        <span class="keyword">int</span> middle = (head + tail) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(arr[middle]== target) <span class="keyword">return</span> middle;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(arr[middle] &gt; target)&#123;</span><br><span class="line">            <span class="keyword">return</span> binarySearch(arr, target, head, middle - <span class="number">1</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> binarySearch(arr, target, middle + <span class="number">1</span>, tail);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">exponentialSearch</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr, <span class="keyword">int</span> target)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr[<span class="number">0</span>] == target) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> n = arr.size() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> searchIndex = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(searchIndex &lt; n &amp;&amp; arr[searchIndex] &lt; target) searchIndex*= <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> binarySearch(arr, target, searchIndex/<span class="number">2</span>, min(searchIndex, n));</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr&#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">10</span>, <span class="number">40</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">40</span>;</span><br><span class="line">    <span class="keyword">int</span> res = exponentialSearch(arr, x);</span><br><span class="line">    (res == <span class="number">-1</span>)?<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Input is not exist in array&quot;</span>:<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Index &quot;</span> &lt;&lt; res &lt;&lt; <span class="string">&quot; is &quot;</span> &lt;&lt; arr[res];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>SearchAlgorithm</category>
+        <category>Search-Algorithm</category>
       </categories>
       <tags>
         <tag>Search</tag>
@@ -785,7 +785,7 @@ After counting, you should make those Lists moved to the same position, as below
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">linearSearch</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr, <span class="keyword">int</span> target)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] == target) <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr&#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">80</span>, <span class="number">30</span>, <span class="number">60</span>, <span class="number">50</span>, <span class="number">100</span>, <span class="number">110</span>, <span class="number">130</span>, <span class="number">170</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">110</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> res = linearSearch(arr, x);</span><br><span class="line">    (res == <span class="number">-1</span>)? <span class="built_in">cout</span> &lt;&lt;<span class="string">&quot;The value isn&#x27;t exist in array&quot;</span>: <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;The value&#x27;s index is &quot;</span> &lt;&lt; res;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>SearchAlgorithm</category>
+        <category>Search-Algorithm</category>
       </categories>
       <tags>
         <tag>Search</tag>
@@ -1722,6 +1722,69 @@ The input must be a <b>binary string</b> of length <span data-stype="background-
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Roman to Integer - Solution/C++</title>
+    <url>/posts/8caf8f3c/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>13. Roman to Integer</b></font>
+</p>
+<h2 id="question">Question:</h2>
+Roman numerals are represented by seven different symbols: <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(I\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(V\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(L\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(C\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(D\)</span></font></span> and <span style="background-color:#F0F0F0"><font color=#808080>M</font></span>.
+<p style="background-color:F0F0F0">
+<b>Symbol</b>  <b>Value</b><br>  <span class="math inline">\(I\)</span>       1<br> <span class="math inline">\(V\)</span>      5<br> <span class="math inline">\(X\)</span>      10<br> <span class="math inline">\(L\)</span>       50<br> <span class="math inline">\(C\)</span>      100<br> <span class="math inline">\(D\)</span>      500<br> <span class="math inline">\(M\)</span>        1000
+</p>
+<a id="more"></a>
+<p>For example, <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(II\)</span></font></span> in Roman numeral, just two one's added together. <span style="background-color:#F0F0F0"><font color=#808080>12</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XII\)</span></font></span>, which is simply <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X + II\)</span></font></span>. The number <span style="background-color:#F0F0F0"><font color=#808080>27</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XXVII\)</span></font></span>, which is <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XX + V + II\)</span></font></span>.</p>
+<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(IIII\)</span></font></span>. Instead, the number four is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(IV\)</span></font></span>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(IX\)</span></font></span>. There are six instances where subtraction is used:</p>
+<ul>
+<li><span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(I\)</span></font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(V\)</span></font></span> (5) and <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X\)</span></font></span> (10) to make 4 and 9.</li>
+<li><span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X\)</span></font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(L\)</span></font></span> (50) and <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(C\)</span></font></span> (100) to make 40 and 90.</li>
+<li><span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(C\)</span></font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(D\)</span></font></span> (500) and <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(M\)</span></font></span> (1000) to make 400 and 900. Given a roman numeral, convert it to an integer.</li>
+</ul>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "<span class="math inline">\(III\)</span>"<br><b>Output:</b> 3<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "<span class="math inline">\(IV\)</span>"<br><b>Output:</b> 4<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "<span class="math inline">\(IX\)</span>"<br><b>Output:</b> 9<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "<span class="math inline">\(LVIII\)</span>"<br><b>Output:</b> 58<br><b>Explanation:</b> <span class="math inline">\(L\)</span> = 50, <span class="math inline">\(V\)</span>= 5, <span class="math inline">\(III\)</span> = 3.<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "<span class="math inline">\(MCMXCIV\)</span>"<b>Output:</b> 1994<br><b>Explanation:</b> <span class="math inline">\(M\)</span> = 1000, <span class="math inline">\(CM\)</span> = 900, <span class="math inline">\(XC\)</span> = 90 and <span class="math inline">\(IV\)</span> = 4.<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+1 &lt;= s.length &lt;= 15
+</li>
+</strong> <strong>
+<li>
+s contains only the characters ('<span class="math inline">\(I\)</span>', '<span class="math inline">\(V\)</span>', '<span class="math inline">\(X\)</span>', '<span class="math inline">\(L\)</span>', '<span class="math inline">\(C\)</span>', '<span class="math inline">\(D\)</span>', '<span class="math inline">\(M\)</span>').
+</li>
+</strong> <strong>
+<li>
+It is guaranteed that s is a valid roman numeral in the range [1, 3999].
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> At first, I thought these symbols can be built by using vector directly. After my careful thought, a map container is a easy way to store elements by a combination of a key value and a mapped value. Next step, I used a loop to check each characters, if <code>symbol[s[i]] &gt;= symbol[s[i + 1]]</code> is true, add symbol[s[i]] up. On the contrary, if <code>symbol[s[i]] &lt; symbol[s[i + 1]]</code> is true, subtract symbol[s[i]] from summation.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        map&lt;char, int&gt; symbol(&#123;&#123;&#x27;I&#x27;, 1&#125;, &#123;&#x27;V&#x27;, 5&#125;, &#123;&#x27;X&#x27;, 10&#125;, &#123;&#x27;L&#x27;, 50&#125;, &#123;&#x27;C&#x27;, 100,&#125;, &#123;&#x27;D&#x27;, 500&#125;, &#123;&#x27;M&#x27;, 1000&#125;&#125;);</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(symbol[s[i]] &gt;= symbol[s[i + <span class="number">1</span>]])&#123;</span><br><span class="line">                sum += symbol[s[i]];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                sum -= symbol[s[i]];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<br> This is a way to reduce a computing time. Add symbol[s[i]] value first, then check a value of s[i - 1] element whether it is less than a value of s[i] or not. If it is true, the summation need to subtract twice value of symbol[s[i - 1]]. So, it implements the less conditional operator.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        map&lt;char, int&gt; symbol(&#123;&#123;&#x27;I&#x27;, 1&#125;, &#123;&#x27;V&#x27;, 5&#125;, &#123;&#x27;X&#x27;, 10&#125;, &#123;&#x27;L&#x27;, 50&#125;, &#123;&#x27;C&#x27;, 100,&#125;, &#123;&#x27;D&#x27;, 500&#125;, &#123;&#x27;M&#x27;, 1000&#125;&#125;);</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            sum += symbol[s[i]];</span><br><span class="line">            <span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; symbol[s[i - <span class="number">1</span>]] &lt; symbol[s[i]])&#123;</span><br><span class="line">                sum -= <span class="number">2</span>*symbol[s[i <span class="number">-1</span>]];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Map(STL)</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
     <url>/posts/9e0f4e5/</url>
     <content><![CDATA[<p align="center">
@@ -2104,42 +2167,6 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Two Sum - Solution/C++</title>
-    <url>/posts/b98c8b25/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>1. Two Sum</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given an array of integers <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> and an integer <span style="background-color:#F0F0F0"><font color=#808080>target</font></span>, return <em>indices of the two numbers such that they add up to target</em>.</p>
-<p>You may assume that each input would have <strong>exactly one solution</strong>, and you may not use the same element twice.</p>
-<p>You can return the answer in any order. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: nums = [2,7,11,15], target = 9<br><b>Output</b>: [0,1]<br><b>Output</b>: Because nums[0] + nums[1] == 9, we return [0, 1].
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: nums = [3,2,4], target = 6<br><b>Output</b>: [1,2].
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: nums = [3,3], target = 6<br><b>Output</b>: [0,1]
-</p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> This is my first coding on the LeetCode platform. After reading the problem, my mind's gone blank, I only thought a simple way to solve it. Use two loop to check all numbers, but the time complexity is O(n^2). I knew this method is not efficient!</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; returnArray;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size() - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; nums.size(); j++)&#123;</span><br><span class="line">                sum = nums[i]+nums[j];</span><br><span class="line">                <span class="keyword">if</span>(sum == target)&#123;</span><br><span class="line">                    returnArray.push_back(i);</span><br><span class="line">                    returnArray.push_back(j);</span><br><span class="line">                    <span class="keyword">return</span> returnArray;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> returnArray;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h4 id="version-2"><u>Version 2</u></h4>
-<p>Idea: So, the source code is refered from online and I added some comments after programming. I heard the Hash Table mechanism at first time. It is a very simple principle, I must remember it! If you want to learn Hash Table, you can see <a href="https://aozturk.medium.com/simple-hash-map-hash-table-implementation-in-c-931965904250">Simple Hash Map</a>.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; returnArray; <span class="comment">// return the ans</span></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mapIndex; <span class="comment">// hash table(key:nums[i], value:index)</span></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            it = mapIndex.find(target - nums[i]);</span><br><span class="line">            <span class="keyword">if</span>(it != mapIndex.end())&#123;</span><br><span class="line">                <span class="comment">// found it, it means target - nums[i] = it-&gt;first</span></span><br><span class="line">                returnArray.push_back(it-&gt;second); <span class="comment">// get the value(index) by iterator</span></span><br><span class="line">                returnArray.push_back(i); <span class="comment">// get the current index</span></span><br><span class="line">                <span class="keyword">return</span> returnArray;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">// add new element</span></span><br><span class="line">                mapIndex.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;(nums[i], i));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> returnArray;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Map(STL)</tag>
-        <tag>Hash_table</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Two Sum II - Input array is sorted</title>
     <url>/posts/a4366474/</url>
     <content><![CDATA[<p align="center">
@@ -2203,6 +2230,42 @@ nums is sorted in increasing order.
       <categories>
         <category>LeetCode-Easy</category>
       </categories>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Two Sum - Solution/C++</title>
+    <url>/posts/b98c8b25/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>1. Two Sum</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given an array of integers <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> and an integer <span style="background-color:#F0F0F0"><font color=#808080>target</font></span>, return <em>indices of the two numbers such that they add up to target</em>.</p>
+<p>You may assume that each input would have <strong>exactly one solution</strong>, and you may not use the same element twice.</p>
+<p>You can return the answer in any order. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: nums = [2,7,11,15], target = 9<br><b>Output</b>: [0,1]<br><b>Output</b>: Because nums[0] + nums[1] == 9, we return [0, 1].
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: nums = [3,2,4], target = 6<br><b>Output</b>: [1,2].
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: nums = [3,3], target = 6<br><b>Output</b>: [0,1]
+</p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> This is my first coding on the LeetCode platform. After reading the problem, my mind's gone blank, I only thought a simple way to solve it. Use two loop to check all numbers, but the time complexity is O(n^2). I knew this method is not efficient!</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; returnArray;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size() - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; nums.size(); j++)&#123;</span><br><span class="line">                sum = nums[i]+nums[j];</span><br><span class="line">                <span class="keyword">if</span>(sum == target)&#123;</span><br><span class="line">                    returnArray.push_back(i);</span><br><span class="line">                    returnArray.push_back(j);</span><br><span class="line">                    <span class="keyword">return</span> returnArray;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> returnArray;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="version-2"><u>Version 2</u></h4>
+<p>Idea: So, the source code is refered from online and I added some comments after programming. I heard the Hash Table mechanism at first time. It is a very simple principle, I must remember it! If you want to learn Hash Table, you can see <a href="https://aozturk.medium.com/simple-hash-map-hash-table-implementation-in-c-931965904250">Simple Hash Map</a>.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; returnArray; <span class="comment">// return the ans</span></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mapIndex; <span class="comment">// hash table(key:nums[i], value:index)</span></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            it = mapIndex.find(target - nums[i]);</span><br><span class="line">            <span class="keyword">if</span>(it != mapIndex.end())&#123;</span><br><span class="line">                <span class="comment">// found it, it means target - nums[i] = it-&gt;first</span></span><br><span class="line">                returnArray.push_back(it-&gt;second); <span class="comment">// get the value(index) by iterator</span></span><br><span class="line">                returnArray.push_back(i); <span class="comment">// get the current index</span></span><br><span class="line">                <span class="keyword">return</span> returnArray;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">// add new element</span></span><br><span class="line">                mapIndex.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;(nums[i], i));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> returnArray;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Map(STL)</tag>
+        <tag>Hash_table</tag>
+      </tags>
   </entry>
   <entry>
     <title>[LeetCode Road] Valid Palindromev - Solution/C++</title>
@@ -2288,6 +2351,38 @@ nums is sorted in increasing order.
       </tags>
   </entry>
   <entry>
+    <title>Run Visual Studio Code on macOS - Tutorial</title>
+    <url>/posts/a7083339/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Visual Studio Code installation and run it from Terminal on macOS</b></font>
+</p>
+<h2 id="background">Background</h2>
+<p><strong>Visual Studio Code</strong> is a free source-code editor made by Microsoft for Windows, Linux and macOS.<br> Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git. Users can change the theme, keyboard shortcuts, preferences, and install extensions that add additional functionality.</p>
+<h2 id="installation">Installation</h2>
+<ol type="1">
+<li><a href="https://code.visualstudio.com/docs?dv=osx">Download Visual Studio Code</a> for macOS directly. <a id="more"></a></li>
+<li>Go to your browser's lownloaded archive.</li>
+<li>Extract <em>VSCode-darwin-stable.zip</em> file</li>
+<li>Drag <span style="background:#F0F0F0">Visual Studio Code.cpp</span> to the <span style="background:#F0F0F0">Applications</span> folder, making it available in the macOS Launchpad.</li>
+</ol>
+<h2 id="launching-from-the-command-line">Launching from the command line</h2>
+<p>You can type 'code .' in any folder to start editing files in that folder.<br> <font color=#FF0000>Notice: you will meet an error message: <b>“code .” command is not working</b></font></p>
+<p><strong>Solution:</strong> You must add Visual Studio Code to the path first:<br></p>
+<ol type="1">
+<li>Create bash_profile file if it doesn't exist in your system. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ touch ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
+<li>Open this file, click 'i' to edit. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ vi ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
+<li>Paste it as below, and type ':' + 'wq' to write &amp; quit.&lt; <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">export PATH=&quot;$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin&quot;</span><br></pre></td></tr></table></figure></li>
+<li>Preserve your current shell, if you miss it, you will repeat step2-step3 again when you reopen the terminal. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ source ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Instruction</category>
+      </categories>
+      <tags>
+        <tag>Editor</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[Quick and Easy] Installation of ns-3 Simulator with OpenFlow 1.3 - Tutorial</title>
     <url>/posts/8ece0fb0/</url>
     <content><![CDATA[<p align="center">
@@ -2366,101 +2461,6 @@ nums is sorted in increasing order.
         <tag>ns-3</tag>
         <tag>ofswitch</tag>
         <tag>OpenFlow1.3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Run Visual Studio Code on macOS - Tutorial</title>
-    <url>/posts/a7083339/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Visual Studio Code installation and run it from Terminal on macOS</b></font>
-</p>
-<h2 id="background">Background</h2>
-<p><strong>Visual Studio Code</strong> is a free source-code editor made by Microsoft for Windows, Linux and macOS.<br> Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git. Users can change the theme, keyboard shortcuts, preferences, and install extensions that add additional functionality.</p>
-<h2 id="installation">Installation</h2>
-<ol type="1">
-<li><a href="https://code.visualstudio.com/docs?dv=osx">Download Visual Studio Code</a> for macOS directly. <a id="more"></a></li>
-<li>Go to your browser's lownloaded archive.</li>
-<li>Extract <em>VSCode-darwin-stable.zip</em> file</li>
-<li>Drag <span style="background:#F0F0F0">Visual Studio Code.cpp</span> to the <span style="background:#F0F0F0">Applications</span> folder, making it available in the macOS Launchpad.</li>
-</ol>
-<h2 id="launching-from-the-command-line">Launching from the command line</h2>
-<p>You can type 'code .' in any folder to start editing files in that folder.<br> <font color=#FF0000>Notice: you will meet an error message: <b>“code .” command is not working</b></font></p>
-<p><strong>Solution:</strong> You must add Visual Studio Code to the path first:<br></p>
-<ol type="1">
-<li>Create bash_profile file if it doesn't exist in your system. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ touch ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
-<li>Open this file, click 'i' to edit. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ vi ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
-<li>Paste it as below, and type ':' + 'wq' to write &amp; quit.&lt; <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">export PATH=&quot;$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin&quot;</span><br></pre></td></tr></table></figure></li>
-<li>Preserve your current shell, if you miss it, you will repeat step2-step3 again when you reopen the terminal. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ source ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Instruction</category>
-      </categories>
-      <tags>
-        <tag>Editor</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Roman to Integer - Solution/C++</title>
-    <url>/posts/8caf8f3c/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>13. Roman to Integer</b></font>
-</p>
-<h2 id="question">Question:</h2>
-Roman numerals are represented by seven different symbols: <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(I\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(V\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(L\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(C\)</span></font></span>, <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(D\)</span></font></span> and <span style="background-color:#F0F0F0"><font color=#808080>M</font></span>.
-<p style="background-color:F0F0F0">
-<b>Symbol</b>  <b>Value</b><br>  <span class="math inline">\(I\)</span>       1<br> <span class="math inline">\(V\)</span>      5<br> <span class="math inline">\(X\)</span>      10<br> <span class="math inline">\(L\)</span>       50<br> <span class="math inline">\(C\)</span>      100<br> <span class="math inline">\(D\)</span>      500<br> <span class="math inline">\(M\)</span>        1000
-</p>
-<a id="more"></a>
-<p>For example, <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(II\)</span></font></span> in Roman numeral, just two one's added together. <span style="background-color:#F0F0F0"><font color=#808080>12</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XII\)</span></font></span>, which is simply <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X + II\)</span></font></span>. The number <span style="background-color:#F0F0F0"><font color=#808080>27</font></span> is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XXVII\)</span></font></span>, which is <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(XX + V + II\)</span></font></span>.</p>
-<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(IIII\)</span></font></span>. Instead, the number four is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(IV\)</span></font></span>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(IX\)</span></font></span>. There are six instances where subtraction is used:</p>
-<ul>
-<li><span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(I\)</span></font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(V\)</span></font></span> (5) and <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X\)</span></font></span> (10) to make 4 and 9.</li>
-<li><span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(X\)</span></font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(L\)</span></font></span> (50) and <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(C\)</span></font></span> (100) to make 40 and 90.</li>
-<li><span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(C\)</span></font></span> can be placed before <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(D\)</span></font></span> (500) and <span style="background-color:#F0F0F0"><font color=#808080><span class="math inline">\(M\)</span></font></span> (1000) to make 400 and 900. Given a roman numeral, convert it to an integer.</li>
-</ul>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = "<span class="math inline">\(III\)</span>"<br><b>Output:</b> 3<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = "<span class="math inline">\(IV\)</span>"<br><b>Output:</b> 4<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = "<span class="math inline">\(IX\)</span>"<br><b>Output:</b> 9<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = "<span class="math inline">\(LVIII\)</span>"<br><b>Output:</b> 58<br><b>Explanation:</b> <span class="math inline">\(L\)</span> = 50, <span class="math inline">\(V\)</span>= 5, <span class="math inline">\(III\)</span> = 3.<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = "<span class="math inline">\(MCMXCIV\)</span>"<b>Output:</b> 1994<br><b>Explanation:</b> <span class="math inline">\(M\)</span> = 1000, <span class="math inline">\(CM\)</span> = 900, <span class="math inline">\(XC\)</span> = 90 and <span class="math inline">\(IV\)</span> = 4.<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-1 &lt;= s.length &lt;= 15
-</li>
-</strong> <strong>
-<li>
-s contains only the characters ('<span class="math inline">\(I\)</span>', '<span class="math inline">\(V\)</span>', '<span class="math inline">\(X\)</span>', '<span class="math inline">\(L\)</span>', '<span class="math inline">\(C\)</span>', '<span class="math inline">\(D\)</span>', '<span class="math inline">\(M\)</span>').
-</li>
-</strong> <strong>
-<li>
-It is guaranteed that s is a valid roman numeral in the range [1, 3999].
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> At first, I thought these symbols can be built by using vector directly. After my careful thought, a map container is a easy way to store elements by a combination of a key value and a mapped value. Next step, I used a loop to check each characters, if <code>symbol[s[i]] &gt;= symbol[s[i + 1]]</code> is true, add symbol[s[i]] up. On the contrary, if <code>symbol[s[i]] &lt; symbol[s[i + 1]]</code> is true, subtract symbol[s[i]] from summation.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        map&lt;char, int&gt; symbol(&#123;&#123;&#x27;I&#x27;, 1&#125;, &#123;&#x27;V&#x27;, 5&#125;, &#123;&#x27;X&#x27;, 10&#125;, &#123;&#x27;L&#x27;, 50&#125;, &#123;&#x27;C&#x27;, 100,&#125;, &#123;&#x27;D&#x27;, 500&#125;, &#123;&#x27;M&#x27;, 1000&#125;&#125;);</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(symbol[s[i]] &gt;= symbol[s[i + <span class="number">1</span>]])&#123;</span><br><span class="line">                sum += symbol[s[i]];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                sum -= symbol[s[i]];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> This is a way to reduce a computing time. Add symbol[s[i]] value first, then check a value of s[i - 1] element whether it is less than a value of s[i] or not. If it is true, the summation need to subtract twice value of symbol[s[i - 1]]. So, it implements the less conditional operator.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        map&lt;char, int&gt; symbol(&#123;&#123;&#x27;I&#x27;, 1&#125;, &#123;&#x27;V&#x27;, 5&#125;, &#123;&#x27;X&#x27;, 10&#125;, &#123;&#x27;L&#x27;, 50&#125;, &#123;&#x27;C&#x27;, 100,&#125;, &#123;&#x27;D&#x27;, 500&#125;, &#123;&#x27;M&#x27;, 1000&#125;&#125;);</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            sum += symbol[s[i]];</span><br><span class="line">            <span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; symbol[s[i - <span class="number">1</span>]] &lt; symbol[s[i]])&#123;</span><br><span class="line">                sum -= <span class="number">2</span>*symbol[s[i <span class="number">-1</span>]];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Map(STL)</tag>
       </tags>
   </entry>
 </search>

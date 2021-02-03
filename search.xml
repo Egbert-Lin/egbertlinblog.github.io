@@ -1,61 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>[LeetCode Road] Add Binary - Solution/C++</title>
-    <url>/posts/e6133085/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>67. Add Binary</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given two binary strings <span style="background-color:#F0F0F0"><font color=#808080>a</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>b</font></span>, return <em>their sum as a binary string</em>. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> a = "11", b = "1"<br><b>Output:</b> "100"<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> a = "1010", b = "1011"<br><b>Output:</b> "10101"<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= a.length, b.length &lt;= 10^4</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>a</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>b</font></span> consist only of <span style="background-color:#F0F0F0"><font color=#808080>'0'</font></span> or <span style="background-color:#F0F0F0"><font color=#808080>'1'</font></span> characters.
-</li>
-</strong> <strong>
-<li>
-Each string does not contain leading zeros except for the zero itself.
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> I want to post my method originally, but the method is very inefficient (add two elements of string as <a href="https://egbert-yu-ting.github.io/posts/acf6f11e/">Plus One</a>, do the same thing for each bits.)<br></p>
-<p>So, I refered to <a href="https://zxi.mytechroad.com/blog/math/leetcode-67-add-binary/">Huahua's Tech Road</a>. Wow, it's a concise approach and coding, use only 1 while() to process.<br></p>
-<p>This part, we can learn how to convert char to integer、how to convert integer to char、calculate a value of carry and output in reverse.<br></p>
-At 9 line, use <code>conditional ? Ture:False</code> to implement one line of if-else statement.<br> At 12 line, it is a right shift operator.
-<p style="background-color:#F0F0F0">
-int a[i] = 1; // binary: 00000001<br> int b[j] = 1; // binary: 00000001<br> int sum = a[i] + b[j] = 2 // binary: 00000010<br> int carry = sum &gt;&gt; 1; // binary: 00000001 (right shifts the bits of the number accordingly)
-</p>
-<p>Then, ues <span style="background-color:#F0F0F0">- '0'</span> to convert char to int as <span style="background-color:#F0F0F0">a[i--] - '0'</span>, because character <span style="background-color:#F0F0F0">'0'</span> means 48.<br></p>
-At 13 line, we use logical AND <span style="background-color:#F0F0F0"><font color=#808080>&amp;</font></span> to get the result of 0 or 1.<br> Because there are three different value of sum, we need to convert integer to bit, it's shown as the following:<br>
-<p style="background-color:#F0F0F0">
-if sum = 0 // binary: 00000000<br>  (sum &amp; 1) = 0<br> if sum = 2 // binary: 00000010<br>  (sum &amp; 1) = 1<br> if sum = 3 // binary: 00000011<br>  (sum &amp; 1) = 1
-</p>
-<p>Then, we can use <span style="background-color:#F0F0F0">+ '0'</span> to convert int to char.<br> Finally, the variable of res is our answer, but the content is in reverse, so we need to output the last as head, <b>rbegin()</b> and <b>rend()</b> are built-in functions in C++ STL. rbegin() can return a reverse iterator pointing to the last char. rend() can return a reverse iterator pointing to the theoretical element preceding the first char of the string.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">addBinary</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = a.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> j = b.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">string</span> res;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> || j &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = (i &gt;= <span class="number">0</span> ? a[i--] - <span class="string">&#x27;0&#x27;</span> : <span class="number">0</span>) +</span><br><span class="line">                      (j &gt;= <span class="number">0</span> ? b[j--] - <span class="string">&#x27;0&#x27;</span> : <span class="number">0</span>) +</span><br><span class="line">                      carry;</span><br><span class="line">            carry = sum &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            res += <span class="string">&#x27;0&#x27;</span> + (sum &amp; <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(carry) res += <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line">        <span class="keyword">return</span> &#123;(res.rbegin()), (res.rend())&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Logical_Operators</tag>
-        <tag>Shift_Operators</tag>
-        <tag>ASCII</tag>
-        <tag>Reverse_iterator</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo NexT v8.x.x - Add recent posts</title>
     <url>/posts/68394953/</url>
     <content><![CDATA[<p align="center">
@@ -131,48 +76,58 @@ TThe number of nodes in the tree is in the range <span style="background-color:#
       </tags>
   </entry>
   <entry>
-    <title>Best Time to Buy and Sell Stock II - Solution/C++</title>
-    <url>/posts/a10d34fe/</url>
+    <title>[LeetCode Road] Add Binary - Solution/C++</title>
+    <url>/posts/e6133085/</url>
     <content><![CDATA[<p align="center">
-<font size="6"><b>122. Best Time to Buy and Sell Stock II</b></font>
+<font size="6"><b>67. Add Binary</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>Say you have an array <span style="background-color:#F0F0F0"><font color=#808080>prices</font></span> for which the ith element is the price of a given stock on day i.<br> <a id="more"></a></p>
-<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).<br></p>
-<p><strong>Note:</strong> You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</p>
+<p>Given two binary strings <span style="background-color:#F0F0F0"><font color=#808080>a</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>b</font></span>, return <em>their sum as a binary string</em>. <a id="more"></a></p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> [7,1,5,3,6,4]<br> <b>Output:</b> 7<br> <b>Explanation:</b> Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.<br>       Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+<b>Input:</b> a = "11", b = "1"<br><b>Output:</b> "100"<br>
 </p>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> [1,2,3,4,5]<br> <b>Output:</b> 4<br> <b>Explanation:</b> Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.        Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are engaging multiple transactions at the same time. You must sell before buying again.
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> [7,6,4,3,1]<br> <b>Output:</b> 0<br> <b>Explanation:</b> In this case, no transaction is done, i.e. max profit = 0.
+<b>Input:</b> a = "1010", b = "1011"<br><b>Output:</b> "10101"<br>
 </p>
 <strong>Constraints:</strong> <strong>
 <li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= prices.length &lt;= 3 * 10 ^ 4</font></span>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= a.length, b.length &lt;= 10^4</font></span>
 </li>
 </strong> <strong>
 <li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= prices[i] &lt;= 10 ^ 4</font></span>
+<span style="background-color:#F0F0F0"><font color=#808080>a</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>b</font></span> consist only of <span style="background-color:#F0F0F0"><font color=#808080>'0'</font></span> or <span style="background-color:#F0F0F0"><font color=#808080>'1'</font></span> characters.
+</li>
+</strong> <strong>
+<li>
+Each string does not contain leading zeros except for the zero itself.
 </li>
 <p></strong></p>
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> Here is the same as <a href="https://egbert-yu-ting.github.io/posts/a026a3d3/">Best Time to Buy and Sell Stock</a>. <br></p>
-<p>At 8 line, it always gets lowest price to i-th day.<br> At 9 - 10 line, we know the value of profit (<code>prices[i] - minPrice</code>), it must be checked whether it's bigger than 0. Because it avoids buying day and selling day on the same day, and guarantee the positive profit we get.<br> At 11 - 14 lin, we should not sell stock immediately even the profit is prositive at i-th day, maybe it will higher tomorrow (i-th + 1 day). So, we can know the selling day that is the best.<br> At 17 line, reinitialize minPrice variable for the next best buying day.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> minPrice = INT_MAX, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            minPrice = min(minPrice, prices[i]);</span><br><span class="line">            <span class="keyword">int</span> profit = prices[i] - minPrice, j = i;</span><br><span class="line">            <span class="keyword">if</span>(profit &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">while</span>(j &lt; n &amp;&amp; prices[j] &gt;= prices[i])&#123;</span><br><span class="line">                    i = j;</span><br><span class="line">                    j++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                sum += prices[i] - minPrice;</span><br><span class="line">                minPrice= INT_MAX;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> This strategy is very simple, if the buying day subtracted from the selling day is positive (profit), we directly add profit into maxProfit variable.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxProfit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(prices[i] &gt; prices[i<span class="number">-1</span>])&#123;</span><br><span class="line">                maxProfit += prices[i]- prices[i<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Idea:<br> I want to post my method originally, but the method is very inefficient (add two elements of string as <a href="https://egbert-yu-ting.github.io/posts/acf6f11e/">Plus One</a>, do the same thing for each bits.)<br></p>
+<p>So, I refered to <a href="https://zxi.mytechroad.com/blog/math/leetcode-67-add-binary/">Huahua's Tech Road</a>. Wow, it's a concise approach and coding, use only 1 while() to process.<br></p>
+<p>This part, we can learn how to convert char to integer、how to convert integer to char、calculate a value of carry and output in reverse.<br></p>
+At 9 line, use <code>conditional ? Ture:False</code> to implement one line of if-else statement.<br> At 12 line, it is a right shift operator.
+<p style="background-color:#F0F0F0">
+int a[i] = 1; // binary: 00000001<br> int b[j] = 1; // binary: 00000001<br> int sum = a[i] + b[j] = 2 // binary: 00000010<br> int carry = sum &gt;&gt; 1; // binary: 00000001 (right shifts the bits of the number accordingly)
+</p>
+<p>Then, ues <span style="background-color:#F0F0F0">- '0'</span> to convert char to int as <span style="background-color:#F0F0F0">a[i--] - '0'</span>, because character <span style="background-color:#F0F0F0">'0'</span> means 48.<br></p>
+At 13 line, we use logical AND <span style="background-color:#F0F0F0"><font color=#808080>&amp;</font></span> to get the result of 0 or 1.<br> Because there are three different value of sum, we need to convert integer to bit, it's shown as the following:<br>
+<p style="background-color:#F0F0F0">
+if sum = 0 // binary: 00000000<br>  (sum &amp; 1) = 0<br> if sum = 2 // binary: 00000010<br>  (sum &amp; 1) = 1<br> if sum = 3 // binary: 00000011<br>  (sum &amp; 1) = 1
+</p>
+<p>Then, we can use <span style="background-color:#F0F0F0">+ '0'</span> to convert int to char.<br> Finally, the variable of res is our answer, but the content is in reverse, so we need to output the last as head, <b>rbegin()</b> and <b>rend()</b> are built-in functions in C++ STL. rbegin() can return a reverse iterator pointing to the last char. rend() can return a reverse iterator pointing to the theoretical element preceding the first char of the string.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">addBinary</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = a.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> j = b.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">string</span> res;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> || j &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = (i &gt;= <span class="number">0</span> ? a[i--] - <span class="string">&#x27;0&#x27;</span> : <span class="number">0</span>) +</span><br><span class="line">                      (j &gt;= <span class="number">0</span> ? b[j--] - <span class="string">&#x27;0&#x27;</span> : <span class="number">0</span>) +</span><br><span class="line">                      carry;</span><br><span class="line">            carry = sum &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            res += <span class="string">&#x27;0&#x27;</span> + (sum &amp; <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(carry) res += <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line">        <span class="keyword">return</span> &#123;(res.rbegin()), (res.rend())&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>LeetCode-Easy</category>
       </categories>
       <tags>
-        <tag>Stock</tag>
+        <tag>Logical_Operators</tag>
+        <tag>Shift_Operators</tag>
+        <tag>ASCII</tag>
+        <tag>Reverse_iterator</tag>
       </tags>
   </entry>
   <entry>
@@ -215,6 +170,51 @@ TThe number of nodes in the tree is in the range <span style="background-color:#
       <tags>
         <tag>Stock</tag>
         <tag>BruteForce</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Best Time to Buy and Sell Stock II - Solution/C++</title>
+    <url>/posts/a10d34fe/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>122. Best Time to Buy and Sell Stock II</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Say you have an array <span style="background-color:#F0F0F0"><font color=#808080>prices</font></span> for which the ith element is the price of a given stock on day i.<br> <a id="more"></a></p>
+<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).<br></p>
+<p><strong>Note:</strong> You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> [7,1,5,3,6,4]<br> <b>Output:</b> 7<br> <b>Explanation:</b> Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.<br>       Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> [1,2,3,4,5]<br> <b>Output:</b> 4<br> <b>Explanation:</b> Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.        Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are engaging multiple transactions at the same time. You must sell before buying again.
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> [7,6,4,3,1]<br> <b>Output:</b> 0<br> <b>Explanation:</b> In this case, no transaction is done, i.e. max profit = 0.
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= prices.length &lt;= 3 * 10 ^ 4</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= prices[i] &lt;= 10 ^ 4</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> Here is the same as <a href="https://egbert-yu-ting.github.io/posts/a026a3d3/">Best Time to Buy and Sell Stock</a>. <br></p>
+<p>At 8 line, it always gets lowest price to i-th day.<br> At 9 - 10 line, we know the value of profit (<code>prices[i] - minPrice</code>), it must be checked whether it's bigger than 0. Because it avoids buying day and selling day on the same day, and guarantee the positive profit we get.<br> At 11 - 14 lin, we should not sell stock immediately even the profit is prositive at i-th day, maybe it will higher tomorrow (i-th + 1 day). So, we can know the selling day that is the best.<br> At 17 line, reinitialize minPrice variable for the next best buying day.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> minPrice = INT_MAX, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            minPrice = min(minPrice, prices[i]);</span><br><span class="line">            <span class="keyword">int</span> profit = prices[i] - minPrice, j = i;</span><br><span class="line">            <span class="keyword">if</span>(profit &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">while</span>(j &lt; n &amp;&amp; prices[j] &gt;= prices[i])&#123;</span><br><span class="line">                    i = j;</span><br><span class="line">                    j++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                sum += prices[i] - minPrice;</span><br><span class="line">                minPrice= INT_MAX;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<br> This strategy is very simple, if the buying day subtracted from the selling day is positive (profit), we directly add profit into maxProfit variable.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxProfit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(prices[i] &gt; prices[i<span class="number">-1</span>])&#123;</span><br><span class="line">                maxProfit += prices[i]- prices[i<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Stock</tag>
       </tags>
   </entry>
   <entry>
@@ -419,6 +419,43 @@ fatal: unable to auto-detect email address (got ...)<br> error: src refspec HEAD
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Excel Sheet column Title</title>
+    <url>/posts/961e4f43/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>168. Excel Sheet Column Title</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a positive integer, return its corresponding column title as appear in an Excel sheet.</p>
+For example:
+<p style="background-color:#F0F0F0">
+  1 -&gt; A<br>   2 -&gt; B<br>   3 -&gt; C<br>   ...<br>   26 -&gt; Z<br>   27 -&gt; AA<br>   28 -&gt; AB <br>   ...
+</p>
+<a id="more"></a>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> 1<br> <b>Output:</b> "A"
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> 28<br> <b>Output:</b> "AB"
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> 701<br> <b>Output:</b> "ZY"
+</p>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> According to the ASCII talbe, if you want to get A~Z character, you need 65-90 demical number to convert it.<br></p>
+<p>If the input is <code>n = 26</code>, you use <code>%26</code> to get the remainder is zero, then it is converted to character you will attain <code>'A'</code>, but a correct answer is <code>'Z'</code>. So, <strong>n minus 1</strong> is important before you get the remainder at 6 line.<br></p>
+<p>Next step, you can convert int to character directly. <strong>Notice:</strong> <code>+65</code> is same as <code>'A'</code>. <br> At 8 line, <code>(n - 1)/26</code> as a carry condition every time until n will be 0.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">convertToTitle</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> remainder = (n - <span class="number">1</span>) % <span class="number">26</span>;</span><br><span class="line">            res = (<span class="keyword">char</span>)(remainder + <span class="number">65</span>) + res;</span><br><span class="line">            n = (n - <span class="number">1</span>)/<span class="number">26</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>ASCII</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Excel Sheet Column Number</title>
     <url>/posts/10e6d46c/</url>
     <content><![CDATA[<p align="center">
@@ -463,43 +500,6 @@ For example:
 <p>A logic likes : (previous_sum * 26 + current_sum), so the sum times 26 for each loop (= each digit)</p>
 <p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(1)</b></p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">titleToNumber</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ln = s.length();</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;ln;i++)&#123;</span><br><span class="line">            sum = sum * <span class="number">26</span> + (<span class="keyword">int</span>(s[i])<span class="number">-64</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>ASCII</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Excel Sheet column Title</title>
-    <url>/posts/961e4f43/</url>
-    <content><![CDATA[<p align="center">
-<font size="6px"><b>168. Excel Sheet Column Title</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a positive integer, return its corresponding column title as appear in an Excel sheet.</p>
-For example:
-<p style="background-color:#F0F0F0">
-  1 -&gt; A<br>   2 -&gt; B<br>   3 -&gt; C<br>   ...<br>   26 -&gt; Z<br>   27 -&gt; AA<br>   28 -&gt; AB <br>   ...
-</p>
-<a id="more"></a>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> 1<br> <b>Output:</b> "A"
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> 28<br> <b>Output:</b> "AB"
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> 701<br> <b>Output:</b> "ZY"
-</p>
-<h2 id="source-code">Source code:</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> According to the ASCII talbe, if you want to get A~Z character, you need 65-90 demical number to convert it.<br></p>
-<p>If the input is <code>n = 26</code>, you use <code>%26</code> to get the remainder is zero, then it is converted to character you will attain <code>'A'</code>, but a correct answer is <code>'Z'</code>. So, <strong>n minus 1</strong> is important before you get the remainder at 6 line.<br></p>
-<p>Next step, you can convert int to character directly. <strong>Notice:</strong> <code>+65</code> is same as <code>'A'</code>. <br> At 8 line, <code>(n - 1)/26</code> as a carry condition every time until n will be 0.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">convertToTitle</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> remainder = (n - <span class="number">1</span>) % <span class="number">26</span>;</span><br><span class="line">            res = (<span class="keyword">char</span>)(remainder + <span class="number">65</span>) + res;</span><br><span class="line">            n = (n - <span class="number">1</span>)/<span class="number">26</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>LeetCode-Easy</category>
@@ -571,26 +571,6 @@ For example:
       </categories>
   </entry>
   <entry>
-    <title>[Interview question] Find second largest element - Solution/C++</title>
-    <url>/posts/16153cc7/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Let coding interview become easy - Find second largest element</b></font>
-</p>
-<p>Maybe you will face it problem when you have an interview for a job with Tech. company.<br> The problem is "How to find second largest element?", it seems very easy to get result, but you must propose an efficient approach. <a id="more"></a></p>
-<p>If there is a vector that consists <code>&#123;2, 3, 4, 1, 7, 6, 5&#125;</code>, I delcare two variables as first largest element and second largest element. I initialize variables to INT_MIN. At 13 line, <code>if(input[i]&gt;first)</code> is true, <code>input[i]</code> is largest element and pass it to <code>first</code> after storing a value of <code>first</code> by <code>second</code>. Otherwise, compare <code>input[i]</code> with <code>second</code>, it checks a current value whether it bigger than <code>second</code> or not.</p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">pair&lt;int, int&gt; findLargest(vector&lt;int&gt; input)&#123;</span><br><span class="line">    <span class="keyword">int</span> first = INT_MIN;</span><br><span class="line">    <span class="keyword">int</span> second = INT_MIN;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; input.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(input[i]&gt;first)&#123;</span><br><span class="line">            second = first;</span><br><span class="line">            first = input[i];</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(input[i] &gt; second)&#123;</span><br><span class="line">            second = input[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">make_pair</span>(first, second);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr = &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; ans = findLargest(arr);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;The first largest element=&quot;</span> &lt;&lt; ans.first &lt;&lt; <span class="string">&quot;, the second largest element=&quot;</span> &lt;&lt; ans.second &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>CodeInterview</category>
-      </categories>
-      <tags>
-        <tag>Pair</tag>
-        <tag>INT_MIN</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[Step by Step] How to install Google Chrome on Ubuntu 16.04</title>
     <url>/posts/65af7d45/</url>
     <content><![CDATA[<p align="center">
@@ -612,6 +592,26 @@ For example:
       <tags>
         <tag>Ubuntu</tag>
         <tag>Google_Chrome</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Interview question] Find second largest element - Solution/C++</title>
+    <url>/posts/16153cc7/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Let coding interview become easy - Find second largest element</b></font>
+</p>
+<p>Maybe you will face it problem when you have an interview for a job with Tech. company.<br> The problem is "How to find second largest element?", it seems very easy to get result, but you must propose an efficient approach. <a id="more"></a></p>
+<p>If there is a vector that consists <code>&#123;2, 3, 4, 1, 7, 6, 5&#125;</code>, I delcare two variables as first largest element and second largest element. I initialize variables to INT_MIN. At 13 line, <code>if(input[i]&gt;first)</code> is true, <code>input[i]</code> is largest element and pass it to <code>first</code> after storing a value of <code>first</code> by <code>second</code>. Otherwise, compare <code>input[i]</code> with <code>second</code>, it checks a current value whether it bigger than <code>second</code> or not.</p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">pair&lt;int, int&gt; findLargest(vector&lt;int&gt; input)&#123;</span><br><span class="line">    <span class="keyword">int</span> first = INT_MIN;</span><br><span class="line">    <span class="keyword">int</span> second = INT_MIN;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; input.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(input[i]&gt;first)&#123;</span><br><span class="line">            second = first;</span><br><span class="line">            first = input[i];</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(input[i] &gt; second)&#123;</span><br><span class="line">            second = input[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">make_pair</span>(first, second);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr = &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; ans = findLargest(arr);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;The first largest element=&quot;</span> &lt;&lt; ans.first &lt;&lt; <span class="string">&quot;, the second largest element=&quot;</span> &lt;&lt; ans.second &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CodeInterview</category>
+      </categories>
+      <tags>
+        <tag>Pair</tag>
+        <tag>INT_MIN</tag>
       </tags>
   </entry>
   <entry>
@@ -956,108 +956,6 @@ Finally, reboot you Mac and enter WIN10 OS successfully.</li>
         <tag>MacOS_X</tag>
         <tag>Windows10</tag>
         <tag>Bootcamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode] Majority Element</title>
-    <url>/posts/ef374e86/</url>
-    <content><![CDATA[<p align="center">
-<font size="6px"><b>169. Majority Element</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given an array <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> of size <span style="background-color:#F0F0F0"><font color=#808080>n</font></span>, return <em>the majority element</em>.</p>
-<p>The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.</p>
-<p><strong>Follow-up:</strong> Could you solve the problem in linear time and in <span style="background-color:#F0F0F0"><font color=#808080>Ｏ(1)</font></span> space? <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [3,2,3]<br> <b>Output:</b> 3
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [2,2,1,1,1,2,2]<br> <b>Output:</b> 2
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>n == nums.length</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= n &lt;= 5 * 10^4</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-2^31 &lt;= nums[i] &lt;= 2^31 - 1</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<p>Idea:<br> The strategy is similar wtih <a href="https://www.dcard.tw/f/boutique/p/235251138">Linked List Cycle's version 1</a>. Use <strong>Hash Table</strong> to store a count of element. Notice: the majority element appears more than ⌊n / 2⌋ times and therefore you should add if statment for checking.</p>
-<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(n)</b></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; count;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            count[nums[i]]++;</span><br><span class="line">            <span class="keyword">if</span> (count[nums[i]] &gt; n/<span class="number">2</span>) <span class="keyword">return</span> nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> It is a vary specail approach. It supposes the first element as the majority, and declare a counter.<br></p>
-<p>Use a loop to go through every element, if current element is equal to the majority, count will plus 1, otherwise, count will minus 1.<br> If count is equal to 0, the majority will be updated to current element, and count is set 1.<br></p>
-<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(1)</b></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> majority = nums.front();</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(majority == nums[i])&#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(--count == <span class="number">0</span>)&#123;</span><br><span class="line">                majority = nums[i];</span><br><span class="line">                count = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> majority;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-3"><u>Version 3</u></h3>
-<p>Idea:<br> You have more than fifty opporunity to get the answer, because the majority element appears more than n / 2 times.<br> Therefore, the strategy is a random approach that a random value is exist in array, then it compares with all element, if it appears more than n /2 times, it is the answer.<br></p>
-<p>Note:<br> The formular of random is:<br> rand%(max - min + 1) + min<br> E.g., you want to get a random number between 5 and 10<br></p>
-<ul>
-<li>min ← 5</li>
-<li>max ← 10</li>
-<li><strong>randValue ← rand()%(10 - 5 + 1) + 5</strong></li>
-</ul>
-<p>// if you don't plus 1 like this: <code>rand()%(10 - 5)</code>, you will attain a random value between 0 to 4. So it must plus 1!</p>
-<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(1)</b></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        srand(time(<span class="literal">nullptr</span>));</span><br><span class="line">        <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> majority = nums[rand()%n];</span><br><span class="line">            <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(majority == nums[i]) count++;</span><br><span class="line">                <span class="keyword">if</span>(count &gt; n/<span class="number">2</span>) <span class="keyword">return</span> majority;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Maximum Depth of Binary Tree - Solution/C++</title>
-    <url>/posts/57b52472/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>104. Maximum Depth of Binary Tree</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given the <span style="background-color:#F0F0F0"><font color=#808080>root</font></span> of a binary tree, return <em>its maximum depth</em>.</p>
-<p>A binary tree's <strong>maximum depth</strong> is the number of nodes along the longest path from the root node down to the farthest leaf node. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<img src="MaximumDepthofBinaryTree_example1.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 3<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [1,null,2]<br> <b>Output:</b> 2<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = []<br> <b>Output:</b> 0<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [0]<br> <b>Output:</b> 1<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^4]</font></span>.
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-100 &lt;= Node.val &lt;= 100</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> Basically, I konw the search must be throughout all link of the whole tree, then if the left/right node of root are NULL, the depth is the deepest, so depth is start from 1 (depth + 1). But, I can't find out any regular action by using the recursion.<br></p>
-<p>There is a quit clear demonstration as below[1]: <img src="MaximumDepthofBinaryTree_example2.png" /> It's very helpful and let me understand the recursion processing. So, let me explain the code:<br> (1) <code>maxDepth(root-&gt;left)</code>: use recursion to find deepest depth of left node<br> (2) <code>maxDepth(root-&gt;right</code>: use recursion to find deepest depth of right node<br> (3) <code>max((1), (2))</code>: compare the deepest depth of both of left/right nodes, get the maximum value. Then, <code>+ 1</code> means adding this layer.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> max(maxDepth(root-&gt;left), maxDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>Reference:<br> [1] https://algorithms.tutorialhorizon.com/find-the-maximum-depth-or-height-of-a-binary-tree/</p>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Tree</tag>
-        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>
@@ -1470,45 +1368,6 @@ Given the below binary tree and <span style="background-color:#F0F0F0"><font col
       </tags>
   </entry>
   <entry>
-    <title>Run PyCharm: Python development platform on Ubuntu (Ryu SDN)</title>
-    <url>/posts/784045ef/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Tutorial - PyCharm Installation and build project environment for the development of Ryu controller</b></font>
-</p>
-<h2 id="what-is-pycharm">What is PyCharm?</h2>
-<p>Are you developing python project on Ubuntu right now? When you are writing code, I guess that you edit file by <code>vi</code>, <code>vim</code> or 'gedit'. Maybe these tools are convenient to you, but those are inefficient and hard to maintain program for the development of big projet.<br> <a id="more"></a></p>
-<p>PyCharm is one of the most popular Python IDEs. It provides <u>code analysis</u>, <u>a graphical debugger</u>, <u>an integrated unit tester</u>, integration with <u>version control systems</u> (VCSes), and supports <u>web development with Django</u> as well as <u>data science with Anaconda</u>.<br></p>
-<p>And, it is cross-platform, compatible with Windows, macOS and Linux versions. Also, it supports both Python 2 (2.7) and Python 3 (3.5 and above) versions.</p>
-<h2 id="installation">Installation</h2>
-<ul>
-<li><p><strong>Step 1.</strong> Download the <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> to your Ubuntu system</p></li>
-<li><p><strong>Step 2.</strong> Unpack the pycharm-*.tar.gz file (The recommended installation location according to the filesystem hierarchy standard (FHS) is /opt.) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo tar xfz pycharm-*.tar.gz -C /opt/</span><br></pre></td></tr></table></figure></p></li>
-<li><p><strong>Step 3.</strong> Go to the bin subdirectory <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd /opt/pycharm-*/bin</span><br></pre></td></tr></table></figure></p></li>
-<li><p><strong>Step 4.</strong> Run pycharm.sh from the bin subdirectory <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ./pycharm.sh</span><br></pre></td></tr></table></figure></p></li>
-<li><p><strong>Step 5.</strong> Choose “Do not import settings” as below: <img src="figure1.png" /></p></li>
-<li><p><strong>Step 6.</strong> Select the user interface theme</p></li>
-<li><p><strong>Step 7.</strong> Download and install additional pyugins</p></li>
-<li><p><strong>Step 8.</strong> Start a project in PyCharm <img src="figure2.png" /></p></li>
-</ul>
-<h2 id="debug-ryu-sdn-controller">Debug Ryu SDN controller</h2>
-<ul>
-<li><p><strong>Step 1.</strong> First, build a new project. Then, create a python file (compile file) <img src="figure_3.png" /></p></li>
-<li><p><strong>Step 2.</strong> Paste the code as below: (Notice: you must set your directory of controller.py) <img src="figure_4.png" /></p></li>
-<li><p><strong>Step 3.</strong> Create a controller.py (You can paste the source code of simple_switch_13.py to controller.py) <img src="figure_5.png" /></p></li>
-<li><p><strong>Step 4.</strong> Change a project interpreter 3.4 to 2.7 version (File-&gt;settings-&gt;Project-&gt;Project Interpreter) <img src="figure_6.png" /></p></li>
-<li><p><strong>Step 5.</strong> Finally, debugging the controller.py and get currect result <img src="figure_7.png" /></p></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Instruction</category>
-      </categories>
-      <tags>
-        <tag>IDE</tag>
-        <tag>Python</tag>
-        <tag>Platform</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Remove Duplicates from Sorted Array - Solution/C++</title>
     <url>/posts/7241c2c1/</url>
     <content><![CDATA[<p align="center">
@@ -1556,6 +1415,45 @@ Internally you can think of this:
       <tags>
         <tag>Vector</tag>
         <tag>Call_by_reference</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Run PyCharm: Python development platform on Ubuntu (Ryu SDN)</title>
+    <url>/posts/784045ef/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Tutorial - PyCharm Installation and build project environment for the development of Ryu controller</b></font>
+</p>
+<h2 id="what-is-pycharm">What is PyCharm?</h2>
+<p>Are you developing python project on Ubuntu right now? When you are writing code, I guess that you edit file by <code>vi</code>, <code>vim</code> or 'gedit'. Maybe these tools are convenient to you, but those are inefficient and hard to maintain program for the development of big projet.<br> <a id="more"></a></p>
+<p>PyCharm is one of the most popular Python IDEs. It provides <u>code analysis</u>, <u>a graphical debugger</u>, <u>an integrated unit tester</u>, integration with <u>version control systems</u> (VCSes), and supports <u>web development with Django</u> as well as <u>data science with Anaconda</u>.<br></p>
+<p>And, it is cross-platform, compatible with Windows, macOS and Linux versions. Also, it supports both Python 2 (2.7) and Python 3 (3.5 and above) versions.</p>
+<h2 id="installation">Installation</h2>
+<ul>
+<li><p><strong>Step 1.</strong> Download the <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> to your Ubuntu system</p></li>
+<li><p><strong>Step 2.</strong> Unpack the pycharm-*.tar.gz file (The recommended installation location according to the filesystem hierarchy standard (FHS) is /opt.) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo tar xfz pycharm-*.tar.gz -C /opt/</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>Step 3.</strong> Go to the bin subdirectory <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd /opt/pycharm-*/bin</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>Step 4.</strong> Run pycharm.sh from the bin subdirectory <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ./pycharm.sh</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>Step 5.</strong> Choose “Do not import settings” as below: <img src="figure1.png" /></p></li>
+<li><p><strong>Step 6.</strong> Select the user interface theme</p></li>
+<li><p><strong>Step 7.</strong> Download and install additional pyugins</p></li>
+<li><p><strong>Step 8.</strong> Start a project in PyCharm <img src="figure2.png" /></p></li>
+</ul>
+<h2 id="debug-ryu-sdn-controller">Debug Ryu SDN controller</h2>
+<ul>
+<li><p><strong>Step 1.</strong> First, build a new project. Then, create a python file (compile file) <img src="figure_3.png" /></p></li>
+<li><p><strong>Step 2.</strong> Paste the code as below: (Notice: you must set your directory of controller.py) <img src="figure_4.png" /></p></li>
+<li><p><strong>Step 3.</strong> Create a controller.py (You can paste the source code of simple_switch_13.py to controller.py) <img src="figure_5.png" /></p></li>
+<li><p><strong>Step 4.</strong> Change a project interpreter 3.4 to 2.7 version (File-&gt;settings-&gt;Project-&gt;Project Interpreter) <img src="figure_6.png" /></p></li>
+<li><p><strong>Step 5.</strong> Finally, debugging the controller.py and get currect result <img src="figure_7.png" /></p></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Instruction</category>
+      </categories>
+      <tags>
+        <tag>IDE</tag>
+        <tag>Python</tag>
+        <tag>Platform</tag>
       </tags>
   </entry>
   <entry>
@@ -2232,6 +2130,41 @@ nums is sorted in increasing order.
       </categories>
   </entry>
   <entry>
+    <title>[LeetCode Road] Valid Palindromev - Solution/C++</title>
+    <url>/posts/1686f472/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>125. Valid Palindrome</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.</p>
+<p><strong>Note:</strong> For the purpose of this problem, we define empty string as valid palindrome. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> "A man, a plan, a canal: Panama"<br> <b>Output:</b> true
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> "race a car"<br> <b>Output:</b> false
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists only of printable ASCII characters.
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> You can easily solve the problem by the library function.<br> However, you must understand the description of question, "Palindrome" means that characters of string are the same when you read it forwards from the beginning or backwards from the end.<br></p>
+<p>"alphanumeric" the content of question is a key point, you should consider alpha and numeric together（Ignor punctuation marks and whether alpha is uppercase or lowercase or not).<br> So, you shoud call <code>isalnum</code> rather than <code>isalpha</code> to filter characters of string.<br></p>
+<p><code>head &lt; tail</code> condition is very important, e.g., input= ".,"<be> Initial: head = 0 &amp; tail=1<br> At 7 line, while() will break when head is added 1(<code>.</code> is not alphanumeric).<br> At 8 line, while() is break direcly, because head = tail (both variables are 1)<br> At 10 line, IF statement will get true and break out of a outer loop.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> head = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> tail = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(head &lt; tail)&#123;</span><br><span class="line">            <span class="keyword">while</span>(head &lt; tail &amp;&amp; !<span class="built_in">isalnum</span>(s[head])) head++;</span><br><span class="line">            <span class="keyword">while</span>(head &lt; tail &amp;&amp; !<span class="built_in">isalnum</span>(s[tail])) tail--;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">tolower</span>(s[head]) != <span class="built_in">tolower</span>(s[tail])) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            head ++;</span><br><span class="line">            tail --;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>STL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Two Sum - Solution/C++</title>
     <url>/posts/b98c8b25/</url>
     <content><![CDATA[<p align="center">
@@ -2268,38 +2201,35 @@ nums is sorted in increasing order.
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Valid Palindromev - Solution/C++</title>
-    <url>/posts/1686f472/</url>
+    <title>Run Visual Studio Code on macOS - Tutorial</title>
+    <url>/posts/a7083339/</url>
     <content><![CDATA[<p align="center">
-<font size="6"><b>125. Valid Palindrome</b></font>
+<font size="6"><b>Visual Studio Code installation and run it from Terminal on macOS</b></font>
 </p>
-<h2 id="question">Question:</h2>
-<p>Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.</p>
-<p><strong>Note:</strong> For the purpose of this problem, we define empty string as valid palindrome. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> "A man, a plan, a canal: Panama"<br> <b>Output:</b> true
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> "race a car"<br> <b>Output:</b> false
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists only of printable ASCII characters.
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> You can easily solve the problem by the library function.<br> However, you must understand the description of question, "Palindrome" means that characters of string are the same when you read it forwards from the beginning or backwards from the end.<br></p>
-<p>"alphanumeric" the content of question is a key point, you should consider alpha and numeric together（Ignor punctuation marks and whether alpha is uppercase or lowercase or not).<br> So, you shoud call <code>isalnum</code> rather than <code>isalpha</code> to filter characters of string.<br></p>
-<p><code>head &lt; tail</code> condition is very important, e.g., input= ".,"<be> Initial: head = 0 &amp; tail=1<br> At 7 line, while() will break when head is added 1(<code>.</code> is not alphanumeric).<br> At 8 line, while() is break direcly, because head = tail (both variables are 1)<br> At 10 line, IF statement will get true and break out of a outer loop.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> head = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> tail = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(head &lt; tail)&#123;</span><br><span class="line">            <span class="keyword">while</span>(head &lt; tail &amp;&amp; !<span class="built_in">isalnum</span>(s[head])) head++;</span><br><span class="line">            <span class="keyword">while</span>(head &lt; tail &amp;&amp; !<span class="built_in">isalnum</span>(s[tail])) tail--;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">tolower</span>(s[head]) != <span class="built_in">tolower</span>(s[tail])) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            head ++;</span><br><span class="line">            tail --;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="background">Background</h2>
+<p><strong>Visual Studio Code</strong> is a free source-code editor made by Microsoft for Windows, Linux and macOS.<br> Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git. Users can change the theme, keyboard shortcuts, preferences, and install extensions that add additional functionality.</p>
+<h2 id="installation">Installation</h2>
+<ol type="1">
+<li><a href="https://code.visualstudio.com/docs?dv=osx">Download Visual Studio Code</a> for macOS directly. <a id="more"></a></li>
+<li>Go to your browser's lownloaded archive.</li>
+<li>Extract <em>VSCode-darwin-stable.zip</em> file</li>
+<li>Drag <span style="background:#F0F0F0">Visual Studio Code.cpp</span> to the <span style="background:#F0F0F0">Applications</span> folder, making it available in the macOS Launchpad.</li>
+</ol>
+<h2 id="launching-from-the-command-line">Launching from the command line</h2>
+<p>You can type 'code .' in any folder to start editing files in that folder.<br> <font color=#FF0000>Notice: you will meet an error message: <b>“code .” command is not working</b></font></p>
+<p><strong>Solution:</strong> You must add Visual Studio Code to the path first:<br></p>
+<ol type="1">
+<li>Create bash_profile file if it doesn't exist in your system. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ touch ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
+<li>Open this file, click 'i' to edit. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ vi ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
+<li>Paste it as below, and type ':' + 'wq' to write &amp; quit.&lt; <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">export PATH=&quot;$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin&quot;</span><br></pre></td></tr></table></figure></li>
+<li>Preserve your current shell, if you miss it, you will repeat step2-step3 again when you reopen the terminal. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ source ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
+</ol>
 ]]></content>
       <categories>
-        <category>LeetCode-Easy</category>
+        <category>Instruction</category>
       </categories>
       <tags>
-        <tag>STL</tag>
+        <tag>Editor</tag>
       </tags>
   </entry>
   <entry>
@@ -2348,38 +2278,6 @@ nums is sorted in increasing order.
       <tags>
         <tag>Stack</tag>
         <tag>Map(STL)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Run Visual Studio Code on macOS - Tutorial</title>
-    <url>/posts/a7083339/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Visual Studio Code installation and run it from Terminal on macOS</b></font>
-</p>
-<h2 id="background">Background</h2>
-<p><strong>Visual Studio Code</strong> is a free source-code editor made by Microsoft for Windows, Linux and macOS.<br> Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git. Users can change the theme, keyboard shortcuts, preferences, and install extensions that add additional functionality.</p>
-<h2 id="installation">Installation</h2>
-<ol type="1">
-<li><a href="https://code.visualstudio.com/docs?dv=osx">Download Visual Studio Code</a> for macOS directly. <a id="more"></a></li>
-<li>Go to your browser's lownloaded archive.</li>
-<li>Extract <em>VSCode-darwin-stable.zip</em> file</li>
-<li>Drag <span style="background:#F0F0F0">Visual Studio Code.cpp</span> to the <span style="background:#F0F0F0">Applications</span> folder, making it available in the macOS Launchpad.</li>
-</ol>
-<h2 id="launching-from-the-command-line">Launching from the command line</h2>
-<p>You can type 'code .' in any folder to start editing files in that folder.<br> <font color=#FF0000>Notice: you will meet an error message: <b>“code .” command is not working</b></font></p>
-<p><strong>Solution:</strong> You must add Visual Studio Code to the path first:<br></p>
-<ol type="1">
-<li>Create bash_profile file if it doesn't exist in your system. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ touch ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
-<li>Open this file, click 'i' to edit. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ vi ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
-<li>Paste it as below, and type ':' + 'wq' to write &amp; quit.&lt; <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">export PATH=&quot;$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin&quot;</span><br></pre></td></tr></table></figure></li>
-<li>Preserve your current shell, if you miss it, you will repeat step2-step3 again when you reopen the terminal. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ source ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Instruction</category>
-      </categories>
-      <tags>
-        <tag>Editor</tag>
       </tags>
   </entry>
   <entry>
@@ -2462,5 +2360,107 @@ nums is sorted in increasing order.
         <tag>ofswitch</tag>
         <tag>OpenFlow1.3</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Maximum Depth of Binary Tree - Solution/C++</title>
+    <url>/posts/57b52472/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>104. Maximum Depth of Binary Tree</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given the <span style="background-color:#F0F0F0"><font color=#808080>root</font></span> of a binary tree, return <em>its maximum depth</em>.</p>
+<p>A binary tree's <strong>maximum depth</strong> is the number of nodes along the longest path from the root node down to the farthest leaf node. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<img src="MaximumDepthofBinaryTree_example1.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 3<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [1,null,2]<br> <b>Output:</b> 2<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = []<br> <b>Output:</b> 0<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [0]<br> <b>Output:</b> 1<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^4]</font></span>.
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-100 &lt;= Node.val &lt;= 100</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> Basically, I konw the search must be throughout all link of the whole tree, then if the left/right node of root are NULL, the depth is the deepest, so depth is start from 1 (depth + 1). But, I can't find out any regular action by using the recursion.<br></p>
+<p>There is a quit clear demonstration as below[1]: <img src="MaximumDepthofBinaryTree_example2.png" /> It's very helpful and let me understand the recursion processing. So, let me explain the code:<br> (1) <code>maxDepth(root-&gt;left)</code>: use recursion to find deepest depth of left node<br> (2) <code>maxDepth(root-&gt;right</code>: use recursion to find deepest depth of right node<br> (3) <code>max((1), (2))</code>: compare the deepest depth of both of left/right nodes, get the maximum value. Then, <code>+ 1</code> means adding this layer.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> max(maxDepth(root-&gt;left), maxDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Reference:<br> [1] https://algorithms.tutorialhorizon.com/find-the-maximum-depth-or-height-of-a-binary-tree/</p>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Tree</tag>
+        <tag>Recursion</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode] Majority Element</title>
+    <url>/posts/ef374e86/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>169. Majority Element</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given an array <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> of size <span style="background-color:#F0F0F0"><font color=#808080>n</font></span>, return <em>the majority element</em>.</p>
+<p>The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.</p>
+<p><strong>Follow-up:</strong> Could you solve the problem in linear time and in <span style="background-color:#F0F0F0"><font color=#808080>Ｏ(1)</font></span> space? <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [3,2,3]<br> <b>Output:</b> 3
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [2,2,1,1,1,2,2]<br> <b>Output:</b> 2
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>n == nums.length</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= n &lt;= 5 * 10^4</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-2^31 &lt;= nums[i] &lt;= 2^31 - 1</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<p>Idea:<br> The strategy is similar wtih <a href="https://www.dcard.tw/f/boutique/p/235251138">Linked List Cycle's version 1</a>. Use <strong>Hash Table</strong> to store a count of element. Notice: the majority element appears more than ⌊n / 2⌋ times and therefore you should add if statment for checking.</p>
+<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(n)</b></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; count;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            count[nums[i]]++;</span><br><span class="line">            <span class="keyword">if</span> (count[nums[i]] &gt; n/<span class="number">2</span>) <span class="keyword">return</span> nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<br> It is a vary specail approach. It supposes the first element as the majority, and declare a counter.<br></p>
+<p>Use a loop to go through every element, if current element is equal to the majority, count will plus 1, otherwise, count will minus 1.<br> If count is equal to 0, the majority will be updated to current element, and count is set 1.<br></p>
+<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(1)</b></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> majority = nums.front();</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(majority == nums[i])&#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(--count == <span class="number">0</span>)&#123;</span><br><span class="line">                majority = nums[i];</span><br><span class="line">                count = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> majority;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-3"><u>Version 3</u></h3>
+<p>Idea:<br> You have more than fifty opporunity to get the answer, because the majority element appears more than n / 2 times.<br> Therefore, the strategy is a random approach that a random value is exist in array, then it compares with all element, if it appears more than n /2 times, it is the answer.<br></p>
+<p>Note:<br> The formular of random is:<br> rand%(max - min + 1) + min<br> E.g., you want to get a random number between 5 and 10<br></p>
+<ul>
+<li>min ← 5</li>
+<li>max ← 10</li>
+<li><strong>randValue ← rand()%(10 - 5 + 1) + 5</strong></li>
+</ul>
+<p>// if you don't plus 1 like this: <code>rand()%(10 - 5)</code>, you will attain a random value between 0 to 4. So it must plus 1!</p>
+<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(1)</b></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        srand(time(<span class="literal">nullptr</span>));</span><br><span class="line">        <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> majority = nums[rand()%n];</span><br><span class="line">            <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(majority == nums[i]) count++;</span><br><span class="line">                <span class="keyword">if</span>(count &gt; n/<span class="number">2</span>) <span class="keyword">return</span> majority;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
   </entry>
 </search>

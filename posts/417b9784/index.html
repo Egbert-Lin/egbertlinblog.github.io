@@ -33,7 +33,7 @@
 <meta property="og:description" content="190. Reverse Bits  Question: Reverse bits of a given 32 bits unsigned integer. Note:   Note that in some languages such as Java, there is no unsigned integer type. In this case, both input and output">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-02T17:01:27.000Z">
-<meta property="article:modified_time" content="2021-02-04T09:00:19.485Z">
+<meta property="article:modified_time" content="2021-02-04T16:00:33.228Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="Shift_Operators">
 <meta name="twitter:card" content="summary">
@@ -387,7 +387,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-02-04 17:00:19" itemprop="dateModified" datetime="2021-02-04T17:00:19+08:00">2021-02-04</time>
+        <time title="Modified: 2021-02-05 00:00:33" itemprop="dateModified" datetime="2021-02-05T00:00:33+08:00">2021-02-05</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -454,7 +454,8 @@ The input must be a <b>binary string</b> of length <span data-stype="background-
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
 <p>Idea:<br> The solution is similar with <a href="https://egbert-yu-ting.github.io/posts/e6133085/">67. Add Binary</a>, those need to use shift operation.<br></p>
-<p>First, you must understand <code>&gt;&gt;</code> and <code>&lt;&lt;</code> how does is work. In this question, we need to get the reverse bits, therefore the processing of the bits starts from the rightmost. When we have handled 1 bit, the input should be shifted right 1 position. Hence, the right-shifted operation is <code>&gt;&gt;</code>.<br></p>
+<p>First, you must understand <code>&gt;&gt;</code> and <code>&lt;&lt;</code> how does is work. In this question, we need to get the reverse bits, therefore the processing of the bits starts from the rightmost. When we have handled 1 bit, the input should be shifted right 1 position. Hence, the right-shifted operation is <code>&gt;&gt;</code> at 7 line.<br></p>
+<p>How to handle the rightmost bits? At 6 line, we have a <code>res</code> variable to store each bit of the input, it need to shift left 1 to create a bit with zeor value at the rightmost.<br> <code>n &amp; 1</code> means taking 1 bit value of the input at the rightmost.<br> <code>|</code> is OR operation, it likes ADD action. E.g.,<br> 0 OR 0 = 0<br> 0 OR 1 = 1<br> So, after running 32 times, we can get correct reverse bits.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">uint32_t</span> <span class="title">reverseBits</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">uint32_t</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++)&#123;</span><br><span class="line">            res = (res &lt;&lt; <span class="number">1</span>) | (n &amp; <span class="number">1</span>);</span><br><span class="line">            n &gt;&gt;=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>

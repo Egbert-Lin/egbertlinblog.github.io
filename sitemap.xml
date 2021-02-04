@@ -9,14 +9,14 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/posts/65334f02/</loc>
+    <loc>https://egbert-yu-ting.github.io/posts/85970ec4/</loc>
     
     <lastmod>2021-02-04</lastmod>
     
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/posts/85970ec4/</loc>
+    <loc>https://egbert-yu-ting.github.io/posts/65334f02/</loc>
     
     <lastmod>2021-02-04</lastmod>
     
@@ -501,13 +501,6 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Search/</loc>
-    <lastmod>2021-02-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://egbert-yu-ting.github.io/tags/STL/</loc>
     <lastmod>2021-02-04</lastmod>
     <changefreq>daily</changefreq>
@@ -516,6 +509,13 @@
   
   <url>
     <loc>https://egbert-yu-ting.github.io/tags/2D-Vector/</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Searching/</loc>
     <lastmod>2021-02-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

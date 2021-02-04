@@ -243,7 +243,7 @@ TThe number of nodes in the tree is in the range <span style="background-color:#
         <category>SearchAlgorithm</category>
       </categories>
       <tags>
-        <tag>Searching</tag>
+        <tag>Search</tag>
       </tags>
   </entry>
   <entry>
@@ -536,7 +536,7 @@ For example:
         <category>SearchAlgorithm</category>
       </categories>
       <tags>
-        <tag>Searching</tag>
+        <tag>Search</tag>
       </tags>
   </entry>
   <entry>
@@ -788,7 +788,7 @@ After counting, you should make those Lists moved to the same position, as below
         <category>SearchAlgorithm</category>
       </categories>
       <tags>
-        <tag>Searching</tag>
+        <tag>Search</tag>
       </tags>
   </entry>
   <entry>
@@ -1251,6 +1251,46 @@ Methods <span style="background-color:#F0F0F0"><font color=#808080>pop</font></s
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Minimum Depth of Binary Tree - Solution/C++</title>
+    <url>/posts/2397063c/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>111. Minimum Depth of Binary Tree</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a binary tree, find its minimum depth.</p>
+<p>The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>
+<p><strong>Note:</strong> A leaf is a node with no children. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<img src="example.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 2
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [2,null,3,null,4,null,5,null,6]<br> <b>Output:</b> 5
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^5]</font></span>.
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-1000 &lt;= Node.val &lt;= 1000</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> We can sum up the rules of the binary tree.<br> <strong>First:</strong> If the left subnode and right subnode are exist of leaf node, it can be calculated each depths and use min() to get minimum depth.<br> <strong>Seconde:</strong> If there is NULL either left subnode or right subnode of leaf node, we must use max() to get the maxixmum depth, because <u>"A leaf is a node with no children"</u> based on the question. E.g., if left subnode is NULL, a leaf can't be calculated as 1 depth.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;left &amp;&amp; root-&gt;right)&#123;</span><br><span class="line">            <span class="keyword">return</span> min(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> max(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Tree</tag>
+        <tag>Recursion</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Palindrome Number - Solution/C++</title>
     <url>/posts/d37a286f/</url>
     <content><![CDATA[<p align="center">
@@ -1357,46 +1397,6 @@ Methods <span style="background-color:#F0F0F0"><font color=#808080>pop</font></s
       </categories>
       <tags>
         <tag>2D_Vector</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Minimum Depth of Binary Tree - Solution/C++</title>
-    <url>/posts/2397063c/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>111. Minimum Depth of Binary Tree</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a binary tree, find its minimum depth.</p>
-<p>The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>
-<p><strong>Note:</strong> A leaf is a node with no children. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<img src="example.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 2
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [2,null,3,null,4,null,5,null,6]<br> <b>Output:</b> 5
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^5]</font></span>.
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-1000 &lt;= Node.val &lt;= 1000</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code:</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> We can sum up the rules of the binary tree.<br> <strong>First:</strong> If the left subnode and right subnode are exist of leaf node, it can be calculated each depths and use min() to get minimum depth.<br> <strong>Seconde:</strong> If there is NULL either left subnode or right subnode of leaf node, we must use max() to get the maxixmum depth, because <u>"A leaf is a node with no children"</u> based on the question. E.g., if left subnode is NULL, a leaf can't be calculated as 1 depth.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;left &amp;&amp; root-&gt;right)&#123;</span><br><span class="line">            <span class="keyword">return</span> min(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> max(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Tree</tag>
-        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>
@@ -2234,41 +2234,6 @@ nums is sorted in increasing order.
       </categories>
   </entry>
   <entry>
-    <title>[LeetCode Road] Valid Palindromev - Solution/C++</title>
-    <url>/posts/1686f472/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>125. Valid Palindrome</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.</p>
-<p><strong>Note:</strong> For the purpose of this problem, we define empty string as valid palindrome. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> "A man, a plan, a canal: Panama"<br> <b>Output:</b> true
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> "race a car"<br> <b>Output:</b> false
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists only of printable ASCII characters.
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> You can easily solve the problem by the library function.<br> However, you must understand the description of question, "Palindrome" means that characters of string are the same when you read it forwards from the beginning or backwards from the end.<br></p>
-<p>"alphanumeric" the content of question is a key point, you should consider alpha and numeric together（Ignor punctuation marks and whether alpha is uppercase or lowercase or not).<br> So, you shoud call <code>isalnum</code> rather than <code>isalpha</code> to filter characters of string.<br></p>
-<p><code>head &lt; tail</code> condition is very important, e.g., input= ".,"<be> Initial: head = 0 &amp; tail=1<br> At 7 line, while() will break when head is added 1(<code>.</code> is not alphanumeric).<br> At 8 line, while() is break direcly, because head = tail (both variables are 1)<br> At 10 line, IF statement will get true and break out of a outer loop.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> head = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> tail = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(head &lt; tail)&#123;</span><br><span class="line">            <span class="keyword">while</span>(head &lt; tail &amp;&amp; !<span class="built_in">isalnum</span>(s[head])) head++;</span><br><span class="line">            <span class="keyword">while</span>(head &lt; tail &amp;&amp; !<span class="built_in">isalnum</span>(s[tail])) tail--;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">tolower</span>(s[head]) != <span class="built_in">tolower</span>(s[tail])) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            head ++;</span><br><span class="line">            tail --;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>STL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Two Sum - Solution/C++</title>
     <url>/posts/b98c8b25/</url>
     <content><![CDATA[<p align="center">
@@ -2302,6 +2267,41 @@ nums is sorted in increasing order.
       <tags>
         <tag>Map(STL)</tag>
         <tag>Hash_table</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Valid Palindromev - Solution/C++</title>
+    <url>/posts/1686f472/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>125. Valid Palindrome</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.</p>
+<p><strong>Note:</strong> For the purpose of this problem, we define empty string as valid palindrome. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> "A man, a plan, a canal: Panama"<br> <b>Output:</b> true
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> "race a car"<br> <b>Output:</b> false
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists only of printable ASCII characters.
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> You can easily solve the problem by the library function.<br> However, you must understand the description of question, "Palindrome" means that characters of string are the same when you read it forwards from the beginning or backwards from the end.<br></p>
+<p>"alphanumeric" the content of question is a key point, you should consider alpha and numeric together（Ignor punctuation marks and whether alpha is uppercase or lowercase or not).<br> So, you shoud call <code>isalnum</code> rather than <code>isalpha</code> to filter characters of string.<br></p>
+<p><code>head &lt; tail</code> condition is very important, e.g., input= ".,"<be> Initial: head = 0 &amp; tail=1<br> At 7 line, while() will break when head is added 1(<code>.</code> is not alphanumeric).<br> At 8 line, while() is break direcly, because head = tail (both variables are 1)<br> At 10 line, IF statement will get true and break out of a outer loop.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> head = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> tail = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(head &lt; tail)&#123;</span><br><span class="line">            <span class="keyword">while</span>(head &lt; tail &amp;&amp; !<span class="built_in">isalnum</span>(s[head])) head++;</span><br><span class="line">            <span class="keyword">while</span>(head &lt; tail &amp;&amp; !<span class="built_in">isalnum</span>(s[tail])) tail--;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">tolower</span>(s[head]) != <span class="built_in">tolower</span>(s[tail])) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            head ++;</span><br><span class="line">            tail --;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>STL</tag>
       </tags>
   </entry>
   <entry>

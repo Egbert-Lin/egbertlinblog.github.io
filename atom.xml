@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-05T01:07:44.875Z</updated>
+  <updated>2021-02-05T01:19:00.810Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -17,11 +17,45 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>[LeetCode] Number of 1 Bits</title>
+    <title>[LeetCode Road]Happy Number</title>
+    <link href="https://egbert-yu-ting.github.io/posts/e73e301/"/>
+    <id>https://egbert-yu-ting.github.io/posts/e73e301/</id>
+    <published>2021-02-05T01:11:00.000Z</published>
+    <updated>2021-02-05T01:19:00.810Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;202. Happy Number&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Write an algorithm to determine if a number &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n&lt;/span&gt;&lt;/font&gt; is happy.&lt;/p&gt;
+&lt;p&gt;A &lt;b&gt;happy number&lt;/b&gt; is a number defined by the following process:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+Starting with any positive integer, replace the number by the sum of the squares of its digits.
+&lt;/li&gt;
+&lt;li&gt;
+Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.
+&lt;/li&gt;
+&lt;li&gt;
+Those numbers for which this process ends in 1 are happy.
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Return &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;true&lt;/font&gt;&lt;/span&gt; &lt;I&gt;if&lt;/I&gt; &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n&lt;/font&gt;&lt;/span&gt; &lt;I&gt;is a happy number, and&lt;/I&gt; &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;false&lt;/font&gt;&lt;/span&gt; &lt;I&gt;if not&amp;lt;//I&amp;gt;.</summary>
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[LeetCode Road] Number of 1 Bits</title>
     <link href="https://egbert-yu-ting.github.io/posts/790fdd9f/"/>
     <id>https://egbert-yu-ting.github.io/posts/790fdd9f/</id>
     <published>2021-02-05T00:52:35.000Z</published>
-    <updated>2021-02-05T01:07:44.875Z</updated>
+    <updated>2021-02-05T01:11:31.682Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -499,29 +533,6 @@ getMin() -- Retrieve the minimum element in the stack.
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Given an integer &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;rowIndex&lt;/font&gt;&lt;/span&gt;, return the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;rowIndex^th&lt;/font&gt;&lt;/span&gt; row of the Pascal&#39;s triangle. Notice that the row index starts from &lt;strong&gt;0&lt;/strong&gt;. &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif&quot; alt=&quot;animation&quot; /&gt; &lt;font size=&quot;2&quot;&gt;In Pascal&#39;s triangle, each number is the sum of the two numbers directly above it.&lt;/font&gt;</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="2D_Vector" scheme="https://egbert-yu-ting.github.io/tags/2D-Vector/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Pascal&#39;s Triangle - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/2b0547f6/"/>
-    <id>https://egbert-yu-ting.github.io/posts/2b0547f6/</id>
-    <published>2021-01-18T00:13:34.000Z</published>
-    <updated>2021-01-24T14:34:49.302Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;118. Pascal&#39;s Triangle&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given a non-negative integer numRows, generate the first numRows of Pascal&#39;s triangle.&lt;br&gt; &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif&quot; alt=&quot;animation&quot; /&gt; &lt;font size=&quot;2&quot;&gt;In Pascal&#39;s triangle, each number is the sum of the two numbers directly above it.&lt;/font&gt;</summary>
     
     
     

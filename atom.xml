@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-04T16:00:33.228Z</updated>
+  <updated>2021-02-05T01:04:30.592Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>[LeetCode] Number of 1 Bits</title>
+    <link href="https://egbert-yu-ting.github.io/posts/790fdd9f/"/>
+    <id>https://egbert-yu-ting.github.io/posts/790fdd9f/</id>
+    <published>2021-02-05T00:52:35.000Z</published>
+    <updated>2021-02-05T01:04:30.592Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;191. Number of 1 Bits&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Write a function that takes</summary>
+      
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+    <category term="Shift_Operators" scheme="https://egbert-yu-ting.github.io/tags/Shift-Operators/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[LeetCode Road] Reverse Bits</title>
     <link href="https://egbert-yu-ting.github.io/posts/417b9784/"/>
     <id>https://egbert-yu-ting.github.io/posts/417b9784/</id>
     <published>2021-02-02T17:01:27.000Z</published>
-    <updated>2021-02-04T16:00:33.228Z</updated>
+    <updated>2021-02-05T01:01:26.124Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -53,7 +79,7 @@ In Java, the compiler represents the signed integers using 2&#39;s complement no
     <link href="https://egbert-yu-ting.github.io/posts/85970ec4/"/>
     <id>https://egbert-yu-ting.github.io/posts/85970ec4/</id>
     <published>2021-02-02T02:02:14.000Z</published>
-    <updated>2021-02-04T16:15:30.633Z</updated>
+    <updated>2021-02-04T16:16:54.163Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -76,7 +102,7 @@ In Java, the compiler represents the signed integers using 2&#39;s complement no
     <link href="https://egbert-yu-ting.github.io/posts/dad48e10/"/>
     <id>https://egbert-yu-ting.github.io/posts/dad48e10/</id>
     <published>2021-02-01T07:50:08.000Z</published>
-    <updated>2021-02-04T16:15:33.969Z</updated>
+    <updated>2021-02-04T16:16:52.421Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -121,7 +147,7 @@ In Java, the compiler represents the signed integers using 2&#39;s complement no
     <link href="https://egbert-yu-ting.github.io/posts/65334f02/"/>
     <id>https://egbert-yu-ting.github.io/posts/65334f02/</id>
     <published>2021-02-01T00:53:55.000Z</published>
-    <updated>2021-02-04T16:15:28.195Z</updated>
+    <updated>2021-02-04T16:16:55.751Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -495,32 +521,6 @@ getMin() -- Retrieve the minimum element in the stack.
     
     
     <category term="2D_Vector" scheme="https://egbert-yu-ting.github.io/tags/2D-Vector/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Path Sum - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/bb7f02f5/"/>
-    <id>https://egbert-yu-ting.github.io/posts/bb7f02f5/</id>
-    <published>2021-01-17T07:54:09.000Z</published>
-    <updated>2021-01-22T02:02:06.978Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;112. Path Sum&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; A leaf is a node with no children.</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Tree" scheme="https://egbert-yu-ting.github.io/tags/Tree/"/>
-    
-    <category term="Recursion" scheme="https://egbert-yu-ting.github.io/tags/Recursion/"/>
     
   </entry>
   

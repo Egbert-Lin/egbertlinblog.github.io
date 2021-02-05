@@ -25,21 +25,21 @@
     var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="14. Longest Common Prefix  Question: Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string &quot;&quot;.">
+  <meta name="description" content="191. Number of 1 Bits  Question: Write a function that takes an unsigned integer and returns the number of &#39;1&#39; bits it has (also known as the Hamming weight). Note:   Note that in some languages such">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[LeetCode Road] Longest Common Prefix - Solution&#x2F;C++">
-<meta property="og:url" content="https://egbert-yu-ting.github.io/posts/2768cb2c/index.html">
+<meta property="og:title" content="[LeetCode] Number of 1 Bits">
+<meta property="og:url" content="https://egbert-yu-ting.github.io/posts/790fdd9f/index.html">
 <meta property="og:site_name" content="Egbert Lin&#39;s Blog">
-<meta property="og:description" content="14. Longest Common Prefix  Question: Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string &quot;&quot;.">
+<meta property="og:description" content="191. Number of 1 Bits  Question: Write a function that takes an unsigned integer and returns the number of &#39;1&#39; bits it has (also known as the Hamming weight). Note:   Note that in some languages such">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-12-02T03:50:15.000Z">
-<meta property="article:modified_time" content="2021-01-22T01:51:58.423Z">
+<meta property="article:published_time" content="2021-02-05T00:52:35.000Z">
+<meta property="article:modified_time" content="2021-02-05T01:04:30.592Z">
 <meta property="article:author" content="EgbertLin">
-<meta property="article:tag" content="String">
+<meta property="article:tag" content="Shift_Operators">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://egbert-yu-ting.github.io/posts/2768cb2c/">
+<link rel="canonical" href="https://egbert-yu-ting.github.io/posts/790fdd9f/">
 
 
 <script class="page-configurations">
@@ -53,7 +53,7 @@
 </script><script data-ad-client="ca-pub-8863232600865901" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <title>[LeetCode Road] Longest Common Prefix - Solution/C++ | Egbert Lin's Blog</title>
+  <title>[LeetCode] Number of 1 Bits | Egbert Lin's Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S56LQ3K3NG"></script>
     <script>
@@ -228,7 +228,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#question"><span class="nav-number">1.</span> <span class="nav-text">Question:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example"><span class="nav-number">2.</span> <span class="nav-text">Example:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source-code"><span class="nav-number">3.</span> <span class="nav-text">Source code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#version-1"><span class="nav-number">3.1.</span> <span class="nav-text">Version 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#version-2"><span class="nav-number">3.2.</span> <span class="nav-text">Version 2</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#question"><span class="nav-number">1.</span> <span class="nav-text">Question:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example"><span class="nav-number">2.</span> <span class="nav-text">Example:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source-code"><span class="nav-number">3.</span> <span class="nav-text">Source code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#version-1"><span class="nav-number">3.1.</span> <span class="nav-text">Version 1</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -353,7 +353,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/2768cb2c/">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/790fdd9f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -369,7 +369,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [LeetCode Road] Longest Common Prefix - Solution/C++
+          [LeetCode] Number of 1 Bits
         </h1>
 
         <div class="post-meta-container">
@@ -379,16 +379,10 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2020-12-02 11:50:15" itemprop="dateCreated datePublished" datetime="2020-12-02T11:50:15+08:00">2020-12-02</time>
+      <time title="Created: 2021-02-05 08:52:35 / Modified: 09:04:30" itemprop="dateCreated datePublished" datetime="2021-02-05T08:52:35+08:00">2021-02-05</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-22 09:51:58" itemprop="dateModified" datetime="2021-01-22T09:51:58+08:00">2021-01-22</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -408,8 +402,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/posts/2768cb2c/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/2768cb2c/" itemprop="commentCount"></span>
+    <a title="disqus" href="/posts/790fdd9f/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/790fdd9f/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -424,40 +418,41 @@
     
     <div class="post-body" itemprop="articleBody">
         <p align="center">
-<font size="6"><b>14. Longest Common Prefix</b></font>
+<font size="6px"><b>191. Number of 1 Bits</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>Write a function to find the longest common prefix string amongst an array of strings.</p>
-<p>If there is no common prefix, return an empty string <span style="background-color:#F0F0F0"><font color=#808080>""</font></span>. <a id="more"></a></p>
+<p>Write a function that takes an unsigned integer and returns the number of '1' bits it has (also known as the <span style="background-color:#F0F0F0"><font color=#808080>Hamming weight</span></font>).</p>
+<b>Note:</b>
+<ul>
+<li>
+Note that in some languages such as Java, there is no unsigned integer type. In this case, the input will be given as a signed integer type. It should not affect your implementation, as the integer's internal binary representation is the same, whether it is signed or unsigned.
+</li>
+<li>
+In Java, the compiler represents the signed integers using <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Two%27s_complement">2's complement</a> notation. Therefore, in <b>Example 3</b> above, the input represents the signed integer. <span style="background-color:#F0F0F0"><font color=#808080>-3</font>
+</style>
+.
+</li>
+</ul>
+<p><b>Follow up:</b> If this function is called many times, how would you optimize it?</p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> strs = ["flower","flow","flight"]<br><b>Output:</b> "fl"<br>
+<b>Input:</b> n = 00000000000000000000000000001011<br> <b>Output:</b> 3<br> <b>Explanation:</b> The input binary string <b>00000000000000000000000000001011</b> has a total of three '1' bits.
 </p>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> strs = ["dog","racecar","car"]<br><b>Output:</b> ""<br><b>Explanation:</b> There is no common prefix among the input strings.<br>
+<b>Input:</b> n = 00000000000000000000000010000000<br> <b>Output:</b> 1<br> <b>Explanation:</b> The input binary string <b>00000000000000000000000010000000</b> has a total of one '1' bit.
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> n = 11111111111111111111111111111101<br> <b>Output:</b> 31<br> <b>Explanation:</b> The input binary string <b>11111111111111111111111111111101</b> has a total of thirty one '1' bits.
 </p>
 <strong>Constraints:</strong> <strong>
 <li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs.length &lt;= 200</font>
-</li>
-</strong><br><strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= strs[i].length &lt;= 200</font>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>strs[i]</font></span> consists of only lower-case English letters.
+The input must be a <b>binary string</b> of length <span style="background-color:#F0F0F0"><font color=#808080>32</font></span>
 </li>
 <p></strong></p>
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> First, declared a variable of string that stored strs[0]. Then, I compared it with each elements of vector. At 8 line, <code>min(res.length(), strs[i].length())</code> means finding a smallest length for matching between strings.<br></p>
-<p>At 10 line, if a statement is true, I stored a current lenght of string and prepared to compare next element; if a statement is false, it means these strings aren't the same, so the length must be subtract 1 and compare each others again. At 17 line, if length is 0, there is no reason to execute althought maybe there are many elements that have not been compared.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.size() == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res = strs[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; strs.size(); i++)&#123;</span><br><span class="line">            length = min(res.length(), strs[i].length());</span><br><span class="line">            <span class="keyword">while</span>(length &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(res.substr(<span class="number">0</span>, length) == strs[i].substr(<span class="number">0</span>, length))&#123;</span><br><span class="line">                    res = strs[i].substr(<span class="number">0</span>, length);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    length --;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (length == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> A method is refered from online. Aims to compare every characters, if each characters is the same at the same position, store it!<br></p>
-<p>The first loop is the length of strs[0] (1th string), the second loop is number of elements of vector. At 8 line, take each characters <code>s[i]</code> from every strings to match a character of <code>strs[0][i]</code>, meanwhile, check the length of string whether it exceeds i index(position) or not. If a condtion is true, store this character <code>strs[0][i]</code>. On the contrary, return a record.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs.empty()) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> res;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strs[<span class="number">0</span>].length(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">const</span> <span class="built_in">string</span> &amp;s : strs)</span><br><span class="line">                <span class="keyword">if</span> (s.length() &lt;= i || s[i] != strs[<span class="number">0</span>][i]) <span class="keyword">return</span> res;</span><br><span class="line">            res += strs[<span class="number">0</span>][i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Idea:<br></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++)&#123;</span><br><span class="line">            count += (n &amp; <span class="number">1</span> == <span class="number">1</span>)?<span class="number">1</span>:<span class="number">0</span>;</span><br><span class="line">            n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -475,7 +470,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>Post link: </strong>
-      <a href="https://egbert-yu-ting.github.io/posts/2768cb2c/" title="[LeetCode Road] Longest Common Prefix - Solution&#x2F;C++">https://egbert-yu-ting.github.io/posts/2768cb2c/</a>
+      <a href="https://egbert-yu-ting.github.io/posts/790fdd9f/" title="[LeetCode] Number of 1 Bits">https://egbert-yu-ting.github.io/posts/790fdd9f/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -484,21 +479,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/String/" rel="tag"><i class="fa fa-tag"></i> String</a>
+              <a href="/tags/Shift-Operators/" rel="tag"><i class="fa fa-tag"></i> Shift_Operators</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/8caf8f3c/" rel="prev" title="[LeetCode Road] Roman to Integer - Solution/C++">
-                  <i class="fa fa-chevron-left"></i> [LeetCode Road] Roman to Integer - Solution/C++
+                <a href="/posts/417b9784/" rel="prev" title="[LeetCode Road] Reverse Bits">
+                  <i class="fa fa-chevron-left"></i> [LeetCode Road] Reverse Bits
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/5ddd3578/" rel="next" title="[LeetCode Road] Valid Parentheses - Solution/C++">
-                  [LeetCode Road] Valid Parentheses - Solution/C++ <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -613,9 +605,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://egbert-yu-ting.github.io/posts/2768cb2c/";
-    this.page.identifier = "posts/2768cb2c/";
-    this.page.title = "[LeetCode Road] Longest Common Prefix - Solution/C++";
+    this.page.url = "https://egbert-yu-ting.github.io/posts/790fdd9f/";
+    this.page.identifier = "posts/790fdd9f/";
+    this.page.title = "[LeetCode] Number of 1 Bits";
     };
   NexT.utils.loadComments('#disqus_thread', () => {
     if (window.DISQUS) {

@@ -33,7 +33,7 @@
 <meta property="og:description" content="202. Happy Number  Question: Write an algorithm to determine if a number n is happy. A happy number is a number defined by the following process:   Starting with any positive integer, replace the num">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-05T01:11:00.000Z">
-<meta property="article:modified_time" content="2021-02-05T06:46:27.312Z">
+<meta property="article:modified_time" content="2021-02-05T07:53:09.163Z">
 <meta property="article:author" content="EgbertLin">
 <meta name="twitter:card" content="summary">
 
@@ -380,7 +380,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-02-05 09:11:00 / Modified: 14:46:27" itemprop="dateCreated datePublished" datetime="2021-02-05T09:11:00+08:00">2021-02-05</time>
+      <time title="Created: 2021-02-05 09:11:00 / Modified: 15:53:09" itemprop="dateCreated datePublished" datetime="2021-02-05T09:11:00+08:00">2021-02-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -444,7 +444,7 @@ Those numbers for which this process ends in 1 are happy.
 <p></strong></p>
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br></p>
+<p>Idea:<br> At first, I suggest you realizing what is unhappy number? You will find out the rule. E.g., n = 48 Ｍath.pow(4,2) + Math.pow(8,2) = 80</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isHappy</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; umap;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">                sum += <span class="built_in">pow</span>(n%<span class="number">10</span>, <span class="number">2</span>);</span><br><span class="line">                n /= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(umap.count(sum)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            umap.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(sum, sum));</span><br><span class="line">            n = sum;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>

@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-05T01:04:30.592Z</updated>
+  <updated>2021-02-05T01:07:44.875Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,17 +21,25 @@
     <link href="https://egbert-yu-ting.github.io/posts/790fdd9f/"/>
     <id>https://egbert-yu-ting.github.io/posts/790fdd9f/</id>
     <published>2021-02-05T00:52:35.000Z</published>
-    <updated>2021-02-05T01:04:30.592Z</updated>
+    <updated>2021-02-05T01:07:44.875Z</updated>
     
     
-      
-      
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6px&quot;&gt;&lt;b&gt;191. Number of 1 Bits&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Write a function that takes</summary>
-      
+&lt;p&gt;Write a function that takes an unsigned integer and returns the number of &#39;1&#39; bits it has (also known as the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;Hamming weight&lt;/span&gt;&lt;/font&gt;).&lt;/p&gt;
+&lt;b&gt;Note:&lt;/b&gt;
+&lt;ul&gt;
+&lt;li&gt;
+Note that in some languages such as Java, there is no unsigned integer type. In this case, the input will be given as a signed integer type. It should not affect your implementation, as the integer&#39;s internal binary representation is the same, whether it is signed or unsigned.
+&lt;/li&gt;
+&lt;li&gt;
+In Java, the compiler represents the signed integers using &lt;a href=&quot;https://en.wikipedia.org/wiki/Two%27s_complement&quot;&gt;2&#39;s complement&lt;/a&gt; notation. Therefore, in &lt;b&gt;Example 3&lt;/b&gt; above, the input represents the signed integer. &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;-3&lt;/font&gt;
+&lt;/style&gt;
+.
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     

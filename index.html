@@ -377,7 +377,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-02-05 08:52:35 / Modified: 09:04:30" itemprop="dateCreated datePublished" datetime="2021-02-05T08:52:35+08:00">2021-02-05</time>
+      <time title="Created: 2021-02-05 08:52:35 / Modified: 09:07:44" itemprop="dateCreated datePublished" datetime="2021-02-05T08:52:35+08:00">2021-02-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -429,27 +429,14 @@ In Java, the compiler represents the signed integers using <a target="_blank" re
 .
 </li>
 </ul>
-<p><b>Follow up:</b> If this function is called many times, how would you optimize it?</p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> n = 00000000000000000000000000001011<br> <b>Output:</b> 3<br> <b>Explanation:</b> The input binary string <b>00000000000000000000000000001011</b> has a total of three '1' bits.
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> n = 00000000000000000000000010000000<br> <b>Output:</b> 1<br> <b>Explanation:</b> The input binary string <b>00000000000000000000000010000000</b> has a total of one '1' bit.
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> n = 11111111111111111111111111111101<br> <b>Output:</b> 31<br> <b>Explanation:</b> The input binary string <b>11111111111111111111111111111101</b> has a total of thirty one '1' bits.
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-The input must be a <b>binary string</b> of length <span style="background-color:#F0F0F0"><font color=#808080>32</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++)&#123;</span><br><span class="line">            count += (n &amp; <span class="number">1</span> == <span class="number">1</span>)?<span class="number">1</span>:<span class="number">0</span>;</span><br><span class="line">            n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/790fdd9f/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

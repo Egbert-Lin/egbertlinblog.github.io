@@ -328,7 +328,9 @@ return its bottom-up level order traversal as:
 <p>Count the number of prime numbers less than a non-negative number, <span style="background-color:#F0F0F0"><font color=#808080>n</span></font>.</p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
-<p><b>Input:</b> n = 10<br> <b>Output:</b> 4<br> <b>Explanation:</b> There are 4 prime numbers less than 10, they are 2, 3, 5, 7.</o></p>
+<b>Input:</b> n = 10<br> <b>Output:</b> 4<br> <b>Explanation:</b> There are 4 prime numbers less than 10, they are 2, 3, 5, 7.
+</p>
+<a id="more"></a>
 <p style="background-color:#F0F0F0">
 <b>Input:</b> n = 0<br> <b>Output:</b> 0
 </p>

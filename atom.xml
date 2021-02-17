@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-17T08:27:24.540Z</updated>
+  <updated>2021-02-17T08:31:05.615Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,17 +21,18 @@
     <link href="https://egbert-yu-ting.github.io/posts/bcde18a6/"/>
     <id>https://egbert-yu-ting.github.io/posts/bcde18a6/</id>
     <published>2021-02-17T03:31:48.000Z</published>
-    <updated>2021-02-17T08:27:24.540Z</updated>
+    <updated>2021-02-17T08:31:05.615Z</updated>
     
     
-      
-      
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6px&quot;&gt;&lt;b&gt;204. Count Primes&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Count the number of prime numbe</summary>
-      
+&lt;p&gt;Count the number of prime numbers less than a non-negative number, &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n&lt;/span&gt;&lt;/font&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;example&quot;&gt;Example:&lt;/h2&gt;
+&lt;p style=&quot;background-color:#F0F0F0&quot;&gt;
+&lt;b&gt;Input:&lt;/b&gt; n = 10&lt;br&gt; &lt;b&gt;Output:&lt;/b&gt; 4&lt;br&gt; &lt;b&gt;Explanation:&lt;/b&gt; There are 4 prime numbers less than 10, they are 2, 3, 5, 7.
+&lt;/p&gt;</summary>
     
     
     

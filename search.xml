@@ -2587,4 +2587,38 @@ nums is sorted in increasing order.
         <tag>Editor</tag>
       </tags>
   </entry>
+  <entry>
+    <title>[LeetCode Road] Count Primes</title>
+    <url>/posts/bcde18a6/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>204. Count Primes</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Count the number of prime numbers less than a non-negative number, <span style="background-color:#F0F0F0"><font color=#808080>n</span></font>.</p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<p><b>Input:</b> n = 10<br> <b>Output:</b> 4<br> <b>Explanation:</b> There are 4 prime numbers less than 10, they are 2, 3, 5, 7.</o></p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> n = 0<br> <b>Output:</b> 0
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> n = 1<br> <b>Output:</b> 0
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= n &lt;= 5 * 10<sup>6</sup></font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> If you looked at source code, you must feel so easy.<br> At first, give a statement if n is smaller than 2, return 0.<br></p>
+<p>Declare a vector that the size is <code>n</code>, variable of <code>count</code> as output and variable of <code>i</code> as vector's index.<br></p>
+<p><code>i</code> starts at 2, if <b>vector[i]</b> is 0, <code>count</code> will add 1. Then, get all multiples of the value of <b>vector[i]</b> but smaller than <code>n</code>, assign 1 to those position at vector.<br></p>
+<p><I>Notice: Assign 1 to <b>vector[multiples of i]</b> that means the value is not prime number</I><br> So, if the value of <code>vector[i]</code> is 0, it's must prime number.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countPrimes</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">number</span><span class="params">(n, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>, i = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; n)&#123;</span><br><span class="line">            <span class="keyword">if</span>(number[i] == <span class="number">0</span>)&#123;</span><br><span class="line">                count++;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">2</span>; j*i &lt; n; j++)</span><br><span class="line">                    number[j*i] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+  </entry>
 </search>

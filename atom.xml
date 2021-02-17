@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-17T03:28:14.723Z</updated>
+  <updated>2021-02-17T07:09:13.610Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[LeetCode Road] Count Primes</title>
+    <link href="https://egbert-yu-ting.github.io/posts/bcde18a6/"/>
+    <id>https://egbert-yu-ting.github.io/posts/bcde18a6/</id>
+    <published>2021-02-17T03:31:48.000Z</published>
+    <updated>2021-02-17T07:09:13.610Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;204. Count Primes&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Count the number of prime numbe</summary>
+      
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>[LeetCode Road] Remove Linked List Elements</title>
@@ -518,32 +542,6 @@ getMin() -- Retrieve the minimum element in the stack.
     <category term="Python" scheme="https://egbert-yu-ting.github.io/tags/Python/"/>
     
     <category term="Platform" scheme="https://egbert-yu-ting.github.io/tags/Platform/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Best Time to Buy and Sell Stock - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/a026a3d3/"/>
-    <id>https://egbert-yu-ting.github.io/posts/a026a3d3/</id>
-    <published>2021-01-18T15:28:03.000Z</published>
-    <updated>2021-01-22T01:32:38.566Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;121. Best Time to Buy and Sell Stock&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;You are given an array &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;prices&lt;/font&gt;&lt;/span&gt; where &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;prices[i]&lt;/font&gt;&lt;/span&gt; is the price of a given stock on the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;i^th&lt;/font&gt;&lt;/span&gt; day.&lt;/p&gt;
-&lt;p&gt;You want to maximize your profit by choosing a &lt;strong&gt;single day&lt;/strong&gt; to buy one stock and choosing a &lt;strong&gt;different day in the future&lt;/strong&gt; to sell that stock.</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Stock" scheme="https://egbert-yu-ting.github.io/tags/Stock/"/>
-    
-    <category term="BruteForce" scheme="https://egbert-yu-ting.github.io/tags/BruteForce/"/>
     
   </entry>
   

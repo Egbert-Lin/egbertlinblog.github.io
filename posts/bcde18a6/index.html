@@ -32,10 +32,12 @@
 <meta property="og:site_name" content="Egbert Lin&#39;s Blog">
 <meta property="og:description" content="204. Count Primes  Question: Count the number of prime numbers less than a non-negative number, n. Example:  Input: n &#x3D; 10 Output: 4 Explanation: There are 4 prime numbers less than 10, they are 2, 3">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://egbert-yu-ting.github.io/posts/bcde18a6/prime%20number.png">
 <meta property="article:published_time" content="2021-02-17T03:31:48.000Z">
-<meta property="article:modified_time" content="2021-02-17T07:09:13.610Z">
+<meta property="article:modified_time" content="2021-02-17T08:27:24.540Z">
 <meta property="article:author" content="EgbertLin">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://egbert-yu-ting.github.io/posts/bcde18a6/prime%20number.png">
 
 
 <link rel="canonical" href="https://egbert-yu-ting.github.io/posts/bcde18a6/">
@@ -380,7 +382,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-02-17 11:31:48 / Modified: 15:09:13" itemprop="dateCreated datePublished" datetime="2021-02-17T11:31:48+08:00">2021-02-17</time>
+      <time title="Created: 2021-02-17 11:31:48 / Modified: 16:27:24" itemprop="dateCreated datePublished" datetime="2021-02-17T11:31:48+08:00">2021-02-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -441,6 +443,7 @@
 <p>Declare a vector that the size is <code>n</code>, variable of <code>count</code> as output and variable of <code>i</code> as vector's index.<br></p>
 <p><code>i</code> starts at 2, if <b>vector[i]</b> is 0, <code>count</code> will add 1. Then, get all multiples of the value of <b>vector[i]</b> but smaller than <code>n</code>, assign 1 to those position at vector.<br></p>
 <p><I>Notice: Assign 1 to <b>vector[multiples of i]</b> that means the value is not prime number</I><br> So, if the value of <code>vector[i]</code> is 0, it's must prime number.</p>
+<p>The demonstration is shown as below:<br> <img src="prime%20number.png" /></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countPrimes</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">number</span><span class="params">(n, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>, i = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; n)&#123;</span><br><span class="line">            <span class="keyword">if</span>(number[i] == <span class="number">0</span>)&#123;</span><br><span class="line">                count++;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">2</span>; j*i &lt; n; j++)</span><br><span class="line">                    number[j*i] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>

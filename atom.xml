@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-05T09:20:25.124Z</updated>
+  <updated>2021-02-17T02:38:56.022Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[LeetCode Road] Remove Linked List Elements</title>
+    <link href="https://egbert-yu-ting.github.io/posts/2ded864c/"/>
+    <id>https://egbert-yu-ting.github.io/posts/2ded864c/</id>
+    <published>2021-02-08T02:49:56.000Z</published>
+    <updated>2021-02-17T02:38:56.022Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;203. Remove Linked List Elements&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Remove all elements from a linked list of integers that have value &lt;I&gt;&lt;b&gt;val&lt;/b&gt;&lt;/I&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;example&quot;&gt;Example:&lt;/h2&gt;
+&lt;p style=&quot;background-color:#F0F0F0&quot;&gt;
+&lt;b&gt;Input:&lt;/b&gt; 1-&amp;gt;2-&amp;gt;6-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;6, &lt;I&gt;&lt;b&gt;val&lt;/b&gt;&lt;/I&gt; = 6&lt;br&gt; &lt;b&gt;Output:&lt;/b&gt; 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5
+&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+    <category term="ListNode" scheme="https://egbert-yu-ting.github.io/tags/ListNode/"/>
+    
+  </entry>
   
   <entry>
     <title>[LeetCode Road] Happy Number</title>
@@ -517,29 +544,6 @@ getMin() -- Retrieve the minimum element in the stack.
     <category term="Stock" scheme="https://egbert-yu-ting.github.io/tags/Stock/"/>
     
     <category term="BruteForce" scheme="https://egbert-yu-ting.github.io/tags/BruteForce/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Pascal&#39;s Triangle II - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/f3431365/"/>
-    <id>https://egbert-yu-ting.github.io/posts/f3431365/</id>
-    <published>2021-01-18T05:55:39.000Z</published>
-    <updated>2021-01-24T14:32:08.077Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;118. Pascal&#39;s Triangle II&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given an integer &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;rowIndex&lt;/font&gt;&lt;/span&gt;, return the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;rowIndex^th&lt;/font&gt;&lt;/span&gt; row of the Pascal&#39;s triangle. Notice that the row index starts from &lt;strong&gt;0&lt;/strong&gt;. &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif&quot; alt=&quot;animation&quot; /&gt; &lt;font size=&quot;2&quot;&gt;In Pascal&#39;s triangle, each number is the sum of the two numbers directly above it.&lt;/font&gt;</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="2D_Vector" scheme="https://egbert-yu-ting.github.io/tags/2D-Vector/"/>
     
   </entry>
   

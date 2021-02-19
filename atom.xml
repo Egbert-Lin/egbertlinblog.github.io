@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-17T08:31:05.615Z</updated>
+  <updated>2021-02-19T07:50:25.395Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[LeetCode Road] Isomorphic Strings</title>
+    <link href="https://egbert-yu-ting.github.io/posts/31bd0f13/"/>
+    <id>https://egbert-yu-ting.github.io/posts/31bd0f13/</id>
+    <published>2021-02-19T03:01:12.000Z</published>
+    <updated>2021-02-19T07:50:25.395Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given two strings &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;s&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;t&lt;/font&gt;&lt;/span&gt;, determine if they are isomorphic.&lt;/p&gt;
+&lt;p&gt;Two strings &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;s&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;t&lt;/font&gt;&lt;/span&gt; are isomorphic if the characters in s can be replaced to get &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;t&lt;/font&gt;&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself.</summary>
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+    <category term="Hash_table" scheme="https://egbert-yu-ting.github.io/tags/Hash-table/"/>
+    
+  </entry>
   
   <entry>
     <title>[LeetCode Road] Count Primes</title>
@@ -516,33 +538,6 @@ getMin() -- Retrieve the minimum element in the stack.
     
     
     <category term="Stock" scheme="https://egbert-yu-ting.github.io/tags/Stock/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Run PyCharm: Python development platform on Ubuntu (Ryu SDN)</title>
-    <link href="https://egbert-yu-ting.github.io/posts/784045ef/"/>
-    <id>https://egbert-yu-ting.github.io/posts/784045ef/</id>
-    <published>2021-01-19T16:34:14.000Z</published>
-    <updated>2021-01-22T00:32:12.774Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;Tutorial - PyCharm Installation and build project environment for the development of Ryu controller&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;what-is-pycharm&quot;&gt;What is PyCharm?&lt;/h2&gt;
-&lt;p&gt;Are you developing python project on Ubuntu right now? When you are writing code, I guess that you edit file by &lt;code&gt;vi&lt;/code&gt;, &lt;code&gt;vim&lt;/code&gt; or &#39;gedit&#39;. Maybe these tools are convenient to you, but those are inefficient and hard to maintain program for the development of big projet.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="Instruction" scheme="https://egbert-yu-ting.github.io/categories/Instruction/"/>
-    
-    
-    <category term="IDE" scheme="https://egbert-yu-ting.github.io/tags/IDE/"/>
-    
-    <category term="Python" scheme="https://egbert-yu-ting.github.io/tags/Python/"/>
-    
-    <category term="Platform" scheme="https://egbert-yu-ting.github.io/tags/Platform/"/>
     
   </entry>
   

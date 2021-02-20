@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-20T02:28:51.733Z</updated>
+  <updated>2021-02-20T09:15:40.288Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -17,14 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>[LeetCode Road] Reverse Linked List</title>
+    <link href="https://egbert-yu-ting.github.io/posts/c6ae99a5/"/>
+    <id>https://egbert-yu-ting.github.io/posts/c6ae99a5/</id>
+    <published>2021-02-20T09:02:17.000Z</published>
+    <updated>2021-02-20T09:15:40.288Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;206. Reverse Linked List&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;head&lt;/font&gt;&lt;/span&gt; of a singly linked list, reverse the list, and return &lt;I&gt;the reversed list&lt;/I&gt;.</summary>
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+    <category term="ListNode" scheme="https://egbert-yu-ting.github.io/tags/ListNode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[LeetCode Road] Isomorphic Strings</title>
     <link href="https://egbert-yu-ting.github.io/posts/31bd0f13/"/>
     <id>https://egbert-yu-ting.github.io/posts/31bd0f13/</id>
     <published>2021-02-19T03:01:12.000Z</published>
-    <updated>2021-02-20T02:28:51.733Z</updated>
+    <updated>2021-02-20T09:09:40.088Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;205. Isomorphic Strings&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Given two strings &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;s&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;t&lt;/font&gt;&lt;/span&gt;, determine if they are isomorphic.&lt;/p&gt;
 &lt;p&gt;Two strings &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;s&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;t&lt;/font&gt;&lt;/span&gt; are isomorphic if the characters in s can be replaced to get &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;t&lt;/font&gt;&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself.</summary>
@@ -515,29 +541,6 @@ getMin() -- Retrieve the minimum element in the stack.
     
     
     <category term="STL" scheme="https://egbert-yu-ting.github.io/tags/STL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Best Time to Buy and Sell Stock II - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/a10d34fe/"/>
-    <id>https://egbert-yu-ting.github.io/posts/a10d34fe/</id>
-    <published>2021-01-20T07:00:48.000Z</published>
-    <updated>2021-01-22T01:32:21.931Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;122. Best Time to Buy and Sell Stock II&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Say you have an array &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;prices&lt;/font&gt;&lt;/span&gt; for which the ith element is the price of a given stock on day i.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Stock" scheme="https://egbert-yu-ting.github.io/tags/Stock/"/>
     
   </entry>
   

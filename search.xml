@@ -798,7 +798,7 @@ After counting, you should make those Lists moved to the same position, as below
 <li>
 <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>t</font></span> consist of any valid ascii character.
 </li>
-<p></strongs></p>
+<p></strong></p>
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
 <p>Idea:<br> "Isomorphic" means that no more than one character of string can map to the same character. E.g., <code>s1="apple"</code> <code>s2="paper"</code>, you can see two <span style="background-color:#F0F0F0"><font color=#808080>p</font></span> alphabets of s1 map to <span style="background-color:#F0F0F0"><font color=#808080>a</font></span> alphabet and <span style="background-color:#F0F0F0"><font color=#808080>p</font></span> alphabet at s2, the result is false.<br></p>

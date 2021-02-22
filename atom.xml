@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-22T06:02:41.205Z</updated>
+  <updated>2021-02-22T06:13:45.549Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/a3617bc9/"/>
     <id>https://egbert-yu-ting.github.io/posts/a3617bc9/</id>
     <published>2021-02-22T02:06:16.000Z</published>
-    <updated>2021-02-22T06:02:41.205Z</updated>
+    <updated>2021-02-22T06:13:45.549Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -363,7 +363,7 @@ For example:
     <link href="https://egbert-yu-ting.github.io/posts/ef374e86/"/>
     <id>https://egbert-yu-ting.github.io/posts/ef374e86/</id>
     <published>2021-01-29T01:19:53.000Z</published>
-    <updated>2021-02-22T06:13:22.171Z</updated>
+    <updated>2021-02-22T06:55:21.846Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -501,7 +501,7 @@ getMin() -- Retrieve the minimum element in the stack.
     <link href="https://egbert-yu-ting.github.io/posts/44e8eae/"/>
     <id>https://egbert-yu-ting.github.io/posts/44e8eae/</id>
     <published>2021-01-25T01:04:33.000Z</published>
-    <updated>2021-01-25T07:04:38.633Z</updated>
+    <updated>2021-02-22T06:54:36.304Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -520,6 +520,8 @@ getMin() -- Retrieve the minimum element in the stack.
     <category term="ListNode" scheme="https://egbert-yu-ting.github.io/tags/ListNode/"/>
     
     <category term="Algorithm" scheme="https://egbert-yu-ting.github.io/tags/Algorithm/"/>
+    
+    <category term="Unordered_set(STL)" scheme="https://egbert-yu-ting.github.io/tags/Unordered-set-STL/"/>
     
   </entry>
   

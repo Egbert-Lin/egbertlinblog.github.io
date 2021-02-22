@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-20T09:15:40.288Z</updated>
+  <updated>2021-02-22T06:02:41.205Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[LeetCode Road] Contains Duplicate</title>
+    <link href="https://egbert-yu-ting.github.io/posts/a3617bc9/"/>
+    <id>https://egbert-yu-ting.github.io/posts/a3617bc9/</id>
+    <published>2021-02-22T02:06:16.000Z</published>
+    <updated>2021-02-22T06:02:41.205Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;217. Contains Duplicate&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given an array of integers, find if the array contains any duplicates.&lt;/p&gt;
+&lt;p&gt;Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.</summary>
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>[LeetCode Road] Reverse Linked List</title>
@@ -44,7 +66,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/31bd0f13/"/>
     <id>https://egbert-yu-ting.github.io/posts/31bd0f13/</id>
     <published>2021-02-19T03:01:12.000Z</published>
-    <updated>2021-02-20T09:09:40.088Z</updated>
+    <updated>2021-02-22T06:11:11.308Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -60,7 +82,7 @@
     <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
     
     
-    <category term="Hash_table" scheme="https://egbert-yu-ting.github.io/tags/Hash-table/"/>
+    <category term="Unordered_map(STL)" scheme="https://egbert-yu-ting.github.io/tags/Unordered-map-STL/"/>
     
   </entry>
   
@@ -69,7 +91,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/bcde18a6/"/>
     <id>https://egbert-yu-ting.github.io/posts/bcde18a6/</id>
     <published>2021-02-17T03:31:48.000Z</published>
-    <updated>2021-02-17T08:31:05.615Z</updated>
+    <updated>2021-02-22T06:13:27.677Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -121,7 +143,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/e73e301/"/>
     <id>https://egbert-yu-ting.github.io/posts/e73e301/</id>
     <published>2021-02-05T01:11:00.000Z</published>
-    <updated>2021-02-05T09:20:25.124Z</updated>
+    <updated>2021-02-22T06:12:01.105Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -147,6 +169,8 @@ Those numbers for which this process ends in 1 are happy.
     
     <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
     
+    
+    <category term="Unordered_map(STL)" scheme="https://egbert-yu-ting.github.io/tags/Unordered-map-STL/"/>
     
   </entry>
   
@@ -339,7 +363,7 @@ For example:
     <link href="https://egbert-yu-ting.github.io/posts/ef374e86/"/>
     <id>https://egbert-yu-ting.github.io/posts/ef374e86/</id>
     <published>2021-01-29T01:19:53.000Z</published>
-    <updated>2021-01-30T17:52:19.860Z</updated>
+    <updated>2021-02-22T06:13:22.171Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -354,6 +378,8 @@ For example:
     
     <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
     
+    
+    <category term="Unordered_map(STL)" scheme="https://egbert-yu-ting.github.io/tags/Unordered-map-STL/"/>
     
   </entry>
   
@@ -502,7 +528,7 @@ getMin() -- Retrieve the minimum element in the stack.
     <link href="https://egbert-yu-ting.github.io/posts/f249b7a1/"/>
     <id>https://egbert-yu-ting.github.io/posts/f249b7a1/</id>
     <published>2021-01-21T06:23:18.000Z</published>
-    <updated>2021-01-22T01:29:31.827Z</updated>
+    <updated>2021-02-22T06:09:58.527Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
@@ -517,30 +543,6 @@ getMin() -- Retrieve the minimum element in the stack.
     <category term="Logical_Operators" scheme="https://egbert-yu-ting.github.io/tags/Logical-Operators/"/>
     
     <category term="Map(STL)" scheme="https://egbert-yu-ting.github.io/tags/Map-STL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Valid Palindromev - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/1686f472/"/>
-    <id>https://egbert-yu-ting.github.io/posts/1686f472/</id>
-    <published>2021-01-21T01:08:36.000Z</published>
-    <updated>2021-01-22T02:08:41.509Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;125. Valid Palindrome&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; For the purpose of this problem, we define empty string as valid palindrome.</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="STL" scheme="https://egbert-yu-ting.github.io/tags/STL/"/>
     
   </entry>
   

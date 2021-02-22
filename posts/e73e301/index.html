@@ -33,8 +33,9 @@
 <meta property="og:description" content="202. Happy Number  Question: Write an algorithm to determine if a number n is happy. A happy number is a number defined by the following process:   Starting with any positive integer, replace the num">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-05T01:11:00.000Z">
-<meta property="article:modified_time" content="2021-02-05T09:20:25.124Z">
+<meta property="article:modified_time" content="2021-02-22T06:12:01.105Z">
 <meta property="article:author" content="EgbertLin">
+<meta property="article:tag" content="Unordered_map(STL)">
 <meta name="twitter:card" content="summary">
 
 
@@ -261,7 +262,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-count">63</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -274,7 +275,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">48</span>
+        <span class="site-state-item-count">49</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -297,6 +298,11 @@
 	</div>
 	<ul class="links-of-blogroll-list recent-posts-list">
 	        <li class="my-links-of-blogroll-item">
+		    <a href="/posts/a3617bc9/" title="[LeetCode Road] Contains Duplicate" target="">
+		    [LeetCode Road] Contains Duplicate
+		    </a>
+		</li>
+	        <li class="my-links-of-blogroll-item">
 		    <a href="/posts/c6ae99a5/" title="[LeetCode Road] Reverse Linked List" target="">
 		    [LeetCode Road] Reverse Linked List
 		    </a>
@@ -314,11 +320,6 @@
 	        <li class="my-links-of-blogroll-item">
 		    <a href="/posts/2ded864c/" title="[LeetCode Road] Remove Linked List Elements" target="">
 		    [LeetCode Road] Remove Linked List Elements
-		    </a>
-		</li>
-	        <li class="my-links-of-blogroll-item">
-		    <a href="/posts/e73e301/" title="[LeetCode Road] Happy Number" target="">
-		    [LeetCode Road] Happy Number
 		    </a>
 		</li>
 	</ul>
@@ -378,10 +379,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-02-05 09:11:00 / Modified: 17:20:25" itemprop="dateCreated datePublished" datetime="2021-02-05T09:11:00+08:00">2021-02-05</time>
+      <time title="Created: 2021-02-05 09:11:00" itemprop="dateCreated datePublished" datetime="2021-02-05T09:11:00+08:00">2021-02-05</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-02-22 14:12:01" itemprop="dateModified" datetime="2021-02-22T14:12:01+08:00">2021-02-22</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -450,7 +457,7 @@ Those numbers for which this process ends in 1 are happy.
 <h3 id="version-1"><u>Version 1</u></h3>
 <p>Idea:<br> At first, I suggest you realizing what is unhappy number? You will find out the rule. E.g., n = 48<br> 4<sup>2</sup> + 8<sup>2</sup> = 80<br> 8<sup>2</sup> + 0<sup>2</sup> = 64<br> 6<sup>2</sup> + 4<sup>2</sup> = 52<br> 5<sup>2</sup> + 2<sup>2</sup> = 29<br> 2<sup>2</sup> + 9<sup>2</sup> = 85<br> 8<sup>2</sup> + 5<sup>2</sup> = 89<br> 8<sup>2</sup> + 9<sup>2</sup> = 145<br> 1<sup>2</sup> + 4<sup>2</sup> + 5<sup>2</sup> = 42<br> 4<sup>2</sup> + 2<sup>2</sup> = 20<br> 2<sup>2</sup> + 0<sup>2</sup> = 4<br> 4<sup>2</sup> = 16<br> 1<sup>2</sup> + 6<sup>2</sup> = 37<br> 3<sup>2</sup> + 7<sup>2</sup> = 58<br> 5<sup>2</sup> + 8<sup>2</sup> = 89<br></p>
 <p>From the above example, you can find the regular process. If a number is unhappy number, the output will repeat. (In this case, <b>89</b> is repeated number)<br></p>
-<p>Hence, you can take the <b>hash table</b> to store each output.<br> Then, use <code>count()</code> to check whether the output exists in hash table or not, if it has already existed, <code>count()</code> will return <b>false</b>, and it means a number is unhappy number. On the contrary, if the ouput is 1, break the while() and return <b>true</b>.</p>
+<p>Hence, you can take the <b>unordered_map container</b> to store each output.<br> Then, use <code>count()</code> to check whether the output exists in container or not, if it has already existed, <code>count()</code> will return <b>false</b>, and it means a number is unhappy number. On the contrary, if the ouput is 1, break the while() and return <b>true</b>.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isHappy</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; umap;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">                sum += <span class="built_in">pow</span>(n%<span class="number">10</span>, <span class="number">2</span>);</span><br><span class="line">                n /= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(umap.count(sum)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            umap.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(sum, sum));</span><br><span class="line">            n = sum;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -477,6 +484,9 @@ Those numbers for which this process ends in 1 are happy.
 </ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/Unordered-map-STL/" rel="tag"><i class="fa fa-tag"></i> Unordered_map(STL)</a>
+          </div>
 
         
 

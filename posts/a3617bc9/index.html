@@ -33,7 +33,7 @@
 <meta property="og:description" content="217. Contains Duplicate  Question: Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it sho">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-22T02:06:16.000Z">
-<meta property="article:modified_time" content="2021-02-22T06:56:47.890Z">
+<meta property="article:modified_time" content="2021-02-22T17:33:49.017Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="Unordered_map(STL)">
 <meta property="article:tag" content="Unordered_set(STL)">
@@ -381,10 +381,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-02-22 10:06:16 / Modified: 14:56:47" itemprop="dateCreated datePublished" datetime="2021-02-22T10:06:16+08:00">2021-02-22</time>
+      <time title="Created: 2021-02-22 10:06:16" itemprop="dateCreated datePublished" datetime="2021-02-22T10:06:16+08:00">2021-02-22</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-02-23 01:33:49" itemprop="dateModified" datetime="2021-02-23T01:33:49+08:00">2021-02-23</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -427,21 +433,37 @@
 <p>Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct. <a id="more"></a></p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
-<p><b>Input:</b> [1,2,3,1]<br> <b>Output:</b> true<br></p>
+<b>Input:</b> [1,2,3,1]<br> <b>Output:</b> true
+</p>
 <p style="background-color:#F0F0F0">
-<p><b>Input:</b> [1,2,3,4]<br> <b>Output:</b> false<br></p>
+<b>Input:</b> [1,2,3,4]<br> <b>Output:</b> false
+</p>
 <p style="background-color:#F0F0F0">
-<p><b>Input:</b> [1,1,1,3,3,4,3,2,4,2]<br> <b>Output:</b> true<br></p>
+<b>Input:</b> [1,1,1,3,3,4,3,2,4,2]<br> <b>Output:</b> true
+</p>
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br></p>
+<p>Idea:<br> You can use <code>unordered_map</code> to store elements in container. At 7 line, use count() to return 1 or 0. If return 0, it means the nums[i] cannot find, so you can insert it. Otherwise, it means the nums[i] has exist already, return true.</p>
+<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(n)</b></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">containsDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; record;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!record.count(nums[i]))&#123;</span><br><span class="line">                record.insert(<span class="built_in">make_pair</span>(nums[i], <span class="number">0</span>));</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> <b>unordered_set</b></p>
+<p>Idea:<br> Each element is inserted only if it is not equivalent to any other element already in the container (elements in an unordered_set have unique values) by using <b>unordered_set</b>.<br> As mentioned above, an <b>unordered_set</b> can effectively increases the container size by the number of elements inserted.[1]<br></p>
+At 6 line, it can refered to <code>pair&lt;iterator,bool&gt; insert ( const value_type&amp; val );</code>, the function returns a pair object:<br>
+<li>
+First element: an iterator pointing either to the newly inserted element in the container or to the element whose key is equivalent.
+</li>
+<li>
+Second element: a bool value indicating whether the element was successfully inserted or not.
+</li>
+<p><br> So, if <code>record.insert(nums[i]).second</code> returns 0, it represented nums[i] has been inserted in container, return true.</p>
+<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(n)</b></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">containsDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_set</span>&lt;<span class="keyword">int</span>&gt; record;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)</span><br><span class="line">            <span class="keyword">if</span>(!record.insert(nums[i]).second) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="version-3"><u>Version 3</u></h3>
-<p>Idea:<br></p>
+<p>Idea:<br> An optiaml and efficient approach by using sorting.<br> At first, use std::sort() to get an array in order. Then, check current element <code>i</code> and next element <code>i+1</code> whether they are the same or not. If they are the same, return true, otherwise, return false until for loop is end.<br></p>
+<p>What is std::sort()?<br> The algorithm used by sort() is <b>IntroSort</b>. Introsort being a <b>hybrid sorting algorithm</b> uses three sorting algorithm to minimise the running time, <u>Quicksort</u>, <u>Heapsort</u> and <u>Insertion Sort</u>.[2]<br></p>
+<p><b>Time complexity: O(nlogn)</b><br> <b>Space complexity: O(1)</b></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">containsDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        sort(nums.begin(), nums.end());</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == nums[i + <span class="number">1</span>]) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Reference:<br> [1] https://www.cplusplus.com/reference/unordered_set/unordered_set/insert/ [2] https://www.geeksforgeeks.org/internal-details-of-stdsort-in-c/</p>
 
     </div>
 

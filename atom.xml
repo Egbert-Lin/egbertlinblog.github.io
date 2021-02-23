@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-23T03:48:47.678Z</updated>
+  <updated>2021-02-23T08:27:59.478Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[LeetCode Road] Implement Stack using Queues</title>
+    <link href="https://egbert-yu-ting.github.io/posts/1e6556c3/"/>
+    <id>https://egbert-yu-ting.github.io/posts/1e6556c3/</id>
+    <published>2021-02-23T06:39:41.000Z</published>
+    <updated>2021-02-23T08:27:59.478Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;225. Contains Duplicate&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Implement a last in first out (LIFO) stack using only two queues. The implemented stack should support all the functions of a normal queue (&lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;push&lt;/font&gt;&lt;/span&gt;, &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;top&lt;/font&gt;&lt;/span&gt;, &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;pop&lt;/font&gt;&lt;/span&gt;, and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;empty&lt;/font&gt;&lt;/span&gt;).</summary>
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+    <category term="Stack" scheme="https://egbert-yu-ting.github.io/tags/Stack/"/>
+    
+    <category term="Queue" scheme="https://egbert-yu-ting.github.io/tags/Queue/"/>
+    
+  </entry>
   
   <entry>
     <title>[LeetCode Road] Contains Duplicate II</title>
@@ -44,7 +69,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/a3617bc9/"/>
     <id>https://egbert-yu-ting.github.io/posts/a3617bc9/</id>
     <published>2021-02-22T02:06:16.000Z</published>
-    <updated>2021-02-23T00:37:15.418Z</updated>
+    <updated>2021-02-23T07:20:30.430Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -524,35 +549,6 @@ getMin() -- Retrieve the minimum element in the stack.
     
     
     <category term="Stack" scheme="https://egbert-yu-ting.github.io/tags/Stack/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Linked List Cycle - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/44e8eae/"/>
-    <id>https://egbert-yu-ting.github.io/posts/44e8eae/</id>
-    <published>2021-01-25T01:04:33.000Z</published>
-    <updated>2021-02-22T06:54:36.304Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;141. Linked List Cycle&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;head&lt;/font&gt;&lt;/span&gt;, the head of a linked list, determine if the linked list has a cycle in it.&lt;/p&gt;
-&lt;p&gt;There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;next&lt;/font&gt;&lt;/soab&gt; pointer. Internally, &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;pos&lt;/font&gt;&lt;/span&gt; is used to denote the index of the node that tail&#39;s &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;next&lt;/font&gt;&lt;/span&gt; pointer is connected to. &lt;strong&gt;Note&lt;/strong&gt; that &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;pos&lt;/font&gt;&lt;/span&gt; &lt;strong&gt;is not passed as a parameter&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Return &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;true&lt;/font&gt;&lt;/span&gt; &lt;em&gt;if there is a cycle in the linked list&lt;/em&gt;. Otherwise, return &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;false&lt;/font&gt;&lt;/span&gt;.</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Unordered_set(STL)" scheme="https://egbert-yu-ting.github.io/tags/Unordered-set-STL/"/>
-    
-    <category term="ListNode" scheme="https://egbert-yu-ting.github.io/tags/ListNode/"/>
-    
-    <category term="Algorithm" scheme="https://egbert-yu-ting.github.io/tags/Algorithm/"/>
     
   </entry>
   

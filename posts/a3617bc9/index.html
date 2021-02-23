@@ -33,7 +33,7 @@
 <meta property="og:description" content="217. Contains Duplicate  Question: Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it sho">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-22T02:06:16.000Z">
-<meta property="article:modified_time" content="2021-02-22T17:33:49.017Z">
+<meta property="article:modified_time" content="2021-02-23T00:37:15.418Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="Unordered_map(STL)">
 <meta property="article:tag" content="Unordered_set(STL)">
@@ -264,7 +264,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-count">64</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -300,6 +300,11 @@
 	</div>
 	<ul class="links-of-blogroll-list recent-posts-list">
 	        <li class="my-links-of-blogroll-item">
+		    <a href="/posts/81b7ce15/" title="[LeetCode Road] Contains Duplicate II" target="">
+		    [LeetCode Road] Contains Duplicate II
+		    </a>
+		</li>
+	        <li class="my-links-of-blogroll-item">
 		    <a href="/posts/a3617bc9/" title="[LeetCode Road] Contains Duplicate" target="">
 		    [LeetCode Road] Contains Duplicate
 		    </a>
@@ -317,11 +322,6 @@
 	        <li class="my-links-of-blogroll-item">
 		    <a href="/posts/bcde18a6/" title="[LeetCode Road] Count Primes" target="">
 		    [LeetCode Road] Count Primes
-		    </a>
-		</li>
-	        <li class="my-links-of-blogroll-item">
-		    <a href="/posts/2ded864c/" title="[LeetCode Road] Remove Linked List Elements" target="">
-		    [LeetCode Road] Remove Linked List Elements
 		    </a>
 		</li>
 	</ul>
@@ -389,7 +389,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-02-23 01:33:49" itemprop="dateModified" datetime="2021-02-23T01:33:49+08:00">2021-02-23</time>
+        <time title="Modified: 2021-02-23 08:37:15" itemprop="dateModified" datetime="2021-02-23T08:37:15+08:00">2021-02-23</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -463,7 +463,7 @@ Second element: a bool value indicating whether the element was successfully ins
 <p>What is std::sort()?<br> The algorithm used by sort() is <b>IntroSort</b>. Introsort being a <b>hybrid sorting algorithm</b> uses three sorting algorithm to minimise the running time, <u>Quicksort</u>, <u>Heapsort</u> and <u>Insertion Sort</u>.[2]<br></p>
 <p><b>Time complexity: O(nlogn)</b><br> <b>Space complexity: O(1)</b></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">containsDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        sort(nums.begin(), nums.end());</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == nums[i + <span class="number">1</span>]) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>Reference:<br> [1] https://www.cplusplus.com/reference/unordered_set/unordered_set/insert/ [2] https://www.geeksforgeeks.org/internal-details-of-stdsort-in-c/</p>
+<p>Reference:<br> [1] https://www.cplusplus.com/reference/unordered_set/unordered_set/insert/<br> [2] https://www.geeksforgeeks.org/internal-details-of-stdsort-in-c/</p>
 
     </div>
 
@@ -504,6 +504,9 @@ Second element: a bool value indicating whether the element was successfully ins
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/posts/81b7ce15/" rel="next" title="[LeetCode Road] Contains Duplicate II">
+                  [LeetCode Road] Contains Duplicate II <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>

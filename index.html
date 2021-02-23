@@ -258,7 +258,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-count">64</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -294,6 +294,11 @@
 	</div>
 	<ul class="links-of-blogroll-list recent-posts-list">
 	        <li class="my-links-of-blogroll-item">
+		    <a href="/posts/81b7ce15/" title="[LeetCode Road] Contains Duplicate II" target="">
+		    [LeetCode Road] Contains Duplicate II
+		    </a>
+		</li>
+	        <li class="my-links-of-blogroll-item">
 		    <a href="/posts/a3617bc9/" title="[LeetCode Road] Contains Duplicate" target="">
 		    [LeetCode Road] Contains Duplicate
 		    </a>
@@ -311,11 +316,6 @@
 	        <li class="my-links-of-blogroll-item">
 		    <a href="/posts/bcde18a6/" title="[LeetCode Road] Count Primes" target="">
 		    [LeetCode Road] Count Primes
-		    </a>
-		</li>
-	        <li class="my-links-of-blogroll-item">
-		    <a href="/posts/2ded864c/" title="[LeetCode Road] Remove Linked List Elements" target="">
-		    [LeetCode Road] Remove Linked List Elements
 		    </a>
 		</li>
 	</ul>
@@ -344,6 +344,111 @@
       
 
       
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/81b7ce15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/81b7ce15/" class="post-title-link" itemprop="url">[LeetCode Road] Contains Duplicate II</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-02-23 08:54:07 / Modified: 09:29:25" itemprop="dateCreated datePublished" datetime="2021-02-23T08:54:07+08:00">2021-02-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/posts/81b7ce15/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/81b7ce15/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p align="center">
+<font size="6px"><b>219. Contains Duplicate</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given an array of integers and an integer <I>k</I>, find out whether there are two distinct indices <I>i</I> and <I>j</I> in the array such that <b>nums[i]</b> = <b>nums[j]</b> and the <b>absolute</b> difference between <I>i</I> and <I>j</I> is at most <I>k</I>.</p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [1,2,3,1], k = 3<br> <b>Output:</b> true
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [1,0,1,1], k = 1<br> <b>Output:</b> true
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [1,2,3,1,2,3], k = 2<br> <b>Output:</b> false
+</p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> I use <b>unordered_map</b> to implement the approach.<br></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">containsNearbyDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; record;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; n; i++)&#123;</span><br><span class="line">            it = record.find(nums[i]);</span><br><span class="line">            <span class="keyword">if</span>(it != record.end())&#123;</span><br><span class="line">                <span class="keyword">if</span>(i - it-&gt;second &lt;= k) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                it-&gt;second = i;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                record.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;(nums[i], i));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -383,7 +488,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-02-23 01:33:49" itemprop="dateModified" datetime="2021-02-23T01:33:49+08:00">2021-02-23</time>
+        <time title="Modified: 2021-02-23 08:37:15" itemprop="dateModified" datetime="2021-02-23T08:37:15+08:00">2021-02-23</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1297,110 +1402,6 @@ In Java, the compiler represents the signed integers using 2's complement notati
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/85970ec4/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/dad48e10/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="EgbertLin">
-      <meta itemprop="description" content="Programming Developer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Egbert Lin's Blog">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/dad48e10/" class="post-title-link" itemprop="url">Data Structures - Binary Search Algorithm</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-02-01 15:50:08" itemprop="dateCreated datePublished" datetime="2021-02-01T15:50:08+08:00">2021-02-01</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-02-05 00:16:52" itemprop="dateModified" datetime="2021-02-05T00:16:52+08:00">2021-02-05</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/searchalgorithm/" itemprop="url" rel="index"><span itemprop="name">SearchAlgorithm</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/posts/dad48e10/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/dad48e10/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p align="center">
-<font size="6px"><b>Basic programming - Binary Search</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a sorted array arr[] of n elements, write a function to search a given element x in arr[].
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/dad48e10/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>

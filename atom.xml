@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-22T17:33:49.017Z</updated>
+  <updated>2021-02-23T01:29:25.043Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>[LeetCode Road] Contains Duplicate II</title>
+    <link href="https://egbert-yu-ting.github.io/posts/81b7ce15/"/>
+    <id>https://egbert-yu-ting.github.io/posts/81b7ce15/</id>
+    <published>2021-02-23T00:54:07.000Z</published>
+    <updated>2021-02-23T01:29:25.043Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;219. Contains Duplicate&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given an array of integer</summary>
+      
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+    <category term="Unordered_map(STL)" scheme="https://egbert-yu-ting.github.io/tags/Unordered-map-STL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[LeetCode Road] Contains Duplicate</title>
     <link href="https://egbert-yu-ting.github.io/posts/a3617bc9/"/>
     <id>https://egbert-yu-ting.github.io/posts/a3617bc9/</id>
     <published>2021-02-22T02:06:16.000Z</published>
-    <updated>2021-02-22T17:33:49.017Z</updated>
+    <updated>2021-02-23T00:37:15.418Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -530,29 +556,6 @@ getMin() -- Retrieve the minimum element in the stack.
     <category term="ListNode" scheme="https://egbert-yu-ting.github.io/tags/ListNode/"/>
     
     <category term="Algorithm" scheme="https://egbert-yu-ting.github.io/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Single Number - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/f249b7a1/"/>
-    <id>https://egbert-yu-ting.github.io/posts/f249b7a1/</id>
-    <published>2021-01-21T06:23:18.000Z</published>
-    <updated>2021-02-22T06:09:58.527Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given a &lt;strong&gt;non-empty&lt;/strong&gt; array of integers nums, every element appears twice except for one. Find that single one.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Follow up:&lt;/strong&gt; Could you implement a solution with a linear runtime complexity and without using extra memory?</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Logical_Operators" scheme="https://egbert-yu-ting.github.io/tags/Logical-Operators/"/>
-    
-    <category term="Map(STL)" scheme="https://egbert-yu-ting.github.io/tags/Map-STL/"/>
     
   </entry>
   

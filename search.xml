@@ -176,35 +176,6 @@ TThe number of nodes in the tree is in the range <span style="background-color:#
       </tags>
   </entry>
   <entry>
-    <title>Data Structures - Binary Search Algorithm</title>
-    <url>/posts/dad48e10/</url>
-    <content><![CDATA[<p align="center">
-<font size="6px"><b>Basic programming - Binary Search</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a sorted array arr[] of n elements, write a function to search a given element x in arr[]. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> arr[] = {1, 4, 6, 7, 9, 11, 12, 15, 17}<br>    x = 12;<br> <b>Output:</b> 6<br> <b>Explanation:</b> Element x is represented at index 6, and the program only runs 2 times. First, middle value is 9. Second, middle value is 12.
-</p>
-<p>The idea of binary search is to use the information that the array is sorted and reduce the time complexity to <strong>O(Log n)</strong>.</p>
-<h2 id="source-code">Source code:</h2>
-<h3 id="version"><u>Version</u></h3>
-<p>Idea:<br> You should know the length of array first, repeatedly dividing the search interval in half is at the core of binary search.<br> The demonstration is shown as below: <img src="binarySearch_example.png" /></p>
-<p>Hence, you can declare <code>head</code> variable that is index 0, and <code>tail</code> varialbe that is index n - 1 (n is the length of array). Therefore, the middle of the interval is <b>(head + tail) / 2</b><br></p>
-<p>At 14 line, if the value of middle is bigger than the target, narrow the interval to the lower half. Otherwise, narrow it to the upeer half.<br></p>
-<p>Repeat 10 - 18 line to find the position of target until head's index is bigger than tail's index, it means the target isn't exist in array, so return -1.<br></p>
-<p><b>Time complexity: O(log n)</b><br></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr, <span class="keyword">int</span> input)</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> n = arr.size();</span><br><span class="line">    <span class="keyword">int</span> head = <span class="number">0</span>, tail = n - <span class="number">1</span>, middle = - <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(head &lt;= tail)&#123;</span><br><span class="line">        middle = (head + tail) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(arr[middle] == input) <span class="keyword">return</span> middle;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(arr[middle] &gt;input)&#123;</span><br><span class="line">            tail = middle - <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            head = middle + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr&#123; <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">30</span>, <span class="number">33</span>, <span class="number">40</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">22</span>;</span><br><span class="line">    <span class="keyword">int</span> res = binarySearch(arr, x);</span><br><span class="line">    (res == <span class="number">-1</span>)?<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Input is not exist in array&quot;</span>:<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Index &quot;</span> &lt;&lt; res &lt;&lt; <span class="string">&quot; is &quot;</span> &lt;&lt; arr[res];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>SearchAlgorithm</category>
-      </categories>
-      <tags>
-        <tag>Searching</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Best Time to Buy and Sell Stock - Solution/C++</title>
     <url>/posts/a026a3d3/</url>
     <content><![CDATA[<p align="center">
@@ -244,6 +215,35 @@ TThe number of nodes in the tree is in the range <span style="background-color:#
       <tags>
         <tag>Stock</tag>
         <tag>BruteForce</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Data Structures - Binary Search Algorithm</title>
+    <url>/posts/dad48e10/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>Basic programming - Binary Search</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a sorted array arr[] of n elements, write a function to search a given element x in arr[]. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> arr[] = {1, 4, 6, 7, 9, 11, 12, 15, 17}<br>    x = 12;<br> <b>Output:</b> 6<br> <b>Explanation:</b> Element x is represented at index 6, and the program only runs 2 times. First, middle value is 9. Second, middle value is 12.
+</p>
+<p>The idea of binary search is to use the information that the array is sorted and reduce the time complexity to <strong>O(Log n)</strong>.</p>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version"><u>Version</u></h3>
+<p>Idea:<br> You should know the length of array first, repeatedly dividing the search interval in half is at the core of binary search.<br> The demonstration is shown as below: <img src="binarySearch_example.png" /></p>
+<p>Hence, you can declare <code>head</code> variable that is index 0, and <code>tail</code> varialbe that is index n - 1 (n is the length of array). Therefore, the middle of the interval is <b>(head + tail) / 2</b><br></p>
+<p>At 14 line, if the value of middle is bigger than the target, narrow the interval to the lower half. Otherwise, narrow it to the upeer half.<br></p>
+<p>Repeat 10 - 18 line to find the position of target until head's index is bigger than tail's index, it means the target isn't exist in array, so return -1.<br></p>
+<p><b>Time complexity: O(log n)</b><br></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr, <span class="keyword">int</span> input)</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> n = arr.size();</span><br><span class="line">    <span class="keyword">int</span> head = <span class="number">0</span>, tail = n - <span class="number">1</span>, middle = - <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(head &lt;= tail)&#123;</span><br><span class="line">        middle = (head + tail) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(arr[middle] == input) <span class="keyword">return</span> middle;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(arr[middle] &gt;input)&#123;</span><br><span class="line">            tail = middle - <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            head = middle + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr&#123; <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">30</span>, <span class="number">33</span>, <span class="number">40</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">22</span>;</span><br><span class="line">    <span class="keyword">int</span> res = binarySearch(arr, x);</span><br><span class="line">    (res == <span class="number">-1</span>)?<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Input is not exist in array&quot;</span>:<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Index &quot;</span> &lt;&lt; res &lt;&lt; <span class="string">&quot; is &quot;</span> &lt;&lt; arr[res];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>SearchAlgorithm</category>
+      </categories>
+      <tags>
+        <tag>Searching</tag>
       </tags>
   </entry>
   <entry>
@@ -319,6 +319,36 @@ return its bottom-up level order traversal as:
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Contains Duplicate II</title>
+    <url>/posts/81b7ce15/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>219. Contains Duplicate</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given an array of integers and an integer <I>k</I>, find out whether there are two distinct indices <I>i</I> and <I>j</I> in the array such that <b>nums[i]</b> = <b>nums[j]</b> and the <b>absolute</b> difference between <I>i</I> and <I>j</I> is at most <I>k</I>.</p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [1,2,3,1], k = 3<br> <b>Output:</b> true
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [1,0,1,1], k = 1<br> <b>Output:</b> true
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [1,2,3,1,2,3], k = 2<br> <b>Output:</b> false
+</p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> I use <b>unordered_map</b> to implement the approach.<br></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">containsNearbyDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; record;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; n; i++)&#123;</span><br><span class="line">            it = record.find(nums[i]);</span><br><span class="line">            <span class="keyword">if</span>(it != record.end())&#123;</span><br><span class="line">                <span class="keyword">if</span>(i - it-&gt;second &lt;= k) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                it-&gt;second = i;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                record.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;(nums[i], i));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Unordered_map(STL)</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Contains Duplicate</title>
     <url>/posts/a3617bc9/</url>
     <content><![CDATA[<p align="center">
@@ -359,7 +389,7 @@ Second element: a bool value indicating whether the element was successfully ins
 <p>What is std::sort()?<br> The algorithm used by sort() is <b>IntroSort</b>. Introsort being a <b>hybrid sorting algorithm</b> uses three sorting algorithm to minimise the running time, <u>Quicksort</u>, <u>Heapsort</u> and <u>Insertion Sort</u>.[2]<br></p>
 <p><b>Time complexity: O(nlogn)</b><br> <b>Space complexity: O(1)</b></p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">containsDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        sort(nums.begin(), nums.end());</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == nums[i + <span class="number">1</span>]) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>Reference:<br> [1] https://www.cplusplus.com/reference/unordered_set/unordered_set/insert/ [2] https://www.geeksforgeeks.org/internal-details-of-stdsort-in-c/</p>
+<p>Reference:<br> [1] https://www.cplusplus.com/reference/unordered_set/unordered_set/insert/<br> [2] https://www.geeksforgeeks.org/internal-details-of-stdsort-in-c/</p>
 ]]></content>
       <categories>
         <category>LeetCode-Easy</category>
@@ -601,37 +631,6 @@ For example:
       </tags>
   </entry>
   <entry>
-    <title>Data Structures - Exponential Search Algorithm</title>
-    <url>/posts/85970ec4/</url>
-    <content><![CDATA[<p align="center">
-<font size="6px"><b>Basic programming - Exponential Search</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a sorted array, and an element x to be searched, find position of x in the array. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> arr[] = {10, 20, 40, 45, 55}<br>    x = 45<br> <b>Output:</b> Element found at index 3
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> arr[] = {10, 15, 25, 45, 55}<br>    x = 15<br> <b>Output:</b> Element found at index 1
-</p>
-<h2 id="source-code">Source code:</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> Based on the iterative approach of binary search, we can use recursive function to implement it easily at 7 - 19 line.<br></p>
-<p>Exponential search is similar with binary search, use the exponential of 2 as the search range is only different part at first.<br> The detailed demonstration is shown as below: <img src="exponentialSearch_example.png" /></p>
-<p>Let explain how to implement exponential search, it involves two steps:<br> 1. Find the range where element is possible exist. 2. Do binary search in above found range.</p>
-<p>At 22 line, index 0 of array should be checked if value is equal to target.<br> At 24 line, delcare integer variable as searchIndex (range), it initialized to 1.<br> At 25 line, searchIndex variable is the exponential growth based on 2. so the index range will be 1, 2, 4, 8, 16 ... etc. If <code>arr[searchIndex] &lt; target</code>, it means the target may be exist between <b>arr[searchIndex/2] and arr[searchIndex]</b>.<br></p>
-<p>There will be an expected cases that is searchIndex is bigger than the lenght of array, so the tail index is from <code>min(searchIndex, n)</code> before calling binarySearch(). <I>P.S. n is index at the end of array and head index is searchIndex/2</I>.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr, <span class="keyword">int</span> target, <span class="keyword">int</span> head, <span class="keyword">int</span> tail)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(head &lt;= tail)&#123;</span><br><span class="line">        <span class="keyword">int</span> middle = (head + tail) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(arr[middle]== target) <span class="keyword">return</span> middle;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(arr[middle] &gt; target)&#123;</span><br><span class="line">            <span class="keyword">return</span> binarySearch(arr, target, head, middle - <span class="number">1</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> binarySearch(arr, target, middle + <span class="number">1</span>, tail);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">exponentialSearch</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr, <span class="keyword">int</span> target)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr[<span class="number">0</span>] == target) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> n = arr.size() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> searchIndex = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(searchIndex &lt; n &amp;&amp; arr[searchIndex] &lt; target) searchIndex*= <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> binarySearch(arr, target, searchIndex/<span class="number">2</span>, min(searchIndex, n));</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr&#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">10</span>, <span class="number">40</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">40</span>;</span><br><span class="line">    <span class="keyword">int</span> res = exponentialSearch(arr, x);</span><br><span class="line">    (res == <span class="number">-1</span>)?<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Input is not exist in array&quot;</span>:<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Index &quot;</span> &lt;&lt; res &lt;&lt; <span class="string">&quot; is &quot;</span> &lt;&lt; arr[res];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>SearchAlgorithm</category>
-      </categories>
-      <tags>
-        <tag>Searching</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Factorial Trailing Zeroes</title>
     <url>/posts/b0d56b8b/</url>
     <content><![CDATA[<p align="center">
@@ -661,6 +660,37 @@ For example:
       <categories>
         <category>LeetCode-Easy</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Data Structures - Exponential Search Algorithm</title>
+    <url>/posts/85970ec4/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>Basic programming - Exponential Search</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a sorted array, and an element x to be searched, find position of x in the array. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> arr[] = {10, 20, 40, 45, 55}<br>    x = 45<br> <b>Output:</b> Element found at index 3
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> arr[] = {10, 15, 25, 45, 55}<br>    x = 15<br> <b>Output:</b> Element found at index 1
+</p>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> Based on the iterative approach of binary search, we can use recursive function to implement it easily at 7 - 19 line.<br></p>
+<p>Exponential search is similar with binary search, use the exponential of 2 as the search range is only different part at first.<br> The detailed demonstration is shown as below: <img src="exponentialSearch_example.png" /></p>
+<p>Let explain how to implement exponential search, it involves two steps:<br> 1. Find the range where element is possible exist. 2. Do binary search in above found range.</p>
+<p>At 22 line, index 0 of array should be checked if value is equal to target.<br> At 24 line, delcare integer variable as searchIndex (range), it initialized to 1.<br> At 25 line, searchIndex variable is the exponential growth based on 2. so the index range will be 1, 2, 4, 8, 16 ... etc. If <code>arr[searchIndex] &lt; target</code>, it means the target may be exist between <b>arr[searchIndex/2] and arr[searchIndex]</b>.<br></p>
+<p>There will be an expected cases that is searchIndex is bigger than the lenght of array, so the tail index is from <code>min(searchIndex, n)</code> before calling binarySearch(). <I>P.S. n is index at the end of array and head index is searchIndex/2</I>.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr, <span class="keyword">int</span> target, <span class="keyword">int</span> head, <span class="keyword">int</span> tail)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(head &lt;= tail)&#123;</span><br><span class="line">        <span class="keyword">int</span> middle = (head + tail) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(arr[middle]== target) <span class="keyword">return</span> middle;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(arr[middle] &gt; target)&#123;</span><br><span class="line">            <span class="keyword">return</span> binarySearch(arr, target, head, middle - <span class="number">1</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> binarySearch(arr, target, middle + <span class="number">1</span>, tail);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">exponentialSearch</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr, <span class="keyword">int</span> target)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr[<span class="number">0</span>] == target) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> n = arr.size() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> searchIndex = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(searchIndex &lt; n &amp;&amp; arr[searchIndex] &lt; target) searchIndex*= <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> binarySearch(arr, target, searchIndex/<span class="number">2</span>, min(searchIndex, n));</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr&#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">10</span>, <span class="number">40</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">40</span>;</span><br><span class="line">    <span class="keyword">int</span> res = exponentialSearch(arr, x);</span><br><span class="line">    (res == <span class="number">-1</span>)?<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Input is not exist in array&quot;</span>:<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Index &quot;</span> &lt;&lt; res &lt;&lt; <span class="string">&quot; is &quot;</span> &lt;&lt; arr[res];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>SearchAlgorithm</category>
+      </categories>
+      <tags>
+        <tag>Searching</tag>
+      </tags>
   </entry>
   <entry>
     <title>[Interview question] Find second largest element - Solution/C++</title>
@@ -707,53 +737,6 @@ For example:
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Happy Number</title>
-    <url>/posts/e73e301/</url>
-    <content><![CDATA[<p align="center">
-<font size="6px"><b>202. Happy Number</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Write an algorithm to determine if a number <span style="background-color:#F0F0F0"><font color=#808080>n</span></font> is happy.</p>
-<p>A <b>happy number</b> is a number defined by the following process:</p>
-<ul>
-<li>
-Starting with any positive integer, replace the number by the sum of the squares of its digits.
-</li>
-<li>
-Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.
-</li>
-<li>
-Those numbers for which this process ends in 1 are happy.
-</li>
-</ul>
-<p>Return <span style="background-color:#F0F0F0"><font color=#808080>true</font></span> <I>if</I> <span style="background-color:#F0F0F0"><font color=#808080>n</font></span> <I>is a happy number, and</I> <span style="background-color:#F0F0F0"><font color=#808080>false</font></span> <I>if not</I>. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> n = 19<br> <b>Output:</b> true<br> <b>Explanation:</b><br> 1<sup>2</sup> + 9<sup>2</sup> = 82<br> 8<sup>2</sup> + 2<sup>2</sup> = 68<br> 6<sup>2</sup> + 8<sup>2</sup> = 100<br> 1<sup>2</sup> + 0<sup>2</sup> + 0<sup>2</sup> = 1
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> n = 2<br> <b>Output:</b> false
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= n &lt;= 2^31 - 1</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> At first, I suggest you realizing what is unhappy number? You will find out the rule. E.g., n = 48<br> 4<sup>2</sup> + 8<sup>2</sup> = 80<br> 8<sup>2</sup> + 0<sup>2</sup> = 64<br> 6<sup>2</sup> + 4<sup>2</sup> = 52<br> 5<sup>2</sup> + 2<sup>2</sup> = 29<br> 2<sup>2</sup> + 9<sup>2</sup> = 85<br> 8<sup>2</sup> + 5<sup>2</sup> = 89<br> 8<sup>2</sup> + 9<sup>2</sup> = 145<br> 1<sup>2</sup> + 4<sup>2</sup> + 5<sup>2</sup> = 42<br> 4<sup>2</sup> + 2<sup>2</sup> = 20<br> 2<sup>2</sup> + 0<sup>2</sup> = 4<br> 4<sup>2</sup> = 16<br> 1<sup>2</sup> + 6<sup>2</sup> = 37<br> 3<sup>2</sup> + 7<sup>2</sup> = 58<br> 5<sup>2</sup> + 8<sup>2</sup> = 89<br></p>
-<p>From the above example, you can find the regular process. If a number is unhappy number, the output will repeat. (In this case, <b>89</b> is repeated number)<br></p>
-<p>Hence, you can take the <b>unordered_map container</b> to store each output.<br> Then, use <code>count()</code> to check whether the output exists in container or not, if it has already existed, <code>count()</code> will return <b>false</b>, and it means a number is unhappy number. On the contrary, if the ouput is 1, break the while() and return <b>true</b>.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isHappy</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; umap;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">                sum += <span class="built_in">pow</span>(n%<span class="number">10</span>, <span class="number">2</span>);</span><br><span class="line">                n /= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(umap.count(sum)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            umap.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(sum, sum));</span><br><span class="line">            n = sum;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Unordered_map(STL)</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Implement strStr() - Solution/C++</title>
     <url>/posts/9bc77297/</url>
     <content><![CDATA[<p align="center">
@@ -796,50 +779,44 @@ Those numbers for which this process ends in 1 are happy.
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Isomorphic Strings</title>
-    <url>/posts/31bd0f13/</url>
+    <title>[LeetCode Road] Happy Number</title>
+    <url>/posts/e73e301/</url>
     <content><![CDATA[<p align="center">
-<font size="6px"><b>205. Isomorphic Strings</b></font>
+<font size="6px"><b>202. Happy Number</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>Given two strings <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>t</font></span>, determine if they are isomorphic.</p>
-<p>Two strings <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>t</font></span> are isomorphic if the characters in s can be replaced to get <span style="background-color:#F0F0F0"><font color=#808080>t</font></span>.</p>
-<p>All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself. <a id="more"></a></p>
+<p>Write an algorithm to determine if a number <span style="background-color:#F0F0F0"><font color=#808080>n</span></font> is happy.</p>
+<p>A <b>happy number</b> is a number defined by the following process:</p>
+<ul>
+<li>
+Starting with any positive integer, replace the number by the sum of the squares of its digits.
+</li>
+<li>
+Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.
+</li>
+<li>
+Those numbers for which this process ends in 1 are happy.
+</li>
+</ul>
+<p>Return <span style="background-color:#F0F0F0"><font color=#808080>true</font></span> <I>if</I> <span style="background-color:#F0F0F0"><font color=#808080>n</font></span> <I>is a happy number, and</I> <span style="background-color:#F0F0F0"><font color=#808080>false</font></span> <I>if not</I>. <a id="more"></a></p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> s = "egg", t = "add"<br> <b>Output:</b> true
+<b>Input:</b> n = 19<br> <b>Output:</b> true<br> <b>Explanation:</b><br> 1<sup>2</sup> + 9<sup>2</sup> = 82<br> 8<sup>2</sup> + 2<sup>2</sup> = 68<br> 6<sup>2</sup> + 8<sup>2</sup> = 100<br> 1<sup>2</sup> + 0<sup>2</sup> + 0<sup>2</sup> = 1
 </p>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> s = "foo", t = "bar"<br> <b>Output:</b> false
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = "paper", t = "title"<br> <b>Output:</b> true
+<b>Input:</b> n = 2<br> <b>Output:</b> false
 </p>
 <strong>Constraints:</strong> <strong>
 <li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= s.length &lt;= 5 * 10<sup>4</sup></font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>t.length == s.length</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>s</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>t</font></span> consist of any valid ascii character.
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= n &lt;= 2^31 - 1</font></span>
 </li>
 <p></strong></p>
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> "Isomorphic" means that no more than one character of string can map to the same character. E.g., <code>s1="apple"</code> <code>s2="paper"</code>, you can see two <span style="background-color:#F0F0F0"><font color=#808080>p</font></span> alphabets of s1 map to <span style="background-color:#F0F0F0"><font color=#808080>a</font></span> alphabet and <span style="background-color:#F0F0F0"><font color=#808080>p</font></span> alphabet at s2, the result is false.<br></p>
-<p>Hence, you need to record each character relationship (two strings) to unordered map container.<br> At 8-16 line, you should through all characters. If this character isn't exist in <code>unmap_s</code> and <code>unmap_t</code>, store a character of the other side. At 10 line, if a character isn't exist in <code>unmap_s</code> but it has already exist in <code>numap_t</code>, it means <b>more than one character map to the same character</b>, so return false.<br></p>
-<p>At 13 line, if this character has already exist in <code>unmap_s</code>, you can get the value (=previous t[i]) then you find the value isn't equal to current t[i], return false.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isIsomorphic</span><span class="params">(<span class="built_in">string</span> s, <span class="built_in">string</span> t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="keyword">if</span>(s == t) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; unmap_s, <span class="keyword">unmap_t</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(unmap_s.find(s[i]) == unmap_s.end())&#123;</span><br><span class="line">                <span class="keyword">if</span>(<span class="keyword">unmap_t</span>.find(t[i]) != <span class="keyword">unmap_t</span>.end()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                unmap_s[s[i]] = t[i];</span><br><span class="line">                <span class="keyword">unmap_t</span>[t[i]] = s[i];</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(unmap_s[s[i]] != t[i])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> This strategy uses only one unordered map container. But I implemented a <code>matchbyValue</code> function to check value existence in container.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isIsomorphic</span><span class="params">(<span class="built_in">string</span> s, <span class="built_in">string</span> t)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">char</span>, <span class="keyword">char</span>&gt; record;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">char</span>, <span class="keyword">char</span>&gt;::iterator it;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            it = record.find(s[i]);</span><br><span class="line">            <span class="keyword">if</span>(it == record.end())&#123;</span><br><span class="line">                <span class="keyword">if</span>(matchbyValue(record, t[i]))&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    record.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(s[i],t[i]));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(it-&gt;second == t[i])&#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">matchbyValue</span><span class="params">(<span class="built_in">unordered_map</span>&lt;<span class="keyword">char</span>, <span class="keyword">char</span>&gt; record, <span class="keyword">char</span> target)</span></span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> it = record.begin();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(it != record.end())&#123;</span><br><span class="line">            <span class="keyword">if</span>(it-&gt;second == target) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            it++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-3"><u>Version 3</u></h3>
-<p>Idea:<br> It is an optimal approach that refered to online.<br> Initial two array to zero at first. At 10-11 line, store the position of character, <code>i + 1</code> means the range of value is 1 to n, because inital value of array is zero.<br> So, if the values are not equal between map_s and map_t, return false. It represented characters are shown in different position. (characters are the same alphabet.)</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isIsomorphic</span><span class="params">(<span class="built_in">string</span> s, <span class="built_in">string</span> t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> map_s[<span class="number">128</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> <span class="keyword">map_t</span>[<span class="number">128</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = s.length();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(map_s[s[i]] != <span class="keyword">map_t</span>[t[i]]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            map_s[s[i]] = i + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">map_t</span>[t[i]] = i + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Idea:<br> At first, I suggest you realizing what is unhappy number? You will find out the rule. E.g., n = 48<br> 4<sup>2</sup> + 8<sup>2</sup> = 80<br> 8<sup>2</sup> + 0<sup>2</sup> = 64<br> 6<sup>2</sup> + 4<sup>2</sup> = 52<br> 5<sup>2</sup> + 2<sup>2</sup> = 29<br> 2<sup>2</sup> + 9<sup>2</sup> = 85<br> 8<sup>2</sup> + 5<sup>2</sup> = 89<br> 8<sup>2</sup> + 9<sup>2</sup> = 145<br> 1<sup>2</sup> + 4<sup>2</sup> + 5<sup>2</sup> = 42<br> 4<sup>2</sup> + 2<sup>2</sup> = 20<br> 2<sup>2</sup> + 0<sup>2</sup> = 4<br> 4<sup>2</sup> = 16<br> 1<sup>2</sup> + 6<sup>2</sup> = 37<br> 3<sup>2</sup> + 7<sup>2</sup> = 58<br> 5<sup>2</sup> + 8<sup>2</sup> = 89<br></p>
+<p>From the above example, you can find the regular process. If a number is unhappy number, the output will repeat. (In this case, <b>89</b> is repeated number)<br></p>
+<p>Hence, you can take the <b>unordered_map container</b> to store each output.<br> Then, use <code>count()</code> to check whether the output exists in container or not, if it has already existed, <code>count()</code> will return <b>false</b>, and it means a number is unhappy number. On the contrary, if the ouput is 1, break the while() and return <b>true</b>.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isHappy</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; umap;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">                sum += <span class="built_in">pow</span>(n%<span class="number">10</span>, <span class="number">2</span>);</span><br><span class="line">                n /= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(umap.count(sum)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            umap.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(sum, sum));</span><br><span class="line">            n = sum;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>LeetCode-Easy</category>
@@ -915,6 +892,59 @@ After counting, you should make those Lists moved to the same position, as below
       </categories>
       <tags>
         <tag>ListNode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Isomorphic Strings</title>
+    <url>/posts/31bd0f13/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>205. Isomorphic Strings</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given two strings <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>t</font></span>, determine if they are isomorphic.</p>
+<p>Two strings <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>t</font></span> are isomorphic if the characters in s can be replaced to get <span style="background-color:#F0F0F0"><font color=#808080>t</font></span>.</p>
+<p>All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "egg", t = "add"<br> <b>Output:</b> true
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "foo", t = "bar"<br> <b>Output:</b> false
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "paper", t = "title"<br> <b>Output:</b> true
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= s.length &lt;= 5 * 10<sup>4</sup></font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>t.length == s.length</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>s</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>t</font></span> consist of any valid ascii character.
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> "Isomorphic" means that no more than one character of string can map to the same character. E.g., <code>s1="apple"</code> <code>s2="paper"</code>, you can see two <span style="background-color:#F0F0F0"><font color=#808080>p</font></span> alphabets of s1 map to <span style="background-color:#F0F0F0"><font color=#808080>a</font></span> alphabet and <span style="background-color:#F0F0F0"><font color=#808080>p</font></span> alphabet at s2, the result is false.<br></p>
+<p>Hence, you need to record each character relationship (two strings) to unordered map container.<br> At 8-16 line, you should through all characters. If this character isn't exist in <code>unmap_s</code> and <code>unmap_t</code>, store a character of the other side. At 10 line, if a character isn't exist in <code>unmap_s</code> but it has already exist in <code>numap_t</code>, it means <b>more than one character map to the same character</b>, so return false.<br></p>
+<p>At 13 line, if this character has already exist in <code>unmap_s</code>, you can get the value (=previous t[i]) then you find the value isn't equal to current t[i], return false.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isIsomorphic</span><span class="params">(<span class="built_in">string</span> s, <span class="built_in">string</span> t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="keyword">if</span>(s == t) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; unmap_s, <span class="keyword">unmap_t</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(unmap_s.find(s[i]) == unmap_s.end())&#123;</span><br><span class="line">                <span class="keyword">if</span>(<span class="keyword">unmap_t</span>.find(t[i]) != <span class="keyword">unmap_t</span>.end()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                unmap_s[s[i]] = t[i];</span><br><span class="line">                <span class="keyword">unmap_t</span>[t[i]] = s[i];</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(unmap_s[s[i]] != t[i])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<br> This strategy uses only one unordered map container. But I implemented a <code>matchbyValue</code> function to check value existence in container.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isIsomorphic</span><span class="params">(<span class="built_in">string</span> s, <span class="built_in">string</span> t)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">char</span>, <span class="keyword">char</span>&gt; record;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">char</span>, <span class="keyword">char</span>&gt;::iterator it;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            it = record.find(s[i]);</span><br><span class="line">            <span class="keyword">if</span>(it == record.end())&#123;</span><br><span class="line">                <span class="keyword">if</span>(matchbyValue(record, t[i]))&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    record.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(s[i],t[i]));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(it-&gt;second == t[i])&#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">matchbyValue</span><span class="params">(<span class="built_in">unordered_map</span>&lt;<span class="keyword">char</span>, <span class="keyword">char</span>&gt; record, <span class="keyword">char</span> target)</span></span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> it = record.begin();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(it != record.end())&#123;</span><br><span class="line">            <span class="keyword">if</span>(it-&gt;second == target) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            it++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-3"><u>Version 3</u></h3>
+<p>Idea:<br> It is an optimal approach that refered to online.<br> Initial two array to zero at first. At 10-11 line, store the position of character, <code>i + 1</code> means the range of value is 1 to n, because inital value of array is zero.<br> So, if the values are not equal between map_s and map_t, return false. It represented characters are shown in different position. (characters are the same alphabet.)</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isIsomorphic</span><span class="params">(<span class="built_in">string</span> s, <span class="built_in">string</span> t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> map_s[<span class="number">128</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> <span class="keyword">map_t</span>[<span class="number">128</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = s.length();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(map_s[s[i]] != <span class="keyword">map_t</span>[t[i]]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            map_s[s[i]] = i + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">map_t</span>[t[i]] = i + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Unordered_map(STL)</tag>
       </tags>
   </entry>
   <entry>
@@ -1913,46 +1943,6 @@ Internally you can think of this:
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Reverse Integer - Solution/C++</title>
-    <url>/posts/236b1bbd/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>7. Reverse Integer</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a 32-bit signed integer, reverse digits of an integer.</p>
-<p><strong>Note:</strong> Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−2^31, 2^31 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = 123<br><b>Output</b>: 321<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = -123<br><b>Output</b>: -321<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = 120<br><b>Output</b>: 21<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: x = 0<br><b>Output</b>: 0<br>
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
--2^31 &lt;= x &lt;= 2^31 -1
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> At the begining, I need to get units digit, so the modulus operator % can compute the remainder. Then, the remainder should be added to answer(return value) after answer times ten for each loop. <code>x = x / 10</code> means removing units digit for getting hundreds digit. Don't forget the constraints, use values of INT_MIN and INT_MAX to implement it.<br> P.S. <code>return (conditional)?true:false</code></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(x != <span class="number">0</span>)&#123;</span><br><span class="line">            ans = ans * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">            x = x / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (ans&gt;INT_MIN &amp;&amp; ans&lt;INT_MAX)?ans:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Remainder</tag>
-        <tag>Quotient</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Reverse Bits</title>
     <url>/posts/417b9784/</url>
     <content><![CDATA[<p align="center">
@@ -1995,6 +1985,46 @@ The input must be a <b>binary string</b> of length <span style="background-color
       </categories>
       <tags>
         <tag>Shift_Operators</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Reverse Integer - Solution/C++</title>
+    <url>/posts/236b1bbd/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>7. Reverse Integer</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a 32-bit signed integer, reverse digits of an integer.</p>
+<p><strong>Note:</strong> Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−2^31, 2^31 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = 123<br><b>Output</b>: 321<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = -123<br><b>Output</b>: -321<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = 120<br><b>Output</b>: 21<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: x = 0<br><b>Output</b>: 0<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+-2^31 &lt;= x &lt;= 2^31 -1
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> At the begining, I need to get units digit, so the modulus operator % can compute the remainder. Then, the remainder should be added to answer(return value) after answer times ten for each loop. <code>x = x / 10</code> means removing units digit for getting hundreds digit. Don't forget the constraints, use values of INT_MIN and INT_MAX to implement it.<br> P.S. <code>return (conditional)?true:false</code></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(x != <span class="number">0</span>)&#123;</span><br><span class="line">            ans = ans * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">            x = x / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (ans&gt;INT_MIN &amp;&amp; ans&lt;INT_MAX)?ans:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Remainder</tag>
+        <tag>Quotient</tag>
       </tags>
   </entry>
   <entry>

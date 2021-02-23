@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-02-23T01:37:19.190Z</updated>
+  <updated>2021-02-23T01:38:23.913Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,17 +21,14 @@
     <link href="https://egbert-yu-ting.github.io/posts/81b7ce15/"/>
     <id>https://egbert-yu-ting.github.io/posts/81b7ce15/</id>
     <published>2021-02-23T00:54:07.000Z</published>
-    <updated>2021-02-23T01:37:19.190Z</updated>
+    <updated>2021-02-23T01:38:23.913Z</updated>
     
     
-      
-      
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6px&quot;&gt;&lt;b&gt;219. Contains Duplicate&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given an array of integer</summary>
-      
+&lt;p&gt;Given an array of integers and an integer &lt;I&gt;k&lt;/I&gt;, find out whether there are two distinct indices &lt;I&gt;i&lt;/I&gt; and &lt;I&gt;j&lt;/I&gt; in the array such that &lt;b&gt;nums[i]&lt;/b&gt; = &lt;b&gt;nums[j]&lt;/b&gt; and the &lt;b&gt;absolute&lt;/b&gt; difference between &lt;I&gt;i&lt;/I&gt; and &lt;I&gt;j&lt;/I&gt; is at most &lt;I&gt;k&lt;/I&gt;.</summary>
     
     
     

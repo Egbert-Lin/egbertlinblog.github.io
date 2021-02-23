@@ -325,7 +325,7 @@ return its bottom-up level order traversal as:
 <font size="6px"><b>219. Contains Duplicate</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>Given an array of integers and an integer <I>k</I>, find out whether there are two distinct indices <I>i</I> and <I>j</I> in the array such that <b>nums[i]</b> = <b>nums[j]</b> and the <b>absolute</b> difference between <I>i</I> and <I>j</I> is at most <I>k</I>.</p>
+<p>Given an array of integers and an integer <I>k</I>, find out whether there are two distinct indices <I>i</I> and <I>j</I> in the array such that <b>nums[i]</b> = <b>nums[j]</b> and the <b>absolute</b> difference between <I>i</I> and <I>j</I> is at most <I>k</I>. <a id="more"></a></p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
 <b>Input:</b> nums = [1,2,3,1], k = 3<br> <b>Output:</b> true

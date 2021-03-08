@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-03-04T03:07:48.364Z</updated>
+  <updated>2021-03-08T08:35:26.879Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>[LeetCode Road] Implement Stack using Queues</title>
+    <title>[LeetCode Road] Implement Stack using Queues - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/1e6556c3/"/>
     <id>https://egbert-yu-ting.github.io/posts/1e6556c3/</id>
     <published>2021-02-23T06:39:41.000Z</published>
-    <updated>2021-03-04T03:07:48.364Z</updated>
+    <updated>2021-03-08T08:35:26.879Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -42,11 +42,11 @@
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Contains Duplicate II</title>
+    <title>[LeetCode Road] Contains Duplicate II - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/81b7ce15/"/>
     <id>https://egbert-yu-ting.github.io/posts/81b7ce15/</id>
     <published>2021-02-23T00:54:07.000Z</published>
-    <updated>2021-02-23T03:48:47.678Z</updated>
+    <updated>2021-03-08T08:32:53.792Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -65,11 +65,11 @@
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Contains Duplicate</title>
-    <link href="https://egbert-yu-ting.github.io/posts/a3617bc9/"/>
-    <id>https://egbert-yu-ting.github.io/posts/a3617bc9/</id>
+    <title>[LeetCode Road] Contains Duplicate - Solution/C++</title>
+    <link href="https://egbert-yu-ting.github.io/posts/5d51ed7c/"/>
+    <id>https://egbert-yu-ting.github.io/posts/5d51ed7c/</id>
     <published>2021-02-22T02:06:16.000Z</published>
-    <updated>2021-02-23T07:20:30.430Z</updated>
+    <updated>2021-03-08T08:31:52.301Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -93,11 +93,11 @@
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Reverse Linked List</title>
+    <title>[LeetCode Road] Reverse Linked List - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/c6ae99a5/"/>
     <id>https://egbert-yu-ting.github.io/posts/c6ae99a5/</id>
     <published>2021-02-20T09:02:17.000Z</published>
-    <updated>2021-02-22T08:33:54.586Z</updated>
+    <updated>2021-03-08T08:35:50.068Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -116,11 +116,11 @@
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Isomorphic Strings</title>
+    <title>[LeetCode Road] Isomorphic Strings - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/31bd0f13/"/>
     <id>https://egbert-yu-ting.github.io/posts/31bd0f13/</id>
     <published>2021-02-19T03:01:12.000Z</published>
-    <updated>2021-02-22T06:11:11.308Z</updated>
+    <updated>2021-03-08T08:33:48.888Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -141,11 +141,11 @@
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Count Primes</title>
+    <title>[LeetCode Road] Count Primes - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/bcde18a6/"/>
     <id>https://egbert-yu-ting.github.io/posts/bcde18a6/</id>
     <published>2021-02-17T03:31:48.000Z</published>
-    <updated>2021-02-22T06:57:37.708Z</updated>
+    <updated>2021-03-08T08:32:52.454Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -168,11 +168,11 @@
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Remove Linked List Elements</title>
+    <title>[LeetCode Road] Remove Linked List Elements - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/2ded864c/"/>
     <id>https://egbert-yu-ting.github.io/posts/2ded864c/</id>
     <published>2021-02-08T02:49:56.000Z</published>
-    <updated>2021-02-17T03:28:14.723Z</updated>
+    <updated>2021-03-08T08:35:13.201Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -195,11 +195,11 @@
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Happy Number</title>
+    <title>[LeetCode Road] Happy Number - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/e73e301/"/>
     <id>https://egbert-yu-ting.github.io/posts/e73e301/</id>
     <published>2021-02-05T01:11:00.000Z</published>
-    <updated>2021-02-22T06:12:01.105Z</updated>
+    <updated>2021-03-08T08:33:29.170Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -231,11 +231,11 @@ Those numbers for which this process ends in 1 are happy.
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Number of 1 Bits</title>
+    <title>[LeetCode Road] Number of 1 Bits - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/790fdd9f/"/>
     <id>https://egbert-yu-ting.github.io/posts/790fdd9f/</id>
     <published>2021-02-05T00:52:35.000Z</published>
-    <updated>2021-02-05T07:17:48.888Z</updated>
+    <updated>2021-03-08T08:34:46.891Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -265,11 +265,11 @@ In Java, the compiler represents the signed integers using &lt;a href=&quot;http
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Reverse Bits</title>
+    <title>[LeetCode Road] Reverse Bits - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/417b9784/"/>
     <id>https://egbert-yu-ting.github.io/posts/417b9784/</id>
     <published>2021-02-02T17:01:27.000Z</published>
-    <updated>2021-02-05T01:01:26.124Z</updated>
+    <updated>2021-03-08T08:35:43.738Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -343,11 +343,11 @@ In Java, the compiler represents the signed integers using 2&#39;s complement no
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Factorial Trailing Zeroes</title>
+    <title>[LeetCode Road] Factorial Trailing Zeroes - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/b0d56b8b/"/>
     <id>https://egbert-yu-ting.github.io/posts/b0d56b8b/</id>
     <published>2021-02-01T06:16:57.000Z</published>
-    <updated>2021-02-01T07:06:06.807Z</updated>
+    <updated>2021-03-08T08:33:17.036Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -388,11 +388,11 @@ In Java, the compiler represents the signed integers using 2&#39;s complement no
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Excel Sheet Column Number</title>
+    <title>[LeetCode Road] Excel Sheet Column Number - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/10e6d46c/"/>
     <id>https://egbert-yu-ting.github.io/posts/10e6d46c/</id>
     <published>2021-01-30T15:33:43.000Z</published>
-    <updated>2021-01-30T17:16:17.372Z</updated>
+    <updated>2021-03-08T08:32:51.318Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -415,11 +415,11 @@ For example:
   </entry>
   
   <entry>
-    <title>[LeetCode] Majority Element</title>
+    <title>[LeetCode] Majority Element - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/ef374e86/"/>
     <id>https://egbert-yu-ting.github.io/posts/ef374e86/</id>
     <published>2021-01-29T01:19:53.000Z</published>
-    <updated>2021-02-22T06:55:21.846Z</updated>
+    <updated>2021-03-08T08:34:07.851Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -440,11 +440,11 @@ For example:
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Excel Sheet column Title</title>
+    <title>[LeetCode Road] Excel Sheet column Title - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/961e4f43/"/>
     <id>https://egbert-yu-ting.github.io/posts/961e4f43/</id>
     <published>2021-01-28T16:05:00.000Z</published>
-    <updated>2021-01-30T16:17:02.464Z</updated>
+    <updated>2021-03-08T08:33:09.587Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -467,11 +467,11 @@ For example:
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Two Sum II - Input array is sorted</title>
+    <title>[LeetCode Road] Two Sum II - Input array is sorted - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/a4366474/"/>
     <id>https://egbert-yu-ting.github.io/posts/a4366474/</id>
     <published>2021-01-28T00:29:41.000Z</published>
-    <updated>2021-02-02T17:17:36.616Z</updated>
+    <updated>2021-03-08T08:36:15.955Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -489,11 +489,11 @@ For example:
   </entry>
   
   <entry>
-    <title>[LeetCode Road] Intersection of Two Linked Lists</title>
+    <title>[LeetCode Road] Intersection of Two Linked Lists - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/a44c9fee/"/>
     <id>https://egbert-yu-ting.github.io/posts/a44c9fee/</id>
     <published>2021-01-26T08:01:15.000Z</published>
-    <updated>2021-01-27T09:12:40.895Z</updated>
+    <updated>2021-03-08T08:33:44.922Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;

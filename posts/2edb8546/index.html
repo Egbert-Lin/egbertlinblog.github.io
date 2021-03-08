@@ -25,21 +25,23 @@
     var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="122. Best Time to Buy and Sell Stock II  Question: Say you have an array prices for which the ith element is the price of a given stock on day i.">
+  <meta name="description" content="118. Pascal&#39;s Triangle II  Question: Given an integer rowIndex, return the rowIndex^th row of the Pascal&#39;s triangle. Notice that the row index starts from 0.  In Pascal&#39;s triangle, each number is the">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Best Time to Buy and Sell Stock II - Solution&#x2F;C++">
-<meta property="og:url" content="https://egbert-yu-ting.github.io/posts/a10d34fe/index.html">
+<meta property="og:title" content="[LeetCode Road] Pascal&#39;s Triangle II - Solution&#x2F;C++">
+<meta property="og:url" content="https://egbert-yu-ting.github.io/posts/2edb8546/index.html">
 <meta property="og:site_name" content="Egbert Lin&#39;s Blog">
-<meta property="og:description" content="122. Best Time to Buy and Sell Stock II  Question: Say you have an array prices for which the ith element is the price of a given stock on day i.">
+<meta property="og:description" content="118. Pascal&#39;s Triangle II  Question: Given an integer rowIndex, return the rowIndex^th row of the Pascal&#39;s triangle. Notice that the row index starts from 0.  In Pascal&#39;s triangle, each number is the">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-01-20T07:00:48.000Z">
-<meta property="article:modified_time" content="2021-01-22T01:32:21.931Z">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif">
+<meta property="article:published_time" content="2021-01-18T05:55:39.000Z">
+<meta property="article:modified_time" content="2021-03-08T08:27:50.144Z">
 <meta property="article:author" content="EgbertLin">
-<meta property="article:tag" content="Stock">
+<meta property="article:tag" content="2D_Vector">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif">
 
 
-<link rel="canonical" href="https://egbert-yu-ting.github.io/posts/a10d34fe/">
+<link rel="canonical" href="https://egbert-yu-ting.github.io/posts/2edb8546/">
 
 
 <script class="page-configurations">
@@ -53,7 +55,7 @@
 </script><script data-ad-client="ca-pub-8863232600865901" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <title>Best Time to Buy and Sell Stock II - Solution/C++ | Egbert Lin's Blog</title>
+  <title>[LeetCode Road] Pascal's Triangle II - Solution/C++ | Egbert Lin's Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S56LQ3K3NG"></script>
     <script>
@@ -298,28 +300,28 @@
 	</div>
 	<ul class="links-of-blogroll-list recent-posts-list">
 	        <li class="my-links-of-blogroll-item">
-		    <a href="/posts/1e6556c3/" title="[LeetCode Road] Implement Stack using Queues" target="">
-		    [LeetCode Road] Implement Stack using Queues
+		    <a href="/posts/1e6556c3/" title="[LeetCode Road] Implement Stack using Queues - Solution/C++" target="">
+		    [LeetCode Road] Implement Stack using Queues - Solution/C++
 		    </a>
 		</li>
 	        <li class="my-links-of-blogroll-item">
-		    <a href="/posts/81b7ce15/" title="[LeetCode Road] Contains Duplicate II" target="">
-		    [LeetCode Road] Contains Duplicate II
+		    <a href="/posts/81b7ce15/" title="[LeetCode Road] Contains Duplicate II - Solution/C++" target="">
+		    [LeetCode Road] Contains Duplicate II - Solution/C++
 		    </a>
 		</li>
 	        <li class="my-links-of-blogroll-item">
-		    <a href="/posts/a3617bc9/" title="[LeetCode Road] Contains Duplicate" target="">
-		    [LeetCode Road] Contains Duplicate
+		    <a href="/posts/5d51ed7c/" title="[LeetCode Road] Contains Duplicate - Solution/C++" target="">
+		    [LeetCode Road] Contains Duplicate - Solution/C++
 		    </a>
 		</li>
 	        <li class="my-links-of-blogroll-item">
-		    <a href="/posts/c6ae99a5/" title="[LeetCode Road] Reverse Linked List" target="">
-		    [LeetCode Road] Reverse Linked List
+		    <a href="/posts/c6ae99a5/" title="[LeetCode Road] Reverse Linked List - Solution/C++" target="">
+		    [LeetCode Road] Reverse Linked List - Solution/C++
 		    </a>
 		</li>
 	        <li class="my-links-of-blogroll-item">
-		    <a href="/posts/31bd0f13/" title="[LeetCode Road] Isomorphic Strings" target="">
-		    [LeetCode Road] Isomorphic Strings
+		    <a href="/posts/31bd0f13/" title="[LeetCode Road] Isomorphic Strings - Solution/C++" target="">
+		    [LeetCode Road] Isomorphic Strings - Solution/C++
 		    </a>
 		</li>
 	</ul>
@@ -353,7 +355,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/a10d34fe/">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/2edb8546/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -369,7 +371,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Best Time to Buy and Sell Stock II - Solution/C++
+          [LeetCode Road] Pascal's Triangle II - Solution/C++
         </h1>
 
         <div class="post-meta-container">
@@ -380,14 +382,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2021-01-20 15:00:48" itemprop="dateCreated datePublished" datetime="2021-01-20T15:00:48+08:00">2021-01-20</time>
+      <time title="Created: 2021-01-18 13:55:39" itemprop="dateCreated datePublished" datetime="2021-01-18T13:55:39+08:00">2021-01-18</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-22 09:32:21" itemprop="dateModified" datetime="2021-01-22T09:32:21+08:00">2021-01-22</time>
+        <time title="Modified: 2021-03-08 16:27:50" itemprop="dateModified" datetime="2021-03-08T16:27:50+08:00">2021-03-08</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -408,8 +410,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/posts/a10d34fe/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/a10d34fe/" itemprop="commentCount"></span>
+    <a title="disqus" href="/posts/2edb8546/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/2edb8546/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -424,39 +426,35 @@
     
     <div class="post-body" itemprop="articleBody">
         <p align="center">
-<font size="6"><b>122. Best Time to Buy and Sell Stock II</b></font>
+<font size="6"><b>118. Pascal's Triangle II</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>Say you have an array <span style="background-color:#F0F0F0"><font color=#808080>prices</font></span> for which the ith element is the price of a given stock on day i.<br> <a id="more"></a></p>
-<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).<br></p>
-<p><strong>Note:</strong> You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</p>
+<p>Given an integer <span style="background-color:#F0F0F0"><font color=#808080>rowIndex</font></span>, return the <span style="background-color:#F0F0F0"><font color=#808080>rowIndex^th</font></span> row of the Pascal's triangle. Notice that the row index starts from <strong>0</strong>. <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif" alt="animation" /> <font size="2">In Pascal's triangle, each number is the sum of the two numbers directly above it.</font> <a id="more"></a></p>
+<p><strong>Follow up:</strong> Could you optimize your algorithm to use only <em>O(k)</em> extra space?</p>
 <h2 id="example">Example:</h2>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> [7,1,5,3,6,4]<br> <b>Output:</b> 7<br> <b>Explanation:</b> Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.<br>       Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+<b>Input:</b> rowIndex = 3<br> <b>Output:</b> [1,3,3,1]
 </p>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> [1,2,3,4,5]<br> <b>Output:</b> 4<br> <b>Explanation:</b> Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.        Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are engaging multiple transactions at the same time. You must sell before buying again.
+<b>Input:</b> rowIndex = 0<br> <b>Output:</b> [1]
 </p>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> [7,6,4,3,1]<br> <b>Output:</b> 0<br> <b>Explanation:</b> In this case, no transaction is done, i.e. max profit = 0.
+<b>Input:</b> rowIndex = 0<br> <b>Output:</b> [1]
 </p>
 <strong>Constraints:</strong> <strong>
 <li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= prices.length &lt;= 3 * 10 ^ 4</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= prices[i] &lt;= 10 ^ 4</font></span>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= rowIndex &lt;= 33</font></span>
 </li>
 <p></strong></p>
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> Here is the same as <a href="https://egbert-yu-ting.github.io/posts/a026a3d3/">Best Time to Buy and Sell Stock</a>. <br></p>
-<p>At 8 line, it always gets lowest price to i-th day.<br> At 9 - 10 line, we know the value of profit (<code>prices[i] - minPrice</code>), it must be checked whether it's bigger than 0. Because it avoids buying day and selling day on the same day, and guarantee the positive profit we get.<br> At 11 - 14 lin, we should not sell stock immediately even the profit is prositive at i-th day, maybe it will higher tomorrow (i-th + 1 day). So, we can know the selling day that is the best.<br> At 17 line, reinitialize minPrice variable for the next best buying day.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> minPrice = INT_MAX, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            minPrice = min(minPrice, prices[i]);</span><br><span class="line">            <span class="keyword">int</span> profit = prices[i] - minPrice, j = i;</span><br><span class="line">            <span class="keyword">if</span>(profit &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">while</span>(j &lt; n &amp;&amp; prices[j] &gt;= prices[i])&#123;</span><br><span class="line">                    i = j;</span><br><span class="line">                    j++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                sum += prices[i] - minPrice;</span><br><span class="line">                minPrice= INT_MAX;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Idea:<br> It is familiar with <a href="https://egbert-yu-ting.github.io/posts/2b0547f6/">Pascal's Trangle</a> question, you can use similar algorithm to implement it.<br> However, the efficiency of algorithm is not optimization.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">getRow</span><span class="params">(<span class="keyword">int</span> rowIndex)</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">res</span><span class="params">(<span class="number">1</span>,<span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">if</span>(rowIndex == <span class="number">0</span>) <span class="keyword">return</span> res;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= rowIndex; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> prev = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; i; j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> temp = res[j];</span><br><span class="line">                res[j] += prev;</span><br><span class="line">                prev = temp;</span><br><span class="line">            &#125; </span><br><span class="line">            res.push_back(<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> This strategy is very simple, if the buying day subtracted from the selling day is positive (profit), we directly add profit into maxProfit variable.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxProfit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(prices[i] &gt; prices[i<span class="number">-1</span>])&#123;</span><br><span class="line">                maxProfit += prices[i]- prices[i<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Idea:<br> Here's the best algorithm.<br> At first, declare a vector that consists <code>rowIndex + 1</code> elements. Must be <strong>add 1</strong>, because row index starts from 0. So the size of vector is ready, we don't use <code>push_back()</code> in loop anymore.<br></p>
+<p>Whatever a value of rowIndex is, the first position of vector is always 1, so we pass 1 to <code>res</code> vector.<br> At 9 line, we calculate each elements in reverse(it not includes the frist element).<br></p>
+<p>E.g., <u>Input: rowIndex = 3</u><br>    i = 1, res=[1, 0, 0]<br>    i = 1, res=[1, 0 + 1, 0] = [1, 1, 0]<br>    i = 2, res=[1, 1 + 1, 0 + 1] = [1, 2, 1] (output)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">getRow</span><span class="params">(<span class="keyword">int</span> rowIndex)</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">res</span><span class="params">(rowIndex+<span class="number">1</span>)</span></span>;</span><br><span class="line">        res[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= rowIndex; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &gt; <span class="number">0</span>; j--)</span><br><span class="line">                res[j] += res[j<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -474,7 +472,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>Post link: </strong>
-      <a href="https://egbert-yu-ting.github.io/posts/a10d34fe/" title="Best Time to Buy and Sell Stock II - Solution&#x2F;C++">https://egbert-yu-ting.github.io/posts/a10d34fe/</a>
+      <a href="https://egbert-yu-ting.github.io/posts/2edb8546/" title="[LeetCode Road] Pascal&#39;s Triangle II - Solution&#x2F;C++">https://egbert-yu-ting.github.io/posts/2edb8546/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -483,20 +481,20 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/Stock/" rel="tag"><i class="fa fa-tag"></i> Stock</a>
+              <a href="/tags/2D-Vector/" rel="tag"><i class="fa fa-tag"></i> 2D_Vector</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/784045ef/" rel="prev" title="Run PyCharm: Python development platform on Ubuntu (Ryu SDN)">
-                  <i class="fa fa-chevron-left"></i> Run PyCharm: Python development platform on Ubuntu (Ryu SDN)
+                <a href="/posts/2b0547f6/" rel="prev" title="[LeetCode Road] Pascal's Triangle - Solution/C++">
+                  <i class="fa fa-chevron-left"></i> [LeetCode Road] Pascal's Triangle - Solution/C++
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/1686f472/" rel="next" title="[LeetCode Road] Valid Palindromev - Solution/C++">
-                  [LeetCode Road] Valid Palindromev - Solution/C++ <i class="fa fa-chevron-right"></i>
+                <a href="/posts/a026a3d3/" rel="next" title="[LeetCode Road] Best Time to Buy and Sell Stock - Solution/C++">
+                  [LeetCode Road] Best Time to Buy and Sell Stock - Solution/C++ <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -612,9 +610,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://egbert-yu-ting.github.io/posts/a10d34fe/";
-    this.page.identifier = "posts/a10d34fe/";
-    this.page.title = "Best Time to Buy and Sell Stock II - Solution/C++";
+    this.page.url = "https://egbert-yu-ting.github.io/posts/2edb8546/";
+    this.page.identifier = "posts/2edb8546/";
+    this.page.title = "[LeetCode Road] Pascal's Triangle II - Solution/C++";
     };
   NexT.utils.loadComments('#disqus_thread', () => {
     if (window.DISQUS) {

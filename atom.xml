@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-03-08T08:35:26.879Z</updated>
+  <updated>2021-03-09T06:39:34.537Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[LeetCode Road] Longest Substring Without Repeating Characters - Solution/C++</title>
+    <link href="https://egbert-yu-ting.github.io/posts/b6196ce1/"/>
+    <id>https://egbert-yu-ting.github.io/posts/b6196ce1/</id>
+    <published>2021-03-09T06:10:44.000Z</published>
+    <updated>2021-03-09T06:39:34.537Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;3. Longest Substring Without Repeating Characters - Solution/C++&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Ques</summary>
+      
+    
+    
+    
+    <category term="LeetCode-Medium" scheme="https://egbert-yu-ting.github.io/categories/LeetCode-Medium/"/>
+    
+    
+    <category term="Hash_table" scheme="https://egbert-yu-ting.github.io/tags/Hash-table/"/>
+    
+    <category term="Sliding_Window" scheme="https://egbert-yu-ting.github.io/tags/Sliding-Window/"/>
+    
+  </entry>
   
   <entry>
     <title>[LeetCode Road] Implement Stack using Queues - Solution/C++</title>
@@ -509,46 +536,6 @@ For example:
     
     
     <category term="ListNode" scheme="https://egbert-yu-ting.github.io/tags/ListNode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Min Stack - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/cb679286/"/>
-    <id>https://egbert-yu-ting.github.io/posts/cb679286/</id>
-    <published>2021-01-25T08:31:05.000Z</published>
-    <updated>2021-01-26T07:27:12.885Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;155. Min Stack&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.&lt;br&gt;&lt;/p&gt;
-&lt;storng&gt;
-&lt;/li&gt;
-push(x) -- Push element x onto stack.
-&lt;/li&gt;
-&lt;/strong&gt; &lt;storng&gt;
-&lt;/li&gt;
-pop() -- Removes the element on top of the stack.
-&lt;/li&gt;
-&lt;/strong&gt; &lt;storng&gt;
-&lt;/li&gt;
-top() -- Get the top element.
-&lt;/li&gt;
-&lt;/storng&gt; &lt;storng&gt;
-&lt;/li&gt;
-getMin() -- Retrieve the minimum element in the stack.
-&lt;/li&gt;
-&lt;p&gt;&lt;/strong&gt;</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Stack" scheme="https://egbert-yu-ting.github.io/tags/Stack/"/>
     
   </entry>
   

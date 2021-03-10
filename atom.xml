@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-03-10T06:57:24.350Z</updated>
+  <updated>2021-03-10T07:22:23.232Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/d0988a37/"/>
     <id>https://egbert-yu-ting.github.io/posts/d0988a37/</id>
     <published>2021-03-10T06:54:06.000Z</published>
-    <updated>2021-03-10T06:57:24.350Z</updated>
+    <updated>2021-03-10T07:22:23.232Z</updated>
     
     
       
@@ -45,17 +45,18 @@
     <link href="https://egbert-yu-ting.github.io/posts/b6196ce1/"/>
     <id>https://egbert-yu-ting.github.io/posts/b6196ce1/</id>
     <published>2021-03-09T06:10:44.000Z</published>
-    <updated>2021-03-10T06:57:18.600Z</updated>
+    <updated>2021-03-10T07:27:44.515Z</updated>
     
     
-      
-      
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6&quot;&gt;&lt;b&gt;3. Longest Substring Without Repeating Characters&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;G</summary>
-      
+&lt;p&gt;Given a string &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;s&lt;/span&gt;&lt;/font&gt;, find the length of the &lt;b&gt;longest substring&lt;/b&gt; without repeating characters.&lt;/p&gt;
+&lt;h2 id=&quot;example&quot;&gt;Example:&lt;/h2&gt;
+&lt;p style=&quot;background-color:#F0F0F0&quot;&gt;
+&lt;b&gt;Input:&lt;/b&gt; s = &quot;abcabcbb&quot;&lt;br&gt; &lt;b&gt;Output:&lt;/b&gt; 3&lt;br&gt; &lt;b&gt;Explanation:&lt;/b&gt; The answer is &quot;abc&quot;, with the length of 3.
+&lt;/p&gt;</summary>
     
     
     

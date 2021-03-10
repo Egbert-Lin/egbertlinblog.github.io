@@ -1152,7 +1152,7 @@ Finally, reboot you Mac and enter WIN10 OS successfully.</li>
     <title>[LeetCode Road] Longest Substring Without Repeating Characters - Solution/C++</title>
     <url>/posts/b6196ce1/</url>
     <content><![CDATA[<p align="center">
-<font size="6"><b>3. Longest Substring Without Repeating Characters - Solution/C++</b></font>
+<font size="6"><b>3. Longest Substring Without Repeating Characters</b></font>
 </p>
 <h2 id="question">Question:</h2>
 <p>Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</span></font>, find the length of the <b>longest substring</b> without repeating characters.</p>
@@ -2945,5 +2945,23 @@ But the following <span style="background-color:#F0F0F0"><font color=#808080>[1,
         <tag>ofswitch</tag>
         <tag>OpenFlow1.3</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Longest Palindromic Substring - Solution/C++</title>
+    <url>/posts/d0988a37/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>5. Longest Palindromic Substring</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<h2 id="example">Example:</h2>
+<p><strong>Constraints:</strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> s;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> startIndex = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> validLen = max(getLen(i, i, n, s), getLen(i, i+<span class="number">1</span>, n, s));</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(validLen &gt; len)&#123;</span><br><span class="line">                len = validLen;</span><br><span class="line">                startIndex = i - (len - <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substr(startIndex, len);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getLen</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> n, <span class="built_in">string</span> s)</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(l &gt;= <span class="number">0</span> &amp;&amp; r &lt; n &amp;&amp; s[l]==s[r])&#123;</span><br><span class="line">            l--;</span><br><span class="line">            r++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r - l - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Medium</category>
+      </categories>
   </entry>
 </search>

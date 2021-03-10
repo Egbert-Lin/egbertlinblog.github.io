@@ -258,7 +258,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">66</span>
+          <span class="site-state-item-count">67</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -294,6 +294,11 @@
 	</div>
 	<ul class="links-of-blogroll-list recent-posts-list">
 	        <li class="my-links-of-blogroll-item">
+		    <a href="/posts/d0988a37/" title="[LeetCode Road] Longest Palindromic Substring - Solution/C++" target="">
+		    [LeetCode Road] Longest Palindromic Substring - Solution/C++
+		    </a>
+		</li>
+	        <li class="my-links-of-blogroll-item">
 		    <a href="/posts/b6196ce1/" title="[LeetCode Road] Longest Substring Without Repeating Characters - Solution/C++" target="">
 		    [LeetCode Road] Longest Substring Without Repeating Characters - Solution/C++
 		    </a>
@@ -311,11 +316,6 @@
 	        <li class="my-links-of-blogroll-item">
 		    <a href="/posts/5d51ed7c/" title="[LeetCode Road] Contains Duplicate - Solution/C++" target="">
 		    [LeetCode Road] Contains Duplicate - Solution/C++
-		    </a>
-		</li>
-	        <li class="my-links-of-blogroll-item">
-		    <a href="/posts/c6ae99a5/" title="[LeetCode Road] Reverse Linked List - Solution/C++" target="">
-		    [LeetCode Road] Reverse Linked List - Solution/C++
 		    </a>
 		</li>
 	</ul>
@@ -348,6 +348,102 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/d0988a37/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/d0988a37/" class="post-title-link" itemprop="url">[LeetCode Road] Longest Palindromic Substring - Solution/C++</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-03-10 14:54:06 / Modified: 14:57:24" itemprop="dateCreated datePublished" datetime="2021-03-10T14:54:06+08:00">2021-03-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/LeetCode-Medium/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Medium</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/posts/d0988a37/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/d0988a37/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p align="center">
+<font size="6"><b>5. Longest Palindromic Substring</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<h2 id="example">Example:</h2>
+<p><strong>Constraints:</strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> s;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> startIndex = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> validLen = max(getLen(i, i, n, s), getLen(i, i+<span class="number">1</span>, n, s));</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(validLen &gt; len)&#123;</span><br><span class="line">                len = validLen;</span><br><span class="line">                startIndex = i - (len - <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substr(startIndex, len);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getLen</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> n, <span class="built_in">string</span> s)</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(l &gt;= <span class="number">0</span> &amp;&amp; r &lt; n &amp;&amp; s[l]==s[r])&#123;</span><br><span class="line">            l--;</span><br><span class="line">            r++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r - l - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/b6196ce1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -375,10 +471,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-03-09 14:10:44 / Modified: 17:35:49" itemprop="dateCreated datePublished" datetime="2021-03-09T14:10:44+08:00">2021-03-09</time>
+      <time title="Created: 2021-03-09 14:10:44" itemprop="dateCreated datePublished" datetime="2021-03-09T14:10:44+08:00">2021-03-09</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-03-10 14:57:18" itemprop="dateModified" datetime="2021-03-10T14:57:18+08:00">2021-03-10</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -414,7 +516,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <p align="center">
-<font size="6"><b>3. Longest Substring Without Repeating Characters - Solution/C++</b></font>
+<font size="6"><b>3. Longest Substring Without Repeating Characters</b></font>
 </p>
 <h2 id="question">Question:</h2>
 <p>Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</span></font>, find the length of the <b>longest substring</b> without repeating characters.</p>
@@ -1306,121 +1408,6 @@ Those numbers for which this process ends in 1 are happy.
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/e73e301/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/790fdd9f/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="EgbertLin">
-      <meta itemprop="description" content="Programming Developer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Egbert Lin's Blog">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/790fdd9f/" class="post-title-link" itemprop="url">[LeetCode Road] Number of 1 Bits - Solution/C++</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-02-05 08:52:35" itemprop="dateCreated datePublished" datetime="2021-02-05T08:52:35+08:00">2021-02-05</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-03-08 16:34:46" itemprop="dateModified" datetime="2021-03-08T16:34:46+08:00">2021-03-08</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/posts/790fdd9f/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/790fdd9f/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p align="center">
-<font size="6px"><b>191. Number of 1 Bits</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Write a function that takes an unsigned integer and returns the number of '1' bits it has (also known as the <span style="background-color:#F0F0F0"><font color=#808080>Hamming weight</span></font>).</p>
-<b>Note:</b>
-<ul>
-<li>
-Note that in some languages such as Java, there is no unsigned integer type. In this case, the input will be given as a signed integer type. It should not affect your implementation, as the integer's internal binary representation is the same, whether it is signed or unsigned.
-</li>
-<li>
-In Java, the compiler represents the signed integers using <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Two%27s_complement">2's complement</a> notation. Therefore, in <b>Example 3</b> above, the input represents the signed integer. <span style="background-color:#F0F0F0"><font color=#808080>-3</font>
-</style>
-.
-</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/790fdd9f/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>

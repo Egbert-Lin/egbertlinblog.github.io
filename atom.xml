@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-03-09T09:35:49.179Z</updated>
+  <updated>2021-03-10T06:57:24.350Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -17,19 +17,44 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>[LeetCode Road] Longest Substring Without Repeating Characters - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/b6196ce1/"/>
-    <id>https://egbert-yu-ting.github.io/posts/b6196ce1/</id>
-    <published>2021-03-09T06:10:44.000Z</published>
-    <updated>2021-03-09T09:35:49.179Z</updated>
+    <title>[LeetCode Road] Longest Palindromic Substring - Solution/C++</title>
+    <link href="https://egbert-yu-ting.github.io/posts/d0988a37/"/>
+    <id>https://egbert-yu-ting.github.io/posts/d0988a37/</id>
+    <published>2021-03-10T06:54:06.000Z</published>
+    <updated>2021-03-10T06:57:24.350Z</updated>
     
     
       
       
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;3. Longest Substring Without Repeating Characters - Solution/C++&lt;/b&gt;&lt;/font&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;5. Longest Palindromic Substring&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Ques</summary>
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;h2 id=&quot;example&quot;&gt;Exam</summary>
+      
+    
+    
+    
+    <category term="LeetCode-Medium" scheme="https://egbert-yu-ting.github.io/categories/LeetCode-Medium/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[LeetCode Road] Longest Substring Without Repeating Characters - Solution/C++</title>
+    <link href="https://egbert-yu-ting.github.io/posts/b6196ce1/"/>
+    <id>https://egbert-yu-ting.github.io/posts/b6196ce1/</id>
+    <published>2021-03-09T06:10:44.000Z</published>
+    <updated>2021-03-10T06:57:18.600Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;3. Longest Substring Without Repeating Characters&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;G</summary>
       
     
     
@@ -512,30 +537,6 @@ For example:
     
     <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Intersection of Two Linked Lists - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/a44c9fee/"/>
-    <id>https://egbert-yu-ting.github.io/posts/a44c9fee/</id>
-    <published>2021-01-26T08:01:15.000Z</published>
-    <updated>2021-03-08T08:33:44.922Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;160. Intersection of Two Linked Lists&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Write a program to find the node at which the intersection of two singly linked lists begins.&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;For example, the following two linked lists:</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="ListNode" scheme="https://egbert-yu-ting.github.io/tags/ListNode/"/>
     
   </entry>
   

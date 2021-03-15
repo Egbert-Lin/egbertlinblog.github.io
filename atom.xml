@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-03-15T06:44:34.995Z</updated>
+  <updated>2021-03-15T06:45:58.531Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,17 +21,18 @@
     <link href="https://egbert-yu-ting.github.io/posts/d0988a37/"/>
     <id>https://egbert-yu-ting.github.io/posts/d0988a37/</id>
     <published>2021-03-10T06:54:06.000Z</published>
-    <updated>2021-03-15T06:44:34.995Z</updated>
+    <updated>2021-03-15T06:45:58.531Z</updated>
     
     
-      
-      
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6&quot;&gt;&lt;b&gt;5. Longest Palindromic Substring&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given a string s, </summary>
-      
+&lt;p&gt;Given a string s, return the longest palindromic substring in s.&lt;/p&gt;
+&lt;h2 id=&quot;example&quot;&gt;Example:&lt;/h2&gt;
+&lt;p style=&quot;background-color:#F0F0F0&quot;&gt;
+&lt;b&gt;Input:&lt;/b&gt; s = &quot;babad&quot;&lt;br&gt; &lt;b&gt;Output:&lt;/b&gt; &quot;bab&quot;&lt;br&gt; &lt;b&gt;Note:&lt;/b&gt; &quot;aba&quot; is also a valid answer.
+&lt;/p&gt;</summary>
     
     
     

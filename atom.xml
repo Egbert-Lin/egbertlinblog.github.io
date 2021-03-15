@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-03-15T06:49:16.220Z</updated>
+  <updated>2021-03-15T08:30:27.355Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[LeetCode Road] Container With Most Water - Solution/C++</title>
+    <link href="https://egbert-yu-ting.github.io/posts/fa15b897/"/>
+    <id>https://egbert-yu-ting.github.io/posts/fa15b897/</id>
+    <published>2021-03-15T08:19:31.000Z</published>
+    <updated>2021-03-15T08:30:27.355Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;11. Container With Most Water&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n&lt;/font&gt;&lt;/span&gt; non-negative integers &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;a1, a2, ..., an&lt;/font&gt;&lt;/span&gt; , where each represents a point at coordinate &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;(i, ai)&lt;/font&gt;&lt;/span&gt;. &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n&lt;/font&gt;&lt;/span&gt; vertical lines are drawn such that the two endpoints of the line &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;i&lt;/font&gt;&lt;/span&gt; is at &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;(i, ai)&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;(i, 0)&lt;/font&gt;&lt;/span&gt;. Find two lines, which, together with the x-axis forms a container, such that the container contains the most water.&lt;br&gt;</summary>
+    
+    
+    
+    <category term="LeetCode-Medium" scheme="https://egbert-yu-ting.github.io/categories/LeetCode-Medium/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>[LeetCode Road] Longest Palindromic Substring - Solution/C++</title>
@@ -517,28 +538,6 @@ For example:
     
     
     <category term="ASCII" scheme="https://egbert-yu-ting.github.io/tags/ASCII/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Two Sum II - Input array is sorted - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/a4366474/"/>
-    <id>https://egbert-yu-ting.github.io/posts/a4366474/</id>
-    <published>2021-01-28T00:29:41.000Z</published>
-    <updated>2021-03-08T08:36:15.955Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Two Sum II - Input array is sorted&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given an array of integers that is already &lt;b&gt;&lt;I&gt;sorted in ascending order&lt;/I&gt;&lt;/b&gt;, find two numbers such that they add up to a specific target number.&lt;/p&gt;
-&lt;p&gt;The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2.</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
     
   </entry>
   

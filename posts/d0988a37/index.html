@@ -32,13 +32,13 @@
 <meta property="og:site_name" content="Egbert Lin&#39;s Blog">
 <meta property="og:description" content="5. Longest Palindromic Substring  Question: Given a string s, return the longest palindromic substring in s. Example:  Input: s &#x3D; &quot;babad&quot; Output: &quot;bab&quot; Note: &quot;aba&quot; is also a valid answer.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://egbert-yu-ting.github.io/posts/d0988a37/sutiation.png">
+<meta property="og:image" content="https://egbert-yu-ting.github.io/posts/d0988a37/situation.png">
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/d0988a37/calculateMargin.png">
 <meta property="article:published_time" content="2021-03-10T06:54:06.000Z">
-<meta property="article:modified_time" content="2021-03-15T06:45:58.531Z">
+<meta property="article:modified_time" content="2021-03-15T06:49:16.220Z">
 <meta property="article:author" content="EgbertLin">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://egbert-yu-ting.github.io/posts/d0988a37/sutiation.png">
+<meta name="twitter:image" content="https://egbert-yu-ting.github.io/posts/d0988a37/situation.png">
 
 
 <link rel="canonical" href="https://egbert-yu-ting.github.io/posts/d0988a37/">
@@ -389,7 +389,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-03-15 14:45:58" itemprop="dateModified" datetime="2021-03-15T14:45:58+08:00">2021-03-15</time>
+        <time title="Modified: 2021-03-15 14:49:16" itemprop="dateModified" datetime="2021-03-15T14:49:16+08:00">2021-03-15</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -456,13 +456,13 @@
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
 <p>Idea:<br></p>
-<p>There are two situations of the palindromic that are shown as below:<br> <img src="sutiation.png" /></p>
+<p>There are two situations of the palindromic that are shown as below:<br> <img src="situation.png" /></p>
 <p>Therefore, you should calculate the maximum length of the valid string for two situation at 11 line.<br></p>
 <p>Let's look at getLen() function. you need to delcare two variables, <code>l</code> is represented the left index and <code>r</code> is represented the right index, use two indexes as the margins of string to find the longest substring. If <code>l</code> is smaller than 0 or <code>r</code> is equal to n or a character of <code>s[l]</code> and <code>s[r]</code> are not the same, the while loop will be stop, and return <code>r - l - 1</code> length.<br></p>
 <p>Why is <code>r - l - 1</code>? Because the value of <code>r</code> and <code>l</code> are added 1 when break the while loop, as below:<br> <img src="calculateMargin.png" /></p>
 <p>Hence, must be additionally substract 1.<br></p>
 <p>After getting the result from getLen(), if the result is bigger than <code>len</code> at 13 line, store the result and calculate the start index of the substring by using the <code>i</code> and <code>len</code>.<br></p>
-<p>Finally, you can use substr to return the exact substring!</p>
+<p>Finally, you can use substr() to return the exact substring!</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> s;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> startIndex = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> validLen = max(getLen(i, i, n, s), getLen(i, i+<span class="number">1</span>, n, s));</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(validLen &gt; len)&#123;</span><br><span class="line">                len = validLen;</span><br><span class="line">                startIndex = i - (len - <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substr(startIndex, len);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getLen</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> n, <span class="built_in">string</span> s)</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(l &gt;= <span class="number">0</span> &amp;&amp; r &lt; n &amp;&amp; s[l]==s[r])&#123;</span><br><span class="line">            l--;</span><br><span class="line">            r++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r - l - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>

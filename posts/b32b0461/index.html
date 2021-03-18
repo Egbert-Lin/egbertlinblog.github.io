@@ -25,24 +25,20 @@
     var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="111. Minimum Depth of Binary Tree  Question: Given a binary tree, find its minimum depth. The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf">
+  <meta name="description" content="15. 3Sum  Question: Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c &#x3D; 0? Find all unique triplets in the array which gives the sum of zero. Notice that the s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[LeetCode Road] Minimum Depth of Binary Tree - Solution&#x2F;C++">
-<meta property="og:url" content="https://egbert-yu-ting.github.io/posts/aedd93e0/index.html">
+<meta property="og:title" content="[LeetCode Road] 3Sum - Solution&#x2F;C++">
+<meta property="og:url" content="https://egbert-yu-ting.github.io/posts/b32b0461/index.html">
 <meta property="og:site_name" content="Egbert Lin&#39;s Blog">
-<meta property="og:description" content="111. Minimum Depth of Binary Tree  Question: Given a binary tree, find its minimum depth. The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf">
+<meta property="og:description" content="15. 3Sum  Question: Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c &#x3D; 0? Find all unique triplets in the array which gives the sum of zero. Notice that the s">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://egbert-yu-ting.github.io/posts/aedd93e0/example.png">
-<meta property="article:published_time" content="2021-01-16T10:23:34.000Z">
-<meta property="article:modified_time" content="2021-03-08T08:36:56.429Z">
+<meta property="article:published_time" content="2021-03-16T16:10:24.000Z">
+<meta property="article:modified_time" content="2021-03-18T08:42:06.862Z">
 <meta property="article:author" content="EgbertLin">
-<meta property="article:tag" content="Tree">
-<meta property="article:tag" content="Recursion">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://egbert-yu-ting.github.io/posts/aedd93e0/example.png">
 
 
-<link rel="canonical" href="https://egbert-yu-ting.github.io/posts/aedd93e0/">
+<link rel="canonical" href="https://egbert-yu-ting.github.io/posts/b32b0461/">
 
 
 <script class="page-configurations">
@@ -56,7 +52,7 @@
 </script><script data-ad-client="ca-pub-8863232600865901" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <title>[LeetCode Road] Minimum Depth of Binary Tree - Solution/C++ | Egbert Lin's Blog</title>
+  <title>[LeetCode Road] 3Sum - Solution/C++ | Egbert Lin's Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S56LQ3K3NG"></script>
     <script>
@@ -356,7 +352,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/aedd93e0/">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/b32b0461/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -372,7 +368,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [LeetCode Road] Minimum Depth of Binary Tree - Solution/C++
+          [LeetCode Road] 3Sum - Solution/C++
         </h1>
 
         <div class="post-meta-container">
@@ -383,14 +379,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2021-01-16 18:23:34" itemprop="dateCreated datePublished" datetime="2021-01-16T18:23:34+08:00">2021-01-16</time>
+      <time title="Created: 2021-03-17 00:10:24" itemprop="dateCreated datePublished" datetime="2021-03-17T00:10:24+08:00">2021-03-17</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-03-08 16:36:56" itemprop="dateModified" datetime="2021-03-08T16:36:56+08:00">2021-03-08</time>
+        <time title="Modified: 2021-03-18 16:42:06" itemprop="dateModified" datetime="2021-03-18T16:42:06+08:00">2021-03-18</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -398,7 +394,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
+          <a href="/categories/LeetCode-Medium/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Medium</span></a>
         </span>
     </span>
 
@@ -411,8 +407,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/posts/aedd93e0/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/aedd93e0/" itemprop="commentCount"></span>
+    <a title="disqus" href="/posts/b32b0461/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/b32b0461/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -427,33 +423,39 @@
     
     <div class="post-body" itemprop="articleBody">
         <p align="center">
-<font size="6"><b>111. Minimum Depth of Binary Tree</b></font>
+<font size="6"><b>15. 3Sum</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>Given a binary tree, find its minimum depth.</p>
-<p>The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>
-<p><strong>Note:</strong> A leaf is a node with no children. <a id="more"></a></p>
+<p>Given an array <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> of <I>n</I> integers, are there elements <I>a, b, c</I> in <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> such that <I>a</I> + <I>b</I> + <I>c</I> = 0? Find all unique triplets in the array which gives the sum of zero.<br></p>
+<p>Notice that the solution set must not contain duplicate triplets. <a id="more"></a></p>
 <h2 id="example">Example:</h2>
-<img src="example.png" />
 <p style="background-color:#F0F0F0">
-<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 2
+<b>Input:</b> nums = [-1,0,1,2,-1,-4]<br> <b>Output:</b> [[-1,-1,2],[-1,0,1]]
 </p>
 <p style="background-color:#F0F0F0">
-<b>Input:</b> root = [2,null,3,null,4,null,5,null,6]<br> <b>Output:</b> 5
+<b>Input:</b> nums = []<br> <b>Output:</b> []
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [0]<br> <b>Output:</b> []
 </p>
 <strong>Constraints:</strong> <strong>
 <li>
-The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^5]</font></span>.
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= nums.length &lt;= 3000</font></span>
 </li>
 </strong> <strong>
 <li>
-<span style="background-color:#F0F0F0"><font color=#808080>-1000 &lt;= Node.val &lt;= 1000</font></span>
+<span style="background-color:#F0F0F0"><font color=#808080>-10<sup>5</sup> &lt;= nums[i] &lt;= 10<sup>5</sup></font></span>
 </li>
 <p></strong></p>
 <h2 id="source-code">Source code:</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> We can sum up the rules of the binary tree.<br> <strong>First:</strong> If the left subnode and right subnode are exist of leaf node, it can be calculated each depths and use min() to get minimum depth.<br> <strong>Seconde:</strong> If there is NULL either left subnode or right subnode of leaf node, we must use max() to get the maxixmum depth, because <u>"A leaf is a node with no children"</u> based on the question. E.g., if left subnode is NULL, a leaf can't be calculated as 1 depth.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;left &amp;&amp; root-&gt;right)&#123;</span><br><span class="line">            <span class="keyword">return</span> min(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> max(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Idea:<br> The input is unsorted data, it's hart to find a rules to solve it. Therefore, sort <code>nums</code> first.<br></p>
+<p>There are some situations that the program doesn't run necessarily, the explanation of situations are shown as below:<b> 1) The sum of the first three elements is bigger than 0, it means any elements is bigger than 0, so directly break the loop.<br> 2) If add the first element <code>nums[i]</code> to the last element <code>nums[n-1]</code> and the second to last element <code>nums[n-2]</code> is small than 0, it's represnets whatever the calculation of sum is always negative number, so directly move <code>i</code> to the next index.<br> 3) Avoid the duplicated elements and results, because all the possibility are found at <code>nums[i-1]</code>.<br></p>
+<p>Then, declare two variables to point the <code>i+1</code> position and the tail of arrayv <code>n-1</code>. There is a search range between <code>i+1</code> and <code>n-1</code>.<br></p>
+<p>If <code>nums[i] + nums[j] + nums[k]</code> is not equal to 0, <I>move <code>j</code> to the next index when the sum is small than 0</I> or <I>move 'k' to previous index when the sum is bigger than 0</I>.</p>
+<p>If <code>nums[i] + nums[j] + nums[k]</code> is equal to 0, push these elements to 2D vector first, then narrow the search range down, it's must to check whether the next element is the same as the previous one for avoid the duplicated result.<br></p>
+<p><b>Time complexity: O(nlongn + n<sup>2</sup>)</b><br> <b>Space complexity: O(1)</b></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; threeSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n  = nums.size();</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">        <span class="comment">//if(n &lt; 3) return res;</span></span><br><span class="line">        </span><br><span class="line">        sort(nums.begin(), nums.end());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">2</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] + nums[i + <span class="number">1</span>] + nums[i + <span class="number">2</span>] &gt; <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">/*the beginning element is bigger than 0, directly break the loop*/</span></span><br><span class="line">            <span class="keyword">if</span>(nums[i] + nums[n - <span class="number">1</span>] + nums[n - <span class="number">2</span>] &lt; <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="comment">/*the beginning element add to the most largest element and the element largest element you get result, if result is negative, no reason to calculate*/</span></span><br><span class="line">            <span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i - <span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="comment">/*ensure the results are not contain duplicat triplets*/</span></span><br><span class="line">            <span class="keyword">int</span> j = i + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> k = n - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(j &lt; k)&#123;</span><br><span class="line">                <span class="comment">//cout &lt;&lt; nums[i] &lt;&lt; &quot; &quot; &lt;&lt; nums[j] &lt;&lt; &quot; &quot; &lt;&lt;nums[k] &lt;&lt; endl;</span></span><br><span class="line">                <span class="keyword">int</span> tmp = nums[i] + nums[j] + nums[k];</span><br><span class="line">                <span class="keyword">if</span>(tmp == <span class="number">0</span>)&#123;</span><br><span class="line">                    res.push_back(&#123;nums[i] , nums[j] , nums[k]&#125;);</span><br><span class="line">                    ++j;</span><br><span class="line">                    <span class="keyword">while</span>(j &lt; k &amp;&amp; nums[j] == nums[j - <span class="number">1</span>]) ++j;</span><br><span class="line">                    --k;</span><br><span class="line">                    <span class="keyword">while</span>(j &lt; k &amp;&amp; nums[k] == nums[k + <span class="number">1</span>]) --k;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(tmp &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                    ++j;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(tmp &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                    --k;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -471,7 +473,7 @@ The number of nodes in the tree is in the range <span style="background-color:#F
   </li>
   <li class="post-copyright-link">
       <strong>Post link: </strong>
-      <a href="https://egbert-yu-ting.github.io/posts/aedd93e0/" title="[LeetCode Road] Minimum Depth of Binary Tree - Solution&#x2F;C++">https://egbert-yu-ting.github.io/posts/aedd93e0/</a>
+      <a href="https://egbert-yu-ting.github.io/posts/b32b0461/" title="[LeetCode Road] 3Sum - Solution&#x2F;C++">https://egbert-yu-ting.github.io/posts/b32b0461/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -479,23 +481,16 @@ The number of nodes in the tree is in the range <span style="background-color:#F
 </ul>
 </div>
 
-          <div class="post-tags">
-              <a href="/tags/Tree/" rel="tag"><i class="fa fa-tag"></i> Tree</a>
-              <a href="/tags/Recursion/" rel="tag"><i class="fa fa-tag"></i> Recursion</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/b3e1ca12/" rel="prev" title="[LeetCode Road] Balanced Binary Tree - Solution/C++">
-                  <i class="fa fa-chevron-left"></i> [LeetCode Road] Balanced Binary Tree - Solution/C++
+                <a href="/posts/fa15b897/" rel="prev" title="[LeetCode Road] Container With Most Water - Solution/C++">
+                  <i class="fa fa-chevron-left"></i> [LeetCode Road] Container With Most Water - Solution/C++
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/bb7f02f5/" rel="next" title="[LeetCode Road] Path Sum - Solution/C++">
-                  [LeetCode Road] Path Sum - Solution/C++ <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -610,9 +605,9 @@ The number of nodes in the tree is in the range <span style="background-color:#F
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://egbert-yu-ting.github.io/posts/aedd93e0/";
-    this.page.identifier = "posts/aedd93e0/";
-    this.page.title = "[LeetCode Road] Minimum Depth of Binary Tree - Solution/C++";
+    this.page.url = "https://egbert-yu-ting.github.io/posts/b32b0461/";
+    this.page.identifier = "posts/b32b0461/";
+    this.page.title = "[LeetCode Road] 3Sum - Solution/C++";
     };
   NexT.utils.loadComments('#disqus_thread', () => {
     if (window.DISQUS) {

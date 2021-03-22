@@ -2254,7 +2254,7 @@ Internally you can think of this:
 <font size="6"><b>19. Remove Nth Node From End of List</b></font>
 </p>
 <h2 id="question">Question:</h2>
-<p>Given the <span style="background-color:#F0F0F0"><font color=#808080>head</font></span> of a linked list, remove the n<sup>th</sup> node from the end of the list and return its head.</p>
+<p>Given the <span style="background-color:#F0F0F0"><font color=#808080>head</font></span> of a linked list, remove the <span style="background-color:#F0F0F0"><font color=#808080>n<sup>th</sup></font></span> node from the end of the list and return its head.</p>
 <p><b>Follow up:</b> Could you do this in one pass? <a id="more"></a></p>
 <h2 id="example">Example:</h2>
 <img src="example.png" />
@@ -2283,10 +2283,10 @@ The number of nodes in the list is <span style="background-color:#F0F0F0"><font 
 <li>
 <span style="background-color:#F0F0F0"><font color=#808080>01 &lt;= n &lt;= sz</font></span>
 </li>
-<p></strong
-
-## Source code
-### <u>Version 1</u> Idea:<br> This method uses fast &amp; slow pointers. It is similar with <a href="https://egbert-yu-ting.github.io/posts/44e8eae/?highlight=fast">141. Linked List Cycle</a>.<br></p>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> This method uses fast &amp; slow pointers. It is similar with <a href="https://egbert-yu-ting.github.io/posts/44e8eae/?highlight=fast">141. Linked List Cycle</a>.<br></p>
 <p>Fast pointer moves <code>n</code> steps first. It means the distance is <code>n</code> between fast pointer and slow pointer.<br></p>
 <p>What the concept of the method?<br> When the fast pointer reaches to the end of the list, the slow points will stop at n<sup>th</sup> from the end of the list. At the monent, the next node of slow pointer is the answer to remove it.<br></p>
 <p>The demonstration is shown as below:<br> <img src="demonstration.png" /></p>

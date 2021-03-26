@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-03-24T07:48:48.651Z</updated>
+  <updated>2021-03-26T07:07:16.191Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -17,11 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Find the Duplicate Number</title>
+    <link href="https://egbert-yu-ting.github.io/posts/36325234/"/>
+    <id>https://egbert-yu-ting.github.io/posts/36325234/</id>
+    <published>2021-03-25T02:03:36.000Z</published>
+    <updated>2021-03-26T07:07:16.191Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given an array of integers &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;nums&lt;/font&gt;&lt;/span&gt; containing &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n + 1&lt;/font&gt;&lt;/span&gt; integers where each integer is in the range &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;[1, n]&lt;/font&gt;&lt;/span&gt; inclusive.&lt;/p&gt;
+&lt;p&gt;There is only &lt;b&gt;one repeated number&lt;/b&gt; in &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;nums&lt;/font&gt;&lt;/span&gt;, return &lt;/u&gt;this repeated number&lt;/u&gt;.</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Data Structures - Selection Sort</title>
     <link href="https://egbert-yu-ting.github.io/posts/74223785/"/>
     <id>https://egbert-yu-ting.github.io/posts/74223785/</id>
     <published>2021-03-24T02:57:42.000Z</published>
-    <updated>2021-03-24T07:48:48.651Z</updated>
+    <updated>2021-03-24T07:49:13.450Z</updated>
     
     
       
@@ -506,29 +523,6 @@ In Java, the compiler represents the signed integers using 2&#39;s complement no
     
     <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Data Structures - Linear Search Algorithm diagram</title>
-    <link href="https://egbert-yu-ting.github.io/posts/65334f02/"/>
-    <id>https://egbert-yu-ting.github.io/posts/65334f02/</id>
-    <published>2021-02-01T00:53:55.000Z</published>
-    <updated>2021-02-04T16:16:55.751Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Basic programming - Linear Search&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given an array arr[] of n elements, write a function to search a given element x in arr[].</summary>
-    
-    
-    
-    <category term="SearchAlgorithm" scheme="https://egbert-yu-ting.github.io/categories/searchalgorithm/"/>
-    
-    
-    <category term="Searching" scheme="https://egbert-yu-ting.github.io/tags/Searching/"/>
     
   </entry>
   

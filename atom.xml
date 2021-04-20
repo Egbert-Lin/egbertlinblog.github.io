@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-04-20T01:16:54.519Z</updated>
+  <updated>2021-04-20T01:28:42.017Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/23a6e02/"/>
     <id>https://egbert-yu-ting.github.io/posts/23a6e02/</id>
     <published>2021-04-13T03:39:31.000Z</published>
-    <updated>2021-04-20T01:16:54.519Z</updated>
+    <updated>2021-04-20T01:28:42.017Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -44,7 +44,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/47c634b1/"/>
     <id>https://egbert-yu-ting.github.io/posts/47c634b1/</id>
     <published>2021-04-11T09:55:01.000Z</published>
-    <updated>2021-04-20T01:24:27.634Z</updated>
+    <updated>2021-04-20T01:28:42.015Z</updated>
     
     
       
@@ -63,18 +63,23 @@
   </entry>
   
   <entry>
-    <title>Find the Duplicate Number</title>
+    <title>[LeetCode Road] Find the Duplicate Number - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/36325234/"/>
     <id>https://egbert-yu-ting.github.io/posts/36325234/</id>
     <published>2021-03-25T02:03:36.000Z</published>
-    <updated>2021-03-26T07:07:29.899Z</updated>
+    <updated>2021-04-20T02:40:53.176Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;287. Find the Duplicate Number&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Given an array of integers &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;nums&lt;/font&gt;&lt;/span&gt; containing &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n + 1&lt;/font&gt;&lt;/span&gt; integers where each integer is in the range &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;[1, n]&lt;/font&gt;&lt;/span&gt; inclusive.&lt;/p&gt;
 &lt;p&gt;There is only &lt;b&gt;one repeated number&lt;/b&gt; in &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;nums&lt;/font&gt;&lt;/span&gt;, return &lt;/u&gt;this repeated number&lt;/u&gt;.</summary>
     
     
+    
+    <category term="LeetCode-Medium" scheme="https://egbert-yu-ting.github.io/categories/LeetCode-Medium/"/>
     
     
   </entry>
@@ -84,17 +89,14 @@
     <link href="https://egbert-yu-ting.github.io/posts/74223785/"/>
     <id>https://egbert-yu-ting.github.io/posts/74223785/</id>
     <published>2021-03-24T02:57:42.000Z</published>
-    <updated>2021-03-24T07:49:13.450Z</updated>
+    <updated>2021-04-20T02:35:12.671Z</updated>
     
     
-      
-      
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Basic programming - Selection Sort&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;approach&quot;&gt;Approach:&lt;/h2&gt;
-&lt;p&gt;Declare two va</summary>
-      
+&lt;p&gt;Declare two variables, &lt;code&gt;i&lt;/code&gt; likes the end pointer of sorted vector and &lt;code&gt;j&lt;/code&gt; likes the scanning pointer.&lt;br&gt; Aims to find the smallest value (or biggest value), therefore, &lt;code&gt;j&lt;/code&gt; starts from &lt;code&gt;i&lt;/code&gt; to scan until the end of &lt;code&gt;nums&lt;/code&gt;. Then, the smallest value is changed with the value of index &lt;code&gt;i&lt;/code&gt; by calling swap(). It means adding the smallest value to the sorted vector. Next step, i moves to the next index and go back to the previous action until all values are sorted.</summary>
     
     
     

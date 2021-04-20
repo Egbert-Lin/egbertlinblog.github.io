@@ -809,9 +809,12 @@ For example:
       </tags>
   </entry>
   <entry>
-    <title>Find the Duplicate Number</title>
+    <title>[LeetCode Road] Find the Duplicate Number - Solution/C++</title>
     <url>/posts/36325234/</url>
-    <content><![CDATA[<h2 id="question">Question:</h2>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>287. Find the Duplicate Number</b></font>
+</p>
+<h2 id="question">Question:</h2>
 <p>Given an array of integers <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> containing <span style="background-color:#F0F0F0"><font color=#808080>n + 1</font></span> integers where each integer is in the range <span style="background-color:#F0F0F0"><font color=#808080>[1, n]</font></span> inclusive.</p>
 <p>There is only <b>one repeated number</b> in <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span>, return </u>this repeated number</u>. <a id="more"></a></p>
 <h2 id="example">Example:</h2>
@@ -829,7 +832,7 @@ For example:
 </p>
 <strong>Constraints:</strong> <strong>
 <li>
-<span style="background-color:#F0F0F0"><font color=#808080>2 &lt;= n &lt;= 3 * 10<sup>4</sup><font></span>
+<span style="background-color:#F0F0F0"><font color=#808080>2 &lt;= n &lt;= 3 * 10<sup>4</sup></font></span>
 </li>
 </strong> <strong>
 <li>
@@ -862,6 +865,9 @@ All the integers in <span style="background-color:#F0F0F0"><font color=#808080>n
 <p><b>Time complexity: O(nlogn)</b><br> <b>Space complexity: O(1)</b></p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">int</span> low = <span class="number">1</span>, high = n - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(low &lt; high)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (low + high)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">const</span> <span class="keyword">int</span> &amp;element:nums)&#123;</span><br><span class="line">                <span class="keyword">if</span>(element &lt;= mid)&#123;</span><br><span class="line">                    count++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(count &lt;= mid)&#123;</span><br><span class="line">                low = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                high = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> low;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>LeetCode-Medium</category>
+      </categories>
   </entry>
   <entry>
     <title>[Step by Step] How to install Google Chrome on Ubuntu 16.04</title>
@@ -2728,8 +2734,7 @@ loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_
 <font size="6px"><b>Basic programming - Selection Sort</b></font>
 </p>
 <h2 id="approach">Approach:</h2>
-<p>Declare two variables, <code>i</code> likes the end pointer of sorted vector and <code>j</code> likes the scanning pointer.<br></p>
-<p>Aims to find the smallest value (or biggest value), therefore, <code>j</code> starts from <code>i</code> to scan until the end of <code>nums</code>. Then, the smallest value is changed with the value of index <code>i</code> by calling swap(). It means adding the smallest value to the sorted vector. Next step, i moves to the next index and go back to the previous action until all values are sorted.</p>
+<p>Declare two variables, <code>i</code> likes the end pointer of sorted vector and <code>j</code> likes the scanning pointer.<br> Aims to find the smallest value (or biggest value), therefore, <code>j</code> starts from <code>i</code> to scan until the end of <code>nums</code>. Then, the smallest value is changed with the value of index <code>i</code> by calling swap(). It means adding the smallest value to the sorted vector. Next step, i moves to the next index and go back to the previous action until all values are sorted. <a id="more"></a></p>
 <b>Time complexity:</b><br>
 <li>
 Best Case：Ο(n<sup>2</sup>)

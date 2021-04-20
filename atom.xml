@@ -63,6 +63,33 @@
   </entry>
   
   <entry>
+    <title>Let&#39;s understand the Backtracking algorithm</title>
+    <link href="https://egbert-yu-ting.github.io/posts/eabab51c/"/>
+    <id>https://egbert-yu-ting.github.io/posts/eabab51c/</id>
+    <published>2021-04-11T09:30:10.000Z</published>
+    <updated>2021-04-20T02:43:04.950Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;source-code&quot;&gt;Source code&lt;/h2&gt;
+&lt;h3 id=&quot;version-1&quot;&gt;&lt;u&gt;Version 1&lt;/u&gt;&lt;/h3&gt;
+&lt;p&gt;Idea:&lt;br&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+      
+    
+    
+    
+    <category term="Tree_SearchAlgorithm" scheme="https://egbert-yu-ting.github.io/categories/Tree-SearchAlgorithm/"/>
+    
+    
+    <category term="Algorithm" scheme="https://egbert-yu-ting.github.io/tags/Algorithm/"/>
+    
+    <category term="Backtracking" scheme="https://egbert-yu-ting.github.io/tags/Backtracking/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[LeetCode Road] Find the Duplicate Number - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/36325234/"/>
     <id>https://egbert-yu-ting.github.io/posts/36325234/</id>
@@ -503,29 +530,6 @@ In Java, the compiler represents the signed integers using 2&#39;s complement no
     
     
     <category term="Shift_Operators" scheme="https://egbert-yu-ting.github.io/tags/Shift-Operators/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Data Structures - Exponential Search Algorithm</title>
-    <link href="https://egbert-yu-ting.github.io/posts/85970ec4/"/>
-    <id>https://egbert-yu-ting.github.io/posts/85970ec4/</id>
-    <published>2021-02-02T02:02:14.000Z</published>
-    <updated>2021-02-04T16:16:54.163Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Basic programming - Exponential Search&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given a sorted array, and an element x to be searched, find position of x in the array.</summary>
-    
-    
-    
-    <category term="SearchAlgorithm" scheme="https://egbert-yu-ting.github.io/categories/searchalgorithm/"/>
-    
-    
-    <category term="Searching" scheme="https://egbert-yu-ting.github.io/tags/Searching/"/>
     
   </entry>
   

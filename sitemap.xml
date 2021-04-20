@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://egbert-yu-ting.github.io/posts/eabab51c/</loc>
+    
+    <lastmod>2021-04-20</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://egbert-yu-ting.github.io/posts/36325234/</loc>
     
     <lastmod>2021-04-20</lastmod>
@@ -927,6 +934,13 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Backtracking/</loc>
+    <lastmod>2021-04-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -1001,6 +1015,13 @@
   
   <url>
     <loc>https://egbert-yu-ting.github.io/categories/recursion/</loc>
+    <lastmod>2021-04-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/categories/Tree-SearchAlgorithm/</loc>
     <lastmod>2021-04-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

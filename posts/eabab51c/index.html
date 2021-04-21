@@ -25,15 +25,15 @@
     var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="Source code Version 1 Idea: 123456789101112131415161718192021222324252627282930#include &lt;iostream&gt;#include &lt;string&gt;#define N 3using namespace std;void backtracking(string&amp; s, string&amp;am">
+  <meta name="description" content="Backtracking algorithm  Introduction:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Let&#39;s understand the Backtracking algorithm">
 <meta property="og:url" content="https://egbert-yu-ting.github.io/posts/eabab51c/index.html">
 <meta property="og:site_name" content="Egbert Lin&#39;s Blog">
-<meta property="og:description" content="Source code Version 1 Idea: 123456789101112131415161718192021222324252627282930#include &lt;iostream&gt;#include &lt;string&gt;#define N 3using namespace std;void backtracking(string&amp; s, string&amp;am">
+<meta property="og:description" content="Backtracking algorithm  Introduction:">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-11T09:30:10.000Z">
-<meta property="article:modified_time" content="2021-04-20T02:43:11.895Z">
+<meta property="article:modified_time" content="2021-04-21T01:05:26.284Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="Algorithm">
 <meta property="article:tag" content="Backtracking">
@@ -229,7 +229,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#source-code"><span class="nav-number">1.</span> <span class="nav-text">Source code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#version-1"><span class="nav-number">1.1.</span> <span class="nav-text">Version 1</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source-code"><span class="nav-number">2.</span> <span class="nav-text">Source code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#version-1"><span class="nav-number">2.1.</span> <span class="nav-text">Version 1</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -263,7 +263,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -299,6 +299,11 @@
 	</div>
 	<ul class="links-of-blogroll-list recent-posts-list">
 	        <li class="my-links-of-blogroll-item">
+		    <a href="/posts/918ef68a/" title="Data Structures - Insertion Sort" target="">
+		    Data Structures - Insertion Sort
+		    </a>
+		</li>
+	        <li class="my-links-of-blogroll-item">
 		    <a href="/posts/23a6e02/" title="[LeetCode Road] Merge k Sorted Lists - Solution/C++" target="">
 		    [LeetCode Road] Merge k Sorted Lists - Solution/C++
 		    </a>
@@ -316,11 +321,6 @@
 	        <li class="my-links-of-blogroll-item">
 		    <a href="/posts/36325234/" title="[LeetCode Road] Find the Duplicate Number - Solution/C++" target="">
 		    [LeetCode Road] Find the Duplicate Number - Solution/C++
-		    </a>
-		</li>
-	        <li class="my-links-of-blogroll-item">
-		    <a href="/posts/74223785/" title="Data Structures - Selection Sort" target="">
-		    Data Structures - Selection Sort
 		    </a>
 		</li>
 	</ul>
@@ -388,7 +388,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-20 10:43:11" itemprop="dateModified" datetime="2021-04-20T10:43:11+08:00">2021-04-20</time>
+        <time title="Modified: 2021-04-21 09:05:26" itemprop="dateModified" datetime="2021-04-21T09:05:26+08:00">2021-04-21</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -424,7 +424,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="source-code">Source code</h2>
+        <p align="center">
+<font size="6px"><b>Backtracking algorithm</b></font>
+</p>
+<h2 id="introduction">Introduction:</h2>
+<a id="more"></a>
+<h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
 <p>Idea:<br></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(<span class="built_in">string</span>&amp; s, <span class="built_in">string</span>&amp; res, <span class="keyword">bool</span> *c)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(res.length() == N)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(c[i] == <span class="number">0</span>)&#123;</span><br><span class="line">            res.push_back(s[i]);</span><br><span class="line">            c[i] = <span class="number">1</span>;</span><br><span class="line">            </span><br><span class="line">            backtracking(s, res, c);</span><br><span class="line">            </span><br><span class="line">            c[i] = <span class="number">0</span>;</span><br><span class="line">            res.pop_back();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s = <span class="string">&quot;ABC&quot;</span>, res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">bool</span> c[N] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    backtracking(s, res, c);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

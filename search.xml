@@ -909,6 +909,7 @@ All the integers in <span style="background-color:#F0F0F0"><font color=#808080>n
 <font size="6px"><b>How arrays are passed to function | Basic and Important</b></font>
 </p>
 <h2 id="introduction">Introduction:</h2>
+<a id="more"></a>
 <h2 id="source-code">Source code</h2>
 <p>Idea:<br></p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">//#include &lt;stdio.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Note that arr[] for fun is just a pointer even if square</span></span><br><span class="line"><span class="comment">// brackets are used</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> arr[])</span>  <span class="comment">// SAME AS void fun(int *arr)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">unsigned</span> <span class="keyword">int</span> n = <span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(arr[<span class="number">0</span>]);</span><br><span class="line">   <span class="comment">//printf(&quot;\nArray size inside fun() is %d&quot;, n);</span></span><br><span class="line">   <span class="comment">//printf(&quot;\n - The first value is %d&quot;, sizeof(arr));</span></span><br><span class="line">   </span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;nArray size inside fun() is &quot;</span> &lt;&lt; <span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(arr[<span class="number">0</span>]) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Driver program</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">int</span> arr[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>&#125;;</span><br><span class="line">   <span class="keyword">unsigned</span> <span class="keyword">int</span> n = <span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(arr[<span class="number">0</span>]);</span><br><span class="line">   <span class="comment">//printf(&quot;Array size inside main() is %d&quot;, n);</span></span><br><span class="line">   <span class="comment">//printf(&quot;\n - The first value is %d&quot;, sizeof(arr));</span></span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;nArray size inside main() is &quot;</span> &lt;&lt; <span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(arr[<span class="number">0</span>]) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">   fun(arr);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -2743,7 +2744,7 @@ loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_
 <font size="6px"><b>Basic programming - Selection Sort</b></font>
 </p>
 <h2 id="approach">Approach:</h2>
-<p>Declare two variables, <code>i</code> likes the end pointer of sorted vector and <code>j</code> likes the scanning pointer.<br> Aims to find the smallest value (or biggest value), therefore, <code>j</code> starts from <code>i</code> to scan until the end of <code>nums</code>. Then, the smallest value is changed with the value of index <code>i</code> by calling swap(). It means adding the smallest value to the sorted vector. Next step, i moves to the next index and go back to the previous action until all values are sorted. <a id="more"></a></p>
+<p>Declare two variables, <code>i</code> likes the end pointer of sorted vector and <code>j</code> likes the scanning pointer.<br> Aims to find the <b>smallest value</b> (or <b>biggest value</b>), therefore, <code>j</code> starts from <code>i</code> to scan until the end of <code>nums</code>. Then, the smallest value is changed with the value of index <code>i</code> by calling swap(). It means adding the smallest value to the sorted vector. Next step, i moves to the next index and go back to the previous action until all values are sorted. <a id="more"></a></p>
 <b>Time complexity:</b><br>
 <li>
 Best Case：Ο(n<sup>2</sup>)
@@ -2754,6 +2755,7 @@ Worst Case：Ο(n<sup>2</sup>)
 <li>
 Average Case：Ο(n<sup>2</sup>)
 </li>
+<p>P.S. Whatever the input is, there are two for-loop to run!<br></p>
 <p><b>Space complexity: O(1)</b><br></p>
 <p>Stable/Unstable: <b>Unstable</b></p>
 <h2 id="source-code">Source code</h2>
@@ -3316,7 +3318,12 @@ nums is sorted in increasing order.
   <entry>
     <title>Let&#39;s understand the Backtracking algorithm</title>
     <url>/posts/eabab51c/</url>
-    <content><![CDATA[<h2 id="source-code">Source code</h2>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>Backtracking algorithm</b></font>
+</p>
+<h2 id="introduction">Introduction:</h2>
+<a id="more"></a>
+<h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
 <p>Idea:<br></p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(<span class="built_in">string</span>&amp; s, <span class="built_in">string</span>&amp; res, <span class="keyword">bool</span> *c)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(res.length() == N)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(c[i] == <span class="number">0</span>)&#123;</span><br><span class="line">            res.push_back(s[i]);</span><br><span class="line">            c[i] = <span class="number">1</span>;</span><br><span class="line">            </span><br><span class="line">            backtracking(s, res, c);</span><br><span class="line">            </span><br><span class="line">            c[i] = <span class="number">0</span>;</span><br><span class="line">            res.pop_back();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s = <span class="string">&quot;ABC&quot;</span>, res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">bool</span> c[N] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    backtracking(s, res, c);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -3327,6 +3334,40 @@ nums is sorted in increasing order.
       <tags>
         <tag>Algorithm</tag>
         <tag>Backtracking</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Data Structures - Insertion Sort</title>
+    <url>/posts/918ef68a/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>Basic programming - Insertion Sort</b></font>
+</p>
+<h2 id="approach">Approach:</h2>
+<p>It need to use 2 for-loop. One is unsorted data in the range [1:n] and the other is sorted data in the range [i:0].<br></p>
+<p>Take one element from unsorted data to compare with sorted data.<br> Step 1: use <code>temp</code> variable to store this element<br> Step 2: search value from sorted data which is bigger than <code>temp</code> , if true, move the bigger value to current position <code>vector[j] = vector[j - 1]</code><br> Step 3: Until if-statement returns false, it means the value of <code>j - 1</code> is smaller than <code>temp</code>, so insert <code>temp</code> to current position <code>vector[j] = temp</code>.<br></p>
+<a id="more"></a>
+<b>Time complexity:</b><br>
+<li>
+Best Case：Ο(1)
+</li>
+<li>
+Worst Case：Ο(n<sup>2</sup>)
+</li>
+<li>
+Average Case：Ο(n<sup>2</sup>)
+</li>
+<p>P.S. If input is sorted, just compare every elements once!</p>
+<p><b>Space complexity: O(1)</b><br></p>
+<p>Stable/Unstable: <b>Stable</b></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; v)</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i, j, temp;</span><br><span class="line">  <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; v.size(); ++i)&#123;</span><br><span class="line">      temp = v[i];</span><br><span class="line">      <span class="keyword">for</span>(j = i; j &gt; <span class="number">0</span> &amp;&amp; temp &lt; v[j - <span class="number">1</span>]; --j)&#123;</span><br><span class="line">          v[j] = v[j - <span class="number">1</span>];</span><br><span class="line">      &#125;</span><br><span class="line">      v[j] = temp;</span><br><span class="line">  &#125;  </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; input = &#123;<span class="number">39</span>,<span class="number">63</span>,<span class="number">89</span>,<span class="number">66</span>,<span class="number">42</span>,<span class="number">21</span>,<span class="number">80</span>,<span class="number">22</span>,<span class="number">81</span>,<span class="number">47</span>&#125;;</span><br><span class="line">    insertSort(input);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; input.size(); ++i)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; input[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>SortAlgorithm</category>
+      </categories>
+      <tags>
+        <tag>Sorting</tag>
       </tags>
   </entry>
 </search>

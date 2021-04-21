@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-04-21T06:42:26.440Z</updated>
+  <updated>2021-04-21T06:48:56.365Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -17,18 +17,18 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Data Structures - BubbleSort</title>
+    <title>Data Structures - Bubble Sort</title>
     <link href="https://egbert-yu-ting.github.io/posts/2b353b50/"/>
     <id>https://egbert-yu-ting.github.io/posts/2b353b50/</id>
     <published>2021-04-21T06:13:46.000Z</published>
-    <updated>2021-04-21T06:42:26.440Z</updated>
+    <updated>2021-04-21T06:48:56.365Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Basic programming - Bubble Sort&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;approach&quot;&gt;Approach:&lt;/h2&gt;
-&lt;p&gt;Compare with each elements in the range &lt;code&gt;[0: n]&lt;/code&gt; and if &lt;code&gt;vector[i]&lt;/code&gt; is bigger than &lt;code&gt;vector[i + 1]&lt;/code&gt;, call swap(). &lt;code&gt;n&lt;/code&gt; is the number of elements in vector and it will descending every loop. It means the biggest element moves to the right side.&lt;br&gt; And, there are one suitation that break the loop earily than expected. If no any elements call swap(), it represented all of the elements in vector are sorted.</summary>
+&lt;p&gt;Compare with each elements in the range &lt;code&gt;[0: n]&lt;/code&gt; and if &lt;code&gt;vector[i]&lt;/code&gt; is bigger than &lt;code&gt;vector[i + 1]&lt;/code&gt;, call swap().&lt;br&gt; &lt;code&gt;n&lt;/code&gt; is the number of elements in vector and it will descending every loop. It means the biggest element moves to the right side.&lt;br&gt; And, there are one suitation that break the loop earily than expected. If no any elements call swap(), it represented all of the elements in vector are sorted.</summary>
     
     
     
@@ -44,14 +44,14 @@
     <link href="https://egbert-yu-ting.github.io/posts/918ef68a/"/>
     <id>https://egbert-yu-ting.github.io/posts/918ef68a/</id>
     <published>2021-04-21T01:08:35.000Z</published>
-    <updated>2021-04-21T06:31:14.819Z</updated>
+    <updated>2021-04-21T06:47:05.689Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Basic programming - Insertion Sort&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;approach&quot;&gt;Approach:&lt;/h2&gt;
-&lt;p&gt;It need to use two for-loop. One is unsorted data in the range [1:n] and the other is sorted data in the range [i:0].&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Need to use two for-loop. One is unsorted data in the range &lt;code&gt;[i:n]&lt;/code&gt; and the other is sorted data in the range &lt;code&gt;[0:i]&lt;/code&gt;.&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;Take one element from unsorted data to compare with sorted data.&lt;br&gt; &lt;b&gt;Step 1:&lt;/b&gt; use &lt;code&gt;temp&lt;/code&gt; variable to store this element&lt;br&gt; &lt;b&gt;Step 2:&lt;/b&gt; search value from sorted data which is bigger than &lt;code&gt;temp&lt;/code&gt; , if true, move the bigger value to current position &lt;code&gt;vector[j] = vector[j - 1]&lt;/code&gt;&lt;br&gt; &lt;b&gt;Step 3:&lt;/b&gt; Until if-statement returns false, it means the value of &lt;code&gt;j - 1&lt;/code&gt; is smaller than &lt;code&gt;temp&lt;/code&gt;, so insert &lt;code&gt;temp&lt;/code&gt; to current position &lt;code&gt;vector[j] = temp&lt;/code&gt;.&lt;br&gt;</summary>
     
     

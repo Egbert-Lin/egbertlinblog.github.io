@@ -3343,7 +3343,7 @@ nums is sorted in increasing order.
 <font size="6px"><b>Basic programming - Insertion Sort</b></font>
 </p>
 <h2 id="approach">Approach:</h2>
-<p>It need to use two for-loop. One is unsorted data in the range [1:n] and the other is sorted data in the range [i:0].<br></p>
+<p>Need to use two for-loop. One is unsorted data in the range <code>[i:n]</code> and the other is sorted data in the range <code>[0:i]</code>.<br></p>
 <p>Take one element from unsorted data to compare with sorted data.<br> <b>Step 1:</b> use <code>temp</code> variable to store this element<br> <b>Step 2:</b> search value from sorted data which is bigger than <code>temp</code> , if true, move the bigger value to current position <code>vector[j] = vector[j - 1]</code><br> <b>Step 3:</b> Until if-statement returns false, it means the value of <code>j - 1</code> is smaller than <code>temp</code>, so insert <code>temp</code> to current position <code>vector[j] = temp</code>.<br> <a id="more"></a></p>
 <b>Time complexity:</b><br>
 <li>
@@ -3370,13 +3370,26 @@ Average Case：Ο(n<sup>2</sup>)
       </tags>
   </entry>
   <entry>
-    <title>Data Structures - BubbleSort</title>
+    <title>Data Structures - Bubble Sort</title>
     <url>/posts/2b353b50/</url>
     <content><![CDATA[<p align="center">
 <font size="6px"><b>Basic programming - Bubble Sort</b></font>
 </p>
 <h2 id="approach">Approach:</h2>
-<p>Compare with each elements in the range <code>[0: n]</code> and if <code>vector[i]</code> is bigger than <code>vector[i + 1]</code>, call swap(). <code>n</code> is the number of elements in vector and it will descending every loop. It means the biggest element moves to the right side.<br> And, there are one suitation that break the loop earily than expected. If no any elements call swap(), it represented all of the elements in vector are sorted. <a id="more"></a></p>
+<p>Compare with each elements in the range <code>[0: n]</code> and if <code>vector[i]</code> is bigger than <code>vector[i + 1]</code>, call swap().<br> <code>n</code> is the number of elements in vector and it will descending every loop. It means the biggest element moves to the right side.<br> And, there are one suitation that break the loop earily than expected. If no any elements call swap(), it represented all of the elements in vector are sorted. <a id="more"></a></p>
+<b>Time complexity:</b><br>
+<li>
+Best Case：Ο(n)
+</li>
+<li>
+Worst Case：Ο(n<sup>2</sup>)
+</li>
+<li>
+Average Case：Ο(n<sup>2</sup>)
+</li>
+<p>P.S. If input is sorted, it still checks once without calling swap()</p>
+<p><b>Space complexity: O(1)</b><br></p>
+<p>Stable/Unstable: <b>Stable</b></p>
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; v)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v.size(); ++i)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; v[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>&amp; l, <span class="keyword">int</span>&amp; r)</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> temp = l;</span><br><span class="line">  l = r;</span><br><span class="line">  r = temp;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; v)</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> n = v.size();</span><br><span class="line">  <span class="keyword">int</span> count = n;</span><br><span class="line">  <span class="keyword">while</span>(n &gt; <span class="number">0</span> &amp;&amp; count &gt; <span class="number">0</span>)&#123;</span><br><span class="line">      count = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)&#123;</span><br><span class="line">          <span class="keyword">if</span>(v[i] &gt; v[i + <span class="number">1</span>])&#123;</span><br><span class="line">              swap(v[i], v[i + <span class="number">1</span>]);</span><br><span class="line">              count ++;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      --n;</span><br><span class="line">      print(v);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; input = &#123;<span class="number">84</span>,<span class="number">17</span>,<span class="number">32</span>,<span class="number">53</span>,<span class="number">91</span>,<span class="number">13</span>,<span class="number">33</span>,<span class="number">61</span>,<span class="number">44</span>,<span class="number">43</span>&#125;;</span><br><span class="line">    bubbleSort(input);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Final answer:&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    print(input);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

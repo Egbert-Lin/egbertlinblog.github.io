@@ -294,8 +294,8 @@
 	</div>
 	<ul class="links-of-blogroll-list recent-posts-list">
 	        <li class="my-links-of-blogroll-item">
-		    <a href="/posts/2b353b50/" title="Data Structures - BubbleSort" target="">
-		    Data Structures - BubbleSort
+		    <a href="/posts/2b353b50/" title="Data Structures - Bubble Sort" target="">
+		    Data Structures - Bubble Sort
 		    </a>
 		</li>
 	        <li class="my-links-of-blogroll-item">
@@ -365,7 +365,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/2b353b50/" class="post-title-link" itemprop="url">Data Structures - BubbleSort</a>
+            <a href="/posts/2b353b50/" class="post-title-link" itemprop="url">Data Structures - Bubble Sort</a>
         </h2>
 
         <div class="post-meta-container">
@@ -377,7 +377,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-04-21 14:13:46 / Modified: 14:42:26" itemprop="dateCreated datePublished" datetime="2021-04-21T14:13:46+08:00">2021-04-21</time>
+      <time title="Created: 2021-04-21 14:13:46 / Modified: 14:48:56" itemprop="dateCreated datePublished" datetime="2021-04-21T14:13:46+08:00">2021-04-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -417,7 +417,7 @@
 <font size="6px"><b>Basic programming - Bubble Sort</b></font>
 </p>
 <h2 id="approach">Approach:</h2>
-<p>Compare with each elements in the range <code>[0: n]</code> and if <code>vector[i]</code> is bigger than <code>vector[i + 1]</code>, call swap(). <code>n</code> is the number of elements in vector and it will descending every loop. It means the biggest element moves to the right side.<br> And, there are one suitation that break the loop earily than expected. If no any elements call swap(), it represented all of the elements in vector are sorted.
+<p>Compare with each elements in the range <code>[0: n]</code> and if <code>vector[i]</code> is bigger than <code>vector[i + 1]</code>, call swap().<br> <code>n</code> is the number of elements in vector and it will descending every loop. It means the biggest element moves to the right side.<br> And, there are one suitation that break the loop earily than expected. If no any elements call swap(), it represented all of the elements in vector are sorted.
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2b353b50/#more" rel="contents">
@@ -475,7 +475,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-04-21 09:08:35 / Modified: 14:31:14" itemprop="dateCreated datePublished" datetime="2021-04-21T09:08:35+08:00">2021-04-21</time>
+      <time title="Created: 2021-04-21 09:08:35 / Modified: 14:47:05" itemprop="dateCreated datePublished" datetime="2021-04-21T09:08:35+08:00">2021-04-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -515,7 +515,7 @@
 <font size="6px"><b>Basic programming - Insertion Sort</b></font>
 </p>
 <h2 id="approach">Approach:</h2>
-<p>It need to use two for-loop. One is unsorted data in the range [1:n] and the other is sorted data in the range [i:0].<br></p>
+<p>Need to use two for-loop. One is unsorted data in the range <code>[i:n]</code> and the other is sorted data in the range <code>[0:i]</code>.<br></p>
 <p>Take one element from unsorted data to compare with sorted data.<br> <b>Step 1:</b> use <code>temp</code> variable to store this element<br> <b>Step 2:</b> search value from sorted data which is bigger than <code>temp</code> , if true, move the bigger value to current position <code>vector[j] = vector[j - 1]</code><br> <b>Step 3:</b> Until if-statement returns false, it means the value of <code>j - 1</code> is smaller than <code>temp</code>, so insert <code>temp</code> to current position <code>vector[j] = temp</code>.<br>
           <!--noindex-->
             <div class="post-button">

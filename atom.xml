@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-04-21T08:45:11.650Z</updated>
+  <updated>2021-04-22T03:39:44.128Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Data Structures - Merge Sort</title>
+    <link href="https://egbert-yu-ting.github.io/posts/ef61bad1/"/>
+    <id>https://egbert-yu-ting.github.io/posts/ef61bad1/</id>
+    <published>2021-04-22T03:08:58.000Z</published>
+    <updated>2021-04-22T03:39:44.128Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Basic programming - Merge Sort&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;approach&quot;&gt;Approach:&lt;/h2&gt;
+&lt;p&gt;It is a Divide and Conquer problem. Divide the vector into small group to sort, and merge each small groups to the vector.&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;In the merge() function, we need two new vectors to store those element that is divided into two parts from the vector.&lt;br&gt; And, &lt;code&gt;INT_MAX&lt;/code&gt; must be added at the end of &lt;code&gt;leftvec&lt;/code&gt; and &lt;code&gt;rightvec&lt;/code&gt;. It&#39;s a comparision use. E.g., all of elements in &lt;code&gt;leftvec&lt;/code&gt; are smaller than &lt;code&gt;rightvec&lt;/code&gt;, so do &lt;code&gt;vec[i] = leftvec[left++]&lt;/code&gt; until &lt;code&gt;leftvec[left] = INT_MAX&lt;/code&gt;, and afterwards do &lt;code&gt;vec[i] = rightvec[right++]&lt;/code&gt;. Finally, those elements are sorted.</summary>
+    
+    
+    
+    <category term="SortAlgorithm" scheme="https://egbert-yu-ting.github.io/categories/SortAlgorithm/"/>
+    
+    
+    <category term="Sorting" scheme="https://egbert-yu-ting.github.io/tags/Sorting/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Data Structures - Quick Sort</title>
     <link href="https://egbert-yu-ting.github.io/posts/91a7f1d8/"/>
     <id>https://egbert-yu-ting.github.io/posts/91a7f1d8/</id>
     <published>2021-04-21T08:40:53.000Z</published>
-    <updated>2021-04-21T08:45:11.650Z</updated>
+    <updated>2021-04-22T03:11:07.311Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -43,7 +67,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/2b353b50/"/>
     <id>https://egbert-yu-ting.github.io/posts/2b353b50/</id>
     <published>2021-04-21T06:13:46.000Z</published>
-    <updated>2021-04-21T06:48:56.365Z</updated>
+    <updated>2021-04-22T03:14:51.774Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -146,9 +170,9 @@
     <category term="Tree_SearchAlgorithm" scheme="https://egbert-yu-ting.github.io/categories/Tree-SearchAlgorithm/"/>
     
     
-    <category term="Algorithm" scheme="https://egbert-yu-ting.github.io/tags/Algorithm/"/>
-    
     <category term="Backtracking" scheme="https://egbert-yu-ting.github.io/tags/Backtracking/"/>
+    
+    <category term="Algorithm" scheme="https://egbert-yu-ting.github.io/tags/Algorithm/"/>
     
   </entry>
   
@@ -464,33 +488,6 @@
     
     
     <category term="Vector" scheme="https://egbert-yu-ting.github.io/tags/Vector/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Remove Linked List Elements - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/2ded864c/"/>
-    <id>https://egbert-yu-ting.github.io/posts/2ded864c/</id>
-    <published>2021-02-08T02:49:56.000Z</published>
-    <updated>2021-03-08T08:35:13.201Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;203. Remove Linked List Elements&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Remove all elements from a linked list of integers that have value &lt;I&gt;&lt;b&gt;val&lt;/b&gt;&lt;/I&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;example&quot;&gt;Example:&lt;/h2&gt;
-&lt;p style=&quot;background-color:#F0F0F0&quot;&gt;
-&lt;b&gt;Input:&lt;/b&gt; 1-&amp;gt;2-&amp;gt;6-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;6, &lt;I&gt;&lt;b&gt;val&lt;/b&gt;&lt;/I&gt; = 6&lt;br&gt; &lt;b&gt;Output:&lt;/b&gt; 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5
-&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="ListNode" scheme="https://egbert-yu-ting.github.io/tags/ListNode/"/>
     
   </entry>
   

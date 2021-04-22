@@ -25,21 +25,21 @@
     var CONFIG = {"hostname":"egbert-yu-ting.github.io","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="8. Length of Last Word  Question: Given a string s consists of some words separated by spaces, return the length of the last word in the string. If the last word does not exist, return 0. A word is a">
+  <meta name="description" content="Basic programming - Merge Sort  Approach: It is a Divide and Conquer problem. Divide the vector into small group to sort, and merge each small groups to the vector. In the merge() function, we need t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[LeetCode Road] Length of Last Word - Solution&#x2F;C++">
-<meta property="og:url" content="https://egbert-yu-ting.github.io/posts/b04b682/index.html">
+<meta property="og:title" content="Data Structures - Merge Sort">
+<meta property="og:url" content="https://egbert-yu-ting.github.io/posts/ef61bad1/index.html">
 <meta property="og:site_name" content="Egbert Lin&#39;s Blog">
-<meta property="og:description" content="8. Length of Last Word  Question: Given a string s consists of some words separated by spaces, return the length of the last word in the string. If the last word does not exist, return 0. A word is a">
+<meta property="og:description" content="Basic programming - Merge Sort  Approach: It is a Divide and Conquer problem. Divide the vector into small group to sort, and merge each small groups to the vector. In the merge() function, we need t">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-12-03T15:09:14.000Z">
-<meta property="article:modified_time" content="2021-01-22T01:51:17.258Z">
+<meta property="article:published_time" content="2021-04-22T03:08:58.000Z">
+<meta property="article:modified_time" content="2021-04-22T03:39:44.128Z">
 <meta property="article:author" content="EgbertLin">
-<meta property="article:tag" content="Reverse_order">
+<meta property="article:tag" content="Sorting">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://egbert-yu-ting.github.io/posts/b04b682/">
+<link rel="canonical" href="https://egbert-yu-ting.github.io/posts/ef61bad1/">
 
 
 <script class="page-configurations">
@@ -53,7 +53,7 @@
 </script><script data-ad-client="ca-pub-8863232600865901" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <title>[LeetCode Road] Length of Last Word - Solution/C++ | Egbert Lin's Blog</title>
+  <title>Data Structures - Merge Sort | Egbert Lin's Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S56LQ3K3NG"></script>
     <script>
@@ -228,7 +228,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#question"><span class="nav-number">1.</span> <span class="nav-text">Question:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example"><span class="nav-number">2.</span> <span class="nav-text">Example:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source-code"><span class="nav-number">3.</span> <span class="nav-text">Source code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#version-1"><span class="nav-number">3.1.</span> <span class="nav-text">Version 1</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#approach"><span class="nav-number">1.</span> <span class="nav-text">Approach:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source-code"><span class="nav-number">2.</span> <span class="nav-text">Source code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#version-1"><span class="nav-number">2.1.</span> <span class="nav-text">Version 1</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -353,7 +353,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/b04b682/">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/ef61bad1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -369,7 +369,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [LeetCode Road] Length of Last Word - Solution/C++
+          Data Structures - Merge Sort
         </h1>
 
         <div class="post-meta-container">
@@ -379,23 +379,17 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2020-12-03 23:09:14" itemprop="dateCreated datePublished" datetime="2020-12-03T23:09:14+08:00">2020-12-03</time>
+      <time title="Created: 2021-04-22 11:08:58 / Modified: 11:39:44" itemprop="dateCreated datePublished" datetime="2021-04-22T11:08:58+08:00">2021-04-22</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-22 09:51:17" itemprop="dateModified" datetime="2021-01-22T09:51:17+08:00">2021-01-22</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
+          <a href="/categories/SortAlgorithm/" itemprop="url" rel="index"><span itemprop="name">SortAlgorithm</span></a>
         </span>
     </span>
 
@@ -408,8 +402,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/posts/b04b682/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/b04b682/" itemprop="commentCount"></span>
+    <a title="disqus" href="/posts/ef61bad1/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/ef61bad1/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -424,31 +418,26 @@
     
     <div class="post-body" itemprop="articleBody">
         <p align="center">
-<font size="6"><b>8. Length of Last Word</b></font>
+<font size="6px"><b>Basic programming - Merge Sort</b></font>
 </p>
-<h2 id="question">Question:</h2>
-<p>Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of some words separated by spaces, return the <em>length of the last word in the string</em>. <em>If the last word does not exist, return</em> <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</p>
-<p>A <strong>word</strong> is a maximal substring consisting of non-space characters only. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = "Hello World"<br><b>Output:</b> 5<br>
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = " "<br><b>Output:</b> 0</br>
-</p>
-<strong>Constraints:</strong> <strong>
+<h2 id="approach">Approach:</h2>
+<p>It is a Divide and Conquer problem. Divide the vector into small group to sort, and merge each small groups to the vector.<br></p>
+<p>In the merge() function, we need two new vectors to store those element that is divided into two parts from the vector.<br> And, <code>INT_MAX</code> must be added at the end of <code>leftvec</code> and <code>rightvec</code>. It's a comparision use. E.g., all of elements in <code>leftvec</code> are smaller than <code>rightvec</code>, so do <code>vec[i] = leftvec[left++]</code> until <code>leftvec[left] = INT_MAX</code>, and afterwards do <code>vec[i] = rightvec[right++]</code>. Finally, those elements are sorted. <a id="more"></a></p>
+<b>Time complexity:</b><br>
 <li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= s.length &lt;= 10^4</font></span>
+Best Case：Ο(nlogn)
 </li>
-</strong> <strong>
 <li>
-<span style="background-color:#F0F0F0"><font color=#808080>s</font></span> consists of only English letters and spaces <span style="background-color:#F0F0F0"><font color=#808080>' '</font></span>
+Worst Case：Ο(nlogn)
 </li>
-<p></strong>.</p>
+<li>
+Average Case：Ο(nlogn)
+</li>
+<p><b>Space complexity: O(n)</b><br></p>
+<p>Stable/Unstable: <b>Stable</b></p>
 <h2 id="source-code">Source code</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> This problem took me a lot of time thinking how to solve, because I tried many methods based on scanning string in order. As a result, I ingorned tailing spaces situation, e.g., "a " or "a bc ".<br> Obviously, my logic was error! Finally, I refered to <a target="_blank" rel="noopener" href="https://zxi.mytechroad.com/blog/string/leetcode-58-length-of-last-word/">Huahua's Tech Road</a>, the solution is very understandable, it scan the string in <strong>reverse order</strong> <u>until a space or reach the beginning of the string</u>.<br> So, the first <code>while(i &gt;= 0 &amp;&amp; s[i] == ' ')</code> means trimming off space at tail; the second <code>while(i &gt;= 0 &amp;&amp; s[i] != ' ')</code> means calculating length of a last word.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLastWord</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> characters = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] == <span class="string">&#x27; &#x27;</span>) i--;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; s[i] != <span class="string">&#x27; &#x27;</span>)&#123;</span><br><span class="line">            i--;</span><br><span class="line">            characters ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> characters;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;climits&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; vec.size(); ++i)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; vec[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; vec, <span class="keyword">int</span> l, <span class="keyword">int</span> mid, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">leftvec</span><span class="params">(vec.begin() + l, vec.begin() + mid + <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">rightvec</span><span class="params">(vec.begin() + mid + <span class="number">1</span>, vec.begin() + r + <span class="number">1</span>)</span></span>;</span><br><span class="line">    </span><br><span class="line">    leftvec.insert(leftvec.end(), INT_MAX);</span><br><span class="line">    rightvec.insert(rightvec.end(), INT_MAX);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = l; i &lt;= r; ++i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(leftvec[left] &lt; rightvec[right])&#123;</span><br><span class="line">            vec[i] = leftvec[left];</span><br><span class="line">            ++left;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            vec[i] = rightvec[right];</span><br><span class="line">            ++right;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    print(vec);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; vec, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &lt; r)&#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        mergeSort(vec, l, mid); <span class="comment">// divide the leftside into subvector</span></span><br><span class="line">        mergeSort(vec, mid + <span class="number">1</span>, r); <span class="comment">// divdie the rightside into subvector</span></span><br><span class="line">        merge(vec, l, mid, r); <span class="comment">// conquer these elements in ascending order</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec = &#123;<span class="number">5</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">7</span>,<span class="number">1</span>,<span class="number">4</span>&#125;;</span><br><span class="line">    mergeSort(vec, <span class="number">0</span>, vec.size() - <span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Final answer:&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    print(vec);</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -466,7 +455,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>Post link: </strong>
-      <a href="https://egbert-yu-ting.github.io/posts/b04b682/" title="[LeetCode Road] Length of Last Word - Solution&#x2F;C++">https://egbert-yu-ting.github.io/posts/b04b682/</a>
+      <a href="https://egbert-yu-ting.github.io/posts/ef61bad1/" title="Data Structures - Merge Sort">https://egbert-yu-ting.github.io/posts/ef61bad1/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -475,21 +464,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/Reverse-order/" rel="tag"><i class="fa fa-tag"></i> Reverse_order</a>
+              <a href="/tags/Sorting/" rel="tag"><i class="fa fa-tag"></i> Sorting</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/5ddd3578/" rel="prev" title="[LeetCode Road] Valid Parentheses - Solution/C++">
-                  <i class="fa fa-chevron-left"></i> [LeetCode Road] Valid Parentheses - Solution/C++
+                <a href="/posts/91a7f1d8/" rel="prev" title="Data Structures - Quick Sort">
+                  <i class="fa fa-chevron-left"></i> Data Structures - Quick Sort
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/61be1b10/" rel="next" title="[LeetCode Road] Merge Two Sorted Lists - Solution/C++">
-                  [LeetCode Road] Merge Two Sorted Lists - Solution/C++ <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -604,9 +590,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://egbert-yu-ting.github.io/posts/b04b682/";
-    this.page.identifier = "posts/b04b682/";
-    this.page.title = "[LeetCode Road] Length of Last Word - Solution/C++";
+    this.page.url = "https://egbert-yu-ting.github.io/posts/ef61bad1/";
+    this.page.identifier = "posts/ef61bad1/";
+    this.page.title = "Data Structures - Merge Sort";
     };
   NexT.utils.loadComments('#disqus_thread', () => {
     if (window.DISQUS) {

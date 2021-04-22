@@ -258,7 +258,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">78</span>
+          <span class="site-state-item-count">79</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -294,6 +294,11 @@
 	</div>
 	<ul class="links-of-blogroll-list recent-posts-list">
 	        <li class="my-links-of-blogroll-item">
+		    <a href="/posts/ef61bad1/" title="Data Structures - Merge Sort" target="">
+		    Data Structures - Merge Sort
+		    </a>
+		</li>
+	        <li class="my-links-of-blogroll-item">
 		    <a href="/posts/91a7f1d8/" title="Data Structures - Quick Sort" target="">
 		    Data Structures - Quick Sort
 		    </a>
@@ -311,11 +316,6 @@
 	        <li class="my-links-of-blogroll-item">
 		    <a href="/posts/23a6e02/" title="[LeetCode Road] Merge k Sorted Lists - Solution/C++" target="">
 		    [LeetCode Road] Merge k Sorted Lists - Solution/C++
-		    </a>
-		</li>
-	        <li class="my-links-of-blogroll-item">
-		    <a href="/posts/47c634b1/" title="How arrays are passed to functions in C/C++" target="">
-		    How arrays are passed to functions in C/C++
 		    </a>
 		</li>
 	</ul>
@@ -348,6 +348,105 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/ef61bad1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/ef61bad1/" class="post-title-link" itemprop="url">Data Structures - Merge Sort</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-04-22 11:08:58 / Modified: 11:39:44" itemprop="dateCreated datePublished" datetime="2021-04-22T11:08:58+08:00">2021-04-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/SortAlgorithm/" itemprop="url" rel="index"><span itemprop="name">SortAlgorithm</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/posts/ef61bad1/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/ef61bad1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p align="center">
+<font size="6px"><b>Basic programming - Merge Sort</b></font>
+</p>
+<h2 id="approach">Approach:</h2>
+<p>It is a Divide and Conquer problem. Divide the vector into small group to sort, and merge each small groups to the vector.<br></p>
+<p>In the merge() function, we need two new vectors to store those element that is divided into two parts from the vector.<br> And, <code>INT_MAX</code> must be added at the end of <code>leftvec</code> and <code>rightvec</code>. It's a comparision use. E.g., all of elements in <code>leftvec</code> are smaller than <code>rightvec</code>, so do <code>vec[i] = leftvec[left++]</code> until <code>leftvec[left] = INT_MAX</code>, and afterwards do <code>vec[i] = rightvec[right++]</code>. Finally, those elements are sorted.
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/ef61bad1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/91a7f1d8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -375,10 +474,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-04-21 16:40:53 / Modified: 16:45:11" itemprop="dateCreated datePublished" datetime="2021-04-21T16:40:53+08:00">2021-04-21</time>
+      <time title="Created: 2021-04-21 16:40:53" itemprop="dateCreated datePublished" datetime="2021-04-21T16:40:53+08:00">2021-04-21</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-04-22 11:11:07" itemprop="dateModified" datetime="2021-04-22T11:11:07+08:00">2021-04-22</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -472,10 +577,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-04-21 14:13:46 / Modified: 14:48:56" itemprop="dateCreated datePublished" datetime="2021-04-21T14:13:46+08:00">2021-04-21</time>
+      <time title="Created: 2021-04-21 14:13:46" itemprop="dateCreated datePublished" datetime="2021-04-21T14:13:46+08:00">2021-04-21</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-04-22 11:14:51" itemprop="dateModified" datetime="2021-04-22T11:14:51+08:00">2021-04-22</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -1235,111 +1346,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/d7f73c78/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/b32b0461/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="EgbertLin">
-      <meta itemprop="description" content="Programming Developer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Egbert Lin's Blog">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/b32b0461/" class="post-title-link" itemprop="url">[LeetCode Road] 3Sum - Solution/C++</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-03-17 00:10:24" itemprop="dateCreated datePublished" datetime="2021-03-17T00:10:24+08:00">2021-03-17</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-03-29 15:42:42" itemprop="dateModified" datetime="2021-03-29T15:42:42+08:00">2021-03-29</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LeetCode-Medium/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Medium</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/posts/b32b0461/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/b32b0461/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p align="center">
-<font size="6"><b>15. 3Sum</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given an array <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> of <I>n</I> integers, are there elements <I>a, b, c</I> in <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> such that <I>a</I> + <I>b</I> + <I>c</I> = 0? Find all unique triplets in the array which gives the sum of zero.<br></p>
-<p>Notice that the solution set must not contain duplicate triplets.
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/b32b0461/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>

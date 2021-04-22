@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-04-22T03:39:44.128Z</updated>
+  <updated>2021-04-22T08:45:33.268Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Data Structures - HeapSort</title>
+    <link href="https://egbert-yu-ting.github.io/posts/73b8e6ad/"/>
+    <id>https://egbert-yu-ting.github.io/posts/73b8e6ad/</id>
+    <published>2021-04-22T08:43:47.000Z</published>
+    <updated>2021-04-22T08:45:33.268Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Basic programming - Heap Sort&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;approach&quot;&gt;Approach:&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="SortAlgorithm" scheme="https://egbert-yu-ting.github.io/categories/SortAlgorithm/"/>
+    
+    
+    <category term="Sorting" scheme="https://egbert-yu-ting.github.io/tags/Sorting/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Data Structures - Merge Sort</title>
     <link href="https://egbert-yu-ting.github.io/posts/ef61bad1/"/>
     <id>https://egbert-yu-ting.github.io/posts/ef61bad1/</id>
     <published>2021-04-22T03:08:58.000Z</published>
-    <updated>2021-04-22T03:39:44.128Z</updated>
+    <updated>2021-04-22T03:39:59.985Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -461,33 +483,6 @@
     
     
     <category term="Unordered_map(STL)" scheme="https://egbert-yu-ting.github.io/tags/Unordered-map-STL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Count Primes - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/bcde18a6/"/>
-    <id>https://egbert-yu-ting.github.io/posts/bcde18a6/</id>
-    <published>2021-02-17T03:31:48.000Z</published>
-    <updated>2021-03-08T08:32:52.454Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;204. Count Primes&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Count the number of prime numbers less than a non-negative number, &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n&lt;/span&gt;&lt;/font&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;example&quot;&gt;Example:&lt;/h2&gt;
-&lt;p style=&quot;background-color:#F0F0F0&quot;&gt;
-&lt;b&gt;Input:&lt;/b&gt; n = 10&lt;br&gt; &lt;b&gt;Output:&lt;/b&gt; 4&lt;br&gt; &lt;b&gt;Explanation:&lt;/b&gt; There are 4 prime numbers less than 10, they are 2, 3, 5, 7.
-&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Vector" scheme="https://egbert-yu-ting.github.io/tags/Vector/"/>
     
   </entry>
   

@@ -375,10 +375,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-04-22 16:43:47 / Modified: 16:45:33" itemprop="dateCreated datePublished" datetime="2021-04-22T16:43:47+08:00">2021-04-22</time>
+      <time title="Created: 2021-04-22 16:43:47" itemprop="dateCreated datePublished" datetime="2021-04-22T16:43:47+08:00">2021-04-22</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-04-26 11:19:08" itemprop="dateModified" datetime="2021-04-26T11:19:08+08:00">2021-04-26</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -417,6 +423,10 @@
 <font size="6px"><b>Basic programming - Heap Sort</b></font>
 </p>
 <h2 id="approach">Approach:</h2>
+<p>Heap is a complete binary tree. And, heap feature is that parent node must bigger than its child nodes. It also calls max-heap.<br></p>
+<p>So, heapify() function ensures the max-heap principle. Get the index of left/right child easily by using the argument <code>i</code> (parent node). Then, find the child nodes which is bigger than their parent node and call swap().<br></p>
+<p>If all of the elements are no heap priciple, heapify() function is not enough handling, so we need to write buildheap() function at the begining.<br> Buildheap() function scans all of the elements between parent node and child nodes and forms a max-heap.<br></p>
+<p>Finally, we need to implement heap sort. We can always pop the root node because it is a largest element. Hence, use <code>swap(arr, 0, i)</code> to put root node to the tail of array. <code>i</code> is the the size of arrary - 1 and it will descending. Then, call heapify() function to make larger element moved to root and call swap() again until <code>i</code> is equal to zero.
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/73b8e6ad/#more" rel="contents">
@@ -472,10 +482,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-04-22 11:08:58 / Modified: 11:39:59" itemprop="dateCreated datePublished" datetime="2021-04-22T11:08:58+08:00">2021-04-22</time>
+      <time title="Created: 2021-04-22 11:08:58" itemprop="dateCreated datePublished" datetime="2021-04-22T11:08:58+08:00">2021-04-22</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-04-26 09:49:12" itemprop="dateModified" datetime="2021-04-26T09:49:12+08:00">2021-04-26</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -579,7 +595,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-22 11:11:07" itemprop="dateModified" datetime="2021-04-22T11:11:07+08:00">2021-04-22</time>
+        <time title="Modified: 2021-04-26 09:49:09" itemprop="dateModified" datetime="2021-04-26T09:49:09+08:00">2021-04-26</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -619,6 +635,9 @@
 <font size="6px"><b>Basic programming - Quick Sort</b></font>
 </p>
 <h2 id="approach">Approach:</h2>
+<p>Take one element as the pivot to separate two parts from another elements. For the convenient, we always takes the last element as the pivot.<br></p>
+<p>There is a partition function, search the elements in the range <code>[left:right - 1]</code>, if the element <code>vec[j]</code> is smaller than <code>vec[piovt]</code>, call swap() for putting the smaller element to left side. On the contrary, put the larger element to right side.<br></p>
+<p>Finally, <code>++i</code> is very important, it means shifting the index to point the right side with larger elements. And, call swap() to move pivot to the middle between left side and right side.<br>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/91a7f1d8/#more" rel="contents">
@@ -682,7 +701,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-22 11:14:51" itemprop="dateModified" datetime="2021-04-22T11:14:51+08:00">2021-04-22</time>
+        <time title="Modified: 2021-04-23 10:47:43" itemprop="dateModified" datetime="2021-04-23T10:47:43+08:00">2021-04-23</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">

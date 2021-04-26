@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-04-22T08:45:33.268Z</updated>
+  <updated>2021-04-26T03:19:08.317Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,13 +21,17 @@
     <link href="https://egbert-yu-ting.github.io/posts/73b8e6ad/"/>
     <id>https://egbert-yu-ting.github.io/posts/73b8e6ad/</id>
     <published>2021-04-22T08:43:47.000Z</published>
-    <updated>2021-04-22T08:45:33.268Z</updated>
+    <updated>2021-04-26T03:19:08.317Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Basic programming - Heap Sort&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
-&lt;h2 id=&quot;approach&quot;&gt;Approach:&lt;/h2&gt;</summary>
+&lt;h2 id=&quot;approach&quot;&gt;Approach:&lt;/h2&gt;
+&lt;p&gt;Heap is a complete binary tree. And, heap feature is that parent node must bigger than its child nodes. It also calls max-heap.&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;So, heapify() function ensures the max-heap principle. Get the index of left/right child easily by using the argument &lt;code&gt;i&lt;/code&gt; (parent node). Then, find the child nodes which is bigger than their parent node and call swap().&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;If all of the elements are no heap priciple, heapify() function is not enough handling, so we need to write buildheap() function at the begining.&lt;br&gt; Buildheap() function scans all of the elements between parent node and child nodes and forms a max-heap.&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Finally, we need to implement heap sort. We can always pop the root node because it is a largest element. Hence, use &lt;code&gt;swap(arr, 0, i)&lt;/code&gt; to put root node to the tail of array. &lt;code&gt;i&lt;/code&gt; is the the size of arrary - 1 and it will descending. Then, call heapify() function to make larger element moved to root and call swap() again until &lt;code&gt;i&lt;/code&gt; is equal to zero.</summary>
     
     
     
@@ -43,7 +47,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/ef61bad1/"/>
     <id>https://egbert-yu-ting.github.io/posts/ef61bad1/</id>
     <published>2021-04-22T03:08:58.000Z</published>
-    <updated>2021-04-22T03:39:59.985Z</updated>
+    <updated>2021-04-26T01:49:12.367Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -67,13 +71,16 @@
     <link href="https://egbert-yu-ting.github.io/posts/91a7f1d8/"/>
     <id>https://egbert-yu-ting.github.io/posts/91a7f1d8/</id>
     <published>2021-04-21T08:40:53.000Z</published>
-    <updated>2021-04-22T03:11:07.311Z</updated>
+    <updated>2021-04-26T01:49:09.996Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Basic programming - Quick Sort&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
-&lt;h2 id=&quot;approach&quot;&gt;Approach:&lt;/h2&gt;</summary>
+&lt;h2 id=&quot;approach&quot;&gt;Approach:&lt;/h2&gt;
+&lt;p&gt;Take one element as the pivot to separate two parts from another elements. For the convenient, we always takes the last element as the pivot.&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;There is a partition function, search the elements in the range &lt;code&gt;[left:right - 1]&lt;/code&gt;, if the element &lt;code&gt;vec[j]&lt;/code&gt; is smaller than &lt;code&gt;vec[piovt]&lt;/code&gt;, call swap() for putting the smaller element to left side. On the contrary, put the larger element to right side.&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Finally, &lt;code&gt;++i&lt;/code&gt; is very important, it means shifting the index to point the right side with larger elements. And, call swap() to move pivot to the middle between left side and right side.&lt;br&gt;</summary>
     
     
     
@@ -89,7 +96,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/2b353b50/"/>
     <id>https://egbert-yu-ting.github.io/posts/2b353b50/</id>
     <published>2021-04-21T06:13:46.000Z</published>
-    <updated>2021-04-22T03:14:51.774Z</updated>
+    <updated>2021-04-23T02:47:43.250Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;

@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-04-26T08:16:33.977Z</updated>
+  <updated>2021-04-26T08:21:09.913Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/9c6c52ab/"/>
     <id>https://egbert-yu-ting.github.io/posts/9c6c52ab/</id>
     <published>2021-04-26T07:11:43.000Z</published>
-    <updated>2021-04-26T08:16:33.977Z</updated>
+    <updated>2021-04-26T08:21:09.913Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -30,7 +30,7 @@
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Given the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;root&lt;/font&gt;&lt;/span&gt; of a binary tree, invert the tree, and return &lt;I&gt;its root&lt;/I&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;example&quot;&gt;Example:&lt;/h2&gt;
-&lt;img src=&quot;example.png&quot; /&gt;
+&lt;img src=&quot;example1.png&quot; /&gt;
 &lt;p style=&quot;background-color:#F0F0F0&quot;&gt;
 &lt;b&gt;Input:&lt;/b&gt; root = [4,2,7,1,3,6,9]&lt;br&gt; &lt;b&gt;Output:&lt;/b&gt; [4,7,2,9,6,3,1]
 &lt;/p&gt;</summary>

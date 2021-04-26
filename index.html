@@ -383,7 +383,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-26 11:19:08" itemprop="dateModified" datetime="2021-04-26T11:19:08+08:00">2021-04-26</time>
+        <time title="Modified: 2021-04-26 11:50:01" itemprop="dateModified" datetime="2021-04-26T11:50:01+08:00">2021-04-26</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -423,10 +423,7 @@
 <font size="6px"><b>Basic programming - Heap Sort</b></font>
 </p>
 <h2 id="approach">Approach:</h2>
-<p>Heap is a complete binary tree. And, heap feature is that parent node must bigger than its child nodes. It also calls max-heap.<br></p>
-<p>So, heapify() function ensures the max-heap principle. Get the index of left/right child easily by using the argument <code>i</code> (parent node). Then, find the child nodes which is bigger than their parent node and call swap().<br></p>
-<p>If all of the elements are no heap priciple, heapify() function is not enough handling, so we need to write buildheap() function at the begining.<br> Buildheap() function scans all of the elements between parent node and child nodes and forms a max-heap.<br></p>
-<p>Finally, we need to implement heap sort. We can always pop the root node because it is a largest element. Hence, use <code>swap(arr, 0, i)</code> to put root node to the tail of array. <code>i</code> is the the size of arrary - 1 and it will descending. Then, call heapify() function to make larger element moved to root and call swap() again until <code>i</code> is equal to zero.
+<p>Heap is a complete binary tree. And, heap feature is that parent node must bigger than its child nodes. It also calls max-heap.<br>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/73b8e6ad/#more" rel="contents">
@@ -490,7 +487,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-26 09:49:12" itemprop="dateModified" datetime="2021-04-26T09:49:12+08:00">2021-04-26</time>
+        <time title="Modified: 2021-04-26 11:50:06" itemprop="dateModified" datetime="2021-04-26T11:50:06+08:00">2021-04-26</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -530,8 +527,7 @@
 <font size="6px"><b>Basic programming - Merge Sort</b></font>
 </p>
 <h2 id="approach">Approach:</h2>
-<p>It is a Divide and Conquer problem. Divide the vector into small group to sort, and merge each small groups to the vector.<br></p>
-<p>In the merge() function, we need two new vectors to store those element that is divided into two parts from the vector.<br> And, <code>INT_MAX</code> must be added at the end of <code>leftvec</code> and <code>rightvec</code>. It's a comparision use. E.g., all of elements in <code>leftvec</code> are smaller than <code>rightvec</code>, so do <code>vec[i] = leftvec[left++]</code> until <code>leftvec[left] = INT_MAX</code>, and afterwards do <code>vec[i] = rightvec[right++]</code>. Finally, those elements are sorted.
+<p>It is a Divide and Conquer problem. Divide the vector into small group to sort, and merge each small groups to the vector.<br>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/ef61bad1/#more" rel="contents">
@@ -595,7 +591,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-26 09:49:09" itemprop="dateModified" datetime="2021-04-26T09:49:09+08:00">2021-04-26</time>
+        <time title="Modified: 2021-04-26 11:47:55" itemprop="dateModified" datetime="2021-04-26T11:47:55+08:00">2021-04-26</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -635,9 +631,7 @@
 <font size="6px"><b>Basic programming - Quick Sort</b></font>
 </p>
 <h2 id="approach">Approach:</h2>
-<p>Take one element as the pivot to separate two parts from another elements. For the convenient, we always takes the last element as the pivot.<br></p>
-<p>There is a partition function, search the elements in the range <code>[left:right - 1]</code>, if the element <code>vec[j]</code> is smaller than <code>vec[piovt]</code>, call swap() for putting the smaller element to left side. On the contrary, put the larger element to right side.<br></p>
-<p>Finally, <code>++i</code> is very important, it means shifting the index to point the right side with larger elements. And, call swap() to move pivot to the middle between left side and right side.<br>
+<p>Take one element as the pivot to separate two parts from another elements. For the convenient, we always takes the last element as the pivot.<br>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/91a7f1d8/#more" rel="contents">
@@ -701,7 +695,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-23 10:47:43" itemprop="dateModified" datetime="2021-04-23T10:47:43+08:00">2021-04-23</time>
+        <time title="Modified: 2021-04-26 11:45:10" itemprop="dateModified" datetime="2021-04-26T11:45:10+08:00">2021-04-26</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -741,7 +735,7 @@
 <font size="6px"><b>Basic programming - Bubble Sort</b></font>
 </p>
 <h2 id="approach">Approach:</h2>
-<p>Compare with each elements in the range <code>[0: n]</code> and if <code>vector[i]</code> is bigger than <code>vector[i + 1]</code>, call swap().<br> <code>n</code> is the number of elements in vector and it will descending every loop. It means the biggest element moves to the right side.<br> And, there are one suitation that break the loop earily than expected. If no any elements call swap(), it represented all of the elements in vector are sorted.
+<p>Compare with each elements in the range <code>[0: n]</code> and if <code>vector[i]</code> is bigger than <code>vector[i + 1]</code>, call swap().<br>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2b353b50/#more" rel="contents">
@@ -1319,7 +1313,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-21 14:15:48" itemprop="dateModified" datetime="2021-04-21T14:15:48+08:00">2021-04-21</time>
+        <time title="Modified: 2021-04-26 11:44:56" itemprop="dateModified" datetime="2021-04-26T11:44:56+08:00">2021-04-26</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1359,7 +1353,7 @@
 <font size="6px"><b>Basic programming - Selection Sort</b></font>
 </p>
 <h2 id="approach">Approach:</h2>
-<p>Declare two variables, <code>i</code> likes the end pointer of sorted vector and <code>j</code> likes the scanning pointer.<br> Aims to find the <b>smallest value</b> (or <b>biggest value</b>), therefore, <code>j</code> starts from <code>i</code> to scan until the end of <code>nums</code>. Then, the smallest value is changed with the value of index <code>i</code> by calling swap(). It means adding the smallest value to the sorted vector. Next step, i moves to the next index and go back to the previous action until all values are sorted.
+<p>Declare two variables, <code>i</code> likes the end pointer of sorted vector and <code>j</code> likes the scanning pointer.<br>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/74223785/#more" rel="contents">

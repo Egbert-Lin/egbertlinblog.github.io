@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-04-26T09:16:11.394Z</updated>
+  <updated>2021-04-27T09:03:28.123Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>[LeetCode Road] Power of Two - Solution/C++</title>
+    <link href="https://egbert-yu-ting.github.io/posts/fb3c78ed/"/>
+    <id>https://egbert-yu-ting.github.io/posts/fb3c78ed/</id>
+    <published>2021-04-27T08:17:27.000Z</published>
+    <updated>2021-04-27T09:03:28.123Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;231. Power of Two&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given an integer &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n&lt;/font&gt;&lt;/span&gt;, return &lt;I&gt;&lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;true&lt;/font&gt;&lt;/span&gt; if it is a power of two. Otherwise, return &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;false&lt;/font&gt;&lt;/span&gt;&lt;/I&gt;.&lt;/p&gt;
+&lt;p&gt;An integer &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n&lt;/font&gt;&lt;/span&gt; is a power of two, if there exists an integer &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;x&lt;/font&gt;&lt;/span&gt; such that &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n == 2&lt;sup&gt;x&lt;/sup&gt;&lt;/font&gt;&lt;/span&gt;.</summary>
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>[LeetCode Road] Summary Ranges - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/415df519/"/>
     <id>https://egbert-yu-ting.github.io/posts/415df519/</id>
     <published>2021-04-26T09:05:56.000Z</published>
-    <updated>2021-04-26T09:16:11.394Z</updated>
+    <updated>2021-04-27T08:08:28.694Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -460,34 +482,6 @@
     
     
     <category term="Unordered_map(STL)" scheme="https://egbert-yu-ting.github.io/tags/Unordered-map-STL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Contains Duplicate - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/5d51ed7c/"/>
-    <id>https://egbert-yu-ting.github.io/posts/5d51ed7c/</id>
-    <published>2021-02-22T02:06:16.000Z</published>
-    <updated>2021-03-08T08:36:56.428Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;217. Contains Duplicate&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given an array of integers, find if the array contains any duplicates.&lt;/p&gt;
-&lt;p&gt;Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Unordered_map(STL)" scheme="https://egbert-yu-ting.github.io/tags/Unordered-map-STL/"/>
-    
-    <category term="Unordered_set(STL)" scheme="https://egbert-yu-ting.github.io/tags/Unordered-set-STL/"/>
-    
-    <category term="Sort" scheme="https://egbert-yu-ting.github.io/tags/Sort/"/>
     
   </entry>
   

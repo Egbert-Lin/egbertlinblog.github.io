@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-04-27T09:04:55.208Z</updated>
+  <updated>2021-04-28T06:44:23.735Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>[LeetCode Road]Implement Queue using Stacks - Solution/C++</title>
+    <link href="https://egbert-yu-ting.github.io/posts/fb82e5ef/"/>
+    <id>https://egbert-yu-ting.github.io/posts/fb82e5ef/</id>
+    <published>2021-04-28T03:54:42.000Z</published>
+    <updated>2021-04-28T06:44:23.735Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;225. Implement Queue using Stacks&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (&lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;push&lt;/font&gt;&lt;/span&gt;, &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;peek&lt;/font&gt;&lt;/span&gt;, &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;pop&lt;/font&gt;&lt;/span&gt;, and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;empty&lt;/font&gt;&lt;span&gt;).</summary>
+    
+    
+    
+    <category term="LeetCode-Eays" scheme="https://egbert-yu-ting.github.io/categories/LeetCode-Eays/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>[LeetCode Road] Power of Two - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/fb3c78ed/"/>
     <id>https://egbert-yu-ting.github.io/posts/fb3c78ed/</id>
     <published>2021-04-27T08:17:27.000Z</published>
-    <updated>2021-04-27T09:04:55.208Z</updated>
+    <updated>2021-04-28T02:52:42.221Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -459,29 +480,6 @@
     <category term="Stack" scheme="https://egbert-yu-ting.github.io/tags/Stack/"/>
     
     <category term="Queue" scheme="https://egbert-yu-ting.github.io/tags/Queue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Contains Duplicate II - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/81b7ce15/"/>
-    <id>https://egbert-yu-ting.github.io/posts/81b7ce15/</id>
-    <published>2021-02-23T00:54:07.000Z</published>
-    <updated>2021-04-26T06:04:00.067Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;219. Contains Duplicate II&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given an array of integers and an integer &lt;I&gt;k&lt;/I&gt;, find out whether there are two distinct indices &lt;I&gt;i&lt;/I&gt; and &lt;I&gt;j&lt;/I&gt; in the array such that &lt;b&gt;nums[i]&lt;/b&gt; = &lt;b&gt;nums[j]&lt;/b&gt; and the &lt;b&gt;absolute&lt;/b&gt; difference between &lt;I&gt;i&lt;/I&gt; and &lt;I&gt;j&lt;/I&gt; is at most &lt;I&gt;k&lt;/I&gt;.</summary>
-    
-    
-    
-    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
-    
-    
-    <category term="Unordered_map(STL)" scheme="https://egbert-yu-ting.github.io/tags/Unordered-map-STL/"/>
     
   </entry>
   

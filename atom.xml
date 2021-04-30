@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-04-29T06:24:02.175Z</updated>
+  <updated>2021-04-30T09:08:23.302Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>[LeetCode Road] Lowest Common Ancestor of a Binary Search Tree - Solution/C++</title>
+    <link href="https://egbert-yu-ting.github.io/posts/e96b392c/"/>
+    <id>https://egbert-yu-ting.github.io/posts/e96b392c/</id>
+    <published>2021-04-29T08:03:20.000Z</published>
+    <updated>2021-04-30T09:08:23.302Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;235. Lowest Common Ancestor of a Binary Search Tree&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;According to the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;definition of LCA on Wikipedia&lt;/font&gt;&lt;/span&gt;: “The lowest common ancestor is defined between two nodes &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;p&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;q&lt;/font&gt;&lt;/span&gt; as the lowest node in &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;T&lt;/font&gt;&lt;/span&gt; that has both &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;p&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;q&lt;/font&gt;&lt;/span&gt; as descendants (where we allow &lt;b&gt;a node to be a descendant of itself&lt;/b&gt;).”</summary>
+    
+    
+    
+    <category term="LeetCode-Easy" scheme="https://egbert-yu-ting.github.io/categories/leetcode-easy/"/>
+    
+    
+    <category term="BST" scheme="https://egbert-yu-ting.github.io/tags/BST/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[LeetCode Road] Palindrome LInked List - Solution/C++</title>
     <link href="https://egbert-yu-ting.github.io/posts/6737deee/"/>
     <id>https://egbert-yu-ting.github.io/posts/6737deee/</id>
     <published>2021-04-29T03:44:55.000Z</published>
-    <updated>2021-04-29T06:24:02.175Z</updated>
+    <updated>2021-04-29T06:24:19.280Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -115,7 +139,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/9c6c52ab/"/>
     <id>https://egbert-yu-ting.github.io/posts/9c6c52ab/</id>
     <published>2021-04-26T07:11:43.000Z</published>
-    <updated>2021-04-26T08:21:09.913Z</updated>
+    <updated>2021-04-29T06:31:47.970Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -455,35 +479,6 @@
     
     <category term="LeetCode-Medium" scheme="https://egbert-yu-ting.github.io/categories/LeetCode-Medium/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Longest Substring Without Repeating Characters - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/b6196ce1/"/>
-    <id>https://egbert-yu-ting.github.io/posts/b6196ce1/</id>
-    <published>2021-03-09T06:10:44.000Z</published>
-    <updated>2021-03-29T07:45:03.652Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;3. Longest Substring Without Repeating Characters&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given a string &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;s&lt;/span&gt;&lt;/font&gt;, find the length of the &lt;b&gt;longest substring&lt;/b&gt; without repeating characters.&lt;/p&gt;
-&lt;h2 id=&quot;example&quot;&gt;Example:&lt;/h2&gt;
-&lt;p style=&quot;background-color:#F0F0F0&quot;&gt;
-&lt;b&gt;Input:&lt;/b&gt; s = &quot;abcabcbb&quot;&lt;br&gt; &lt;b&gt;Output:&lt;/b&gt; 3&lt;br&gt; &lt;b&gt;Explanation:&lt;/b&gt; The answer is &quot;abc&quot;, with the length of 3.
-&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="LeetCode-Medium" scheme="https://egbert-yu-ting.github.io/categories/LeetCode-Medium/"/>
-    
-    
-    <category term="Hash_table" scheme="https://egbert-yu-ting.github.io/tags/Hash-table/"/>
-    
-    <category term="Sliding_Window" scheme="https://egbert-yu-ting.github.io/tags/Sliding-Window/"/>
     
   </entry>
   

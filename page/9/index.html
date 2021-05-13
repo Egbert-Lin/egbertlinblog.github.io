@@ -258,7 +258,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">86</span>
+          <span class="site-state-item-count">88</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -294,6 +294,16 @@
 	</div>
 	<ul class="links-of-blogroll-list recent-posts-list">
 	        <li class="my-links-of-blogroll-item">
+		    <a href="/posts/9803d5a6/" title="[LeetCode Road] Remove Duplicates from Sorted List II - Solution/C++" target="">
+		    [LeetCode Road] Remove Duplicates from Sorted List II - Solution/C++
+		    </a>
+		</li>
+	        <li class="my-links-of-blogroll-item">
+		    <a href="/posts/34845636/" title="Classic C/C++ program - You must to understand" target="">
+		    Classic C/C++ program - You must to understand
+		    </a>
+		</li>
+	        <li class="my-links-of-blogroll-item">
 		    <a href="/posts/e96b392c/" title="[LeetCode Road] Lowest Common Ancestor of a Binary Search Tree - Solution/C++" target="">
 		    [LeetCode Road] Lowest Common Ancestor of a Binary Search Tree - Solution/C++
 		    </a>
@@ -306,16 +316,6 @@
 	        <li class="my-links-of-blogroll-item">
 		    <a href="/posts/fb82e5ef/" title="[LeetCode Road]Implement Queue using Stacks - Solution/C++" target="">
 		    [LeetCode Road]Implement Queue using Stacks - Solution/C++
-		    </a>
-		</li>
-	        <li class="my-links-of-blogroll-item">
-		    <a href="/posts/fb3c78ed/" title="[LeetCode Road] Power of Two - Solution/C++" target="">
-		    [LeetCode Road] Power of Two - Solution/C++
-		    </a>
-		</li>
-	        <li class="my-links-of-blogroll-item">
-		    <a href="/posts/415df519/" title="[LeetCode Road] Summary Ranges - Solution/C++" target="">
-		    [LeetCode Road] Summary Ranges - Solution/C++
 		    </a>
 		</li>
 	</ul>
@@ -344,6 +344,216 @@
       
 
       
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/5ddd3578/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/5ddd3578/" class="post-title-link" itemprop="url">[LeetCode Road] Valid Parentheses - Solution/C++</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-12-03 11:13:28" itemprop="dateCreated datePublished" datetime="2020-12-03T11:13:28+08:00">2020-12-03</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-05-04 09:43:58" itemprop="dateModified" datetime="2021-05-04T09:43:58+08:00">2021-05-04</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/posts/5ddd3578/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/5ddd3578/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p align="center">
+<font size="6"><b>20. Valid Parentheses</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> containing just the characters <span style="background-color:#F0F0F0"><font color=#808080>'('</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>')'</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>'{'</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>'}'</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>'['</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>']'</font></span>, determine if the input string is valid.</p>
+<p>An input string is valid if: 1. Open brackets must be closed by the same type of brackets. 2. Open brackets must be closed in the correct order.
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/5ddd3578/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/2768cb2c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2768cb2c/" class="post-title-link" itemprop="url">[LeetCode Road] Longest Common Prefix - Solution/C++</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-12-02 11:50:15" itemprop="dateCreated datePublished" datetime="2020-12-02T11:50:15+08:00">2020-12-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-22 09:51:58" itemprop="dateModified" datetime="2021-01-22T09:51:58+08:00">2021-01-22</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/posts/2768cb2c/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/2768cb2c/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p align="center">
+<font size="6"><b>14. Longest Common Prefix</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Write a function to find the longest common prefix string amongst an array of strings.</p>
+<p>If there is no common prefix, return an empty string <span style="background-color:#F0F0F0"><font color=#808080>""</font></span>.
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/2768cb2c/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
       
   
   

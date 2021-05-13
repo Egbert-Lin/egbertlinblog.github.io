@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-04-30T09:08:43.590Z</updated>
+  <updated>2021-05-13T09:21:28.726Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[LeetCode Road] Remove Duplicates from Sorted List II - Solution/C++</title>
+    <link href="https://egbert-yu-ting.github.io/posts/9803d5a6/"/>
+    <id>https://egbert-yu-ting.github.io/posts/9803d5a6/</id>
+    <published>2021-05-13T08:24:25.000Z</published>
+    <updated>2021-05-13T09:21:28.726Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;82. Remove Duplicates from Sorted List II&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;Given the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;head&lt;/font&gt;&lt;/span&gt; of a sorted linked list, &lt;I&gt;delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.&lt;/I&gt; Return the linked list sorted as well.</summary>
+    
+    
+    
+    <category term="LeetCode-Medium" scheme="https://egbert-yu-ting.github.io/categories/LeetCode-Medium/"/>
+    
+    
+    <category term="ListNode" scheme="https://egbert-yu-ting.github.io/tags/ListNode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Classic C/C++ program - You must to understand</title>
+    <link href="https://egbert-yu-ting.github.io/posts/34845636/"/>
+    <id>https://egbert-yu-ting.github.io/posts/34845636/</id>
+    <published>2021-05-05T06:31:50.000Z</published>
+    <updated>2021-05-06T06:03:48.825Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6&quot;&gt;&lt;b&gt;Classic and Basic C/C++ Question&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question-1-fibonacci-sequence&quot;&gt;Question 1: Fib</summary>
+      
+    
+    
+    
+    <category term="CodeInterview" scheme="https://egbert-yu-ting.github.io/categories/codeinterview/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>[LeetCode Road] Lowest Common Ancestor of a Binary Search Tree - Solution/C++</title>
@@ -93,7 +139,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/fb3c78ed/"/>
     <id>https://egbert-yu-ting.github.io/posts/fb3c78ed/</id>
     <published>2021-04-27T08:17:27.000Z</published>
-    <updated>2021-04-29T03:41:27.734Z</updated>
+    <updated>2021-05-13T09:09:36.243Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -428,52 +474,6 @@
 &lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
 &lt;p&gt;Given an array &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;nums&lt;/font&gt;&lt;/span&gt; of &lt;I&gt;n&lt;/I&gt; integers, are there elements &lt;I&gt;a, b, c&lt;/I&gt; in &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;nums&lt;/font&gt;&lt;/span&gt; such that &lt;I&gt;a&lt;/I&gt; + &lt;I&gt;b&lt;/I&gt; + &lt;I&gt;c&lt;/I&gt; = 0? Find all unique triplets in the array which gives the sum of zero.&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;Notice that the solution set must not contain duplicate triplets.</summary>
-    
-    
-    
-    <category term="LeetCode-Medium" scheme="https://egbert-yu-ting.github.io/categories/LeetCode-Medium/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Container With Most Water - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/fa15b897/"/>
-    <id>https://egbert-yu-ting.github.io/posts/fa15b897/</id>
-    <published>2021-03-15T08:19:31.000Z</published>
-    <updated>2021-04-02T18:26:27.637Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;11. Container With Most Water&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n&lt;/font&gt;&lt;/span&gt; non-negative integers &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;a1, a2, ..., an&lt;/font&gt;&lt;/span&gt; , where each represents a point at coordinate &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;(i, ai)&lt;/font&gt;&lt;/span&gt;. &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n&lt;/font&gt;&lt;/span&gt; vertical lines are drawn such that the two endpoints of the line &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;i&lt;/font&gt;&lt;/span&gt; is at &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;(i, ai)&lt;/font&gt;&lt;/span&gt; and &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;(i, 0)&lt;/font&gt;&lt;/span&gt;. Find two lines, which, together with the x-axis forms a container, such that the container contains the most water.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="LeetCode-Medium" scheme="https://egbert-yu-ting.github.io/categories/LeetCode-Medium/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Longest Palindromic Substring - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/d0988a37/"/>
-    <id>https://egbert-yu-ting.github.io/posts/d0988a37/</id>
-    <published>2021-03-10T06:54:06.000Z</published>
-    <updated>2021-03-15T09:00:50.685Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;5. Longest Palindromic Substring&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given a string s, return the longest palindromic substring in s.&lt;/p&gt;
-&lt;h2 id=&quot;example&quot;&gt;Example:&lt;/h2&gt;
-&lt;p style=&quot;background-color:#F0F0F0&quot;&gt;
-&lt;b&gt;Input:&lt;/b&gt; s = &quot;babad&quot;&lt;br&gt; &lt;b&gt;Output:&lt;/b&gt; &quot;bab&quot;&lt;br&gt; &lt;b&gt;Note:&lt;/b&gt; &quot;aba&quot; is also a valid answer.
-&lt;/p&gt;</summary>
     
     
     

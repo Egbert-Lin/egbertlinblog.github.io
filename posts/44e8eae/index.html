@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/44e8eae/cyclical_list.png">
 <meta property="og:image" content="https://egbert-yu-ting.github.io/posts/44e8eae/non_cyclical_list.png">
 <meta property="article:published_time" content="2021-01-25T01:04:33.000Z">
-<meta property="article:modified_time" content="2021-06-09T07:10:12.435Z">
+<meta property="article:modified_time" content="2021-07-01T12:20:57.580Z">
 <meta property="article:author" content="EgbertLin">
 <meta property="article:tag" content="Algorithm">
 <meta property="article:tag" content="Unordered_set(STL)">
@@ -395,7 +395,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-09 15:10:12" itemprop="dateModified" datetime="2021-06-09T15:10:12+08:00">2021-06-09</time>
+        <time title="Modified: 2021-07-01 20:20:57" itemprop="dateModified" datetime="2021-07-01T20:20:57+08:00">2021-07-01</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -479,7 +479,8 @@ The number of the nodes in the list is in the range <span style="background-colo
 <p>The algorithm is named after Robert W. Floyd, who was credited with its invention by Donald Knuth.<br> It is a pointer algorithm that uses only two pointers, which move through the sequence at different speeds. It is also called the "tortoise and the hare algorithm".<br></p>
 <p><strong>How does it work?</strong><br> Declare two variable as a slow pointer and a fast pointer. The slow pointer moves one step at a time while the fast pointer moves two steps at a time.<br></p>
 <p>If there is a non cyclical List, the fast pointer will reach the end first and the last node points a NULL, you can return false in this case.</p>
-<p>If there is a cyclical List, <strong>the fast pointer will eventually meet the slow pointer</strong>, so you can return true at 18 line.</p>
+<p>If there is a cyclical List, <strong>the fast pointer will eventually meet the slow pointer</strong>, so you can return true at 18 line.<br></p>
+<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(1)</b></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> fast = head;</span><br><span class="line">        <span class="keyword">auto</span> slow = head;</span><br><span class="line">        <span class="keyword">while</span>(fast)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!fast-&gt;next) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            fast = fast-&gt;next-&gt;next;</span><br><span class="line">            slow = slow-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(fast == slow) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>

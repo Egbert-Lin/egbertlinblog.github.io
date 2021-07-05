@@ -993,8 +993,13 @@ Those numbers for which this process ends in 1 are happy.
 <h3 id="version-1"><u>Version 1</u></h3>
 <p>Idea:<br> At first, I suggest you realizing what is unhappy number? You will find out the rule. E.g., n = 48<br> 4<sup>2</sup> + 8<sup>2</sup> = 80<br> 8<sup>2</sup> + 0<sup>2</sup> = 64<br> 6<sup>2</sup> + 4<sup>2</sup> = 52<br> 5<sup>2</sup> + 2<sup>2</sup> = 29<br> 2<sup>2</sup> + 9<sup>2</sup> = 85<br> 8<sup>2</sup> + 5<sup>2</sup> = 89<br> 8<sup>2</sup> + 9<sup>2</sup> = 145<br> 1<sup>2</sup> + 4<sup>2</sup> + 5<sup>2</sup> = 42<br> 4<sup>2</sup> + 2<sup>2</sup> = 20<br> 2<sup>2</sup> + 0<sup>2</sup> = 4<br> 4<sup>2</sup> = 16<br> 1<sup>2</sup> + 6<sup>2</sup> = 37<br> 3<sup>2</sup> + 7<sup>2</sup> = 58<br> 5<sup>2</sup> + 8<sup>2</sup> = 89<br></p>
 <p>From the above example, you can find the regular process. If a number is unhappy number, the output will repeat. (In this case, <b>89</b> is repeated number)<br></p>
-<p>Hence, you can take the <b>unordered_map container</b> to store each output.<br> Then, use <code>count()</code> to check whether the output exists in container or not, if it has already existed, <code>count()</code> will return <b>false</b>, and it means a number is unhappy number. On the contrary, if the ouput is 1, break the while() and return <b>true</b>.</p>
+<p>Hence, you can take the <b>unordered_map container</b> to store each output.<br> Then, use <code>count()</code> to check whether the output exists in container or not, if it has already existed, <code>count()</code> will return <b>false</b>, and it means a number is unhappy number. On the contrary, if the ouput is 1, break the while() and return <b>true</b>.<br></p>
+<p><b>Time complexity: O(log(n))</b><br> <b>Space complexity: O(n)</b></p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isHappy</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; umap;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">                sum += <span class="built_in">pow</span>(n%<span class="number">10</span>, <span class="number">2</span>);</span><br><span class="line">                n /= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(umap.count(sum)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            umap.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(sum, sum));</span><br><span class="line">            n = sum;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<br> We can also adopt <b>Floyd's Cycle Finding Algorithm</b>, the program will stop at the same number. Then, if this number is 1, return true. Otherwise, return false.<br></p>
+<p><b>Time complexity: O(log(n))</b><br> <b>Space complexity: O(1)</b></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isHappy</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> slow = n;</span><br><span class="line">        <span class="keyword">int</span> fast = n;</span><br><span class="line">        <span class="keyword">do</span>&#123;</span><br><span class="line">            slow = nextvalue(slow);</span><br><span class="line">            fast = nextvalue(fast);</span><br><span class="line">            fast = nextvalue(fast);</span><br><span class="line">        &#125;<span class="keyword">while</span>(slow != fast);</span><br><span class="line">        <span class="keyword">if</span>(slow == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">nextvalue</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(n)&#123;</span><br><span class="line">            sum += <span class="built_in">pow</span>(n%<span class="number">10</span>, <span class="number">2</span>);</span><br><span class="line">            n /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>LeetCode-Easy</category>
@@ -1634,7 +1639,8 @@ The number of the nodes in the list is in the range <span style="background-colo
 <h2 id="source-code">Source code:</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
 <p>Idea:<br> We can use <strong>unordered_set</strong> to detect if a list is cyclical.<br></p>
-<p>When we go through each node one by one, we should records the reference of node (or memory address) in a <strong>unordered_set container</strong>. Every reference is unique, so if current node's reference is in the container, it means that a node had been visited in a list before, <code>return true</code>. If the current node is <code>NULL</code>, it's represented the end of the list and a cyclical list is invalid, <code>return false</code>.</p>
+<p>When we go through each node one by one, we should records the reference of node (or memory address) in a <strong>unordered_set container</strong>. Every reference is unique, so if current node's reference is in the container, it means that a node had been visited in a list before, <code>return true</code>. If the current node is <code>NULL</code>, it's represented the end of the list and a cyclical list is invalid, <code>return false</code>.<br></p>
+<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(n)</b></p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_set</span>&lt;ListNode*&gt; visited;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(head)&#123;</span><br><span class="line">            <span class="keyword">if</span>(visited.count(head)) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            visited.insert(head);</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="version-2"><u>Version 2</u></h3>
 <p>Idea:<br> In order to reduce the space complexity to <code>O(1)</code>, we can't declare any container to record the reference of node. <strong>Floyd's Cycle Finding Algorithm</strong> is quite efficient and simple.<br></p>
@@ -3931,6 +3937,56 @@ loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_
         <tag>Ubuntu</tag>
         <tag>SDN</tag>
         <tag>Controller</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Unique Paths - Solution/C++</title>
+    <url>/posts/7cafec50/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>62. Unique Paths</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>A robot is located at the top-left corner of a <span style="background-color:#F0F0F0"><font color=#808080>m x n</font></span> grid (marked 'Start' in the diagram below).</p>
+<p>The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).</p>
+<p>How many possible unique paths are there? <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<img src="example.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> m = 3, n = 7<br> <b>Output:</b> 28
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> m = 3, n = 2<br> <b>Output:</b> 3<br> <b>Explanation:</b><br> From the top-left corner, there are a total of 3 ways to reach the bottom-right corner:<br> 1. Right -&gt; Down -&gt; Down<br> 2. Down -&gt; Down -&gt; Right<br> 3. Down -&gt; Right -&gt; Down
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> m = 7, n = 3<br> <b>Output:</b> 28
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> m = 3, n = 3<br> <b>Output:</b> 6
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= m, n &lt;= 100</font></span>
+</li>
+</strong> <strong>
+<li>
+It's guaranteed that the answer will be less than or equal to <span style="background-color:#F0F0F0"><font color=#808080>2 * 10<sup>9</sup></font></span>.
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> It is a dynamic programming (DP) problem, we need to divide DP problem to subproblems.<br></p>
+<p>Any node in m x n grid, the paths of each node must be obtained from node[m-1][n] + node[m][n-1]. Hence, use recursion to get the possible paths for node[m-1][n] and node[m][n] at 9-10 line.<br></p>
+<p>In addtion, we need to set some conditions to avoid m/n index out of border at 4 line and there is only 1 path at begining position(m = 1 &amp;&amp; n == 1), hence, return 1 at 5 line.<br></p>
+<p>However, some of nodes have repeat calculations, like; node[2][2] is be computed twice in 3 x 3 grid. So, we need 2d array to store an unique paths of each nodes. If it was computed, an unique paths must bigger than 0, return paths directly at 7 line.<br></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">uniquePaths</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>( m &lt;= <span class="number">0</span> || n &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(m == <span class="number">1</span> &amp;&amp; n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(st[m][n] &gt; <span class="number">0</span>) <span class="keyword">return</span> st[m][n];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> left = uniquePaths(m - <span class="number">1</span>, n);</span><br><span class="line">        <span class="keyword">int</span> right = uniquePaths(m, n - <span class="number">1</span>);</span><br><span class="line">        st[m][n] = left + right;</span><br><span class="line">        <span class="keyword">return</span> st[m][n];</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt; st;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Medium</category>
+      </categories>
+      <tags>
+        <tag>Unordered_map(STL)</tag>
+        <tag>Recursive_function</tag>
+        <tag>Dynamic_programming</tag>
       </tags>
   </entry>
 </search>

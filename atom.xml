@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-06-29T12:19:41.548Z</updated>
+  <updated>2021-07-05T04:08:12.677Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[LeetCode Road] Unique Paths - Solution/C++</title>
+    <link href="https://egbert-yu-ting.github.io/posts/7cafec50/"/>
+    <id>https://egbert-yu-ting.github.io/posts/7cafec50/</id>
+    <published>2021-07-05T02:16:17.000Z</published>
+    <updated>2021-07-05T04:08:12.677Z</updated>
+    
+    
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;62. Unique Paths&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
+&lt;p&gt;A robot is located at the top-left corner of a &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;m x n&lt;/font&gt;&lt;/span&gt; grid (marked &#39;Start&#39; in the diagram below).&lt;/p&gt;
+&lt;p&gt;The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked &#39;Finish&#39; in the diagram below).&lt;/p&gt;
+&lt;p&gt;How many possible unique paths are there?</summary>
+    
+    
+    
+    <category term="LeetCode-Medium" scheme="https://egbert-yu-ting.github.io/categories/LeetCode-Medium/"/>
+    
+    
+    <category term="Unordered_map(STL)" scheme="https://egbert-yu-ting.github.io/tags/Unordered-map-STL/"/>
+    
+    <category term="Recursive_function" scheme="https://egbert-yu-ting.github.io/tags/Recursive-function/"/>
+    
+    <category term="Dynamic_programming" scheme="https://egbert-yu-ting.github.io/tags/Dynamic-programming/"/>
+    
+  </entry>
   
   <entry>
     <title>[LeetCode Road] Binary Tree Inorder Traversal - Solution/C++</title>
@@ -460,28 +489,6 @@
     
     
     <category term="Sorting" scheme="https://egbert-yu-ting.github.io/tags/Sorting/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode Road] Remove Nth Node From End of List - Solution/C++</title>
-    <link href="https://egbert-yu-ting.github.io/posts/d7f73c78/"/>
-    <id>https://egbert-yu-ting.github.io/posts/d7f73c78/</id>
-    <published>2021-03-22T07:17:29.000Z</published>
-    <updated>2021-03-22T08:30:51.831Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6&quot;&gt;&lt;b&gt;19. Remove Nth Node From End of List&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;question&quot;&gt;Question:&lt;/h2&gt;
-&lt;p&gt;Given the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;head&lt;/font&gt;&lt;/span&gt; of a linked list, remove the &lt;span style=&quot;background-color:#F0F0F0&quot;&gt;&lt;font color=#808080&gt;n&lt;sup&gt;th&lt;/sup&gt;&lt;/font&gt;&lt;/span&gt; node from the end of the list and return its head.&lt;/p&gt;
-&lt;p&gt;&lt;b&gt;Follow up:&lt;/b&gt; Could you do this in one pass?</summary>
-    
-    
-    
-    <category term="LeetCode-Medium" scheme="https://egbert-yu-ting.github.io/categories/LeetCode-Medium/"/>
-    
     
   </entry>
   

@@ -356,6 +356,7 @@ Average Case：Ο(n<sup>2</sup>)
     <content><![CDATA[<p align="center">
 <font size="6"><b>Classic and Basic C/C++ Question</b></font>
 </p>
+<p>There are four classical question abount C/C++ interview. <a id="more"></a></p>
 <h2 id="question-1-fibonacci-sequence">Question 1: Fibonacci Sequence</h2>
 <h3 id="version-1"><u>Version 1</u></h3>
 <p>This is a recursive function method.</p>

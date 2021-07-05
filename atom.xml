@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-07-05T04:08:12.677Z</updated>
+  <updated>2021-07-05T06:23:15.070Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://egbert-yu-ting.github.io/posts/7cafec50/"/>
     <id>https://egbert-yu-ting.github.io/posts/7cafec50/</id>
     <published>2021-07-05T02:16:17.000Z</published>
-    <updated>2021-07-05T04:08:12.677Z</updated>
+    <updated>2021-07-05T06:23:15.070Z</updated>
     
     
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
@@ -98,16 +98,13 @@
     <link href="https://egbert-yu-ting.github.io/posts/34845636/"/>
     <id>https://egbert-yu-ting.github.io/posts/34845636/</id>
     <published>2021-05-05T06:31:50.000Z</published>
-    <updated>2021-05-13T09:22:16.090Z</updated>
+    <updated>2021-07-05T07:00:45.342Z</updated>
     
     
-      
-      
     <summary type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;font size=&quot;6&quot;&gt;&lt;b&gt;Classic and Basic C/C++ Question&lt;/b&gt;&lt;/font&gt;
 &lt;/p&gt;
-&lt;h2 id=&quot;question-1-fibonacci-sequence&quot;&gt;Question 1: Fib</summary>
-      
+&lt;p&gt;There are four classical question abount C/C++ interview.</summary>
     
     
     

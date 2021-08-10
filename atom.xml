@@ -6,7 +6,7 @@
   <link href="https://egbert-yu-ting.github.io/atom.xml" rel="self"/>
   
   <link href="https://egbert-yu-ting.github.io/"/>
-  <updated>2021-07-05T06:23:15.070Z</updated>
+  <updated>2021-07-11T12:25:47.839Z</updated>
   <id>https://egbert-yu-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Dijkstra algorithm</title>
+    <link href="https://egbert-yu-ting.github.io/posts/1c6c6296/"/>
+    <id>https://egbert-yu-ting.github.io/posts/1c6c6296/</id>
+    <published>2021-07-11T10:58:06.000Z</published>
+    <updated>2021-07-11T12:25:47.839Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Shortest Path Algorithm - Dijkstra&#39;s algorithm&lt;/b&gt;&lt;/font&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;what-is-shortest-path-algorith</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>[LeetCode Road] Unique Paths - Solution/C++</title>
@@ -463,29 +484,6 @@
     
     <category term="LeetCode-Medium" scheme="https://egbert-yu-ting.github.io/categories/LeetCode-Medium/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Data Structures - Selection Sort</title>
-    <link href="https://egbert-yu-ting.github.io/posts/74223785/"/>
-    <id>https://egbert-yu-ting.github.io/posts/74223785/</id>
-    <published>2021-03-24T02:57:42.000Z</published>
-    <updated>2021-04-26T03:44:56.394Z</updated>
-    
-    
-    <summary type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;font size=&quot;6px&quot;&gt;&lt;b&gt;Basic programming - Selection Sort&lt;/b&gt;&lt;/font&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;approach&quot;&gt;Approach:&lt;/h2&gt;
-&lt;p&gt;Declare two variables, &lt;code&gt;i&lt;/code&gt; likes the end pointer of sorted vector and &lt;code&gt;j&lt;/code&gt; likes the scanning pointer.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="SortAlgorithm" scheme="https://egbert-yu-ting.github.io/categories/SortAlgorithm/"/>
-    
-    
-    <category term="Sorting" scheme="https://egbert-yu-ting.github.io/tags/Sorting/"/>
     
   </entry>
   

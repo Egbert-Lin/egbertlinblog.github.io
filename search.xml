@@ -3851,7 +3851,7 @@ Average Case：Ο(nlogn)
 <li>Performance analysis</li>
 <li>Graphical Visualization</li>
 </ol>
-<h2 id="key-terms-adn-abstractions">Key terms adn abstractions:</h2>
+<h2 id="key-terms-and-abstractions">Key terms and abstractions:</h2>
 <ul>
 <li>Node: the virtual hardward (e.g., PC, server, router, smart phone, etc.)</li>
 <li>Network device: transimts and receives over the channel with network layer</li>

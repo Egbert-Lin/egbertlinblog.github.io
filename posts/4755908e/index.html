@@ -216,6 +216,7 @@
     </div>
   </div>
 
+
 </div>
         
   
@@ -334,17 +335,10 @@
 		    </a>
 		</li>
 	</ul>
-    </div>
-      </section>
-        <div class="back-to-top animated">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8863232600865901"
      crossorigin="anonymous"></script>
-     <!-- hexo-side-bar -->
-     <ins class="adsbygoogle"
+    <!-- hexo-side-bar -->
+    <ins class="adsbygoogle"
          style="display:block"
          data-ad-client="ca-pub-8863232600865901"
          data-ad-slot="2891057534"
@@ -353,6 +347,13 @@
      <script>
          (adsbygoogle = window.adsbygoogle || []).push({});
      </script>
+    </div>
+
+      </section>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
 
     </div>
   </aside>
@@ -374,7 +375,177 @@
 
       
 
+    
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/4755908e/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Save time] Shared partition between Mac OS X and Windows 10
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-01-07 11:15:05" itemprop="dateCreated datePublished" datetime="2021-01-07T11:15:05+08:00">2021-01-07</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-22 08:30:20" itemprop="dateModified" datetime="2021-01-22T08:30:20+08:00">2021-01-22</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Instruction/" itemprop="url" rel="index"><span itemprop="name">Instruction</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/posts/4755908e/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/4755908e/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p align="center">
+<font size="6"><b>Bootcamp: File sharing between Mac OS X and Windows 10 on MacBook Pro</b></font>
+</p>
+<p>Here are some reason you should consider deploying Windows on your Mac device. 1. More games with better performance in Windows OS. 2. Some Applications don't work in macOS or not support all functions. 3. Developers need to test projects in Windows OS.</p>
+<p>So, I shared my experience to save your time of installing Windows on MacBook Pro. <a id="more"></a> ## Hardward &amp; Software preparation + Hardware Product model: Macbook Pro 2017 + Software - Win10 ISO You can go to this url to downlaod ISO: https://www.microsoft.com/zh-tw/software-download/windows10 Choose version:Windows 10, Choose language: English and choose 64-bit version</p>
+<h2 id="use-bootcamp-to-install-win10">Use Bootcamp to install Win10</h2>
+<ul>
+<li><p><strong>Step 1.</strong> Launch Bootcamp Assistant from th Utilities folder in Applications. Then, load your WIN10 ISO and allocate appropriate disk size. <img src="bootcamp_1.png" /></p></li>
+<li><p><strong>Step 2.</strong> Wait for some time, the processing will download WIN10 support software. <img src="bootcamp_2.png" /></p></li>
+<li><p><strong>Step 3.</strong> Finally, you will see the WIN10 setup screen. <img src="bootcamp_3.png" /></p></li>
+<li><p><strong>Step 4.</strong> Enter "Explorer", you wil see <code>WININSTALL (D:)</code> and click <code>BootCamp folder</code> to execute setup program. (Don't choose anything else) <img src="bootcamp_4.png" /></p></li>
+</ul>
+<h2 id="partition-ntfs-for-file-sharing">Partition NTFS for file sharing</h2>
+<ul>
+<li><p><strong>Step 1.</strong> Shut down your Mac.</p></li>
+<li><p><strong>Step 2.</strong> Hold down the <code>Command and R keys</code> down and press the power button.</p></li>
+<li><p><strong>Step 3.</strong> Keep holding Command and R keys until the Apple logo appears on the screen.</p></li>
+<li><p><strong>Step 4.</strong> Then, you will see a screen saying macOS Utilities(or if your Mac is older, OS X Utilities).</p></li>
+<li><p><strong>Step 5.</strong> Choose "Disk Utility" <img src="bootcamp_5.png" /></p></li>
+<li><p><strong>Step 6.</strong> Choose "APPLE SSD ..." and click partition <img src="bootcamp_6.png" /></p></li>
+<li><p><strong>Step 7.</strong> Click '+' to new partition section <img src="bootcamp_7.png" /></p></li>
+<li><p><strong>Step 8.</strong> Suggest selecting the NTFS option <img src="bootcamp_8.png" /></p></li>
+<li><p><strong>Step 9.</strong> If the partition is succes, you will see the new partition section between Mac OS X and Windows 10</p></li>
+</ul>
+<h2 id="error---blue-screen-when-boot-windows-10">Error - blue screen when boot Windows 10</h2>
+<p>You finish above procedures, <font color=#FF0000>if WIN10 can't boot anymore and show blue screen with error message: 0xd000000e</font></p>
+<ul>
+<li><strong>Reason:</strong> The installation creates a hybrid MBR which is completely unnecessary. Windows will not boot in EFI mode but in BIOS mode instead and crash.</li>
+<li><strong>Solution:</strong> Enter Mac OS X to open terminal <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install gdisk</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gdisk /dev/sda0 (&quot;sda0&quot; depands on your primary partition)</span><br></pre></td></tr></table></figure>
+<p style="background-color:#F0F0F0">
+Type <b>p</b> to view the partition table to verify you're working on the correct disk
+</p>
+<p style="background-color:#F0F0F0">
+Type <b>x</b> to enter the experts' menu
+</p>
+<p style="background-color:#F0F0F0">
+Type <b>n</b> to create an empty protective MBR
+</p>
+<p style="background-color:#F0F0F0">
+Type <b>w</b> to save your changes, You'll be asked to confirm this action
+</p>
+Finally, reboot you Mac and enter WIN10 OS successfully.</li>
+</ul>
+<h2 id="necessary-third-party-softwares">Necessary third party softwares</h2>
+<p>To enable Mac OS X can write data at shared partition, I provide some software infomations as below:<br> 1. <a target="_blank" rel="noopener" href="https://osxfuse.github.io">OSXFUSE</a><br> 2. <a target="_blank" rel="noopener" href="https://www.tuxera.com/company/open-source/">ntfs-3g</a></p>
+<p>Reference:<br> https://www.innoq.com/en/blog/triple-booting-a-mac/</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>EgbertLin
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://egbert-yu-ting.github.io/posts/4755908e/" title="[Save time] Shared partition between Mac OS X and Windows 10">https://egbert-yu-ting.github.io/posts/4755908e/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/MacOS-X/" rel="tag"><i class="fa fa-tag"></i> MacOS_X</a>
+              <a href="/tags/Windows10/" rel="tag"><i class="fa fa-tag"></i> Windows10</a>
+              <a href="/tags/Bootcamp/" rel="tag"><i class="fa fa-tag"></i> Bootcamp</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/9e0f4e5/" rel="prev" title="[One-time success] How to install Ryu on Ubuntu - Tutorial">
+                  <i class="fa fa-chevron-left"></i> [One-time success] How to install Ryu on Ubuntu - Tutorial
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/17bf1818/" rel="next" title="[LeetCode Road] Convert Sorted Array to Binary Search Tree - Solution/C++">
+                  [LeetCode Road] Convert Sorted Array to Binary Search Tree - Solution/C++ <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
 
 
       

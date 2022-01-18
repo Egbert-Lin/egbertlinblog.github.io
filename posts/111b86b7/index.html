@@ -207,6 +207,7 @@
     </div>
   </div>
 
+
 </div>
         
   
@@ -325,17 +326,10 @@
 		    </a>
 		</li>
 	</ul>
-    </div>
-      </section>
-        <div class="back-to-top animated">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8863232600865901"
      crossorigin="anonymous"></script>
-     <!-- hexo-side-bar -->
-     <ins class="adsbygoogle"
+    <!-- hexo-side-bar -->
+    <ins class="adsbygoogle"
          style="display:block"
          data-ad-client="ca-pub-8863232600865901"
          data-ad-slot="2891057534"
@@ -344,6 +338,13 @@
      <script>
          (adsbygoogle = window.adsbygoogle || []).push({});
      </script>
+    </div>
+
+      </section>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
 
     </div>
   </aside>
@@ -365,7 +366,158 @@
 
       
 
+    
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/111b86b7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [LeetCode Road] Climbing Stairs - Solution/C++
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-12-17 16:12:36" itemprop="dateCreated datePublished" datetime="2020-12-17T16:12:36+08:00">2020-12-17</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-03-08 16:24:07" itemprop="dateModified" datetime="2021-03-08T16:24:07+08:00">2021-03-08</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/posts/111b86b7/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/111b86b7/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p align="center">
+<font size="6"><b>70. Climbing Stairs</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>You are climbing a staircase. It takes <span style="background-color:#F0F0F0"><font color=#808080>n</font></span> steps to reach the top.</p>
+<p>Each time you can either climb <span style="background-color:#F0F0F0"><font color=#808080>1</font></span> or <span style="background-color:#F0F0F0"><font color=#808080>2</font></span> steps. In how many distinct ways can you climb to the top? <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> n = 2<br> <b>Output:</b> 2<br> <b>Explanation:</b> There are two ways to climb to the top.<br> 1. 1 step + 1 step<br> 2. 2 steps<br>
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> n = 3<br> <b>Output:</b> 3<br> <b>Explanation:</b> There are three ways to climb to the top.<br> 1. 1 step + 1 step + 1 step<br> 2. 1 step + 2 steps<br> 3. 2 steps + 1 step<br>
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= n &lt;= 45</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> We must find the reqular pattern. As example mentioned, n = 2 -&gt; output: 2, n = 3 -&gt; output: 3.<br></p>
+<p>You can derive n = 4, n = 5, ...ect. My answer is as below and you can get the reqular result:<br> n = 4 -&gt; Output: 5 // 2 + 3<br> n = 5 -&gt; Output: 8 // 3 + 5<br> n = 6 -&gt; Output: 13 // 5 + 8<br> n = 7 -&gt; Output: 21 // 8 + 13<br> (Results: 1 2 3 5 8 13 21 ...)<br></p>
+<p>Isn't it like classical problem of <strong>Fibonacci Sequence</strong>? So, I directly think recursion can solve it. The approach is as below, but the recursion can't pass the submission, because it will show <u>Time Limit Exceeded</u> when n = 44.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">return</span> climbStairs(n - <span class="number">1</span>) + climbStairs(n - <span class="number">2</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<br> The strategy of second approach is an iterator. We can use for loop instead of recursion. Very simple coding as below and it can pass the submission.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> prev = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> next = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++)&#123;</span><br><span class="line">            result = prev + next;</span><br><span class="line">            prev = next;</span><br><span class="line">            next = result;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>EgbertLin
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://egbert-yu-ting.github.io/posts/111b86b7/" title="[LeetCode Road] Climbing Stairs - Solution&#x2F;C++">https://egbert-yu-ting.github.io/posts/111b86b7/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Recursion/" rel="tag"><i class="fa fa-tag"></i> Recursion</a>
+              <a href="/tags/Fibonacci-Sequence/" rel="tag"><i class="fa fa-tag"></i> Fibonacci_Sequence</a>
+              <a href="/tags/Iterator/" rel="tag"><i class="fa fa-tag"></i> Iterator</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/72b31d68/" rel="prev" title="[LeetCode Road] Sqrt(x) - Solution/C++">
+                  <i class="fa fa-chevron-left"></i> [LeetCode Road] Sqrt(x) - Solution/C++
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/66cc46ab/" rel="next" title="[LeetCode Road] Remove Duplicates from Sorted List - Solution/C++">
+                  [LeetCode Road] Remove Duplicates from Sorted List - Solution/C++ <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
 
 
       

@@ -205,6 +205,7 @@
     </div>
   </div>
 
+
 </div>
         
   
@@ -323,17 +324,10 @@
 		    </a>
 		</li>
 	</ul>
-    </div>
-      </section>
-        <div class="back-to-top animated">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8863232600865901"
      crossorigin="anonymous"></script>
-     <!-- hexo-side-bar -->
-     <ins class="adsbygoogle"
+    <!-- hexo-side-bar -->
+    <ins class="adsbygoogle"
          style="display:block"
          data-ad-client="ca-pub-8863232600865901"
          data-ad-slot="2891057534"
@@ -342,6 +336,13 @@
      <script>
          (adsbygoogle = window.adsbygoogle || []).push({});
      </script>
+    </div>
+
+      </section>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
 
     </div>
   </aside>
@@ -363,7 +364,170 @@
 
       
 
+    
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/e73e301/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [LeetCode Road] Happy Number - Solution/C++
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-02-05 09:11:00" itemprop="dateCreated datePublished" datetime="2021-02-05T09:11:00+08:00">2021-02-05</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-07-04 21:06:30" itemprop="dateModified" datetime="2021-07-04T21:06:30+08:00">2021-07-04</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/posts/e73e301/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/e73e301/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p align="center">
+<font size="6px"><b>202. Happy Number</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Write an algorithm to determine if a number <span style="background-color:#F0F0F0"><font color=#808080>n</span></font> is happy.</p>
+<p>A <b>happy number</b> is a number defined by the following process:</p>
+<ul>
+<li>
+Starting with any positive integer, replace the number by the sum of the squares of its digits.
+</li>
+<li>
+Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.
+</li>
+<li>
+Those numbers for which this process ends in 1 are happy.
+</li>
+</ul>
+<p>Return <span style="background-color:#F0F0F0"><font color=#808080>true</font></span> <I>if</I> <span style="background-color:#F0F0F0"><font color=#808080>n</font></span> <I>is a happy number, and</I> <span style="background-color:#F0F0F0"><font color=#808080>false</font></span> <I>if not</I>. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> n = 19<br> <b>Output:</b> true<br> <b>Explanation:</b><br> 1<sup>2</sup> + 9<sup>2</sup> = 82<br> 8<sup>2</sup> + 2<sup>2</sup> = 68<br> 6<sup>2</sup> + 8<sup>2</sup> = 100<br> 1<sup>2</sup> + 0<sup>2</sup> + 0<sup>2</sup> = 1
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> n = 2<br> <b>Output:</b> false
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= n &lt;= 2^31 - 1</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> At first, I suggest you realizing what is unhappy number? You will find out the rule. E.g., n = 48<br> 4<sup>2</sup> + 8<sup>2</sup> = 80<br> 8<sup>2</sup> + 0<sup>2</sup> = 64<br> 6<sup>2</sup> + 4<sup>2</sup> = 52<br> 5<sup>2</sup> + 2<sup>2</sup> = 29<br> 2<sup>2</sup> + 9<sup>2</sup> = 85<br> 8<sup>2</sup> + 5<sup>2</sup> = 89<br> 8<sup>2</sup> + 9<sup>2</sup> = 145<br> 1<sup>2</sup> + 4<sup>2</sup> + 5<sup>2</sup> = 42<br> 4<sup>2</sup> + 2<sup>2</sup> = 20<br> 2<sup>2</sup> + 0<sup>2</sup> = 4<br> 4<sup>2</sup> = 16<br> 1<sup>2</sup> + 6<sup>2</sup> = 37<br> 3<sup>2</sup> + 7<sup>2</sup> = 58<br> 5<sup>2</sup> + 8<sup>2</sup> = 89<br></p>
+<p>From the above example, you can find the regular process. If a number is unhappy number, the output will repeat. (In this case, <b>89</b> is repeated number)<br></p>
+<p>Hence, you can take the <b>unordered_map container</b> to store each output.<br> Then, use <code>count()</code> to check whether the output exists in container or not, if it has already existed, <code>count()</code> will return <b>false</b>, and it means a number is unhappy number. On the contrary, if the ouput is 1, break the while() and return <b>true</b>.<br></p>
+<p><b>Time complexity: O(log(n))</b><br> <b>Space complexity: O(n)</b></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isHappy</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; umap;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">                sum += <span class="built_in">pow</span>(n%<span class="number">10</span>, <span class="number">2</span>);</span><br><span class="line">                n /= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(umap.count(sum)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            umap.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(sum, sum));</span><br><span class="line">            n = sum;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<br> We can also adopt <b>Floyd's Cycle Finding Algorithm</b>, the program will stop at the same number. Then, if this number is 1, return true. Otherwise, return false.<br></p>
+<p><b>Time complexity: O(log(n))</b><br> <b>Space complexity: O(1)</b></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isHappy</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> slow = n;</span><br><span class="line">        <span class="keyword">int</span> fast = n;</span><br><span class="line">        <span class="keyword">do</span>&#123;</span><br><span class="line">            slow = nextvalue(slow);</span><br><span class="line">            fast = nextvalue(fast);</span><br><span class="line">            fast = nextvalue(fast);</span><br><span class="line">        &#125;<span class="keyword">while</span>(slow != fast);</span><br><span class="line">        <span class="keyword">if</span>(slow == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">nextvalue</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(n)&#123;</span><br><span class="line">            sum += <span class="built_in">pow</span>(n%<span class="number">10</span>, <span class="number">2</span>);</span><br><span class="line">            n /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>EgbertLin
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://egbert-yu-ting.github.io/posts/e73e301/" title="[LeetCode Road] Happy Number - Solution&#x2F;C++">https://egbert-yu-ting.github.io/posts/e73e301/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Unordered-map-STL/" rel="tag"><i class="fa fa-tag"></i> Unordered_map(STL)</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/790fdd9f/" rel="prev" title="[LeetCode Road] Number of 1 Bits - Solution/C++">
+                  <i class="fa fa-chevron-left"></i> [LeetCode Road] Number of 1 Bits - Solution/C++
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/2ded864c/" rel="next" title="[LeetCode Road] Remove Linked List Elements - Solution/C++">
+                  [LeetCode Road] Remove Linked List Elements - Solution/C++ <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
 
 
       

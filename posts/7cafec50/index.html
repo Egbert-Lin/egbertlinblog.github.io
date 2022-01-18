@@ -209,6 +209,7 @@
     </div>
   </div>
 
+
 </div>
         
   
@@ -327,17 +328,10 @@
 		    </a>
 		</li>
 	</ul>
-    </div>
-      </section>
-        <div class="back-to-top animated">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8863232600865901"
      crossorigin="anonymous"></script>
-     <!-- hexo-side-bar -->
-     <ins class="adsbygoogle"
+    <!-- hexo-side-bar -->
+    <ins class="adsbygoogle"
          style="display:block"
          data-ad-client="ca-pub-8863232600865901"
          data-ad-slot="2891057534"
@@ -346,6 +340,13 @@
      <script>
          (adsbygoogle = window.adsbygoogle || []).push({});
      </script>
+    </div>
+
+      </section>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
 
     </div>
   </aside>
@@ -367,7 +368,159 @@
 
       
 
+    
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/7cafec50/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [LeetCode Road] Unique Paths - Solution/C++
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-07-05 10:16:17 / Modified: 14:23:15" itemprop="dateCreated datePublished" datetime="2021-07-05T10:16:17+08:00">2021-07-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/LeetCode-Medium/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Medium</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/posts/7cafec50/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/7cafec50/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p align="center">
+<font size="6px"><b>62. Unique Paths</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>A robot is located at the top-left corner of a <span style="background-color:#F0F0F0"><font color=#808080>m x n</font></span> grid (marked 'Start' in the diagram below).</p>
+<p>The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).</p>
+<p>How many possible unique paths are there? <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<img src="example.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> m = 3, n = 7<br> <b>Output:</b> 28
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> m = 3, n = 2<br> <b>Output:</b> 3<br> <b>Explanation:</b><br> From the top-left corner, there are a total of 3 ways to reach the bottom-right corner:<br> 1. Right -&gt; Down -&gt; Down<br> 2. Down -&gt; Down -&gt; Right<br> 3. Down -&gt; Right -&gt; Down
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> m = 7, n = 3<br> <b>Output:</b> 28
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> m = 3, n = 3<br> <b>Output:</b> 6
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= m, n &lt;= 100</font></span>
+</li>
+</strong> <strong>
+<li>
+It's guaranteed that the answer will be less than or equal to <span style="background-color:#F0F0F0"><font color=#808080>2 * 10<sup>9</sup></font></span>.
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> It is a dynamic programming (DP) problem, we need to divide DP problem to subproblems.<br></p>
+<p>Any node in m x n grid, the paths of each node must be obtained from node[m-1][n] + node[m][n-1]. Hence, use recursion to get the possible paths for node[m-1][n] and node[m][n] at 9-10 line.<br></p>
+<p>In addtion, we need to set some conditions to avoid m/n index out of border at 4 line and there is only 1 path at begining position(m = 1 &amp;&amp; n == 1), hence, return 1 at 5 line.<br></p>
+<p>However, some of nodes have repeat calculations, like; node[2][2] is be computed twice in 3 x 3 grid. So, we need 2d array to store an unique paths of each nodes. If it was computed, an unique paths must bigger than 0, return paths directly at 7 line.<br></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">uniquePaths</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>( m &lt;= <span class="number">0</span> || n &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(m == <span class="number">1</span> &amp;&amp; n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(st[m][n] &gt; <span class="number">0</span>) <span class="keyword">return</span> st[m][n];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> left = uniquePaths(m - <span class="number">1</span>, n);</span><br><span class="line">        <span class="keyword">int</span> right = uniquePaths(m, n - <span class="number">1</span>);</span><br><span class="line">        st[m][n] = left + right;</span><br><span class="line">        <span class="keyword">return</span> st[m][n];</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt; st;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>EgbertLin
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://egbert-yu-ting.github.io/posts/7cafec50/" title="[LeetCode Road] Unique Paths - Solution&#x2F;C++">https://egbert-yu-ting.github.io/posts/7cafec50/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Unordered-map-STL/" rel="tag"><i class="fa fa-tag"></i> Unordered_map(STL)</a>
+              <a href="/tags/Recursive-function/" rel="tag"><i class="fa fa-tag"></i> Recursive_function</a>
+              <a href="/tags/Dynamic-programming/" rel="tag"><i class="fa fa-tag"></i> Dynamic_programming</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/c3ddedee/" rel="prev" title="[LeetCode Road] Binary Tree Inorder Traversal - Solution/C++">
+                  <i class="fa fa-chevron-left"></i> [LeetCode Road] Binary Tree Inorder Traversal - Solution/C++
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
 
 
       

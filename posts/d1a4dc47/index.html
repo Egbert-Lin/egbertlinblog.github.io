@@ -207,6 +207,7 @@
     </div>
   </div>
 
+
 </div>
         
   
@@ -324,17 +325,10 @@
 		    </a>
 		</li>
 	</ul>
-    </div>
-      </section>
-        <div class="back-to-top animated">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8863232600865901"
      crossorigin="anonymous"></script>
-     <!-- hexo-side-bar -->
-     <ins class="adsbygoogle"
+    <!-- hexo-side-bar -->
+    <ins class="adsbygoogle"
          style="display:block"
          data-ad-client="ca-pub-8863232600865901"
          data-ad-slot="2891057534"
@@ -343,6 +337,13 @@
      <script>
          (adsbygoogle = window.adsbygoogle || []).push({});
      </script>
+    </div>
+
+      </section>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
 
     </div>
   </aside>
@@ -364,7 +365,240 @@
 
       
 
+    
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/d1a4dc47/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          How to understand recursive function - Tower of Hanoi
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-11-23 15:54:27" itemprop="dateCreated datePublished" datetime="2020-11-23T15:54:27+08:00">2020-11-23</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-03-08 16:36:56" itemprop="dateModified" datetime="2021-03-08T16:36:56+08:00">2021-03-08</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/recursion/" itemprop="url" rel="index"><span itemprop="name">Recursion</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/posts/d1a4dc47/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/d1a4dc47/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p align="center">
+<font size="6"><b>Tower of Hanoi</b></font>
+</p>
+<p>Let's realize how does tower of hanoi works and how to use recursive function to implement it!!!</p>
+<p>The <strong>Tower of Hanoi</strong> is a mathematical game or puzzle, it's a classical problem during your CSIE studies.</p>
+<p><strong>First</strong>, the demonstration of process(3 disks and 3 rods) as below[1]: <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Tower_of_Hanoi.gif" alt="animation" /> <a id="more"></a> <strong>Second</strong>, moving the entire stack to another rod need to comply with the following rules: 1. Only one disk can be moved at a time. 2. Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack or on an empty rod. 3. No larger disk may be placed on top of a smaller disk.</p>
+<p><strong>Third</strong>, the solutions between 1 disks and 4 disks are shown as following:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">1 disks</th>
+<th style="text-align: center;">2 disks</th>
+<th style="text-align: center;">3 disks</th>
+<th style="text-align: center;">4 disks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1 A-&gt;B</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">2 A-&gt;C</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1 B-&gt;C</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3 A-&gt;B</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1 A-&gt;C</td>
+<td style="text-align: center;">1 C-&gt;A</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">2 A-&gt;B</td>
+<td style="text-align: center;">2 C-&gt;B</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1 A-&gt;B</td>
+<td style="text-align: center;">1 C-&gt;B</td>
+<td style="text-align: center;">1 A-&gt;B</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1 A-&gt;C</td>
+<td style="text-align: center;">2 A-&gt;C</td>
+<td style="text-align: center;">3 A-&gt;C</td>
+<td style="text-align: center;">4 A-&gt;C</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1 B-&gt;C</td>
+<td style="text-align: center;">1 B-&gt;A</td>
+<td style="text-align: center;">1 B-&gt;C</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">2 B-&gt;C</td>
+<td style="text-align: center;">2 B-&gt;A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1 A-&gt;C</td>
+<td style="text-align: center;">1 C-&gt;A</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3 B-&gt;C</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1 A-&gt;B</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">2 A-&gt;C</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1 B-&gt;C</td>
+</tr>
+</tbody>
+</table>
+<p>we can find regular movement! In short, the pattern can be proposed: + Shift 'n-1' disks from 'A' to 'B'. + Shift last disk from 'A' to 'C'. + Shift 'n-1' disks from 'B' to 'C'.</p>
+<p><strong>Finally</strong>, we can get complicated solution by computing:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">hanoi</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">char</span> start, <span class="keyword">char</span> temp, <span class="keyword">char</span> target, <span class="keyword">int</span> &amp;moved)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Move &quot;</span> &lt;&lt; start &lt;&lt; <span class="string">&quot; -&gt; &quot;</span> &lt;&lt; target &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        moved++;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        hanoi(n - <span class="number">1</span>, start, target, temp, moved);</span><br><span class="line">        hanoi(<span class="number">1</span>, start, temp, target, moved);</span><br><span class="line">        hanoi(n - <span class="number">1</span>, temp, start, target, moved);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">   <span class="keyword">int</span> n = <span class="number">3</span>, moved = <span class="number">0</span>;</span><br><span class="line">   hanoi(n, <span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span> , moved);</span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Total moved &quot;</span> &lt;&lt; moved &lt;&lt; <span class="string">&quot; steps&quot;</span> &lt;&lt; <span class="built_in">endl</span>;  </span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Explanation:<br> In the main(), I declare "n" is represented the number of dists and "moved" is a counter. At 19 line, call hanoi() function which consists 5 argument ('A', 'B' and 'C' are represented each rods).<br> At hanoi() function, it checks n whether it's equal to 1 at 6 line, but it's invalid at the first time. So, the program runs else part.<br> <font color=#FF0000>n = 3 - 1, A C B</font> (<em>recursive call at 10 line</em>) <br>   <font color=#0000FF> n = 2, A C B<br>   =&gt; if statement is invalid, so do else part</font><br>   <font color=#FF0000>n= 2 - 1 , A B C</font> (<em>recursive call</em>)<br>     n = 1, A B C<br>     =&gt; if statement is valid<br>     =&gt; print "Move A → C", moved ++<br>   <font color=#0000FF>n = 1, A C B</font> (<em>recursive call at 11 line</em>)<br>   <font color=#0000FF>=&gt; print "Move A → B", moved ++</font><br>   <font color=#FF0000>n = 2 - 1, C A B</font> (<em>recursive call at 12 line</em>)<br>     n = 1, C A B<br>     =&gt; if statement is valid<br>     =&gt; print "Move C → B", moved ++<br> <font color=#FF0000>n = 1, A B C (<em>recursive call at 11 line</em>)<br> =&gt; if statement is valid<br> =&gt; print "Move A → C", moved ++</font><br> <font color=#FF0000>n = 3 - 1, B A C</font> (<em>recursive call at 12 line</em>)<br>   <font color=#0000FF>n = 2, B A C<br>   =&gt; if statement is invalid, so do else part</font><br>   <font color=#FF0000>n = 2 - 1, B C A</font> (<em>recursive call at 10 line</em>)<br>     n = 1, B C A<br>     =&gt; if statement is valid<br>     =&gt; print "Move B → C", moved ++<br>   <font color=#0000FF>n = 1, B A C</font> (<em>recursive call at 11 line</em>)<br>   <font color=#0000FF>=&gt; print "Move B → C", moved ++</font><br> <font color=#FF0000>n = 2 - 1, A B C (<em>recursive call at 12 line</em>)<br> =&gt; if statement is valid<br> =&gt; print "Move A → C", moved ++</font><br></p>
+<p>Reference:<br> [1] André Karwath aka Aka, CC BY-SA 2.5 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-sa/2.5" class="uri">https://creativecommons.org/licenses/by-sa/2.5</a>, via Wikimedia Commons</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>EgbertLin
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://egbert-yu-ting.github.io/posts/d1a4dc47/" title="How to understand recursive function - Tower of Hanoi">https://egbert-yu-ting.github.io/posts/d1a4dc47/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Recursive-function/" rel="tag"><i class="fa fa-tag"></i> Recursive_function</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/b98c8b25/" rel="next" title="[LeetCode Road] Two Sum - Solution/C++">
+                  [LeetCode Road] Two Sum - Solution/C++ <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
 
 
       

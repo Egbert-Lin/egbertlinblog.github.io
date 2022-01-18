@@ -330,6 +330,20 @@
           <i class="fa fa-arrow-up"></i>
           <span>0%</span>
         </div>
+
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8863232600865901"
+     crossorigin="anonymous"></script>
+     <!-- hexo-side-bar -->
+     <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8863232600865901"
+         data-ad-slot="2891057534"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+     <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+     </script>
+
     </div>
   </aside>
   <div class="sidebar-dimmer"></div>
@@ -350,164 +364,7 @@
 
       
 
-    
   
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/fa15b897/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="EgbertLin">
-      <meta itemprop="description" content="Programming Developer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Egbert Lin's Blog">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          [LeetCode Road] Container With Most Water - Solution/C++
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-03-15 16:19:31" itemprop="dateCreated datePublished" datetime="2021-03-15T16:19:31+08:00">2021-03-15</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-03 02:26:27" itemprop="dateModified" datetime="2021-04-03T02:26:27+08:00">2021-04-03</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LeetCode-Medium/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Medium</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/posts/fa15b897/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/fa15b897/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-        <p align="center">
-<font size="6"><b>11. Container With Most Water</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given <span style="background-color:#F0F0F0"><font color=#808080>n</font></span> non-negative integers <span style="background-color:#F0F0F0"><font color=#808080>a1, a2, ..., an</font></span> , where each represents a point at coordinate <span style="background-color:#F0F0F0"><font color=#808080>(i, ai)</font></span>. <span style="background-color:#F0F0F0"><font color=#808080>n</font></span> vertical lines are drawn such that the two endpoints of the line <span style="background-color:#F0F0F0"><font color=#808080>i</font></span> is at <span style="background-color:#F0F0F0"><font color=#808080>(i, ai)</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>(i, 0)</font></span>. Find two lines, which, together with the x-axis forms a container, such that the container contains the most water.<br> <a id="more"></a></p>
-<p><b>Notice</b> that you may not slant the container.</p>
-<h2 id="example">Example:</h2>
-<img src="example.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> height = [1,8,6,2,5,4,8,3,7]<br> <b>Output:</b> 49<br> <b>Explanation:</b> The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> height = [1,1]<br> <b>Output:</b> 1
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> height = [4,3,2,1,4]<br> <b>Output:</b> 16
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> height = [1,2,1]<br> <b>Output:</b> 2
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>n == height.length</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>2 &lt;= n &lt;= 10<sup>5</sup></font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= height[i] &lt;= 10<sup>4</sup></font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="verion-1"><u>Verion 1</u></h3>
-<p>Idea:<br> Declare two variables, one is the leftmost of vertical lines and the other is the rightmost of vertical lines.<br> First, we can get the container with largest length of x-axis. Then, compare the leftmost line with the rightmost line for finding the smallest one. It will be moved close to the other. (It means moving to the next line and try to find the larger container)<br></p>
-<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(1)</b></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> r = height.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> maxContain = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">            <span class="keyword">int</span> area = min(height[l], height[r]) * (r - l);</span><br><span class="line">            maxContain = max(maxContain, area);</span><br><span class="line">            <span class="keyword">if</span>(height[l] &lt; height[r])&#123;</span><br><span class="line">                ++l;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                --r;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxContain;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-          
-
-<div class="post-copyright">
-<ul>
-  <li class="post-copyright-author">
-      <strong>Post author:  </strong>EgbertLin
-  </li>
-  <li class="post-copyright-link">
-      <strong>Post link: </strong>
-      <a href="https://egbert-yu-ting.github.io/posts/fa15b897/" title="[LeetCode Road] Container With Most Water - Solution&#x2F;C++">https://egbert-yu-ting.github.io/posts/fa15b897/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
-  </li>
-</ul>
-</div>
-
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/posts/d0988a37/" rel="prev" title="[LeetCode Road] Longest Palindromic Substring - Solution/C++">
-                  <i class="fa fa-chevron-left"></i> [LeetCode Road] Longest Palindromic Substring - Solution/C++
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/posts/b32b0461/" rel="next" title="[LeetCode Road] 3Sum - Solution/C++">
-                  [LeetCode Road] 3Sum - Solution/C++ <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
-  </article>
-  
-  
-  
-
 
 
       
@@ -553,7 +410,7 @@
 <div class="copyright">
   
   &copy; 2020-2021 – 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -330,6 +330,20 @@
           <i class="fa fa-arrow-up"></i>
           <span>0%</span>
         </div>
+
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8863232600865901"
+     crossorigin="anonymous"></script>
+     <!-- hexo-side-bar -->
+     <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8863232600865901"
+         data-ad-slot="2891057534"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+     <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+     </script>
+
     </div>
   </aside>
   <div class="sidebar-dimmer"></div>
@@ -350,162 +364,7 @@
 
       
 
-    
   
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/a026a3d3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="EgbertLin">
-      <meta itemprop="description" content="Programming Developer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Egbert Lin's Blog">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          [LeetCode Road] Best Time to Buy and Sell Stock - Solution/C++
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-01-18 23:28:03" itemprop="dateCreated datePublished" datetime="2021-01-18T23:28:03+08:00">2021-01-18</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-07-01 17:00:23" itemprop="dateModified" datetime="2021-07-01T17:00:23+08:00">2021-07-01</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/posts/a026a3d3/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/a026a3d3/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-        <p align="center">
-<font size="6"><b>121. Best Time to Buy and Sell Stock</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>You are given an array <span style="background-color:#F0F0F0"><font color=#808080>prices</font></span> where <span style="background-color:#F0F0F0"><font color=#808080>prices[i]</font></span> is the price of a given stock on the <span style="background-color:#F0F0F0"><font color=#808080>i^th</font></span> day.</p>
-<p>You want to maximize your profit by choosing a <strong>single day</strong> to buy one stock and choosing a <strong>different day in the future</strong> to sell that stock. <a id="more"></a></p>
-<p>Return <em>the maximum profit you can achieve from this transaction</em>. If you cannot achieve any profit, return <span style="background-color:#F0F0F0"><font color=#808080>0</font></span>.</p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> prices = [7,1,5,3,6,4]<br> <b>Output:</b> 5<br> <b>Explanation:</b> Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.<br> Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> prices = [7,6,4,3,1]<br> <b>Output:</b> 0<br> <b>Explanation:</b> In this case, no transactions are done and the max profit = 0.
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= prices.length &lt;= 10^5</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= prices[i] &lt;= 10^4</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> It is a brute force algorithm. Each elements as buying day (<code>prices[i]</code>)compare the profit with other selling day (<code>prices[j]</code>, i &lt; j), so we can get the maximum profit, however, the strategy is very inefficient. (Time Limit Exceeded)</p>
-<p><b>Time complexity: O(n<sup>2</sup>)</b><br> <b>Space complexity: O(1)</b></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices.empty() || prices.size() == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> profit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; prices.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> cost = prices[i];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; prices.size(); j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> reward = prices[j];</span><br><span class="line">                <span class="keyword">int</span> temp = reward - cost;</span><br><span class="line">                <span class="keyword">if</span>(temp &gt; <span class="number">0</span> &amp;&amp; temp &gt; profit)&#123;</span><br><span class="line">                    profit = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> It can use only one loop to implement the algorithm.<br> <code>minPrice</code>: It want to get the lowest price up to i-th day.<br> <code>maxProfit</code>: It want to get the max profit up to i-th day.<br> <code>max(maxProfit, prices[i] - minPrice)</code>: It means that the minimum price subtracted from the price of selling day(<code>prices[i]</code>) and choose the large profit.<br></p>
-<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(1)</b></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> minPrice = INT_MAX, maxProfit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            minPrice = min(minPrice, prices[i]);</span><br><span class="line">            maxProfit = max(maxProfit, prices[i] - minPrice);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-          
-
-<div class="post-copyright">
-<ul>
-  <li class="post-copyright-author">
-      <strong>Post author:  </strong>EgbertLin
-  </li>
-  <li class="post-copyright-link">
-      <strong>Post link: </strong>
-      <a href="https://egbert-yu-ting.github.io/posts/a026a3d3/" title="[LeetCode Road] Best Time to Buy and Sell Stock - Solution&#x2F;C++">https://egbert-yu-ting.github.io/posts/a026a3d3/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
-  </li>
-</ul>
-</div>
-
-          <div class="post-tags">
-              <a href="/tags/Stock/" rel="tag"><i class="fa fa-tag"></i> Stock</a>
-              <a href="/tags/BruteForce/" rel="tag"><i class="fa fa-tag"></i> BruteForce</a>
-          </div>
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/posts/2edb8546/" rel="prev" title="[LeetCode Road] Pascal's Triangle II - Solution/C++">
-                  <i class="fa fa-chevron-left"></i> [LeetCode Road] Pascal's Triangle II - Solution/C++
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/posts/784045ef/" rel="next" title="Run PyCharm: Python development platform on Ubuntu (Ryu SDN)">
-                  Run PyCharm: Python development platform on Ubuntu (Ryu SDN) <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
-  </article>
-  
-  
-  
-
 
 
       
@@ -551,7 +410,7 @@
 <div class="copyright">
   
   &copy; 2020-2021 – 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

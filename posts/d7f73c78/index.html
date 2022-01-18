@@ -331,6 +331,20 @@
           <i class="fa fa-arrow-up"></i>
           <span>0%</span>
         </div>
+
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8863232600865901"
+     crossorigin="anonymous"></script>
+     <!-- hexo-side-bar -->
+     <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8863232600865901"
+         data-ad-slot="2891057534"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+     <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+     </script>
+
     </div>
   </aside>
   <div class="sidebar-dimmer"></div>
@@ -351,162 +365,7 @@
 
       
 
-    
   
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/d7f73c78/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="EgbertLin">
-      <meta itemprop="description" content="Programming Developer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Egbert Lin's Blog">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          [LeetCode Road] Remove Nth Node From End of List - Solution/C++
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-03-22 15:17:29 / Modified: 16:30:51" itemprop="dateCreated datePublished" datetime="2021-03-22T15:17:29+08:00">2021-03-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LeetCode-Medium/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Medium</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/posts/d7f73c78/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/d7f73c78/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-        <p align="center">
-<font size="6"><b>19. Remove Nth Node From End of List</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given the <span style="background-color:#F0F0F0"><font color=#808080>head</font></span> of a linked list, remove the <span style="background-color:#F0F0F0"><font color=#808080>n<sup>th</sup></font></span> node from the end of the list and return its head.</p>
-<p><b>Follow up:</b> Could you do this in one pass? <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<img src="example.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> head = [1,2,3,4,5], n = 2<br> <b>Output:</b> [1,2,3,5]
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> head = [1], n = 1<br> <b>Output:</b> []
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> head = [1,2], n = 1<br> <b>Output:</b> [1]
-</p>
-<strong>Constaints:</strong> <strong>
-<li>
-The number of nodes in the list is <span style="background-color:#F0F0F0"><font color=#808080>sz</font></span>.
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>01 &lt;= sz &lt;= 30</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>00 &lt;= Node.val &lt;= 100</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>01 &lt;= n &lt;= sz</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> This method uses fast &amp; slow pointers. It is similar with <a href="https://egbert-yu-ting.github.io/posts/44e8eae/?highlight=fast">141. Linked List Cycle</a>.<br></p>
-<p>Fast pointer moves <code>n</code> steps first. It means the distance is <code>n</code> between fast pointer and slow pointer.<br></p>
-<p>What the concept of the method?<br> When the fast pointer reaches to the end of the list, the slow points will stop at n<sup>th</sup> from the end of the list. At the monent, the next node of slow pointer is the answer to remove it.<br></p>
-<p>The demonstration is shown as below:<br> <img src="demonstration.png" /></p>
-<p><b>Time complexity: O(L)</b><br> <b>Space complexity: O(1)</b></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">removeNthFromEnd</span><span class="params">(ListNode* head, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!head) <span class="keyword">return</span> head;</span><br><span class="line">        </span><br><span class="line">        <span class="function">ListNode <span class="title">dummy</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">        ListNode* ptr = &amp;dummy;</span><br><span class="line">        ptr-&gt;next = head;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">auto</span> fast = ptr;</span><br><span class="line">        <span class="keyword">auto</span> slow = ptr;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(fast-&gt;next)&#123;</span><br><span class="line">            fast = fast-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(n-- &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">                slow = slow-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        slow-&gt;next = slow-&gt;next-&gt;next;</span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-          
-
-<div class="post-copyright">
-<ul>
-  <li class="post-copyright-author">
-      <strong>Post author:  </strong>EgbertLin
-  </li>
-  <li class="post-copyright-link">
-      <strong>Post link: </strong>
-      <a href="https://egbert-yu-ting.github.io/posts/d7f73c78/" title="[LeetCode Road] Remove Nth Node From End of List - Solution&#x2F;C++">https://egbert-yu-ting.github.io/posts/d7f73c78/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
-  </li>
-</ul>
-</div>
-
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/posts/b32b0461/" rel="prev" title="[LeetCode Road] 3Sum - Solution/C++">
-                  <i class="fa fa-chevron-left"></i> [LeetCode Road] 3Sum - Solution/C++
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/posts/74223785/" rel="next" title="Data Structures - Selection Sort">
-                  Data Structures - Selection Sort <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
-  </article>
-  
-  
-  
-
 
 
       
@@ -552,7 +411,7 @@ The number of nodes in the list is <span style="background-color:#F0F0F0"><font 
 <div class="copyright">
   
   &copy; 2020-2021 – 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

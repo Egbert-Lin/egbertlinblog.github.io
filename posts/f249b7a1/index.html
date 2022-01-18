@@ -330,6 +330,20 @@
           <i class="fa fa-arrow-up"></i>
           <span>0%</span>
         </div>
+
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8863232600865901"
+     crossorigin="anonymous"></script>
+     <!-- hexo-side-bar -->
+     <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8863232600865901"
+         data-ad-slot="2891057534"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+     <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+     </script>
+
     </div>
   </aside>
   <div class="sidebar-dimmer"></div>
@@ -350,170 +364,7 @@
 
       
 
-    
   
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/f249b7a1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="EgbertLin">
-      <meta itemprop="description" content="Programming Developer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Egbert Lin's Blog">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          [LeetCode Road] Single Number - Solution/C++
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-01-21 14:23:18" itemprop="dateCreated datePublished" datetime="2021-01-21T14:23:18+08:00">2021-01-21</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-07-01 17:03:40" itemprop="dateModified" datetime="2021-07-01T17:03:40+08:00">2021-07-01</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/leetcode-easy/" itemprop="url" rel="index"><span itemprop="name">LeetCode-Easy</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/posts/f249b7a1/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/f249b7a1/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-        <h2 id="question">Question:</h2>
-<p>Given a <strong>non-empty</strong> array of integers nums, every element appears twice except for one. Find that single one.</p>
-<p><strong>Follow up:</strong> Could you implement a solution with a linear runtime complexity and without using extra memory? <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [2,2,1]<br> <b>Output:</b> 1
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [4,1,2,1,2]<br> <b>Output:</b> 4
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [1]<br> <b>Output:</b> 1
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= nums.length &lt;= 3 * 10^4</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-3 * 10^4 &lt;= nums[i] &lt;= 3 * 10^4</font></span>
-</li>
-</strong> <strong>
-<li>
-Each element in the array appears twice except for one element which appears only once.
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> I need a pool to store elements, those are recorded by a counter. Hence, I remember one of LeetCode question I had done before. The question of <a href="https://egbert-yu-ting.github.io/posts/b98c8b25/">Two Sum</a> solution is <strong>map</strong>. A map container is supporting generic type key-value pairs with the templates.<br></p>
-<p>Therefore, the elements of nums vector will be stored into map&lt;int,int&gt;, I set the element as a key (unique), give 1 as a value (means a counter). If the element is exist in map already, a counter will be added 1.<br></p>
-<p>Finally, I use a loop to check each pairs whether a counter is equal to 1. Remember to return a key of pair.<br></p>
-<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(n)</b></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.size() == <span class="number">1</span>) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mapNum;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">        <span class="keyword">int</span> ans;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            it = mapNum.find(nums[i]);</span><br><span class="line">            <span class="keyword">if</span>(it == mapNum.end())&#123;</span><br><span class="line">                mapNum.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(nums[i], <span class="number">1</span>));</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                it-&gt;second += <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">for</span>(it = mapNum.begin(); it != mapNum.end(); it++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(it-&gt;second == <span class="number">1</span>)&#123;</span><br><span class="line">                ans = it-&gt;first;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> This is an optimal algorithm that refered to internet. A Logical operator is very impressive method to solve it.<br></p>
-<p>Exclusive or (<code>XOR</code>) is one of a logicl operator that outputs is true (=1) only when two inputs differ. On the contrary, outputs is false (=0) only when the two inputs are the same.<br></p>
-<p>E.g.,<br>    1 0<br> <u>XOR 1 0</u><br>    0 0<br></p>
-<p>Hence, we can do XOR for each elements and the result appears only once.<br></p>
-<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(1)</b></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            res ^= nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-          
-
-<div class="post-copyright">
-<ul>
-  <li class="post-copyright-author">
-      <strong>Post author:  </strong>EgbertLin
-  </li>
-  <li class="post-copyright-link">
-      <strong>Post link: </strong>
-      <a href="https://egbert-yu-ting.github.io/posts/f249b7a1/" title="[LeetCode Road] Single Number - Solution&#x2F;C++">https://egbert-yu-ting.github.io/posts/f249b7a1/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
-  </li>
-</ul>
-</div>
-
-          <div class="post-tags">
-              <a href="/tags/Logical-Operators/" rel="tag"><i class="fa fa-tag"></i> Logical_Operators</a>
-              <a href="/tags/Map-STL/" rel="tag"><i class="fa fa-tag"></i> Map(STL)</a>
-          </div>
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/posts/1686f472/" rel="prev" title="[LeetCode Road] Valid Palindrome - Solution/C++">
-                  <i class="fa fa-chevron-left"></i> [LeetCode Road] Valid Palindrome - Solution/C++
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/posts/44e8eae/" rel="next" title="[LeetCode Road] Linked List Cycle - Solution/C++ - Solution/C++">
-                  [LeetCode Road] Linked List Cycle - Solution/C++ - Solution/C++ <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
-  </article>
-  
-  
-  
-
 
 
       
@@ -559,7 +410,7 @@ Each element in the array appears twice except for one element which appears onl
 <div class="copyright">
   
   &copy; 2020-2021 – 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -331,6 +331,20 @@
           <i class="fa fa-arrow-up"></i>
           <span>0%</span>
         </div>
+
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8863232600865901"
+     crossorigin="anonymous"></script>
+     <!-- hexo-side-bar -->
+     <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8863232600865901"
+         data-ad-slot="2891057534"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+     <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+     </script>
+
     </div>
   </aside>
   <div class="sidebar-dimmer"></div>
@@ -351,159 +365,7 @@
 
       
 
-    
   
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/9e0f4e5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="EgbertLin">
-      <meta itemprop="description" content="Programming Developer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Egbert Lin's Blog">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          [One-time success] How to install Ryu on Ubuntu - Tutorial
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-01-06 14:14:43" itemprop="dateCreated datePublished" datetime="2021-01-06T14:14:43+08:00">2021-01-06</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-22 10:05:52" itemprop="dateModified" datetime="2021-01-22T10:05:52+08:00">2021-01-22</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/simulator/" itemprop="url" rel="index"><span itemprop="name">Simulator</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/posts/9e0f4e5/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/9e0f4e5/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-        <p align="center">
-<font size="6"><b>Tutorial - Install Ryu in Ubuntu 16.04 with no failure</b></font>
-</p>
-<p><a target="_blank" rel="noopener" href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It's very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet. <a id="more"></a></p>
-<h2 id="start-to-configure-and-install">Start to configure and install</h2>
-<ul>
-<li><strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources) <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install python-pip python-dev</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary. <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 4.</strong> Download Ryu source code from github <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone git://github.com/osrg/ryu.git</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 5.</strong> <a target="_blank" rel="noopener" href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller. <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install networkx</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 6.</strong> Install Ryu <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo python ./setup.py install</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 7.</strong> Execution and testing <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ryu-manager</span><br></pre></td></tr></table></figure> // If your installation is successful, the terminal will show some info. and stop to listening:
-<p style="background-color:#F0F0F0">
-loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_handler of OFPHandler
-</p>
-<hr />
-<p>
-<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error!</font>
-</p>
-<p>
-<b>Solution:</b>
-</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pip install -r tools/pip-requires</span><br></pre></td></tr></table></figure>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pip install six --upgrade</span><br></pre></td></tr></table></figure>
-<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font> <font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>   <b>SyntaxError: ivalid syntax</b></font><br> <b>Solution:</b> <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/local/lib/python2.7/dist-packages/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo rm –rf oslo_config/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata</span><br></pre></td></tr></table></figure> From the above, the command is refered to:<br> http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd oslo.config</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo python setup.py install</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-          
-
-<div class="post-copyright">
-<ul>
-  <li class="post-copyright-author">
-      <strong>Post author:  </strong>EgbertLin
-  </li>
-  <li class="post-copyright-link">
-      <strong>Post link: </strong>
-      <a href="https://egbert-yu-ting.github.io/posts/9e0f4e5/" title="[One-time success] How to install Ryu on Ubuntu - Tutorial">https://egbert-yu-ting.github.io/posts/9e0f4e5/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
-  </li>
-</ul>
-</div>
-
-          <div class="post-tags">
-              <a href="/tags/Ubuntu/" rel="tag"><i class="fa fa-tag"></i> Ubuntu</a>
-              <a href="/tags/SDN/" rel="tag"><i class="fa fa-tag"></i> SDN</a>
-              <a href="/tags/Controller/" rel="tag"><i class="fa fa-tag"></i> Controller</a>
-          </div>
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/posts/8ece0fb0/" rel="prev" title="[Quick and Easy] Installation of ns-3 Simulator with OpenFlow 1.3 - Tutorial">
-                  <i class="fa fa-chevron-left"></i> [Quick and Easy] Installation of ns-3 Simulator with OpenFlow 1.3 - Tutorial
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/posts/4755908e/" rel="next" title="[Save time] Shared partition between Mac OS X and Windows 10">
-                  [Save time] Shared partition between Mac OS X and Windows 10 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
-  </article>
-  
-  
-  
-
 
 
       
@@ -549,7 +411,7 @@ loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_
 <div class="copyright">
   
   &copy; 2020-2021 – 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

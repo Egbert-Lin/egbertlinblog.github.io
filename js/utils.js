@@ -312,6 +312,10 @@ NexT.utils = {
     const sidebarOffset = CONFIG.sidebar.offset || 12;
     let sidebarSchemePadding = (CONFIG.sidebar.padding * 2) + sidebarNavHeight + sidebarb2tHeight;
     if (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') sidebarSchemePadding += sidebarOffset * 2;
+    // add by typeart.cc
+    $(window).on("scroll", () => {
+      $(".gooAd").css("margin-top", $(".affix").height() + +NexT.utils.getSidebarb2tHeight() + 15 + "px");
+    });
     // Initialize Sidebar & TOC Height.
     const sidebarWrapperHeight = document.body.offsetHeight - sidebarSchemePadding + 'px';
     document.documentElement.style.setProperty('--sidebar-wrapper-height', sidebarWrapperHeight);

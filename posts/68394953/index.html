@@ -354,7 +354,166 @@
 
       
 
+    
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/68394953/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo NexT v8.x.x - Add recent posts
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-01-13 11:09:05" itemprop="dateCreated datePublished" datetime="2021-01-13T11:09:05+08:00">2021-01-13</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-18 08:55:21" itemprop="dateModified" datetime="2021-01-18T08:55:21+08:00">2021-01-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/posts/68394953/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/68394953/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p align="center">
+<font size="6"><b>How to add recent posts to Next theme（v8.x.x）</b></font>
+</p>
+<p>If you have managed your blog for a long time, maybe you want to reach high impression, you can append <strong>Recent Post</strong> to sidebar. Viewers can see it whatever the article they read. <a id="more"></a></p>
+<h2 id="create-custom-file">Create Custom File:</h2>
+<p>In the <code>/blog/source/</code> path, establish <code>_data/sidebar.njk</code> file under <code>source/</code> directory, and add contents into <code>sidebar.njk</code> as below:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- recent posts --&gt;</span></span><br><span class="line">&#123;%- if theme.recent_posts %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;links-of-blogroll motion-element &#123;&#123; &quot;</span><span class="attr">links-of-blogroll-</span>&quot; + <span class="attr">theme.recent_posts_layout</span> &#125;&#125;&quot;&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;links-of-blogroll-title recent-posts-title&quot;</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;fa fa-history &#123;&#123; theme.recent_posts_icon | lower &#125;&#125;&quot;</span> <span class="attr">aria-hidden</span>=<span class="string">&quot;true&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            &#123;&#123; theme.recent_posts_title &#125;&#125;</span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;links-of-blogroll-list recent-posts-list&quot;</span>&gt;</span></span><br><span class="line">	    &#123;%- set posts = site.posts.sort(&#x27;-date&#x27;).toArray() %&#125;</span><br><span class="line">	    &#123;%- for post in posts.slice(&#x27;0&#x27;, &#x27;5&#x27;) %&#125;</span><br><span class="line">	        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;my-links-of-blogroll-item&quot;</span>&gt;</span></span><br><span class="line">		    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;&#123; url_for(post.path) &#125;&#125;&quot;</span> <span class="attr">title</span>=<span class="string">&quot;&#123;&#123; post.title &#125;&#125;&quot;</span> <span class="attr">target</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">		    &#123;&#123; post.title &#125;&#125;</span><br><span class="line">		    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	    &#123;%- endfor %&#125;</span><br><span class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="custom-file-support-1">Custom File Support [1]</h2>
+<p>In <code>/blog/themes/next</code>, open theme config file (_config.yml) and use <strong>custom_file_path</strong> key word to search the section. Then, uncomment the <code>sidebar: source/_data_sidebar.njk</code> as below: <img src="sidebar.png" /></p>
+<h2 id="modify-the-theme-config-file-_config.yml">Modify the theme config file (_config.yml)</h2>
+<p>Let add some contents to enable this function. So open _config.yml and add three line: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">recent_posts: true</span><br><span class="line">recent_posts_title: Recently</span><br><span class="line">recent_posts_layout: block</span><br></pre></td></tr></table></figure></p>
+<h2 id="redeploy-your-blog">Redeploy your blog</h2>
+<p>After deploying the blog, you will see recent posts successfully. <img src="Recently.png" /></p>
+<p>References:<br> [1] https://theme-next.js.org/docs/advanced-settings/custom-files.html?highlight=sideb</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+
+<div class="post-end-adsense">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8863232600865901"
+     crossorigin="anonymous"></script>
+    <!-- hexo-post-end -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8863232600865901"
+         data-ad-slot="8068196746"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+© 2022 GitHub, Inc.
+Terms
+
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>EgbertLin
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://egbert-yu-ting.github.io/posts/68394953/" title="Hexo NexT v8.x.x - Add recent posts">https://egbert-yu-ting.github.io/posts/68394953/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Tech/" rel="tag"><i class="fa fa-tag"></i> Tech</a>
+              <a href="/tags/Sidebar/" rel="tag"><i class="fa fa-tag"></i> Sidebar</a>
+              <a href="/tags/Post/" rel="tag"><i class="fa fa-tag"></i> Post</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/17bf1818/" rel="prev" title="[LeetCode Road] Convert Sorted Array to Binary Search Tree - Solution/C++">
+                  <i class="fa fa-chevron-left"></i> [LeetCode Road] Convert Sorted Array to Binary Search Tree - Solution/C++
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/b3e1ca12/" rel="next" title="[LeetCode Road] Balanced Binary Tree - Solution/C++">
+                  [LeetCode Road] Balanced Binary Tree - Solution/C++ <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
 
 
       

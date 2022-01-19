@@ -349,7 +349,166 @@
 
       
 
+    
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://egbert-yu-ting.github.io/posts/918ef68a/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="EgbertLin">
+      <meta itemprop="description" content="Programming Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Egbert Lin's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Data Structures - Insertion Sort
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-04-21 09:08:35 / Modified: 14:47:05" itemprop="dateCreated datePublished" datetime="2021-04-21T09:08:35+08:00">2021-04-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/SortAlgorithm/" itemprop="url" rel="index"><span itemprop="name">SortAlgorithm</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/posts/918ef68a/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/918ef68a/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p align="center">
+<font size="6px"><b>Basic programming - Insertion Sort</b></font>
+</p>
+<h2 id="approach">Approach:</h2>
+<p>Need to use two for-loop. One is unsorted data in the range <code>[i:n]</code> and the other is sorted data in the range <code>[0:i]</code>.<br></p>
+<p>Take one element from unsorted data to compare with sorted data.<br> <b>Step 1:</b> use <code>temp</code> variable to store this element<br> <b>Step 2:</b> search value from sorted data which is bigger than <code>temp</code> , if true, move the bigger value to current position <code>vector[j] = vector[j - 1]</code><br> <b>Step 3:</b> Until if-statement returns false, it means the value of <code>j - 1</code> is smaller than <code>temp</code>, so insert <code>temp</code> to current position <code>vector[j] = temp</code>.<br> <a id="more"></a></p>
+<b>Time complexity:</b><br>
+<li>
+Best Case：Ο(1)
+</li>
+<li>
+Worst Case：Ο(n<sup>2</sup>)
+</li>
+<li>
+Average Case：Ο(n<sup>2</sup>)
+</li>
+<p>P.S. If input is sorted, just compare every elements once!</p>
+<p><b>Space complexity: O(1)</b><br></p>
+<p>Stable/Unstable: <b>Stable</b></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; v)</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i, j, temp;</span><br><span class="line">  <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; v.size(); ++i)&#123;</span><br><span class="line">      temp = v[i];</span><br><span class="line">      <span class="keyword">for</span>(j = i; j &gt; <span class="number">0</span> &amp;&amp; temp &lt; v[j - <span class="number">1</span>]; --j)&#123;</span><br><span class="line">          v[j] = v[j - <span class="number">1</span>];</span><br><span class="line">      &#125;</span><br><span class="line">      v[j] = temp;</span><br><span class="line">  &#125;  </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; input = &#123;<span class="number">39</span>,<span class="number">63</span>,<span class="number">89</span>,<span class="number">66</span>,<span class="number">42</span>,<span class="number">21</span>,<span class="number">80</span>,<span class="number">22</span>,<span class="number">81</span>,<span class="number">47</span>&#125;;</span><br><span class="line">    insertSort(input);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; input.size(); ++i)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; input[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+
+<div class="post-end-adsense">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8863232600865901"
+     crossorigin="anonymous"></script>
+    <!-- hexo-post-end -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8863232600865901"
+         data-ad-slot="8068196746"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+© 2022 GitHub, Inc.
+Terms
+
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>EgbertLin
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://egbert-yu-ting.github.io/posts/918ef68a/" title="Data Structures - Insertion Sort">https://egbert-yu-ting.github.io/posts/918ef68a/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Sorting/" rel="tag"><i class="fa fa-tag"></i> Sorting</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/23a6e02/" rel="prev" title="[LeetCode Road] Merge k Sorted Lists - Solution/C++">
+                  <i class="fa fa-chevron-left"></i> [LeetCode Road] Merge k Sorted Lists - Solution/C++
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/2b353b50/" rel="next" title="Data Structures - Bubble Sort">
+                  Data Structures - Bubble Sort <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
 
 
       

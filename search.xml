@@ -404,6 +404,31 @@ Average Case：Ο(n<sup>2</sup>)
       </tags>
   </entry>
   <entry>
+    <title>Classic C/C++ program - You must to understand</title>
+    <url>/posts/34845636/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Classic and Basic C/C++ Question</b></font>
+</p>
+<p>There are four classical question abount C/C++ interview. <a id="more"></a></p>
+<h2 id="question-1-fibonacci-sequence">Question 1: Fibonacci Sequence</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>This is a recursive function method.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> fib(n <span class="number">-1</span>) + fib(n<span class="number">-2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Please give n:&quot;</span></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">7</span>; ++i)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; fib(i) &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>This is an iteration method.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> curr = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> next1 = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> next2 = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; curr &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        next2 = curr + next1;</span><br><span class="line">        curr = next1;</span><br><span class="line">        next1 = next2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Please give n:&quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt;n;</span><br><span class="line">    fib(n);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="question-2-palindrome-number">Question 2: Palindrome Number</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">palindrome</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt; <span class="number">0</span> || (n!=<span class="number">0</span> &amp;&amp; n %<span class="number">10</span> == <span class="number">0</span>)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n &gt; res)&#123;</span><br><span class="line">        res = res*<span class="number">10</span> + n % <span class="number">10</span>;</span><br><span class="line">        n /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (res == n) || (res / <span class="number">10</span> == n);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Please give n:&quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt;n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; boolalpha;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; palindrome(n);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="question-3-check-number-if-its-prime-number">Question 3: Check number if it's prime number</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">primeNumber</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">v</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">int</span> vNumber = v.size();</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">2</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(i &lt; vNumber)&#123;</span><br><span class="line">        <span class="keyword">if</span>(v[i] == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">2</span>; i*j &lt; vNumber; ++j)&#123;</span><br><span class="line">                v[i*j] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ++i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (v[n]==<span class="number">0</span>)?<span class="literal">true</span>:<span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Please give n:&quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt;n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; boolalpha;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; primeNumber(n);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="question-4-draw-pyramid-and-triangle">Question 4: Draw Pyramid and Triangle</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">drawPyramid</span><span class="params">(<span class="keyword">int</span> floors)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= floors; ++i)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= floors - i; ++j)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= i*<span class="number">2</span> - <span class="number">1</span>; ++k)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;*&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">drawInvertedPyramid</span><span class="params">(<span class="keyword">int</span> floors)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = floors; i &gt;= <span class="number">1</span>; --i)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; floors; ++j )&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= i*<span class="number">2</span> - <span class="number">1</span>; ++k)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;*&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">drawTriangle</span><span class="params">(<span class="keyword">int</span> floors)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= floors; ++i)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i*<span class="number">2</span> - <span class="number">1</span>; ++j)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;*&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">drawInvertedTriangle</span><span class="params">(<span class="keyword">int</span> floors)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = floors; i &gt;= <span class="number">1</span>; --i)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &gt;= <span class="number">1</span>; --j)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;*&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> f;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Please give f:&quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; f;</span><br><span class="line">    drawPyramid(f);</span><br><span class="line">    drawInvertedPyramid(f);</span><br><span class="line">    drawTriangle(f);</span><br><span class="line">    drawInvertedTriangle(f);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CodeInterview</category>
+      </categories>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Climbing Stairs - Solution/C++</title>
     <url>/posts/111b86b7/</url>
     <content><![CDATA[<p align="center">
@@ -442,77 +467,6 @@ Average Case：Ο(n<sup>2</sup>)
         <tag>Fibonacci_Sequence</tag>
         <tag>Iterator</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Classic C/C++ program - You must to understand</title>
-    <url>/posts/34845636/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Classic and Basic C/C++ Question</b></font>
-</p>
-<p>There are four classical question abount C/C++ interview. <a id="more"></a></p>
-<h2 id="question-1-fibonacci-sequence">Question 1: Fibonacci Sequence</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>This is a recursive function method.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> fib(n <span class="number">-1</span>) + fib(n<span class="number">-2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Please give n:&quot;</span></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">7</span>; ++i)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; fib(i) &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>This is an iteration method.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> curr = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> next1 = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> next2 = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; curr &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        next2 = curr + next1;</span><br><span class="line">        curr = next1;</span><br><span class="line">        next1 = next2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Please give n:&quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt;n;</span><br><span class="line">    fib(n);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="question-2-palindrome-number">Question 2: Palindrome Number</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">palindrome</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt; <span class="number">0</span> || (n!=<span class="number">0</span> &amp;&amp; n %<span class="number">10</span> == <span class="number">0</span>)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n &gt; res)&#123;</span><br><span class="line">        res = res*<span class="number">10</span> + n % <span class="number">10</span>;</span><br><span class="line">        n /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (res == n) || (res / <span class="number">10</span> == n);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Please give n:&quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt;n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; boolalpha;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; palindrome(n);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="question-3-check-number-if-its-prime-number">Question 3: Check number if it's prime number</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">primeNumber</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">v</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">int</span> vNumber = v.size();</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">2</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(i &lt; vNumber)&#123;</span><br><span class="line">        <span class="keyword">if</span>(v[i] == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">2</span>; i*j &lt; vNumber; ++j)&#123;</span><br><span class="line">                v[i*j] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ++i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (v[n]==<span class="number">0</span>)?<span class="literal">true</span>:<span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Please give n:&quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt;n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; boolalpha;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; primeNumber(n);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="question-4-draw-pyramid-and-triangle">Question 4: Draw Pyramid and Triangle</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">drawPyramid</span><span class="params">(<span class="keyword">int</span> floors)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= floors; ++i)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= floors - i; ++j)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= i*<span class="number">2</span> - <span class="number">1</span>; ++k)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;*&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">drawInvertedPyramid</span><span class="params">(<span class="keyword">int</span> floors)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = floors; i &gt;= <span class="number">1</span>; --i)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; floors; ++j )&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= i*<span class="number">2</span> - <span class="number">1</span>; ++k)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;*&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">drawTriangle</span><span class="params">(<span class="keyword">int</span> floors)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= floors; ++i)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i*<span class="number">2</span> - <span class="number">1</span>; ++j)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;*&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">drawInvertedTriangle</span><span class="params">(<span class="keyword">int</span> floors)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = floors; i &gt;= <span class="number">1</span>; --i)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &gt;= <span class="number">1</span>; --j)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;*&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> f;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Please give f:&quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; f;</span><br><span class="line">    drawPyramid(f);</span><br><span class="line">    drawInvertedPyramid(f);</span><br><span class="line">    drawTriangle(f);</span><br><span class="line">    drawInvertedTriangle(f);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>CodeInterview</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Container With Most Water - Solution/C++</title>
-    <url>/posts/fa15b897/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>11. Container With Most Water</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given <span style="background-color:#F0F0F0"><font color=#808080>n</font></span> non-negative integers <span style="background-color:#F0F0F0"><font color=#808080>a1, a2, ..., an</font></span> , where each represents a point at coordinate <span style="background-color:#F0F0F0"><font color=#808080>(i, ai)</font></span>. <span style="background-color:#F0F0F0"><font color=#808080>n</font></span> vertical lines are drawn such that the two endpoints of the line <span style="background-color:#F0F0F0"><font color=#808080>i</font></span> is at <span style="background-color:#F0F0F0"><font color=#808080>(i, ai)</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>(i, 0)</font></span>. Find two lines, which, together with the x-axis forms a container, such that the container contains the most water.<br> <a id="more"></a></p>
-<p><b>Notice</b> that you may not slant the container.</p>
-<h2 id="example">Example:</h2>
-<img src="example.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> height = [1,8,6,2,5,4,8,3,7]<br> <b>Output:</b> 49<br> <b>Explanation:</b> The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> height = [1,1]<br> <b>Output:</b> 1
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> height = [4,3,2,1,4]<br> <b>Output:</b> 16
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> height = [1,2,1]<br> <b>Output:</b> 2
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>n == height.length</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>2 &lt;= n &lt;= 10<sup>5</sup></font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= height[i] &lt;= 10<sup>4</sup></font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="verion-1"><u>Verion 1</u></h3>
-<p>Idea:<br> Declare two variables, one is the leftmost of vertical lines and the other is the rightmost of vertical lines.<br> First, we can get the container with largest length of x-axis. Then, compare the leftmost line with the rightmost line for finding the smallest one. It will be moved close to the other. (It means moving to the next line and try to find the larger container)<br></p>
-<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(1)</b></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> r = height.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> maxContain = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">            <span class="keyword">int</span> area = min(height[l], height[r]) * (r - l);</span><br><span class="line">            maxContain = max(maxContain, area);</span><br><span class="line">            <span class="keyword">if</span>(height[l] &lt; height[r])&#123;</span><br><span class="line">                ++l;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                --r;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxContain;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Medium</category>
-      </categories>
   </entry>
   <entry>
     <title>[LeetCode Road] Contains Duplicate - Solution/C++</title>
@@ -566,42 +520,6 @@ Second element: a bool value indicating whether the element was successfully ins
         <tag>Unordered_map(STL)</tag>
         <tag>Unordered_set(STL)</tag>
         <tag>Sort</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Contains Duplicate II - Solution/C++</title>
-    <url>/posts/81b7ce15/</url>
-    <content><![CDATA[<p align="center">
-<font size="6px"><b>219. Contains Duplicate II</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given an array of integers and an integer <I>k</I>, find out whether there are two distinct indices <I>i</I> and <I>j</I> in the array such that <b>nums[i]</b> = <b>nums[j]</b> and the <b>absolute</b> difference between <I>i</I> and <I>j</I> is at most <I>k</I>. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [1,2,3,1], k = 3<br> <b>Output:</b> true
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [1,0,1,1], k = 1<br> <b>Output:</b> true
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> nums = [1,2,3,1,2,3], k = 2<br> <b>Output:</b> false
-</p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> I use <b>unordered_map</b> to implement the approach.<br> Use find() to check nums[n] whether it's exist in container or not. If it cannot find the element, insert <code>nums[i]</code>as a key and <code>i</code> index as a value in container. If the element is found, check the distance between current index <code>i</code> and <code>it-&gt;second</code> (previous index), it should less than or equal to <code>k</code>.<br> Notice, if <code>i - it-&gt;second</code> is bigger than <code>k</code>, you must update <code>it-&gt;second</code> to current index <code>i</code> at 12 line.</p>
-<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(n)</b></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">containsNearbyDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; record;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; n; i++)&#123;</span><br><span class="line">            it = record.find(nums[i]);</span><br><span class="line">            <span class="keyword">if</span>(it != record.end())&#123;</span><br><span class="line">                <span class="keyword">if</span>(i - it-&gt;second &lt;= k) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                it-&gt;second = i;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                record.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;(nums[i], i));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> This method is <b>unordered_set</b>. I have introduced <b>unordered_set</b> function at <a href="https://egbert-yu-ting.github.io/posts/a3617bc9/">Contains Duplicate</a>.<br> Hence, use <b>unordered_set</b> is more efficient than <code>unordered_map</code> of memory usage.<br> At 6 line, it always maintains latest <code>k</code> elements of nums, to ensure the distance isn't exceed <code>k</code> between i and j. If <code>i &gt; k</code>, use <code>erase(elements)</code> to remove the specific element in the container.<br></p>
-<p>Also, if the element of index i has exist in the container already, it will return <b>false</b> at 8 line, then retun <b>true</b>.</p>
-<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(min(n, k))</b></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">containsNearbyDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_set</span>&lt;<span class="keyword">int</span>&gt; record;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i &gt; k) record.erase(nums[i - k - <span class="number">1</span>]);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(!record.insert(nums[i]).second) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Unordered_map(STL)</tag>
       </tags>
   </entry>
   <entry>
@@ -745,6 +663,43 @@ fatal: unable to auto-detect email address (got ...)<br> error: src refspec HEAD
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Excel Sheet column Title - Solution/C++</title>
+    <url>/posts/961e4f43/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>168. Excel Sheet Column Title</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a positive integer, return its corresponding column title as appear in an Excel sheet.</p>
+For example:
+<p style="background-color:#F0F0F0">
+  1 -&gt; A<br>   2 -&gt; B<br>   3 -&gt; C<br>   ...<br>   26 -&gt; Z<br>   27 -&gt; AA<br>   28 -&gt; AB <br>   ...
+</p>
+<a id="more"></a>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> 1<br> <b>Output:</b> "A"
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> 28<br> <b>Output:</b> "AB"
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> 701<br> <b>Output:</b> "ZY"
+</p>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> According to the ASCII talbe, if you want to get A~Z character, you need 65-90 demical number to convert it.<br></p>
+<p>If the input is <code>n = 26</code>, you use <code>%26</code> to get the remainder is zero, then it is converted to character you will attain <code>'A'</code>, but a correct answer is <code>'Z'</code>. So, <strong>n minus 1</strong> is important before you get the remainder at 6 line.<br></p>
+<p>Next step, you can convert int to character directly. <strong>Notice:</strong> <code>+65</code> is same as <code>'A'</code>. <br> At 8 line, <code>(n - 1)/26</code> as a carry condition every time until n will be 0.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">convertToTitle</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> remainder = (n - <span class="number">1</span>) % <span class="number">26</span>;</span><br><span class="line">            res = (<span class="keyword">char</span>)(remainder + <span class="number">65</span>) + res;</span><br><span class="line">            n = (n - <span class="number">1</span>)/<span class="number">26</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>ASCII</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Excel Sheet Column Number - Solution/C++</title>
     <url>/posts/10e6d46c/</url>
     <content><![CDATA[<p align="center">
@@ -789,43 +744,6 @@ For example:
 <p>A logic likes : (previous_sum * 26 + current_sum), so the sum times 26 for each loop (= each digit)</p>
 <p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(1)</b></p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">titleToNumber</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ln = s.length();</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;ln;i++)&#123;</span><br><span class="line">            sum = sum * <span class="number">26</span> + (<span class="keyword">int</span>(s[i])<span class="number">-64</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>ASCII</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Excel Sheet column Title - Solution/C++</title>
-    <url>/posts/961e4f43/</url>
-    <content><![CDATA[<p align="center">
-<font size="6px"><b>168. Excel Sheet Column Title</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a positive integer, return its corresponding column title as appear in an Excel sheet.</p>
-For example:
-<p style="background-color:#F0F0F0">
-  1 -&gt; A<br>   2 -&gt; B<br>   3 -&gt; C<br>   ...<br>   26 -&gt; Z<br>   27 -&gt; AA<br>   28 -&gt; AB <br>   ...
-</p>
-<a id="more"></a>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> 1<br> <b>Output:</b> "A"
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> 28<br> <b>Output:</b> "AB"
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> 701<br> <b>Output:</b> "ZY"
-</p>
-<h2 id="source-code">Source code:</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> According to the ASCII talbe, if you want to get A~Z character, you need 65-90 demical number to convert it.<br></p>
-<p>If the input is <code>n = 26</code>, you use <code>%26</code> to get the remainder is zero, then it is converted to character you will attain <code>'A'</code>, but a correct answer is <code>'Z'</code>. So, <strong>n minus 1</strong> is important before you get the remainder at 6 line.<br></p>
-<p>Next step, you can convert int to character directly. <strong>Notice:</strong> <code>+65</code> is same as <code>'A'</code>. <br> At 8 line, <code>(n - 1)/26</code> as a carry condition every time until n will be 0.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">convertToTitle</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> remainder = (n - <span class="number">1</span>) % <span class="number">26</span>;</span><br><span class="line">            res = (<span class="keyword">char</span>)(remainder + <span class="number">65</span>) + res;</span><br><span class="line">            n = (n - <span class="number">1</span>)/<span class="number">26</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>LeetCode-Easy</category>
@@ -894,6 +812,52 @@ For example:
 ]]></content>
       <categories>
         <category>LeetCode-Easy</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Container With Most Water - Solution/C++</title>
+    <url>/posts/fa15b897/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>11. Container With Most Water</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given <span style="background-color:#F0F0F0"><font color=#808080>n</font></span> non-negative integers <span style="background-color:#F0F0F0"><font color=#808080>a1, a2, ..., an</font></span> , where each represents a point at coordinate <span style="background-color:#F0F0F0"><font color=#808080>(i, ai)</font></span>. <span style="background-color:#F0F0F0"><font color=#808080>n</font></span> vertical lines are drawn such that the two endpoints of the line <span style="background-color:#F0F0F0"><font color=#808080>i</font></span> is at <span style="background-color:#F0F0F0"><font color=#808080>(i, ai)</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>(i, 0)</font></span>. Find two lines, which, together with the x-axis forms a container, such that the container contains the most water.<br> <a id="more"></a></p>
+<p><b>Notice</b> that you may not slant the container.</p>
+<h2 id="example">Example:</h2>
+<img src="example.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> height = [1,8,6,2,5,4,8,3,7]<br> <b>Output:</b> 49<br> <b>Explanation:</b> The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> height = [1,1]<br> <b>Output:</b> 1
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> height = [4,3,2,1,4]<br> <b>Output:</b> 16
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> height = [1,2,1]<br> <b>Output:</b> 2
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>n == height.length</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>2 &lt;= n &lt;= 10<sup>5</sup></font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>0 &lt;= height[i] &lt;= 10<sup>4</sup></font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="verion-1"><u>Verion 1</u></h3>
+<p>Idea:<br> Declare two variables, one is the leftmost of vertical lines and the other is the rightmost of vertical lines.<br> First, we can get the container with largest length of x-axis. Then, compare the leftmost line with the rightmost line for finding the smallest one. It will be moved close to the other. (It means moving to the next line and try to find the larger container)<br></p>
+<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(1)</b></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> r = height.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> maxContain = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">            <span class="keyword">int</span> area = min(height[l], height[r]) * (r - l);</span><br><span class="line">            maxContain = max(maxContain, area);</span><br><span class="line">            <span class="keyword">if</span>(height[l] &lt; height[r])&#123;</span><br><span class="line">                ++l;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                --r;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxContain;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Medium</category>
       </categories>
   </entry>
   <entry>
@@ -987,27 +951,39 @@ All the integers in <span style="background-color:#F0F0F0"><font color=#808080>n
       </categories>
   </entry>
   <entry>
-    <title>[Step by Step] How to install Google Chrome on Ubuntu 16.04</title>
-    <url>/posts/65af7d45/</url>
+    <title>[LeetCode Road] Contains Duplicate II - Solution/C++</title>
+    <url>/posts/81b7ce15/</url>
     <content><![CDATA[<p align="center">
-<font size="6"><b>Tutorial - Google Chrome Web Browser in Ubuntu</b></font>
+<font size="6px"><b>219. Contains Duplicate II</b></font>
 </p>
-<p>If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice.<br> Here, I shared my experience of installing Google Chrome on Ubuntu 16.04. You can implement it rapidly and easily. <a id="more"></a></p>
-<ul>
-<li><strong>Step 1.</strong> Download the Google Chrome to your Ubuntu system <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 2.</strong> Install the Google Chrome <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo dpkg -i google-chrome-stable_current_amd64.deb</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 3.</strong> Update the Google Chrome and you can run it. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cat /etc/apt/sources.list.d/google-chrome.list</span><br></pre></td></tr></table></figure> <img src="GoogleChromeInstallation_1.png" />
-<hr style="border-top: dotted 1px;" /></li>
-</ul>
-<p>When open the application, if you meet <font color=#FF0000>"Your connection is not secure"</font> message or result as below: <img src="GoogleChromeInstallation_2.png" /></p>
-<p><strong>Solution.</strong> Installation of Network Security Service libraries package: <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install libnss3-1d</span><br></pre></td></tr></table></figure></p>
+<h2 id="question">Question:</h2>
+<p>Given an array of integers and an integer <I>k</I>, find out whether there are two distinct indices <I>i</I> and <I>j</I> in the array such that <b>nums[i]</b> = <b>nums[j]</b> and the <b>absolute</b> difference between <I>i</I> and <I>j</I> is at most <I>k</I>. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [1,2,3,1], k = 3<br> <b>Output:</b> true
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [1,0,1,1], k = 1<br> <b>Output:</b> true
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> nums = [1,2,3,1,2,3], k = 2<br> <b>Output:</b> false
+</p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> I use <b>unordered_map</b> to implement the approach.<br> Use find() to check nums[n] whether it's exist in container or not. If it cannot find the element, insert <code>nums[i]</code>as a key and <code>i</code> index as a value in container. If the element is found, check the distance between current index <code>i</code> and <code>it-&gt;second</code> (previous index), it should less than or equal to <code>k</code>.<br> Notice, if <code>i - it-&gt;second</code> is bigger than <code>k</code>, you must update <code>it-&gt;second</code> to current index <code>i</code> at 12 line.</p>
+<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(n)</b></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">containsNearbyDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; record;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; n; i++)&#123;</span><br><span class="line">            it = record.find(nums[i]);</span><br><span class="line">            <span class="keyword">if</span>(it != record.end())&#123;</span><br><span class="line">                <span class="keyword">if</span>(i - it-&gt;second &lt;= k) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                it-&gt;second = i;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                record.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;(nums[i], i));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<br> This method is <b>unordered_set</b>. I have introduced <b>unordered_set</b> function at <a href="https://egbert-yu-ting.github.io/posts/a3617bc9/">Contains Duplicate</a>.<br> Hence, use <b>unordered_set</b> is more efficient than <code>unordered_map</code> of memory usage.<br> At 6 line, it always maintains latest <code>k</code> elements of nums, to ensure the distance isn't exceed <code>k</code> between i and j. If <code>i &gt; k</code>, use <code>erase(elements)</code> to remove the specific element in the container.<br></p>
+<p>Also, if the element of index i has exist in the container already, it will return <b>false</b> at 8 line, then retun <b>true</b>.</p>
+<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(min(n, k))</b></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">containsNearbyDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_set</span>&lt;<span class="keyword">int</span>&gt; record;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i &gt; k) record.erase(nums[i - k - <span class="number">1</span>]);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(!record.insert(nums[i]).second) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Instruction</category>
+        <category>LeetCode-Easy</category>
       </categories>
       <tags>
-        <tag>Ubuntu</tag>
-        <tag>Google_Chrome</tag>
+        <tag>Unordered_map(STL)</tag>
       </tags>
   </entry>
   <entry>
@@ -1063,20 +1039,28 @@ Those numbers for which this process ends in 1 are happy.
       </tags>
   </entry>
   <entry>
-    <title>How arrays are passed to functions in C/C++</title>
-    <url>/posts/47c634b1/</url>
+    <title>[Step by Step] How to install Google Chrome on Ubuntu 16.04</title>
+    <url>/posts/65af7d45/</url>
     <content><![CDATA[<p align="center">
-<font size="6px"><b>How arrays are passed to function | Basic and Important</b></font>
+<font size="6"><b>Tutorial - Google Chrome Web Browser in Ubuntu</b></font>
 </p>
-<h2 id="introduction">Introduction:</h2>
-<a id="more"></a>
-<h2 id="source-code">Source code</h2>
-<p>Idea:<br></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">//#include &lt;stdio.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Note that arr[] for fun is just a pointer even if square</span></span><br><span class="line"><span class="comment">// brackets are used</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> arr[])</span>  <span class="comment">// SAME AS void fun(int *arr)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">unsigned</span> <span class="keyword">int</span> n = <span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(arr[<span class="number">0</span>]);</span><br><span class="line">   <span class="comment">//printf(&quot;\nArray size inside fun() is %d&quot;, n);</span></span><br><span class="line">   <span class="comment">//printf(&quot;\n - The first value is %d&quot;, sizeof(arr));</span></span><br><span class="line">   </span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;nArray size inside fun() is &quot;</span> &lt;&lt; <span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(arr[<span class="number">0</span>]) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Driver program</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">int</span> arr[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>&#125;;</span><br><span class="line">   <span class="keyword">unsigned</span> <span class="keyword">int</span> n = <span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(arr[<span class="number">0</span>]);</span><br><span class="line">   <span class="comment">//printf(&quot;Array size inside main() is %d&quot;, n);</span></span><br><span class="line">   <span class="comment">//printf(&quot;\n - The first value is %d&quot;, sizeof(arr));</span></span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;nArray size inside main() is &quot;</span> &lt;&lt; <span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(arr[<span class="number">0</span>]) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">   fun(arr);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>If you are working on the Ubuntu environment and not used to using FireFox browser, Google Chrome maybe is your first choice.<br> Here, I shared my experience of installing Google Chrome on Ubuntu 16.04. You can implement it rapidly and easily. <a id="more"></a></p>
+<ul>
+<li><strong>Step 1.</strong> Download the Google Chrome to your Ubuntu system <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 2.</strong> Install the Google Chrome <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo dpkg -i google-chrome-stable_current_amd64.deb</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 3.</strong> Update the Google Chrome and you can run it. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cat /etc/apt/sources.list.d/google-chrome.list</span><br></pre></td></tr></table></figure> <img src="GoogleChromeInstallation_1.png" />
+<hr style="border-top: dotted 1px;" /></li>
+</ul>
+<p>When open the application, if you meet <font color=#FF0000>"Your connection is not secure"</font> message or result as below: <img src="GoogleChromeInstallation_2.png" /></p>
+<p><strong>Solution.</strong> Installation of Network Security Service libraries package: <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install libnss3-1d</span><br></pre></td></tr></table></figure></p>
 ]]></content>
       <categories>
-        <category>C/C++_Concept</category>
+        <category>Instruction</category>
       </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>Google_Chrome</tag>
+      </tags>
   </entry>
   <entry>
     <title>Data Structures - HeapSort</title>
@@ -1111,6 +1095,22 @@ Average Case：Ο(nlogn)
       <tags>
         <tag>Sorting</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>How arrays are passed to functions in C/C++</title>
+    <url>/posts/47c634b1/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>How arrays are passed to function | Basic and Important</b></font>
+</p>
+<h2 id="introduction">Introduction:</h2>
+<a id="more"></a>
+<h2 id="source-code">Source code</h2>
+<p>Idea:<br></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">//#include &lt;stdio.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Note that arr[] for fun is just a pointer even if square</span></span><br><span class="line"><span class="comment">// brackets are used</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> arr[])</span>  <span class="comment">// SAME AS void fun(int *arr)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">unsigned</span> <span class="keyword">int</span> n = <span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(arr[<span class="number">0</span>]);</span><br><span class="line">   <span class="comment">//printf(&quot;\nArray size inside fun() is %d&quot;, n);</span></span><br><span class="line">   <span class="comment">//printf(&quot;\n - The first value is %d&quot;, sizeof(arr));</span></span><br><span class="line">   </span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;nArray size inside fun() is &quot;</span> &lt;&lt; <span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(arr[<span class="number">0</span>]) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Driver program</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">int</span> arr[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>&#125;;</span><br><span class="line">   <span class="keyword">unsigned</span> <span class="keyword">int</span> n = <span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(arr[<span class="number">0</span>]);</span><br><span class="line">   <span class="comment">//printf(&quot;Array size inside main() is %d&quot;, n);</span></span><br><span class="line">   <span class="comment">//printf(&quot;\n - The first value is %d&quot;, sizeof(arr));</span></span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;nArray size inside main() is &quot;</span> &lt;&lt; <span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(arr[<span class="number">0</span>]) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">   fun(arr);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C/C++_Concept</category>
+      </categories>
   </entry>
   <entry>
     <title>[LeetCode Road]Implement Queue using Stacks - Solution/C++</title>
@@ -1242,39 +1242,6 @@ All the calls to <span style="background-color:#F0F0F0"><font color=#808080>pop<
       </tags>
   </entry>
   <entry>
-    <title>Data Structures - Insertion Sort</title>
-    <url>/posts/918ef68a/</url>
-    <content><![CDATA[<p align="center">
-<font size="6px"><b>Basic programming - Insertion Sort</b></font>
-</p>
-<h2 id="approach">Approach:</h2>
-<p>Need to use two for-loop. One is unsorted data in the range <code>[i:n]</code> and the other is sorted data in the range <code>[0:i]</code>.<br></p>
-<p>Take one element from unsorted data to compare with sorted data.<br> <b>Step 1:</b> use <code>temp</code> variable to store this element<br> <b>Step 2:</b> search value from sorted data which is bigger than <code>temp</code> , if true, move the bigger value to current position <code>vector[j] = vector[j - 1]</code><br> <b>Step 3:</b> Until if-statement returns false, it means the value of <code>j - 1</code> is smaller than <code>temp</code>, so insert <code>temp</code> to current position <code>vector[j] = temp</code>.<br> <a id="more"></a></p>
-<b>Time complexity:</b><br>
-<li>
-Best Case：Ο(1)
-</li>
-<li>
-Worst Case：Ο(n<sup>2</sup>)
-</li>
-<li>
-Average Case：Ο(n<sup>2</sup>)
-</li>
-<p>P.S. If input is sorted, just compare every elements once!</p>
-<p><b>Space complexity: O(1)</b><br></p>
-<p>Stable/Unstable: <b>Stable</b></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; v)</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i, j, temp;</span><br><span class="line">  <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; v.size(); ++i)&#123;</span><br><span class="line">      temp = v[i];</span><br><span class="line">      <span class="keyword">for</span>(j = i; j &gt; <span class="number">0</span> &amp;&amp; temp &lt; v[j - <span class="number">1</span>]; --j)&#123;</span><br><span class="line">          v[j] = v[j - <span class="number">1</span>];</span><br><span class="line">      &#125;</span><br><span class="line">      v[j] = temp;</span><br><span class="line">  &#125;  </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; input = &#123;<span class="number">39</span>,<span class="number">63</span>,<span class="number">89</span>,<span class="number">66</span>,<span class="number">42</span>,<span class="number">21</span>,<span class="number">80</span>,<span class="number">22</span>,<span class="number">81</span>,<span class="number">47</span>&#125;;</span><br><span class="line">    insertSort(input);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; input.size(); ++i)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; input[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>SortAlgorithm</category>
-      </categories>
-      <tags>
-        <tag>Sorting</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Implement strStr() - Solution/C++</title>
     <url>/posts/9bc77297/</url>
     <content><![CDATA[<p align="center">
@@ -1320,6 +1287,39 @@ Average Case：Ο(n<sup>2</sup>)
       </categories>
       <tags>
         <tag>String</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Data Structures - Insertion Sort</title>
+    <url>/posts/918ef68a/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>Basic programming - Insertion Sort</b></font>
+</p>
+<h2 id="approach">Approach:</h2>
+<p>Need to use two for-loop. One is unsorted data in the range <code>[i:n]</code> and the other is sorted data in the range <code>[0:i]</code>.<br></p>
+<p>Take one element from unsorted data to compare with sorted data.<br> <b>Step 1:</b> use <code>temp</code> variable to store this element<br> <b>Step 2:</b> search value from sorted data which is bigger than <code>temp</code> , if true, move the bigger value to current position <code>vector[j] = vector[j - 1]</code><br> <b>Step 3:</b> Until if-statement returns false, it means the value of <code>j - 1</code> is smaller than <code>temp</code>, so insert <code>temp</code> to current position <code>vector[j] = temp</code>.<br> <a id="more"></a></p>
+<b>Time complexity:</b><br>
+<li>
+Best Case：Ο(1)
+</li>
+<li>
+Worst Case：Ο(n<sup>2</sup>)
+</li>
+<li>
+Average Case：Ο(n<sup>2</sup>)
+</li>
+<p>P.S. If input is sorted, just compare every elements once!</p>
+<p><b>Space complexity: O(1)</b><br></p>
+<p>Stable/Unstable: <b>Stable</b></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; v)</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i, j, temp;</span><br><span class="line">  <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; v.size(); ++i)&#123;</span><br><span class="line">      temp = v[i];</span><br><span class="line">      <span class="keyword">for</span>(j = i; j &gt; <span class="number">0</span> &amp;&amp; temp &lt; v[j - <span class="number">1</span>]; --j)&#123;</span><br><span class="line">          v[j] = v[j - <span class="number">1</span>];</span><br><span class="line">      &#125;</span><br><span class="line">      v[j] = temp;</span><br><span class="line">  &#125;  </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; input = &#123;<span class="number">39</span>,<span class="number">63</span>,<span class="number">89</span>,<span class="number">66</span>,<span class="number">42</span>,<span class="number">21</span>,<span class="number">80</span>,<span class="number">22</span>,<span class="number">81</span>,<span class="number">47</span>&#125;;</span><br><span class="line">    insertSort(input);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; input.size(); ++i)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; input[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>SortAlgorithm</category>
+      </categories>
+      <tags>
+        <tag>Sorting</tag>
       </tags>
   </entry>
   <entry>
@@ -1495,35 +1495,6 @@ The number of nodes in the tree is in the range <span style="background-color:#F
       </tags>
   </entry>
   <entry>
-    <title>Data Structures - Linear Search Algorithm diagram</title>
-    <url>/posts/65334f02/</url>
-    <content><![CDATA[<p align="center">
-<font size="6px"><b>Basic programming - Linear Search</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given an array arr[] of n elements, write a function to search a given element x in arr[]. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> arr[] = {10, 20, 80, 30, 60, 50, 100, 110, 130, 170}<br>     x = 110;<br> <b>Output:</b> 6<br> <b>Explanation:</b> Element x is presented at index 6
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> arr[] = {10, 20, 80, 30, 60, 50, 100, 110, 130, 170}<br>    x = 175;<br> <b>Output:</b> -1<br> <b>Explanation:</b> Element x is not presented in arr[].
-</p>
-<h2 id="source-code">Source code:</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea<br> It is a very simple approach to find the target.<br> <img src="linear_example.png" /></p>
-<p>Go through each element which is equal to the target (Start from the index 0 of array). If the target doesn't exist in arry, return -1.<br> However, it is rarely used practically because other search algorithms are more efficient.<br></p>
-<p><b>Time complexity: O(n)</b><br></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">linearSearch</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr, <span class="keyword">int</span> target)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] == target) <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr&#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">80</span>, <span class="number">30</span>, <span class="number">60</span>, <span class="number">50</span>, <span class="number">100</span>, <span class="number">110</span>, <span class="number">130</span>, <span class="number">170</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">110</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> res = linearSearch(arr, x);</span><br><span class="line">    (res == <span class="number">-1</span>)? <span class="built_in">cout</span> &lt;&lt;<span class="string">&quot;The value isn&#x27;t exist in array&quot;</span>: <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;The value&#x27;s index is &quot;</span> &lt;&lt; res;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>SearchAlgorithm</category>
-      </categories>
-      <tags>
-        <tag>Searching</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Length of Last Word - Solution/C++</title>
     <url>/posts/b04b682/</url>
     <content><![CDATA[<p align="center">
@@ -1558,6 +1529,35 @@ The number of nodes in the tree is in the range <span style="background-color:#F
       </categories>
       <tags>
         <tag>Reverse_order</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Data Structures - Linear Search Algorithm diagram</title>
+    <url>/posts/65334f02/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>Basic programming - Linear Search</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given an array arr[] of n elements, write a function to search a given element x in arr[]. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> arr[] = {10, 20, 80, 30, 60, 50, 100, 110, 130, 170}<br>     x = 110;<br> <b>Output:</b> 6<br> <b>Explanation:</b> Element x is presented at index 6
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> arr[] = {10, 20, 80, 30, 60, 50, 100, 110, 130, 170}<br>    x = 175;<br> <b>Output:</b> -1<br> <b>Explanation:</b> Element x is not presented in arr[].
+</p>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea<br> It is a very simple approach to find the target.<br> <img src="linear_example.png" /></p>
+<p>Go through each element which is equal to the target (Start from the index 0 of array). If the target doesn't exist in arry, return -1.<br> However, it is rarely used practically because other search algorithms are more efficient.<br></p>
+<p><b>Time complexity: O(n)</b><br></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">linearSearch</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr, <span class="keyword">int</span> target)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] == target) <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr&#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">80</span>, <span class="number">30</span>, <span class="number">60</span>, <span class="number">50</span>, <span class="number">100</span>, <span class="number">110</span>, <span class="number">130</span>, <span class="number">170</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">110</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> res = linearSearch(arr, x);</span><br><span class="line">    (res == <span class="number">-1</span>)? <span class="built_in">cout</span> &lt;&lt;<span class="string">&quot;The value isn&#x27;t exist in array&quot;</span>: <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;The value&#x27;s index is &quot;</span> &lt;&lt; res;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>SearchAlgorithm</category>
+      </categories>
+      <tags>
+        <tag>Searching</tag>
       </tags>
   </entry>
   <entry>
@@ -1775,6 +1775,65 @@ span style="background-color:#F0F0F0"&gt;<font color=#808080>s</font></span> con
       </tags>
   </entry>
   <entry>
+    <title>[Save time] Shared partition between Mac OS X and Windows 10</title>
+    <url>/posts/4755908e/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Bootcamp: File sharing between Mac OS X and Windows 10 on MacBook Pro</b></font>
+</p>
+<p>Here are some reason you should consider deploying Windows on your Mac device. 1. More games with better performance in Windows OS. 2. Some Applications don't work in macOS or not support all functions. 3. Developers need to test projects in Windows OS.</p>
+<p>So, I shared my experience to save your time of installing Windows on MacBook Pro. <a id="more"></a> ## Hardward &amp; Software preparation + Hardware Product model: Macbook Pro 2017 + Software - Win10 ISO You can go to this url to downlaod ISO: https://www.microsoft.com/zh-tw/software-download/windows10 Choose version:Windows 10, Choose language: English and choose 64-bit version</p>
+<h2 id="use-bootcamp-to-install-win10">Use Bootcamp to install Win10</h2>
+<ul>
+<li><p><strong>Step 1.</strong> Launch Bootcamp Assistant from th Utilities folder in Applications. Then, load your WIN10 ISO and allocate appropriate disk size. <img src="bootcamp_1.png" /></p></li>
+<li><p><strong>Step 2.</strong> Wait for some time, the processing will download WIN10 support software. <img src="bootcamp_2.png" /></p></li>
+<li><p><strong>Step 3.</strong> Finally, you will see the WIN10 setup screen. <img src="bootcamp_3.png" /></p></li>
+<li><p><strong>Step 4.</strong> Enter "Explorer", you wil see <code>WININSTALL (D:)</code> and click <code>BootCamp folder</code> to execute setup program. (Don't choose anything else) <img src="bootcamp_4.png" /></p></li>
+</ul>
+<h2 id="partition-ntfs-for-file-sharing">Partition NTFS for file sharing</h2>
+<ul>
+<li><p><strong>Step 1.</strong> Shut down your Mac.</p></li>
+<li><p><strong>Step 2.</strong> Hold down the <code>Command and R keys</code> down and press the power button.</p></li>
+<li><p><strong>Step 3.</strong> Keep holding Command and R keys until the Apple logo appears on the screen.</p></li>
+<li><p><strong>Step 4.</strong> Then, you will see a screen saying macOS Utilities(or if your Mac is older, OS X Utilities).</p></li>
+<li><p><strong>Step 5.</strong> Choose "Disk Utility" <img src="bootcamp_5.png" /></p></li>
+<li><p><strong>Step 6.</strong> Choose "APPLE SSD ..." and click partition <img src="bootcamp_6.png" /></p></li>
+<li><p><strong>Step 7.</strong> Click '+' to new partition section <img src="bootcamp_7.png" /></p></li>
+<li><p><strong>Step 8.</strong> Suggest selecting the NTFS option <img src="bootcamp_8.png" /></p></li>
+<li><p><strong>Step 9.</strong> If the partition is succes, you will see the new partition section between Mac OS X and Windows 10</p></li>
+</ul>
+<h2 id="error---blue-screen-when-boot-windows-10">Error - blue screen when boot Windows 10</h2>
+<p>You finish above procedures, <font color=#FF0000>if WIN10 can't boot anymore and show blue screen with error message: 0xd000000e</font></p>
+<ul>
+<li><strong>Reason:</strong> The installation creates a hybrid MBR which is completely unnecessary. Windows will not boot in EFI mode but in BIOS mode instead and crash.</li>
+<li><strong>Solution:</strong> Enter Mac OS X to open terminal <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install gdisk</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo gdisk /dev/sda0 (&quot;sda0&quot; depands on your primary partition)</span><br></pre></td></tr></table></figure>
+<p style="background-color:#F0F0F0">
+Type <b>p</b> to view the partition table to verify you're working on the correct disk
+</p>
+<p style="background-color:#F0F0F0">
+Type <b>x</b> to enter the experts' menu
+</p>
+<p style="background-color:#F0F0F0">
+Type <b>n</b> to create an empty protective MBR
+</p>
+<p style="background-color:#F0F0F0">
+Type <b>w</b> to save your changes, You'll be asked to confirm this action
+</p>
+Finally, reboot you Mac and enter WIN10 OS successfully.</li>
+</ul>
+<h2 id="necessary-third-party-softwares">Necessary third party softwares</h2>
+<p>To enable Mac OS X can write data at shared partition, I provide some software infomations as below:<br> 1. <a href="https://osxfuse.github.io">OSXFUSE</a><br> 2. <a href="https://www.tuxera.com/company/open-source/">ntfs-3g</a></p>
+<p>Reference:<br> https://www.innoq.com/en/blog/triple-booting-a-mac/</p>
+]]></content>
+      <categories>
+        <category>Instruction</category>
+      </categories>
+      <tags>
+        <tag>MacOS_X</tag>
+        <tag>Windows10</tag>
+        <tag>Bootcamp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Lowest Common Ancestor of a Binary Search Tree - Solution/C++</title>
     <url>/posts/e96b392c/</url>
     <content><![CDATA[<p align="center">
@@ -1833,65 +1892,6 @@ All <span style="background-color:#F0F0F0"><font color=#808080>Node.val</font></
       </categories>
       <tags>
         <tag>BST</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Save time] Shared partition between Mac OS X and Windows 10</title>
-    <url>/posts/4755908e/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Bootcamp: File sharing between Mac OS X and Windows 10 on MacBook Pro</b></font>
-</p>
-<p>Here are some reason you should consider deploying Windows on your Mac device. 1. More games with better performance in Windows OS. 2. Some Applications don't work in macOS or not support all functions. 3. Developers need to test projects in Windows OS.</p>
-<p>So, I shared my experience to save your time of installing Windows on MacBook Pro. <a id="more"></a> ## Hardward &amp; Software preparation + Hardware Product model: Macbook Pro 2017 + Software - Win10 ISO You can go to this url to downlaod ISO: https://www.microsoft.com/zh-tw/software-download/windows10 Choose version:Windows 10, Choose language: English and choose 64-bit version</p>
-<h2 id="use-bootcamp-to-install-win10">Use Bootcamp to install Win10</h2>
-<ul>
-<li><p><strong>Step 1.</strong> Launch Bootcamp Assistant from th Utilities folder in Applications. Then, load your WIN10 ISO and allocate appropriate disk size. <img src="bootcamp_1.png" /></p></li>
-<li><p><strong>Step 2.</strong> Wait for some time, the processing will download WIN10 support software. <img src="bootcamp_2.png" /></p></li>
-<li><p><strong>Step 3.</strong> Finally, you will see the WIN10 setup screen. <img src="bootcamp_3.png" /></p></li>
-<li><p><strong>Step 4.</strong> Enter "Explorer", you wil see <code>WININSTALL (D:)</code> and click <code>BootCamp folder</code> to execute setup program. (Don't choose anything else) <img src="bootcamp_4.png" /></p></li>
-</ul>
-<h2 id="partition-ntfs-for-file-sharing">Partition NTFS for file sharing</h2>
-<ul>
-<li><p><strong>Step 1.</strong> Shut down your Mac.</p></li>
-<li><p><strong>Step 2.</strong> Hold down the <code>Command and R keys</code> down and press the power button.</p></li>
-<li><p><strong>Step 3.</strong> Keep holding Command and R keys until the Apple logo appears on the screen.</p></li>
-<li><p><strong>Step 4.</strong> Then, you will see a screen saying macOS Utilities(or if your Mac is older, OS X Utilities).</p></li>
-<li><p><strong>Step 5.</strong> Choose "Disk Utility" <img src="bootcamp_5.png" /></p></li>
-<li><p><strong>Step 6.</strong> Choose "APPLE SSD ..." and click partition <img src="bootcamp_6.png" /></p></li>
-<li><p><strong>Step 7.</strong> Click '+' to new partition section <img src="bootcamp_7.png" /></p></li>
-<li><p><strong>Step 8.</strong> Suggest selecting the NTFS option <img src="bootcamp_8.png" /></p></li>
-<li><p><strong>Step 9.</strong> If the partition is succes, you will see the new partition section between Mac OS X and Windows 10</p></li>
-</ul>
-<h2 id="error---blue-screen-when-boot-windows-10">Error - blue screen when boot Windows 10</h2>
-<p>You finish above procedures, <font color=#FF0000>if WIN10 can't boot anymore and show blue screen with error message: 0xd000000e</font></p>
-<ul>
-<li><strong>Reason:</strong> The installation creates a hybrid MBR which is completely unnecessary. Windows will not boot in EFI mode but in BIOS mode instead and crash.</li>
-<li><strong>Solution:</strong> Enter Mac OS X to open terminal <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install gdisk</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo gdisk /dev/sda0 (&quot;sda0&quot; depands on your primary partition)</span><br></pre></td></tr></table></figure>
-<p style="background-color:#F0F0F0">
-Type <b>p</b> to view the partition table to verify you're working on the correct disk
-</p>
-<p style="background-color:#F0F0F0">
-Type <b>x</b> to enter the experts' menu
-</p>
-<p style="background-color:#F0F0F0">
-Type <b>n</b> to create an empty protective MBR
-</p>
-<p style="background-color:#F0F0F0">
-Type <b>w</b> to save your changes, You'll be asked to confirm this action
-</p>
-Finally, reboot you Mac and enter WIN10 OS successfully.</li>
-</ul>
-<h2 id="necessary-third-party-softwares">Necessary third party softwares</h2>
-<p>To enable Mac OS X can write data at shared partition, I provide some software infomations as below:<br> 1. <a href="https://osxfuse.github.io">OSXFUSE</a><br> 2. <a href="https://www.tuxera.com/company/open-source/">ntfs-3g</a></p>
-<p>Reference:<br> https://www.innoq.com/en/blog/triple-booting-a-mac/</p>
-]]></content>
-      <categories>
-        <category>Instruction</category>
-      </categories>
-      <tags>
-        <tag>MacOS_X</tag>
-        <tag>Windows10</tag>
-        <tag>Bootcamp</tag>
       </tags>
   </entry>
   <entry>
@@ -2287,46 +2287,6 @@ Methods <span style="background-color:#F0F0F0"><font color=#808080>pop</font></s
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Minimum Depth of Binary Tree - Solution/C++</title>
-    <url>/posts/aedd93e0/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>111. Minimum Depth of Binary Tree</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a binary tree, find its minimum depth.</p>
-<p>The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>
-<p><strong>Note:</strong> A leaf is a node with no children. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<img src="example.png" />
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 2
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> root = [2,null,3,null,4,null,5,null,6]<br> <b>Output:</b> 5
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^5]</font></span>.
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>-1000 &lt;= Node.val &lt;= 1000</font></span>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code:</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> We can sum up the rules of the binary tree.<br> <strong>First:</strong> If the left subnode and right subnode are exist of leaf node, it can be calculated each depths and use min() to get minimum depth.<br> <strong>Seconde:</strong> If there is NULL either left subnode or right subnode of leaf node, we must use max() to get the maxixmum depth, because <u>"A leaf is a node with no children"</u> based on the question. E.g., if left subnode is NULL, a leaf can't be calculated as 1 depth.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;left &amp;&amp; root-&gt;right)&#123;</span><br><span class="line">            <span class="keyword">return</span> min(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> max(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Tree</tag>
-        <tag>Recursion</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Number of 1 Bits - Solution/C++</title>
     <url>/posts/790fdd9f/</url>
     <content><![CDATA[<p align="center">
@@ -2373,6 +2333,46 @@ The input must be a <b>binary string</b> of length <span style="background-color
       </categories>
       <tags>
         <tag>Shift_Operators</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Minimum Depth of Binary Tree - Solution/C++</title>
+    <url>/posts/aedd93e0/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>111. Minimum Depth of Binary Tree</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a binary tree, find its minimum depth.</p>
+<p>The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>
+<p><strong>Note:</strong> A leaf is a node with no children. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<img src="example.png" />
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [3,9,20,null,null,15,7]<br> <b>Output:</b> 2
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> root = [2,null,3,null,4,null,5,null,6]<br> <b>Output:</b> 5
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+The number of nodes in the tree is in the range <span style="background-color:#F0F0F0"><font color=#808080>[0, 10^5]</font></span>.
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>-1000 &lt;= Node.val &lt;= 1000</font></span>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code:</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> We can sum up the rules of the binary tree.<br> <strong>First:</strong> If the left subnode and right subnode are exist of leaf node, it can be calculated each depths and use min() to get minimum depth.<br> <strong>Seconde:</strong> If there is NULL either left subnode or right subnode of leaf node, we must use max() to get the maxixmum depth, because <u>"A leaf is a node with no children"</u> based on the question. E.g., if left subnode is NULL, a leaf can't be calculated as 1 depth.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;left &amp;&amp; root-&gt;right)&#123;</span><br><span class="line">            <span class="keyword">return</span> min(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> max(minDepth(root-&gt;left), minDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Tree</tag>
+        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>
@@ -2594,6 +2594,45 @@ Given the below binary tree and <span style="background-color:#F0F0F0"><font col
       </tags>
   </entry>
   <entry>
+    <title>Run PyCharm: Python development platform on Ubuntu (Ryu SDN)</title>
+    <url>/posts/784045ef/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Tutorial - PyCharm Installation and build project environment for the development of Ryu controller</b></font>
+</p>
+<h2 id="what-is-pycharm">What is PyCharm?</h2>
+<p>Are you developing python project on Ubuntu right now? When you are writing code, I guess that you edit file by <code>vi</code>, <code>vim</code> or 'gedit'. Maybe these tools are convenient to you, but those are inefficient and hard to maintain program for the development of big projet.<br> <a id="more"></a></p>
+<p>PyCharm is one of the most popular Python IDEs. It provides <u>code analysis</u>, <u>a graphical debugger</u>, <u>an integrated unit tester</u>, integration with <u>version control systems</u> (VCSes), and supports <u>web development with Django</u> as well as <u>data science with Anaconda</u>.<br></p>
+<p>And, it is cross-platform, compatible with Windows, macOS and Linux versions. Also, it supports both Python 2 (2.7) and Python 3 (3.5 and above) versions.</p>
+<h2 id="installation">Installation</h2>
+<ul>
+<li><p><strong>Step 1.</strong> Download the <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> to your Ubuntu system</p></li>
+<li><p><strong>Step 2.</strong> Unpack the pycharm-*.tar.gz file (The recommended installation location according to the filesystem hierarchy standard (FHS) is /opt.) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo tar xfz pycharm-*.tar.gz -C /opt/</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>Step 3.</strong> Go to the bin subdirectory <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd /opt/pycharm-*/bin</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>Step 4.</strong> Run pycharm.sh from the bin subdirectory <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ./pycharm.sh</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>Step 5.</strong> Choose “Do not import settings” as below: <img src="figure1.png" /></p></li>
+<li><p><strong>Step 6.</strong> Select the user interface theme</p></li>
+<li><p><strong>Step 7.</strong> Download and install additional pyugins</p></li>
+<li><p><strong>Step 8.</strong> Start a project in PyCharm <img src="figure2.png" /></p></li>
+</ul>
+<h2 id="debug-ryu-sdn-controller">Debug Ryu SDN controller</h2>
+<ul>
+<li><p><strong>Step 1.</strong> First, build a new project. Then, create a python file (compile file) <img src="figure_3.png" /></p></li>
+<li><p><strong>Step 2.</strong> Paste the code as below: (Notice: you must set your directory of controller.py) <img src="figure_4.png" /></p></li>
+<li><p><strong>Step 3.</strong> Create a controller.py (You can paste the source code of simple_switch_13.py to controller.py) <img src="figure_5.png" /></p></li>
+<li><p><strong>Step 4.</strong> Change a project interpreter 3.4 to 2.7 version (File-&gt;settings-&gt;Project-&gt;Project Interpreter) <img src="figure_6.png" /></p></li>
+<li><p><strong>Step 5.</strong> Finally, debugging the controller.py and get currect result <img src="figure_7.png" /></p></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Instruction</category>
+      </categories>
+      <tags>
+        <tag>IDE</tag>
+        <tag>Python</tag>
+        <tag>Platform</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Power of Two - Solution/C++</title>
     <url>/posts/fb3c78ed/</url>
     <content><![CDATA[<p align="center">
@@ -2639,45 +2678,6 @@ Given the below binary tree and <span style="background-color:#F0F0F0"><font col
       </categories>
       <tags>
         <tag>Logical_Operators</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Run PyCharm: Python development platform on Ubuntu (Ryu SDN)</title>
-    <url>/posts/784045ef/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Tutorial - PyCharm Installation and build project environment for the development of Ryu controller</b></font>
-</p>
-<h2 id="what-is-pycharm">What is PyCharm?</h2>
-<p>Are you developing python project on Ubuntu right now? When you are writing code, I guess that you edit file by <code>vi</code>, <code>vim</code> or 'gedit'. Maybe these tools are convenient to you, but those are inefficient and hard to maintain program for the development of big projet.<br> <a id="more"></a></p>
-<p>PyCharm is one of the most popular Python IDEs. It provides <u>code analysis</u>, <u>a graphical debugger</u>, <u>an integrated unit tester</u>, integration with <u>version control systems</u> (VCSes), and supports <u>web development with Django</u> as well as <u>data science with Anaconda</u>.<br></p>
-<p>And, it is cross-platform, compatible with Windows, macOS and Linux versions. Also, it supports both Python 2 (2.7) and Python 3 (3.5 and above) versions.</p>
-<h2 id="installation">Installation</h2>
-<ul>
-<li><p><strong>Step 1.</strong> Download the <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> to your Ubuntu system</p></li>
-<li><p><strong>Step 2.</strong> Unpack the pycharm-*.tar.gz file (The recommended installation location according to the filesystem hierarchy standard (FHS) is /opt.) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo tar xfz pycharm-*.tar.gz -C /opt/</span><br></pre></td></tr></table></figure></p></li>
-<li><p><strong>Step 3.</strong> Go to the bin subdirectory <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd /opt/pycharm-*/bin</span><br></pre></td></tr></table></figure></p></li>
-<li><p><strong>Step 4.</strong> Run pycharm.sh from the bin subdirectory <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ./pycharm.sh</span><br></pre></td></tr></table></figure></p></li>
-<li><p><strong>Step 5.</strong> Choose “Do not import settings” as below: <img src="figure1.png" /></p></li>
-<li><p><strong>Step 6.</strong> Select the user interface theme</p></li>
-<li><p><strong>Step 7.</strong> Download and install additional pyugins</p></li>
-<li><p><strong>Step 8.</strong> Start a project in PyCharm <img src="figure2.png" /></p></li>
-</ul>
-<h2 id="debug-ryu-sdn-controller">Debug Ryu SDN controller</h2>
-<ul>
-<li><p><strong>Step 1.</strong> First, build a new project. Then, create a python file (compile file) <img src="figure_3.png" /></p></li>
-<li><p><strong>Step 2.</strong> Paste the code as below: (Notice: you must set your directory of controller.py) <img src="figure_4.png" /></p></li>
-<li><p><strong>Step 3.</strong> Create a controller.py (You can paste the source code of simple_switch_13.py to controller.py) <img src="figure_5.png" /></p></li>
-<li><p><strong>Step 4.</strong> Change a project interpreter 3.4 to 2.7 version (File-&gt;settings-&gt;Project-&gt;Project Interpreter) <img src="figure_6.png" /></p></li>
-<li><p><strong>Step 5.</strong> Finally, debugging the controller.py and get currect result <img src="figure_7.png" /></p></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Instruction</category>
-      </categories>
-      <tags>
-        <tag>IDE</tag>
-        <tag>Python</tag>
-        <tag>Platform</tag>
       </tags>
   </entry>
   <entry>
@@ -2892,35 +2892,6 @@ Internally you can think of this:
       </tags>
   </entry>
   <entry>
-    <title>[LeetCode Road] Remove Linked List Elements - Solution/C++</title>
-    <url>/posts/2ded864c/</url>
-    <content><![CDATA[<p align="center">
-<font size="6px"><b>203. Remove Linked List Elements</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Remove all elements from a linked list of integers that have value <I><b>val</b></I>.</p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> 1-&gt;2-&gt;6-&gt;3-&gt;4-&gt;5-&gt;6, <I><b>val</b></I> = 6<br> <b>Output:</b> 1-&gt;2-&gt;3-&gt;4-&gt;5
-</p>
-<a id="more"></a>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> Some inputs maybe like 1-&gt;1-&gt;2-&gt;3-&gt;null (val=1) or 1-&gt;1-&gt;1 (val=1), you have to do check to filer these elements at 16-18.<br></p>
-<p>At 20-22 line, I declare a new ListNode, and link to <b>head</b>.<br> At 23-30 line, you should check the next value of head's element whether it'e equal to <b>val</b>, if it is true at 24 line, it will link to after the next element.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">removeElements</span><span class="params">(ListNode* head, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!head) <span class="keyword">return</span> head;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(head &amp;&amp; head-&gt;val == val)&#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="function">ListNode <span class="title">dummy</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">        ListNode* next = &amp;dummy;</span><br><span class="line">        next-&gt;next = head;</span><br><span class="line">        <span class="keyword">while</span>(head &amp;&amp; head-&gt;next)&#123;</span><br><span class="line">            <span class="keyword">if</span>(head-&gt;next-&gt;val == val)&#123;</span><br><span class="line">                head-&gt;next = head-&gt;next-&gt;next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                next-&gt;next = head;</span><br><span class="line">                next = next-&gt;next;</span><br><span class="line">                head = head-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> Declaring a new ListNode to recode the elements won't be necessary, you only delcare a pointer to point <b>head</b>, and return <b>head</b> at last.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">removeElements</span><span class="params">(ListNode* head, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!head) <span class="keyword">return</span> head;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(head &amp;&amp; head-&gt;val == val)&#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        ListNode* curr = head;</span><br><span class="line">        <span class="keyword">while</span>(curr &amp;&amp; curr-&gt;next)&#123;</span><br><span class="line">            <span class="keyword">if</span>(curr-&gt;next-&gt;val == val)&#123;</span><br><span class="line">                curr-&gt;next = curr-&gt;next-&gt;next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                curr = curr-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>ListNode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Remove Nth Node From End of List - Solution/C++</title>
     <url>/posts/d7f73c78/</url>
     <content><![CDATA[<p align="center">
@@ -2969,6 +2940,35 @@ The number of nodes in the list is <span style="background-color:#F0F0F0"><font 
       <categories>
         <category>LeetCode-Medium</category>
       </categories>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Remove Linked List Elements - Solution/C++</title>
+    <url>/posts/2ded864c/</url>
+    <content><![CDATA[<p align="center">
+<font size="6px"><b>203. Remove Linked List Elements</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Remove all elements from a linked list of integers that have value <I><b>val</b></I>.</p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> 1-&gt;2-&gt;6-&gt;3-&gt;4-&gt;5-&gt;6, <I><b>val</b></I> = 6<br> <b>Output:</b> 1-&gt;2-&gt;3-&gt;4-&gt;5
+</p>
+<a id="more"></a>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> Some inputs maybe like 1-&gt;1-&gt;2-&gt;3-&gt;null (val=1) or 1-&gt;1-&gt;1 (val=1), you have to do check to filer these elements at 16-18.<br></p>
+<p>At 20-22 line, I declare a new ListNode, and link to <b>head</b>.<br> At 23-30 line, you should check the next value of head's element whether it'e equal to <b>val</b>, if it is true at 24 line, it will link to after the next element.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">removeElements</span><span class="params">(ListNode* head, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!head) <span class="keyword">return</span> head;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(head &amp;&amp; head-&gt;val == val)&#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="function">ListNode <span class="title">dummy</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">        ListNode* next = &amp;dummy;</span><br><span class="line">        next-&gt;next = head;</span><br><span class="line">        <span class="keyword">while</span>(head &amp;&amp; head-&gt;next)&#123;</span><br><span class="line">            <span class="keyword">if</span>(head-&gt;next-&gt;val == val)&#123;</span><br><span class="line">                head-&gt;next = head-&gt;next-&gt;next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                next-&gt;next = head;</span><br><span class="line">                next = next-&gt;next;</span><br><span class="line">                head = head-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<br> Declaring a new ListNode to recode the elements won't be necessary, you only delcare a pointer to point <b>head</b>, and return <b>head</b> at last.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">removeElements</span><span class="params">(ListNode* head, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!head) <span class="keyword">return</span> head;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(head &amp;&amp; head-&gt;val == val)&#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        ListNode* curr = head;</span><br><span class="line">        <span class="keyword">while</span>(curr &amp;&amp; curr-&gt;next)&#123;</span><br><span class="line">            <span class="keyword">if</span>(curr-&gt;next-&gt;val == val)&#123;</span><br><span class="line">                curr-&gt;next = curr-&gt;next-&gt;next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                curr = curr-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>ListNode</tag>
+      </tags>
   </entry>
   <entry>
     <title>[LeetCode Road] Reverse Bits - Solution/C++</title>
@@ -3099,47 +3099,6 @@ The number of nodes in the list is the range <span style="background-color:#F0F0
       </tags>
   </entry>
   <entry>
-    <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
-    <url>/posts/9e0f4e5/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>Tutorial - Install Ryu in Ubuntu 16.04 with no failure</b></font>
-</p>
-<p><a href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It's very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet. <a id="more"></a></p>
-<h2 id="start-to-configure-and-install">Start to configure and install</h2>
-<ul>
-<li><strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-pip python-dev</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 4.</strong> Download Ryu source code from github <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ git clone git://github.com/osrg/ryu.git</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 5.</strong> <a href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ pip install networkx</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 6.</strong> Install Ryu <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python ./setup.py install</span><br></pre></td></tr></table></figure></li>
-<li><strong>Step 7.</strong> Execution and testing <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ryu-manager</span><br></pre></td></tr></table></figure> // If your installation is successful, the terminal will show some info. and stop to listening:
-<p style="background-color:#F0F0F0">
-loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_handler of OFPHandler
-</p>
-<hr />
-<p>
-<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error!</font>
-</p>
-<p>
-<b>Solution:</b>
-</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install -r tools/pip-requires</span><br></pre></td></tr></table></figure>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install six --upgrade</span><br></pre></td></tr></table></figure>
-<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font> <font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>   <b>SyntaxError: ivalid syntax</b></font><br> <b>Solution:</b> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd /usr/local/lib/python2.7/dist-packages/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo rm –rf oslo_config/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata</span><br></pre></td></tr></table></figure> From the above, the command is refered to:<br> http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd oslo.config</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python setup.py install</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Simulator</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-        <tag>SDN</tag>
-        <tag>Controller</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Roman to Integer - Solution/C++</title>
     <url>/posts/8caf8f3c/</url>
     <content><![CDATA[<p align="center">
@@ -3200,6 +3159,47 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
       </categories>
       <tags>
         <tag>Map(STL)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[One-time success] How to install Ryu on Ubuntu - Tutorial</title>
+    <url>/posts/9e0f4e5/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>Tutorial - Install Ryu in Ubuntu 16.04 with no failure</b></font>
+</p>
+<p><a href="https://ryu.readthedocs.io/en/latest/index.html">Ryu</a> is a component-based software defined networking framework. It's very easy to develop your own SDN controller. And, if you have any questions, there are rich source on the internet. <a id="more"></a></p>
+<h2 id="start-to-configure-and-install">Start to configure and install</h2>
+<ul>
+<li><strong>Step 1.</strong> Download package information from all configured sources. (The sources often defined in /etc/apt/sources) <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 2.</strong> Install dependencies for building the required Python packages on your system <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-pip python-dev</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install python-eventlet python-routes python-webob python-paramiko python-dev</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 3.</strong> We will download Ryu source code from github, so git is necessary. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 4.</strong> Download Ryu source code from github <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ git clone git://github.com/osrg/ryu.git</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 5.</strong> <a href="https://networkx.org/documentation/stable/index.html">NetworkX</a> is very important software to support your development of SDN controller. <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ pip install networkx</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 6.</strong> Install Ryu <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python ./setup.py install</span><br></pre></td></tr></table></figure></li>
+<li><strong>Step 7.</strong> Execution and testing <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ ryu-manager</span><br></pre></td></tr></table></figure> // If your installation is successful, the terminal will show some info. and stop to listening:
+<p style="background-color:#F0F0F0">
+loading app ryu.controller.ofp_handler<br> instantiating app ryu.controller.ofp_handler of OFPHandler
+</p>
+<hr />
+<p>
+<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error!</font>
+</p>
+<p>
+<b>Solution:</b>
+</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd ryu/</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install -r tools/pip-requires</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo pip install six --upgrade</span><br></pre></td></tr></table></figure>
+<font color=#FF0000>Warning: if you execute “ryu-manager” and get an error as below:</font> <font color=#FF0000><b>class ConfigurationSourceDriver(object, metaclass=abc.ABCMeta):</b><br>   <b>SyntaxError: ivalid syntax</b></font><br> <b>Solution:</b> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd /usr/local/lib/python2.7/dist-packages/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo rm –rf oslo_config/</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo git clone https://github.com/openstack/oslo.config -b stable/ocata</span><br></pre></td></tr></table></figure> From the above, the command is refered to:<br> http://gogosatellite.blogspot.com/2016/05/openstack-oslo-config-tutorial.html <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ cd oslo.config</span><br></pre></td></tr></table></figure> <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ sudo python setup.py install</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Simulator</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>SDN</tag>
+        <tag>Controller</tag>
       </tags>
   </entry>
   <entry>
@@ -3705,49 +3705,6 @@ nums is sorted in increasing order.
       </categories>
   </entry>
   <entry>
-    <title>[LeetCode Road] Two Sum - Solution/C++</title>
-    <url>/posts/b98c8b25/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>1. Two Sum</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given an array of integers <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> and an integer <span style="background-color:#F0F0F0"><font color=#808080>target</font></span>, return <em>indices of the two numbers such that they add up to target</em>.</p>
-<p>You may assume that each input would have <strong>exactly one solution</strong>, and you may not use the same element twice.</p>
-<p>You can return the answer in any order. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: nums = [2,7,11,15], target = 9<br><b>Output</b>: [0,1]<br><b>Output</b>: Because nums[0] + nums[1] == 9, we return [0, 1].
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: nums = [3,2,4], target = 6<br><b>Output</b>: [1,2].
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input</b>: nums = [3,3], target = 6<br><b>Output</b>: [0,1]
-</p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> This is my first coding on the LeetCode platform. After reading the problem, my mind's gone blank, I only thought a simple way to solve it. Use two loop to check all numbers, but the time complexity is O(n^2). I knew this method is not efficient!<br></p>
-<p><b>Time complexity: O(n<sup>2</sup>)</b><br> <b>Space complexity: O(1)</b></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; returnArray;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size() - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; nums.size(); j++)&#123;</span><br><span class="line">                sum = nums[i]+nums[j];</span><br><span class="line">                <span class="keyword">if</span>(sum == target)&#123;</span><br><span class="line">                    returnArray.push_back(i);</span><br><span class="line">                    returnArray.push_back(j);</span><br><span class="line">                    <span class="keyword">return</span> returnArray;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> returnArray;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea: So, the source code is refered from online and I added some comments after programming. I heard the Hash Table mechanism at first time. It is a very simple principle, I must remember it! If you want to learn Hash Table, you can see <a href="https://aozturk.medium.com/simple-hash-map-hash-table-implementation-in-c-931965904250">Simple Hash Map</a>.<br></p>
-<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(n)</b></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; returnArray; <span class="comment">// return the ans</span></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mapIndex; <span class="comment">// hash table(key:nums[i], value:index)</span></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            it = mapIndex.find(target - nums[i]);</span><br><span class="line">            <span class="keyword">if</span>(it != mapIndex.end())&#123;</span><br><span class="line">                <span class="comment">// found it, it means target - nums[i] = it-&gt;first</span></span><br><span class="line">                returnArray.push_back(it-&gt;second); <span class="comment">// get the value(index) by iterator</span></span><br><span class="line">                returnArray.push_back(i); <span class="comment">// get the current index</span></span><br><span class="line">                <span class="keyword">return</span> returnArray;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">// add new element</span></span><br><span class="line">                mapIndex.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;(nums[i], i));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> returnArray;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-3"><u>Version 3</u></h3>
-<p>Idea:<br> You also can use <code>unordered_map</code> to implement it. <br> And, you don't need to declare a vector as a result container to store indexes.<br></p>
-<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(n)</b></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; arr;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; nums.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr.find(target - nums[i]) != arr.end())&#123;</span><br><span class="line">                <span class="keyword">return</span> &#123;arr[target - nums[i]], i&#125;;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                arr[nums[i]] = i; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Unordered_map(STL)</tag>
-        <tag>Hash_table</tag>
-        <tag>Map(STL)</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode Road] Unique Paths - Solution/C++</title>
     <url>/posts/7cafec50/</url>
     <content><![CDATA[<p align="center">
@@ -3798,6 +3755,49 @@ It's guaranteed that the answer will be less than or equal to <span style="backg
       </tags>
   </entry>
   <entry>
+    <title>[LeetCode Road] Two Sum - Solution/C++</title>
+    <url>/posts/b98c8b25/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>1. Two Sum</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given an array of integers <span style="background-color:#F0F0F0"><font color=#808080>nums</font></span> and an integer <span style="background-color:#F0F0F0"><font color=#808080>target</font></span>, return <em>indices of the two numbers such that they add up to target</em>.</p>
+<p>You may assume that each input would have <strong>exactly one solution</strong>, and you may not use the same element twice.</p>
+<p>You can return the answer in any order. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: nums = [2,7,11,15], target = 9<br><b>Output</b>: [0,1]<br><b>Output</b>: Because nums[0] + nums[1] == 9, we return [0, 1].
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: nums = [3,2,4], target = 6<br><b>Output</b>: [1,2].
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input</b>: nums = [3,3], target = 6<br><b>Output</b>: [0,1]
+</p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> This is my first coding on the LeetCode platform. After reading the problem, my mind's gone blank, I only thought a simple way to solve it. Use two loop to check all numbers, but the time complexity is O(n^2). I knew this method is not efficient!<br></p>
+<p><b>Time complexity: O(n<sup>2</sup>)</b><br> <b>Space complexity: O(1)</b></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; returnArray;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size() - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; nums.size(); j++)&#123;</span><br><span class="line">                sum = nums[i]+nums[j];</span><br><span class="line">                <span class="keyword">if</span>(sum == target)&#123;</span><br><span class="line">                    returnArray.push_back(i);</span><br><span class="line">                    returnArray.push_back(j);</span><br><span class="line">                    <span class="keyword">return</span> returnArray;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> returnArray;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea: So, the source code is refered from online and I added some comments after programming. I heard the Hash Table mechanism at first time. It is a very simple principle, I must remember it! If you want to learn Hash Table, you can see <a href="https://aozturk.medium.com/simple-hash-map-hash-table-implementation-in-c-931965904250">Simple Hash Map</a>.<br></p>
+<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(n)</b></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; returnArray; <span class="comment">// return the ans</span></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mapIndex; <span class="comment">// hash table(key:nums[i], value:index)</span></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            it = mapIndex.find(target - nums[i]);</span><br><span class="line">            <span class="keyword">if</span>(it != mapIndex.end())&#123;</span><br><span class="line">                <span class="comment">// found it, it means target - nums[i] = it-&gt;first</span></span><br><span class="line">                returnArray.push_back(it-&gt;second); <span class="comment">// get the value(index) by iterator</span></span><br><span class="line">                returnArray.push_back(i); <span class="comment">// get the current index</span></span><br><span class="line">                <span class="keyword">return</span> returnArray;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">// add new element</span></span><br><span class="line">                mapIndex.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;(nums[i], i));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> returnArray;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-3"><u>Version 3</u></h3>
+<p>Idea:<br> You also can use <code>unordered_map</code> to implement it. <br> And, you don't need to declare a vector as a result container to store indexes.<br></p>
+<p><b>Time complexity: O(n)</b><br> <b>Space complexity: O(n)</b></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; arr;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; nums.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr.find(target - nums[i]) != arr.end())&#123;</span><br><span class="line">                <span class="keyword">return</span> &#123;arr[target - nums[i]], i&#125;;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                arr[nums[i]] = i; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Unordered_map(STL)</tag>
+        <tag>Hash_table</tag>
+        <tag>Map(STL)</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode Road] Valid Palindrome - Solution/C++</title>
     <url>/posts/1686f472/</url>
     <content><![CDATA[<p align="center">
@@ -3831,6 +3831,59 @@ It's guaranteed that the answer will be less than or equal to <span style="backg
       </categories>
       <tags>
         <tag>STL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode Road] Valid Parentheses - Solution/C++</title>
+    <url>/posts/5ddd3578/</url>
+    <content><![CDATA[<p align="center">
+<font size="6"><b>20. Valid Parentheses</b></font>
+</p>
+<h2 id="question">Question:</h2>
+<p>Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> containing just the characters <span style="background-color:#F0F0F0"><font color=#808080>'('</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>')'</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>'{'</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>'}'</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>'['</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>']'</font></span>, determine if the input string is valid.</p>
+<p>An input string is valid if: 1. Open brackets must be closed by the same type of brackets. 2. Open brackets must be closed in the correct order. <a id="more"></a></p>
+<h2 id="example">Example:</h2>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "()"<br><b>Output:</b> true
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "()<span></span>"<br><b>Output:</b> true
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "(]"<br><b>Output:</b> false
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "([)]"<br><b>Output:</b> false
+</p>
+<p style="background-color:#F0F0F0">
+<b>Input:</b> s = "{[]}"<br><b>Output:</b> true
+</p>
+<strong>Constraints:</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= s.length &lt;= 10^4</font></span>
+</li>
+</strong> <strong>
+<li>
+<span style="background-color:#F0F0F0"><font color=#808080>s</span></font> consists of parentheses only <span style="background-color:#F0F0F0"><font color=#808080>'()<span></span>'.</span></font>
+</li>
+<p></strong></p>
+<h2 id="source-code">Source code</h2>
+<h3 id="version-1"><u>Version 1</u></h3>
+<p>Idea:<br> Use map&lt;key, value&gt; to declare the characters. Notice: a string will be process is left parenthese, so these can be used as a value. Then, I can use key-value to do match when right parenthese is processed.<br></p>
+<p>I get each characters to check whether it is unrecorded or equal <code>st.top()</code> or not. If it is true, this character be added at the top of the stack. On the contrary, delete the top most element of the stack. Finally, ues <code>st.empty()</code> to return whether the stack is empty.<br> P.S. Stack is LIFO(Last In First Out).<br></p>
+<p><b>Time complexity: O(l)</b><br> <b>Space complexity: O(h + l)</b></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValid</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.length() == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">char</span>, <span class="keyword">char</span>&gt;  match&#123;&#123;<span class="string">&#x27;(&#x27;</span>, <span class="string">&#x27;)&#x27;</span>&#125;, &#123;<span class="string">&#x27;&#123;&#x27;</span>,<span class="string">&#x27;&#125;&#x27;</span>&#125;,&#123;<span class="string">&#x27;[&#x27;</span>,<span class="string">&#x27;]&#x27;</span>&#125;&#125;;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; st;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">const</span> <span class="keyword">char</span> c:s)&#123;</span><br><span class="line">            <span class="keyword">if</span>(st.empty() || c != st.top())&#123;</span><br><span class="line">                st.push(match[c]);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                st.pop();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> st.empty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="version-2"><u>Version 2</u></h3>
+<p>Idea:<br> Get rid of using map or unordered_map, adopt switch statement to implement it.<br></p>
+<p><b>Time complexity: O(l)</b><br> <b>Space complexity: O(l)</b></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValid</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; st;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> &amp;c : s)&#123;</span><br><span class="line">            <span class="keyword">switch</span>(c)&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;(&#x27;</span>: st.push(<span class="string">&#x27;)&#x27;</span>); <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;&#123;&#x27;</span>: st.push(<span class="string">&#x27;&#125;&#x27;</span>); <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;[&#x27;</span>: st.push(<span class="string">&#x27;]&#x27;</span>); <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">default</span>: </span><br><span class="line">                    <span class="keyword">if</span>(st.empty() || c != st.top()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">else</span> st.pop();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> st.empty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode-Easy</category>
+      </categories>
+      <tags>
+        <tag>Stack</tag>
+        <tag>Map(STL)</tag>
       </tags>
   </entry>
   <entry>
@@ -3944,59 +3997,6 @@ It's guaranteed that the answer will be less than or equal to <span style="backg
         <tag>ns-3</tag>
         <tag>ofswitch</tag>
         <tag>OpenFlow1.3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode Road] Valid Parentheses - Solution/C++</title>
-    <url>/posts/5ddd3578/</url>
-    <content><![CDATA[<p align="center">
-<font size="6"><b>20. Valid Parentheses</b></font>
-</p>
-<h2 id="question">Question:</h2>
-<p>Given a string <span style="background-color:#F0F0F0"><font color=#808080>s</font></span> containing just the characters <span style="background-color:#F0F0F0"><font color=#808080>'('</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>')'</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>'{'</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>'}'</font></span>, <span style="background-color:#F0F0F0"><font color=#808080>'['</font></span> and <span style="background-color:#F0F0F0"><font color=#808080>']'</font></span>, determine if the input string is valid.</p>
-<p>An input string is valid if: 1. Open brackets must be closed by the same type of brackets. 2. Open brackets must be closed in the correct order. <a id="more"></a></p>
-<h2 id="example">Example:</h2>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = "()"<br><b>Output:</b> true
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = "()<span></span>"<br><b>Output:</b> true
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = "(]"<br><b>Output:</b> false
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = "([)]"<br><b>Output:</b> false
-</p>
-<p style="background-color:#F0F0F0">
-<b>Input:</b> s = "{[]}"<br><b>Output:</b> true
-</p>
-<strong>Constraints:</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>1 &lt;= s.length &lt;= 10^4</font></span>
-</li>
-</strong> <strong>
-<li>
-<span style="background-color:#F0F0F0"><font color=#808080>s</span></font> consists of parentheses only <span style="background-color:#F0F0F0"><font color=#808080>'()<span></span>'.</span></font>
-</li>
-<p></strong></p>
-<h2 id="source-code">Source code</h2>
-<h3 id="version-1"><u>Version 1</u></h3>
-<p>Idea:<br> Use map&lt;key, value&gt; to declare the characters. Notice: a string will be process is left parenthese, so these can be used as a value. Then, I can use key-value to do match when right parenthese is processed.<br></p>
-<p>I get each characters to check whether it is unrecorded or equal <code>st.top()</code> or not. If it is true, this character be added at the top of the stack. On the contrary, delete the top most element of the stack. Finally, ues <code>st.empty()</code> to return whether the stack is empty.<br> P.S. Stack is LIFO(Last In First Out).<br></p>
-<p><b>Time complexity: O(l)</b><br> <b>Space complexity: O(h + l)</b></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValid</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.length() == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">char</span>, <span class="keyword">char</span>&gt;  match&#123;&#123;<span class="string">&#x27;(&#x27;</span>, <span class="string">&#x27;)&#x27;</span>&#125;, &#123;<span class="string">&#x27;&#123;&#x27;</span>,<span class="string">&#x27;&#125;&#x27;</span>&#125;,&#123;<span class="string">&#x27;[&#x27;</span>,<span class="string">&#x27;]&#x27;</span>&#125;&#125;;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; st;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">const</span> <span class="keyword">char</span> c:s)&#123;</span><br><span class="line">            <span class="keyword">if</span>(st.empty() || c != st.top())&#123;</span><br><span class="line">                st.push(match[c]);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                st.pop();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> st.empty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="version-2"><u>Version 2</u></h3>
-<p>Idea:<br> Get rid of using map or unordered_map, adopt switch statement to implement it.<br></p>
-<p><b>Time complexity: O(l)</b><br> <b>Space complexity: O(l)</b></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValid</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; st;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> &amp;c : s)&#123;</span><br><span class="line">            <span class="keyword">switch</span>(c)&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;(&#x27;</span>: st.push(<span class="string">&#x27;)&#x27;</span>); <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;&#123;&#x27;</span>: st.push(<span class="string">&#x27;&#125;&#x27;</span>); <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;[&#x27;</span>: st.push(<span class="string">&#x27;]&#x27;</span>); <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">default</span>: </span><br><span class="line">                    <span class="keyword">if</span>(st.empty() || c != st.top()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">else</span> st.pop();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> st.empty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>LeetCode-Easy</category>
-      </categories>
-      <tags>
-        <tag>Stack</tag>
-        <tag>Map(STL)</tag>
       </tags>
   </entry>
 </search>

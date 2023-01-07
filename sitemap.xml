@@ -907,13 +907,6 @@
   </url>
   
   <url>
-    <loc>https://egbert-yu-ting.github.io/tags/BST/</loc>
-    <lastmod>2023-01-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://egbert-yu-ting.github.io/tags/MacOS-X/</loc>
     <lastmod>2023-01-07</lastmod>
     <changefreq>daily</changefreq>
@@ -929,6 +922,13 @@
   
   <url>
     <loc>https://egbert-yu-ting.github.io/tags/Bootcamp/</loc>
+    <lastmod>2023-01-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://egbert-yu-ting.github.io/tags/BST/</loc>
     <lastmod>2023-01-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -977,6 +977,13 @@
   </url>
   
   <url>
+    <loc>https://egbert-yu-ting.github.io/tags/Map-STL/</loc>
+    <lastmod>2023-01-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://egbert-yu-ting.github.io/tags/SDN/</loc>
     <lastmod>2023-01-07</lastmod>
     <changefreq>daily</changefreq>
@@ -985,13 +992,6 @@
   
   <url>
     <loc>https://egbert-yu-ting.github.io/tags/Controller/</loc>
-    <lastmod>2023-01-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://egbert-yu-ting.github.io/tags/Map-STL/</loc>
     <lastmod>2023-01-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
